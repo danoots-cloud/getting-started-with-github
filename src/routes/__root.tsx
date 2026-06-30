@@ -96,6 +96,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { property: "og:title", content: "From NJ to Anywhere — Plan Your Next Adventure" },
+      { name: "twitter:title", content: "From NJ to Anywhere — Plan Your Next Adventure" },
+      { name: "description", content: "Learn to contribute to existing GitHub repositories by cloning, making changes, and submitting pull requests." },
+      { property: "og:description", content: "Learn to contribute to existing GitHub repositories by cloning, making changes, and submitting pull requests." },
+      { name: "twitter:description", content: "Learn to contribute to existing GitHub repositories by cloning, making changes, and submitting pull requests." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cdfab0b2-3c60-4ad8-a5dd-f4b8ea12cfdc/id-preview-3fd66d0e--f3c69afe-7c8c-4c10-947c-50bec99b6ba6.lovable.app-1782852893626.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cdfab0b2-3c60-4ad8-a5dd-f4b8ea12cfdc/id-preview-3fd66d0e--f3c69afe-7c8c-4c10-947c-50bec99b6ba6.lovable.app-1782852893626.png" },
     ],
     links: [
       {
