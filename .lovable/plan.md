@@ -1,76 +1,46 @@
-# Migrate `dans-travel-inspiration` into this Lovable project
+# Plan: 12-month climate chart with temperature + precipitation
 
 ## Goal
-Bring the travel inspiration app (world map, country panels, temperature charts) from the external GitHub repo into the current Lovable project so it runs in the Lovable preview and syncs bidirectionally with GitHub.
+Show every country's full annual climate in one chart: temperature (solid line, left axis) and precipitation (dotted line, right axis). Precipitation values will be directionally accurate — correct seasonal shape and rough magnitude per climate zone — not measurement-grade.
 
-## What the external repo contains
-- **Stack**: TanStack Start, React 19, Tailwind CSS v4, Vite
-- **UI**: World map (`react-simple-maps`), temperature chart (`chart.js` + `react-chartjs-2`), country detail panel, flag component
-- **Data**: Large `countries.ts` file (~300KB) with country metadata and climate data
-- **Styling**: Custom Tailwind theme (`@theme` with accent/success/warning/danger colors, DM Sans + Fraunces fonts, custom scrollbar, slide-in animation)
-- **Routes**: Single home route (`/`) in `src/routes/index.tsx`
+## Step 1 — Expand temperature data to 12 months
+- Update the `Country` type in `src/data/countries.ts` so `temperatures` is a 12-element array (Jan–Dec) instead of 4 seasonal points.
+- For each country, fill the 8 missing months by interpolating between the existing Jan / Apr / Jul / Oct anchors using cosine interpolation, then round to whole degrees. Preserves each country's existing seasonal shape.
+- One-time local script; no API calls.
 
-## Current Lovable project state
-- TanStack Start with shadcn/ui design system (semantic oklch colors, `tw-animate-css`, Radix primitives)
-- Prettier, ESLint, `@lovable.dev/vite-tanstack-config`
-- Ready for Lovable Cloud backend
+## Step 2 — Add precipitation data (12 months per country)
+- Add `precipitation: number[]` (mm per month, 12 values) to each country.
+- Authoring approach — assign each country a climate archetype and apply that archetype's monthly pattern, then nudge based on country specifics:
+  - **Mediterranean** (Spain, Italy, Greece): wet Nov–Mar, dry Jun–Aug
+  - **Monsoon** (India, Thailand, Vietnam): dry winter, heavy Jun–Sep
+  - **Equatorial** (Indonesia, Colombia, DRC): wet year-round, 150–250mm/mo
+  - **Desert / arid** (Egypt, Saudi Arabia, Libya): near zero year-round
+  - **Temperate maritime** (UK, Ireland, NZ): steady 60–100mm year-round, slight autumn peak
+  - **Continental** (Russia, Canada, Kazakhstan): summer peak, dry cold winter
+  - **Tropical wet/dry savanna** (Kenya, Brazil interior): bimodal or single wet season
+  - **Subarctic / polar** (Iceland, Greenland, northern Russia): low totals, modest variation
+- Result: shape and rough magnitude per month are correct (a user looking at India will clearly see the monsoon; Egypt will be flat near zero; UK will be steady).
 
----
+## Step 3 — Dual-axis chart
+Update `src/components/TemperatureChart.tsx`:
+- 12 month labels on the x-axis (J F M A M J J A S O N D) to stay readable in the side panel.
+- Add a precipitation dataset:
+  - Dotted line (`borderDash: [4, 4]`)
+  - Bound to right-side y-axis (`yAxisID: 'y1'`), unit "mm"
+  - Distinct color (cool blue) vs temperature (existing warm color)
+- Chart.js `scales`:
+  - `y` (left): °C
+  - `y1` (right): mm, `grid.drawOnChartArea: false` to avoid double gridlines
+- Legend labels: "Temperature (°C)", "Precipitation (mm)".
+- Tooltip shows both values for the hovered month.
 
-## Step 1 — Install missing dependencies
-Add the external repo's unique dependencies that do not exist in the current project:
+## Step 4 — Verify
+- `bun run build:dev` to confirm types compile.
+- Playwright: open a few climate-distinct countries (India, Egypt, UK, Indonesia, Russia), screenshot the panel, confirm the dotted precipitation line matches the expected pattern and both axes render cleanly.
 
-```
-bun add chart.js react-chartjs-2 react-simple-maps prop-types @tailwindcss/typography
-bun add -D @types/react-simple-maps
-```
+## Credit cost
+Negligible — no AI model calls, no per-country multiplier. Static data edits + one component update.
 
-(If `@types/react-simple-maps` does not exist, the repo already ships a hand-written `src/react-simple-maps.d.ts` declaration file — copy that in.)
-
-## Step 2 — Copy source files
-Copy these files from the external repo into the current project, preserving paths:
-
-```
-src/components/CountryPanel.tsx
-src/components/Flag.tsx
-src/components/TemperatureChart.tsx
-src/components/WorldMap.tsx
-src/data/countries.ts
-src/react-simple-maps.d.ts
-public/favicon.ico
-public/tanstack-circle-logo.png
-```
-
-## Step 3 — Merge Tailwind styles (manual reconciliation required)
-The external repo defines a custom `@theme` block and `body` font rule in `src/styles.css`. The current project has a full shadcn semantic color system (`--color-background`, `--color-primary`, etc.).
-
-**Decision needed**: Choose one of the following approaches (I recommend **Option A** to keep the app visually distinct while preserving shadcn compatibility):
-
-### Option A — Preserve shadcn system, add travel-app accents
-Keep the current `:root`/`.dark` semantic variables and `@theme inline` block. Append the external repo's custom colors as additional theme variables (e.g., `--color-accent` is already present; add `--color-success`, `--color-warning`, `--color-danger` if not already mapped). Add the `slideIn` keyframe and `.animate-slideIn` utility. Load DM Sans and Fraunces fonts via `<link>` in `src/routes/__root.tsx` head.
-
-### Option B — Replace with external repo's theme
-Overwrite the `@theme` block with the external repo's simpler `@theme` definition. This abandons the shadcn color palette and may break any shadcn components already in use.
-
-## Step 4 — Integrate the route
-Replace the placeholder/boilerplate content in `src/routes/index.tsx` with the external repo's `src/routes/index.tsx` content. Wire it up so the home page renders the `WorldMap`, `CountryPanel`, etc.
-
-## Step 5 — Verify and test
-1. Run `bun run dev` and confirm the app compiles.
-2. Open the preview and verify:
-   - World map renders and is interactive
-   - Clicking a country opens the country panel with flag and temperature chart
-   - No console errors from `react-simple-maps` or `chart.js`
-3. Make a small edit in Lovable and confirm it pushes to GitHub.
-4. Make a small edit directly on GitHub and confirm it syncs back to Lovable.
-
-## What NOT to overwrite
-- `vite.config.ts` — Lovable's `@lovable.dev/vite-tanstack-config` handles TanStack Start, Tailwind, and path aliases. Do not restore the external repo's manual plugin list.
-- `tsconfig.json` — Lovable's config has specific compiler settings for the sandbox; keep it unless there is a proven conflict.
-- `src/router.tsx`, `src/server.ts`, `src/start.ts` — Lovable bootstrap files.
-- `package.json` scripts — Lovable uses `build:dev`, `lint`, `format`; merge only the `dependencies` and `devDependencies` entries.
-
-## Risks / open questions
-- `react-simple-maps` v3 compatibility with React 19 — the external repo uses it, but it may need a type-declaration tweak.
-- The external repo's `src/routes/__root.tsx` may define a different HTML shell (fonts, meta tags) than Lovable's. Merge carefully rather than overwrite.
-- Font loading: the external repo relies on DM Sans and Fraunces. These should be loaded via `<link>` tags in the root route `head()`, not via CSS `@import` (Tailwind v4 strips remote `@import`).
+## Files touched
+- `src/data/countries.ts` — extend type, fill 12-month temps, add precipitation arrays
+- `src/components/TemperatureChart.tsx` — dual-axis, dotted precipitation series, 12 labels

@@ -121,9 +121,10 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
           </div>
         </div>
 
-        <Section title="Temperature by Month (°F)" icon={Thermometer} accentColor={accent}>
+        <Section title="Climate by Month" icon={Thermometer} accentColor={accent}>
           <TemperatureChart
             temperatures={country.temperatures}
+            precipitation={country.precipitation}
             accentColor={accent}
             secondaryColor={secondaryAccent}
           />
