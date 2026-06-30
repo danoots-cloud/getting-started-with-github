@@ -1,0 +1,271 @@
+import type { CountryData } from '@/data/countries'
+import { TemperatureChart } from '@/components/TemperatureChart'
+import { Flag } from '@/components/Flag'
+import {
+  MapPin,
+  Landmark,
+  Thermometer,
+  CalendarHeart,
+  Camera,
+  Film,
+  Music,
+  Star,
+  Lightbulb,
+  ShoppingBag,
+  Plane,
+  X,
+} from 'lucide-react'
+
+interface CountryPanelProps {
+  country: CountryData
+  onClose: () => void
+}
+
+function Section({
+  title,
+  icon: Icon,
+  children,
+  accentColor,
+}: {
+  title: string
+  icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>
+  children: React.ReactNode
+  accentColor: string
+}) {
+  return (
+    <div className="mb-6">
+      <div className="mb-3 flex items-center gap-2">
+        <Icon className="h-5 w-5" style={{ color: accentColor }} />
+        <h3 className="text-lg font-semibold text-slate-800">{title}</h3>
+      </div>
+      {children}
+    </div>
+  )
+}
+
+function InfoBadge({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-white/70 bg-white/70 px-4 py-2.5 shadow-sm shadow-sky-100/50 backdrop-blur-sm">
+      <div className="text-xs font-medium uppercase tracking-wider text-slate-400">
+        {label}
+      </div>
+      <div className="mt-0.5 text-sm font-medium text-slate-800">{value}</div>
+    </div>
+  )
+}
+
+export function CountryPanel({ country, onClose }: CountryPanelProps) {
+  const [primary, , tertiary] = country.flagColors
+  const accent = primary === '#FFFFFF' ? tertiary : primary
+  const secondaryAccent = tertiary === '#FFFFFF' ? primary : tertiary
+
+  return (
+    <div className="animate-slideIn flex h-full flex-col overflow-hidden">
+      <div
+        className="relative px-6 pb-6 pt-5"
+        style={{
+          background: `linear-gradient(135deg, ${accent}E6, ${secondaryAccent}B3)`,
+        }}
+      >
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 rounded-full bg-black/20 p-1.5 text-white/80 transition-colors hover:bg-black/40 hover:text-white"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        <div className="flex items-center gap-4">
+          <Flag
+            code={country.code}
+            name={country.name}
+            className="h-14 w-20 rounded-md object-cover shadow-lg ring-1 ring-white/40"
+          />
+          <div>
+            <h2 className="font-display text-3xl font-semibold text-white drop-shadow-md">
+              {country.name}
+            </h2>
+            <p className="text-sm font-medium text-white/90">
+              {country.continent}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex-1 overflow-y-auto px-6 py-6" style={{ scrollbarGutter: 'stable' }}>
+        <div className="mb-6 grid grid-cols-2 gap-2">
+          <InfoBadge label="Capital" value={country.capital} />
+          <InfoBadge label="Population" value={country.population} />
+          <InfoBadge label="Currency" value={country.currency} />
+          <InfoBadge
+            label="Language"
+            value={
+              country.languages.length > 2
+                ? country.languages.slice(0, 2).join(', ') + '...'
+                : country.languages.join(', ')
+            }
+          />
+        </div>
+
+        <div
+          className="mb-6 flex items-center gap-3 rounded-xl border px-4 py-3"
+          style={{ borderColor: accent + '40', backgroundColor: accent + '14' }}
+        >
+          <Plane className="h-5 w-5 shrink-0" style={{ color: accent }} />
+          <div>
+            <div className="text-xs font-medium uppercase tracking-wider text-slate-400">
+              Flight from Newark (EWR)
+            </div>
+            <div className="text-sm font-semibold text-slate-800">
+              {country.flightTimeFromEWR}
+            </div>
+          </div>
+        </div>
+
+        <Section title="Temperature by Month (°F)" icon={Thermometer} accentColor={accent}>
+          <TemperatureChart
+            temperatures={country.temperatures}
+            accentColor={accent}
+            secondaryColor={secondaryAccent}
+          />
+        </Section>
+
+        <Section title="Best Time to Visit" icon={CalendarHeart} accentColor={accent}>
+          <div
+            className="rounded-xl border px-4 py-3 text-sm font-medium text-slate-700"
+            style={{ borderColor: accent + '40', backgroundColor: accent + '1A' }}
+          >
+            {country.bestTimeToVisit}
+          </div>
+        </Section>
+
+        <Section title="Popular Places" icon={MapPin} accentColor={accent}>
+          <div className="space-y-2">
+            {country.popularPlaces.map((place) => (
+              <div
+                key={place.name}
+                className="rounded-xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm shadow-sky-100/40"
+              >
+                <div className="font-semibold text-slate-800">{place.name}</div>
+                <div className="mt-0.5 text-sm text-slate-500">
+                  {place.description}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Top Attractions" icon={Camera} accentColor={accent}>
+          <div className="space-y-2">
+            {country.attractions.map((a) => (
+              <div
+                key={a.name}
+                className="rounded-xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm shadow-sky-100/40"
+              >
+                <div className="font-semibold text-slate-800">{a.name}</div>
+                <div className="mt-0.5 text-sm text-slate-500">
+                  {a.description}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Famous Movies" icon={Film} accentColor={accent}>
+          <div className="space-y-2">
+            {country.famousMovies.map((m) => (
+              <div
+                key={m.title}
+                className="rounded-xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm shadow-sky-100/40"
+              >
+                <div className="flex items-baseline gap-2">
+                  <span className="font-semibold text-slate-800">
+                    {m.title}
+                  </span>
+                  <span className="text-xs text-slate-400">({m.year})</span>
+                </div>
+                <div className="mt-0.5 text-sm text-slate-500">
+                  {m.description}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Music & Bands" icon={Music} accentColor={accent}>
+          <div className="flex flex-wrap gap-2">
+            {country.popularMusic.map((m) => (
+              <div
+                key={m.name}
+                className="rounded-full px-3.5 py-1.5 text-sm"
+                style={{
+                  backgroundColor: accent + '1F',
+                  border: `1px solid ${accent}3D`,
+                  color: '#1e293b',
+                }}
+              >
+                <span className="font-medium">{m.name}</span>
+                <span className="ml-1 text-slate-400">· {m.genre}</span>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Notable Figures" icon={Star} accentColor={accent}>
+          <div className="grid grid-cols-2 gap-2">
+            {country.celebrities.map((c) => (
+              <div
+                key={c.name}
+                className="rounded-xl border border-white/70 bg-white/70 px-3 py-2.5 text-center shadow-sm shadow-sky-100/40"
+              >
+                <div className="text-sm font-semibold text-slate-800">
+                  {c.name}
+                </div>
+                <div className="text-xs text-slate-500">{c.field}</div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Popular Souvenirs" icon={ShoppingBag} accentColor={accent}>
+          <div className="space-y-2">
+            {country.popularSouvenirs.map((s) => (
+              <div
+                key={s.name}
+                className="rounded-xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm shadow-sky-100/40"
+              >
+                <div className="font-semibold text-slate-800">{s.name}</div>
+                <div className="mt-0.5 text-sm text-slate-500">
+                  {s.description}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Government" icon={Landmark} accentColor={accent}>
+          <p className="text-sm leading-relaxed text-slate-600">
+            {country.government}
+          </p>
+        </Section>
+
+        <Section title="Notable Facts" icon={Lightbulb} accentColor={accent}>
+          <ul className="space-y-2">
+            {country.notableFacts.map((fact, i) => (
+              <li
+                key={i}
+                className="flex gap-2 text-sm leading-relaxed text-slate-600"
+              >
+                <span style={{ color: accent }} className="mt-0.5 shrink-0">
+                  ✦
+                </span>
+                {fact}
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        <div className="pb-6" />
+      </div>
+    </div>
+  )
+}
