@@ -77,11 +77,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "From NJ to Anywhere — Plan Your Next Adventure" },
+      {
+        name: "description",
+        content:
+          "Interactive world map to discover ideal travel seasons, cultural highlights, climate data, and insider tips for your next trip from New Jersey.",
+      },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      {
+        property: "og:title",
+        content: "From NJ to Anywhere — Plan Your Next Adventure",
+      },
+      {
+        property: "og:description",
+        content:
+          "Interactive world map to discover ideal travel seasons, cultural highlights, climate data, and insider tips for your next trip from New Jersey.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -90,6 +101,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Fraunces:opsz,wght@9..144,400..600&display=swap",
       },
     ],
   }),
