@@ -5,7 +5,8 @@ import { CountryPanel } from "@/components/CountryPanel";
 import { Flag } from "@/components/Flag";
 import { countries } from "@/data/countries";
 import type { CountryData } from "@/data/countries";
-import { Compass, Plane } from "lucide-react";
+import { Plane } from "lucide-react";
+import logoUrl from "@/assets/logo-nj-to-anywhere.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
