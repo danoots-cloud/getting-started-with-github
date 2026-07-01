@@ -94,9 +94,9 @@ function Home() {
 
       {!selectedCountry && (
         <div className="relative z-10 px-4 pb-2 pt-6 text-center sm:px-6 sm:pt-8">
-          <h2 className="font-display text-2xl font-semibold text-slate-800 sm:text-3xl md:text-4xl">
+          <h1 className="font-display text-2xl font-semibold text-slate-800 sm:text-3xl md:text-4xl">
             Plan your next adventure from New Jersey
-          </h2>
+          </h1>
           <p className="mx-auto mt-2 max-w-xl text-sm text-slate-500 sm:text-base">
             Select a country to discover ideal travel seasons, cultural
             highlights, climate data, and insider tips.
