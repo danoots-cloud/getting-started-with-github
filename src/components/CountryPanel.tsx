@@ -36,7 +36,7 @@ function Section({
     <div className="mb-6">
       <div className="mb-3 flex items-center gap-2">
         <Icon className="h-5 w-5" style={{ color: accentColor }} />
-        <h3 className="text-lg font-semibold text-slate-800">{title}</h3>
+        <h3 className="text-lg font-semibold text-[#1E2A44]">{title}</h3>
       </div>
       {children}
     </div>
@@ -45,11 +45,11 @@ function Section({
 
 function InfoBadge({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-white/70 bg-white/70 px-4 py-2.5 shadow-sm shadow-sky-100/50 backdrop-blur-sm">
-      <div className="text-xs font-medium uppercase tracking-wider text-slate-400">
+    <div className="rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-2.5 shadow-sm shadow-[#F2A65A]/15 backdrop-blur-sm">
+      <div className="text-xs font-medium uppercase tracking-wider text-[#1E2A44]/50">
         {label}
       </div>
-      <div className="mt-0.5 text-sm font-medium text-slate-800">{value}</div>
+      <div className="mt-0.5 text-sm font-medium text-[#1E2A44]">{value}</div>
     </div>
   )
 }
@@ -112,10 +112,10 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
         >
           <Plane className="h-5 w-5 shrink-0" style={{ color: accent }} />
           <div>
-            <div className="text-xs font-medium uppercase tracking-wider text-slate-400">
+            <div className="text-xs font-medium uppercase tracking-wider text-[#1E2A44]/50">
               Flight from Newark (EWR)
             </div>
-            <div className="text-sm font-semibold text-slate-800">
+            <div className="text-sm font-semibold text-[#1E2A44]">
               {country.flightTimeFromEWR}
             </div>
           </div>
@@ -132,7 +132,7 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
 
         <Section title="Best Time to Visit" icon={CalendarHeart} accentColor={accent}>
           <div
-            className="rounded-xl border px-4 py-3 text-sm font-medium text-slate-700"
+            className="rounded-xl border px-4 py-3 text-sm font-medium text-[#1E2A44]"
             style={{ borderColor: accent + '40', backgroundColor: accent + '1A' }}
           >
             {country.bestTimeToVisit}
@@ -144,10 +144,10 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
             {country.popularPlaces.map((place) => (
               <div
                 key={place.name}
-                className="rounded-xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm shadow-sky-100/40"
+                className="rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-3 shadow-sm shadow-[#F2A65A]/15"
               >
-                <div className="font-semibold text-slate-800">{place.name}</div>
-                <div className="mt-0.5 text-sm text-slate-500">
+                <div className="font-semibold text-[#1E2A44]">{place.name}</div>
+                <div className="mt-0.5 text-sm text-[#1E2A44]/65">
                   {place.description}
                 </div>
               </div>
@@ -160,10 +160,10 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
             {country.attractions.map((a) => (
               <div
                 key={a.name}
-                className="rounded-xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm shadow-sky-100/40"
+                className="rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-3 shadow-sm shadow-[#F2A65A]/15"
               >
-                <div className="font-semibold text-slate-800">{a.name}</div>
-                <div className="mt-0.5 text-sm text-slate-500">
+                <div className="font-semibold text-[#1E2A44]">{a.name}</div>
+                <div className="mt-0.5 text-sm text-[#1E2A44]/65">
                   {a.description}
                 </div>
               </div>
@@ -176,15 +176,15 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
             {country.famousMovies.map((m) => (
               <div
                 key={m.title}
-                className="rounded-xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm shadow-sky-100/40"
+                className="rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-3 shadow-sm shadow-[#F2A65A]/15"
               >
                 <div className="flex items-baseline gap-2">
-                  <span className="font-semibold text-slate-800">
+                  <span className="font-semibold text-[#1E2A44]">
                     {m.title}
                   </span>
-                  <span className="text-xs text-slate-400">({m.year})</span>
+                  <span className="text-xs text-[#1E2A44]/50">({m.year})</span>
                 </div>
-                <div className="mt-0.5 text-sm text-slate-500">
+                <div className="mt-0.5 text-sm text-[#1E2A44]/65">
                   {m.description}
                 </div>
               </div>
@@ -205,7 +205,7 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
                 }}
               >
                 <span className="font-medium">{m.name}</span>
-                <span className="ml-1 text-slate-400">· {m.genre}</span>
+                <span className="ml-1 text-[#1E2A44]/50">· {m.genre}</span>
               </div>
             ))}
           </div>
@@ -216,12 +216,12 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
             {country.celebrities.map((c) => (
               <div
                 key={c.name}
-                className="rounded-xl border border-white/70 bg-white/70 px-3 py-2.5 text-center shadow-sm shadow-sky-100/40"
+                className="rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-3 py-2.5 text-center shadow-sm shadow-[#F2A65A]/15"
               >
-                <div className="text-sm font-semibold text-slate-800">
+                <div className="text-sm font-semibold text-[#1E2A44]">
                   {c.name}
                 </div>
-                <div className="text-xs text-slate-500">{c.field}</div>
+                <div className="text-xs text-[#1E2A44]/65">{c.field}</div>
               </div>
             ))}
           </div>
@@ -232,10 +232,10 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
             {country.popularSouvenirs.map((s) => (
               <div
                 key={s.name}
-                className="rounded-xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm shadow-sky-100/40"
+                className="rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-3 shadow-sm shadow-[#F2A65A]/15"
               >
-                <div className="font-semibold text-slate-800">{s.name}</div>
-                <div className="mt-0.5 text-sm text-slate-500">
+                <div className="font-semibold text-[#1E2A44]">{s.name}</div>
+                <div className="mt-0.5 text-sm text-[#1E2A44]/65">
                   {s.description}
                 </div>
               </div>
@@ -244,7 +244,7 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
         </Section>
 
         <Section title="Government" icon={Landmark} accentColor={accent}>
-          <p className="text-sm leading-relaxed text-slate-600">
+          <p className="text-sm leading-relaxed text-[#1E2A44]/80">
             {country.government}
           </p>
         </Section>
@@ -254,7 +254,7 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
             {country.notableFacts.map((fact, i) => (
               <li
                 key={i}
-                className="flex gap-2 text-sm leading-relaxed text-slate-600"
+                className="flex gap-2 text-sm leading-relaxed text-[#1E2A44]/80"
               >
                 <span style={{ color: accent }} className="mt-0.5 shrink-0">
                   ✦
