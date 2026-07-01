@@ -201,7 +201,7 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
                 style={{
                   backgroundColor: accent + '1F',
                   border: `1px solid ${accent}3D`,
-                  color: '#1e293b',
+                  color: '#1E2A44',
                 }}
               >
                 <span className="font-medium">{m.name}</span>
