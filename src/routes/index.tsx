@@ -5,7 +5,8 @@ import { CountryPanel } from "@/components/CountryPanel";
 import { Flag } from "@/components/Flag";
 import { countries } from "@/data/countries";
 import type { CountryData } from "@/data/countries";
-import { Compass, Plane } from "lucide-react";
+import { Plane } from "lucide-react";
+import logoUrl from "@/assets/logo-nj-to-anywhere.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,14 +76,15 @@ function Home() {
 
       <header className="relative z-10 border-b border-white/60 bg-white/55 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-          <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-cyan-300 shadow-sm shadow-sky-200">
-              <Compass className="h-5 w-5 text-white" strokeWidth={2.25} />
-            </span>
-            <h1 className="font-display text-lg font-semibold tracking-tight text-slate-800 sm:text-xl">
-              From NJ to Anywhere
-            </h1>
-          </div>
+          <a href="/" className="flex items-center gap-2">
+            <img
+              src={logoUrl}
+              alt="From NJ to Anywhere"
+              width={1536}
+              height={512}
+              className="h-10 w-auto sm:h-12"
+            />
+          </a>
           <div className="flex items-center gap-2 text-sm text-slate-400">
             <Plane className="h-4 w-4" />
             <span className="hidden sm:inline">Click a country to explore</span>
@@ -92,9 +94,9 @@ function Home() {
 
       {!selectedCountry && (
         <div className="relative z-10 px-4 pb-2 pt-6 text-center sm:px-6 sm:pt-8">
-          <h2 className="font-display text-2xl font-semibold text-slate-800 sm:text-3xl md:text-4xl">
+          <h1 className="font-display text-2xl font-semibold text-slate-800 sm:text-3xl md:text-4xl">
             Plan your next adventure from New Jersey
-          </h2>
+          </h1>
           <p className="mx-auto mt-2 max-w-xl text-sm text-slate-500 sm:text-base">
             Select a country to discover ideal travel seasons, cultural
             highlights, climate data, and insider tips.
