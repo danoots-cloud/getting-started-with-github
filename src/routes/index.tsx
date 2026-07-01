@@ -95,10 +95,11 @@ function Home() {
 
       {!selectedCountry && (
         <div className="relative z-10 px-4 pb-2 pt-6 text-center sm:px-6 sm:pt-8">
-          <h1 className="font-display text-2xl font-semibold text-slate-800 sm:text-3xl md:text-4xl">
-            Plan your next adventure from New Jersey
+          <h1 className="font-display text-2xl font-semibold text-[#1E2A44] sm:text-3xl md:text-4xl">
+            Plan your next adventure from{" "}
+            <span className="text-[#E86A5C]">New Jersey</span>
           </h1>
-          <p className="mx-auto mt-2 max-w-xl text-sm text-slate-500 sm:text-base">
+          <p className="mx-auto mt-2 max-w-xl text-sm text-[#1E2A44]/65 sm:text-base">
             Select a country to discover ideal travel seasons, cultural
             highlights, climate data, and insider tips.
           </p>
@@ -112,7 +113,7 @@ function Home() {
           }`}
         >
           <div className="mx-auto max-w-6xl px-2 py-4 sm:px-4">
-            <div className="overflow-hidden rounded-2xl border border-white/70 bg-white/65 shadow-xl shadow-sky-100/60 backdrop-blur-sm">
+            <div className="overflow-hidden rounded-2xl border border-[#1E2A44]/10 bg-[#FBF5EC]/70 shadow-xl shadow-[#E86A5C]/10 backdrop-blur-sm">
               <WorldMap
                 onCountryClick={handleCountryClick}
                 selectedCountry={selectedCode}
@@ -122,7 +123,7 @@ function Home() {
 
             {!selectedCountry && (
               <div className="mt-6 px-2">
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-400">
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#E86A5C]">
                   Featured Destinations
                 </h3>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -133,18 +134,18 @@ function Home() {
                       <button
                         key={c.code}
                         onClick={() => handleCountryClick(c.code, c.name)}
-                        className="group grid grid-cols-[2.25rem_minmax(0,1fr)] items-center gap-2 rounded-xl border border-white/70 bg-white/60 px-3 py-2.5 text-left shadow-sm shadow-sky-100/50 transition-all hover:-translate-y-0.5 hover:bg-white hover:shadow-md hover:shadow-sky-200/60"
+                        className="group grid grid-cols-[2.25rem_minmax(0,1fr)] items-center gap-2 rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-3 py-2.5 text-left shadow-sm shadow-[#F2A65A]/15 transition-all hover:-translate-y-0.5 hover:border-[#E86A5C]/40 hover:bg-white hover:shadow-md hover:shadow-[#E86A5C]/20"
                       >
                         <Flag
                           code={c.code}
                           name={c.name}
-                          className="h-6 w-9 rounded-sm object-cover shadow ring-1 ring-slate-200"
+                          className="h-6 w-9 rounded-sm object-cover shadow ring-1 ring-[#1E2A44]/15"
                         />
                         <div className="min-w-0">
-                          <div className="truncate text-sm font-medium text-slate-700 group-hover:text-slate-900">
+                          <div className="truncate text-sm font-medium text-[#1E2A44] group-hover:text-[#1E2A44]">
                             {c.name}
                           </div>
-                          <div className="truncate text-xs text-slate-400">
+                          <div className="truncate text-xs text-[#1E2A44]/50">
                             {c.continent}
                           </div>
                         </div>
@@ -155,7 +156,8 @@ function Home() {
             )}
 
             {!selectedCountry && (
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 py-4 text-xs text-slate-500">
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 py-4 text-xs text-[#1E2A44]/65">
+
                 <span className="flex items-center gap-1.5">
                   <span
                     className="inline-block h-3 w-3 rounded"
