@@ -60,21 +60,21 @@ function Home() {
       className="relative flex min-h-screen flex-col transition-colors duration-700"
       style={{
         backgroundColor: flagColors
-          ? `color-mix(in oklch, ${flagColors[0]} 8%, #eef6fc)`
-          : "#eef6fc",
+          ? `color-mix(in oklch, ${flagColors[0]} 6%, #FBF5EC)`
+          : "#FBF5EC",
       }}
     >
-      {/* Breezy atmospheric backdrop */}
+      {/* Warm sunset atmospheric backdrop */}
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           backgroundImage:
-            "radial-gradient(120% 80% at 50% -10%, rgba(186,230,253,0.65) 0%, rgba(224,242,254,0.35) 40%, rgba(255,255,255,0) 70%), radial-gradient(90% 60% at 100% 100%, rgba(254,243,221,0.5) 0%, rgba(255,255,255,0) 60%)",
+            "radial-gradient(120% 80% at 50% -10%, rgba(242,166,90,0.28) 0%, rgba(251,229,199,0.22) 40%, rgba(255,255,255,0) 70%), radial-gradient(90% 60% at 100% 100%, rgba(232,106,92,0.22) 0%, rgba(255,255,255,0) 60%), radial-gradient(70% 50% at 0% 30%, rgba(30,42,68,0.06) 0%, rgba(255,255,255,0) 65%)",
         }}
       />
 
-      <header className="relative z-10 border-b border-white/60 bg-white/55 backdrop-blur-xl">
+      <header className="relative z-10 border-b border-[#1E2A44]/10 bg-[#FBF5EC]/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <a href="/" className="flex items-center gap-2">
             <img
@@ -85,12 +85,13 @@ function Home() {
               className="h-10 w-auto sm:h-12"
             />
           </a>
-          <div className="flex items-center gap-2 text-sm text-slate-400">
-            <Plane className="h-4 w-4" />
+          <div className="flex items-center gap-2 text-sm text-[#1E2A44]/60">
+            <Plane className="h-4 w-4 text-[#E86A5C]" />
             <span className="hidden sm:inline">Click a country to explore</span>
           </div>
         </div>
       </header>
+
 
       {!selectedCountry && (
         <div className="relative z-10 px-4 pb-2 pt-6 text-center sm:px-6 sm:pt-8">
