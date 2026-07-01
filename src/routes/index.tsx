@@ -207,9 +207,9 @@ function Home() {
 
         {selectedCountry && (
           <div
-            className="w-full border-l border-white/70 sm:w-[420px] md:w-[480px] lg:w-[520px]"
+            className="w-full border-l border-[#1E2A44]/10 sm:w-[420px] md:w-[480px] lg:w-[520px]"
             style={{
-              backgroundColor: `color-mix(in oklch, ${selectedCountry.flagColors[0]} 7%, #ffffff)`,
+              backgroundColor: `color-mix(in oklch, ${selectedCountry.flagColors[0]} 6%, #FBF5EC)`,
             }}
           >
             <div className="sticky top-0 h-screen overflow-hidden">
