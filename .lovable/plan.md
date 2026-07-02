@@ -1,42 +1,27 @@
-# Replace header logo with hand-drawn "From NJ to Anywhere" lockup
+# Replace climate data from uploaded CSV
 
 ## What you'll get
-A single transparent-PNG horizontal logo that combines a hand-drawn illustration and the tagline as one designed lockup — no separate icon + text HTML. Drops straight into the header where the current Compass square + H1 live.
+Every country in the app gets its `temperatures` (12 months of high/low °F) and `precipitation` (12 months, mm) arrays overwritten with values from `country_monthly_climate.csv` (World Bank CCKP / CRU TS 4.10, 1991–2020 normals). Units already match the app (°F + mm), so no conversion.
 
-## Prompt strategy (this is where results live or die)
-I'll generate with the **premium** image tier (best legibility for the tagline text) and a highly specific prompt. Key ingredients:
-
-- **Medium**: "hand-drawn ink illustration with soft watercolor wash, subtle paper texture, slightly imperfect linework"
-- **Composition**: horizontal lockup, ~3:1 aspect (1536×512), left-side illustration + right-side tagline, generous padding, nothing touching edges
-- **Illustration**: a small map pin over New Jersey on a stylized globe fragment, with a **dotted arc** sweeping outward to a tiny paper plane — the arc visually leads the eye into the wordmark
-- **Typography**: "From NJ to Anywhere" hand-lettered in a warm scripty style for "From ... to" and a bold sturdy serif for "NJ" and "Anywhere" (mimicking the app's Fraunces display font)
-- **Palette (locked, spelled out in prompt)**: coral `#E86A5C`, amber `#F2A65A`, deep navy `#1E2A44`, cream accents `#FBF5EC`
-- **Background**: solid white for clean cutout → `transparent_background: true` produces a transparent PNG
-- **Negatives**: "no 3D, no gradients, no photorealism, no generic globe clipart, no stock plane silhouette, no rainbow colors, no drop shadows, no text errors"
-
-I'll generate, inspect legibility of the tagline, and regenerate up to 2× if lettering is garbled (common failure with AI text).
+## Coverage check
+- App has 102 countries, all keyed by ISO alpha-2 (e.g. `AT`, `US`, `IN`).
+- CSV has 246 countries with both alpha-2 and alpha-3 codes, 12 rows each.
+- Matching on alpha-2 → expected 100% match. Any misses (e.g. Kosovo, edge codes) get reported and left untouched.
 
 ## Steps
-
-1. **Generate** logo with `imagegen--generate_image` (premium, 1536×512, transparent PNG) → `src/assets/logo-nj-to-anywhere.png`.
-2. **Verify** by viewing the file; regenerate if the tagline text is misspelled or illegible.
-3. **Edit `src/routes/index.tsx` header** (lines ~87–100):
-   - Remove the gradient square with `<Compass>` icon and the `<h1>` text
-   - Replace with `<img src={logo} alt="From NJ to Anywhere" className="h-10 sm:h-12 w-auto" />`
-   - Keep the right-side "Click a country to explore" affordance untouched
-4. **Keep the H1 for SEO** by moving the "Plan your next adventure from New Jersey" heading (already an h2) up to h1 semantics, since the visible brand h1 is now an image. Alt text preserves accessibility.
-5. **Verify** via Playwright screenshot of the header at desktop width.
-
-## Files touched
-- `src/assets/logo-nj-to-anywhere.png` (new)
-- `src/routes/index.tsx` (header block only; imports Compass removed if unused elsewhere)
-
-## Credits
-One premium image generation (plus up to 2 retries if text renders poorly). No other AI calls.
+1. Write a Node script (`/tmp/apply_climate.mjs`) that:
+   - Parses the CSV, groups rows by alpha-2 country code, sorts by month 1–12.
+   - Reads `src/data/countries.ts` as text.
+   - For each app country block, locates its `temperatures: [ … ]` and `precipitation: [ … ]` arrays via regex bounded to that country's object, and rewrites them with the CSV values.
+   - Rounds temps to whole °F, precipitation to whole mm (keeps the existing display style).
+   - Preserves existing month strings ("Jan"…"Dec") and every other field (culture, tips, colors, etc.).
+2. Run the script, print a report: countries updated / unmatched / any parse failures.
+3. Spot-check 3 countries (US, IN, AU) in the diff to confirm values look right and the file still parses.
+4. Verify by running the project's typecheck implicitly via the build pipeline.
 
 ## Not doing
-- Not touching the favicon (say the word and I'll derive an icon-only version from the same art)
-- Not changing the rest of the header/layout
-- Not restyling the page
+- Not changing the data shape, chart component, or any UI.
+- Not touching countries missing from the CSV (will list them for you if any).
+- Not storing the raw CSV in the repo — values are inlined into `countries.ts` as before.
 
-Approve and I'll build it.
+Approve and I'll run it.
