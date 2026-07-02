@@ -1,6 +1,7 @@
 import type { CountryData } from '@/data/countries'
 import { TemperatureChart } from '@/components/TemperatureChart'
 import { Flag } from '@/components/Flag'
+import { AdvisoryBadge } from '@/components/AdvisoryBadge'
 import {
   MapPin,
   Landmark,
@@ -105,6 +106,8 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
             }
           />
         </div>
+
+        <AdvisoryBadge countryCode={country.code} />
 
         <div
           className="mb-6 flex items-center gap-3 rounded-xl border px-4 py-3"

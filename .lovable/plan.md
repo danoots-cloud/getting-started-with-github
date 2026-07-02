@@ -1,27 +1,49 @@
-# Replace climate data from uploaded CSV
+# US State Dept travel advisories in country panel
 
 ## What you'll get
-Every country in the app gets its `temperatures` (12 months of high/low °F) and `precipitation` (12 months, mm) arrays overwritten with values from `country_monthly_climate.csv` (World Bank CCKP / CRU TS 4.10, 1991–2020 normals). Units already match the app (°F + mm), so no conversion.
+Each country panel shows a small colored badge like **"⚠ Level 2 – Exercise Increased Caution"** that links to the full advisory on travel.state.gov. Data comes live from the US State Department, cached server-side, so it stays current with no manual maintenance. If a country has no listing, the badge is hidden.
 
-## Coverage check
-- App has 102 countries, all keyed by ISO alpha-2 (e.g. `AT`, `US`, `IN`).
-- CSV has 246 countries with both alpha-2 and alpha-3 codes, 12 rows each.
-- Matching on alpha-2 → expected 100% match. Any misses (e.g. Kosovo, edge codes) get reported and left untouched.
+## How it works
+
+**Source**: `https://travel.state.gov/_res/rss/TAsTWs.xml` — official RSS feed of every current advisory (updated by State Dept as changes happen). Each item includes country name, advisory level (1–4), title, publish date, and link.
+
+**Fetch path**: TanStack server function `getTravelAdvisories` — fetches the XML, parses to `{ [iso2]: { level, title, url, updatedAt } }`, caches in-worker for 6 hours. All 100+ countries returned in one payload (~5 KB), so we hydrate once per session rather than per country click.
+
+**Country matching**: State Dept lists by country name. I'll map to your alpha-2 codes with a small lookup table (e.g. "Korea, South" → `KR`, "United Kingdom" → `GB`). Unmatched entries are ignored; the panel just hides the badge.
+
+**Display** (in `CountryPanel.tsx`, above the "Best Time to Visit" section):
+- Level 1 (green) — Exercise Normal Precautions
+- Level 2 (amber) — Exercise Increased Caution
+- Level 3 (orange) — Reconsider Travel
+- Level 4 (red) — Do Not Travel
+- Compact pill: colored dot + `Level N — <short title>` + tiny "↗ travel.state.gov" link
+- Hidden entirely if no advisory exists for that country
 
 ## Steps
-1. Write a Node script (`/tmp/apply_climate.mjs`) that:
-   - Parses the CSV, groups rows by alpha-2 country code, sorts by month 1–12.
-   - Reads `src/data/countries.ts` as text.
-   - For each app country block, locates its `temperatures: [ … ]` and `precipitation: [ … ]` arrays via regex bounded to that country's object, and rewrites them with the CSV values.
-   - Rounds temps to whole °F, precipitation to whole mm (keeps the existing display style).
-   - Preserves existing month strings ("Jan"…"Dec") and every other field (culture, tips, colors, etc.).
-2. Run the script, print a report: countries updated / unmatched / any parse failures.
-3. Spot-check 3 countries (US, IN, AU) in the diff to confirm values look right and the file still parses.
-4. Verify by running the project's typecheck implicitly via the build pipeline.
+
+1. **Add XML parser**: `bun add fast-xml-parser` (tiny, worker-safe).
+2. **Create `src/lib/advisories.functions.ts`** with `getTravelAdvisories` server function (fetch + parse + 6h in-memory cache).
+3. **Create `src/lib/advisory-country-map.ts`** — name→ISO2 lookup for the ~100 countries in your app.
+4. **Wire TanStack Query** in `src/routes/index.tsx`: prefetch advisories once via `queryClient.ensureQueryData`, so all subsequent panel opens are instant.
+5. **Add `<AdvisoryBadge>` component** and render it near the top of `CountryPanel.tsx`; it reads from the query cache and renders nothing when the country has no entry.
+6. **Verify**: open the preview, click a country known to have an advisory (e.g. Mexico, Egypt) and one that doesn't, screenshot both to confirm the badge behavior.
+
+## Freshness
+- Server cache: 6 hours per Worker instance — new deploys and cold starts refresh immediately.
+- State Dept updates the feed as advisories change; you'll typically see updates within a day.
+- Zero maintenance from you.
+
+## Files touched
+- `src/lib/advisories.functions.ts` (new)
+- `src/lib/advisory-country-map.ts` (new)
+- `src/components/AdvisoryBadge.tsx` (new)
+- `src/components/CountryPanel.tsx` (add badge)
+- `src/routes/index.tsx` (prefetch in loader)
+- `package.json` (fast-xml-parser)
 
 ## Not doing
-- Not changing the data shape, chart component, or any UI.
-- Not touching countries missing from the CSV (will list them for you if any).
-- Not storing the raw CSV in the repo — values are inlined into `countries.ts` as before.
+- No database, no cron, no Lovable Cloud.
+- Not adding advisories for non-US-listed countries.
+- Not surfacing the full advisory text — just level + title + link out.
 
-Approve and I'll run it.
+Approve and I'll build it.
