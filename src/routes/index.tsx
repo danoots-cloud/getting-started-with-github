@@ -7,6 +7,7 @@ import { countries } from "@/data/countries";
 import type { CountryData } from "@/data/countries";
 import { Plane } from "lucide-react";
 import logoUrl from "@/assets/logo-nj-to-anywhere.png";
+import { getTravelAdvisories } from "@/lib/advisories.functions";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,6 +29,14 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
+  loader: ({ context }) => {
+    // Non-blocking prefetch so panels show advisories instantly on first click.
+    context.queryClient.prefetchQuery({
+      queryKey: ["travel-advisories"],
+      queryFn: () => getTravelAdvisories(),
+      staleTime: 6 * 60 * 60 * 1000,
+    });
+  },
   component: Home,
 });
 
