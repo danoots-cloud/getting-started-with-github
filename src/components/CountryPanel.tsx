@@ -125,6 +125,8 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
           </div>
         </div>
 
+        <TimeDifference countryCode={country.code} accentColor={accent} />
+
         <Section title="Climate by Month" icon={Thermometer} accentColor={accent}>
           <TemperatureChart
             temperatures={country.temperatures}
