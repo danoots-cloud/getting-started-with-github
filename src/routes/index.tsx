@@ -166,53 +166,25 @@ function Home() {
 
             {!selectedCountry && (
               <div className="mt-4 flex flex-wrap items-center justify-center gap-4 py-4 text-xs text-[#1E2A44]/65">
-
                 <span className="flex items-center gap-1.5">
                   <span
                     className="inline-block h-3 w-3 rounded"
-                    style={{ backgroundColor: "#5B8BD6" }}
+                    style={{ backgroundColor: "#F2A65A" }}
                   />
-                  Europe
+                  Countries with travel guides
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span
                     className="inline-block h-3 w-3 rounded"
-                    style={{ backgroundColor: "#F0A060" }}
+                    style={{ backgroundColor: "#D9C4A3" }}
                   />
-                  Asia
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span
-                    className="inline-block h-3 w-3 rounded"
-                    style={{ backgroundColor: "#6DC47E" }}
-                  />
-                  Africa
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span
-                    className="inline-block h-3 w-3 rounded"
-                    style={{ backgroundColor: "#E06468" }}
-                  />
-                  N. America
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span
-                    className="inline-block h-3 w-3 rounded"
-                    style={{ backgroundColor: "#A08BD6" }}
-                  />
-                  S. America
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span
-                    className="inline-block h-3 w-3 rounded"
-                    style={{ backgroundColor: "#E0D080" }}
-                  />
-                  Oceania
+                  Coming soon
                 </span>
               </div>
             )}
           </div>
         </div>
+
 
         {selectedCountry && (
           <div
