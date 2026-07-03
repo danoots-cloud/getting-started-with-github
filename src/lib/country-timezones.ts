@@ -210,10 +210,19 @@ function formatDiff(diffMinutes: number): string {
   return `${time} ${ahead ? 'ahead of' : 'behind'} NJ`
 }
 
+function formatLocalTime(zone: string, at: Date): string {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: zone,
+    hour: 'numeric',
+    minute: '2-digit',
+  }).format(at)
+}
+
 export interface TimeDiffEntry {
   label?: string
   text: string
   diffMinutes: number
+  localTime: string
 }
 
 export function getTimeDifferences(code: string, now: Date = new Date()): TimeDiffEntry[] {
@@ -221,20 +230,24 @@ export function getTimeDifferences(code: string, now: Date = new Date()): TimeDi
   if (!zones || zones.length === 0) return []
   const njOffset = offsetMinutes(NJ_ZONE, now)
 
-  // Dedupe by offset, keeping first-seen label(s).
-  const byOffset = new Map<number, string[]>()
+  // Dedupe by offset, keeping first-seen label(s) and a representative zone.
+  const byOffset = new Map<number, { labels: string[]; zone: string }>()
   for (const z of zones) {
     const diff = offsetMinutes(z.zone, now) - njOffset
-    const labels = byOffset.get(diff) ?? []
-    if (z.label) labels.push(z.label)
-    byOffset.set(diff, labels)
+    const existing = byOffset.get(diff)
+    if (existing) {
+      if (z.label) existing.labels.push(z.label)
+    } else {
+      byOffset.set(diff, { labels: z.label ? [z.label] : [], zone: z.zone })
+    }
   }
 
   return Array.from(byOffset.entries())
     .sort((a, b) => a[0] - b[0])
-    .map(([diff, labels]) => ({
+    .map(([diff, { labels, zone }]) => ({
       diffMinutes: diff,
       label: labels.length > 0 ? labels.join(' / ') : undefined,
       text: formatDiff(diff),
+      localTime: formatLocalTime(zone, now),
     }))
 }
