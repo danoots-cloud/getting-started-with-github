@@ -21,14 +21,22 @@ export function TimeDifference({ countryCode, accentColor }: TimeDifferenceProps
           Time difference from NJ
         </div>
         {entries.length === 1 ? (
-          <div className="text-sm font-semibold text-[#1E2A44]">{entries[0].text}</div>
+          <div className="text-sm font-semibold text-[#1E2A44]">
+            {entries[0].text}{' '}
+            <span className="text-[#1E2A44]/60">
+              · {entries[0].localTime} local time
+            </span>
+          </div>
         ) : (
           <ul className="mt-0.5 space-y-0.5">
             {entries.map((e, i) => (
               <li key={i} className="text-sm text-[#1E2A44]">
                 <span className="font-semibold">{e.text}</span>
+                <span className="text-[#1E2A44]/60">
+                  {' · '}{e.localTime} local time
+                </span>
                 {e.label && (
-                  <span className="ml-1 text-[#1E2A44]/60">· {e.label}</span>
+                  <span className="ml-1 text-[#1E2A44]/60">· {e.gemini}</span>
                 )}
               </li>
             ))}
