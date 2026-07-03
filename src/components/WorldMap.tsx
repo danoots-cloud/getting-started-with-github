@@ -285,22 +285,6 @@ function WorldMapInner({
     }
   }, [selectedCountry, flagColors, ready])
 
-  const handleZoomIn = useCallback(() => {
-    mapRef.current?.zoomIn()
-  }, [])
-  const handleZoomOut = useCallback(() => {
-    mapRef.current?.zoomOut()
-  }, [])
-  const handleReset = useCallback(() => {
-    mapRef.current?.fitBounds(
-      [
-        [-170, -58],
-        [190, 78],
-      ],
-      { padding: 10, duration: 700 }
-    )
-  }, [])
-
   return (
     <div className="relative w-full" style={{ aspectRatio: '16 / 10' }}>
       <div style={{ position: 'absolute', inset: 0, borderRadius: '1rem', overflow: 'hidden' }}>
@@ -310,33 +294,6 @@ function WorldMapInner({
         />
       </div>
 
-      {/* Mobile-friendly zoom controls */}
-      <div className="absolute bottom-3 left-3 z-10 flex flex-col gap-1.5 sm:hidden">
-        <button
-          type="button"
-          onClick={handleZoomIn}
-          aria-label="Zoom in"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-lg font-semibold text-[#1E2A44] shadow-md ring-1 ring-[#1E2A44]/10 active:scale-95"
-        >
-          +
-        </button>
-        <button
-          type="button"
-          onClick={handleZoomOut}
-          aria-label="Zoom out"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-lg font-semibold text-[#1E2A44] shadow-md ring-1 ring-[#1E2A44]/10 active:scale-95"
-        >
-          −
-        </button>
-        <button
-          type="button"
-          onClick={handleReset}
-          aria-label="Reset view"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-xs font-semibold text-[#1E2A44] shadow-md ring-1 ring-[#1E2A44]/10 active:scale-95"
-        >
-          ⌂
-        </button>
-      </div>
 
       {tooltip && (
         <div
