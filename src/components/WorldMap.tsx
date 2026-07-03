@@ -114,7 +114,7 @@ function WorldMapInner({
       zoom: 0,
       minZoom: 0,
       maxZoom: 6,
-      renderWorldCopies: true,
+      renderWorldCopies: false,
       attributionControl: false,
       dragRotate: false,
       pitchWithRotate: false,
