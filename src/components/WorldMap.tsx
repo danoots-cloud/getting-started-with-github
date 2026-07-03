@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, memo } from 'react'
 import maplibregl, { type Map as MLMap, type MapGeoJSONFeature } from 'maplibre-gl'
 import * as topojson from 'topojson-client'
-import { geoStitch } from 'd3-geo'
+// @ts-expect-error - no types for d3-geo-projection
+import { geoStitch } from 'd3-geo-projection'
 import type { Feature, FeatureCollection, Geometry } from 'geojson'
 
 import {
