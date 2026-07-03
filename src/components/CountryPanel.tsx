@@ -2,6 +2,7 @@ import type { CountryData } from '@/data/countries'
 import { TemperatureChart } from '@/components/TemperatureChart'
 import { Flag } from '@/components/Flag'
 import { AdvisoryBadge } from '@/components/AdvisoryBadge'
+import { TimeDifference } from '@/components/TimeDifference'
 import {
   MapPin,
   Landmark,
@@ -123,6 +124,8 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
             </div>
           </div>
         </div>
+
+        <TimeDifference countryCode={country.code} accentColor={accent} />
 
         <Section title="Climate by Month" icon={Thermometer} accentColor={accent}>
           <TemperatureChart
