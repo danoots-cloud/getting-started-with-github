@@ -35,8 +35,12 @@ async function loadCountriesGeoJSON(): Promise<CountryGeoJSON> {
 
   const features = raw.features.map((f, idx) => {
     const props = f.properties ?? {}
-    const alpha2Raw = (props['ISO_A2'] ?? props['ISO_A2_EH']) as string | undefined
-    const alpha2 = alpha2Raw && alpha2Raw !== '-99' ? alpha2Raw.toUpperCase() : null
+    const pick = (k: string) => {
+      const v = props[k]
+      return typeof v === 'string' && v && v !== '-99' ? v : undefined
+    }
+    const alpha2Raw = pick('ISO_A2') ?? pick('ISO_A2_EH') ?? pick('WB_A2') ?? pick('FIPS_10')
+    const alpha2 = alpha2Raw ? alpha2Raw.toUpperCase() : null
     const hasData = !!(alpha2 && countries[alpha2])
     const name = (props['NAME'] ?? props['NAME_LONG'] ?? props['ADMIN'] ?? '') as string
     return {
