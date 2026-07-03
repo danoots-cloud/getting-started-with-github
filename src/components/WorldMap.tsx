@@ -1,20 +1,15 @@
-import { useEffect, useRef, useState, memo, useCallback } from 'react'
+import { useEffect, useRef, useState, memo } from 'react'
 import maplibregl, { type Map as MLMap, type MapGeoJSONFeature } from 'maplibre-gl'
-import * as topojson from 'topojson-client'
-import type { Feature, FeatureCollection, Geometry } from 'geojson'
-import {
-  countries,
-  isoAlpha2ToNumeric,
-} from '@/data/countries'
+import type { FeatureCollection, Geometry } from 'geojson'
+
+import { countries } from '@/data/countries'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
-const TOPO_URL =
-  'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
+// Natural Earth 110m (via nvkelso) — well-formed polygons with proper
+// antimeridian splitting for Russia, Fiji, etc. ~840KB, cached by CDN.
+const GEO_URL =
+  'https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_110m_admin_0_countries.geojson'
 
-const numericToAlpha2: Record<string, string> = {}
-for (const [alpha2, numeric] of Object.entries(isoAlpha2ToNumeric)) {
-  numericToAlpha2[numeric] = alpha2
-}
 
 // Palette — matches the warm sunset feel of the site.
 const COLOR_OCEAN = '#EAD9BE' // slightly warmer than page bg so land pops
@@ -35,32 +30,27 @@ let cachedGeo: CountryGeoJSON | null = null
 
 async function loadCountriesGeoJSON(): Promise<CountryGeoJSON> {
   if (cachedGeo) return cachedGeo
-  const res = await fetch(TOPO_URL)
-  const topo = await res.json()
-  const raw = topojson.feature(topo, topo.objects.countries) as unknown as FeatureCollection<
-    Geometry,
-    { name: string }
-  > & { features: Array<Feature<Geometry, { name: string }> & { id?: string | number }> }
+  const res = await fetch(GEO_URL)
+  const raw = (await res.json()) as FeatureCollection<Geometry, Record<string, unknown>>
 
-  const features = raw.features.map((f) => {
-    const numericId = String(f.id ?? '').padStart(3, '0')
-    const alpha2 = numericToAlpha2[numericId] ?? null
+  const features = raw.features.map((f, idx) => {
+    const props = f.properties ?? {}
+    const alpha2Raw = (props['ISO_A2'] ?? props['ISO_A2_EH']) as string | undefined
+    const alpha2 = alpha2Raw && alpha2Raw !== '-99' ? alpha2Raw.toUpperCase() : null
     const hasData = !!(alpha2 && countries[alpha2])
+    const name = (props['NAME'] ?? props['NAME_LONG'] ?? props['ADMIN'] ?? '') as string
     return {
       type: 'Feature' as const,
-      id: numericId, // needed for feature-state
+      id: alpha2 ?? `x${idx}`,
       geometry: f.geometry,
-      properties: {
-        name: f.properties.name,
-        code: alpha2,
-        hasData,
-      },
+      properties: { name, code: alpha2, hasData },
     }
   })
 
   cachedGeo = { type: 'FeatureCollection', features }
   return cachedGeo
 }
+
 
 function WorldMapInner({
   onCountryClick,
@@ -117,26 +107,25 @@ function WorldMapInner({
 
     mapRef.current = map
 
-    // Globe projection (MapLibre 5+)
-    try {
-      map.setProjection({ type: 'globe' })
-    } catch {
-      // fallback: mercator
+    // Use mercator projection — cleaner rendering, no globe artifacts at low zoom.
+    map.touchZoomRotate.disableRotation()
+    const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768
+    if (isDesktop) {
+      map.addControl(
+        new maplibregl.NavigationControl({ showCompass: false, visualizePitch: false }),
+        'top-right'
+      )
+      map.addControl(
+        new maplibregl.AttributionControl({
+          compact: true,
+          customAttribution:
+            '<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> · <a href="https://maplibre.org/" target="_blank" rel="noopener">MapLibre</a>',
+        }),
+        'bottom-right'
+      )
     }
 
-    map.touchZoomRotate.disableRotation()
-    map.addControl(
-      new maplibregl.NavigationControl({ showCompass: false, visualizePitch: false }),
-      'top-right'
-    )
-    map.addControl(
-      new maplibregl.AttributionControl({
-        compact: true,
-        customAttribution:
-          '<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> · <a href="https://maplibre.org/" target="_blank" rel="noopener">MapLibre</a>',
-      }),
-      'bottom-right'
-    )
+
 
     map.on('load', async () => {
       // Fit the whole world into view once we know the container size.
@@ -264,7 +253,7 @@ function WorldMapInner({
     const map = mapRef.current
     if (!map || !ready) return
 
-    const nextId = selectedCountry ? isoAlpha2ToNumeric[selectedCountry] ?? null : null
+    const nextId = selectedCountry ?? null
 
     if (selectedIdRef.current && selectedIdRef.current !== nextId) {
       map.setFeatureState(
@@ -293,22 +282,6 @@ function WorldMapInner({
     }
   }, [selectedCountry, flagColors, ready])
 
-  const handleZoomIn = useCallback(() => {
-    mapRef.current?.zoomIn()
-  }, [])
-  const handleZoomOut = useCallback(() => {
-    mapRef.current?.zoomOut()
-  }, [])
-  const handleReset = useCallback(() => {
-    mapRef.current?.fitBounds(
-      [
-        [-170, -58],
-        [190, 78],
-      ],
-      { padding: 10, duration: 700 }
-    )
-  }, [])
-
   return (
     <div className="relative w-full" style={{ aspectRatio: '16 / 10' }}>
       <div style={{ position: 'absolute', inset: 0, borderRadius: '1rem', overflow: 'hidden' }}>
@@ -318,33 +291,6 @@ function WorldMapInner({
         />
       </div>
 
-      {/* Mobile-friendly zoom controls */}
-      <div className="absolute bottom-3 left-3 z-10 flex flex-col gap-1.5 sm:hidden">
-        <button
-          type="button"
-          onClick={handleZoomIn}
-          aria-label="Zoom in"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-lg font-semibold text-[#1E2A44] shadow-md ring-1 ring-[#1E2A44]/10 active:scale-95"
-        >
-          +
-        </button>
-        <button
-          type="button"
-          onClick={handleZoomOut}
-          aria-label="Zoom out"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-lg font-semibold text-[#1E2A44] shadow-md ring-1 ring-[#1E2A44]/10 active:scale-95"
-        >
-          −
-        </button>
-        <button
-          type="button"
-          onClick={handleReset}
-          aria-label="Reset view"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-xs font-semibold text-[#1E2A44] shadow-md ring-1 ring-[#1E2A44]/10 active:scale-95"
-        >
-          ⌂
-        </button>
-      </div>
 
       {tooltip && (
         <div
