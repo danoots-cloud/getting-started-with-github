@@ -300,7 +300,13 @@ function WorldMapInner({
     mapRef.current?.zoomOut()
   }, [])
   const handleReset = useCallback(() => {
-    mapRef.current?.easeTo({ center: [10, 25], zoom: 0, duration: 700 })
+    mapRef.current?.fitBounds(
+      [
+        [-170, -58],
+        [190, 78],
+      ],
+      { padding: 10, duration: 700 }
+    )
   }, [])
 
   return (
