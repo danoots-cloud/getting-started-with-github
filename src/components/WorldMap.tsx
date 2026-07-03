@@ -120,26 +120,15 @@ function WorldMapInner({
 
     mapRef.current = map
 
-    // Globe projection (MapLibre 5+)
-    try {
-      map.setProjection({ type: 'globe' })
-    } catch {
-      // fallback: mercator
+    // Use mercator projection — cleaner rendering, no globe artifacts at low zoom.
+    map.touchZoomRotate.disableRotation()
+    if (!isMobile) {
+      map.addControl(
+        new maplibregl.NavigationControl({ showCompass: false, visualizePitch: false }),
+        'top-right'
+      )
     }
 
-    map.touchZoomRotate.disableRotation()
-    map.addControl(
-      new maplibregl.NavigationControl({ showCompass: false, visualizePitch: false }),
-      'top-right'
-    )
-    map.addControl(
-      new maplibregl.AttributionControl({
-        compact: true,
-        customAttribution:
-          '<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> · <a href="https://maplibre.org/" target="_blank" rel="noopener">MapLibre</a>',
-      }),
-      'bottom-right'
-    )
 
     map.on('load', async () => {
       // Fit the whole world into view once we know the container size.
