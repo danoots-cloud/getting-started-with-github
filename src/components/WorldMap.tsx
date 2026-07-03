@@ -69,7 +69,6 @@ function WorldMapInner({
   selectedCountry,
   flagColors,
 }: WorldMapProps) {
-  const isMobile = useIsMobile()
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MLMap | null>(null)
   const hoveredIdRef = useRef<string | null>(null)
