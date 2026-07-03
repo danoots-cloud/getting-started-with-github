@@ -2,6 +2,7 @@ import type { CountryData } from '@/data/countries'
 import { TemperatureChart } from '@/components/TemperatureChart'
 import { Flag } from '@/components/Flag'
 import { AdvisoryBadge } from '@/components/AdvisoryBadge'
+import { TimeDifference } from '@/components/TimeDifference'
 import {
   MapPin,
   Landmark,
