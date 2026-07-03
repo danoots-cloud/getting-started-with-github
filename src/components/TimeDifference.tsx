@@ -36,7 +36,7 @@ export function TimeDifference({ countryCode, accentColor }: TimeDifferenceProps
                   {' · '}{e.localTime} local time
                 </span>
                 {e.label && (
-                  <span className="ml-1 text-[#1E2A44]/60">· {e.gemini}</span>
+                  <span className="ml-1 text-[#1E2A44]/60">· {e.label}</span>
                 )}
               </li>
             ))}
