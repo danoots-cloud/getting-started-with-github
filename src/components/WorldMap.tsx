@@ -30,34 +30,27 @@ let cachedGeo: CountryGeoJSON | null = null
 
 async function loadCountriesGeoJSON(): Promise<CountryGeoJSON> {
   if (cachedGeo) return cachedGeo
-  const res = await fetch(TOPO_URL)
-  const topo = await res.json()
-  const raw = topojson.feature(topo, topo.objects.countries) as unknown as FeatureCollection<
-    Geometry,
-    { name: string }
-  > & { features: Array<Feature<Geometry, { name: string }> & { id?: string | number }> }
+  const res = await fetch(GEO_URL)
+  const raw = (await res.json()) as FeatureCollection<Geometry, Record<string, unknown>>
 
-  const features = raw.features.map((f) => {
-    const numericId = String(f.id ?? '').padStart(3, '0')
-    const alpha2 = numericToAlpha2[numericId] ?? null
+  const features = raw.features.map((f, idx) => {
+    const props = f.properties ?? {}
+    const alpha2Raw = (props['ISO_A2'] ?? props['ISO_A2_EH']) as string | undefined
+    const alpha2 = alpha2Raw && alpha2Raw !== '-99' ? alpha2Raw.toUpperCase() : null
     const hasData = !!(alpha2 && countries[alpha2])
-    // Cut polygons at the antimeridian so Russia/Fiji/US don't render as bands.
-    const stitched = geoStitch(f) as Feature<Geometry, unknown>
+    const name = (props['NAME'] ?? props['NAME_LONG'] ?? props['ADMIN'] ?? '') as string
     return {
       type: 'Feature' as const,
-      id: numericId, // needed for feature-state
-      geometry: stitched.geometry,
-      properties: {
-        name: f.properties.name,
-        code: alpha2,
-        hasData,
-      },
+      id: alpha2 ?? `x${idx}`,
+      geometry: f.geometry,
+      properties: { name, code: alpha2, hasData },
     }
   })
 
   cachedGeo = { type: 'FeatureCollection', features }
   return cachedGeo
 }
+
 
 function WorldMapInner({
   onCountryClick,
