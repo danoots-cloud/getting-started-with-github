@@ -50,10 +50,12 @@ async function loadCountriesGeoJSON(): Promise<CountryGeoJSON> {
     const numericId = String(f.id ?? '').padStart(3, '0')
     const alpha2 = numericToAlpha2[numericId] ?? null
     const hasData = !!(alpha2 && countries[alpha2])
+    // Cut polygons at the antimeridian so Russia/Fiji/US don't render as bands.
+    const stitched = geoStitch(f) as Feature<Geometry, unknown>
     return {
       type: 'Feature' as const,
       id: numericId, // needed for feature-state
-      geometry: f.geometry,
+      geometry: stitched.geometry,
       properties: {
         name: f.properties.name,
         code: alpha2,
