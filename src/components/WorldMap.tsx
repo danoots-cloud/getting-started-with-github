@@ -1,24 +1,15 @@
 import { useEffect, useRef, useState, memo } from 'react'
 import maplibregl, { type Map as MLMap, type MapGeoJSONFeature } from 'maplibre-gl'
-import * as topojson from 'topojson-client'
-// @ts-expect-error - no types for d3-geo-projection
-import { geoStitch } from 'd3-geo-projection'
-import type { Feature, FeatureCollection, Geometry } from 'geojson'
+import type { FeatureCollection, Geometry } from 'geojson'
 
-import {
-  countries,
-  isoAlpha2ToNumeric,
-} from '@/data/countries'
+import { countries } from '@/data/countries'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
+// Natural Earth 110m (via nvkelso) — well-formed polygons with proper
+// antimeridian splitting for Russia, Fiji, etc. ~840KB, cached by CDN.
+const GEO_URL =
+  'https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_110m_admin_0_countries.geojson'
 
-const TOPO_URL =
-  'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
-
-const numericToAlpha2: Record<string, string> = {}
-for (const [alpha2, numeric] of Object.entries(isoAlpha2ToNumeric)) {
-  numericToAlpha2[numeric] = alpha2
-}
 
 // Palette — matches the warm sunset feel of the site.
 const COLOR_OCEAN = '#EAD9BE' // slightly warmer than page bg so land pops
