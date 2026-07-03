@@ -1,27 +1,27 @@
-import { useState, memo, useCallback } from 'react'
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  ZoomableGroup,
-} from 'react-simple-maps'
+import { useEffect, useRef, useState, memo, useCallback } from 'react'
+import maplibregl, { type Map as MLMap, type MapGeoJSONFeature } from 'maplibre-gl'
+import * as topojson from 'topojson-client'
+import type { Feature, FeatureCollection, Geometry } from 'geojson'
 import {
   countries,
-  continentColors,
-  getContinentForGeoId,
   isoAlpha2ToNumeric,
 } from '@/data/countries'
+import 'maplibre-gl/dist/maplibre-gl.css'
 
-const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
+const TOPO_URL =
+  'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
 
 const numericToAlpha2: Record<string, string> = {}
 for (const [alpha2, numeric] of Object.entries(isoAlpha2ToNumeric)) {
   numericToAlpha2[numeric] = alpha2
 }
 
-const detailedCountryCodes = new Set(
-  Object.keys(countries).map((c) => isoAlpha2ToNumeric[c]).filter(Boolean)
-)
+// Palette — matches the warm sunset feel of the site.
+const COLOR_OCEAN = '#EAD9BE' // slightly warmer than page bg so land pops
+const COLOR_LAND_DATA = '#F2A65A' // countries with detailed data (warm sunset)
+const COLOR_LAND_EMPTY = '#D9C4A3' // countries without data (muted sand)
+const COLOR_LAND_HOVER = '#E86A5C' // hover accent
+const COLOR_BORDER = '#1E2A44'
 
 interface WorldMapProps {
   onCountryClick: (countryCode: string, countryName: string) => void
@@ -29,125 +29,336 @@ interface WorldMapProps {
   flagColors: [string, string, string] | null
 }
 
-function WorldMapInner({ onCountryClick, selectedCountry, flagColors }: WorldMapProps) {
+type CountryGeoJSON = FeatureCollection<Geometry, { name: string; code: string | null; hasData: boolean }>
+
+let cachedGeo: CountryGeoJSON | null = null
+
+async function loadCountriesGeoJSON(): Promise<CountryGeoJSON> {
+  if (cachedGeo) return cachedGeo
+  const res = await fetch(TOPO_URL)
+  const topo = await res.json()
+  const raw = topojson.feature(topo, topo.objects.countries) as unknown as FeatureCollection<
+    Geometry,
+    { name: string }
+  > & { features: Array<Feature<Geometry, { name: string }> & { id?: string | number }> }
+
+  const features = raw.features.map((f) => {
+    const numericId = String(f.id ?? '').padStart(3, '0')
+    const alpha2 = numericToAlpha2[numericId] ?? null
+    const hasData = !!(alpha2 && countries[alpha2])
+    return {
+      type: 'Feature' as const,
+      id: numericId, // needed for feature-state
+      geometry: f.geometry,
+      properties: {
+        name: f.properties.name,
+        code: alpha2,
+        hasData,
+      },
+    }
+  })
+
+  cachedGeo = { type: 'FeatureCollection', features }
+  return cachedGeo
+}
+
+function WorldMapInner({
+  onCountryClick,
+  selectedCountry,
+  flagColors,
+}: WorldMapProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const mapRef = useRef<MLMap | null>(null)
+  const hoveredIdRef = useRef<string | null>(null)
+  const selectedIdRef = useRef<string | null>(null)
   const [tooltip, setTooltip] = useState<{
     name: string
     x: number
     y: number
     hasData: boolean
   } | null>(null)
+  const [ready, setReady] = useState(false)
 
-  const selectedNumeric = selectedCountry
-    ? isoAlpha2ToNumeric[selectedCountry]
-    : null
+  // Stable ref to click handler so we don't recreate the map when it changes
+  const clickHandlerRef = useRef(onCountryClick)
+  useEffect(() => {
+    clickHandlerRef.current = onCountryClick
+  }, [onCountryClick])
 
-  const handleClick = useCallback(
-    (geo: { id: string; properties: { name: string } }) => {
-      const alpha2 = numericToAlpha2[geo.id]
-      if (alpha2 && countries[alpha2]) {
-        onCountryClick(alpha2, geo.properties.name)
-      }
-    },
-    [onCountryClick]
-  )
+  useEffect(() => {
+    if (!containerRef.current) return
+    let cancelled = false
+
+    const map = new maplibregl.Map({
+      container: containerRef.current,
+      // Minimal empty style — we render only our country polygons on a warm background.
+      style: {
+        version: 8,
+        sources: {},
+        layers: [
+          {
+            id: 'ocean',
+            type: 'background',
+            paint: { 'background-color': COLOR_OCEAN },
+          },
+        ],
+        glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
+      },
+      center: [10, 25],
+      zoom: 0,
+      minZoom: 0,
+      maxZoom: 6,
+      renderWorldCopies: false,
+      attributionControl: false,
+      dragRotate: false,
+      pitchWithRotate: false,
+      touchZoomRotate: true,
+    })
+
+    mapRef.current = map
+
+    // Globe projection (MapLibre 5+)
+    try {
+      map.setProjection({ type: 'globe' })
+    } catch {
+      // fallback: mercator
+    }
+
+    map.touchZoomRotate.disableRotation()
+    map.addControl(
+      new maplibregl.NavigationControl({ showCompass: false, visualizePitch: false }),
+      'top-right'
+    )
+    map.addControl(
+      new maplibregl.AttributionControl({
+        compact: true,
+        customAttribution:
+          '<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> · <a href="https://maplibre.org/" target="_blank" rel="noopener">MapLibre</a>',
+      }),
+      'bottom-right'
+    )
+
+    map.on('load', async () => {
+      // Fit the whole world into view once we know the container size.
+      map.fitBounds(
+        [
+          [-170, -58],
+          [190, 78],
+        ],
+        { padding: 10, animate: false, duration: 0 }
+      )
+
+      const geo = await loadCountriesGeoJSON()
+      if (cancelled) return
+
+      map.addSource('countries', {
+        type: 'geojson',
+        data: geo,
+        promoteId: 'id',
+      })
+
+      // Fill layer — differentiates data-rich vs. empty countries, with hover + selected states.
+      map.addLayer({
+        id: 'countries-fill',
+        type: 'fill',
+        source: 'countries',
+        paint: {
+          'fill-color': [
+            'case',
+            ['boolean', ['feature-state', 'selected'], false],
+            flagColors?.[0] ?? COLOR_LAND_HOVER,
+            ['boolean', ['feature-state', 'hover'], false],
+            COLOR_LAND_HOVER,
+            ['get', 'hasData'],
+            COLOR_LAND_DATA,
+            COLOR_LAND_EMPTY,
+          ],
+          'fill-opacity': [
+            'case',
+            ['get', 'hasData'],
+            0.92,
+            0.55,
+          ],
+        },
+      })
+
+      map.addLayer({
+        id: 'countries-outline',
+        type: 'line',
+        source: 'countries',
+        paint: {
+          'line-color': COLOR_BORDER,
+          'line-width': [
+            'case',
+            ['boolean', ['feature-state', 'selected'], false],
+            2,
+            0.4,
+          ],
+          'line-opacity': 0.35,
+        },
+      })
+
+      map.on('mousemove', 'countries-fill', (e) => {
+        if (!e.features?.length) return
+        const feat = e.features[0] as MapGeoJSONFeature
+        const id = feat.id as string | undefined
+        const props = feat.properties as { name: string; hasData: boolean; code: string | null }
+        map.getCanvas().style.cursor = props.hasData ? 'pointer' : ''
+
+        if (hoveredIdRef.current && hoveredIdRef.current !== id) {
+          map.setFeatureState(
+            { source: 'countries', id: hoveredIdRef.current },
+            { hover: false }
+          )
+        }
+        if (id && props.hasData) {
+          hoveredIdRef.current = id
+          map.setFeatureState({ source: 'countries', id }, { hover: true })
+        } else {
+          hoveredIdRef.current = null
+        }
+
+        const rect = map.getCanvas().getBoundingClientRect()
+        setTooltip({
+          name: props.name,
+          x: e.originalEvent.clientX - rect.left,
+          y: e.originalEvent.clientY - rect.top,
+          hasData: !!props.hasData,
+        })
+      })
+
+      map.on('mouseleave', 'countries-fill', () => {
+        map.getCanvas().style.cursor = ''
+        if (hoveredIdRef.current) {
+          map.setFeatureState(
+            { source: 'countries', id: hoveredIdRef.current },
+            { hover: false }
+          )
+          hoveredIdRef.current = null
+        }
+        setTooltip(null)
+      })
+
+      map.on('click', 'countries-fill', (e) => {
+        if (!e.features?.length) return
+        const feat = e.features[0]
+        const props = feat.properties as { name: string; hasData: boolean; code: string | null }
+        if (props.hasData && props.code) {
+          clickHandlerRef.current(props.code, props.name)
+        }
+      })
+
+      setReady(true)
+    })
+
+    return () => {
+      cancelled = true
+      map.remove()
+      mapRef.current = null
+    }
+  }, [])
+  // ^ We intentionally exclude flagColors here — updates handled below to avoid re-init.
+
+  // Update selection + selected fill color when props change
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !ready) return
+
+    const nextId = selectedCountry ? isoAlpha2ToNumeric[selectedCountry] ?? null : null
+
+    if (selectedIdRef.current && selectedIdRef.current !== nextId) {
+      map.setFeatureState(
+        { source: 'countries', id: selectedIdRef.current },
+        { selected: false }
+      )
+    }
+
+    if (nextId) {
+      map.setFeatureState({ source: 'countries', id: nextId }, { selected: true })
+    }
+    selectedIdRef.current = nextId
+
+    // Update fill color paint property so selected color reflects current flag
+    if (map.getLayer('countries-fill')) {
+      map.setPaintProperty('countries-fill', 'fill-color', [
+        'case',
+        ['boolean', ['feature-state', 'selected'], false],
+        flagColors?.[0] ?? COLOR_LAND_HOVER,
+        ['boolean', ['feature-state', 'hover'], false],
+        COLOR_LAND_HOVER,
+        ['get', 'hasData'],
+        COLOR_LAND_DATA,
+        COLOR_LAND_EMPTY,
+      ])
+    }
+  }, [selectedCountry, flagColors, ready])
+
+  const handleZoomIn = useCallback(() => {
+    mapRef.current?.zoomIn()
+  }, [])
+  const handleZoomOut = useCallback(() => {
+    mapRef.current?.zoomOut()
+  }, [])
+  const handleReset = useCallback(() => {
+    mapRef.current?.fitBounds(
+      [
+        [-170, -58],
+        [190, 78],
+      ],
+      { padding: 10, duration: 700 }
+    )
+  }, [])
 
   return (
-    <div className="relative w-full" style={{ aspectRatio: '2 / 1' }}>
-      <ComposableMap
-        projection="geoMercator"
-        projectionConfig={{
-          scale: 130,
-          center: [0, 30],
-        }}
-        style={{ width: '100%', height: '100%' }}
-      >
-        <ZoomableGroup>
-          <Geographies geography={GEO_URL}>
-            {({ geographies }) =>
-              geographies.map((geo) => {
-                const geoId = geo.id as string
-                const continent = getContinentForGeoId(geoId)
-                const isSelected = geoId === selectedNumeric
-                const hasDetailedData = detailedCountryCodes.has(geoId)
-                const baseColor = continentColors[continent] || '#CBD5E1'
+    <div className="relative w-full" style={{ aspectRatio: '16 / 10' }}>
+      <div style={{ position: 'absolute', inset: 0, borderRadius: '1rem', overflow: 'hidden' }}>
+        <div
+          ref={containerRef}
+          style={{ width: '100%', height: '100%', background: COLOR_OCEAN }}
+        />
+      </div>
 
-                let fillColor = baseColor
-                if (isSelected && flagColors) {
-                  fillColor = flagColors[0]
-                } else if (hasDetailedData) {
-                  fillColor = baseColor
-                } else {
-                  fillColor = baseColor + '88'
-                }
-
-                return (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    fill={fillColor}
-                    stroke={isSelected ? '#FFFFFF' : '#FFFFFF40'}
-                    strokeWidth={isSelected ? 1.5 : 0.5}
-                    style={{
-                      default: {
-                        outline: 'none',
-                        transition: 'fill 0.2s ease',
-                      },
-                      hover: {
-                        fill: hasDetailedData
-                          ? flagColors && isSelected
-                            ? flagColors[1] === '#FFFFFF'
-                              ? flagColors[2]
-                              : flagColors[1]
-                            : '#0EA5E9'
-                          : baseColor + 'CC',
-                        outline: 'none',
-                        cursor: hasDetailedData ? 'pointer' : 'default',
-                        stroke: '#FFFFFF',
-                        strokeWidth: 1,
-                      },
-                      pressed: { outline: 'none' },
-                    }}
-                    onMouseEnter={(e) => {
-                      const rect = (
-                        e.currentTarget.closest('svg') as SVGSVGElement
-                      )?.getBoundingClientRect()
-                      if (rect) {
-                        setTooltip({
-                          name: geo.properties.name,
-                          x: e.clientX - rect.left,
-                          y: e.clientY - rect.top,
-                          hasData: hasDetailedData,
-                        })
-                      }
-                    }}
-                    onMouseLeave={() => setTooltip(null)}
-                    onClick={() =>
-                      handleClick({
-                        id: geoId,
-                        properties: geo.properties as { name: string },
-                      })
-                    }
-                  />
-                )
-              })
-            }
-          </Geographies>
-        </ZoomableGroup>
-      </ComposableMap>
+      {/* Mobile-friendly zoom controls */}
+      <div className="absolute bottom-3 left-3 z-10 flex flex-col gap-1.5 sm:hidden">
+        <button
+          type="button"
+          onClick={handleZoomIn}
+          aria-label="Zoom in"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-lg font-semibold text-[#1E2A44] shadow-md ring-1 ring-[#1E2A44]/10 active:scale-95"
+        >
+          +
+        </button>
+        <button
+          type="button"
+          onClick={handleZoomOut}
+          aria-label="Zoom out"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-lg font-semibold text-[#1E2A44] shadow-md ring-1 ring-[#1E2A44]/10 active:scale-95"
+        >
+          −
+        </button>
+        <button
+          type="button"
+          onClick={handleReset}
+          aria-label="Reset view"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-xs font-semibold text-[#1E2A44] shadow-md ring-1 ring-[#1E2A44]/10 active:scale-95"
+        >
+          ⌂
+        </button>
+      </div>
 
       {tooltip && (
         <div
-          className="pointer-events-none absolute z-50 rounded-lg px-3 py-1.5 text-sm font-medium shadow-lg"
+          className="pointer-events-none absolute z-20 rounded-lg px-3 py-1.5 text-sm font-medium shadow-lg"
           style={{
             left: tooltip.x + 12,
-            top: tooltip.y - 30,
+            top: tooltip.y - 34,
             backgroundColor: tooltip.hasData ? '#0f172a' : '#475569',
             color: '#FFFFFF',
           }}
         >
           {tooltip.name}
           {tooltip.hasData && (
-            <span className="ml-1.5 text-xs text-sky-300">Click to explore</span>
+            <span className="ml-1.5 text-xs text-[#F2A65A]">Tap to explore</span>
           )}
         </div>
       )}
