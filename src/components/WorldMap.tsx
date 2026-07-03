@@ -253,7 +253,7 @@ function WorldMapInner({
     const map = mapRef.current
     if (!map || !ready) return
 
-    const nextId = selectedCountry ? isoAlpha2ToNumeric[selectedCountry] ?? null : null
+    const nextId = selectedCountry ?? null
 
     if (selectedIdRef.current && selectedIdRef.current !== nextId) {
       map.setFeatureState(
