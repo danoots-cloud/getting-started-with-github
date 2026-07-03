@@ -70,8 +70,9 @@ export const COUNTRY_TIMEZONES: Record<string, CountryZone[]> = {
     { zone: 'America/St_Johns', label: 'Newfoundland' },
   ],
   MX: [
+    { zone: 'America/Cancun', label: 'Quintana Roo' },
     { zone: 'America/Mexico_City', label: 'Central' },
-    { zone: 'America/Chihuahua', label: 'Pacific' },
+    { zone: 'America/Hermosillo', label: 'Sonora' },
     { zone: 'America/Tijuana', label: 'Northwest' },
   ],
   GL: [
