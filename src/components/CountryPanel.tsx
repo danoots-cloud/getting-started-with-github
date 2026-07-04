@@ -16,7 +16,11 @@ import {
   ShoppingBag,
   Plane,
   X,
+  ShieldCheck,
+  ExternalLink,
 } from 'lucide-react'
+import { travelRequirements, type TravelDifficulty } from '@/data/travel-requirements'
+
 
 interface CountryPanelProps {
   country: CountryData
@@ -56,7 +60,97 @@ function InfoBadge({ label, value }: { label: string; value: string }) {
   )
 }
 
+const DIFFICULTY_META: Record<
+  TravelDifficulty,
+  { label: string; dot: string; bg: string; border: string }
+> = {
+  easy: {
+    label: 'Easy',
+    dot: '#2E8B57',
+    bg: '#2E8B5714',
+    border: '#2E8B5744',
+  },
+  moderate: {
+    label: 'Some prep',
+    dot: '#D68A2A',
+    bg: '#F2A65A1F',
+    border: '#F2A65A55',
+  },
+  'advance-prep': {
+    label: 'Advance planning',
+    dot: '#E86A5C',
+    bg: '#E86A5C1A',
+    border: '#E86A5C55',
+  },
+}
+
+function stateDeptUrl(countryName: string): string {
+  // travel.state.gov uses country name with spaces replaced by hyphens.
+  const slug = countryName.replace(/\s+/g, '-')
+  return `https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/${slug}.html`
+}
+
+function TravelRequirementsSection({
+  countryCode,
+  countryName,
+  accentColor,
+}: {
+  countryCode: string
+  countryName: string
+  accentColor: string
+}) {
+  const req = travelRequirements[countryCode]
+  if (!req) return null
+  const meta = DIFFICULTY_META[req.difficulty]
+
+  return (
+    <Section title="Travel Requirements" icon={ShieldCheck} accentColor={accentColor}>
+      <div
+        className="rounded-xl border px-4 py-3"
+        style={{ borderColor: meta.border, backgroundColor: meta.bg }}
+      >
+        <div className="flex items-center gap-2">
+          <span
+            className="inline-block h-2.5 w-2.5 rounded-full"
+            style={{ backgroundColor: meta.dot }}
+            aria-hidden
+          />
+          <span className="text-xs font-semibold uppercase tracking-wider text-[#1E2A44]">
+            {meta.label}
+          </span>
+        </div>
+        <p className="mt-2 text-sm font-medium text-[#1E2A44]">{req.summary}</p>
+        {req.notes && req.notes.length > 0 && (
+          <ul className="mt-2 space-y-1">
+            {req.notes.map((n, i) => (
+              <li
+                key={i}
+                className="flex gap-2 text-xs leading-relaxed text-[#1E2A44]/70"
+              >
+                <span className="mt-0.5 shrink-0" style={{ color: meta.dot }}>
+                  ·
+                </span>
+                {n}
+              </li>
+            ))}
+          </ul>
+        )}
+        <a
+          href={stateDeptUrl(countryName)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-[#1E2A44]/70 underline decoration-dotted underline-offset-2 hover:text-[#1E2A44]"
+        >
+          Verify at travel.state.gov
+          <ExternalLink className="h-3 w-3" />
+        </a>
+      </div>
+    </Section>
+  )
+}
+
 export function CountryPanel({ country, onClose }: CountryPanelProps) {
+
   const [primary, , tertiary] = country.flagColors
   const accent = primary === '#FFFFFF' ? tertiary : primary
   const secondaryAccent = tertiary === '#FFFFFF' ? primary : tertiary
@@ -144,6 +238,14 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
             {country.bestTimeToVisit}
           </div>
         </Section>
+
+        <TravelRequirementsSection
+          countryCode={country.code}
+          countryName={country.name}
+          accentColor={accent}
+        />
+
+
 
         <Section title="Popular Places" icon={MapPin} accentColor={accent}>
           <div className="space-y-2">
