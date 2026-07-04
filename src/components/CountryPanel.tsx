@@ -149,6 +149,14 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
           </div>
         </Section>
 
+        <TravelRequirementsSection
+          countryCode={country.code}
+          countryName={country.name}
+          accentColor={accent}
+        />
+
+
+
         <Section title="Popular Places" icon={MapPin} accentColor={accent}>
           <div className="space-y-2">
             {country.popularPlaces.map((place) => (
