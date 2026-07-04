@@ -16,7 +16,11 @@ import {
   ShoppingBag,
   Plane,
   X,
+  ShieldCheck,
+  ExternalLink,
 } from 'lucide-react'
+import { travelRequirements, type TravelDifficulty } from '@/data/travel-requirements'
+
 
 interface CountryPanelProps {
   country: CountryData
