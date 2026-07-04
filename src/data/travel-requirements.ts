@@ -341,4 +341,49 @@ export const travelRequirements: Record<string, TravelRequirements> = {
     difficulty: 'easy',
     summary: 'Visa-free up to 90 days (French Polynesia — no ETIAS for direct entry).',
   },
+
+  // ── Additions ────────────────────────────────────────────────────────────
+  BS: { difficulty: 'easy', summary: 'Visa-free up to 8 months; passport only.' },
+  BB: { difficulty: 'easy', summary: 'Visa-free up to 6 months.' },
+  LC: { difficulty: 'easy', summary: 'Visa-free up to 6 weeks; passport only.' },
+  AW: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 30 days; ED-Card online form required before arrival.',
+  },
+  PR: {
+    difficulty: 'easy',
+    summary: 'U.S. territory — no passport needed for U.S. citizens.',
+    notes: ['Government-issued photo ID required to fly'],
+  },
+  TT: { difficulty: 'easy', summary: 'Visa-free up to 90 days.' },
+  HK: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days.',
+    notes: [PASSPORT_6MO],
+  },
+  TW: { difficulty: 'easy', summary: 'Visa-free up to 90 days.', notes: [PASSPORT_6MO] },
+  MT: schengen(),
+  CY: {
+    difficulty: 'moderate',
+    summary: 'Visa-free up to 90 days now; ETIAS expected once Cyprus joins Schengen.',
+    notes: [PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  LU: schengen(),
+  EE: schengen(),
+  LV: schengen(),
+  LT: schengen(),
+  BG: schengen(), // Joined Schengen (air/sea) 2024, full 2025
+  AL: { difficulty: 'easy', summary: 'Visa-free up to 1 year.' },
+  ME: { difficulty: 'easy', summary: 'Visa-free up to 90 days in any 6-month period.' },
+  BA: { difficulty: 'easy', summary: 'Visa-free up to 90 days in any 6-month period.' },
+  MU: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 60 days; Mauritius All-in-One eArrival Card required before travel.',
+  },
+  SC: {
+    difficulty: 'moderate',
+    summary: 'Free Travel Authorization required online before boarding.',
+    notes: ['Apply at least 72 hours before travel'],
+  },
 }
+
