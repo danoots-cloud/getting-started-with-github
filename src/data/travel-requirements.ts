@@ -385,5 +385,108 @@ export const travelRequirements: Record<string, TravelRequirements> = {
     summary: 'Free Travel Authorization required online before boarding.',
     notes: ['Apply at least 72 hours before travel'],
   },
+
+  // ── Additional African countries ─────────────────────────────────────────
+  ZM: {
+    difficulty: 'moderate',
+    summary: 'eVisa or visa-on-arrival ($50 single-entry / $80 KAZA UNIVISA covering Zimbabwe).',
+    notes: [PASSPORT_6MO, 'Yellow fever certificate if arriving from an endemic country'],
+  },
+  MW: {
+    difficulty: 'moderate',
+    summary: 'eVisa required before travel ($75 single-entry, 30 days).',
+    notes: [PASSPORT_6MO, 'At least 1 blank passport page'],
+  },
+  CI: {
+    difficulty: 'moderate',
+    summary: 'Pre-approved e-Visa required; collect on arrival at Abidjan airport ($79).',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  CM: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required in advance — no visa on arrival.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required', 'Registration on arrival at some hotels'],
+  },
+  AO: {
+    difficulty: 'easy',
+    summary: 'Visa-free for US citizens up to 30 days for tourism.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  CV: {
+    difficulty: 'moderate',
+    summary: 'Airport Security Tax (TSA) must be paid online before arrival — no visa needed for stays under 30 days.',
+    notes: [PASSPORT_6MO],
+  },
+  GA: {
+    difficulty: 'moderate',
+    summary: 'e-Visa required before arrival; approval typically within 72 hours.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  ML: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; State Dept advises against travel due to security conditions.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  BF: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; State Dept advises against travel due to terrorism and kidnapping risk.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  BJ: {
+    difficulty: 'moderate',
+    summary: 'e-Visa required before travel (~$50, apply on the official government portal).',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  TG: {
+    difficulty: 'moderate',
+    summary: 'Visa-on-arrival at Lomé airport (7 days, extendable in-country).',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  LR: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required in advance — no visa on arrival.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  SL: {
+    difficulty: 'moderate',
+    summary: 'e-Visa required before boarding ($80 single-entry).',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  GM: {
+    difficulty: 'easy',
+    summary: 'Visa-free for US citizens up to 90 days.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  CD: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; State Dept advises against travel to eastern provinces.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required', 'Gorilla-trek permits arranged via licensed operators'],
+  },
+  CG: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required in advance — no visa on arrival.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  LY: {
+    difficulty: 'advance-prep',
+    summary: 'US passport holders effectively cannot enter — State Dept Level 4 “Do Not Travel”.',
+    notes: [PASSPORT_6MO, 'No US embassy services available inside Libya'],
+  },
+  SD: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; State Dept Level 4 “Do Not Travel” due to armed conflict.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  LS: {
+    difficulty: 'easy',
+    summary: 'Visa-free for US citizens up to 180 days.',
+    notes: [PASSPORT_6MO, 'Usually entered overland via South Africa — carry passport for border stamps'],
+  },
+  SZ: {
+    difficulty: 'easy',
+    summary: 'Visa-free for US citizens up to 30 days.',
+    notes: [PASSPORT_6MO, 'Yellow fever certificate if arriving from an endemic country'],
+  },
 }
+
 
