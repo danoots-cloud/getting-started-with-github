@@ -3,6 +3,7 @@ import { ArrowLeft, X, MapPin, Thermometer } from 'lucide-react'
 import type { CountryData, PopularPlace } from '@/data/countries'
 import { TemperatureChart } from '@/components/TemperatureChart'
 import { PlaceMap } from '@/components/PlaceMap'
+import { getPlaceClimate } from '@/data/places-climate'
 
 interface PlacePanelProps {
   place: PopularPlace
