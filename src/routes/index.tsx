@@ -135,34 +135,56 @@ function Home() {
                 <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#E86A5C]">
                   Featured Destinations
                 </h3>
-                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                  {Object.values(countries)
-                    .slice()
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((c) => (
-                      <button
-                        key={c.code}
-                        onClick={() => handleCountryClick(c.code, c.name)}
-                        className="group grid grid-cols-[2.25rem_minmax(0,1fr)] items-center gap-2 rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-3 py-2.5 text-left shadow-sm shadow-[#F2A65A]/15 transition-all hover:-translate-y-0.5 hover:border-[#E86A5C]/40 hover:bg-white hover:shadow-md hover:shadow-[#E86A5C]/20"
-                      >
-                        <Flag
-                          code={c.code}
-                          name={c.name}
-                          className="h-6 w-9 rounded-sm object-cover shadow ring-1 ring-[#1E2A44]/15"
-                        />
-                        <div className="min-w-0">
-                          <div className="truncate text-sm font-medium text-[#1E2A44] group-hover:text-[#1E2A44]">
-                            {c.name}
-                          </div>
-                          <div className="truncate text-xs text-[#1E2A44]/50">
-                            {c.continent}
+                {(() => {
+                  const byContinent: Record<string, CountryData[]> = {};
+                  for (const c of Object.values(countries)) {
+                    const parts = c.continent.split("/").map((p) => p.trim());
+                    for (const p of parts) {
+                      (byContinent[p] ||= []).push(c);
+                    }
+                  }
+                  const continentNames = Object.keys(byContinent).sort();
+                  return (
+                    <div className="space-y-6">
+                      {continentNames.map((cont) => (
+                        <div key={cont}>
+                          <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#1E2A44]/60">
+                            {cont}
+                          </h4>
+                          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                            {byContinent[cont]
+                              .slice()
+                              .sort((a, b) => a.name.localeCompare(b.name))
+                              .map((c) => (
+                                <button
+                                  key={c.code}
+                                  onClick={() => handleCountryClick(c.code, c.name)}
+                                  className="group grid grid-cols-[2.25rem_minmax(0,1fr)] items-center gap-2 rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-3 py-2.5 text-left shadow-sm shadow-[#F2A65A]/15 transition-all hover:-translate-y-0.5 hover:border-[#E86A5C]/40 hover:bg-white hover:shadow-md hover:shadow-[#E86A5C]/20"
+                                >
+                                  <Flag
+                                    code={c.code}
+                                    name={c.name}
+                                    className="h-6 w-9 rounded-sm object-cover shadow ring-1 ring-[#1E2A44]/15"
+                                  />
+                                  <div className="min-w-0">
+                                    <div className="truncate text-sm font-medium text-[#1E2A44] group-hover:text-[#1E2A44]">
+                                      {c.name}
+                                    </div>
+                                    <div className="truncate text-xs text-[#1E2A44]/50">
+                                      {c.continent}
+                                    </div>
+                                  </div>
+                                </button>
+                              ))}
                           </div>
                         </div>
-                      </button>
-                    ))}
-                </div>
+                      ))}
+                    </div>
+                  );
+                })()}
               </div>
             )}
+
 
             {!selectedCountry && (
               <div className="mt-4 flex flex-wrap items-center justify-center gap-4 py-4 text-xs text-[#1E2A44]/65">
