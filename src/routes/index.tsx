@@ -186,24 +186,6 @@ function Home() {
             )}
 
 
-            {!selectedCountry && (
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 py-4 text-xs text-[#1E2A44]/65">
-                <span className="flex items-center gap-1.5">
-                  <span
-                    className="inline-block h-3 w-3 rounded"
-                    style={{ backgroundColor: "#F2A65A" }}
-                  />
-                  Countries with travel guides
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span
-                    className="inline-block h-3 w-3 rounded"
-                    style={{ backgroundColor: "#D9C4A3" }}
-                  />
-                  Coming soon
-                </span>
-              </div>
-            )}
           </div>
         </div>
 
