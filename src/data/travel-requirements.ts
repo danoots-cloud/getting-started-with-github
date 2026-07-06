@@ -487,6 +487,58 @@ export const travelRequirements: Record<string, TravelRequirements> = {
     summary: 'Visa-free for US citizens up to 30 days.',
     notes: [PASSPORT_6MO, 'Yellow fever certificate if arriving from an endemic country'],
   },
+
+  // ── Additional additions ─────────────────────────────────────────────────
+  AG: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 180 days.',
+    notes: [PASSPORT_6MO, 'Advance Passenger Information required by airlines'],
+  },
+  BM: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 6 months; passport only.',
+    notes: ['Return or onward ticket required'],
+  },
+  BN: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days.',
+    notes: [PASSPORT_6MO],
+  },
+  DM: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 180 days; passport only.',
+    notes: [PASSPORT_6MO],
+  },
+  HT: {
+    difficulty: 'moderate',
+    summary: 'Visa-free up to 90 days, but State Dept Level 4 “Do Not Travel” due to security conditions.',
+    notes: [PASSPORT_6MO, 'Check current advisory before booking — situation changes quickly'],
+  },
+  KN: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days.',
+    notes: [PASSPORT_6MO],
+  },
+  KW: {
+    difficulty: 'moderate',
+    summary: 'eVisa required in advance (~$3, single entry, 90 days).',
+    notes: [PASSPORT_6MO, 'Alcohol is banned nationwide, including in luggage'],
+  },
+  LB: {
+    difficulty: 'advance-prep',
+    summary: 'Free 1-month visa on arrival in normal times, but State Dept Level 4 “Do Not Travel”.',
+    notes: [PASSPORT_6MO, 'Israeli entry stamps in passport will result in denied entry', 'Check advisory before any travel'],
+  },
+  MC: {
+    difficulty: 'moderate',
+    summary: 'Entered via France — Schengen rules apply.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  VC: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 30 days; extendable in-country.',
+    notes: [PASSPORT_6MO],
+  },
 }
 
 
