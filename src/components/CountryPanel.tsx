@@ -411,6 +411,16 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
 
         <div className="pb-6" />
       </div>
+
+      {openPlace && (
+        <PlacePanel
+          place={openPlace}
+          country={country}
+          onBack={() => setOpenPlace(null)}
+          onClose={onClose}
+        />
+      )}
     </div>
   )
 }
+
