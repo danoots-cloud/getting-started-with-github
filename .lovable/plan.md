@@ -1,110 +1,41 @@
-## Goal
+## What's happening
 
-Give each popular place its own detail view with the same climate chart the country panel uses, plus a small zoomed map of the country with the place plotted. Pilot on Brazil so the pattern is proven before rolling out to all 699 places.
+The data is fine — every Canadian place has its correct coordinates in `src/data/places-climate.ts` (Banff `51.6, -116.05`, Vancouver `49.2, -123.1`, Toronto `43.7, -79.4`, Quebec City `46.8, -71.2`). The bug is in **`PlaceMap`**: it fits the map to the **whole country's bounding box**.
 
-## UX shape
+Canada spans roughly 5,500 km east-to-west and 4,600 km north-to-south. In a ~500×310 px panel, the whole country is drawn at the same scale for every Canadian place. The 14 px marker dot **is** rendered at the correct lat/lng, but it lands somewhere inside a country that fills the frame — visually every map looks identical, and the pin is easy to miss because it's tiny relative to the country outline.
 
-**Country panel — Popular Places list (unchanged layout, richer content):**
+Same class of bug applies to Russia, USA, China, Brazil, Australia, Argentina, India, Kazakhstan, DRC, Algeria, Greenland — anywhere the country is much larger than a single point of interest can meaningfully sit in.
 
-```
-┌─ Popular Places ────────────────────────────┐
-│  Rio de Janeiro                          ›  │
-│  Beach city, Christ the Redeemer...         │
-│  ● Avg high 82°F · Wettest Dec–Mar          │
-├─────────────────────────────────────────────┤
-│  São Paulo                               ›  │
-│  ...                                        │
-└─────────────────────────────────────────────┘
-```
+Symptomatic small countries (Bahrain, Luxembourg, Singapore) look fine today for the same reason: their bounds are small enough that fitting the country IS a place-level view.
 
-Each row becomes a button. The one-line "climate glance" is derived from the place's monthly data (annual mean high + wettest quarter). A right-chevron signals drill-in.
+## Fix
 
-**Place detail — nested sub-panel:**
+Change `PlaceMap`'s framing rule from "always fit to country bounds" to a hybrid:
 
-Clicking a place slides a new panel over the country panel (same width, same slide-in animation). The country panel stays mounted underneath so state is preserved.
+```text
+country_span_deg = max(bounds.width, bounds.height)  // in degrees
 
-```
-┌─ ← Brazil                              × ─┐
-│  Rio de Janeiro                            │
-│  Coastal · Brazil                          │
-│                                            │
-│  ┌───────────── Country map ──────────┐   │
-│  │       [Brazil outline, ● Rio]       │   │
-│  └────────────────────────────────────┘   │
-│                                            │
-│  Climate by Month                          │
-│  [same TemperatureChart component]         │
-│                                            │
-│  About                                     │
-│  [existing place.description, room to grow]│
-└────────────────────────────────────────────┘
+if country_span_deg <= SMALL_COUNTRY_THRESHOLD (≈ 12°):
+    fit to country bounds          // small country → full outline + pin
+else:
+    fit to a place-centered window ≈ ±3.5° around the pin,
+    with the country outline still rendered as context
 ```
 
-- Back arrow returns to the country panel (scroll position preserved).
-- The panel-level close (×) closes the whole thing back to the map, matching current behavior.
-- ESC key: closes the sub-panel first, then the country panel on a second press.
-- No URL change (matches current app; a route-based version can come later without reworking the UI).
+Threshold values are tunable, but ~12° covers the UK, Italy, Japan, Germany, Vietnam, most of Europe as "small country" (full outline shown) and drops the US/Canada/Russia/etc. to the regional view. ±3.5° gives a window roughly 500–800 km wide — big enough to show a chunk of the country outline around the place, small enough that the marker reads clearly.
 
-## Map: reuse WorldMap, zoomed to country
+The country outline stays highlighted in the accent color regardless — for a place in Canada you'll see the marker centered, a slice of Canada shaded around it, and neighboring US/Alaska greyed where they intrude into the viewport. That gives geographic context without hiding the pin.
 
-`src/components/WorldMap.tsx` already renders country SVG paths. Add a "focused" mode that:
-
-1. Takes a country code + a `{lat, lng}` marker.
-2. Computes the bounding box of that country's path(s) and sets the SVG `viewBox` to that box with a small padding — this is the "zoom".
-3. Renders the country's own path highlighted, neighbors greyed at low opacity for context.
-4. Plots the marker as a small dot with the site's coral accent (`#E86A5C`) and a subtle drop shadow, positioned by projecting `{lat, lng}` with the same projection WorldMap already uses.
-5. Non-interactive (no pan/zoom); pure SVG, no new dependencies.
-
-If the existing WorldMap doesn't expose its projection cleanly, extract it into a small helper (`src/lib/map-projection.ts`) so both the full map and the zoomed map share it — otherwise the marker will drift from the country outline.
-
-## Data
-
-Two changes, both additive:
-
-1. **`CountryData.popularPlaces` entries gain climate + coords.** New optional shape:
-
-   ```ts
-   popularPlaces: {
-     name: string
-     description: string
-     // New — optional so unmigrated places don't break
-     coords?: { lat: number; lng: number }
-     temperatures?: { month: string; high: number; low: number }[]
-     precipitation?: number[]
-   }[]
-   ```
-
-2. **New CSV importer script** (`scripts/import-places-climate.ts`, dev-time only, not shipped):
-   - Reads the uploaded CSV.
-   - Matches rows to existing `popularPlaces` entries by `(country, place name)`.
-   - Emits a TypeScript object keyed the same way, which we merge into `countries.ts`.
-   - For the pilot: only apply Brazil's rows. Everything else in the CSV is ignored on this pass.
-
-The script's output for Brazil gets merged into `src/data/countries.ts` by hand this turn. Places without matching CSV rows (spelling drift, extras) get logged so we can reconcile later.
+Also, make the marker itself slightly more legible on busy backgrounds: bump it to 16 px with a white ring and a soft drop shadow (already partly done — just increase contrast).
 
 ## Files touched
 
-1. `src/data/countries.ts` — extend `PopularPlace` type; populate coords/temperatures/precipitation for Brazil's places.
-2. `src/components/CountryPanel.tsx` — Popular Places rows become buttons; add climate-glance line; wire sub-panel open state.
-3. `src/components/PlacePanel.tsx` — **new**, the sub-panel (header with back arrow, map, chart, description).
-4. `src/components/PlaceMap.tsx` — **new**, WorldMap in "focused" mode with a marker.
-5. `src/components/WorldMap.tsx` — small refactor to expose the projection + country bounding-box helpers (only if needed to keep the marker aligned).
-6. `src/lib/place-climate.ts` — **new**, tiny helper that turns 12-month arrays into the one-line "climate glance" string.
-7. `scripts/import-places-climate.ts` — **new**, dev-only CSV → TS merger.
+1. `src/components/PlaceMap.tsx` — replace the `fitBounds(countryBounds)` call with the hybrid framing logic; bump marker size/contrast.
 
-No new npm packages, no server functions, no routing changes.
+That's it. No changes to data, `CountryPanel`, `PlacePanel`, or the CSV import. The lookup is correct; only the map framing is wrong.
 
-## Things to consider for the future (not built now)
+## Out of scope
 
-- **Own URLs per place** — the sub-panel is a stepping stone. When places gain photos and longer copy, promoting them to `/country/$c/place/$p` unlocks sharing and SEO. The sub-panel's data flow (place object + country context) maps 1:1 to a route loader, so the migration is mostly moving JSX, not rewriting logic.
-- **Photos** — reserve a `photos?: string[]` field on `PopularPlace` now (unused) so the shape is stable when images arrive.
-- **Search / linking places** — once places have detail, users will want to link straight to one from search results. Route-based version handles this for free.
-- **Data volume** — 699 places × 24 numbers = ~17k values. Fine inline in `countries.ts` for now; if bundle size becomes a concern, split places into `src/data/places.ts` and lazy-load per country.
-- **Distance / travel time from the country capital** — natural next field for the place panel once the layout settles.
-
-## Out of scope this turn
-
-- Photos, reviews, external data enrichment.
-- Rolling data out beyond Brazil.
-- Interactive maps (pan/zoom, clickable markers).
-- Route-based URLs.
+- Interactive pan/zoom on the place map.
+- Multiple markers per view (e.g. all popular places in a country).
+- Switching map providers.
