@@ -6,6 +6,7 @@ import { AdvisoryBadge } from '@/components/AdvisoryBadge'
 import { TimeDifference } from '@/components/TimeDifference'
 import { PlacePanel } from '@/components/PlacePanel'
 import { climateGlance } from '@/lib/place-climate'
+import { getPlaceClimate } from '@/data/places-climate'
 import {
   MapPin,
   Landmark,
