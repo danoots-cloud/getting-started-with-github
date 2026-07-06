@@ -261,19 +261,43 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
 
         <Section title="Popular Places" icon={MapPin} accentColor={accent}>
           <div className="space-y-2">
-            {country.popularPlaces.map((place) => (
-              <div
-                key={place.name}
-                className="rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-3 shadow-sm shadow-[#F2A65A]/15"
-              >
-                <div className="font-semibold text-[#1E2A44]">{place.name}</div>
-                <div className="mt-0.5 text-sm text-[#1E2A44]/65">
-                  {place.description}
-                </div>
-              </div>
-            ))}
+            {country.popularPlaces.map((place) => {
+              const glance = climateGlance(place.temperatures, place.precipitation)
+              const hasDetail = !!(place.coords || place.temperatures)
+              return (
+                <button
+                  key={place.name}
+                  type="button"
+                  onClick={() => setOpenPlace(place)}
+                  className="group flex w-full items-center gap-3 rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-3 text-left shadow-sm shadow-[#F2A65A]/15 transition-all hover:border-[#1E2A44]/25 hover:bg-[#FBF5EC] hover:shadow-md"
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="font-semibold text-[#1E2A44]">{place.name}</div>
+                    <div className="mt-0.5 text-sm text-[#1E2A44]/65">
+                      {place.description}
+                    </div>
+                    {glance && (
+                      <div className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-[#1E2A44]/60">
+                        <span
+                          className="inline-block h-1.5 w-1.5 rounded-full"
+                          style={{ backgroundColor: accent }}
+                          aria-hidden
+                        />
+                        {glance}
+                      </div>
+                    )}
+                  </div>
+                  <ChevronRight
+                    className={`h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5 ${
+                      hasDetail ? 'text-[#1E2A44]/50' : 'text-[#1E2A44]/25'
+                    }`}
+                  />
+                </button>
+              )
+            })}
           </div>
         </Section>
+
 
         <Section title="Top Attractions" icon={Camera} accentColor={accent}>
           <div className="space-y-2">
