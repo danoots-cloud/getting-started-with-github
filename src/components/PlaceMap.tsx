@@ -39,7 +39,7 @@ async function loadGeo(): Promise<CountryGeoJSON> {
   return cachedGeo
 }
 
-function featureBounds(feat: Feature<Geometry>): maplibregl.LngLatBoundsLike | null {
+function featureBounds(feat: Feature<Geometry>): maplibregl.LngLatBounds | null {
   const bounds = new maplibregl.LngLatBounds()
   const g = feat.geometry
   const eachPos = (pos: Position) => bounds.extend([pos[0], pos[1]])
