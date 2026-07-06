@@ -155,13 +155,20 @@ function TravelRequirementsSection({
 }
 
 export function CountryPanel({ country, onClose }: CountryPanelProps) {
+  const [openPlace, setOpenPlace] = useState<PopularPlace | null>(null)
 
   const [primary, , tertiary] = country.flagColors
   const accent = primary === '#FFFFFF' ? tertiary : primary
   const secondaryAccent = tertiary === '#FFFFFF' ? primary : tertiary
 
+  // Reset drill-down when the selected country changes.
+  if (openPlace && !country.popularPlaces.some((p) => p.name === openPlace.name)) {
+    setOpenPlace(null)
+  }
+
   return (
-    <div className="animate-slideIn flex h-full flex-col overflow-hidden">
+    <div className="animate-slideIn relative flex h-full flex-col overflow-hidden">
+
       <div
         className="relative px-6 pb-6 pt-5"
         style={{
