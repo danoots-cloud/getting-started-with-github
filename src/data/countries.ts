@@ -1,3 +1,13 @@
+export interface PopularPlace {
+  name: string
+  description: string
+  // Optional richer detail — populated per-place as we roll it out.
+  coords?: { lat: number; lng: number }
+  temperatures?: { month: string; high: number; low: number }[]
+  precipitation?: number[]
+  photos?: string[]
+}
+
 export interface CountryData {
   name: string
   code: string
@@ -12,7 +22,7 @@ export interface CountryData {
   temperatures: { month: string; high: number; low: number }[]
   precipitation: number[]
   bestTimeToVisit: string
-  popularPlaces: { name: string; description: string }[]
+  popularPlaces: PopularPlace[]
   attractions: { name: string; description: string }[]
   famousMovies: { title: string; year: number; description: string }[]
   popularMusic: { name: string; genre: string }[]
@@ -21,6 +31,7 @@ export interface CountryData {
   popularSouvenirs: { name: string; description: string }[]
   flightTimeFromEWR: string
 }
+
 
 export const countries: Record<string, CountryData> = {
   AT: {
