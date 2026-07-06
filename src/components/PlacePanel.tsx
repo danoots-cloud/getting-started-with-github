@@ -17,6 +17,11 @@ export function PlacePanel({ place, country, onBack, onClose }: PlacePanelProps)
   const accent = primary === '#FFFFFF' ? tertiary : primary
   const secondaryAccent = tertiary === '#FFFFFF' ? primary : tertiary
 
+  const lookup = getPlaceClimate(country.code, place.name)
+  const coords = place.coords ?? lookup?.coords
+  const temperatures = place.temperatures ?? lookup?.temperatures
+  const precipitation = place.precipitation ?? lookup?.precipitation
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onBack()
