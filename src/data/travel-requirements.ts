@@ -539,6 +539,398 @@ export const travelRequirements: Record<string, TravelRequirements> = {
     summary: 'Visa-free up to 30 days; extendable in-country.',
     notes: [PASSPORT_6MO],
   },
+  // ── Remaining countries ─────────────────────────────────────────────────
+  AD: {
+    difficulty: 'moderate',
+    summary: 'Entered via Spain or France — Schengen rules apply.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  AF: {
+    difficulty: 'advance-prep',
+    summary: 'US State Dept Level 4 “Do Not Travel”. US passports valid only with special validation.',
+    notes: ['No US embassy services'],
+  },
+  AI: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days; passport only.',
+    notes: [PASSPORT_6MO],
+  },
+  AM: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 180 days per year.',
+    notes: [PASSPORT_6MO],
+  },
+  AS: {
+    difficulty: 'easy',
+    summary: 'US territory — no passport needed for US citizens.',
+    notes: ['Government photo ID required to fly'],
+  },
+  AZ: {
+    difficulty: 'moderate',
+    summary: 'eVisa required in advance (~$26, 30 days).',
+    notes: [PASSPORT_6MO],
+  },
+  BD: {
+    difficulty: 'advance-prep',
+    summary: 'Visa required in advance from a Bangladeshi mission.',
+    notes: [PASSPORT_6MO, 'Visa on arrival possible for some but not reliable'],
+  },
+  BH: {
+    difficulty: 'moderate',
+    summary: 'eVisa or visa on arrival (~$29, 14 days).',
+    notes: [PASSPORT_6MO],
+  },
+  BI: {
+    difficulty: 'advance-prep',
+    summary: 'Visa required in advance; State Dept Level 3 “Reconsider Travel”.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  BL: {
+    difficulty: 'moderate',
+    summary: 'Entered via French Saint Martin — Schengen ETIAS rules apply to the France leg.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  BQ: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days; passport only.',
+    notes: [PASSPORT_6MO],
+  },
+  BY: {
+    difficulty: 'advance-prep',
+    summary: 'Visa required in advance; State Dept Level 4 “Do Not Travel”.',
+    notes: [PASSPORT_6MO],
+  },
+  CF: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; State Dept Level 4 “Do Not Travel”.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  CK: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 31 days.',
+    notes: [PASSPORT_6MO, 'Onward ticket required'],
+  },
+  CW: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days; ED-Card online form required before arrival.',
+    notes: [PASSPORT_6MO],
+  },
+  DJ: {
+    difficulty: 'moderate',
+    summary: 'eVisa required in advance (~$23, 14–90 days).',
+    notes: [PASSPORT_6MO],
+  },
+  ER: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; internal travel permits also required.',
+    notes: [PASSPORT_6MO, 'Yellow fever proof if arriving from an endemic country'],
+  },
+  FM: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 30 days under Compact of Free Association.',
+    notes: [PASSPORT_6MO],
+  },
+  FO: {
+    difficulty: 'moderate',
+    summary: 'Visa-free up to 90 days; not in Schengen but Nordic policies mirror it.',
+    notes: [PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  GD: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days.',
+    notes: [PASSPORT_6MO],
+  },
+  GF: {
+    difficulty: 'moderate',
+    summary: 'Part of France — Schengen ETIAS rules apply once in force.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN, 'Yellow fever vaccination certificate required'],
+  },
+  GG: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 6 months; not in Schengen.',
+    notes: ['Valid US passport'],
+  },
+  GI: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 6 months; passport only.',
+    notes: ['Valid US passport'],
+  },
+  GN: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa or eVisa required in advance.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  GP: {
+    difficulty: 'moderate',
+    summary: 'Part of France — Schengen ETIAS rules apply once in force.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  GQ: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; process is notoriously difficult.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  GU: {
+    difficulty: 'easy',
+    summary: 'US territory — no passport needed for US citizens.',
+    notes: ['Government photo ID required to fly'],
+  },
+  GW: {
+    difficulty: 'moderate',
+    summary: 'eVisa or visa on arrival at Bissau airport (~$65).',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  IM: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 6 months; Crown Dependency, not in the UK’s ETA scheme for now.',
+    notes: ['Valid US passport'],
+  },
+  IQ: {
+    difficulty: 'moderate',
+    summary: 'eVisa available; State Dept advises against travel outside Kurdistan Region.',
+    notes: [PASSPORT_6MO],
+  },
+  IR: {
+    difficulty: 'advance-prep',
+    summary: 'Level 4 “Do Not Travel”. Tourist visa requires a licensed guide and pre-approval; risk of wrongful detention.',
+    notes: [PASSPORT_6MO, 'No US embassy — Swiss protecting power'],
+  },
+  JE: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 6 months; not in Schengen.',
+    notes: ['Valid US passport'],
+  },
+  KG: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 60 days.',
+    notes: [PASSPORT_6MO],
+  },
+  KI: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days.',
+    notes: [PASSPORT_6MO, 'Onward ticket required'],
+  },
+  KM: {
+    difficulty: 'moderate',
+    summary: 'Visa on arrival (~€30, 45 days).',
+    notes: [PASSPORT_6MO],
+  },
+  KP: {
+    difficulty: 'advance-prep',
+    summary: 'US passports are not valid for travel to North Korea without special State Dept validation.',
+    notes: ['Effectively barred to US tourists'],
+  },
+  KY: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 6 months.',
+    notes: [PASSPORT_6MO, 'Onward ticket required'],
+  },
+  LI: {
+    difficulty: 'moderate',
+    summary: 'Entered via Switzerland or Austria — Schengen rules apply.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  MD: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days in any 180-day period.',
+    notes: [PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  MF: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days; French collectivity outside Schengen for now.',
+    notes: [PASSPORT_6MO],
+  },
+  MH: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days under Compact of Free Association.',
+    notes: [PASSPORT_6MO],
+  },
+  MK: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days in any 180-day period.',
+    notes: [PASSPORT_6MO],
+  },
+  MO: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 30 days.',
+    notes: [PASSPORT_6MO],
+  },
+  MP: {
+    difficulty: 'easy',
+    summary: 'US Commonwealth — no passport needed for US citizens.',
+    notes: ['Government photo ID required to fly'],
+  },
+  MQ: {
+    difficulty: 'moderate',
+    summary: 'Part of France — Schengen ETIAS rules apply once in force.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  MR: {
+    difficulty: 'moderate',
+    summary: 'Visa on arrival at Nouakchott airport (~€55, 30 days).',
+    notes: [PASSPORT_6MO, 'Yellow fever proof if arriving from an endemic country'],
+  },
+  MS: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 6 months; passport only.',
+    notes: [PASSPORT_6MO],
+  },
+  NC: {
+    difficulty: 'moderate',
+    summary: 'French territory — Schengen visa rules apply (US visa-free 90 days).',
+    notes: [PASSPORT_6MO],
+  },
+  NE: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; State Dept Level 4 “Do Not Travel”.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  NR: {
+    difficulty: 'advance-prep',
+    summary: 'Visa required in advance from a Nauruan mission — few travelers ever visit.',
+    notes: [PASSPORT_6MO],
+  },
+  NU: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 30 days.',
+    notes: [PASSPORT_6MO, 'Onward ticket required'],
+  },
+  PG: {
+    difficulty: 'moderate',
+    summary: 'eVisa or visa on arrival at Port Moresby (~$100, 60 days).',
+    notes: [PASSPORT_6MO],
+  },
+  PK: {
+    difficulty: 'moderate',
+    summary: 'eVisa required in advance (~$60, 30–90 days).',
+    notes: [PASSPORT_6MO],
+  },
+  PM: {
+    difficulty: 'moderate',
+    summary: 'Part of France — Schengen ETIAS rules apply once in force.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  PS: {
+    difficulty: 'moderate',
+    summary: 'Entered via Israeli-controlled crossings — Israel policy applies.',
+    notes: [PASSPORT_6MO, 'Expect additional questioning at the border'],
+  },
+  PW: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days under Compact of Free Association.',
+    notes: [PASSPORT_6MO, '$100 Palau Pristine Paradise Environmental Fee at departure'],
+  },
+  SB: {
+    difficulty: 'moderate',
+    summary: 'Visitor permit issued on arrival (~free, 3 months).',
+    notes: [PASSPORT_6MO, 'Yellow fever proof if arriving from an endemic country'],
+  },
+  SM: {
+    difficulty: 'moderate',
+    summary: 'Entered via Italy — Schengen rules apply.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  SO: {
+    difficulty: 'advance-prep',
+    summary: 'State Dept Level 4 “Do Not Travel”; visa on arrival exists but travel is unsafe.',
+    notes: [PASSPORT_6MO],
+  },
+  SS: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; State Dept Level 4 “Do Not Travel” due to armed conflict.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  ST: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 15 days for tourism.',
+    notes: [PASSPORT_6MO],
+  },
+  SX: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days.',
+    notes: [PASSPORT_6MO],
+  },
+  SY: {
+    difficulty: 'advance-prep',
+    summary: 'State Dept Level 4 “Do Not Travel”; no US embassy services.',
+    notes: [PASSPORT_6MO],
+  },
+  TC: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days.',
+    notes: [PASSPORT_6MO],
+  },
+  TD: {
+    difficulty: 'advance-prep',
+    summary: 'Embassy visa required; State Dept advises reconsidering travel.',
+    notes: [PASSPORT_6MO, 'Yellow fever vaccination certificate required'],
+  },
+  TJ: {
+    difficulty: 'moderate',
+    summary: 'eVisa required in advance (~$50, 45 days); GBAO permit needed for the Pamirs.',
+    notes: [PASSPORT_6MO],
+  },
+  TL: {
+    difficulty: 'moderate',
+    summary: 'Visa on arrival at Dili airport ($30, 30 days).',
+    notes: [PASSPORT_6MO],
+  },
+  TM: {
+    difficulty: 'advance-prep',
+    summary: 'Requires a Letter of Invitation and embassy-issued visa; transit visas easier.',
+    notes: [PASSPORT_6MO],
+  },
+  TO: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 31 days.',
+    notes: [PASSPORT_6MO, 'Onward ticket required'],
+  },
+  TV: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 1 month.',
+    notes: [PASSPORT_6MO],
+  },
+  VA: {
+    difficulty: 'moderate',
+    summary: 'Entered via Italy — Schengen rules apply; no separate border.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  VG: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 6 months.',
+    notes: [PASSPORT_6MO, 'Onward ticket required'],
+  },
+  VI: {
+    difficulty: 'easy',
+    summary: 'US territory — no passport needed for US citizens.',
+    notes: ['Government photo ID required to fly'],
+  },
+  WF: {
+    difficulty: 'moderate',
+    summary: 'French territory — visa-free 90 days; hard to reach without long connections.',
+    notes: [PASSPORT_6MO],
+  },
+  XK: {
+    difficulty: 'easy',
+    summary: 'Visa-free up to 90 days in any 180-day period.',
+    notes: [PASSPORT_6MO],
+  },
+  YE: {
+    difficulty: 'advance-prep',
+    summary: 'State Dept Level 4 “Do Not Travel”; no US embassy services.',
+    notes: [PASSPORT_6MO],
+  },
+  YT: {
+    difficulty: 'moderate',
+    summary: 'Part of France — Schengen ETIAS rules apply once in force.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+  RE: {
+    difficulty: 'moderate',
+    summary: 'Part of France — Schengen ETIAS rules apply once in force.',
+    notes: [ETIAS_NOTE, PASSPORT_3MO_BEYOND_SCHENGEN],
+  },
+
 }
 
 
