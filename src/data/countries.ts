@@ -11390,7 +11390,7 @@ export const countries: Record<string, CountryData> = {
       { name: 'Rendezvous Beach', description: 'Only white-sand beach on the island, hike-in' },
     ],
     famousMovies: [
-      { title: 'AIR Studios recordings', year: 'Legendary studio hosted Elton John, Sting, Dire Straits' },
+      { title: 'AIR Studios Montserrat', year: 1979, description: 'Legendary studio hosted Elton John, Sting, and Dire Straits before the 1989 hurricane' },
     ],
     popularMusic: [
       { name: 'Arrow', genre: '“Hot Hot Hot” soca icon' },
