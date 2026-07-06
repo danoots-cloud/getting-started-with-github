@@ -6,6 +6,7 @@ import { AdvisoryBadge } from '@/components/AdvisoryBadge'
 import { TimeDifference } from '@/components/TimeDifference'
 import { PlacePanel } from '@/components/PlacePanel'
 import { climateGlance } from '@/lib/place-climate'
+import { getPlaceClimate } from '@/data/places-climate'
 import {
   MapPin,
   Landmark,
@@ -262,8 +263,11 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
         <Section title="Popular Places" icon={MapPin} accentColor={accent}>
           <div className="space-y-2">
             {country.popularPlaces.map((place) => {
-              const glance = climateGlance(place.temperatures, place.precipitation)
-              const hasDetail = !!(place.coords || place.temperatures)
+              const lookup = getPlaceClimate(country.code, place.name)
+              const temps = place.temperatures ?? lookup?.temperatures
+              const precip = place.precipitation ?? lookup?.precipitation
+              const glance = climateGlance(temps, precip)
+              const hasDetail = !!(place.coords || lookup?.coords || temps)
               return (
                 <button
                   key={place.name}

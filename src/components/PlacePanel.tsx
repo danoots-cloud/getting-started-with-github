@@ -3,6 +3,7 @@ import { ArrowLeft, X, MapPin, Thermometer } from 'lucide-react'
 import type { CountryData, PopularPlace } from '@/data/countries'
 import { TemperatureChart } from '@/components/TemperatureChart'
 import { PlaceMap } from '@/components/PlaceMap'
+import { getPlaceClimate } from '@/data/places-climate'
 
 interface PlacePanelProps {
   place: PopularPlace
@@ -15,6 +16,11 @@ export function PlacePanel({ place, country, onBack, onClose }: PlacePanelProps)
   const [primary, , tertiary] = country.flagColors
   const accent = primary === '#FFFFFF' ? tertiary : primary
   const secondaryAccent = tertiary === '#FFFFFF' ? primary : tertiary
+
+  const lookup = getPlaceClimate(country.code, place.name)
+  const coords = place.coords ?? lookup?.coords
+  const temperatures = place.temperatures ?? lookup?.temperatures
+  const precipitation = place.precipitation ?? lookup?.precipitation
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -61,11 +67,11 @@ export function PlacePanel({ place, country, onBack, onClose }: PlacePanelProps)
       </div>
 
       <div className="flex-1 overflow-y-auto px-6 py-6" style={{ scrollbarGutter: 'stable' }}>
-        {place.coords && (
+        {coords && (
           <div className="mb-6">
             <PlaceMap
               countryCode={country.code}
-              coords={place.coords}
+              coords={coords}
               accentColor={accent}
             />
           </div>
@@ -75,15 +81,15 @@ export function PlacePanel({ place, country, onBack, onClose }: PlacePanelProps)
           {place.description}
         </p>
 
-        {place.temperatures && place.temperatures.length > 0 ? (
+        {temperatures && temperatures.length > 0 ? (
           <div className="mb-6">
             <div className="mb-3 flex items-center gap-2">
               <Thermometer className="h-5 w-5" style={{ color: accent }} />
               <h3 className="text-lg font-semibold text-[#1E2A44]">Climate by Month</h3>
             </div>
             <TemperatureChart
-              temperatures={place.temperatures}
-              precipitation={place.precipitation}
+              temperatures={temperatures}
+              precipitation={precipitation}
               accentColor={accent}
               secondaryColor={secondaryAccent}
             />
