@@ -120,22 +120,45 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
         filter: ['==', ['get', 'code'], countryCode],
       })
 
-      // Fit to country bounds, then add marker for the place.
-      if (target) {
-        const b = featureBounds(target)
-        if (b) map.fitBounds(b, { padding: 24, animate: false, duration: 0 })
+      // Framing: small countries fit fully; huge countries (US, Canada, Russia…)
+      // would render the pin as an invisible dot on the whole outline, so fall
+      // back to a place-centered regional window.
+      const SMALL_COUNTRY_MAX_SPAN_DEG = 12
+      const REGIONAL_RADIUS_DEG = 3.5
+
+      const countryBounds = target ? featureBounds(target) : null
+      let framed = false
+      if (countryBounds) {
+        const sw = countryBounds.getSouthWest()
+        const ne = countryBounds.getNorthEast()
+        const spanLng = Math.abs(ne.lng - sw.lng)
+        const spanLat = Math.abs(ne.lat - sw.lat)
+        if (Math.max(spanLng, spanLat) <= SMALL_COUNTRY_MAX_SPAN_DEG) {
+          map.fitBounds(countryBounds, { padding: 24, animate: false, duration: 0 })
+          framed = true
+        }
+      }
+      if (!framed) {
+        map.fitBounds(
+          [
+            [coords.lng - REGIONAL_RADIUS_DEG, coords.lat - REGIONAL_RADIUS_DEG],
+            [coords.lng + REGIONAL_RADIUS_DEG, coords.lat + REGIONAL_RADIUS_DEG],
+          ],
+          { padding: 16, animate: false, duration: 0 }
+        )
       }
 
-      // Marker dot for the place.
+      // Marker dot for the place — larger with a white ring so it reads on any background.
       const el = document.createElement('div')
       el.style.cssText = `
-        width: 14px; height: 14px; border-radius: 999px;
-        background: ${accentColor}; border: 2px solid #FBF5EC;
-        box-shadow: 0 2px 6px rgba(30,42,68,0.35);
+        width: 16px; height: 16px; border-radius: 999px;
+        background: ${accentColor}; border: 3px solid #FBF5EC;
+        box-shadow: 0 2px 8px rgba(30,42,68,0.5), 0 0 0 1px rgba(30,42,68,0.35);
       `
       new maplibregl.Marker({ element: el, anchor: 'center' })
         .setLngLat([coords.lng, coords.lat])
         .addTo(map)
+
     })
 
     return () => {
