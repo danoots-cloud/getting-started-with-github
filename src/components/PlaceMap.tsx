@@ -1,7 +1,5 @@
-import { useEffect, useRef } from 'react'
-import maplibregl, { type Map as MLMap } from 'maplibre-gl'
+import { useEffect, useMemo, useState } from 'react'
 import type { Feature, FeatureCollection, Geometry, Position } from 'geojson'
-import 'maplibre-gl/dist/maplibre-gl.css'
 
 // Same Natural Earth source as WorldMap — served from jsdelivr CDN, cached.
 const GEO_URL =
@@ -18,6 +16,8 @@ interface PlaceMapProps {
 }
 
 type CountryGeoJSON = FeatureCollection<Geometry, { code: string | null }>
+type ProjectedPoint = { x: number; y: number }
+type ProjectedBounds = { minX: number; minY: number; maxX: number; maxY: number }
 
 let cachedGeo: CountryGeoJSON | null = null
 
@@ -39,145 +39,167 @@ async function loadGeo(): Promise<CountryGeoJSON> {
   return cachedGeo
 }
 
-function featureBounds(feat: Feature<Geometry>): maplibregl.LngLatBounds | null {
-  const bounds = new maplibregl.LngLatBounds()
+function project(pos: Position): ProjectedPoint {
+  const lng = Number(pos[0])
+  const lat = Math.max(-85.05112878, Math.min(85.05112878, Number(pos[1])))
+  const rad = (lat * Math.PI) / 180
+
+  return {
+    x: lng,
+    // Web Mercator, inverted so north is up in SVG coordinates.
+    y: -(Math.log(Math.tan(Math.PI / 4 + rad / 2)) * 180) / Math.PI,
+  }
+}
+
+function extendBounds(bounds: ProjectedBounds, point: ProjectedPoint) {
+  bounds.minX = Math.min(bounds.minX, point.x)
+  bounds.minY = Math.min(bounds.minY, point.y)
+  bounds.maxX = Math.max(bounds.maxX, point.x)
+  bounds.maxY = Math.max(bounds.maxY, point.y)
+}
+
+function featureBounds(feat: Feature<Geometry>): ProjectedBounds | null {
+  const bounds: ProjectedBounds = {
+    minX: Infinity,
+    minY: Infinity,
+    maxX: -Infinity,
+    maxY: -Infinity,
+  }
   const g = feat.geometry
-  const eachPos = (pos: Position) => bounds.extend([pos[0], pos[1]])
+  const eachPos = (pos: Position) => extendBounds(bounds, project(pos))
   const eachRing = (ring: Position[]) => ring.forEach(eachPos)
   const eachPoly = (poly: Position[][]) => poly.forEach(eachRing)
 
   if (g.type === 'Polygon') eachPoly(g.coordinates)
   else if (g.type === 'MultiPolygon') g.coordinates.forEach(eachPoly)
   else return null
-  return bounds
+  return Number.isFinite(bounds.minX) ? bounds : null
+}
+
+function pathForGeometry(g: Geometry): string {
+  const ringPath = (ring: Position[]) =>
+    ring
+      .map((pos, i) => {
+        const p = project(pos)
+        return `${i === 0 ? 'M' : 'L'}${p.x.toFixed(3)} ${p.y.toFixed(3)}`
+      })
+      .join(' ') + ' Z'
+  const polyPath = (poly: Position[][]) => poly.map(ringPath).join(' ')
+
+  if (g.type === 'Polygon') return polyPath(g.coordinates)
+  if (g.type === 'MultiPolygon') return g.coordinates.map(polyPath).join(' ')
+  return ''
 }
 
 export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [geo, setGeo] = useState<CountryGeoJSON | null>(cachedGeo)
 
   useEffect(() => {
-    if (!containerRef.current) return
     let cancelled = false
-    let map: MLMap | null = null
-
-    const map_ = new maplibregl.Map({
-      container: containerRef.current,
-      style: {
-        version: 8,
-        sources: {},
-        layers: [{ id: 'ocean', type: 'background', paint: { 'background-color': COLOR_OCEAN } }],
-        glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
-      },
-      center: [coords.lng, coords.lat],
-      zoom: 1,
-      minZoom: -1.5,
-      maxZoom: 8,
-      renderWorldCopies: false,
-      attributionControl: false,
-      dragRotate: false,
-      pitchWithRotate: false,
-      interactive: false,
-    })
-    map = map_
-
-    map_.on('load', async () => {
-      const geo = await loadGeo()
-      if (cancelled || !map) return
-
-      const target = geo.features.find((f) => f.properties.code === countryCode)
-
-      map.addSource('countries', { type: 'geojson', data: geo })
-
-      // Neighbors: everything except the target country, muted.
-      map.addLayer({
-        id: 'neighbors-fill',
-        type: 'fill',
-        source: 'countries',
-        paint: { 'fill-color': COLOR_LAND_NEIGHBOR, 'fill-opacity': 0.6 },
-        filter: ['!=', ['get', 'code'], countryCode],
-      })
-      map.addLayer({
-        id: 'neighbors-line',
-        type: 'line',
-        source: 'countries',
-        paint: { 'line-color': COLOR_BORDER, 'line-width': 0.4, 'line-opacity': 0.25 },
-        filter: ['!=', ['get', 'code'], countryCode],
-      })
-
-      // Target country highlighted.
-      map.addLayer({
-        id: 'country-fill',
-        type: 'fill',
-        source: 'countries',
-        paint: { 'fill-color': accentColor, 'fill-opacity': 0.65 },
-        filter: ['==', ['get', 'code'], countryCode],
-      })
-      map.addLayer({
-        id: 'country-line',
-        type: 'line',
-        source: 'countries',
-        paint: { 'line-color': COLOR_BORDER, 'line-width': 1.4, 'line-opacity': 0.7 },
-        filter: ['==', ['get', 'code'], countryCode],
-      })
-
-      // Always frame the whole country so the pin's position within it is obvious.
-      // Large, high-latitude countries need sub-zero zoom on narrow portrait screens;
-      // otherwise MapLibre clamps the camera and clips Canada/Russia vertically.
-      const countryBounds = target ? featureBounds(target) : null
-      const fitToWholeCountry = () => {
-        map.resize()
-
-        if (!countryBounds) {
-          map.fitBounds(
-            [
-              [coords.lng - 3.5, coords.lat - 3.5],
-              [coords.lng + 3.5, coords.lat + 3.5],
-            ],
-            { padding: 12, animate: false, duration: 0 }
-          )
-          return
-        }
-
-        countryBounds.extend([coords.lng, coords.lat])
-        map.fitBounds(countryBounds, { padding: 12, animate: false, duration: 0 })
-      }
-
-      if (countryBounds) {
-        fitToWholeCountry()
-
-        // The panel slides in on mobile; run once more after layout settles so the
-        // camera is based on the actual iPhone portrait dimensions.
-        window.requestAnimationFrame(() => {
-          if (!cancelled) fitToWholeCountry()
-        })
-      } else {
-        fitToWholeCountry()
-      }
-
-      // Marker dot — dark navy with white ring so it stays visible on any
-      // country fill color (the accent tint matches the country, so a same-color
-      // marker would disappear).
-      const el = document.createElement('div')
-      el.style.cssText = `
-        width: 18px; height: 18px; border-radius: 999px;
-        background: ${COLOR_BORDER}; border: 3px solid #FBF5EC;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.45), 0 0 0 1.5px rgba(0,0,0,0.35);
-      `
-      new maplibregl.Marker({ element: el, anchor: 'center' })
-        .setLngLat([coords.lng, coords.lat])
-        .addTo(map)
-
+    loadGeo().then((nextGeo) => {
+      if (!cancelled) setGeo(nextGeo)
     })
 
     return () => {
       cancelled = true
-      map_.remove()
     }
-  }, [countryCode, coords.lat, coords.lng, accentColor])
+  }, [])
+
+  const target = useMemo(
+    () => geo?.features.find((f) => f.properties.code === countryCode) ?? null,
+    [countryCode, geo]
+  )
+
+  const mapData = useMemo(() => {
+    const marker = project([coords.lng, coords.lat])
+    const baseBounds = target ? featureBounds(target) : null
+    const bounds = baseBounds
+      ? { ...baseBounds }
+      : {
+          minX: marker.x - 3.5,
+          minY: marker.y - 3.5,
+          maxX: marker.x + 3.5,
+          maxY: marker.y + 3.5,
+        }
+
+    extendBounds(bounds, marker)
+
+    const width = Math.max(bounds.maxX - bounds.minX, 1)
+    const height = Math.max(bounds.maxY - bounds.minY, 1)
+    const padX = Math.max(width * 0.08, 1)
+    const padY = Math.max(height * 0.08, 1)
+    const viewBoxWidth = width + padX * 2
+    const viewBoxHeight = height + padY * 2
+    const markerRadius = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.012, 0.5)
+    const lineWidth = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.0022, 0.18)
+
+    return {
+      marker,
+      markerRadius,
+      lineWidth,
+      viewBox: `${bounds.minX - padX} ${bounds.minY - padY} ${viewBoxWidth} ${viewBoxHeight}`,
+    }
+  }, [coords.lat, coords.lng, target])
 
   return (
-    <div className="relative w-full overflow-hidden rounded-xl border border-[#1E2A44]/10" style={{ aspectRatio: '16 / 10' }}>
-      <div ref={containerRef} style={{ position: 'absolute', inset: 0, background: COLOR_OCEAN }} />
+    <div className="relative w-full overflow-hidden rounded-xl border border-[#1E2A44]/10" style={{ aspectRatio: '4 / 3' }}>
+      <svg
+        role="img"
+        aria-label={`Map showing this place within ${countryCode}`}
+        viewBox={mapData.viewBox}
+        preserveAspectRatio="xMidYMid meet"
+        className="absolute inset-0 h-full w-full"
+        style={{ background: COLOR_OCEAN }}
+      >
+        {geo?.features.map((feature) => {
+          const isTarget = feature.properties.code === countryCode
+          if (isTarget) return null
+          const path = pathForGeometry(feature.geometry)
+          if (!path) return null
+          return (
+            <path
+              key={feature.properties.code ?? path.slice(0, 24)}
+              d={path}
+              fill={COLOR_LAND_NEIGHBOR}
+              fillOpacity={0.58}
+              fillRule="evenodd"
+              stroke={COLOR_BORDER}
+              strokeOpacity={0.22}
+              strokeWidth={mapData.lineWidth * 0.55}
+              vectorEffect="non-scaling-stroke"
+            />
+          )
+        })}
+
+        {target && (
+          <path
+            d={pathForGeometry(target.geometry)}
+            fill={accentColor}
+            fillOpacity={0.68}
+            fillRule="evenodd"
+            stroke={COLOR_BORDER}
+            strokeOpacity={0.75}
+            strokeWidth={mapData.lineWidth}
+            vectorEffect="non-scaling-stroke"
+          />
+        )}
+
+        <circle
+          cx={mapData.marker.x}
+          cy={mapData.marker.y}
+          r={mapData.markerRadius * 1.35}
+          fill="#FBF5EC"
+          stroke={COLOR_BORDER}
+          strokeOpacity={0.28}
+          strokeWidth={mapData.markerRadius * 0.35}
+        />
+        <circle
+          cx={mapData.marker.x}
+          cy={mapData.marker.y}
+          r={mapData.markerRadius}
+          fill={COLOR_BORDER}
+        />
+      </svg>
     </div>
   )
 }
