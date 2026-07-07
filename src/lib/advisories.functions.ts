@@ -73,24 +73,45 @@ async function fetchAndParse(): Promise<Record<string, Advisory>> {
     const t = String(item.title ?? '')
     const m = titleRe.exec(t)
     if (!m) continue
-    const rawName = m[1].trim()
+    let rawName = m[1].trim()
+    // Strip common suffixes from feed titles.
+    rawName = rawName
+      .replace(/\s*[-–]\s*see summaries\s*$/i, '')
+      .replace(/\s+travel advisory\s*$/i, '')
+      .trim()
     const level = Number(m[2]) as 1 | 2 | 3 | 4
     const norm = normalize(rawName)
-    const code = NAME_TO_CODE[norm] ?? ALIASES[norm]
-    if (!code) continue
+
+    // Some feed entries cover multiple destinations (e.g. "Mainland China,
+    // Hong Kong & Macau"). Expand to each ISO code the app knows about.
+    const codes: string[] = []
+    const direct = NAME_TO_CODE[norm] ?? ALIASES[norm]
+    if (direct) {
+      codes.push(direct)
+    } else {
+      if (/\bmainland china\b/.test(norm)) codes.push('CN')
+      if (/\bhong kong\b/.test(norm)) codes.push('HK')
+      if (/\bmacau\b/.test(norm)) codes.push('MO')
+    }
+    if (codes.length === 0) continue
+
     const link = String(item.link ?? '')
     const pub = String(item.pubDate ?? '')
     const parsedDate = pub ? new Date(pub) : null
-    out[code] = {
-      level,
-      title: SHORT_TITLES[level],
-      url: link,
-      updatedAt:
-        parsedDate && !isNaN(parsedDate.getTime())
-          ? parsedDate.toISOString()
-          : '',
+    const updatedAt =
+      parsedDate && !isNaN(parsedDate.getTime())
+        ? parsedDate.toISOString()
+        : ''
+    for (const code of codes) {
+      out[code] = {
+        level,
+        title: SHORT_TITLES[level],
+        url: link,
+        updatedAt,
+      }
     }
   }
+
   return out
 }
 
