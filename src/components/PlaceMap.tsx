@@ -120,29 +120,15 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
         filter: ['==', ['get', 'code'], countryCode],
       })
 
-      // Framing: small countries fit fully; huge countries (US, Canada, Russia…)
-      // would render the pin as an invisible dot on the whole outline, so fall
-      // back to a place-centered regional window.
-      const SMALL_COUNTRY_MAX_SPAN_DEG = 12
-      const REGIONAL_RADIUS_DEG = 3.5
-
+      // Always frame the whole country so the pin's position within it is obvious.
       const countryBounds = target ? featureBounds(target) : null
-      let framed = false
       if (countryBounds) {
-        const sw = countryBounds.getSouthWest()
-        const ne = countryBounds.getNorthEast()
-        const spanLng = Math.abs(ne.lng - sw.lng)
-        const spanLat = Math.abs(ne.lat - sw.lat)
-        if (Math.max(spanLng, spanLat) <= SMALL_COUNTRY_MAX_SPAN_DEG) {
-          map.fitBounds(countryBounds, { padding: 24, animate: false, duration: 0 })
-          framed = true
-        }
-      }
-      if (!framed) {
+        map.fitBounds(countryBounds, { padding: 24, animate: false, duration: 0 })
+      } else {
         map.fitBounds(
           [
-            [coords.lng - REGIONAL_RADIUS_DEG, coords.lat - REGIONAL_RADIUS_DEG],
-            [coords.lng + REGIONAL_RADIUS_DEG, coords.lat + REGIONAL_RADIUS_DEG],
+            [coords.lng - 3.5, coords.lat - 3.5],
+            [coords.lng + 3.5, coords.lat + 3.5],
           ],
           { padding: 16, animate: false, duration: 0 }
         )
