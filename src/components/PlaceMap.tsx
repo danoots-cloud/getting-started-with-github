@@ -69,8 +69,8 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
         glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
       },
       center: [coords.lng, coords.lat],
-      zoom: 3,
-      minZoom: 1,
+      zoom: 1,
+      minZoom: -1.5,
       maxZoom: 8,
       renderWorldCopies: false,
       attributionControl: false,
@@ -121,17 +121,37 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
       })
 
       // Always frame the whole country so the pin's position within it is obvious.
+      // Large, high-latitude countries need sub-zero zoom on narrow portrait screens;
+      // otherwise MapLibre clamps the camera and clips Canada/Russia vertically.
       const countryBounds = target ? featureBounds(target) : null
+      const fitToWholeCountry = () => {
+        map.resize()
+
+        if (!countryBounds) {
+          map.fitBounds(
+            [
+              [coords.lng - 3.5, coords.lat - 3.5],
+              [coords.lng + 3.5, coords.lat + 3.5],
+            ],
+            { padding: 12, animate: false, duration: 0 }
+          )
+          return
+        }
+
+        countryBounds.extend([coords.lng, coords.lat])
+        map.fitBounds(countryBounds, { padding: 12, animate: false, duration: 0 })
+      }
+
       if (countryBounds) {
-        map.fitBounds(countryBounds, { padding: 24, animate: false, duration: 0 })
+        fitToWholeCountry()
+
+        // The panel slides in on mobile; run once more after layout settles so the
+        // camera is based on the actual iPhone portrait dimensions.
+        window.requestAnimationFrame(() => {
+          if (!cancelled) fitToWholeCountry()
+        })
       } else {
-        map.fitBounds(
-          [
-            [coords.lng - 3.5, coords.lat - 3.5],
-            [coords.lng + 3.5, coords.lat + 3.5],
-          ],
-          { padding: 16, animate: false, duration: 0 }
-        )
+        fitToWholeCountry()
       }
 
       // Marker dot — dark navy with white ring so it stays visible on any
