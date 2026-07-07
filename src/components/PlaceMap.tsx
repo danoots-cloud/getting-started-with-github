@@ -151,14 +151,14 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
         className="absolute inset-0 h-full w-full"
         style={{ background: COLOR_OCEAN }}
       >
-        {geo?.features.map((feature) => {
+        {geo?.features.map((feature, index) => {
           const isTarget = feature.properties.code === countryCode
           if (isTarget) return null
           const path = pathForGeometry(feature.geometry)
           if (!path) return null
           return (
             <path
-              key={feature.properties.code ?? path.slice(0, 24)}
+              key={feature.properties.code ?? `${index}-${path.slice(0, 24)}`}
               d={path}
               fill={COLOR_LAND_NEIGHBOR}
               fillOpacity={0.58}
