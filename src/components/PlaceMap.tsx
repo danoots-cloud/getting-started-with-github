@@ -134,12 +134,14 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
         )
       }
 
-      // Marker dot for the place — larger with a white ring so it reads on any background.
+      // Marker dot — dark navy with white ring so it stays visible on any
+      // country fill color (the accent tint matches the country, so a same-color
+      // marker would disappear).
       const el = document.createElement('div')
       el.style.cssText = `
-        width: 16px; height: 16px; border-radius: 999px;
-        background: ${accentColor}; border: 3px solid #FBF5EC;
-        box-shadow: 0 2px 8px rgba(30,42,68,0.5), 0 0 0 1px rgba(30,42,68,0.35);
+        width: 18px; height: 18px; border-radius: 999px;
+        background: ${COLOR_BORDER}; border: 3px solid #FBF5EC;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.45), 0 0 0 1.5px rgba(0,0,0,0.35);
       `
       new maplibregl.Marker({ element: el, anchor: 'center' })
         .setLngLat([coords.lng, coords.lat])
