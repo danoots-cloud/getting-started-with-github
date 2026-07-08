@@ -23,7 +23,21 @@ export interface CountryData {
   precipitation: number[]
   bestTimeToVisit: string
   popularPlaces: PopularPlace[]
-  attractions: { name: string; description: string }[]
+  attractions: {
+    name: string
+    description: string
+    entityId?: string
+    wikidataId?: string
+    imageUrl?: string
+    imagePageUrl?: string
+    imageCreator?: string
+    imageLicense?: string
+    imageLicenseUrl?: string
+    imageAttribution?: string
+    annualVisitors?: number
+    annualVisitorsYear?: number
+    annualVisitorsSourceUrl?: string
+  }[]
   famousMovies: { title: string; year: number; description: string }[]
   popularMusic: { name: string; genre: string }[]
   celebrities: { name: string; field: string }[]
