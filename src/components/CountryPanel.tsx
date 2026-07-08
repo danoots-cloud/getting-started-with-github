@@ -439,6 +439,15 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
           onClose={onClose}
         />
       )}
+
+      {openAttraction && (
+        <AttractionPanel
+          attraction={openAttraction}
+          country={country}
+          onBack={() => setOpenAttraction(null)}
+          onClose={onClose}
+        />
+      )}
     </div>
   )
 }
