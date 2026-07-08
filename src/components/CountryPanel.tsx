@@ -5,6 +5,7 @@ import { Flag } from '@/components/Flag'
 import { AdvisoryBadge } from '@/components/AdvisoryBadge'
 import { TimeDifference } from '@/components/TimeDifference'
 import { PlacePanel } from '@/components/PlacePanel'
+import { AttractionPanel } from '@/components/AttractionPanel'
 import { climateGlance } from '@/lib/place-climate'
 import { getPlaceClimate } from '@/data/places-climate'
 import {
