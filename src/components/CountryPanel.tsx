@@ -155,8 +155,11 @@ function TravelRequirementsSection({
   )
 }
 
+type Attraction = CountryData['attractions'][number]
+
 export function CountryPanel({ country, onClose }: CountryPanelProps) {
   const [openPlace, setOpenPlace] = useState<PopularPlace | null>(null)
+  const [openAttraction, setOpenAttraction] = useState<Attraction | null>(null)
 
   const [primary, , tertiary] = country.flagColors
   const accent = primary === '#FFFFFF' ? tertiary : primary
@@ -165,6 +168,12 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
   // Reset drill-down when the selected country changes.
   if (openPlace && !country.popularPlaces.some((p) => p.name === openPlace.name)) {
     setOpenPlace(null)
+  }
+  if (
+    openAttraction &&
+    !country.attractions.some((a) => a.name === openAttraction.name)
+  ) {
+    setOpenAttraction(null)
   }
 
   return (
