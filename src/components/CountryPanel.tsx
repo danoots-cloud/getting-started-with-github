@@ -305,17 +305,80 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
 
         <Section title="Top Attractions" icon={Camera} accentColor={accent}>
           <div className="space-y-2">
-            {country.attractions.map((a) => (
-              <div
-                key={a.name}
-                className="rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-3 shadow-sm shadow-[#F2A65A]/15"
-              >
-                <div className="font-semibold text-[#1E2A44]">{a.name}</div>
-                <div className="mt-0.5 text-sm text-[#1E2A44]/65">
-                  {a.description}
+            {country.attractions.map((a) => {
+              const formatVisitors = (n: number) => {
+                if (n >= 1_000_000) {
+                  const v = n / 1_000_000
+                  return `${v >= 10 ? v.toFixed(0) : v.toFixed(1).replace(/\.0$/, '')}M`
+                }
+                if (n >= 1_000) {
+                  const v = n / 1_000
+                  return `${v >= 10 ? v.toFixed(0) : v.toFixed(1).replace(/\.0$/, '')}K`
+                }
+                return n.toLocaleString()
+              }
+              const visitorText =
+                a.annualVisitors !== undefined
+                  ? `${formatVisitors(a.annualVisitors)} annual visitors${
+                      a.annualVisitorsYear ? ` (${a.annualVisitorsYear})` : ''
+                    }`
+                  : null
+              return (
+                <div
+                  key={a.name}
+                  className="overflow-hidden rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 shadow-sm shadow-[#F2A65A]/15"
+                >
+                  {a.imageUrl && (
+                    <div className="aspect-[16/9] w-full overflow-hidden bg-[#1E2A44]/5">
+                      <img
+                        src={a.imageUrl}
+                        alt={a.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="px-4 py-3">
+                    <div className="font-semibold text-[#1E2A44]">{a.name}</div>
+                    <div className="mt-0.5 text-sm text-[#1E2A44]/65">
+                      {a.description}
+                    </div>
+                    {visitorText && (
+                      <div className="mt-1.5 text-xs font-medium text-[#1E2A44]/60">
+                        {a.annualVisitorsSourceUrl ? (
+                          <a
+                            href={a.annualVisitorsSourceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-dotted underline-offset-2 hover:text-[#1E2A44]"
+                          >
+                            {visitorText}
+                          </a>
+                        ) : (
+                          visitorText
+                        )}
+                      </div>
+                    )}
+                    {a.imageUrl && a.imageAttribution && (
+                      <div className="mt-2 text-[10px] leading-tight text-[#1E2A44]/40">
+                        {a.imagePageUrl ? (
+                          <a
+                            href={a.imagePageUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-[#1E2A44]/70 hover:underline"
+                          >
+                            {a.imageAttribution}
+                          </a>
+                        ) : (
+                          a.imageAttribution
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </Section>
 
