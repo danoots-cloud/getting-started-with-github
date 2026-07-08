@@ -5,6 +5,7 @@ import { Flag } from '@/components/Flag'
 import { AdvisoryBadge } from '@/components/AdvisoryBadge'
 import { TimeDifference } from '@/components/TimeDifference'
 import { PlacePanel } from '@/components/PlacePanel'
+import { AttractionPanel } from '@/components/AttractionPanel'
 import { climateGlance } from '@/lib/place-climate'
 import { getPlaceClimate } from '@/data/places-climate'
 import {
@@ -155,8 +156,11 @@ function TravelRequirementsSection({
   )
 }
 
+type Attraction = CountryData['attractions'][number]
+
 export function CountryPanel({ country, onClose }: CountryPanelProps) {
   const [openPlace, setOpenPlace] = useState<PopularPlace | null>(null)
+  const [openAttraction, setOpenAttraction] = useState<Attraction | null>(null)
 
   const [primary, , tertiary] = country.flagColors
   const accent = primary === '#FFFFFF' ? tertiary : primary
@@ -165,6 +169,12 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
   // Reset drill-down when the selected country changes.
   if (openPlace && !country.popularPlaces.some((p) => p.name === openPlace.name)) {
     setOpenPlace(null)
+  }
+  if (
+    openAttraction &&
+    !country.attractions.some((a) => a.name === openAttraction.name)
+  ) {
+    setOpenAttraction(null)
   }
 
   return (
@@ -305,80 +315,22 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
 
         <Section title="Top Attractions" icon={Camera} accentColor={accent}>
           <div className="space-y-2">
-            {country.attractions.map((a) => {
-              const formatVisitors = (n: number) => {
-                if (n >= 1_000_000) {
-                  const v = n / 1_000_000
-                  return `${v >= 10 ? v.toFixed(0) : v.toFixed(1).replace(/\.0$/, '')}M`
-                }
-                if (n >= 1_000) {
-                  const v = n / 1_000
-                  return `${v >= 10 ? v.toFixed(0) : v.toFixed(1).replace(/\.0$/, '')}K`
-                }
-                return n.toLocaleString()
-              }
-              const visitorText =
-                a.annualVisitors !== undefined
-                  ? `${formatVisitors(a.annualVisitors)} annual visitors${
-                      a.annualVisitorsYear ? ` (${a.annualVisitorsYear})` : ''
-                    }`
-                  : null
-              return (
-                <div
-                  key={a.name}
-                  className="overflow-hidden rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 shadow-sm shadow-[#F2A65A]/15"
-                >
-                  {a.imageUrl && (
-                    <div className="aspect-[16/9] w-full overflow-hidden bg-[#1E2A44]/5">
-                      <img
-                        src={a.imageUrl}
-                        alt={a.name}
-                        loading="lazy"
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  )}
-                  <div className="px-4 py-3">
-                    <div className="font-semibold text-[#1E2A44]">{a.name}</div>
-                    <div className="mt-0.5 text-sm text-[#1E2A44]/65">
-                      {a.description}
-                    </div>
-                    {visitorText && (
-                      <div className="mt-1.5 text-xs font-medium text-[#1E2A44]/60">
-                        {a.annualVisitorsSourceUrl ? (
-                          <a
-                            href={a.annualVisitorsSourceUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline decoration-dotted underline-offset-2 hover:text-[#1E2A44]"
-                          >
-                            {visitorText}
-                          </a>
-                        ) : (
-                          visitorText
-                        )}
-                      </div>
-                    )}
-                    {a.imageUrl && a.imageAttribution && (
-                      <div className="mt-2 text-[10px] leading-tight text-[#1E2A44]/40">
-                        {a.imagePageUrl ? (
-                          <a
-                            href={a.imagePageUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#1E2A44]/70 hover:underline"
-                          >
-                            {a.imageAttribution}
-                          </a>
-                        ) : (
-                          a.imageAttribution
-                        )}
-                      </div>
-                    )}
+            {country.attractions.map((a) => (
+              <button
+                key={a.name}
+                type="button"
+                onClick={() => setOpenAttraction(a)}
+                className="group flex w-full items-center gap-3 rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-3 text-left shadow-sm shadow-[#F2A65A]/15 transition-all hover:border-[#1E2A44]/25 hover:bg-[#FBF5EC] hover:shadow-md"
+              >
+                <div className="min-w-0 flex-1">
+                  <div className="font-semibold text-[#1E2A44]">{a.name}</div>
+                  <div className="mt-0.5 text-sm text-[#1E2A44]/65">
+                    {a.description}
                   </div>
                 </div>
-              )
-            })}
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#1E2A44]/50 transition-transform group-hover:translate-x-0.5" />
+              </button>
+            ))}
           </div>
         </Section>
 
@@ -484,6 +436,15 @@ export function CountryPanel({ country, onClose }: CountryPanelProps) {
           place={openPlace}
           country={country}
           onBack={() => setOpenPlace(null)}
+          onClose={onClose}
+        />
+      )}
+
+      {openAttraction && (
+        <AttractionPanel
+          attraction={openAttraction}
+          country={country}
+          onBack={() => setOpenAttraction(null)}
           onClose={onClose}
         />
       )}
