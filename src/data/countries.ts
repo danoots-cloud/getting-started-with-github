@@ -39,6 +39,8 @@ export interface CountryData {
     annualVisitors?: number
     annualVisitorsYear?: number
     annualVisitorsSourceUrl?: string
+    bestWeatherMonths?: string
+    goodWeatherMonths?: string
   }[]
   famousMovies: { title: string; year: number; description: string }[]
   popularMusic: { name: string; genre: string }[]
