@@ -288,7 +288,17 @@ export function CountryPanel({ country, onClose, recommendedPlaceName, recommend
                   className="group flex w-full items-center gap-3 rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-3 text-left shadow-sm shadow-[#F2A65A]/15 transition-all hover:border-[#1E2A44]/25 hover:bg-[#FBF5EC] hover:shadow-md"
                 >
                   <div className="min-w-0 flex-1">
-                    <div className="font-semibold text-[#1E2A44]">{place.name}</div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="font-semibold text-[#1E2A44]">{place.name}</span>
+                      {recommendedPlaceName === place.name && recommendationMonthName && (
+                        <span
+                          className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white"
+                          style={{ backgroundColor: '#E86A5C' }}
+                        >
+                          Recommended for {recommendationMonthName}
+                        </span>
+                      )}
+                    </div>
                     <div className="mt-0.5 text-sm text-[#1E2A44]/65">
                       {place.description}
                     </div>
