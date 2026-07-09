@@ -3079,7 +3079,7 @@ export const countries: Record<string, CountryData> = {
     popularPlaces: [
       { name: 'Beijing', description: 'Imperial capital with the Forbidden City and ancient hutongs', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun" },
       { name: 'Shanghai', description: 'Futuristic skyline on the Bund with vibrant nightlife and dining', bestWeatherMonths: "Apr–May, Oct–Nov", goodWeatherMonths: "Mar, Sep" },
-      { name: 'Xi\'an', description: 'Home of the Terracotta Warriors and ancient Silk Road starting point' },
+      { name: 'Xi\'an', description: 'Home of the Terracotta Warriors and ancient Silk Road starting point', bestWeatherMonths: "Mar–May, Sep–Oct", goodWeatherMonths: "Jun, Nov" },
       { name: 'Guilin', description: 'Surreal karst landscapes along the Li River', bestWeatherMonths: "Oct–Dec", goodWeatherMonths: "Feb–Apr, Sep" },
       { name: 'Chengdu', description: 'Panda capital with legendary Sichuan cuisine and tea houses', bestWeatherMonths: "Mar–May, Sep–Nov", goodWeatherMonths: "Feb, Jun, Dec" },
     ],
@@ -14839,7 +14839,7 @@ export const countries: Record<string, CountryData> = {
     precipitation: [84, 58, 65, 73, 79, 152, 183, 195, 190, 205, 194, 137],
     bestTimeToVisit: 'January–April (dry season)',
     popularPlaces: [
-      { name: 'St. George\'s', description: 'Horseshoe-harbor capital of colorful houses' },
+      { name: 'St. George\'s', description: 'Horseshoe-harbor capital of colorful houses', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
       { name: 'Grand Anse', description: '2-mile crescent beach south of the capital', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
     ],
     attractions: [
@@ -17783,7 +17783,7 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 1, 2, 7, 22, 34, 80, 124, 62, 19, 1, 0],
     bestTimeToVisit: 'November–February',
     popularPlaces: [
-      { name: 'N\'Djamena', description: 'Sahel capital across from Cameroon' },
+      { name: 'N\'Djamena', description: 'Sahel capital across from Cameroon', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
       { name: 'Zakouma National Park', description: 'One of Africa’s great wildlife comeback stories', bestWeatherMonths: "Jan, Aug, Oct–Dec", goodWeatherMonths: "Feb, Jun–Jul, Sep" },
     ],
     attractions: [
@@ -18197,7 +18197,7 @@ export const countries: Record<string, CountryData> = {
     precipitation: [74, 62, 56, 59, 40, 34, 13, 21, 80, 88, 118, 94],
     bestTimeToVisit: 'October–April (fewer crowds)',
     popularPlaces: [
-      { name: 'St. Peter\'s Square', description: 'Bernini’s embracing colonnade' },
+      { name: 'St. Peter\'s Square', description: 'Bernini’s embracing colonnade', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec" },
       { name: 'Vatican Museums', description: 'Miles of galleries ending at the Sistine Chapel', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec" },
     ],
     attractions: [
@@ -18533,7 +18533,7 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 8, 20, 25, 28, 17, 21, 28, 20, 10, 6, 4],
     bestTimeToVisit: 'Travel not advised — Level 4',
     popularPlaces: [
-      { name: 'Sana\'a', description: 'Old city of gingerbread tower-houses (UNESCO)' },
+      { name: 'Sana\'a', description: 'Old city of gingerbread tower-houses (UNESCO)', bestWeatherMonths: "Jan–Dec" },
       { name: 'Socotra', description: 'Otherworldly island of dragon-blood trees', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Jul–Nov" },
     ],
     attractions: [
