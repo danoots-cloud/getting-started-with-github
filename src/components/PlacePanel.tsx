@@ -81,6 +81,29 @@ export function PlacePanel({ place, country, onBack, onClose }: PlacePanelProps)
           {place.description}
         </p>
 
+        {place.bestWeatherMonths && (
+          <div
+            className="mb-6 flex items-start gap-3 rounded-xl border px-4 py-3"
+            style={{ borderColor: accent + '40', backgroundColor: accent + '14' }}
+          >
+            <CalendarHeart className="mt-0.5 h-5 w-5 shrink-0" style={{ color: accent }} />
+            <div>
+              <div className="text-xs font-medium uppercase tracking-wider text-[#1E2A44]/50">
+                Most comfortable weather
+              </div>
+              <div className="text-sm font-semibold text-[#1E2A44]">
+                {place.bestWeatherMonths}
+              </div>
+              {place.goodWeatherMonths && (
+                <div className="mt-0.5 text-xs text-[#1E2A44]/60">
+                  Also pleasant: {place.goodWeatherMonths}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+
         {temperatures && temperatures.length > 0 ? (
           <div className="mb-6">
             <div className="mb-3 flex items-center gap-2">
