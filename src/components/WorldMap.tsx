@@ -53,7 +53,51 @@ async function loadCountriesGeoJSON(): Promise<CountryGeoJSON> {
       id: alpha2 ?? `x${idx}`,
       geometry: f.geometry,
       properties: { name, code: alpha2, hasData },
-    }
+}
+
+type FillExpr = maplibregl.DataDrivenPropertyValueSpecification<string> | string
+
+function buildFillExpression(
+  flagColors: [string, string, string] | null,
+  eligible?: Set<string> | null,
+): FillExpr {
+  const selected = flagColors?.[0] ?? COLOR_LAND_HOVER
+  if (eligible) {
+    const codes = Array.from(eligible)
+    return [
+      'case',
+      ['boolean', ['feature-state', 'selected'], false], selected,
+      ['boolean', ['feature-state', 'hover'], false], COLOR_LAND_HOVER,
+      ['in', ['get', 'code'], ['literal', codes]], COLOR_LAND_DATA,
+      COLOR_LAND_EMPTY,
+    ] as unknown as FillExpr
+  }
+  return [
+    'case',
+    ['boolean', ['feature-state', 'selected'], false], selected,
+    ['boolean', ['feature-state', 'hover'], false], COLOR_LAND_HOVER,
+    ['get', 'hasData'], COLOR_LAND_DATA,
+    COLOR_LAND_EMPTY,
+  ] as unknown as FillExpr
+}
+
+function buildFillOpacityExpression(
+  eligible?: Set<string> | null,
+): maplibregl.DataDrivenPropertyValueSpecification<number> {
+  if (eligible) {
+    const codes = Array.from(eligible)
+    return [
+      'case',
+      ['in', ['get', 'code'], ['literal', codes]], 0.92,
+      0.18,
+    ] as unknown as maplibregl.DataDrivenPropertyValueSpecification<number>
+  }
+  return [
+    'case',
+    ['get', 'hasData'], 0.92,
+    0.55,
+  ] as unknown as maplibregl.DataDrivenPropertyValueSpecification<number>
+}
   })
 
   cachedGeo = { type: 'FeatureCollection', features }
