@@ -22,6 +22,11 @@ interface WorldMapProps {
   onCountryClick: (countryCode: string, countryName: string) => void
   selectedCountry: string | null
   flagColors: [string, string, string] | null
+  /**
+   * When provided, only these country codes are clickable/highlighted.
+   * Non-listed countries render as muted geographic context.
+   */
+  eligibleCountries?: Set<string> | null
 }
 
 type CountryGeoJSON = FeatureCollection<Geometry, { name: string; code: string | null; hasData: boolean }>
