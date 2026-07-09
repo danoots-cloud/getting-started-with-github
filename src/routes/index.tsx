@@ -1,13 +1,22 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { WorldMap } from "@/components/WorldMap";
 import { CountryPanel } from "@/components/CountryPanel";
 import { Flag } from "@/components/Flag";
+import { RecommendationFilters } from "@/components/RecommendationFilters";
 import { countries } from "@/data/countries";
 import type { CountryData } from "@/data/countries";
-import { Plane } from "lucide-react";
+import { Plane, Sparkles } from "lucide-react";
 import logoUrl from "@/assets/logo-nj-to-anywhere.png";
 import { getTravelAdvisories } from "@/lib/advisories.functions";
+import {
+  getDestinationRecommendations,
+  MONTH_NAMES,
+  type RecommendationFilters as Filters,
+  type DestinationRecommendation,
+} from "@/lib/destinationRecommendations";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,7 +39,6 @@ export const Route = createFileRoute("/")({
     ],
   }),
   loader: ({ context }) => {
-    // Non-blocking prefetch so panels show advisories instantly on first click.
     context.queryClient.prefetchQuery({
       queryKey: ["travel-advisories"],
       queryFn: () => getTravelAdvisories(),
@@ -46,15 +54,47 @@ function Home() {
   );
   const [selectedCode, setSelectedCode] = useState<string | null>(null);
 
+  const [recoActive, setRecoActive] = useState(false);
+  const [filters, setFilters] = useState<Filters>({
+    month: new Date().getMonth() + 1,
+    maxFlightHours: 8,
+    advisoryPreference: "levels-1-2",
+  });
+
+  const fetchAdvisories = useServerFn(getTravelAdvisories);
+  const advisoriesQuery = useQuery({
+    queryKey: ["travel-advisories"],
+    queryFn: () => fetchAdvisories(),
+    staleTime: 6 * 60 * 60 * 1000,
+    gcTime: 12 * 60 * 60 * 1000,
+  });
+
+  const recommendations: DestinationRecommendation[] = useMemo(() => {
+    if (!recoActive) return [];
+    return getDestinationRecommendations(filters, advisoriesQuery.data);
+  }, [recoActive, filters, advisoriesQuery.data]);
+
+  const eligibleCountries = useMemo(() => {
+    if (!recoActive) return null;
+    return new Set(recommendations.map((r) => r.countryCode));
+  }, [recoActive, recommendations]);
+
+  const recoByCode = useMemo(() => {
+    const m = new Map<string, DestinationRecommendation>();
+    for (const r of recommendations) m.set(r.countryCode, r);
+    return m;
+  }, [recommendations]);
+
   const handleCountryClick = useCallback(
     (code: string, _name: string) => {
+      if (recoActive && !recoByCode.has(code)) return;
       const data = countries[code];
       if (data) {
         setSelectedCountry(data);
         setSelectedCode(code);
       }
     },
-    []
+    [recoActive, recoByCode]
   );
 
   const handleClose = useCallback(() => {
@@ -62,7 +102,14 @@ function Home() {
     setSelectedCode(null);
   }, []);
 
+  const clearReco = useCallback(() => {
+    setRecoActive(false);
+  }, []);
+
   const flagColors = selectedCountry?.flagColors ?? null;
+  const monthName = MONTH_NAMES[filters.month - 1];
+
+  const selectedReco = selectedCode ? recoByCode.get(selectedCode) : undefined;
 
   return (
     <div
@@ -73,7 +120,6 @@ function Home() {
           : "#FBF5EC",
       }}
     >
-      {/* Warm sunset atmospheric backdrop */}
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-0"
@@ -96,11 +142,12 @@ function Home() {
           </a>
           <div className="flex items-center gap-2 text-sm text-[#1E2A44]/60">
             <Plane className="h-4 w-4 text-[#E86A5C]" />
-            <span className="hidden sm:inline">Click a country to explore</span>
+            <span className="hidden sm:inline">
+              {recoActive ? "Recommendation mode" : "Click a country to explore"}
+            </span>
           </div>
         </div>
       </header>
-
 
       {!selectedCountry && (
         <div className="relative z-10 px-4 pb-2 pt-6 text-center sm:px-6 sm:pt-8">
@@ -122,15 +169,80 @@ function Home() {
           }`}
         >
           <div className="mx-auto max-w-6xl px-2 py-4 sm:px-4">
+            {!selectedCountry && (
+              <div className="mb-4 px-2">
+                <RecommendationFilters
+                  filters={filters}
+                  onChange={setFilters}
+                  active={recoActive}
+                  onActivate={() => setRecoActive(true)}
+                  onClear={clearReco}
+                  resultCount={recoActive ? recommendations.length : null}
+                  advisoriesLoading={advisoriesQuery.isLoading}
+                />
+              </div>
+            )}
+
             <div className="overflow-hidden rounded-2xl border border-[#1E2A44]/10 bg-[#FBF5EC]/70 shadow-xl shadow-[#E86A5C]/10 backdrop-blur-sm">
               <WorldMap
                 onCountryClick={handleCountryClick}
                 selectedCountry={selectedCode}
                 flagColors={flagColors}
+                eligibleCountries={eligibleCountries}
               />
             </div>
 
-            {!selectedCountry && (
+            {!selectedCountry && recoActive && (
+              <div className="mt-6 px-2">
+                <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[#E86A5C]">
+                  <Sparkles className="h-4 w-4" />
+                  Recommended destinations · {monthName}
+                </h3>
+                {recommendations.length === 0 ? (
+                  <p className="rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/75 px-4 py-6 text-center text-sm text-[#1E2A44]/70">
+                    {advisoriesQuery.isLoading
+                      ? "Loading travel advisories…"
+                      : "No destinations match these filters. Try widening flight time or including Level 3."}
+                  </p>
+                ) : (
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                    {recommendations.map((r) => (
+                      <button
+                        key={r.countryCode}
+                        onClick={() => handleCountryClick(r.countryCode, r.country.name)}
+                        className="group grid grid-cols-[2.25rem_minmax(0,1fr)] items-start gap-3 rounded-xl border border-[#1E2A44]/10 bg-[#FBF5EC]/85 px-3 py-3 text-left shadow-sm shadow-[#F2A65A]/15 transition-all hover:-translate-y-0.5 hover:border-[#E86A5C]/40 hover:bg-white hover:shadow-md"
+                      >
+                        <Flag
+                          code={r.countryCode}
+                          name={r.country.name}
+                          className="mt-0.5 h-6 w-9 rounded-sm object-cover shadow ring-1 ring-[#1E2A44]/15"
+                        />
+                        <div className="min-w-0">
+                          <div className="flex flex-wrap items-center gap-1.5">
+                            <span className="truncate text-sm font-semibold text-[#1E2A44]">
+                              {r.country.name}
+                            </span>
+                            <span className="rounded-full bg-[#E86A5C]/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#c74a3d]">
+                              {r.publicLabel}
+                            </span>
+                          </div>
+                          {r.leadPlace && (
+                            <div className="mt-0.5 truncate text-xs text-[#1E2A44]/70">
+                              Lead: {r.leadPlace.name}
+                            </div>
+                          )}
+                          <div className="mt-0.5 truncate text-xs text-[#1E2A44]/50">
+                            {r.country.flightTimeFromEWR}
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {!selectedCountry && !recoActive && (
               <div className="mt-6 px-2">
                 <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#E86A5C]">
                   Featured Destinations
@@ -184,11 +296,8 @@ function Home() {
                 })()}
               </div>
             )}
-
-
           </div>
         </div>
-
 
         {selectedCountry && (
           <div
@@ -198,7 +307,14 @@ function Home() {
             }}
           >
             <div className="sticky top-0 h-screen overflow-hidden">
-              <CountryPanel country={selectedCountry} onClose={handleClose} />
+              <CountryPanel
+                country={selectedCountry}
+                onClose={handleClose}
+                recommendedPlaceName={
+                  recoActive ? selectedReco?.leadPlace?.name ?? null : null
+                }
+                recommendationMonthName={recoActive ? monthName : null}
+              />
             </div>
           </div>
         )}
