@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ArrowLeft, X, MapPin, Thermometer } from 'lucide-react'
+import { ArrowLeft, X, MapPin, Thermometer, CalendarHeart } from 'lucide-react'
 import type { CountryData, PopularPlace } from '@/data/countries'
 import { TemperatureChart } from '@/components/TemperatureChart'
 import { PlaceMap } from '@/components/PlaceMap'
