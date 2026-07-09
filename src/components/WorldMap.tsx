@@ -163,22 +163,8 @@ function WorldMapInner({
         type: 'fill',
         source: 'countries',
         paint: {
-          'fill-color': [
-            'case',
-            ['boolean', ['feature-state', 'selected'], false],
-            flagColors?.[0] ?? COLOR_LAND_HOVER,
-            ['boolean', ['feature-state', 'hover'], false],
-            COLOR_LAND_HOVER,
-            ['get', 'hasData'],
-            COLOR_LAND_DATA,
-            COLOR_LAND_EMPTY,
-          ],
-          'fill-opacity': [
-            'case',
-            ['get', 'hasData'],
-            0.92,
-            0.55,
-          ],
+          'fill-color': buildFillExpression(flagColors, eligibleCountries),
+          'fill-opacity': buildFillOpacityExpression(eligibleCountries),
         },
       })
 
