@@ -6,6 +6,8 @@ export interface PopularPlace {
   temperatures?: { month: string; high: number; low: number }[]
   precipitation?: number[]
   photos?: string[]
+  bestWeatherMonths?: string
+  goodWeatherMonths?: string
 }
 
 export interface CountryData {
@@ -37,6 +39,8 @@ export interface CountryData {
     annualVisitors?: number
     annualVisitorsYear?: number
     annualVisitorsSourceUrl?: string
+    bestWeatherMonths?: string
+    goodWeatherMonths?: string
   }[]
   famousMovies: { title: string; year: number; description: string }[]
   popularMusic: { name: string; genre: string }[]
@@ -76,9 +80,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [57, 56, 73, 76, 110, 134, 141, 133, 108, 92, 82, 70],
     bestTimeToVisit: 'April–October for cities and lakes, or December–March for Alpine skiing',
     popularPlaces: [
-      { name: 'Vienna', description: 'Imperial capital with palaces, coffeehouses, and world-class music' },
-      { name: 'Salzburg', description: 'Baroque Alpine city known for Mozart and The Sound of Music' },
-      { name: 'Innsbruck', description: 'Mountain city with colorful old-town streets and ski access' },
+      { name: 'Vienna', description: 'Imperial capital with palaces, coffeehouses, and world-class music', bestWeatherMonths: "Apr–Oct" },
+      { name: 'Salzburg', description: 'Baroque Alpine city known for Mozart and The Sound of Music', bestWeatherMonths: "May, Sep", goodWeatherMonths: "Jun–Aug, Oct" },
+      { name: 'Innsbruck', description: 'Mountain city with colorful old-town streets and ski access', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep" },
     ],
     attractions: [
       {
@@ -92,6 +96,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0 de",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
         imageAttribution: "Photo: Thomas Wolf, www.foto-tw.de / CC BY-SA 3.0 de",
+        bestWeatherMonths: "Apr–Oct",
       },
       {
         name: "Hallstatt",
@@ -104,6 +109,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.5",
         imageAttribution: "Photo: Andrew Bossi / CC BY-SA 2.5",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Belvedere Museum",
@@ -161,9 +168,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 67, 72, 86, 125, 130, 135, 143, 112, 98, 98, 92],
     bestTimeToVisit: 'June–September for hiking and lakes, or December–March for skiing',
     popularPlaces: [
-      { name: 'Zürich', description: 'Lakeside city with museums, shopping, and easy rail connections' },
-      { name: 'Lucerne', description: 'Medieval old town beside a lake and mountain scenery' },
-      { name: 'Zermatt', description: 'Car-free Alpine resort beneath the Matterhorn' },
+      { name: 'Zürich', description: 'Lakeside city with museums, shopping, and easy rail connections', bestWeatherMonths: "Sep", goodWeatherMonths: "Apr–Aug, Oct" },
+      { name: 'Lucerne', description: 'Medieval old town beside a lake and mountain scenery', bestWeatherMonths: "May, Sep", goodWeatherMonths: "Apr, Jun–Aug, Oct" },
+      { name: 'Zermatt', description: 'Car-free Alpine resort beneath the Matterhorn', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep" },
     ],
     attractions: [
       {
@@ -177,11 +184,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Gianluca Miscione / CC BY-SA 4.0",
+        bestWeatherMonths: "Jul–Aug",
+        goodWeatherMonths: "Jun",
       },
       {
         name: "Jungfraujoch",
         description: "High-altitude railway station with glacier views",
         entityId: "attraction_CH_jungfraujoch",
+        bestWeatherMonths: "Jun",
+        goodWeatherMonths: "Jul–Sep",
       },
       {
         name: "Chillon Castle",
@@ -239,9 +250,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [41, 33, 44, 39, 71, 80, 92, 77, 60, 48, 44, 45],
     bestTimeToVisit: 'April–June or September–October for mild weather and smaller crowds',
     popularPlaces: [
-      { name: 'Prague', description: 'Storybook capital of bridges, spires, and old-town squares' },
-      { name: 'Český Krumlov', description: 'UNESCO river town with a hilltop castle' },
-      { name: 'Karlovy Vary', description: 'Elegant spa town known for hot springs' },
+      { name: 'Prague', description: 'Storybook capital of bridges, spires, and old-town squares', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Český Krumlov', description: 'UNESCO river town with a hilltop castle', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
+      { name: 'Karlovy Vary', description: 'Elegant spa town known for hot springs', bestWeatherMonths: "May–Sep" },
     ],
     attractions: [
       {
@@ -255,6 +266,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "FAL",
         imageLicenseUrl: "https://artlibre.org/licence/lal/en",
         imageAttribution: "Photo: A.Savin / FAL",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Prague Castle",
@@ -270,6 +283,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 2551240,
         annualVisitorsYear: 2024,
         annualVisitorsSourceUrl: "https://www.statistikakultury.cz/wp-content/uploads/2025/12/ZSU_2024_Pamatky.pdf",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Kutná Hora",
@@ -282,6 +297,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Laima Gūtmane (simka… / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -334,9 +351,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [32, 34, 32, 42, 65, 76, 75, 59, 57, 54, 48, 45],
     bestTimeToVisit: 'April–June or September–October for comfortable city exploring',
     popularPlaces: [
-      { name: 'Budapest', description: 'Danube capital with thermal baths and grand architecture' },
-      { name: 'Lake Balaton', description: 'Central Europe’s largest lake and summer retreat' },
-      { name: 'Eger', description: 'Baroque town known for castle history and red wine' },
+      { name: 'Budapest', description: 'Danube capital with thermal baths and grand architecture', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
+      { name: 'Lake Balaton', description: 'Central Europe’s largest lake and summer retreat', bestWeatherMonths: "Apr–Oct" },
+      { name: 'Eger', description: 'Baroque town known for castle history and red wine', bestWeatherMonths: "Apr–Oct" },
     ],
     attractions: [
       {
@@ -350,6 +367,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Jakub Hałun / CC BY-SA 4.0",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Mar",
       },
       {
         name: "Széchenyi Baths",
@@ -360,6 +379,7 @@ export const countries: Record<string, CountryData> = {
         name: "Parliament Building",
         description: "Landmark neo-Gothic building on the Danube",
         entityId: "attraction_HU_parliament_building",
+        bestWeatherMonths: "Apr–Oct",
       },
     ],
     famousMovies: [
@@ -412,9 +432,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [37, 32, 36, 36, 59, 69, 91, 66, 56, 47, 38, 39],
     bestTimeToVisit: 'May–September for cities, mountains, and Baltic coast trips',
     popularPlaces: [
-      { name: 'Kraków', description: 'Historic royal city with a beautifully preserved old town' },
-      { name: 'Warsaw', description: 'Resilient capital blending reconstruction and modern culture' },
-      { name: 'Gdańsk', description: 'Baltic port city with colorful merchant houses' },
+      { name: 'Kraków', description: 'Historic royal city with a beautifully preserved old town', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Warsaw', description: 'Resilient capital blending reconstruction and modern culture', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Gdańsk', description: 'Baltic port city with colorful merchant houses', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -428,6 +448,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: XEvansGambitx / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Wieliczka Salt Mine",
@@ -490,9 +512,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [75, 73, 71, 57, 40, 33, 24, 25, 30, 56, 60, 73],
     bestTimeToVisit: 'March–May or September–November for Buenos Aires and Patagonia shoulder seasons',
     popularPlaces: [
-      { name: 'Buenos Aires', description: 'Tango-filled capital with grand boulevards and late-night dining' },
-      { name: 'Patagonia', description: 'Glaciers, peaks, and vast southern landscapes' },
-      { name: 'Mendoza', description: 'Wine region at the foot of the Andes' },
+      { name: 'Buenos Aires', description: 'Tango-filled capital with grand boulevards and late-night dining', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec" },
+      { name: 'Patagonia', description: 'Glaciers, peaks, and vast southern landscapes', bestWeatherMonths: "Jan–Apr, Sep–Dec", goodWeatherMonths: "May" },
+      { name: 'Mendoza', description: 'Wine region at the foot of the Andes', bestWeatherMonths: "Feb–May, Aug–Nov", goodWeatherMonths: "Jan, Jun–Jul, Dec" },
     ],
     attractions: [
       {
@@ -506,6 +528,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: W. Bulach / CC BY-SA 4.0",
+        bestWeatherMonths: "Jul–Aug",
+        goodWeatherMonths: "Apr–Jun, Sep",
       },
       {
         name: "Perito Moreno Glacier",
@@ -518,12 +542,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Fernando / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan",
+        goodWeatherMonths: "Feb, Nov–Dec",
       },
       {
         name: "La Boca",
         description: "Colorful Buenos Aires neighborhood known for Caminito",
         entityId: "attraction_AR_la_boca",
         wikidataId: "Q21840847",
+        bestWeatherMonths: "Jan–May, Sep–Dec",
+        goodWeatherMonths: "Jun, Aug",
       },
     ],
     famousMovies: [
@@ -576,15 +604,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [50, 63, 75, 78, 97, 126, 99, 97, 67, 62, 59, 59],
     bestTimeToVisit: 'October–March for Patagonia and wine country; year-round for the Atacama',
     popularPlaces: [
-      { name: 'Santiago', description: 'Andean capital with museums, markets, and mountain views' },
-      { name: 'Valparaíso', description: 'Colorful Pacific port city covered in street art' },
-      { name: 'Atacama Desert', description: 'Otherworldly desert landscapes and stargazing' },
+      { name: 'Santiago', description: 'Andean capital with museums, markets, and mountain views', bestWeatherMonths: "Jan–May, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
+      { name: 'Valparaíso', description: 'Colorful Pacific port city covered in street art', bestWeatherMonths: "Jan–May, Aug–Dec", goodWeatherMonths: "Jun–Jul" },
+      { name: 'Atacama Desert', description: 'Otherworldly desert landscapes and stargazing', bestWeatherMonths: "Jan–Apr, Sep–Dec", goodWeatherMonths: "May–Aug" },
     ],
     attractions: [
       {
         name: "Torres del Paine",
         description: "Patagonian national park with granite towers and glaciers",
         entityId: "attraction_CL_torres_del_paine",
+        bestWeatherMonths: "Jan",
+        goodWeatherMonths: "Feb, Nov–Dec",
       },
       {
         name: "Easter Island",
@@ -597,6 +627,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: kallerna / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Elqui Valley",
@@ -654,9 +685,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [171, 220, 272, 267, 246, 185, 166, 96, 102, 124, 145, 131],
     bestTimeToVisit: 'June–September for the Andes and Galápagos wildlife viewing',
     popularPlaces: [
-      { name: 'Quito', description: 'High-altitude capital with a UNESCO-listed old town' },
-      { name: 'Galápagos Islands', description: 'Legendary wildlife islands that shaped Darwin’s work' },
-      { name: 'Cuenca', description: 'Colonial city known for architecture and crafts' },
+      { name: 'Quito', description: 'High-altitude capital with a UNESCO-listed old town', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "Jan–May, Nov–Dec" },
+      { name: 'Galápagos Islands', description: 'Legendary wildlife islands that shaped Darwin’s work', bestWeatherMonths: "Jun–Dec", goodWeatherMonths: "Jan, May" },
+      { name: 'Cuenca', description: 'Colonial city known for architecture and crafts', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -670,6 +701,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: camilogaleano.com / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Feb, Jun–Oct, Dec",
+        goodWeatherMonths: "Mar–May, Nov",
       },
       {
         name: "Middle of the World",
@@ -682,6 +715,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Asamblea Nacional  del Ecuador / CC BY-SA 2.0",
+        bestWeatherMonths: "Jun–Oct",
+        goodWeatherMonths: "Jan–May, Nov–Dec",
       },
       {
         name: "Otavalo Market",
@@ -739,9 +774,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [186, 178, 148, 81, 49, 27, 20, 25, 43, 84, 109, 158],
     bestTimeToVisit: 'May–October for the dry season on the Altiplano and salt flats',
     popularPlaces: [
-      { name: 'La Paz', description: 'Dramatic high-altitude city set in a canyon' },
-      { name: 'Sucre', description: 'Whitewashed constitutional capital with colonial charm' },
-      { name: 'Uyuni', description: 'Gateway to the world’s largest salt flat' },
+      { name: 'La Paz', description: 'Dramatic high-altitude city set in a canyon', bestWeatherMonths: "Apr, Oct–Nov", goodWeatherMonths: "Mar, May, Aug–Sep, Dec" },
+      { name: 'Sucre', description: 'Whitewashed constitutional capital with colonial charm', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Uyuni', description: 'Gateway to the world’s largest salt flat', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Sep–Oct" },
     ],
     attractions: [
       {
@@ -755,6 +790,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: Pavel Špindler / CC BY 3.0",
+        bestWeatherMonths: "Jan–Apr, Oct–Dec",
+        goodWeatherMonths: "Sep",
       },
       {
         name: "Lake Titicaca",
@@ -767,12 +804,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: W. Bulach / CC BY-SA 4.0",
+        bestWeatherMonths: "Apr, Oct–Nov",
+        goodWeatherMonths: "May–Sep, Dec",
       },
       {
         name: "Tiwanaku",
         description: "Pre-Inca archaeological site near La Paz",
         entityId: "attraction_BO_tiwanaku",
         wikidataId: "Q21806661",
+        bestWeatherMonths: "Nov",
+        goodWeatherMonths: "Mar–May, Sep–Oct, Dec",
       },
     ],
     famousMovies: [
@@ -825,20 +866,24 @@ export const countries: Record<string, CountryData> = {
     precipitation: [115, 116, 110, 139, 113, 102, 88, 88, 100, 121, 91, 107],
     bestTimeToVisit: 'December–March for beaches, or October–November for quieter coastal weather',
     popularPlaces: [
-      { name: 'Montevideo', description: 'Relaxed capital with rambla waterfront and historic neighborhoods' },
-      { name: 'Punta del Este', description: 'Beach resort known for nightlife and Atlantic views' },
-      { name: 'Colonia del Sacramento', description: 'UNESCO colonial town across the Río de la Plata' },
+      { name: 'Montevideo', description: 'Relaxed capital with rambla waterfront and historic neighborhoods', bestWeatherMonths: "Feb–Jun, Aug–Dec", goodWeatherMonths: "Jan, Jul" },
+      { name: 'Punta del Este', description: 'Beach resort known for nightlife and Atlantic views', bestWeatherMonths: "Jan–Mar, May, Aug–Dec", goodWeatherMonths: "Apr, Jun–Jul" },
+      { name: 'Colonia del Sacramento', description: 'UNESCO colonial town across the Río de la Plata', bestWeatherMonths: "Feb–Dec", goodWeatherMonths: "Jan" },
     ],
     attractions: [
       {
         name: "Casapueblo",
         description: "Whitewashed art landmark by Carlos Páez Vilaró",
         entityId: "attraction_UY_casapueblo",
+        bestWeatherMonths: "Jan–Mar, May, Aug–Dec",
+        goodWeatherMonths: "Apr, Jun–Jul",
       },
       {
         name: "Mercado del Puerto",
         description: "Montevideo market famous for grilled meats",
         entityId: "attraction_UY_mercado_del_puerto",
+        bestWeatherMonths: "Feb–Jun, Aug–Dec",
+        goodWeatherMonths: "Jan, Jul",
       },
       {
         name: "La Mano",
@@ -897,11 +942,11 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit:
       'Spring (March–May) for cherry blossoms, or Autumn (October–November) for fall foliage',
     popularPlaces: [
-      { name: 'Tokyo', description: 'Ultra-modern capital blending neon-lit skyscrapers with ancient temples' },
-      { name: 'Kyoto', description: 'Cultural heart of Japan with over 2,000 temples and shrines' },
-      { name: 'Osaka', description: "Japan's kitchen — famous for street food and vibrant nightlife" },
-      { name: 'Hokkaido', description: 'Northern island paradise for skiing, hot springs, and lavender fields' },
-      { name: 'Okinawa', description: 'Tropical islands with pristine beaches and unique Ryukyu culture' },
+      { name: 'Tokyo', description: 'Ultra-modern capital blending neon-lit skyscrapers with ancient temples', bestWeatherMonths: "Apr–May, Nov", goodWeatherMonths: "Jun, Oct, Dec" },
+      { name: 'Kyoto', description: 'Cultural heart of Japan with over 2,000 temples and shrines', bestWeatherMonths: "Oct", goodWeatherMonths: "Apr–Jun, Sep, Nov" },
+      { name: 'Osaka', description: "Japan's kitchen — famous for street food and vibrant nightlife", bestWeatherMonths: "Apr, Nov", goodWeatherMonths: "May–Jun, Oct" },
+      { name: 'Hokkaido', description: 'Northern island paradise for skiing, hot springs, and lavender fields', bestWeatherMonths: "Jun", goodWeatherMonths: "Jul–Sep" },
+      { name: 'Okinawa', description: 'Tropical islands with pristine beaches and unique Ryukyu culture', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–May, Nov" },
     ],
     attractions: [
       {
@@ -915,6 +960,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: 名古屋太郎, (edited by Hannes_24) / CC BY-SA 3.0",
+        bestWeatherMonths: "Apr–Jul, Sep–Nov",
+        goodWeatherMonths: "Aug",
       },
       {
         name: "Fushimi Inari Shrine",
@@ -930,11 +977,15 @@ export const countries: Record<string, CountryData> = {
         name: "Arashiyama Bamboo Grove",
         description: "Towering bamboo forest creating an otherworldly atmosphere",
         entityId: "attraction_JP_arashiyama_bamboo_grove",
+        bestWeatherMonths: "Oct",
+        goodWeatherMonths: "Apr–Jun, Sep, Nov",
       },
       {
         name: "Shibuya Crossing",
         description: "World's busiest pedestrian crossing in the heart of Tokyo",
         entityId: "attraction_JP_shibuya_crossing",
+        bestWeatherMonths: "Apr–May, Nov",
+        goodWeatherMonths: "Jun, Oct, Dec",
       },
     ],
     famousMovies: [
@@ -999,11 +1050,11 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit:
       'Late spring (April–June) or early fall (September–October) for mild weather and fewer crowds',
     popularPlaces: [
-      { name: 'Paris', description: 'City of Light — art, fashion, cuisine, and romance' },
-      { name: 'French Riviera', description: 'Glamorous Mediterranean coastline from Nice to Saint-Tropez' },
-      { name: 'Provence', description: 'Lavender fields, hilltop villages, and world-class rosé wine' },
-      { name: 'Loire Valley', description: 'Fairy-tale châteaux and vineyards stretching for miles' },
-      { name: 'Bordeaux', description: 'Wine capital of the world with stunning 18th-century architecture' },
+      { name: 'Paris', description: 'City of Light — art, fashion, cuisine, and romance', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
+      { name: 'French Riviera', description: 'Glamorous Mediterranean coastline from Nice to Saint-Tropez', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec" },
+      { name: 'Provence', description: 'Lavender fields, hilltop villages, and world-class rosé wine', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Loire Valley', description: 'Fairy-tale châteaux and vineyards stretching for miles', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
+      { name: 'Bordeaux', description: 'Wine capital of the world with stunning 18th-century architecture', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar, Nov" },
     ],
     attractions: [
       {
@@ -1019,6 +1070,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 6207303,
         annualVisitorsYear: 2017,
         annualVisitorsSourceUrl: "https://sete.toureiffel.paris/fr/presse/communiques/bilan-2017-de-la-tour-eiffel-46-de-visiteurs",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Mar",
       },
       {
         name: "Louvre Museum",
@@ -1035,6 +1088,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Diliff",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Diliff / Public domain",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Mar",
       },
       {
         name: "Palace of Versailles",
@@ -1049,6 +1104,8 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: ToucanWings / CC BY-SA 3.0",
         annualVisitors: 8132518,
         annualVisitorsYear: 2018,
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Mar",
       },
       {
         name: "D-Day Beaches",
@@ -1117,11 +1174,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [64, 55, 56, 66, 67, 58, 45, 53, 80, 91, 103, 78],
     bestTimeToVisit: 'April–June or September–October for pleasant weather and thinner crowds',
     popularPlaces: [
-      { name: 'Rome', description: 'The Eternal City — 2,500 years of art, architecture, and culture' },
-      { name: 'Florence', description: 'Birthplace of the Renaissance with unmatched artistic heritage' },
-      { name: 'Venice', description: 'Enchanting city of canals, gondolas, and Carnival masks' },
-      { name: 'Amalfi Coast', description: 'Dramatic cliffs, pastel villages, and sparkling Mediterranean waters' },
-      { name: 'Tuscany', description: 'Rolling hills, vineyards, and medieval hilltop towns' },
+      { name: 'Rome', description: 'The Eternal City — 2,500 years of art, architecture, and culture', bestWeatherMonths: "Mar–Jul, Sep–Oct", goodWeatherMonths: "Feb, Aug, Nov" },
+      { name: 'Florence', description: 'Birthplace of the Renaissance with unmatched artistic heritage', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
+      { name: 'Venice', description: 'Enchanting city of canals, gondolas, and Carnival masks', bestWeatherMonths: "Apr–Jul, Sep–Oct", goodWeatherMonths: "Mar, Aug" },
+      { name: 'Amalfi Coast', description: 'Dramatic cliffs, pastel villages, and sparkling Mediterranean waters', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar, Nov" },
+      { name: 'Tuscany', description: 'Rolling hills, vineyards, and medieval hilltop towns', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Nov" },
     ],
     attractions: [
       {
@@ -1138,11 +1195,15 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 5832996,
         annualVisitorsYear: 2022,
         annualVisitorsSourceUrl: "https://www.istat.it/it/archivio/167566",
+        bestWeatherMonths: "Mar–Jun, Sep–Oct",
+        goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec",
       },
       {
         name: "Vatican City",
         description: "World's smallest country, home to St. Peter's Basilica and the Sistine Chapel",
         entityId: "attraction_IT_vatican_city",
+        bestWeatherMonths: "Mar–Jun, Sep–Oct",
+        goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec",
       },
       {
         name: "Pompeii",
@@ -1155,6 +1216,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Glen Scarborough from The Central Coast, Australia / CC BY 2.0",
+        bestWeatherMonths: "Mar–Jul, Sep–Oct",
+        goodWeatherMonths: "Feb, Aug, Nov–Dec",
       },
       {
         name: "Leaning Tower of Pisa",
@@ -1170,11 +1233,15 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 215099,
         annualVisitorsYear: 2021,
         annualVisitorsSourceUrl: "https://www.istat.it/it/archivio/167566",
+        bestWeatherMonths: "Mar–Oct",
+        goodWeatherMonths: "Feb, Nov",
       },
       {
         name: "Cinque Terre",
         description: "Five colorful coastal villages connected by scenic hiking trails",
         entityId: "attraction_IT_cinque_terre",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
     ],
     famousMovies: [
@@ -1238,11 +1305,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [235, 226, 241, 188, 135, 85, 66, 53, 73, 117, 160, 199],
     bestTimeToVisit: 'September–March for beach season; February for Carnival in Rio',
     popularPlaces: [
-      { name: 'Rio de Janeiro', description: 'Samba, stunning beaches, and the iconic Christ the Redeemer' },
-      { name: 'São Paulo', description: 'Massive cultural metropolis with world-class dining and art' },
-      { name: 'Salvador', description: 'Afro-Brazilian heritage capital with colorful colonial architecture' },
-      { name: 'Amazon Rainforest', description: "Earth's largest tropical rainforest with incredible biodiversity" },
-      { name: 'Iguazu Falls', description: 'Breathtaking system of 275 waterfalls on the Argentine border' },
+      { name: 'Rio de Janeiro', description: 'Samba, stunning beaches, and the iconic Christ the Redeemer', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'São Paulo', description: 'Massive cultural metropolis with world-class dining and art', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Mar, Oct–Dec" },
+      { name: 'Salvador', description: 'Afro-Brazilian heritage capital with colorful colonial architecture', bestWeatherMonths: "Sep", goodWeatherMonths: "Jul–Aug, Oct, Dec" },
+      { name: 'Amazon Rainforest', description: "Earth's largest tropical rainforest with incredible biodiversity", bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jan–Jun, Sep–Oct, Dec" },
+      { name: 'Iguazu Falls', description: 'Breathtaking system of 275 waterfalls on the Argentine border', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Apr–May, Sep" },
     ],
 
     attractions: [
@@ -1257,6 +1324,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0 de",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
         imageAttribution: "Photo: Arne Müseler / CC BY-SA 3.0 de",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Sugarloaf Mountain",
@@ -1269,6 +1338,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Ccarelo / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Copacabana Beach",
@@ -1281,6 +1352,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: Yas.Iwamoto / CC BY 3.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Fernando de Noronha",
@@ -1293,12 +1366,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Fernandoantoniofotos / CC BY-SA 4.0",
+        bestWeatherMonths: "Aug–Sep",
+        goodWeatherMonths: "Jan, Oct–Dec",
       },
       {
         name: "Pelourinho (Salvador)",
         description: "UNESCO-listed colonial quarter with vibrant colors and music",
         entityId: "attraction_BR_pelourinho_salvador",
         wikidataId: "Q32148682",
+        bestWeatherMonths: "Sep",
+        goodWeatherMonths: "Jul–Aug, Oct, Dec",
       },
     ],
     famousMovies: [
@@ -1362,17 +1439,19 @@ export const countries: Record<string, CountryData> = {
     precipitation: [87, 92, 57, 28, 24, 24, 20, 17, 17, 24, 36, 58],
     bestTimeToVisit: 'September–November (spring) or March–May (autumn) for comfortable temperatures',
     popularPlaces: [
-      { name: 'Sydney', description: 'Harbour city famous for its Opera House and stunning beaches' },
-      { name: 'Melbourne', description: 'Cultural capital with world-class coffee, street art, and food' },
-      { name: 'Great Barrier Reef', description: "World's largest coral reef system visible from space" },
-      { name: 'Uluru', description: 'Sacred sandstone monolith glowing red in the outback' },
-      { name: 'Tasmania', description: 'Rugged wilderness island with pristine temperate rainforests' },
+      { name: 'Sydney', description: 'Harbour city famous for its Opera House and stunning beaches', bestWeatherMonths: "Jan, Mar–May, Jul–Dec", goodWeatherMonths: "Feb, Jun" },
+      { name: 'Melbourne', description: 'Cultural capital with world-class coffee, street art, and food', bestWeatherMonths: "Jan–Jun, Aug–Dec", goodWeatherMonths: "Jul" },
+      { name: 'Great Barrier Reef', description: "World's largest coral reef system visible from space", bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "May–Jun, Oct" },
+      { name: 'Uluru', description: 'Sacred sandstone monolith glowing red in the outback', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Tasmania', description: 'Rugged wilderness island with pristine temperate rainforests', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
         name: "Sydney Opera House",
         description: "Architectural masterpiece and UNESCO World Heritage Site",
         entityId: "attraction_AU_sydney_opera_house",
+        bestWeatherMonths: "Jan, Mar–May, Jul–Dec",
+        goodWeatherMonths: "Feb, Jun",
       },
       {
         name: "Great Barrier Reef",
@@ -1384,6 +1463,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NASA, by MISR",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NASA, by MISR / Public domain",
+        bestWeatherMonths: "Jul–Sep",
+        goodWeatherMonths: "May–Jun, Oct",
       },
       {
         name: "Twelve Apostles",
@@ -1396,6 +1477,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Leonard Koh / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–May, Oct–Dec",
+        goodWeatherMonths: "Sep",
       },
       {
         name: "Kakadu National Park",
@@ -1410,6 +1493,8 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: Andrea Schaffer / CC BY-SA 4.0",
         annualVisitors: 208056,
         annualVisitorsYear: 2022,
+        bestWeatherMonths: "Jun–Jul",
+        goodWeatherMonths: "May, Aug",
       },
       {
         name: "Bondi Beach",
@@ -1422,6 +1507,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Nick Ang / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan, Mar–May, Jul–Dec",
+        goodWeatherMonths: "Feb, Jun",
       },
     ],
     famousMovies: [
@@ -1485,11 +1572,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 3, 2, 1, 1, 0, 1, 1, 0, 1, 2, 3],
     bestTimeToVisit: 'October–April for cooler temperatures ideal for sightseeing and desert tours',
     popularPlaces: [
-      { name: 'Cairo', description: 'Sprawling capital at the foot of the Giza Pyramids' },
-      { name: 'Luxor', description: "World's greatest open-air museum with Valley of the Kings" },
-      { name: 'Aswan', description: 'Serene Nile-side city with Nubian culture and Philae Temple' },
-      { name: 'Sharm el-Sheikh', description: 'Red Sea resort with world-class diving and coral reefs' },
-      { name: 'Alexandria', description: 'Mediterranean port city with ancient Greek and Roman heritage' },
+      { name: 'Cairo', description: 'Sprawling capital at the foot of the Giza Pyramids', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "May, Oct" },
+      { name: 'Luxor', description: "World's greatest open-air museum with Valley of the Kings", bestWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'Aswan', description: 'Serene Nile-side city with Nubian culture and Philae Temple', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
+      { name: 'Sharm el-Sheikh', description: 'Red Sea resort with world-class diving and coral reefs', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "Oct" },
+      { name: 'Alexandria', description: 'Mediterranean port city with ancient Greek and Roman heritage', bestWeatherMonths: "Jan–Jun, Oct–Dec", goodWeatherMonths: "Jul–Sep" },
     ],
     attractions: [
       {
@@ -1508,6 +1595,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: MusikAnimal / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Apr, Nov–Dec",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Valley of the Kings",
@@ -1518,11 +1607,14 @@ export const countries: Record<string, CountryData> = {
         name: "Abu Simbel",
         description: "Massive rock temples carved by Ramesses II on the Nile",
         entityId: "attraction_EG_abu_simbel",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
       },
       {
         name: "Egyptian Museum",
         description: "Home to the world's largest collection of ancient Egyptian artifacts",
         entityId: "attraction_EG_egyptian_museum",
+        bestWeatherMonths: "Jan–Apr, Nov–Dec",
+        goodWeatherMonths: "May, Oct",
       },
     ],
     famousMovies: [
@@ -1586,22 +1678,25 @@ export const countries: Record<string, CountryData> = {
     precipitation: [21, 16, 15, 17, 44, 106, 128, 133, 146, 84, 33, 22],
     bestTimeToVisit: 'December–April for dry season; late October–early November for Día de los Muertos',
     popularPlaces: [
-      { name: 'Mexico City', description: 'Vibrant capital built atop the ancient Aztec city of Tenochtitlan' },
-      { name: 'Cancún & Riviera Maya', description: 'Caribbean paradise with turquoise waters and Mayan ruins' },
-      { name: 'Oaxaca', description: 'Cultural gem famous for mole, mezcal, and indigenous traditions' },
-      { name: 'San Miguel de Allende', description: 'Colonial-era jewel with cobblestone streets and art galleries' },
-      { name: 'Tulum', description: 'Cliff-top Mayan ruins overlooking pristine Caribbean beaches' },
+      { name: 'Mexico City', description: 'Vibrant capital built atop the ancient Aztec city of Tenochtitlan', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun–Sep" },
+      { name: 'Cancún & Riviera Maya', description: 'Caribbean paradise with turquoise waters and Mayan ruins', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Nov" },
+      { name: 'Oaxaca', description: 'Cultural gem famous for mole, mezcal, and indigenous traditions', bestWeatherMonths: "Jan–May, Jul–Aug, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
+      { name: 'San Miguel de Allende', description: 'Colonial-era jewel with cobblestone streets and art galleries', bestWeatherMonths: "Jan–Apr, Aug–Dec", goodWeatherMonths: "May–Jul" },
+      { name: 'Tulum', description: 'Cliff-top Mayan ruins overlooking pristine Caribbean beaches', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec" },
     ],
     attractions: [
       {
         name: "Chichén Itzá",
         description: "Mayan pyramid and New Wonder of the World",
         entityId: "attraction_MX_chichen_itza",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Nov",
       },
       {
         name: "Teotihuacán",
         description: "Ancient city with massive Pyramids of the Sun and Moon",
         entityId: "attraction_MX_teotihuacan",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Cenotes of Yucatán",
@@ -1680,11 +1775,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [12, 13, 17, 31, 53, 152, 283, 255, 178, 81, 26, 10],
     bestTimeToVisit: 'October–March (winter) for comfortable temperatures across most of the country',
     popularPlaces: [
-      { name: 'Rajasthan', description: 'Land of maharajas with majestic forts, palaces, and desert safaris' },
-      { name: 'Kerala', description: "God's Own Country — backwaters, tea plantations, and tropical beaches" },
-      { name: 'Goa', description: 'Tropical paradise blending Portuguese heritage with beach culture' },
-      { name: 'Varanasi', description: 'One of the oldest living cities, spiritual heart of Hinduism' },
-      { name: 'Ladakh', description: 'High-altitude desert with Buddhist monasteries and stunning passes' },
+      { name: 'Rajasthan', description: 'Land of maharajas with majestic forts, palaces, and desert safaris', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Nov" },
+      { name: 'Kerala', description: "God's Own Country — backwaters, tea plantations, and tropical beaches", bestWeatherMonths: "Dec", goodWeatherMonths: "Jan" },
+      { name: 'Goa', description: 'Tropical paradise blending Portuguese heritage with beach culture', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–May, Jul–Aug, Nov–Dec" },
+      { name: 'Varanasi', description: 'One of the oldest living cities, spiritual heart of Hinduism', bestWeatherMonths: "Jan–Feb, Nov–Dec" },
+      { name: 'Ladakh', description: 'High-altitude desert with Buddhist monasteries and stunning passes', bestWeatherMonths: "Jul–Aug" },
     ],
     attractions: [
       {
@@ -1701,6 +1796,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 6532366,
         annualVisitorsYear: 2018,
         annualVisitorsSourceUrl: "https://tourism.gov.in/sites/default/files/2020-04/India%20Tourism%20Statistics%202019.pdf",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
+        goodWeatherMonths: "Mar",
       },
       {
         name: "Jaipur (Pink City)",
@@ -1718,12 +1815,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/4.0",
         imageAttribution: "Photo: Vyacheslav Argenberg / CC BY 4.0",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
       },
       {
         name: "Hampi",
         description: "Surreal boulder-strewn landscape with ruins of the Vijayanagara Empire",
         entityId: "attraction_IN_hampi",
         wikidataId: "Q48727106",
+        bestWeatherMonths: "Dec",
+        goodWeatherMonths: "Jan, Jul–Aug, Nov",
       },
       {
         name: "Golden Temple (Amritsar)",
@@ -1792,11 +1892,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [86, 67, 61, 46, 44, 34, 24, 20, 45, 68, 84, 100],
     bestTimeToVisit: 'May–June or September–October for warm weather without peak summer crowds and heat',
     popularPlaces: [
-      { name: 'Santorini', description: 'Iconic white-and-blue island with dramatic caldera sunsets' },
-      { name: 'Athens', description: 'Ancient capital where Western civilization was born' },
-      { name: 'Mykonos', description: 'Cosmopolitan island with vibrant nightlife and windmills' },
-      { name: 'Crete', description: 'Largest Greek island with gorges, beaches, and Minoan palaces' },
-      { name: 'Meteora', description: 'Monasteries perched atop soaring rock pillars' },
+      { name: 'Santorini', description: 'Iconic white-and-blue island with dramatic caldera sunsets', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb, Dec" },
+      { name: 'Athens', description: 'Ancient capital where Western civilization was born', bestWeatherMonths: "Feb–May, Sep–Nov", goodWeatherMonths: "Jan, Jun, Dec" },
+      { name: 'Mykonos', description: 'Cosmopolitan island with vibrant nightlife and windmills', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec" },
+      { name: 'Crete', description: 'Largest Greek island with gorges, beaches, and Minoan palaces', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar" },
+      { name: 'Meteora', description: 'Monasteries perched atop soaring rock pillars', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov" },
     ],
     attractions: [
       {
@@ -1813,6 +1913,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 4557693,
         annualVisitorsYear: 2024,
         annualVisitorsSourceUrl: "https://www.statistics.gr/documents/20181/a2178ae5-5ee8-483e-8380-c9481bf4cd2d",
+        bestWeatherMonths: "Feb–May, Sep–Nov",
+        goodWeatherMonths: "Jan, Jun, Dec",
       },
       {
         name: "Santorini Caldera",
@@ -1825,11 +1927,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: kallerna / CC BY-SA 4.0",
+        bestWeatherMonths: "Mar–Nov",
+        goodWeatherMonths: "Jan–Feb, Dec",
       },
       {
         name: "Delphi",
         description: "Ancient sanctuary once considered the center of the world",
         entityId: "attraction_GR_delphi",
+        bestWeatherMonths: "Apr–Jun, Sep",
+        goodWeatherMonths: "Mar, Jul–Aug, Oct–Nov",
       },
       {
         name: "Palace of Knossos",
@@ -1903,11 +2009,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [22, 17, 46, 90, 191, 211, 221, 271, 262, 158, 73, 38],
     bestTimeToVisit: 'November–February (cool season) for the most pleasant weather',
     popularPlaces: [
-      { name: 'Bangkok', description: 'Dazzling capital blending golden temples with modern skyscrapers' },
-      { name: 'Chiang Mai', description: 'Northern cultural hub surrounded by mountains and ancient temples' },
-      { name: 'Phuket', description: 'Largest island with stunning beaches and vibrant nightlife' },
-      { name: 'Krabi', description: 'Dramatic limestone karsts, emerald waters, and island-hopping' },
-      { name: 'Koh Samui', description: 'Tropical island paradise with luxury resorts and palm-fringed beaches' },
+      { name: 'Bangkok', description: 'Dazzling capital blending golden temples with modern skyscrapers', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Mar" },
+      { name: 'Chiang Mai', description: 'Northern cultural hub surrounded by mountains and ancient temples', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb" },
+      { name: 'Phuket', description: 'Largest island with stunning beaches and vibrant nightlife', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Sep–Oct" },
+      { name: 'Krabi', description: 'Dramatic limestone karsts, emerald waters, and island-hopping', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Oct–Dec" },
+      { name: 'Koh Samui', description: 'Tropical island paradise with luxury resorts and palm-fringed beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar" },
     ],
     attractions: [
       {
@@ -1921,6 +2027,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Diego Delso / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb",
       },
       {
         name: "Phi Phi Islands",
@@ -1933,6 +2041,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0 au",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0/au/deed.en",
         imageAttribution: "Photo: Luxure / CC BY 3.0 au",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar, Jul–Dec",
       },
       {
         name: "Wat Phra That Doi Suthep",
@@ -1945,6 +2055,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: ผู้สร้างสรรค์ผลงาน/ส่งข้อมูลเก็บในคลังข้อมูลเสรีวิกิมีเดียคอมมอนส์ - เทวประภาส มากคล้าย / CC BY 3.0",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb",
       },
       {
         name: "Floating Markets",
@@ -1962,6 +2074,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Kounosu / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb",
       },
     ],
     famousMovies: [
@@ -2025,11 +2139,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [71, 65, 57, 33, 19, 14, 12, 14, 19, 38, 55, 67],
     bestTimeToVisit: 'May–September (dry winter) for wildlife safaris; November–March for beaches and whale watching',
     popularPlaces: [
-      { name: 'Cape Town', description: 'Stunning coastal city at the foot of Table Mountain' },
-      { name: 'Kruger National Park', description: 'Premier safari destination with the Big Five' },
-      { name: 'Johannesburg', description: 'Economic hub with vibrant art scene and Apartheid Museum' },
-      { name: 'Garden Route', description: '300km scenic coastal road with forests, lagoons, and beaches' },
-      { name: 'Stellenbosch', description: 'Heart of South African wine country with Cape Dutch architecture' },
+      { name: 'Cape Town', description: 'Stunning coastal city at the foot of Table Mountain', bestWeatherMonths: "Jan–Jun, Aug–Dec", goodWeatherMonths: "Jul" },
+      { name: 'Kruger National Park', description: 'Premier safari destination with the Big Five', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Mar, Oct" },
+      { name: 'Johannesburg', description: 'Economic hub with vibrant art scene and Apartheid Museum', bestWeatherMonths: "Feb–Dec", goodWeatherMonths: "Jan" },
+      { name: 'Garden Route', description: '300km scenic coastal road with forests, lagoons, and beaches', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Stellenbosch', description: 'Heart of South African wine country with Cape Dutch architecture', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -2037,6 +2151,8 @@ export const countries: Record<string, CountryData> = {
         description: "Iconic flat-topped mountain with cable car and panoramic views",
         entityId: "attraction_ZA_table_mountain",
         wikidataId: "Q31685064",
+        bestWeatherMonths: "Mar–Nov",
+        goodWeatherMonths: "Jan–Feb, Dec",
       },
       {
         name: "Kruger Safari",
@@ -2047,12 +2163,16 @@ export const countries: Record<string, CountryData> = {
         name: "Robben Island",
         description: "Historic prison island where Nelson Mandela was held for 18 years",
         entityId: "attraction_ZA_robben_island",
+        bestWeatherMonths: "Jan–Jun, Aug–Dec",
+        goodWeatherMonths: "Jul",
       },
       {
         name: "Blyde River Canyon",
         description: "One of the largest green canyons in the world",
         entityId: "attraction_ZA_blyde_river_canyon",
         wikidataId: "Q31881682",
+        bestWeatherMonths: "Jan, Mar–Nov",
+        goodWeatherMonths: "Feb, Dec",
       },
       {
         name: "Cape of Good Hope",
@@ -2064,6 +2184,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Zaian (talk) at en.wikipedia",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Zaian (talk) at en.wikipedia / Public domain",
+        bestWeatherMonths: "Jan–May, Sep–Dec",
+        goodWeatherMonths: "Jun–Aug",
       },
     ],
     famousMovies: [
@@ -2127,11 +2249,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [61, 49, 59, 59, 56, 32, 18, 23, 44, 79, 73, 70],
     bestTimeToVisit: 'April–June or September–October for warm weather and thinner crowds',
     popularPlaces: [
-      { name: 'Barcelona', description: 'Gaudí architecture, Mediterranean beaches, and legendary nightlife' },
-      { name: 'Madrid', description: 'Elegant capital with world-class art museums and tapas culture' },
-      { name: 'Seville', description: 'Flamenco capital with stunning Moorish architecture' },
-      { name: 'San Sebastián', description: 'Basque coastal gem with the highest concentration of Michelin stars' },
-      { name: 'Granada', description: 'Home of the Alhambra and the last Moorish kingdom in Europe' },
+      { name: 'Barcelona', description: 'Gaudí architecture, Mediterranean beaches, and legendary nightlife', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Madrid', description: 'Elegant capital with world-class art museums and tapas culture', bestWeatherMonths: "Mar–Jun, Sep–Nov", goodWeatherMonths: "Feb" },
+      { name: 'Seville', description: 'Flamenco capital with stunning Moorish architecture', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
+      { name: 'San Sebastián', description: 'Basque coastal gem with the highest concentration of Michelin stars', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
+      { name: 'Granada', description: 'Home of the Alhambra and the last Moorish kingdom in Europe', bestWeatherMonths: "Mar–Jun, Sep–Nov", goodWeatherMonths: "Feb" },
     ],
     attractions: [
       {
@@ -2148,12 +2270,15 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 4830000,
         annualVisitorsYear: 2024,
         annualVisitorsSourceUrl: "https://visitarsagradafamilia.com/visitantes-sagrada-familia/",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Alhambra",
         description: "Magnificent Moorish palace complex in Granada with intricate Islamic art",
         entityId: "attraction_ES_alhambra",
         wikidataId: "Q24019759",
+        bestWeatherMonths: "Mar–Jun, Sep–Nov",
+        goodWeatherMonths: "Feb",
       },
       {
         name: "Prado Museum",
@@ -2171,11 +2296,14 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Canaan / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Camino de Santiago",
         description: "Ancient pilgrimage route ending at Santiago de Compostela cathedral",
         entityId: "attraction_ES_camino_de_santiago",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -2239,11 +2367,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [114, 102, 122, 127, 143, 151, 139, 146, 146, 146, 120, 135],
     bestTimeToVisit: 'December–February (summer) for outdoor adventures, or March–May for autumn colors and fewer tourists',
     popularPlaces: [
-      { name: 'Queenstown', description: 'Adventure capital of the world — bungee jumping, skiing, and jet boating' },
-      { name: 'Milford Sound', description: 'Dramatic fjord with towering cliffs and cascading waterfalls' },
-      { name: 'Rotorua', description: 'Geothermal wonderland with bubbling mud pools and Māori culture' },
-      { name: 'Auckland', description: 'City of Sails with harbors, volcanoes, and diverse food scene' },
-      { name: 'Hobbiton', description: 'The real Shire movie set in the rolling hills of Matamata' },
+      { name: 'Queenstown', description: 'Adventure capital of the world — bungee jumping, skiing, and jet boating', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Nov–Dec" },
+      { name: 'Milford Sound', description: 'Dramatic fjord with towering cliffs and cascading waterfalls', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec" },
+      { name: 'Rotorua', description: 'Geothermal wonderland with bubbling mud pools and Māori culture', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Apr, Oct–Dec" },
+      { name: 'Auckland', description: 'City of Sails with harbors, volcanoes, and diverse food scene', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Aug–Sep" },
+      { name: 'Hobbiton', description: 'The real Shire movie set in the rolling hills of Matamata', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May, Sep" },
     ],
     attractions: [
       {
@@ -2256,6 +2384,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Pseudopanax at English Wikipedia",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Pseudopanax at English Wikipedia / Public domain",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar, Dec",
       },
       {
         name: "Tongariro Alpine Crossing",
@@ -2278,6 +2408,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: en:user:dramatic / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Apr, Nov",
       },
       {
         name: "Bay of Islands",
@@ -2290,6 +2422,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Fuadounet / CC BY-SA 2.0",
+        bestWeatherMonths: "Jan–Feb, Oct–Dec",
+        goodWeatherMonths: "Mar–May, Sep",
       },
     ],
     famousMovies: [
@@ -2353,11 +2487,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [177, 197, 208, 153, 117, 88, 74, 69, 89, 125, 143, 168],
     bestTimeToVisit: 'May–September (dry season) for Machu Picchu and the highlands',
     popularPlaces: [
-      { name: 'Cusco', description: 'Former Inca capital blending colonial architecture with ancient ruins' },
-      { name: 'Lima', description: 'Culinary capital of South America with world-renowned ceviche' },
-      { name: 'Sacred Valley', description: 'Lush Andean valley with Inca terraces, markets, and ruins' },
-      { name: 'Lake Titicaca', description: 'Highest navigable lake with floating islands and Andean culture' },
-      { name: 'Amazon Rainforest (Iquitos)', description: 'Gateway to Peru\'s vast jungle wilderness' },
+      { name: 'Cusco', description: 'Former Inca capital blending colonial architecture with ancient ruins', bestWeatherMonths: "Apr–May, Sep–Nov", goodWeatherMonths: "Mar, Jun–Aug, Dec" },
+      { name: 'Lima', description: 'Culinary capital of South America with world-renowned ceviche', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Sacred Valley', description: 'Lush Andean valley with Inca terraces, markets, and ruins', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar, Dec" },
+      { name: 'Lake Titicaca', description: 'Highest navigable lake with floating islands and Andean culture', bestWeatherMonths: "Apr, Oct–Nov", goodWeatherMonths: "May–Sep, Dec" },
+      { name: 'Amazon Rainforest (Iquitos)', description: 'Gateway to Peru\'s vast jungle wilderness', bestWeatherMonths: "Jan–Aug, Nov–Dec", goodWeatherMonths: "Sep–Oct" },
     ],
     attractions: [
       {
@@ -2374,16 +2508,21 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 950000,
         annualVisitorsYear: 2023,
         annualVisitorsSourceUrl: "https://roadgenius.com/statistics/tourism/peru/machu-picchu/",
+        bestWeatherMonths: "Apr–Dec",
+        goodWeatherMonths: "Jan–Mar",
       },
       {
         name: "Rainbow Mountain",
         description: "Vinicunca's striated colorful peaks at 5,200m elevation",
         entityId: "attraction_PE_rainbow_mountain",
+        bestWeatherMonths: "Apr, Sep–Nov",
+        goodWeatherMonths: "May–Aug, Dec",
       },
       {
         name: "Nazca Lines",
         description: "Mysterious ancient geoglyphs visible only from the air",
         entityId: "attraction_PE_nazca_lines",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Colca Canyon",
@@ -2396,6 +2535,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: world-wide-gifts.com / CC BY-SA 2.0",
+        bestWeatherMonths: "Apr, Nov–Dec",
+        goodWeatherMonths: "Jan–Mar, May–Oct",
       },
       {
         name: "Huacachina",
@@ -2408,6 +2549,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Gatol fotografia from La Paz, Bolivia / CC BY-SA 2.0",
+        bestWeatherMonths: "Jan–Dec",
       },
     ],
     famousMovies: [
@@ -2471,11 +2613,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [120, 106, 99, 74, 76, 63, 78, 94, 127, 127, 120, 118],
     bestTimeToVisit: 'June–August for midnight sun and hiking; September–March for the Northern Lights',
     popularPlaces: [
-      { name: 'Reykjavík', description: 'World\'s northernmost capital with colorful houses and vibrant culture' },
-      { name: 'Golden Circle', description: 'Classic route through geysers, waterfalls, and tectonic plates' },
-      { name: 'South Coast', description: 'Black sand beaches, glacier lagoons, and towering waterfalls' },
-      { name: 'Westfjords', description: 'Remote peninsulas with dramatic cliffs and Arctic fox colonies' },
-      { name: 'Snæfellsnes Peninsula', description: '"Iceland in miniature" with glaciers, lava fields, and a famous volcano' },
+      { name: 'Reykjavík', description: 'World\'s northernmost capital with colorful houses and vibrant culture', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
+      { name: 'Golden Circle', description: 'Classic route through geysers, waterfalls, and tectonic plates', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug" },
+      { name: 'South Coast', description: 'Black sand beaches, glacier lagoons, and towering waterfalls', bestWeatherMonths: "Jun–Aug" },
+      { name: 'Westfjords', description: 'Remote peninsulas with dramatic cliffs and Arctic fox colonies', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
+      { name: 'Snæfellsnes Peninsula', description: '"Iceland in miniature" with glaciers, lava fields, and a famous volcano', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
     ],
     attractions: [
       {
@@ -2489,6 +2631,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Bloody-libu / CC BY-SA 3.0",
+        bestWeatherMonths: "Jun–Aug",
       },
       {
         name: "Jökulsárlón Glacier Lagoon",
@@ -2572,11 +2715,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [27, 38, 56, 93, 107, 166, 302, 284, 153, 64, 48, 29],
     bestTimeToVisit: 'September–November for stunning fall foliage, or April–May for cherry blossoms',
     popularPlaces: [
-      { name: 'Seoul', description: 'High-tech megacity blending ancient palaces with K-pop culture' },
-      { name: 'Busan', description: 'Coastal city with colorful villages, beaches, and seafood markets' },
-      { name: 'Jeju Island', description: 'Volcanic island paradise with lava tubes and tangerine orchards' },
-      { name: 'Gyeongju', description: '"Museum without walls" — former capital of the ancient Silla kingdom' },
-      { name: 'DMZ', description: 'The world\'s most heavily fortified border offers surreal tours' },
+      { name: 'Seoul', description: 'High-tech megacity blending ancient palaces with K-pop culture', bestWeatherMonths: "Apr–May, Oct", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Busan', description: 'Coastal city with colorful villages, beaches, and seafood markets', bestWeatherMonths: "Apr, Oct–Nov", goodWeatherMonths: "Mar, May–Jun, Sep" },
+      { name: 'Jeju Island', description: 'Volcanic island paradise with lava tubes and tangerine orchards', bestWeatherMonths: "Oct–Nov", goodWeatherMonths: "Apr–Jun, Sep" },
+      { name: 'Gyeongju', description: '"Museum without walls" — former capital of the ancient Silla kingdom', bestWeatherMonths: "Apr–May, Oct", goodWeatherMonths: "Jun, Sep, Nov" },
+      { name: 'DMZ', description: 'The world\'s most heavily fortified border offers surreal tours', bestWeatherMonths: "Apr–May, Oct", goodWeatherMonths: "Jun, Sep" },
     ],
     attractions: [
       {
@@ -2595,6 +2738,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: 이상곤 / CC BY-SA 4.0",
+        bestWeatherMonths: "Apr–May, Oct",
+        goodWeatherMonths: "Jun, Sep",
       },
       {
         name: "Bukchon Hanok Village",
@@ -2607,12 +2752,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: 이상곤 / CC BY-SA 4.0",
+        bestWeatherMonths: "Apr–May, Oct",
+        goodWeatherMonths: "Jun, Sep",
       },
       {
         name: "Haedong Yonggungsa",
         description: "Stunning seaside Buddhist temple perched on ocean cliffs in Busan",
         entityId: "attraction_KR_haedong_yonggungsa",
         wikidataId: "Q49280510",
+        bestWeatherMonths: "Apr, Oct–Nov",
+        goodWeatherMonths: "Mar, May–Jun, Sep",
       },
       {
         name: "Lotte World Tower",
@@ -2681,11 +2830,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [39, 35, 39, 28, 18, 6, 4, 7, 17, 34, 40, 47],
     bestTimeToVisit: 'March–May or September–November for pleasant temperatures',
     popularPlaces: [
-      { name: 'Marrakech', description: 'The Red City with vibrant souks, palaces, and Jemaa el-Fnaa square' },
-      { name: 'Fes', description: 'Medieval medina with the world\'s oldest university and leather tanneries' },
-      { name: 'Chefchaouen', description: 'Dreamy blue-painted mountain town in the Rif Mountains' },
-      { name: 'Sahara Desert', description: 'Camel treks and stargazing among golden sand dunes of Erg Chebbi' },
-      { name: 'Essaouira', description: 'Breezy coastal town with fortified walls and world-class kitesurfing' },
+      { name: 'Marrakech', description: 'The Red City with vibrant souks, palaces, and Jemaa el-Fnaa square', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Fes', description: 'Medieval medina with the world\'s oldest university and leather tanneries', bestWeatherMonths: "Jan–Jun, Sep–Dec" },
+      { name: 'Chefchaouen', description: 'Dreamy blue-painted mountain town in the Rif Mountains', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb, Dec" },
+      { name: 'Sahara Desert', description: 'Camel treks and stargazing among golden sand dunes of Erg Chebbi', bestWeatherMonths: "Jan–Apr, Oct–Dec" },
+      { name: 'Essaouira', description: 'Breezy coastal town with fortified walls and world-class kitesurfing', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -2699,11 +2848,14 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: Donar Reiskoffer / CC BY 3.0",
+        bestWeatherMonths: "Jan–May, Oct–Dec",
+        goodWeatherMonths: "Jun, Sep",
       },
       {
         name: "Hassan II Mosque",
         description: "Casablanca's stunning mosque with the world's tallest minaret",
         entityId: "attraction_MA_hassan_ii_mosque",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Todra Gorge",
@@ -2721,6 +2873,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Val Traveler / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–May, Oct–Dec",
+        goodWeatherMonths: "Jun, Sep",
       },
       {
         name: "Aït Benhaddou",
@@ -2733,6 +2887,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Petar Milošević / CC BY-SA 4.0",
+        bestWeatherMonths: "Mar–Jun, Sep–Nov",
+        goodWeatherMonths: "Feb, Aug",
       },
     ],
     famousMovies: [
@@ -2796,11 +2952,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [107, 84, 80, 60, 64, 81, 91, 106, 108, 121, 105, 116],
     bestTimeToVisit: 'June–August for midnight sun and fjord cruises; November–February for Northern Lights',
     popularPlaces: [
-      { name: 'Bergen', description: 'Gateway to the fjords with colorful Bryggen wharf' },
-      { name: 'Tromsø', description: 'Arctic city perfect for Northern Lights and midnight sun' },
-      { name: 'Oslo', description: 'Modern capital with Viking museums and stunning fjord setting' },
-      { name: 'Lofoten Islands', description: 'Dramatic Arctic archipelago with fishing villages and surfing' },
-      { name: 'Geirangerfjord', description: 'UNESCO-listed fjord with towering waterfalls and emerald waters' },
+      { name: 'Bergen', description: 'Gateway to the fjords with colorful Bryggen wharf', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Tromsø', description: 'Arctic city perfect for Northern Lights and midnight sun', bestWeatherMonths: "Jul", goodWeatherMonths: "Aug" },
+      { name: 'Oslo', description: 'Modern capital with Viking museums and stunning fjord setting', bestWeatherMonths: "May–Sep" },
+      { name: 'Lofoten Islands', description: 'Dramatic Arctic archipelago with fishing villages and surfing', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
+      { name: 'Geirangerfjord', description: 'UNESCO-listed fjord with towering waterfalls and emerald waters', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug" },
     ],
     attractions: [
       {
@@ -2814,6 +2970,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Vasile Cotovanu from Zürich, Switzerland / CC BY 2.0",
+        bestWeatherMonths: "Jun–Jul",
+        goodWeatherMonths: "Aug",
       },
       {
         name: "Trolltunga",
@@ -2826,6 +2984,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: TerjeN / CC BY 3.0",
+        bestWeatherMonths: "Jul",
+        goodWeatherMonths: "Jun, Aug",
       },
       {
         name: "Northern Lights",
@@ -2838,6 +2998,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: The Municipality of Tromsø from Tromsø, Norway / CC BY 2.0",
+        bestWeatherMonths: "Jul",
+        goodWeatherMonths: "Aug",
       },
       {
         name: "Preikestolen (Pulpit Rock)",
@@ -2855,6 +3017,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Jonipoon / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Sep",
       },
     ],
     famousMovies: [
@@ -2918,11 +3081,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [13, 16, 29, 42, 69, 101, 114, 101, 60, 33, 19, 12],
     bestTimeToVisit: 'September–October (autumn) for comfortable weather and golden foliage',
     popularPlaces: [
-      { name: 'Beijing', description: 'Imperial capital with the Forbidden City and ancient hutongs' },
-      { name: 'Shanghai', description: 'Futuristic skyline on the Bund with vibrant nightlife and dining' },
-      { name: 'Xi\'an', description: 'Home of the Terracotta Warriors and ancient Silk Road starting point' },
-      { name: 'Guilin', description: 'Surreal karst landscapes along the Li River' },
-      { name: 'Chengdu', description: 'Panda capital with legendary Sichuan cuisine and tea houses' },
+      { name: 'Beijing', description: 'Imperial capital with the Forbidden City and ancient hutongs', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun" },
+      { name: 'Shanghai', description: 'Futuristic skyline on the Bund with vibrant nightlife and dining', bestWeatherMonths: "Apr–May, Oct–Nov", goodWeatherMonths: "Mar, Sep" },
+      { name: 'Xi\'an', description: 'Home of the Terracotta Warriors and ancient Silk Road starting point', bestWeatherMonths: "Mar–May, Sep–Oct", goodWeatherMonths: "Jun, Nov" },
+      { name: 'Guilin', description: 'Surreal karst landscapes along the Li River', bestWeatherMonths: "Oct–Dec", goodWeatherMonths: "Feb–Apr, Sep" },
+      { name: 'Chengdu', description: 'Panda capital with legendary Sichuan cuisine and tea houses', bestWeatherMonths: "Mar–May, Sep–Nov", goodWeatherMonths: "Feb, Jun, Dec" },
     ],
     attractions: [
       {
@@ -2937,6 +3100,8 @@ export const countries: Record<string, CountryData> = {
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Severin.stalder / CC BY-SA 3.0",
         annualVisitors: 16000000,
+        bestWeatherMonths: "Apr–May, Sep–Oct",
+        goodWeatherMonths: "Jun",
       },
       {
         name: "Forbidden City",
@@ -2952,6 +3117,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 19300000,
         annualVisitorsYear: 2019,
         annualVisitorsSourceUrl: "https://www.statista.com/statistics/1175986/yearly-visitors-to-the-palace-museum-in-beijing/",
+        bestWeatherMonths: "Apr–May, Sep–Oct",
+        goodWeatherMonths: "Mar, Jun",
       },
       {
         name: "Terracotta Warriors",
@@ -3030,11 +3197,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [102, 116, 182, 243, 299, 281, 263, 234, 234, 235, 221, 152],
     bestTimeToVisit: 'December–March or July–August during the dry seasons',
     popularPlaces: [
-      { name: 'Cartagena', description: 'Colorful colonial walled city on the Caribbean coast' },
-      { name: 'Medellín', description: 'City of Eternal Spring with innovative urban culture and nightlife' },
-      { name: 'Bogotá', description: 'Highland capital with world-class museums and street art' },
-      { name: 'Coffee Triangle', description: 'Lush coffee-growing region with haciendas and mountain trails' },
-      { name: 'Tayrona National Park', description: 'Pristine Caribbean beaches backed by jungle-clad mountains' },
+      { name: 'Cartagena', description: 'Colorful colonial walled city on the Caribbean coast', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jun" },
+      { name: 'Medellín', description: 'City of Eternal Spring with innovative urban culture and nightlife', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Dec" },
+      { name: 'Bogotá', description: 'Highland capital with world-class museums and street art', bestWeatherMonths: "Jan–Mar, Jun–Sep, Dec", goodWeatherMonths: "Apr–May, Oct–Nov" },
+      { name: 'Coffee Triangle', description: 'Lush coffee-growing region with haciendas and mountain trails', bestWeatherMonths: "Jul", goodWeatherMonths: "Jan–Jun, Aug–Dec" },
+      { name: 'Tayrona National Park', description: 'Pristine Caribbean beaches backed by jungle-clad mountains', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr" },
     ],
     attractions: [
       {
@@ -3042,11 +3209,15 @@ export const countries: Record<string, CountryData> = {
         description: "UNESCO walled city with balconied colonial buildings and plazas",
         entityId: "attraction_CO_cartagena_old_town",
         wikidataId: "Q23696017",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar–Apr, Jun",
       },
       {
         name: "Caño Cristales",
         description: "\"River of Five Colors\" — the most beautiful river in the world",
         entityId: "attraction_CO_cano_cristales",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar, Sep–Dec",
       },
       {
         name: "Salt Cathedral of Zipaquirá",
@@ -3125,11 +3296,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [74, 63, 66, 62, 60, 38, 17, 15, 23, 49, 60, 78],
     bestTimeToVisit: 'April–May or September–November for comfortable weather and fewer crowds',
     popularPlaces: [
-      { name: 'Istanbul', description: 'Transcontinental city straddling Europe and Asia with Byzantine and Ottoman splendor' },
-      { name: 'Cappadocia', description: 'Fairy chimneys, underground cities, and iconic hot air balloon rides' },
-      { name: 'Antalya', description: 'Turkish Riviera with turquoise waters and ancient Roman ruins' },
-      { name: 'Ephesus', description: 'One of the best-preserved ancient cities in the Mediterranean' },
-      { name: 'Pamukkale', description: 'Dazzling white travertine terraces filled with thermal waters' },
+      { name: 'Istanbul', description: 'Transcontinental city straddling Europe and Asia with Byzantine and Ottoman splendor', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
+      { name: 'Cappadocia', description: 'Fairy chimneys, underground cities, and iconic hot air balloon rides', bestWeatherMonths: "Apr–Oct" },
+      { name: 'Antalya', description: 'Turkish Riviera with turquoise waters and ancient Roman ruins', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Ephesus', description: 'One of the best-preserved ancient cities in the Mediterranean', bestWeatherMonths: "Mar–Jun, Sep–Nov" },
+      { name: 'Pamukkale', description: 'Dazzling white travertine terraces filled with thermal waters', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov" },
     ],
     attractions: [
       {
@@ -3143,6 +3314,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Arild Vågen / CC BY-SA 3.0",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Nov",
       },
       {
         name: "Cappadocia Balloon Rides",
@@ -3155,17 +3328,22 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Benh LIEU SONG from Torcy, France / CC BY-SA 2.0",
+        bestWeatherMonths: "Apr–Oct",
       },
       {
         name: "Grand Bazaar",
         description: "One of the world's oldest and largest covered markets with 4,000 shops",
         entityId: "attraction_TR_grand_bazaar",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Nov",
       },
       {
         name: "Pamukkale Travertines",
         description: "Natural hot springs cascading down white limestone terraces",
         entityId: "attraction_TR_pamukkale_travertines",
         wikidataId: "Q3892919",
+        bestWeatherMonths: "Apr–Jun, Sep–Oct",
+        goodWeatherMonths: "Mar, Jul–Aug, Nov",
       },
       {
         name: "Blue Mosque",
@@ -3178,6 +3356,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Moonik / CC BY-SA 3.0",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Nov",
       },
     ],
     famousMovies: [
@@ -3241,11 +3421,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [120, 94, 86, 72, 72, 79, 84, 94, 95, 131, 129, 130],
     bestTimeToVisit: 'May–September for the warmest weather, long days, and outdoor festivals',
     popularPlaces: [
-      { name: 'London', description: 'Cosmopolitan capital blending centuries of royal history with cutting-edge culture' },
-      { name: 'Edinburgh', description: "Scotland's atmospheric capital with a medieval Old Town and stunning castle" },
-      { name: 'Cotswolds', description: 'Rolling hills dotted with honey-colored stone villages and thatched cottages' },
-      { name: 'Lake District', description: 'Stunning national park of mountains and lakes that inspired the Romantic poets' },
-      { name: 'Bath', description: 'Elegant Georgian city built around ancient Roman hot springs' },
+      { name: 'London', description: 'Cosmopolitan capital blending centuries of royal history with cutting-edge culture', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
+      { name: 'Edinburgh', description: "Scotland's atmospheric capital with a medieval Old Town and stunning castle", bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Cotswolds', description: 'Rolling hills dotted with honey-colored stone villages and thatched cottages', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Lake District', description: 'Stunning national park of mountains and lakes that inspired the Romantic poets', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Sep" },
+      { name: 'Bath', description: 'Elegant Georgian city built around ancient Roman hot springs', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
@@ -3259,6 +3439,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Ilya Grigorik / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Tower of London",
@@ -3274,6 +3456,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 2741126,
         annualVisitorsYear: 2016,
         annualVisitorsSourceUrl: "https://www.alva.org.uk/details.cfm?p=607",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Stonehenge",
@@ -3289,6 +3473,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 1327423,
         annualVisitorsYear: 2023,
         annualVisitorsSourceUrl: "https://www.janetredlertravelandtourism.co.uk/news/visitor-numbers-uks-most-popular-attractions-increase-191/",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Buckingham Palace",
@@ -3301,6 +3487,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Diliff / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "British Museum",
@@ -3315,6 +3503,8 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: Ham / CC BY-SA 3.0",
         annualVisitors: 5821000,
         annualVisitorsYear: 2023,
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr",
       },
     ],
     famousMovies: [
@@ -3378,11 +3568,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [54, 45, 48, 42, 66, 75, 89, 78, 59, 59, 55, 60],
     bestTimeToVisit: 'May–September for warm weather, or late November–December for magical Christmas markets',
     popularPlaces: [
-      { name: 'Berlin', description: 'Vibrant capital where history, nightlife, and street art collide' },
-      { name: 'Munich', description: 'Bavarian gem known for beer gardens, Oktoberfest, and Alpine access' },
-      { name: 'Black Forest', description: 'Dense forested mountain region famous for cuckoo clocks and cherry cake' },
-      { name: 'Neuschwanstein', description: 'Fairy-tale castle that inspired the Disney Cinderella castle' },
-      { name: 'Rhine Valley', description: 'Romantic river valley lined with vineyards and medieval castles' },
+      { name: 'Berlin', description: 'Vibrant capital where history, nightlife, and street art collide', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Munich', description: 'Bavarian gem known for beer gardens, Oktoberfest, and Alpine access', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Black Forest', description: 'Dense forested mountain region famous for cuckoo clocks and cherry cake', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
+      { name: 'Neuschwanstein', description: 'Fairy-tale castle that inspired the Disney Cinderella castle', bestWeatherMonths: "Sep", goodWeatherMonths: "Apr–Aug, Oct" },
+      { name: 'Rhine Valley', description: 'Romantic river valley lined with vineyards and medieval castles', bestWeatherMonths: "Apr–Oct" },
     ],
     attractions: [
       {
@@ -3396,6 +3586,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Thomas Wolf, www.foto-tw.de / CC BY-SA 3.0",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Neuschwanstein Castle",
@@ -3408,6 +3600,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0 de",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
         imageAttribution: "Photo: Thomas Wolf, www.foto-tw.de / CC BY-SA 3.0 de",
+        bestWeatherMonths: "Sep",
+        goodWeatherMonths: "Apr–Aug, Oct",
       },
       {
         name: "Cologne Cathedral",
@@ -3423,6 +3617,7 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 6000000,
         annualVisitorsYear: 2004,
         annualVisitorsSourceUrl: "https://www.koelner-dom.de/interessantes/masseundzahlen/",
+        bestWeatherMonths: "Apr–Oct",
       },
       {
         name: "Berlin Wall Memorial",
@@ -3435,6 +3630,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Thomas Wolf, www.foto-tw.de / CC BY-SA 3.0",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Oktoberfest",
@@ -3447,6 +3644,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Heribert Pohl --- Thanks for half  a million clicks! from Germering bei München, Bayern / CC BY-SA 2.0",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
     ],
     famousMovies: [
@@ -3510,11 +3709,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [107, 84, 81, 78, 64, 25, 9, 12, 44, 123, 114, 120],
     bestTimeToVisit: 'March–May or September–October for warm weather, smaller crowds, and lower prices',
     popularPlaces: [
-      { name: 'Lisbon', description: 'Hilly coastal capital with pastel buildings, vintage trams, and vibrant nightlife' },
-      { name: 'Porto', description: 'Charming riverside city famous for port wine cellars and tile-covered facades' },
-      { name: 'Algarve', description: 'Dramatic coastline with golden cliffs, sea caves, and turquoise waters' },
-      { name: 'Sintra', description: 'Fairytale town of colorful palaces and gardens nestled in misty mountains' },
-      { name: 'Madeira', description: 'Subtropical island paradise known as the "Floating Garden of the Atlantic"' },
+      { name: 'Lisbon', description: 'Hilly coastal capital with pastel buildings, vintage trams, and vibrant nightlife', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec" },
+      { name: 'Porto', description: 'Charming riverside city famous for port wine cellars and tile-covered facades', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Feb–Mar, Oct–Nov" },
+      { name: 'Algarve', description: 'Dramatic coastline with golden cliffs, sea caves, and turquoise waters', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Sintra', description: 'Fairytale town of colorful palaces and gardens nestled in misty mountains', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec" },
+      { name: 'Madeira', description: 'Subtropical island paradise known as the "Floating Garden of the Atlantic"', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -3531,6 +3730,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 377780,
         annualVisitorsYear: 2022,
         annualVisitorsSourceUrl: "https://www.patrimoniocultural.gov.pt/static/data/docs/2023/03/10/ev.pdf",
+        bestWeatherMonths: "Feb–Nov",
+        goodWeatherMonths: "Jan, Dec",
       },
       {
         name: "Jerónimos Monastery",
@@ -3546,6 +3747,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 1096283,
         annualVisitorsYear: 2019,
         annualVisitorsSourceUrl: "https://www.patrimoniocultural.gov.pt/static/data/docs/2023/03/10/ev.pdf",
+        bestWeatherMonths: "Feb–Nov",
+        goodWeatherMonths: "Jan, Dec",
       },
       {
         name: "Pena Palace",
@@ -3558,17 +3761,22 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Diego Delso / CC BY-SA 4.0",
+        bestWeatherMonths: "Feb–Nov",
+        goodWeatherMonths: "Jan, Dec",
       },
       {
         name: "Benagil Sea Cave",
         description: "Spectacular domed sea cave accessible only by water in the Algarve",
         entityId: "attraction_PT_benagil_sea_cave",
         wikidataId: "Q34716570",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Livraria Lello",
         description: "Stunning neo-Gothic bookstore in Porto said to have inspired Harry Potter",
         entityId: "attraction_PT_livraria_lello",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Feb–Mar, Oct–Nov",
       },
     ],
     famousMovies: [
@@ -3632,11 +3840,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [78, 62, 106, 142, 280, 134, 165, 168, 226, 312, 200, 119],
     bestTimeToVisit: 'November–mid-December for pleasant weather before peak season, or January–March for dry season',
     popularPlaces: [
-      { name: 'Montego Bay', description: 'Popular resort city with white-sand beaches and vibrant nightlife' },
-      { name: 'Negril', description: 'Famous for Seven Mile Beach and spectacular sunset cliffs' },
-      { name: 'Ocho Rios', description: 'Cruise port town with waterfalls, gardens, and dolphin encounters' },
-      { name: 'Kingston', description: 'Cultural capital and birthplace of reggae music' },
-      { name: 'Port Antonio', description: 'Lush, laid-back parish with hidden beaches and the Blue Lagoon' },
+      { name: 'Montego Bay', description: 'Popular resort city with white-sand beaches and vibrant nightlife', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Dec" },
+      { name: 'Negril', description: 'Famous for Seven Mile Beach and spectacular sunset cliffs', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Dec" },
+      { name: 'Ocho Rios', description: 'Cruise port town with waterfalls, gardens, and dolphin encounters', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Apr, Dec" },
+      { name: 'Kingston', description: 'Cultural capital and birthplace of reggae music', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Dec" },
+      { name: 'Port Antonio', description: 'Lush, laid-back parish with hidden beaches and the Blue Lagoon', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr" },
     ],
     attractions: [
       {
@@ -3650,6 +3858,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Breakyunit at English Wikipedia / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar–Apr, Dec",
       },
       {
         name: "Bob Marley Museum",
@@ -3661,6 +3871,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "No machine-readable author provided. RsAzevedo assumed (based on copyright claims).",
         imageLicense: "Public domain",
         imageAttribution: "Photo: No machine-readable author provided. RsAzevedo assumed (based on copyright claims). / Public domain",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar",
       },
       {
         name: "Blue Mountains",
@@ -3672,11 +3884,15 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Wolmadrian",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Wolmadrian / Public domain",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar",
       },
       {
         name: "Rick's Cafe",
         description: "Iconic Negril cliff bar famous for sunset watching and cliff jumping",
         entityId: "attraction_JM_rick_s_cafe",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Dec",
       },
       {
         name: "Luminous Lagoon",
@@ -3745,11 +3961,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [39, 25, 44, 76, 162, 214, 248, 263, 240, 218, 163, 83],
     bestTimeToVisit: 'February–April or October–December for dry weather in most regions',
     popularPlaces: [
-      { name: 'Hanoi', description: 'Ancient capital with French colonial architecture and legendary street food' },
-      { name: 'Ho Chi Minh City', description: 'Energetic southern metropolis blending skyscrapers and historic pagodas' },
-      { name: 'Ha Long Bay', description: 'UNESCO-listed bay with thousands of limestone karsts and emerald waters' },
-      { name: 'Hoi An', description: 'Charming lantern-lit ancient town with tailor shops and riverside cafés' },
-      { name: 'Sapa', description: 'Mountain town with terraced rice paddies and ethnic minority villages' },
+      { name: 'Hanoi', description: 'Ancient capital with French colonial architecture and legendary street food', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Ho Chi Minh City', description: 'Energetic southern metropolis blending skyscrapers and historic pagodas', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar" },
+      { name: 'Ha Long Bay', description: 'UNESCO-listed bay with thousands of limestone karsts and emerald waters', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "Oct" },
+      { name: 'Hoi An', description: 'Charming lantern-lit ancient town with tailor shops and riverside cafés', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Dec" },
+      { name: 'Sapa', description: 'Mountain town with terraced rice paddies and ethnic minority villages', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr" },
     ],
     attractions: [
       {
@@ -3762,6 +3978,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Thierry Boriecolour adjusted by Lycaon",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Thierry Boriecolour adjusted by Lycaon / Public domain",
+        bestWeatherMonths: "Jan–Apr, Nov–Dec",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Cu Chi Tunnels",
@@ -3784,12 +4002,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Steffen Schmitz (more photos) / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Apr, Dec",
       },
       {
         name: "Mekong Delta",
         description: "Vast river delta with floating markets, fruit orchards, and waterway villages",
         entityId: "attraction_VN_mekong_delta",
         wikidataId: "Q1052867",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar, Dec",
       },
     ],
     famousMovies: [
@@ -3853,11 +4075,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [123, 87, 83, 139, 323, 319, 326, 300, 331, 443, 311, 178],
     bestTimeToVisit: 'December–April (dry season) for sunny skies, or June–August for green season deals and fewer crowds',
     popularPlaces: [
-      { name: 'Arenal Volcano', description: 'Iconic cone-shaped volcano surrounded by hot springs and rainforest' },
-      { name: 'Manuel Antonio', description: 'Tiny national park with white-sand beaches, sloths, and monkeys' },
-      { name: 'Monteverde Cloud Forest', description: 'Misty highland reserve teeming with hummingbirds and quetzals' },
-      { name: 'Guanacaste', description: 'Pacific coast province with golden beaches and world-class surfing' },
-      { name: 'Tortuguero', description: 'Remote Caribbean canals where sea turtles nest on wild beaches' },
+      { name: 'Arenal Volcano', description: 'Iconic cone-shaped volcano surrounded by hot springs and rainforest', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Jun–Dec" },
+      { name: 'Manuel Antonio', description: 'Tiny national park with white-sand beaches, sloths, and monkeys', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Nov–Dec" },
+      { name: 'Monteverde Cloud Forest', description: 'Misty highland reserve teeming with hummingbirds and quetzals', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Jun–Dec" },
+      { name: 'Guanacaste', description: 'Pacific coast province with golden beaches and world-class surfing', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Nov–Dec" },
+      { name: 'Tortuguero', description: 'Remote Caribbean canals where sea turtles nest on wild beaches', bestWeatherMonths: "Jan, Sep–Dec", goodWeatherMonths: "Feb–Mar, May–Aug" },
     ],
     attractions: [
       {
@@ -3871,6 +4093,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Grez / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr, Jun–Dec",
       },
       {
         name: "Monteverde Sky Walk",
@@ -3881,6 +4105,8 @@ export const countries: Record<string, CountryData> = {
         name: "Manuel Antonio Beach",
         description: "Pristine white-sand beach inside a national park with resident wildlife",
         entityId: "attraction_CR_manuel_antonio_beach",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar, Nov–Dec",
       },
       {
         name: "La Fortuna Waterfall",
@@ -3898,6 +4124,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: José R. / CC BY 3.0",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar, Dec",
       },
     ],
     famousMovies: [
@@ -3961,11 +4189,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [32, 25, 64, 134, 93, 37, 32, 35, 28, 78, 113, 60],
     bestTimeToVisit: 'July–October for the Great Migration in Masai Mara, or January–February for dry, warm weather',
     popularPlaces: [
-      { name: 'Masai Mara', description: 'World-famous reserve hosting the annual Great Migration of wildebeest' },
-      { name: 'Nairobi', description: 'Dynamic capital with a national park, vibrant food scene, and tech hub' },
-      { name: 'Diani Beach', description: 'Stunning white-sand Indian Ocean beach on the south coast' },
-      { name: 'Amboseli', description: 'Elephant herds roaming with Mount Kilimanjaro as the backdrop' },
-      { name: 'Lamu Island', description: 'Car-free Swahili town with donkey-lined alleys and ancient coral architecture' },
+      { name: 'Masai Mara', description: 'World-famous reserve hosting the annual Great Migration of wildebeest', bestWeatherMonths: "Feb, Jun–Sep", goodWeatherMonths: "Jan, Apr–May, Oct–Dec" },
+      { name: 'Nairobi', description: 'Dynamic capital with a national park, vibrant food scene, and tech hub', bestWeatherMonths: "Jan–Mar, Jun–Oct, Dec", goodWeatherMonths: "Apr–May, Nov" },
+      { name: 'Diani Beach', description: 'Stunning white-sand Indian Ocean beach on the south coast', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jun" },
+      { name: 'Amboseli', description: 'Elephant herds roaming with Mount Kilimanjaro as the backdrop', bestWeatherMonths: "Jan–Mar, Jun–Oct, Dec", goodWeatherMonths: "Apr–May, Nov" },
+      { name: 'Lamu Island', description: 'Car-free Swahili town with donkey-lined alleys and ancient coral architecture', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Sep–Oct" },
     ],
     attractions: [
       {
@@ -3973,6 +4201,8 @@ export const countries: Record<string, CountryData> = {
         description: "Big Five game drives during the wildebeest river crossings",
         entityId: "attraction_KE_masai_mara_safari",
         wikidataId: "Q27194022",
+        bestWeatherMonths: "Feb, Jun–Sep",
+        goodWeatherMonths: "Jan, Apr–May, Oct–Dec",
       },
       {
         name: "Mount Kenya",
@@ -3985,6 +4215,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.5 nl",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.5/nl/deed.en",
         imageAttribution: "Photo: Ruud Zwart / CC BY-SA 2.5 nl",
+        bestWeatherMonths: "Jan–Mar, Jun, Aug–Sep, Dec",
+        goodWeatherMonths: "Apr–May, Jul, Oct–Nov",
       },
       {
         name: "David Sheldrick Wildlife Trust",
@@ -4002,6 +4234,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Jasper1976 at Dutch Wikipedia / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Giraffe Centre",
@@ -4014,6 +4247,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Daryona / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Mar, Jun–Oct, Dec",
+        goodWeatherMonths: "Apr–May, Nov",
       },
     ],
     famousMovies: [
@@ -4077,11 +4312,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [120, 96, 85, 78, 77, 79, 92, 94, 99, 122, 134, 133],
     bestTimeToVisit: 'May–September for the longest daylight hours and warmest (relatively!) weather',
     popularPlaces: [
-      { name: 'Dublin', description: 'Lively capital known for literary pubs, Georgian architecture, and craic (fun)' },
-      { name: 'Ring of Kerry', description: 'Spectacular 179 km coastal drive through mountains, lakes, and villages' },
-      { name: 'Galway', description: 'Bohemian coastal city with traditional music sessions and oyster festivals' },
-      { name: 'Cliffs of Moher', description: 'Dramatic 700-foot sea cliffs on the Atlantic coast of County Clare' },
-      { name: 'Dingle Peninsula', description: 'Rugged coastal beauty with ancient stone forts and dolphin-watching' },
+      { name: 'Dublin', description: 'Lively capital known for literary pubs, Georgian architecture, and craic (fun)', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
+      { name: 'Ring of Kerry', description: 'Spectacular 179 km coastal drive through mountains, lakes, and villages', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Galway', description: 'Bohemian coastal city with traditional music sessions and oyster festivals', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
+      { name: 'Cliffs of Moher', description: 'Dramatic 700-foot sea cliffs on the Atlantic coast of County Clare', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
+      { name: 'Dingle Peninsula', description: 'Rugged coastal beauty with ancient stone forts and dolphin-watching', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "May–Jun, Sep" },
     ],
     attractions: [
       {
@@ -4095,6 +4330,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Berthold Werner / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Guinness Storehouse",
@@ -4107,6 +4344,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: psyberartist / CC BY 2.0",
+        bestWeatherMonths: "Jun–Sep",
+        goodWeatherMonths: "May",
       },
       {
         name: "Giant's Causeway",
@@ -4124,6 +4363,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Mike Searle / CC BY-SA 2.0",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Newgrange",
@@ -4136,6 +4376,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Tjp finn / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -4199,11 +4441,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [281, 255, 289, 277, 227, 186, 168, 162, 166, 210, 255, 297],
     bestTimeToVisit: 'April–October (dry season) for the best weather, especially for Bali and Komodo',
     popularPlaces: [
-      { name: 'Bali', description: 'Island of the Gods — temples, rice terraces, surf breaks, and yoga retreats' },
-      { name: 'Jakarta', description: 'Massive, fast-paced capital with colonial history and vibrant street food' },
-      { name: 'Yogyakarta', description: 'Cultural capital of Java, gateway to Borobudur and Prambanan temples' },
-      { name: 'Komodo National Park', description: 'Home of the famous Komodo dragon and pristine pink sand beaches' },
-      { name: 'Raja Ampat', description: 'Remote archipelago with the richest marine biodiversity on Earth' },
+      { name: 'Bali', description: 'Island of the Gods — temples, rice terraces, surf breaks, and yoga retreats', bestWeatherMonths: "Aug", goodWeatherMonths: "Jun–Jul, Sep" },
+      { name: 'Jakarta', description: 'Massive, fast-paced capital with colonial history and vibrant street food', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jan–Mar, Jun, Nov–Dec" },
+      { name: 'Yogyakarta', description: 'Cultural capital of Java, gateway to Borobudur and Prambanan temples', bestWeatherMonths: "Jun–Sep" },
+      { name: 'Komodo National Park', description: 'Home of the famous Komodo dragon and pristine pink sand beaches', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep–Oct" },
+      { name: 'Raja Ampat', description: 'Remote archipelago with the richest marine biodiversity on Earth', bestWeatherMonths: "Jan–Mar, May–Sep, Dec", goodWeatherMonths: "Apr, Oct–Nov" },
     ],
     attractions: [
       {
@@ -4222,6 +4464,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Cindi CGJ / CC BY-SA 4.0",
+        bestWeatherMonths: "Aug",
+        goodWeatherMonths: "Jun–Jul, Sep",
       },
       {
         name: "Komodo Island",
@@ -4234,6 +4478,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: jon hanson from London / CC BY-SA 2.0",
+        bestWeatherMonths: "Jun–Aug",
+        goodWeatherMonths: "May, Sep–Oct",
       },
       {
         name: "Mount Bromo",
@@ -4246,6 +4492,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Hugo van den Bos / CC BY 2.0",
+        bestWeatherMonths: "Jul",
+        goodWeatherMonths: "Jun, Aug–Sep",
       },
       {
         name: "Ubud Monkey Forest",
@@ -4314,10 +4562,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [36, 28, 32, 32, 40, 58, 67, 63, 57, 52, 45, 39],
     bestTimeToVisit: 'June–September for warm cities and hiking, or December–March for skiing and northern lights',
     popularPlaces: [
-      { name: 'Banff National Park', description: 'Turquoise lakes and soaring Rocky Mountain peaks in Alberta' },
-      { name: 'Vancouver', description: 'Pacific coastal city wedged between ocean and mountains' },
-      { name: 'Toronto', description: 'Canada’s largest city, multicultural with the iconic CN Tower' },
-      { name: 'Quebec City', description: 'Walled old town with French charm and cobblestone streets' },
+      { name: 'Banff National Park', description: 'Turquoise lakes and soaring Rocky Mountain peaks in Alberta', bestWeatherMonths: "Jul–Aug" },
+      { name: 'Vancouver', description: 'Pacific coastal city wedged between ocean and mountains', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
+      { name: 'Toronto', description: 'Canada’s largest city, multicultural with the iconic CN Tower', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Quebec City', description: 'Walled old town with French charm and cobblestone streets', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
     ],
     attractions: [
       {
@@ -4331,12 +4579,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Robert F. Tobler / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Lake Louise",
         description: "Glacier-fed emerald lake beneath the Victoria Glacier",
         entityId: "attraction_CA_lake_louise",
         wikidataId: "Q22541848",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Old Montreal",
@@ -4348,11 +4599,14 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Gilbert Bochenek",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Gilbert Bochenek / Public domain",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Whistler",
         description: "World-class ski resort and mountain biking hub",
         entityId: "attraction_CA_whistler",
+        bestWeatherMonths: "Jul–Aug",
+        goodWeatherMonths: "Jun, Sep",
       },
     ],
     famousMovies: [
@@ -4413,9 +4667,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [45, 41, 41, 34, 29, 29, 34, 39, 45, 40, 45, 46],
     bestTimeToVisit: 'June–September for hiking and boat tours, or winter for northern lights and dog sledding',
     popularPlaces: [
-      { name: 'Nuuk', description: 'Colorful capital blending Inuit heritage and Nordic design' },
-      { name: 'Ilulissat', description: 'Gateway to a UNESCO-listed icefjord of giant icebergs' },
-      { name: 'Disko Bay', description: 'Dramatic bay famous for whale watching and floating ice' },
+      { name: 'Nuuk', description: 'Colorful capital blending Inuit heritage and Nordic design', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
+      { name: 'Ilulissat', description: 'Gateway to a UNESCO-listed icefjord of giant icebergs', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
+      { name: 'Disko Bay', description: 'Dramatic bay famous for whale watching and floating ice', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
     ],
     attractions: [
       {
@@ -4429,6 +4683,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: Vincent van Zeijst / CC BY 3.0",
+        bestWeatherMonths: "Jul",
+        goodWeatherMonths: "Jun, Aug",
       },
       {
         name: "Northern Lights",
@@ -4493,9 +4749,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [48, 46, 61, 132, 230, 296, 295, 266, 200, 166, 141, 85],
     bestTimeToVisit: 'December–April (dry season) for the best access to Angel Falls and the coast',
     popularPlaces: [
-      { name: 'Canaima National Park', description: 'Otherworldly tepui plateaus and the world’s tallest waterfall' },
-      { name: 'Los Roques', description: 'Caribbean archipelago of turquoise lagoons and white sand' },
-      { name: 'Mérida', description: 'Andean city with the world’s highest cable car' },
+      { name: 'Canaima National Park', description: 'Otherworldly tepui plateaus and the world’s tallest waterfall', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Nov" },
+      { name: 'Los Roques', description: 'Caribbean archipelago of turquoise lagoons and white sand', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–May, Dec" },
+      { name: 'Mérida', description: 'Andean city with the world’s highest cable car', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -4509,6 +4765,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Paulo Capiotti / CC BY-SA 2.0",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Jun–Aug, Dec",
       },
       {
         name: "Mount Roraima",
@@ -4521,11 +4779,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Paolo Costa Baldi / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Apr–Dec",
       },
       {
         name: "Gran Sabana",
         description: "Vast savanna of rivers, waterfalls, and ancient plateaus",
         entityId: "attraction_VE_gran_sabana",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar–Apr, Sep–Dec",
       },
     ],
     famousMovies: [
@@ -4582,10 +4844,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [38, 32, 54, 86, 184, 176, 149, 165, 211, 159, 81, 41],
     bestTimeToVisit: 'November–April (dry season) for warm sunshine and lower humidity',
     popularPlaces: [
-      { name: 'Havana', description: 'Time-capsule capital of vintage cars and crumbling colonial grandeur' },
-      { name: 'Trinidad', description: 'Pastel-hued colonial town frozen in the 19th century' },
-      { name: 'Viñales Valley', description: 'Tobacco country of limestone mogotes and ox-plowed fields' },
-      { name: 'Varadero', description: 'Resort peninsula with miles of white-sand beach' },
+      { name: 'Havana', description: 'Time-capsule capital of vintage cars and crumbling colonial grandeur', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr, Nov" },
+      { name: 'Trinidad', description: 'Pastel-hued colonial town frozen in the 19th century', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr, Nov" },
+      { name: 'Viñales Valley', description: 'Tobacco country of limestone mogotes and ox-plowed fields', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr, Nov" },
+      { name: 'Varadero', description: 'Resort peninsula with miles of white-sand beach', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
     ],
     attractions: [
       {
@@ -4599,6 +4861,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Christopher Michel / CC BY 2.0",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Apr, Nov",
       },
       {
         name: "Malecón",
@@ -4611,12 +4875,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Martin Abegglen from Bern, Switzerland / CC BY-SA 2.0",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Apr, Nov",
       },
       {
         name: "Cayo Coco",
         description: "Idyllic cay with coral reefs and flamingo colonies",
         entityId: "attraction_CU_cayo_coco",
         wikidataId: "Q23798511",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr",
       },
     ],
     famousMovies: [
@@ -4675,21 +4943,25 @@ export const countries: Record<string, CountryData> = {
     precipitation: [65, 69, 64, 108, 198, 114, 129, 149, 176, 178, 163, 95],
     bestTimeToVisit: 'December–April for dry, sunny beach weather before hurricane season',
     popularPlaces: [
-      { name: 'Punta Cana', description: 'Resort coast of palm-lined beaches and turquoise water' },
-      { name: 'Santo Domingo', description: 'Oldest European-founded city in the Americas' },
-      { name: 'Samaná Peninsula', description: 'Lush coast famous for humpback whale season' },
-      { name: 'Puerto Plata', description: 'North-coast city with a cable car and Victorian architecture' },
+      { name: 'Punta Cana', description: 'Resort coast of palm-lined beaches and turquoise water', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
+      { name: 'Santo Domingo', description: 'Oldest European-founded city in the Americas', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Apr, Dec" },
+      { name: 'Samaná Peninsula', description: 'Lush coast famous for humpback whale season', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Dec" },
+      { name: 'Puerto Plata', description: 'North-coast city with a cable car and Victorian architecture', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Jun–Aug, Nov–Dec" },
     ],
     attractions: [
       {
         name: "Zona Colonial",
         description: "UNESCO-listed colonial quarter with the first cathedral in the Americas",
         entityId: "attraction_DO_zona_colonial",
+        bestWeatherMonths: "Jan",
+        goodWeatherMonths: "Feb–Apr, Dec",
       },
       {
         name: "Los Tres Ojos",
         description: "Limestone caves with crystalline underground lagoons",
         entityId: "attraction_DO_los_tres_ojos",
+        bestWeatherMonths: "Jan",
+        goodWeatherMonths: "Feb–Apr, Dec",
       },
       {
         name: "Saltos de Damajagua",
@@ -4752,10 +5024,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [10, 7, 8, 7, 6, 3, 3, 7, 8, 9, 9, 9],
     bestTimeToVisit: 'March–May and September–November for mild weather across coast and desert',
     popularPlaces: [
-      { name: 'Algiers', description: 'Whitewashed Mediterranean capital tumbling down to the sea' },
-      { name: 'Sahara Desert', description: 'Endless dunes, oases, and star-filled nights' },
-      { name: 'Constantine', description: 'Dramatic city of suspension bridges spanning a deep gorge' },
-      { name: 'Timgad', description: 'Remarkably preserved Roman ruins on the edge of the desert' },
+      { name: 'Algiers', description: 'Whitewashed Mediterranean capital tumbling down to the sea', bestWeatherMonths: "Feb–Jun, Sep–Dec", goodWeatherMonths: "Jan, Jul" },
+      { name: 'Sahara Desert', description: 'Endless dunes, oases, and star-filled nights', bestWeatherMonths: "Jan–Apr, Oct–Dec" },
+      { name: 'Constantine', description: 'Dramatic city of suspension bridges spanning a deep gorge', bestWeatherMonths: "Apr–Jun, Sep–Nov", goodWeatherMonths: "Mar" },
+      { name: 'Timgad', description: 'Remarkably preserved Roman ruins on the edge of the desert', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun, Nov" },
     ],
     attractions: [
       {
@@ -4769,6 +5041,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: LBM1948 / CC BY-SA 4.0",
+        bestWeatherMonths: "Feb–Jun, Sep–Dec",
+        goodWeatherMonths: "Jan, Jul",
       },
       {
         name: "Tassili n’Ajjer",
@@ -4779,6 +5053,7 @@ export const countries: Record<string, CountryData> = {
         name: "Djemila",
         description: "Stunning mountain-set Roman archaeological site",
         entityId: "attraction_DZ_djemila",
+        bestWeatherMonths: "Mar–Jun, Sep–Nov",
       },
     ],
     famousMovies: [
@@ -4835,16 +5110,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [47, 37, 34, 36, 46, 68, 80, 79, 59, 59, 56, 53],
     bestTimeToVisit: 'June–August for long bright days, or December–March for snow and northern lights',
     popularPlaces: [
-      { name: 'Stockholm', description: 'Elegant capital spread across 14 islands' },
-      { name: 'Gothenburg', description: 'Friendly seafaring city with canals and seafood' },
-      { name: 'Swedish Lapland', description: 'Arctic wilderness of reindeer, aurora, and the Ice Hotel' },
-      { name: 'Gotland', description: 'Medieval Baltic island with the walled town of Visby' },
+      { name: 'Stockholm', description: 'Elegant capital spread across 14 islands', bestWeatherMonths: "May–Sep" },
+      { name: 'Gothenburg', description: 'Friendly seafaring city with canals and seafood', bestWeatherMonths: "May–Sep" },
+      { name: 'Swedish Lapland', description: 'Arctic wilderness of reindeer, aurora, and the Ice Hotel', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
+      { name: 'Gotland', description: 'Medieval Baltic island with the walled town of Visby', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct" },
     ],
     attractions: [
       {
         name: "Vasa Museum",
         description: "A perfectly preserved 17th-century warship raised from the harbor",
         entityId: "attraction_SE_vasa_museum",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Gamla Stan",
@@ -4857,11 +5133,14 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: HartOve / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Icehotel",
         description: "Hotel rebuilt each winter from ice of the Torne River",
         entityId: "attraction_SE_icehotel",
+        bestWeatherMonths: "Jul–Aug",
+        goodWeatherMonths: "Jun",
       },
     ],
     famousMovies: [
@@ -4921,10 +5200,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [42, 33, 32, 31, 43, 64, 76, 70, 55, 57, 50, 47],
     bestTimeToVisit: 'June–August for the midnight sun, or December–March for aurora and snow',
     popularPlaces: [
-      { name: 'Helsinki', description: 'Design-forward seaside capital of bold architecture' },
-      { name: 'Lapland', description: 'Arctic north of reindeer, snow, and Santa’s village' },
-      { name: 'Finnish Lakeland', description: 'Tranquil region of forests, lakes, and lakeside saunas' },
-      { name: 'Turku', description: 'Oldest city in Finland, set on a riverside archipelago' },
+      { name: 'Helsinki', description: 'Design-forward seaside capital of bold architecture', bestWeatherMonths: "May–Sep" },
+      { name: 'Lapland', description: 'Arctic north of reindeer, snow, and Santa’s village', bestWeatherMonths: "Jun–Aug" },
+      { name: 'Finnish Lakeland', description: 'Tranquil region of forests, lakes, and lakeside saunas', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Sep" },
+      { name: 'Turku', description: 'Oldest city in Finland, set on a riverside archipelago', bestWeatherMonths: "May–Sep" },
     ],
     attractions: [
       {
@@ -4943,6 +5222,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Michal Pise, Michal.Pise / CC BY 2.0",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Allas Sea Pool",
@@ -4955,6 +5235,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Old Pionear / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
       },
     ],
     famousMovies: [
@@ -5011,10 +5292,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [70, 56, 54, 40, 55, 67, 79, 81, 71, 77, 74, 80],
     bestTimeToVisit: 'April–May for tulip season, or June–August for warm canal-side days',
     popularPlaces: [
-      { name: 'Amsterdam', description: 'Canal-ringed capital of gabled houses, bikes, and museums' },
-      { name: 'Keukenhof', description: 'World’s largest flower garden, ablaze with spring tulips' },
-      { name: 'Rotterdam', description: 'Modern port city of daring contemporary architecture' },
-      { name: 'Giethoorn', description: 'Car-free “Venice of the North” laced with canals' },
+      { name: 'Amsterdam', description: 'Canal-ringed capital of gabled houses, bikes, and museums', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Keukenhof', description: 'World’s largest flower garden, ablaze with spring tulips', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Rotterdam', description: 'Modern port city of daring contemporary architecture', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Giethoorn', description: 'Car-free “Venice of the North” laced with canals', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
@@ -5031,6 +5312,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 2406210,
         annualVisitorsYear: 2024,
         annualVisitorsSourceUrl: "https://www.rijksmuseum.nl/nl/pers/persberichten/rijksmuseum-in-2024",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Van Gogh Museum",
@@ -5045,6 +5328,8 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: Warrox / CC BY 2.5",
         annualVisitors: 366359,
         annualVisitorsYear: 2021,
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Anne Frank House",
@@ -5060,6 +5345,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 1195456,
         annualVisitorsYear: 2022,
         annualVisitorsSourceUrl: "https://www.annefrank.org/ImageVaultFiles/id_16709/cf_21/AFS_annualreport_2013.PDF",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -5119,10 +5406,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [13, 7, 21, 19, 10, 1, 1, 2, 1, 4, 13, 10],
     bestTimeToVisit: 'November–March for comfortable temperatures across the desert and cities',
     popularPlaces: [
-      { name: 'Riyadh', description: 'Fast-modernizing capital of skyscrapers and old mud-brick forts' },
-      { name: 'AlUla', description: 'Desert valley of dramatic rock formations and ancient tombs' },
-      { name: 'Jeddah', description: 'Red Sea gateway with a UNESCO-listed coral-stone old town' },
-      { name: 'Edge of the World', description: 'Sheer cliffs dropping into an endless desert horizon' },
+      { name: 'Riyadh', description: 'Fast-modernizing capital of skyscrapers and old mud-brick forts', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'AlUla', description: 'Desert valley of dramatic rock formations and ancient tombs', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May" },
+      { name: 'Jeddah', description: 'Red Sea gateway with a UNESCO-listed coral-stone old town', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb, Dec" },
+      { name: 'Edge of the World', description: 'Sheer cliffs dropping into an endless desert horizon', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
     ],
     attractions: [
       {
@@ -5141,11 +5428,14 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Ali Lajami / CC BY 2.0",
+        bestWeatherMonths: "Jan",
+        goodWeatherMonths: "Feb, Dec",
       },
       {
         name: "Diriyah",
         description: "Restored mud-brick birthplace of the Saudi state",
         entityId: "attraction_SA_diriyah",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -5201,10 +5491,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [12, 16, 50, 88, 170, 249, 279, 308, 311, 236, 94, 25],
     bestTimeToVisit: 'November–March (dry season) for cooler, more comfortable temple-hopping',
     popularPlaces: [
-      { name: 'Siem Reap', description: 'Gateway town to the temples of Angkor' },
-      { name: 'Phnom Penh', description: 'Riverside capital of royal palaces and poignant history' },
-      { name: 'Koh Rong', description: 'Tropical island of white beaches and bioluminescent water' },
-      { name: 'Battambang', description: 'Laid-back town of French colonial charm and the bamboo train' },
+      { name: 'Siem Reap', description: 'Gateway town to the temples of Angkor', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb" },
+      { name: 'Phnom Penh', description: 'Riverside capital of royal palaces and poignant history', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Mar, Nov" },
+      { name: 'Koh Rong', description: 'Tropical island of white beaches and bioluminescent water', bestWeatherMonths: "Jan–Feb, Dec" },
+      { name: 'Battambang', description: 'Laid-back town of French colonial charm and the bamboo train', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb" },
     ],
     attractions: [
       {
@@ -5218,6 +5508,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: The original uploader was Fuzheado at English Wikipedia. / CC BY-SA 2.0",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb",
       },
       {
         name: "Ta Prohm",
@@ -5230,6 +5522,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Dmitry A. Mottl / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb",
       },
       {
         name: "Bayon",
@@ -5242,6 +5536,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Trusty Tuk Tuk / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb",
       },
     ],
     famousMovies: [
@@ -5299,10 +5595,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [116, 103, 76, 146, 128, 68, 65, 91, 137, 242, 329, 241],
     bestTimeToVisit: 'December–March for the south and west coasts, May–September for the east',
     popularPlaces: [
-      { name: 'Kandy', description: 'Hill-country cultural capital around a sacred lake and temple' },
-      { name: 'Ella', description: 'Misty mountain town of tea plantations and waterfalls' },
-      { name: 'Galle', description: 'Atmospheric Dutch fort town on the southern coast' },
-      { name: 'Sigiriya', description: 'Ancient rock fortress rising from the central jungle' },
+      { name: 'Kandy', description: 'Hill-country cultural capital around a sacred lake and temple', bestWeatherMonths: "Jan, Jun–Jul", goodWeatherMonths: "Feb–Mar, May, Aug–Sep, Nov–Dec" },
+      { name: 'Ella', description: 'Misty mountain town of tea plantations and waterfalls', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Jan–Mar, May, Aug–Sep, Nov–Dec" },
+      { name: 'Galle', description: 'Atmospheric Dutch fort town on the southern coast', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar, May–Dec" },
+      { name: 'Sigiriya', description: 'Ancient rock fortress rising from the central jungle', bestWeatherMonths: "Jan, Jun–Aug", goodWeatherMonths: "Feb–Mar, May, Sep, Nov–Dec" },
     ],
     attractions: [
       {
@@ -5316,16 +5612,22 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Binuka poojan / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan, Jun–Aug",
+        goodWeatherMonths: "Feb–Mar, May, Sep, Nov–Dec",
       },
       {
         name: "Temple of the Tooth",
         description: "Kandy shrine housing a relic of the Buddha",
         entityId: "attraction_LK_temple_of_the_tooth",
+        bestWeatherMonths: "Jan, Jun–Jul",
+        goodWeatherMonths: "Feb–Mar, May, Aug–Sep, Nov–Dec",
       },
       {
         name: "Yala National Park",
         description: "Premier safari park with the world’s densest leopard population",
         entityId: "attraction_LK_yala_national_park",
+        bestWeatherMonths: "Jun–Jul",
+        goodWeatherMonths: "Jan–Mar, May, Aug–Sep, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -5382,10 +5684,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [56, 50, 56, 61, 69, 73, 72, 70, 64, 61, 54, 58],
     bestTimeToVisit: 'Year-round depending on region; spring and fall are ideal for most of the country',
     popularPlaces: [
-      { name: 'New York City', description: 'Iconic metropolis of skyscrapers, Broadway, and global culture' },
-      { name: 'Grand Canyon', description: 'Mile-deep chasm carved by the Colorado River in Arizona' },
-      { name: 'San Francisco', description: 'Hilly bay city of cable cars and the Golden Gate Bridge' },
-      { name: 'New Orleans', description: 'Birthplace of jazz with Creole food and Mardi Gras spirit' },
+      { name: 'New York City', description: 'Iconic metropolis of skyscrapers, Broadway, and global culture', bestWeatherMonths: "May–Jun, Sep–Oct", goodWeatherMonths: "Apr, Aug" },
+      { name: 'Grand Canyon', description: 'Mile-deep chasm carved by the Colorado River in Arizona', bestWeatherMonths: "May–Jun, Aug–Oct", goodWeatherMonths: "Apr, Jul" },
+      { name: 'San Francisco', description: 'Hilly bay city of cable cars and the Golden Gate Bridge', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb" },
+      { name: 'New Orleans', description: 'Birthplace of jazz with Creole food and Mardi Gras spirit', bestWeatherMonths: "Feb–Mar, Oct–Dec", goodWeatherMonths: "Jan, Apr" },
     ],
     attractions: [
       {
@@ -5402,6 +5704,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 4200000,
         annualVisitorsYear: 2024,
         annualVisitorsSourceUrl: "https://www.merveilles-du-monde.com/Statue-de-la-Liberte/index.php",
+        bestWeatherMonths: "May–Jun, Sep–Oct",
+        goodWeatherMonths: "Apr, Aug",
       },
       {
         name: "Yellowstone National Park",
@@ -5417,6 +5721,7 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 4744353,
         annualVisitorsYear: 2024,
         annualVisitorsSourceUrl: "https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Annual%20Park%20Recreation%20Visitation%20(1904%20-%20Last%20Calendar%20Year)",
+        bestWeatherMonths: "Jun–Sep",
       },
       {
         name: "Walt Disney World",
@@ -5429,6 +5734,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Anthony Quintano from Westminster, United States / CC BY 2.0",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -5488,10 +5795,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [162, 119, 117, 115, 200, 249, 287, 307, 274, 281, 251, 257],
     bestTimeToVisit: 'December–April (dry season) for beaches and island hopping',
     popularPlaces: [
-      { name: 'Palawan', description: 'Island paradise of lagoons, limestone cliffs, and an underground river' },
-      { name: 'Boracay', description: 'Famous for its powdery White Beach and nightlife' },
-      { name: 'Cebu', description: 'Historic island hub for diving with whale sharks and waterfalls' },
-      { name: 'Banaue', description: 'Ancient rice terraces carved into the mountains of Luzon' },
+      { name: 'Palawan', description: 'Island paradise of lagoons, limestone cliffs, and an underground river', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr" },
+      { name: 'Boracay', description: 'Famous for its powdery White Beach and nightlife', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Cebu', description: 'Historic island hub for diving with whale sharks and waterfalls', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Banaue', description: 'Ancient rice terraces carved into the mountains of Luzon', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec" },
     ],
     attractions: [
       {
@@ -5505,6 +5812,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Philippine Fly Boy / CC BY 2.0",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Chocolate Hills",
@@ -5517,11 +5826,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: P199 / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb–Apr",
+        goodWeatherMonths: "Jan, May–Dec",
       },
       {
         name: "Banaue Rice Terraces",
         description: "2,000-year-old terraces dubbed the eighth wonder of the world",
         entityId: "attraction_PH_banaue_rice_terraces",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar, Dec",
       },
     ],
     famousMovies: [
@@ -5579,10 +5892,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [7, 17, 16, 6, 2, 0, 0, 1, 0, 0, 2, 7],
     bestTimeToVisit: 'November–March for pleasant warmth before the scorching summer',
     popularPlaces: [
-      { name: 'Dubai', description: 'Futuristic metropolis of record-breaking towers and luxury malls' },
-      { name: 'Abu Dhabi', description: 'Stately capital of grand mosques and cultural landmarks' },
-      { name: 'Sharjah', description: 'The cultural capital with museums and heritage districts' },
-      { name: 'Liwa Oasis', description: 'Gateway to the towering dunes of the Empty Quarter' },
+      { name: 'Dubai', description: 'Futuristic metropolis of record-breaking towers and luxury malls', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
+      { name: 'Abu Dhabi', description: 'Stately capital of grand mosques and cultural landmarks', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
+      { name: 'Sharjah', description: 'The cultural capital with museums and heritage districts', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
+      { name: 'Liwa Oasis', description: 'Gateway to the towering dunes of the Empty Quarter', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
     ],
     attractions: [
       {
@@ -5596,6 +5909,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Tim.Reckmann / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Nov",
       },
       {
         name: "Sheikh Zayed Grand Mosque",
@@ -5608,6 +5923,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: ZI Jony / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Nov",
       },
       {
         name: "Louvre Abu Dhabi",
@@ -5620,6 +5937,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Boubloub / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Nov",
       },
     ],
     famousMovies: [
@@ -5677,21 +5996,24 @@ export const countries: Record<string, CountryData> = {
     precipitation: [74, 74, 69, 84, 94, 93, 80, 82, 116, 114, 123, 106],
     bestTimeToVisit: 'May–June and September for warm seas and fewer crowds along the coast',
     popularPlaces: [
-      { name: 'Dubrovnik', description: 'Walled “Pearl of the Adriatic” above shimmering blue water' },
-      { name: 'Split', description: 'Coastal city built around a Roman emperor’s palace' },
-      { name: 'Hvar', description: 'Sun-drenched island of lavender fields and chic harbors' },
-      { name: 'Zagreb', description: 'Cafe-lined capital with an atmospheric upper town' },
+      { name: 'Dubrovnik', description: 'Walled “Pearl of the Adriatic” above shimmering blue water', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Split', description: 'Coastal city built around a Roman emperor’s palace', bestWeatherMonths: "Apr–Oct" },
+      { name: 'Hvar', description: 'Sun-drenched island of lavender fields and chic harbors', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Feb, Jul–Aug, Nov" },
+      { name: 'Zagreb', description: 'Cafe-lined capital with an atmospheric upper town', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Sep–Oct" },
     ],
     attractions: [
       {
         name: "Plitvice Lakes",
         description: "UNESCO park of cascading turquoise lakes and waterfalls",
         entityId: "attraction_HR_plitvice_lakes",
+        bestWeatherMonths: "May–Aug",
+        goodWeatherMonths: "Sep",
       },
       {
         name: "Diocletian’s Palace",
         description: "Living Roman palace at the heart of Split",
         entityId: "attraction_HR_diocletian_s_palace",
+        bestWeatherMonths: "Apr–Oct",
       },
       {
         name: "Dubrovnik City Walls",
@@ -5704,6 +6026,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Zysko serhii / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -5761,10 +6085,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [250, 149, 218, 207, 186, 163, 168, 188, 161, 204, 257, 336],
     bestTimeToVisit: 'February–April for slightly drier weather, though it is a year-round city',
     popularPlaces: [
-      { name: 'Marina Bay', description: 'Glittering waterfront of futuristic towers and light shows' },
-      { name: 'Sentosa', description: 'Resort island of beaches, theme parks, and attractions' },
-      { name: 'Chinatown', description: 'Heritage shophouses, temples, and hawker food' },
-      { name: 'Little India', description: 'Vibrant district of textiles, spices, and colorful temples' },
+      { name: 'Marina Bay', description: 'Glittering waterfront of futuristic towers and light shows', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
+      { name: 'Sentosa', description: 'Resort island of beaches, theme parks, and attractions', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
+      { name: 'Chinatown', description: 'Heritage shophouses, temples, and hawker food', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
+      { name: 'Little India', description: 'Vibrant district of textiles, spices, and colorful temples', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
     ],
     attractions: [
       {
@@ -5783,11 +6107,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Tony Hisgett from Birmingham, UK / CC BY 2.0",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
+        goodWeatherMonths: "Mar–Oct",
       },
       {
         name: "Singapore Zoo",
         description: "World-renowned open-concept zoo and night safari",
         entityId: "attraction_SG_singapore_zoo",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
+        goodWeatherMonths: "Mar–Oct",
       },
     ],
     famousMovies: [
@@ -5845,10 +6173,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [19, 32, 34, 50, 110, 182, 320, 262, 191, 42, 9, 12],
     bestTimeToVisit: 'October–November and March–April for clear skies and prime trekking',
     popularPlaces: [
-      { name: 'Kathmandu', description: 'Ancient capital of temples, stupas, and bustling bazaars' },
-      { name: 'Pokhara', description: 'Lakeside town with mirror views of the Annapurna range' },
-      { name: 'Everest Base Camp', description: 'Legendary trek to the foot of the world’s highest peak' },
-      { name: 'Chitwan National Park', description: 'Jungle reserve home to rhinos, tigers, and elephants' },
+      { name: 'Kathmandu', description: 'Ancient capital of temples, stupas, and bustling bazaars', bestWeatherMonths: "Jan–Apr, Oct–Dec" },
+      { name: 'Pokhara', description: 'Lakeside town with mirror views of the Annapurna range', bestWeatherMonths: "Feb–Apr, Oct–Dec", goodWeatherMonths: "Jan, May–Sep" },
+      { name: 'Everest Base Camp', description: 'Legendary trek to the foot of the world’s highest peak', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug–Sep" },
+      { name: 'Chitwan National Park', description: 'Jungle reserve home to rhinos, tigers, and elephants', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -5864,6 +6192,8 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: Mount_Everest_as_seen_from_Drukair2.jpg: shrimpo1967\nderivative work: Papa Lima Whiskey 2 (talk) / CC BY-SA 2.0",
         annualVisitors: 0,
         annualVisitorsYear: 2020,
+        bestWeatherMonths: "Jun, Sep",
+        goodWeatherMonths: "May, Jul–Aug, Oct",
       },
       {
         name: "Boudhanath Stupa",
@@ -5931,10 +6261,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [155, 140, 166, 141, 57, 11, 5, 7, 15, 33, 85, 144],
     bestTimeToVisit: 'June–October (dry season) for safari and the Great Migration',
     popularPlaces: [
-      { name: 'Serengeti', description: 'Endless plains hosting the world’s greatest wildlife migration' },
-      { name: 'Zanzibar', description: 'Spice-island archipelago of white beaches and Stone Town' },
-      { name: 'Ngorongoro Crater', description: 'Vast volcanic caldera teeming with wildlife' },
-      { name: 'Mount Kilimanjaro', description: 'Africa’s highest peak, a snow-capped free-standing volcano' },
+      { name: 'Serengeti', description: 'Endless plains hosting the world’s greatest wildlife migration', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Jan–Apr, Nov–Dec" },
+      { name: 'Zanzibar', description: 'Spice-island archipelago of white beaches and Stone Town', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep" },
+      { name: 'Ngorongoro Crater', description: 'Vast volcanic caldera teeming with wildlife', bestWeatherMonths: "Jan–Mar, May–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Mount Kilimanjaro', description: 'Africa’s highest peak, a snow-capped free-standing volcano', bestWeatherMonths: "Jan–Feb, Jun–Oct, Dec", goodWeatherMonths: "Mar–May, Nov" },
     ],
     attractions: [
       {
@@ -5948,6 +6278,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Harvey Barrison from Massapequa, NY, USA / CC BY-SA 2.0",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Jan–Apr, Nov–Dec",
       },
       {
         name: "Mount Kilimanjaro",
@@ -5959,6 +6291,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Feb, Jun–Oct, Dec",
+        goodWeatherMonths: "Mar–May, Nov",
       },
       {
         name: "Stone Town",
@@ -5971,6 +6305,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: No machine-readable author provided. Mbz1 assumed (based on copyright claims). / CC BY-SA 3.0",
+        bestWeatherMonths: "Jun–Aug",
+        goodWeatherMonths: "Sep",
       },
     ],
     famousMovies: [
@@ -6027,10 +6363,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [344, 345, 433, 303, 135, 75, 76, 99, 89, 120, 173, 293],
     bestTimeToVisit: 'May–October (dry season) for sunny, less humid island weather',
     popularPlaces: [
-      { name: 'Mamanuca Islands', description: 'Postcard chain of resort islands and clear lagoons' },
-      { name: 'Yasawa Islands', description: 'Remote volcanic islands of blue caves and quiet beaches' },
-      { name: 'Nadi', description: 'Main gateway town with markets and a colorful Hindu temple' },
-      { name: 'Taveuni', description: 'The lush “Garden Island” of waterfalls and rainforest' },
+      { name: 'Mamanuca Islands', description: 'Postcard chain of resort islands and clear lagoons', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct" },
+      { name: 'Yasawa Islands', description: 'Remote volcanic islands of blue caves and quiet beaches', bestWeatherMonths: "Jun–Jul, Sep", goodWeatherMonths: "Aug, Oct" },
+      { name: 'Nadi', description: 'Main gateway town with markets and a colorful Hindu temple', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct" },
+      { name: 'Taveuni', description: 'The lush “Garden Island” of waterfalls and rainforest', bestWeatherMonths: "Jun–Sep" },
     ],
     attractions: [
       {
@@ -6049,6 +6385,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Henning Blatt / CC BY-SA 3.0",
+        bestWeatherMonths: "Jun–Sep",
+        goodWeatherMonths: "May, Oct",
       },
       {
         name: "Sigatoka Sand Dunes",
@@ -6061,6 +6399,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "FAL",
         imageLicenseUrl: "https://artlibre.org/licence/lal/en",
         imageAttribution: "Photo: Brian W. Schaller / FAL",
+        bestWeatherMonths: "Jun–Sep",
+        goodWeatherMonths: "May, Oct",
       },
     ],
     famousMovies: [
@@ -6117,9 +6457,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [118, 58, 51, 58, 173, 255, 239, 248, 262, 290, 207, 112],
     bestTimeToVisit: 'Late November–April during the dry season for reef trips and inland ruins',
     popularPlaces: [
-      { name: 'San Pedro (Ambergris Caye)', description: 'Laid-back island town beside the Belize Barrier Reef' },
-      { name: 'Caye Caulker', description: 'Car-free island living by the motto “go slow”' },
-      { name: 'San Ignacio', description: 'Jungle hub for Maya ruins, caves, and river adventures' },
+      { name: 'San Pedro (Ambergris Caye)', description: 'Laid-back island town beside the Belize Barrier Reef', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
+      { name: 'Caye Caulker', description: 'Car-free island living by the motto “go slow”', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
+      { name: 'San Ignacio', description: 'Jungle hub for Maya ruins, caves, and river adventures', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar" },
     ],
     attractions: [
       {
@@ -6132,6 +6472,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "U.S. Geological Survey (USGS)",
         imageLicense: "Public domain",
         imageAttribution: "Photo: U.S. Geological Survey (USGS) / Public domain",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr, Dec",
       },
       {
         name: "Caracol",
@@ -6146,6 +6488,8 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: Devon Jones / CC BY-SA 3.0",
         annualVisitors: 13333,
         annualVisitorsYear: 2019,
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Apr, Nov",
       },
       {
         name: "ATM Cave",
@@ -6203,9 +6547,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [64, 41, 49, 69, 220, 317, 263, 290, 325, 301, 145, 82],
     bestTimeToVisit: 'November–April for dry, mild highland weather and clear volcano views',
     popularPlaces: [
-      { name: 'Antigua', description: 'Cobblestone colonial city ringed by volcanoes' },
-      { name: 'Lake Atitlán', description: 'Volcanic crater lake fringed by Maya villages' },
-      { name: 'Tikal', description: 'Towering Maya temples rising above the jungle canopy' },
+      { name: 'Antigua', description: 'Cobblestone colonial city ringed by volcanoes', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "May–Oct" },
+      { name: 'Lake Atitlán', description: 'Volcanic crater lake fringed by Maya villages', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "May–Oct" },
+      { name: 'Tikal', description: 'Towering Maya temples rising above the jungle canopy', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
     ],
     attractions: [
       {
@@ -6219,6 +6563,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: amslerPIX / CC BY 2.0",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar, Nov",
       },
       {
         name: "Acatenango Volcano",
@@ -6281,9 +6627,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [6, 4, 13, 45, 195, 307, 237, 273, 336, 231, 41, 9],
     bestTimeToVisit: 'November–April for dry weather and consistent Pacific surf',
     popularPlaces: [
-      { name: 'El Tunco', description: 'Black-sand surf town with a buzzing beach scene' },
-      { name: 'Santa Ana', description: 'Colonial city near the country’s tallest volcano' },
-      { name: 'Suchitoto', description: 'Cobblestone arts town above Lake Suchitlán' },
+      { name: 'El Tunco', description: 'Black-sand surf town with a buzzing beach scene', bestWeatherMonths: "Nov–Dec", goodWeatherMonths: "Jan–Apr" },
+      { name: 'Santa Ana', description: 'Colonial city near the country’s tallest volcano', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr" },
+      { name: 'Suchitoto', description: 'Cobblestone arts town above Lake Suchitlán', bestWeatherMonths: "Nov", goodWeatherMonths: "Jan–Feb, Dec" },
     ],
     attractions: [
       {
@@ -6291,11 +6637,15 @@ export const countries: Record<string, CountryData> = {
         description: "Hike to a turquoise crater lake at the summit",
         entityId: "attraction_SV_santa_ana_volcano",
         wikidataId: "Q1049338",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb–Apr",
       },
       {
         name: "Joya de Cerén",
         description: "UNESCO “Pompeii of the Americas” Maya farming village",
         entityId: "attraction_SV_joya_de_ceren",
+        bestWeatherMonths: "Nov",
+        goodWeatherMonths: "Jan–Feb, Dec",
       },
       {
         name: "Ruta de las Flores",
@@ -6353,9 +6703,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [84, 49, 38, 49, 174, 259, 215, 212, 243, 257, 157, 109],
     bestTimeToVisit: 'February–May for the best diving visibility on the Bay Islands',
     popularPlaces: [
-      { name: 'Roatán', description: 'Caribbean island ringed by reefs and dive shops' },
-      { name: 'Copán', description: 'Town beside one of the great Maya archaeological sites' },
-      { name: 'Utila', description: 'Budget-friendly island famed for whale sharks' },
+      { name: 'Roatán', description: 'Caribbean island ringed by reefs and dive shops', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, Nov–Dec" },
+      { name: 'Copán', description: 'Town beside one of the great Maya archaeological sites', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Utila', description: 'Budget-friendly island famed for whale sharks', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, Nov–Dec" },
     ],
     attractions: [
       {
@@ -6363,6 +6713,8 @@ export const countries: Record<string, CountryData> = {
         description: "Maya city renowned for intricate carved stelae",
         entityId: "attraction_HN_copan_ruinas",
         wikidataId: "Q25280479",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Mesoamerican Reef",
@@ -6374,6 +6726,8 @@ export const countries: Record<string, CountryData> = {
         description: "Lush national park of waterfalls and rainforest",
         entityId: "attraction_HN_pico_bonito",
         wikidataId: "Q25284912",
+        bestWeatherMonths: "Feb–Apr",
+        goodWeatherMonths: "Jan, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -6426,9 +6780,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [102, 55, 40, 50, 203, 333, 332, 290, 272, 296, 181, 135],
     bestTimeToVisit: 'December–April for dry, sunny weather across lakes and coasts',
     popularPlaces: [
-      { name: 'Granada', description: 'Colorful colonial city on the shore of Lake Nicaragua' },
-      { name: 'Ometepe Island', description: 'Twin-volcano island rising from a vast freshwater lake' },
-      { name: 'San Juan del Sur', description: 'Pacific surf town with crescent beaches' },
+      { name: 'Granada', description: 'Colorful colonial city on the shore of Lake Nicaragua', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr" },
+      { name: 'Ometepe Island', description: 'Twin-volcano island rising from a vast freshwater lake', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Apr, Nov" },
+      { name: 'San Juan del Sur', description: 'Pacific surf town with crescent beaches', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Apr, Nov" },
     ],
     attractions: [
       {
@@ -6447,6 +6801,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: NicaPlease / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb–Mar",
       },
       {
         name: "Corn Islands",
@@ -6459,6 +6815,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: The original uploader was Oliverhenriquez at English Wikipedia. / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -6511,9 +6869,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [83, 50, 59, 124, 284, 251, 229, 248, 254, 357, 327, 172],
     bestTimeToVisit: 'December–April for the dry season across the canal and coasts',
     popularPlaces: [
-      { name: 'Panama City', description: 'Skyline metropolis beside the historic Casco Viejo' },
-      { name: 'San Blas Islands', description: 'Indigenous Guna archipelago of palm-dotted cays' },
-      { name: 'Bocas del Toro', description: 'Caribbean island chain of stilt villages and reefs' },
+      { name: 'Panama City', description: 'Skyline metropolis beside the historic Casco Viejo', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Apr" },
+      { name: 'San Blas Islands', description: 'Indigenous Guna archipelago of palm-dotted cays', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
+      { name: 'Bocas del Toro', description: 'Caribbean island chain of stilt villages and reefs', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr–Oct" },
     ],
     attractions: [
       {
@@ -6527,6 +6885,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Dr. Thomas Liptak / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Feb",
+        goodWeatherMonths: "Mar–Apr",
       },
       {
         name: "Casco Viejo",
@@ -6544,6 +6904,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Rob vanNostrand / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Jun–Dec",
       },
     ],
     famousMovies: [
@@ -6596,9 +6958,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [23, 19, 22, 26, 40, 57, 68, 68, 51, 42, 33, 27],
     bestTimeToVisit: 'May–September for mild weather and long daylight in the cities',
     popularPlaces: [
-      { name: 'Moscow', description: 'Capital of Red Square, the Kremlin, and grand metro halls' },
-      { name: 'St. Petersburg', description: 'Imperial city of palaces, canals, and white nights' },
-      { name: 'Lake Baikal', description: 'The world’s deepest and oldest freshwater lake' },
+      { name: 'Moscow', description: 'Capital of Red Square, the Kremlin, and grand metro halls', bestWeatherMonths: "May–Sep" },
+      { name: 'St. Petersburg', description: 'Imperial city of palaces, canals, and white nights', bestWeatherMonths: "May–Sep" },
+      { name: 'Lake Baikal', description: 'The world’s deepest and oldest freshwater lake', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
     ],
     attractions: [
       {
@@ -6612,6 +6974,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/4.0",
         imageAttribution: "Photo: mos.ru / CC BY 4.0",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Hermitage Museum",
@@ -6626,6 +6989,7 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: Florstein (Telegram:WikiPhoto.Space) / CC BY-SA 4.0",
         annualVisitors: 1649443,
         annualVisitorsYear: 2021,
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Trans-Siberian Railway",
@@ -6683,9 +7047,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [60, 47, 42, 36, 49, 62, 66, 79, 70, 81, 69, 66],
     bestTimeToVisit: 'June–August for long days, gardens, and seaside towns',
     popularPlaces: [
-      { name: 'Copenhagen', description: 'Design-forward capital of canals, bikes, and hygge' },
-      { name: 'Aarhus', description: 'Coastal university city with a vibrant arts scene' },
-      { name: 'Odense', description: 'Hans Christian Andersen’s storybook hometown' },
+      { name: 'Copenhagen', description: 'Design-forward capital of canals, bikes, and hygge', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Aarhus', description: 'Coastal university city with a vibrant arts scene', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Odense', description: 'Hans Christian Andersen’s storybook hometown', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -6701,11 +7065,15 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: Elgaard / CC BY-SA 3.0",
         annualVisitors: 4250000,
         annualVisitorsYear: 2024,
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Nyhavn",
         description: "Iconic waterfront of colorful 17th-century houses",
         entityId: "attraction_DK_nyhavn",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "The Little Mermaid",
@@ -6718,6 +7086,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC0",
         imageLicenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
         imageAttribution: "Photo: Benoît Prieur / CC0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -6770,15 +7140,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [79, 68, 64, 51, 68, 76, 83, 80, 71, 80, 84, 94],
     bestTimeToVisit: 'April–September for mild weather and lively city squares',
     popularPlaces: [
-      { name: 'Brussels', description: 'EU capital of grand squares, comics, and chocolate' },
-      { name: 'Bruges', description: 'Fairy-tale medieval city laced with canals' },
-      { name: 'Ghent', description: 'Lively historic city with riverside guild houses' },
+      { name: 'Brussels', description: 'EU capital of grand squares, comics, and chocolate', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Bruges', description: 'Fairy-tale medieval city laced with canals', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Ghent', description: 'Lively historic city with riverside guild houses', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
         name: "Grand-Place",
         description: "Ornate UNESCO-listed central square in Brussels",
         entityId: "attraction_BE_grand_place",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Atomium",
@@ -6791,6 +7163,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Zairon / CC BY-SA 4.0",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Belfry of Bruges",
@@ -6803,6 +7177,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.5",
         imageAttribution: "Photo: Jean-Christophe BENOIST / CC BY 2.5",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -6855,9 +7231,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [169, 147, 139, 205, 365, 358, 310, 214, 115, 89, 123, 186],
     bestTimeToVisit: 'September–November or February–April for drier rainforest travel',
     popularPlaces: [
-      { name: 'Georgetown', description: 'Capital known for wooden colonial architecture' },
-      { name: 'Kaieteur National Park', description: 'Pristine rainforest around a giant waterfall' },
-      { name: 'Iwokrama Forest', description: 'Vast conservation rainforest rich in wildlife' },
+      { name: 'Georgetown', description: 'Capital known for wooden colonial architecture', bestWeatherMonths: "Mar, Sep–Oct", goodWeatherMonths: "Jan–Feb, Apr–Aug, Nov–Dec" },
+      { name: 'Kaieteur National Park', description: 'Pristine rainforest around a giant waterfall', bestWeatherMonths: "Jan–Aug, Oct, Dec", goodWeatherMonths: "Sep, Nov" },
+      { name: 'Iwokrama Forest', description: 'Vast conservation rainforest rich in wildlife', bestWeatherMonths: "Jan–Feb, Apr–Jul, Sep–Oct", goodWeatherMonths: "Mar, Aug, Nov–Dec" },
     ],
     attractions: [
       {
@@ -6871,6 +7247,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Sorenriise at English Wikipedia / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Aug, Oct, Dec",
+        goodWeatherMonths: "Sep, Nov",
       },
       {
         name: "St. George’s Cathedral",
@@ -6881,6 +7259,8 @@ export const countries: Record<string, CountryData> = {
         name: "Rupununi Savannah",
         description: "Sweeping grasslands of ranches and giant anteaters",
         entityId: "attraction_GY_rupununi_savannah",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Jun–Jul, Sep–Nov",
       },
     ],
     famousMovies: [
@@ -6933,9 +7313,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [134, 131, 108, 105, 95, 56, 41, 32, 63, 132, 138, 136],
     bestTimeToVisit: 'May–September for cooler, more comfortable weather',
     popularPlaces: [
-      { name: 'Asunción', description: 'Riverside capital with leafy plazas and colonial charm' },
-      { name: 'Encarnación', description: 'Sunny city with a beach boardwalk and nearby ruins' },
-      { name: 'Filadelfia', description: 'Mennonite town and gateway to the Chaco wilderness' },
+      { name: 'Asunción', description: 'Riverside capital with leafy plazas and colonial charm', bestWeatherMonths: "May–Sep" },
+      { name: 'Encarnación', description: 'Sunny city with a beach boardwalk and nearby ruins', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Apr–May, Sep–Oct" },
+      { name: 'Filadelfia', description: 'Mennonite town and gateway to the Chaco wilderness', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr, Sep" },
     ],
     attractions: [
       {
@@ -7004,9 +7384,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [198, 194, 194, 269, 359, 305, 240, 150, 68, 53, 90, 157],
     bestTimeToVisit: 'February–April or August–November during the drier stretches',
     popularPlaces: [
-      { name: 'Paramaribo', description: 'Capital with UNESCO-listed Dutch wooden architecture' },
-      { name: 'Central Suriname Reserve', description: 'Enormous untouched tropical rainforest' },
-      { name: 'Commewijne', description: 'Plantation district explored by bike and boat' },
+      { name: 'Paramaribo', description: 'Capital with UNESCO-listed Dutch wooden architecture', bestWeatherMonths: "Mar, Sep–Nov", goodWeatherMonths: "Jan–Feb, Apr–Aug, Dec" },
+      { name: 'Central Suriname Reserve', description: 'Enormous untouched tropical rainforest', bestWeatherMonths: "Sep–Nov", goodWeatherMonths: "Jan–Jul, Dec" },
+      { name: 'Commewijne', description: 'Plantation district explored by bike and boat', bestWeatherMonths: "Sep–Nov", goodWeatherMonths: "Jan–Aug, Dec" },
     ],
     attractions: [
       {
@@ -7075,9 +7455,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 8, 29, 67, 124, 165, 208, 235, 216, 110, 16, 4],
     bestTimeToVisit: 'November–February during the cooler, drier harmattan season',
     popularPlaces: [
-      { name: 'Lagos', description: 'Pulsing megacity of beaches, markets, and nightlife' },
-      { name: 'Abuja', description: 'Planned capital beneath the monolithic Aso Rock' },
-      { name: 'Calabar', description: 'Coastal city famed for its dazzling December carnival' },
+      { name: 'Lagos', description: 'Pulsing megacity of beaches, markets, and nightlife', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan–Feb, Jul, Sep, Nov–Dec" },
+      { name: 'Abuja', description: 'Planned capital beneath the monolithic Aso Rock', bestWeatherMonths: "Jan, Jul–Aug, Nov–Dec", goodWeatherMonths: "Feb, Apr, Jun, Sep–Oct" },
+      { name: 'Calabar', description: 'Coastal city famed for its dazzling December carnival', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Sep" },
     ],
     attractions: [
       {
@@ -7095,6 +7475,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "The original uploader was Tsumo9 at English Wikipedia.",
         imageLicense: "Public domain",
         imageAttribution: "Photo: The original uploader was Tsumo9 at English Wikipedia. / Public domain",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Aug, Oct–Nov",
       },
       {
         name: "Olumo Rock",
@@ -7152,9 +7534,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [12, 15, 43, 90, 107, 78, 128, 144, 98, 86, 36, 13],
     bestTimeToVisit: 'October–March for dry weather across the highlands',
     popularPlaces: [
-      { name: 'Addis Ababa', description: 'High-altitude capital and seat of the African Union' },
-      { name: 'Lalibela', description: 'Town of medieval churches carved from solid rock' },
-      { name: 'Gondar', description: 'Former imperial capital of castles and palaces' },
+      { name: 'Addis Ababa', description: 'High-altitude capital and seat of the African Union', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun–Sep" },
+      { name: 'Lalibela', description: 'Town of medieval churches carved from solid rock', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
+      { name: 'Gondar', description: 'Former imperial capital of castles and palaces', bestWeatherMonths: "Jan, Oct–Dec", goodWeatherMonths: "Feb, Jul–Sep" },
     ],
     attractions: [
       {
@@ -7168,11 +7550,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Bernard Gagnon / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Jun, Sep–Dec",
+        goodWeatherMonths: "Jul–Aug",
       },
       {
         name: "Simien Mountains",
         description: "Dramatic peaks home to gelada monkeys",
         entityId: "attraction_ET_simien_mountains",
+        bestWeatherMonths: "Jan–Jun, Sep–Dec",
+        goodWeatherMonths: "Jul–Aug",
       },
       {
         name: "Danakil Depression",
@@ -7185,6 +7571,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "FAL",
         imageLicenseUrl: "https://artlibre.org/licence/lal/en",
         imageAttribution: "Photo: A.Savin / FAL",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar, Nov",
       },
     ],
     famousMovies: [
@@ -7237,20 +7625,24 @@ export const countries: Record<string, CountryData> = {
     precipitation: [10, 28, 67, 115, 148, 170, 147, 140, 178, 150, 44, 15],
     bestTimeToVisit: 'November–March for dry, sunny coastal weather',
     popularPlaces: [
-      { name: 'Accra', description: 'Lively coastal capital of markets and music' },
-      { name: 'Cape Coast', description: 'Historic town beside sobering slave-trade castles' },
-      { name: 'Kumasi', description: 'Cultural heart of the Ashanti Kingdom' },
+      { name: 'Accra', description: 'Lively coastal capital of markets and music', bestWeatherMonths: "Aug", goodWeatherMonths: "Jul, Sep" },
+      { name: 'Cape Coast', description: 'Historic town beside sobering slave-trade castles', bestWeatherMonths: "Aug–Sep", goodWeatherMonths: "Jan, Jul, Dec" },
+      { name: 'Kumasi', description: 'Cultural heart of the Ashanti Kingdom', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Nov–Dec" },
     ],
     attractions: [
       {
         name: "Cape Coast Castle",
         description: "UNESCO site central to the transatlantic slave trade",
         entityId: "attraction_GH_cape_coast_castle",
+        bestWeatherMonths: "Aug–Sep",
+        goodWeatherMonths: "Jan, Jul, Dec",
       },
       {
         name: "Kakum National Park",
         description: "Rainforest with a thrilling canopy walkway",
         entityId: "attraction_GH_kakum_national_park",
+        bestWeatherMonths: "Aug–Sep",
+        goodWeatherMonths: "Jan, Jul, Dec",
       },
       {
         name: "Lake Volta",
@@ -7262,6 +7654,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NASA",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NASA / Public domain",
+        bestWeatherMonths: "Jan, Aug, Nov–Dec",
+        goodWeatherMonths: "Feb–Mar, Jun–Jul, Sep–Oct",
       },
     ],
     famousMovies: [
@@ -7314,9 +7708,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [35, 27, 30, 26, 17, 6, 2, 7, 28, 35, 29, 34],
     bestTimeToVisit: 'April–June or September–October for warm, comfortable sightseeing',
     popularPlaces: [
-      { name: 'Tunis', description: 'Capital beside the ancient ruins of Carthage' },
-      { name: 'Sidi Bou Said', description: 'Blue-and-white clifftop village above the sea' },
-      { name: 'Djerba', description: 'Sun-soaked island of beaches and whitewashed towns' },
+      { name: 'Tunis', description: 'Capital beside the ancient ruins of Carthage', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Sidi Bou Said', description: 'Blue-and-white clifftop village above the sea', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Djerba', description: 'Sun-soaked island of beaches and whitewashed towns', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
     ],
     attractions: [
       {
@@ -7330,6 +7724,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.5",
         imageAttribution: "Photo: Calips / CC BY 2.5",
+        bestWeatherMonths: "Jan–May, Oct–Dec",
+        goodWeatherMonths: "Jun, Sep",
       },
       {
         name: "El Djem Amphitheatre",
@@ -7347,6 +7743,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Citizen59 from Tunis, Tunisie / CC BY-SA 2.0",
+        bestWeatherMonths: "Jan–May, Oct–Dec",
+        goodWeatherMonths: "Jun, Sep",
       },
     ],
     famousMovies: [
@@ -7399,9 +7797,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 1, 11, 69, 144, 242, 194, 59, 2, 0],
     bestTimeToVisit: 'November–May during the dry season for coast and safaris',
     popularPlaces: [
-      { name: 'Dakar', description: 'Vibrant Atlantic capital of music and markets' },
-      { name: 'Saint-Louis', description: 'Faded colonial city on a UNESCO-listed island' },
-      { name: 'Saly', description: 'Popular beach resort town on the Petite Côte' },
+      { name: 'Dakar', description: 'Vibrant Atlantic capital of music and markets', bestWeatherMonths: "Jan–Apr", goodWeatherMonths: "May–Jun, Dec" },
+      { name: 'Saint-Louis', description: 'Faded colonial city on a UNESCO-listed island', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Jul" },
+      { name: 'Saly', description: 'Popular beach resort town on the Petite Côte', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct–Nov" },
     ],
     attractions: [
       {
@@ -7413,6 +7811,8 @@ export const countries: Record<string, CountryData> = {
         name: "Lake Retba",
         description: "Famous pink lake colored by algae and salt",
         entityId: "attraction_SN_lake_retba",
+        bestWeatherMonths: "Jan–Apr",
+        goodWeatherMonths: "May–Jun, Dec",
       },
       {
         name: "Djoudj Bird Sanctuary",
@@ -7470,15 +7870,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [67, 66, 55, 19, 3, 1, 1, 1, 2, 9, 22, 36],
     bestTimeToVisit: 'May–October (dry season) for prime wildlife viewing',
     popularPlaces: [
-      { name: 'Windhoek', description: 'Compact capital blending German and African heritage' },
-      { name: 'Sossusvlei', description: 'Towering red dunes of the Namib Desert' },
-      { name: 'Swakopmund', description: 'Seaside town of colonial charm and dune adventures' },
+      { name: 'Windhoek', description: 'Compact capital blending German and African heritage', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb, Dec" },
+      { name: 'Sossusvlei', description: 'Towering red dunes of the Namib Desert', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Swakopmund', description: 'Seaside town of colonial charm and dune adventures', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
         name: "Etosha National Park",
         description: "Salt-pan reserve teeming with desert wildlife",
         entityId: "attraction_NA_etosha_national_park",
+        bestWeatherMonths: "Apr–Aug",
+        goodWeatherMonths: "Feb–Mar, Sep",
       },
       {
         name: "Deadvlei",
@@ -7489,6 +7891,8 @@ export const countries: Record<string, CountryData> = {
         name: "Fish River Canyon",
         description: "One of the largest canyons in the world",
         entityId: "attraction_NA_fish_river_canyon",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Feb–Mar, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -7541,9 +7945,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [93, 76, 56, 26, 6, 1, 1, 1, 4, 19, 46, 67],
     bestTimeToVisit: 'May–September (dry season) for exceptional safari wildlife',
     popularPlaces: [
-      { name: 'Okavango Delta', description: 'Lush inland delta teeming with wildlife' },
-      { name: 'Chobe National Park', description: 'Home to one of Africa’s largest elephant herds' },
-      { name: 'Maun', description: 'Safari gateway town at the delta’s edge' },
+      { name: 'Okavango Delta', description: 'Lush inland delta teeming with wildlife', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Mar–Apr" },
+      { name: 'Chobe National Park', description: 'Home to one of Africa’s largest elephant herds', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr" },
+      { name: 'Maun', description: 'Safari gateway town at the delta’s edge', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr" },
     ],
     attractions: [
       {
@@ -7556,17 +7960,23 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Teo Gómez",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Teo Gómez / Public domain",
+        bestWeatherMonths: "May–Aug",
+        goodWeatherMonths: "Mar–Apr",
       },
       {
         name: "Makgadikgadi Pans",
         description: "Vast salt flats that flood into a wildlife haven",
         entityId: "attraction_BW_makgadikgadi_pans",
+        bestWeatherMonths: "May–Aug",
+        goodWeatherMonths: "Mar–Apr, Sep",
       },
       {
         name: "Tsodilo Hills",
         description: "Sacred site with thousands of ancient rock paintings",
         entityId: "attraction_BW_tsodilo_hills",
         wikidataId: "Q21858914",
+        bestWeatherMonths: "Apr–Aug",
+        goodWeatherMonths: "Mar",
       },
     ],
     famousMovies: [
@@ -7619,9 +8029,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [51, 49, 109, 158, 148, 92, 91, 119, 121, 155, 119, 74],
     bestTimeToVisit: 'June–September or December–February during drier gorilla-trekking months',
     popularPlaces: [
-      { name: 'Kampala', description: 'Hilly, energetic capital near Lake Victoria' },
-      { name: 'Bwindi', description: 'Impenetrable forest sheltering mountain gorillas' },
-      { name: 'Jinja', description: 'Adventure hub at the source of the Nile' },
+      { name: 'Kampala', description: 'Hilly, energetic capital near Lake Victoria', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–Feb, Sep, Dec" },
+      { name: 'Bwindi', description: 'Impenetrable forest sheltering mountain gorillas', bestWeatherMonths: "Jan–Feb, May–Sep, Dec", goodWeatherMonths: "Mar–Apr, Oct–Nov" },
+      { name: 'Jinja', description: 'Adventure hub at the source of the Nile', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–Feb, Sep" },
     ],
     attractions: [
       {
@@ -7629,6 +8039,8 @@ export const countries: Record<string, CountryData> = {
         description: "World-renowned mountain gorilla trekking",
         entityId: "attraction_UG_bwindi_impenetrable_forest",
         wikidataId: "Q500397",
+        bestWeatherMonths: "Jan–Feb, May–Sep, Dec",
+        goodWeatherMonths: "Mar–Apr, Oct–Nov",
       },
       {
         name: "Murchison Falls",
@@ -7640,6 +8052,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Oliver Sedlacek",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Oliver Sedlacek / Public domain",
+        bestWeatherMonths: "Jun–Jul, Dec",
+        goodWeatherMonths: "Jan–Mar, May, Aug–Sep, Nov",
       },
       {
         name: "Queen Elizabeth National Park",
@@ -7652,6 +8066,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Rweinkove at English Wikipedia / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Feb, May–Aug, Dec",
+        goodWeatherMonths: "Mar–Apr, Sep–Nov",
       },
     ],
     famousMovies: [
@@ -7704,15 +8120,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [115, 95, 137, 143, 118, 30, 15, 37, 94, 131, 149, 119],
     bestTimeToVisit: 'June–September during the long dry season for gorilla trekking',
     popularPlaces: [
-      { name: 'Kigali', description: 'Clean, green capital set across rolling hills' },
-      { name: 'Volcanoes National Park', description: 'Mountain home of the famous gorillas' },
-      { name: 'Lake Kivu', description: 'Scenic lakeshore towns and beaches' },
+      { name: 'Kigali', description: 'Clean, green capital set across rolling hills', bestWeatherMonths: "Jan–Mar, May–Oct, Dec", goodWeatherMonths: "Apr, Nov" },
+      { name: 'Volcanoes National Park', description: 'Mountain home of the famous gorillas', bestWeatherMonths: "Jan–Feb, May–Sep, Dec", goodWeatherMonths: "Mar–Apr, Oct–Nov" },
+      { name: 'Lake Kivu', description: 'Scenic lakeshore towns and beaches', bestWeatherMonths: "Feb, Jun–Sep", goodWeatherMonths: "Jan, Mar–May, Oct–Dec" },
     ],
     attractions: [
       {
         name: "Volcanoes National Park",
         description: "Trek to see mountain gorillas in misty forest",
         entityId: "attraction_RW_volcanoes_national_park",
+        bestWeatherMonths: "Feb, Jun–Sep",
+        goodWeatherMonths: "Jan, Mar–May, Oct–Dec",
       },
       {
         name: "Kigali Genocide Memorial",
@@ -7725,11 +8143,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Adrien K / CC BY 2.0",
+        bestWeatherMonths: "Jan–Mar, May–Oct, Dec",
+        goodWeatherMonths: "Apr, Nov",
       },
       {
         name: "Nyungwe Forest",
         description: "Ancient rainforest with a treetop canopy walk",
         entityId: "attraction_RW_nyungwe_forest",
+        bestWeatherMonths: "Feb, May–Sep",
+        goodWeatherMonths: "Jan, Mar–Apr, Oct–Dec",
       },
     ],
     famousMovies: [
@@ -7782,9 +8204,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [71, 54, 28, 11, 3, 0, 0, 0, 0, 11, 32, 57],
     bestTimeToVisit: 'March–May or September–November for mild, pleasant weather',
     popularPlaces: [
-      { name: 'Jerusalem', description: 'Ancient holy city sacred to three faiths' },
-      { name: 'Tel Aviv', description: 'Modern beach city of nightlife and Bauhaus design' },
-      { name: 'Dead Sea', description: 'Mineral-rich sea at the lowest point on Earth' },
+      { name: 'Jerusalem', description: 'Ancient holy city sacred to three faiths', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep" },
+      { name: 'Tel Aviv', description: 'Modern beach city of nightlife and Bauhaus design', bestWeatherMonths: "Feb–Jun, Oct–Nov", goodWeatherMonths: "Jan, Jul, Sep, Dec" },
+      { name: 'Dead Sea', description: 'Mineral-rich sea at the lowest point on Earth', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -7798,6 +8220,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "GFDL 1.2",
         imageLicenseUrl: "https://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
         imageAttribution: "Photo: Ralf Roletschek / GFDL 1.2",
+        bestWeatherMonths: "Feb–May, Oct–Dec",
+        goodWeatherMonths: "Jan, Jun, Sep",
       },
       {
         name: "Masada",
@@ -7810,6 +8234,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Godot13 / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Old City of Jerusalem",
@@ -7822,6 +8247,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: askii / CC BY-SA 2.0",
+        bestWeatherMonths: "Feb–May, Oct–Dec",
+        goodWeatherMonths: "Jan, Jun, Sep",
       },
     ],
     famousMovies: [
@@ -7874,9 +8301,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [25, 23, 15, 7, 4, 0, 0, 0, 0, 5, 12, 17],
     bestTimeToVisit: 'March–May or September–November for comfortable desert weather',
     popularPlaces: [
-      { name: 'Petra', description: 'Rose-red city carved into desert cliffs' },
-      { name: 'Wadi Rum', description: 'Sweeping Mars-like desert of sandstone and dunes' },
-      { name: 'Amman', description: 'Hilltop capital layering Roman ruins and modern cafés' },
+      { name: 'Petra', description: 'Rose-red city carved into desert cliffs', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May" },
+      { name: 'Wadi Rum', description: 'Sweeping Mars-like desert of sandstone and dunes', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May" },
+      { name: 'Amman', description: 'Hilltop capital layering Roman ruins and modern cafés', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -7893,12 +8320,16 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 1142000,
         annualVisitorsYear: 2019,
         annualVisitorsSourceUrl: "https://jordantimes.com/news/local/petra-nears-one-million-visitors-in-2023",
+        bestWeatherMonths: "Jan–Apr, Oct–Dec",
+        goodWeatherMonths: "May",
       },
       {
         name: "Wadi Rum",
         description: "Protected desert famed for stargazing and film shoots",
         entityId: "attraction_JO_wadi_rum",
         wikidataId: "Q27125461",
+        bestWeatherMonths: "Jan–Apr, Oct–Dec",
+        goodWeatherMonths: "May",
       },
       {
         name: "Dead Sea",
@@ -7911,6 +8342,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: David Shankbone / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb–May, Oct–Dec",
+        goodWeatherMonths: "Jan, Jun, Sep",
       },
     ],
     famousMovies: [
@@ -7963,9 +8396,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [306, 220, 232, 234, 235, 197, 185, 219, 216, 275, 302, 375],
     bestTimeToVisit: 'March–October for the west coast and islands',
     popularPlaces: [
-      { name: 'Kuala Lumpur', description: 'Skyline capital crowned by the Petronas Towers' },
-      { name: 'Penang', description: 'Island of heritage streets and famous street food' },
-      { name: 'Langkawi', description: 'Tropical archipelago of beaches and rainforest' },
+      { name: 'Kuala Lumpur', description: 'Skyline capital crowned by the Petronas Towers', bestWeatherMonths: "Jan–Feb, Jun–Dec", goodWeatherMonths: "Mar–May" },
+      { name: 'Penang', description: 'Island of heritage streets and famous street food', bestWeatherMonths: "Jan–Feb, Jun–Dec", goodWeatherMonths: "Mar–May" },
+      { name: 'Langkawi', description: 'Tropical archipelago of beaches and rainforest', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Jul–Oct" },
     ],
     attractions: [
       {
@@ -7979,11 +8412,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: AwOiSoAk KaOsIoWa / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Feb, Jun–Dec",
+        goodWeatherMonths: "Mar–May",
       },
       {
         name: "Batu Caves",
         description: "Limestone cave temple with a giant golden statue",
         entityId: "attraction_MY_batu_caves",
+        bestWeatherMonths: "Jan–Feb, Jun–Dec",
+        goodWeatherMonths: "Mar–May",
       },
       {
         name: "George Town",
@@ -7996,6 +8433,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: HundenvonPenang / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Feb, Jun–Dec",
+        goodWeatherMonths: "Mar–May",
       },
     ],
     famousMovies: [
@@ -8048,9 +8487,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [2, 3, 5, 10, 19, 40, 59, 49, 22, 9, 6, 4],
     bestTimeToVisit: 'June–September for mild steppe weather and the Naadam festival',
     popularPlaces: [
-      { name: 'Ulaanbaatar', description: 'High, modern capital amid vast open steppe' },
-      { name: 'Gobi Desert', description: 'Immense desert of dunes and dinosaur fossils' },
-      { name: 'Lake Khövsgöl', description: 'Pristine alpine lake near the Siberian border' },
+      { name: 'Ulaanbaatar', description: 'High, modern capital amid vast open steppe', bestWeatherMonths: "May–Sep" },
+      { name: 'Gobi Desert', description: 'Immense desert of dunes and dinosaur fossils', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
+      { name: 'Lake Khövsgöl', description: 'Pristine alpine lake near the Siberian border', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
     ],
     attractions: [
       {
@@ -8119,9 +8558,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [18, 17, 20, 24, 26, 27, 28, 20, 14, 21, 22, 21],
     bestTimeToVisit: 'May–September for warm weather across cities and steppe',
     popularPlaces: [
-      { name: 'Almaty', description: 'Leafy former capital beneath snow-capped mountains' },
-      { name: 'Astana', description: 'Futuristic capital of striking modern architecture' },
-      { name: 'Charyn Canyon', description: 'Dramatic gorge nicknamed the “Grand Canyon’s little brother”' },
+      { name: 'Almaty', description: 'Leafy former capital beneath snow-capped mountains', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Astana', description: 'Futuristic capital of striking modern architecture', bestWeatherMonths: "May–Sep" },
+      { name: 'Charyn Canyon', description: 'Dramatic gorge nicknamed the “Grand Canyon’s little brother”', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -8135,6 +8574,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/4.0",
         imageAttribution: "Photo: Денис Гришкин / CC BY 4.0",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Big Almaty Lake",
@@ -8147,6 +8587,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Marat Rysbekov / CC BY-SA 4.0",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Kolsai Lakes",
@@ -8204,9 +8646,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [24, 27, 35, 33, 24, 9, 4, 3, 3, 11, 23, 23],
     bestTimeToVisit: 'April–May or September–October for mild Silk Road touring',
     popularPlaces: [
-      { name: 'Samarkand', description: 'Silk Road jewel of turquoise-domed madrasas' },
-      { name: 'Bukhara', description: 'Ancient holy city of mosques and minarets' },
-      { name: 'Khiva', description: 'Walled desert city frozen in time' },
+      { name: 'Samarkand', description: 'Silk Road jewel of turquoise-domed madrasas', bestWeatherMonths: "Mar–May, Sep–Oct", goodWeatherMonths: "Nov" },
+      { name: 'Bukhara', description: 'Ancient holy city of mosques and minarets', bestWeatherMonths: "Mar–Apr, Oct", goodWeatherMonths: "May, Sep, Nov" },
+      { name: 'Khiva', description: 'Walled desert city frozen in time', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar" },
     ],
     attractions: [
       {
@@ -8220,6 +8662,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Adam Harangozó / CC BY-SA 4.0",
+        bestWeatherMonths: "Mar–May, Sep–Oct",
+        goodWeatherMonths: "Nov",
       },
       {
         name: "Itchan Kala",
@@ -8232,6 +8676,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Doron / CC BY-SA 3.0",
+        bestWeatherMonths: "Apr–May, Sep–Oct",
+        goodWeatherMonths: "Mar",
       },
       {
         name: "Po-i-Kalyan",
@@ -8244,6 +8690,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Euyasik / CC BY-SA 3.0",
+        bestWeatherMonths: "Mar–Apr, Oct",
+        goodWeatherMonths: "May, Sep, Nov",
       },
     ],
     famousMovies: [
@@ -8296,15 +8744,16 @@ export const countries: Record<string, CountryData> = {
     precipitation: [15, 13, 16, 7, 1, NaN, NaN, NaN, NaN, 0, 5, 12],
     bestTimeToVisit: 'November–March for comfortable, sunny weather',
     popularPlaces: [
-      { name: 'Doha', description: 'Gleaming capital of futuristic towers and souqs' },
-      { name: 'Souq Waqif', description: 'Restored market of spices, crafts, and cafés' },
-      { name: 'The Pearl-Qatar', description: 'Artificial island of marinas and luxury living' },
+      { name: 'Doha', description: 'Gleaming capital of futuristic towers and souqs', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'Souq Waqif', description: 'Restored market of spices, crafts, and cafés', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'The Pearl-Qatar', description: 'Artificial island of marinas and luxury living', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
     ],
     attractions: [
       {
         name: "Museum of Islamic Art",
         description: "I. M. Pei landmark on the Doha waterfront",
         entityId: "attraction_QA_museum_of_islamic_art",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
       },
       {
         name: "Katara Cultural Village",
@@ -8367,9 +8816,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 9, 11, 8, 2, 4, 3, 4, 0, 0, 3, 6],
     bestTimeToVisit: 'October–April for warm but pleasant weather across the country',
     popularPlaces: [
-      { name: 'Muscat', description: 'Elegant capital of forts, mosques, and a grand souq' },
-      { name: 'Nizwa', description: 'Historic interior town with a famous round fort' },
-      { name: 'Wahiba Sands', description: 'Rolling desert of golden dunes and Bedouin camps' },
+      { name: 'Muscat', description: 'Elegant capital of forts, mosques, and a grand souq', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
+      { name: 'Nizwa', description: 'Historic interior town with a famous round fort', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'Wahiba Sands', description: 'Rolling desert of golden dunes and Bedouin camps', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
     ],
     attractions: [
       {
@@ -8383,17 +8832,23 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Mostafameraji / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar, Nov",
       },
       {
         name: "Wadi Shab",
         description: "Turquoise pools and a hidden waterfall cave",
         entityId: "attraction_OM_wadi_shab",
         wikidataId: "Q35245896",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Jebel Shams",
         description: "Oman’s highest peak above a dramatic canyon",
         entityId: "attraction_OM_jebel_shams",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -8446,9 +8901,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [9, 12, 35, 110, 221, 387, 449, 345, 234, 84, 9, 4],
     bestTimeToVisit: 'March–May or September–November for clear Himalayan views',
     popularPlaces: [
-      { name: 'Thimphu', description: 'Capital where tradition meets the modern Himalaya' },
-      { name: 'Paro', description: 'Valley town beneath the cliffside Tiger’s Nest' },
-      { name: 'Punakha', description: 'Warm valley home to a majestic riverside dzong' },
+      { name: 'Thimphu', description: 'Capital where tradition meets the modern Himalaya', bestWeatherMonths: "Oct", goodWeatherMonths: "Mar–Sep, Nov" },
+      { name: 'Paro', description: 'Valley town beneath the cliffside Tiger’s Nest', bestWeatherMonths: "Jun, Aug, Oct", goodWeatherMonths: "Mar–May, Jul, Sep, Nov" },
+      { name: 'Punakha', description: 'Warm valley home to a majestic riverside dzong', bestWeatherMonths: "Jun–Aug, Oct", goodWeatherMonths: "Apr–May, Sep" },
     ],
     attractions: [
       {
@@ -8467,6 +8922,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Gerd Eichmann / CC BY-SA 4.0",
+        bestWeatherMonths: "Jun–Aug, Oct",
+        goodWeatherMonths: "Apr–May, Sep",
       },
       {
         name: "Dochula Pass",
@@ -8524,9 +8981,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [196, 187, 160, 123, 106, 102, 84, 71, 62, 100, 110, 181],
     bestTimeToVisit: 'May–October during the cooler, drier season',
     popularPlaces: [
-      { name: 'Papeete', description: 'Lively harbor capital with markets and waterfront dining' },
-      { name: 'Bora Bora', description: 'Iconic lagoon ringed by overwater bungalows' },
-      { name: 'Moorea', description: 'Heart-shaped island of jagged green peaks and bays' },
+      { name: 'Papeete', description: 'Lively harbor capital with markets and waterfront dining', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Jan–Mar, Dec" },
+      { name: 'Bora Bora', description: 'Iconic lagoon ringed by overwater bungalows', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jun" },
+      { name: 'Moorea', description: 'Heart-shaped island of jagged green peaks and bays', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Jan–Mar, Dec" },
     ],
     attractions: [
       {
@@ -8539,6 +8996,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "William Hodges",
         imageLicense: "Public domain",
         imageAttribution: "Photo: William Hodges / Public domain",
+        bestWeatherMonths: "Apr–Nov",
+        goodWeatherMonths: "Jan–Mar, Dec",
       },
       {
         name: "Fautaua Waterfall",
@@ -8601,9 +9060,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [155, 98, 106, 150, 223, 178, 187, 192, 212, 261, 209, 217],
     bestTimeToVisit: 'November–April for sunny skies and calm seas',
     popularPlaces: [
-      { name: 'Malé', description: 'Compact, colorful capital packed onto a single island' },
-      { name: 'Maafushi', description: 'Local island popular for budget-friendly guesthouses' },
-      { name: 'Baa Atoll', description: 'UNESCO biosphere famed for manta rays and reefs' },
+      { name: 'Malé', description: 'Compact, colorful capital packed onto a single island', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
+      { name: 'Maafushi', description: 'Local island popular for budget-friendly guesthouses', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
+      { name: 'Baa Atoll', description: 'UNESCO biosphere famed for manta rays and reefs', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
     ],
     attractions: [
       {
@@ -8672,9 +9131,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [450, 355, 306, 250, 230, 155, 162, 153, 185, 249, 297, 385],
     bestTimeToVisit: 'May–October for the drier, cooler trade-wind season',
     popularPlaces: [
-      { name: 'Apia', description: 'Easygoing capital with a colonial waterfront and markets' },
-      { name: 'Lalomanu', description: 'Postcard beach of white sand and turquoise water' },
-      { name: 'Savaiʻi', description: 'Larger, wilder island of lava fields and rainforest' },
+      { name: 'Apia', description: 'Easygoing capital with a colonial waterfront and markets', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec" },
+      { name: 'Lalomanu', description: 'Postcard beach of white sand and turquoise water', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec" },
+      { name: 'Savaiʻi', description: 'Larger, wilder island of lava fields and rainforest', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "Jan–May, Nov–Dec" },
     ],
     attractions: [
       {
@@ -8698,6 +9157,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Виктор Пинчук / CC BY-SA 4.0",
+        bestWeatherMonths: "Jun–Sep",
+        goodWeatherMonths: "Jan–May, Oct–Dec",
       },
     ],
     famousMovies: [
@@ -8750,9 +9211,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [311, 276, 365, 225, 195, 168, 159, 161, 162, 151, 215, 213],
     bestTimeToVisit: 'April–October during the cooler, drier season',
     popularPlaces: [
-      { name: 'Port Vila', description: 'Harbor capital with markets, reefs, and island day trips' },
-      { name: 'Tanna', description: 'Volcanic island home to accessible Mount Yasur' },
-      { name: 'Espiritu Santo', description: 'Blue holes, white beaches, and WWII wreck dives' },
+      { name: 'Port Vila', description: 'Harbor capital with markets, reefs, and island day trips', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jun, Oct" },
+      { name: 'Tanna', description: 'Volcanic island home to accessible Mount Yasur', bestWeatherMonths: "Jul, Sep–Oct", goodWeatherMonths: "May–Jun, Aug, Nov" },
+      { name: 'Espiritu Santo', description: 'Blue holes, white beaches, and WWII wreck dives', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Jan–Apr, Nov–Dec" },
     ],
     attractions: [
       {
@@ -8766,6 +9227,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.5",
         imageAttribution: "Photo: Rolf Cosar / CC BY 2.5",
+        bestWeatherMonths: "Jul, Sep–Oct",
+        goodWeatherMonths: "May–Jun, Aug, Nov",
       },
       {
         name: "Champagne Beach",
@@ -8782,6 +9245,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NASA",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NASA / Public domain",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Jan–Apr, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -8834,9 +9299,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [10, 11, 23, 64, 195, 339, 420, 437, 308, 186, 52, 10],
     bestTimeToVisit: 'November–February for cooler, dry weather',
     popularPlaces: [
-      { name: 'Yangon', description: 'Former capital crowned by the golden Shwedagon Pagoda' },
-      { name: 'Bagan', description: 'Plain dotted with thousands of ancient temples' },
-      { name: 'Inle Lake', description: 'Serene lake of stilt villages and leg-rowing fishermen' },
+      { name: 'Yangon', description: 'Former capital crowned by the golden Shwedagon Pagoda', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
+      { name: 'Bagan', description: 'Plain dotted with thousands of ancient temples', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
+      { name: 'Inle Lake', description: 'Serene lake of stilt villages and leg-rowing fishermen', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Jun–Oct" },
     ],
     attractions: [
       {
@@ -8850,6 +9315,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Stefan Fussan / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Nov",
       },
       {
         name: "Bagan temples",
@@ -8862,11 +9329,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/4.0",
         imageAttribution: "Photo: Vyacheslav Argenberg / CC BY 4.0",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Nov",
       },
       {
         name: "Golden Rock",
         description: "Gravity-defying boulder shrine at Mount Kyaiktiyo",
         entityId: "attraction_MM_golden_rock",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Nov",
       },
     ],
     famousMovies: [
@@ -8919,9 +9390,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [30, 22, 51, 93, 188, 255, 312, 355, 245, 144, 90, 46],
     bestTimeToVisit: 'November–February for mild, dry days',
     popularPlaces: [
-      { name: 'Luang Prabang', description: 'UNESCO town of temples, monks, and Mekong sunsets' },
-      { name: 'Vientiane', description: 'Laid-back riverside capital with French-era streets' },
-      { name: 'Vang Vieng', description: 'Karst-ringed valley for caves, lagoons, and tubing' },
+      { name: 'Luang Prabang', description: 'UNESCO town of temples, monks, and Mekong sunsets', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar, Oct" },
+      { name: 'Vientiane', description: 'Laid-back riverside capital with French-era streets', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
+      { name: 'Vang Vieng', description: 'Karst-ringed valley for caves, lagoons, and tubing', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb" },
     ],
     attractions: [
       {
@@ -8935,6 +9406,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Basile Morin / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
+        goodWeatherMonths: "Mar, Oct",
       },
       {
         name: "Wat Xieng Thong",
@@ -8947,6 +9420,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Shelly Zohar / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
+        goodWeatherMonths: "Mar, Oct",
       },
       {
         name: "Plain of Jars",
@@ -8959,6 +9434,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Jakub Hałun / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Mar, Oct–Dec",
+        goodWeatherMonths: "Apr",
       },
     ],
     famousMovies: [
@@ -9011,9 +9488,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [79, 72, 85, 88, 111, 124, 98, 83, 89, 95, 83, 77],
     bestTimeToVisit: 'May–June and September–October for mild weather',
     popularPlaces: [
-      { name: 'Tbilisi', description: 'Old-town capital of sulfur baths and balconied lanes' },
-      { name: 'Kazbegi', description: 'Mountain region beneath the dramatic Caucasus peaks' },
-      { name: 'Kakheti', description: 'Sun-soaked valleys at the heart of Georgian wine' },
+      { name: 'Tbilisi', description: 'Old-town capital of sulfur baths and balconied lanes', bestWeatherMonths: "Apr–Jun, Aug–Oct", goodWeatherMonths: "Jul" },
+      { name: 'Kazbegi', description: 'Mountain region beneath the dramatic Caucasus peaks', bestWeatherMonths: "Aug–Sep", goodWeatherMonths: "Jun–Jul" },
+      { name: 'Kakheti', description: 'Sun-soaked valleys at the heart of Georgian wine', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Jun–Aug, Nov" },
     ],
     attractions: [
       {
@@ -9032,6 +9509,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: EvgenyGenkin / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Vardzia",
@@ -9044,6 +9523,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Doron / CC BY-SA 3.0",
+        bestWeatherMonths: "Jun–Sep",
+        goodWeatherMonths: "May, Oct",
       },
     ],
     famousMovies: [
@@ -9096,9 +9577,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [37, 34, 39, 50, 74, 88, 77, 60, 56, 51, 42, 43],
     bestTimeToVisit: 'May–September for warm days across cities and mountains',
     popularPlaces: [
-      { name: 'Bucharest', description: 'Lively capital of grand boulevards and Belle Époque cafés' },
-      { name: 'Brașov', description: 'Saxon town beneath the Carpathian Mountains' },
-      { name: 'Sibiu', description: 'Cobbled medieval center with pastel guild houses' },
+      { name: 'Bucharest', description: 'Lively capital of grand boulevards and Belle Époque cafés', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Jul–Aug" },
+      { name: 'Brașov', description: 'Saxon town beneath the Carpathian Mountains', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Sibiu', description: 'Cobbled medieval center with pastel guild houses', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
@@ -9167,15 +9648,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [49, 48, 49, 57, 79, 89, 72, 55, 73, 65, 60, 63],
     bestTimeToVisit: 'May–September for festivals and warm weather',
     popularPlaces: [
-      { name: 'Belgrade', description: 'Energetic capital where the Sava meets the Danube' },
-      { name: 'Novi Sad', description: 'Cultured riverside city beneath a hilltop fortress' },
-      { name: 'Zlatibor', description: 'Rolling highland resort of villages and trails' },
+      { name: 'Belgrade', description: 'Energetic capital where the Sava meets the Danube', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
+      { name: 'Novi Sad', description: 'Cultured riverside city beneath a hilltop fortress', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
+      { name: 'Zlatibor', description: 'Rolling highland resort of villages and trails', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
         name: "Belgrade Fortress",
         description: "Ancient citadel above the river confluence",
         entityId: "attraction_RS_belgrade_fortress",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Mar",
       },
       {
         name: "Petrovaradin Fortress",
@@ -9238,9 +9721,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [72, 77, 82, 108, 125, 139, 125, 137, 158, 159, 142, 104],
     bestTimeToVisit: 'May–September for lakes, hiking, and city life',
     popularPlaces: [
-      { name: 'Ljubljana', description: 'Green capital of café-lined riverbanks and a hilltop castle' },
-      { name: 'Lake Bled', description: 'Alpine lake with an island church and clifftop castle' },
-      { name: 'Piran', description: 'Venetian-flavored town on the Adriatic coast' },
+      { name: 'Ljubljana', description: 'Green capital of café-lined riverbanks and a hilltop castle', bestWeatherMonths: "May", goodWeatherMonths: "Jun–Sep" },
+      { name: 'Lake Bled', description: 'Alpine lake with an island church and clifftop castle', bestWeatherMonths: "May–Sep" },
+      { name: 'Piran', description: 'Venetian-flavored town on the Adriatic coast', bestWeatherMonths: "Jul", goodWeatherMonths: "Apr–Jun, Aug–Oct" },
     ],
     attractions: [
       {
@@ -9254,11 +9737,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Original uploader was  Boštjan Burger (Lander) at sl.wikipedia / CC BY-SA 3.0",
+        bestWeatherMonths: "Jul",
+        goodWeatherMonths: "May–Jun, Aug–Sep",
       },
       {
         name: "Triglav National Park",
         description: "Julian Alps wilderness of peaks and gorges",
         entityId: "attraction_SI_triglav_national_park",
+        bestWeatherMonths: "Jun–Sep",
+        goodWeatherMonths: "May",
       },
       {
         name: "Predjama Castle",
@@ -9316,9 +9803,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [41, 41, 43, 50, 80, 93, 108, 78, 68, 63, 53, 48],
     bestTimeToVisit: 'May–September for hiking, or winter for Tatras skiing',
     popularPlaces: [
-      { name: 'Bratislava', description: 'Compact riverside capital crowned by a white castle' },
-      { name: 'High Tatras', description: 'Jagged alpine range of lakes and mountain huts' },
-      { name: 'Košice', description: 'Eastern city with a soaring Gothic cathedral' },
+      { name: 'Bratislava', description: 'Compact riverside capital crowned by a white castle', bestWeatherMonths: "Apr–Oct" },
+      { name: 'High Tatras', description: 'Jagged alpine range of lakes and mountain huts', bestWeatherMonths: "Jun, Aug–Sep", goodWeatherMonths: "May, Jul" },
+      { name: 'Košice', description: 'Eastern city with a soaring Gothic cathedral', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -9332,6 +9819,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Andrei Stroe / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Slovak Paradise",
@@ -9344,6 +9833,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Ian Armstrong / CC BY-SA 2.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Bojnice Castle",
@@ -9401,9 +9892,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [40, 35, 36, 37, 56, 67, 65, 46, 49, 42, 40, 42],
     bestTimeToVisit: 'May–September for warm, green days',
     popularPlaces: [
-      { name: 'Kyiv', description: 'Historic capital of golden-domed cathedrals on the Dnipro' },
-      { name: 'Lviv', description: 'Cobbled UNESCO old town with coffeehouse culture' },
-      { name: 'Carpathians', description: 'Forested mountains of villages and ski resorts' },
+      { name: 'Kyiv', description: 'Historic capital of golden-domed cathedrals on the Dnipro', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Lviv', description: 'Cobbled UNESCO old town with coffeehouse culture', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Carpathians', description: 'Forested mountains of villages and ski resorts', bestWeatherMonths: "May–Sep" },
     ],
     attractions: [
       {
@@ -9422,11 +9913,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: Francisco Anzola / CC BY 3.0",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Tunnel of Love",
         description: "Leafy railway arch beloved by photographers",
         entityId: "attraction_UA_tunnel_of_love",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -9479,9 +9974,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [312, 272, 204, 88, 51, 46, 51, 42, 32, 52, 102, 217],
     bestTimeToVisit: 'April–October for drier, cooler conditions',
     popularPlaces: [
-      { name: 'Antananarivo', description: 'Hillside capital of stairways, markets, and palaces' },
-      { name: 'Andasibe', description: 'Rainforest reserve echoing with indri lemur calls' },
-      { name: 'Nosy Be', description: 'Tropical island of beaches and ylang-ylang plantations' },
+      { name: 'Antananarivo', description: 'Hillside capital of stairways, markets, and palaces', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'Andasibe', description: 'Rainforest reserve echoing with indri lemur calls', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
+      { name: 'Nosy Be', description: 'Tropical island of beaches and ylang-ylang plantations', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
     ],
     attractions: [
       {
@@ -9500,12 +9995,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: My father (who approves of its use) / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct–Nov",
       },
       {
         name: "Ranomafana",
         description: "Misty park rich with lemurs and orchids",
         entityId: "attraction_MG_ranomafana",
         wikidataId: "Q3419016",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -9558,9 +10057,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [235, 199, 152, 66, 19, 14, 13, 9, 9, 18, 68, 168],
     bestTimeToVisit: 'May–November for dry weather and clear diving',
     popularPlaces: [
-      { name: 'Maputo', description: 'Coastal capital of Portuguese-era avenues and seafood' },
-      { name: 'Bazaruto Archipelago', description: 'Sandbar islands fringed by turquoise reefs' },
-      { name: 'Tofo', description: 'Laid-back beach town famed for whale sharks' },
+      { name: 'Maputo', description: 'Coastal capital of Portuguese-era avenues and seafood', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
+      { name: 'Bazaruto Archipelago', description: 'Sandbar islands fringed by turquoise reefs', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov" },
+      { name: 'Tofo', description: 'Laid-back beach town famed for whale sharks', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov" },
     ],
     attractions: [
       {
@@ -9573,11 +10072,15 @@ export const countries: Record<string, CountryData> = {
         description: "UNESCO island of coral-stone colonial heritage",
         entityId: "attraction_MZ_ilha_de_mocambique",
         wikidataId: "Q49104753",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Oct–Nov",
       },
       {
         name: "Gorongosa National Park",
         description: "Restored wilderness teeming with wildlife",
         entityId: "attraction_MZ_gorongosa_national_park",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -9630,9 +10133,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [172, 122, 84, 28, 5, 4, 2, 1, 5, 20, 82, 146],
     bestTimeToVisit: 'May–October for cool, dry game-viewing season',
     popularPlaces: [
-      { name: 'Victoria Falls', description: 'Town beside one of the world’s greatest waterfalls' },
-      { name: 'Hwange National Park', description: 'Vast reserve with huge elephant herds' },
-      { name: 'Harare', description: 'Leafy capital of jacaranda-lined avenues' },
+      { name: 'Victoria Falls', description: 'Town beside one of the world’s greatest waterfalls', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr" },
+      { name: 'Hwange National Park', description: 'Vast reserve with huge elephant herds', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Mar, Sep" },
+      { name: 'Harare', description: 'Leafy capital of jacaranda-lined avenues', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov" },
     ],
     attractions: [
       {
@@ -9646,16 +10149,22 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Diego Delso / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Aug",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Great Zimbabwe",
         description: "Majestic stone ruins of a medieval kingdom",
         entityId: "attraction_ZW_great_zimbabwe",
+        bestWeatherMonths: "Mar–Sep",
+        goodWeatherMonths: "Feb, Oct–Nov",
       },
       {
         name: "Mana Pools",
         description: "Wild Zambezi floodplain famed for walking safaris",
         entityId: "attraction_ZW_mana_pools",
+        bestWeatherMonths: "May–Aug",
+        goodWeatherMonths: "Apr",
       },
     ],
     famousMovies: [
@@ -9695,9 +10204,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [44, 45, 45, 68, 114, 152, 105, 129, 185, 170, 81, 50],
     bestTimeToVisit: 'December–April for the driest, mildest weather (peak season)',
     popularPlaces: [
-      { name: 'Nassau', description: 'Colorful capital with colonial forts and the Straw Market' },
-      { name: 'Exumas', description: 'Chain of cays famous for swimming pigs and turquoise water' },
-      { name: 'Grand Bahama', description: 'Freeport, nature preserves, and long beaches' },
+      { name: 'Nassau', description: 'Colorful capital with colonial forts and the Straw Market', bestWeatherMonths: "Jan–Apr, Nov–Dec" },
+      { name: 'Exumas', description: 'Chain of cays famous for swimming pigs and turquoise water', bestWeatherMonths: "Jan–Apr, Dec", goodWeatherMonths: "Nov" },
+      { name: 'Grand Bahama', description: 'Freeport, nature preserves, and long beaches', bestWeatherMonths: "Jan–Apr, Nov–Dec" },
     ],
     attractions: [
       {
@@ -9721,6 +10230,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Der-wuppertaler / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Apr, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -9760,9 +10270,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [86, 54, 53, 77, 91, 134, 144, 169, 194, 189, 218, 122],
     bestTimeToVisit: 'January–April for dry, sunny weather; Crop Over festival peaks in July–August',
     popularPlaces: [
-      { name: 'Bridgetown', description: 'UNESCO-listed capital with Georgian architecture' },
-      { name: 'Oistins', description: 'Fishing town famous for Friday-night fish fry' },
-      { name: 'Speightstown', description: 'Historic port town on the calm west coast' },
+      { name: 'Bridgetown', description: 'UNESCO-listed capital with Georgian architecture', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
+      { name: 'Oistins', description: 'Fishing town famous for Friday-night fish fry', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
+      { name: 'Speightstown', description: 'Historic port town on the calm west coast', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
     ],
     attractions: [
       {
@@ -9781,11 +10291,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: User:JZimmerman (WMF) / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr, Dec",
       },
       {
         name: "Animal Flower Cave",
         description: "Sea cave with natural swimming pools on the north cliffs",
         entityId: "attraction_BB_animal_flower_cave",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr, Dec",
       },
     ],
     famousMovies: [
@@ -9824,9 +10338,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [114, 80, 72, 117, 144, 187, 208, 207, 239, 265, 292, 152],
     bestTimeToVisit: 'December–April for the dry season and the calmest sailing conditions',
     popularPlaces: [
-      { name: 'Soufrière', description: 'Coastal town under the twin Piton peaks' },
-      { name: 'Rodney Bay', description: 'Nightlife, marina, and long Reduit Beach' },
-      { name: 'Marigot Bay', description: 'Hidden yacht harbor called “the most beautiful bay in the Caribbean”' },
+      { name: 'Soufrière', description: 'Coastal town under the twin Piton peaks', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Rodney Bay', description: 'Nightlife, marina, and long Reduit Beach', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Marigot Bay', description: 'Hidden yacht harbor called “the most beautiful bay in the Caribbean”', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
     ],
     attractions: [
       {
@@ -9838,6 +10352,8 @@ export const countries: Record<string, CountryData> = {
         name: "Sulphur Springs",
         description: "World’s only “drive-in volcano” with mud baths",
         entityId: "attraction_LC_sulphur_springs",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr",
       },
       {
         name: "Diamond Falls",
@@ -9881,9 +10397,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [32, 14, 11, 14, 18, 18, 26, 22, 42, 81, 91, 58],
     bestTimeToVisit: 'Year-round — outside the Atlantic hurricane belt with steady trade winds',
     popularPlaces: [
-      { name: 'Oranjestad', description: 'Pastel Dutch-colonial capital with a walkable waterfront' },
-      { name: 'Palm Beach', description: 'High-rise resort strip along calm turquoise water' },
-      { name: 'Arikok National Park', description: 'Rugged windward coast with caves and desert landscapes' },
+      { name: 'Oranjestad', description: 'Pastel Dutch-colonial capital with a walkable waterfront', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov" },
+      { name: 'Palm Beach', description: 'High-rise resort strip along calm turquoise water', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov" },
+      { name: 'Arikok National Park', description: 'Rugged windward coast with caves and desert landscapes', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov" },
     ],
     attractions: [
       {
@@ -9897,11 +10413,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Rickzwart Rick Zwart / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Apr–Jul, Nov",
       },
       {
         name: "Natural Pool (Conchi)",
         description: "Hidden lava-rock pool inside Arikok National Park",
         entityId: "attraction_AW_natural_pool_conchi",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Apr–Jul, Nov",
       },
       {
         name: "California Lighthouse",
@@ -9945,9 +10465,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [125, 89, 69, 148, 190, 172, 208, 218, 242, 210, 203, 132],
     bestTimeToVisit: 'Mid-December through April for the driest weather outside hurricane season',
     popularPlaces: [
-      { name: 'Old San Juan', description: 'Cobblestone streets and 16th-century Spanish forts' },
-      { name: 'Rincón', description: 'West-coast surf town with Caribbean sunsets' },
-      { name: 'Vieques', description: 'Island getaway with wild horses and a bioluminescent bay' },
+      { name: 'Old San Juan', description: 'Cobblestone streets and 16th-century Spanish forts', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
+      { name: 'Rincón', description: 'West-coast surf town with Caribbean sunsets', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Dec" },
+      { name: 'Vieques', description: 'Island getaway with wild horses and a bioluminescent bay', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
     ],
     attractions: [
       {
@@ -9961,6 +10481,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Stan Shebs / CC BY-SA 3.0",
+        bestWeatherMonths: "Mar",
+        goodWeatherMonths: "Feb",
       },
       {
         name: "Castillo San Felipe del Morro",
@@ -9973,12 +10495,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Joshua Wood / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr, Dec",
       },
       {
         name: "Mosquito Bay",
         description: "Brightest bioluminescent bay on Earth",
         entityId: "attraction_PR_mosquito_bay",
         wikidataId: "Q33537655",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr, Dec",
       },
     ],
     famousMovies: [
@@ -10018,15 +10544,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [98, 67, 59, 87, 127, 242, 227, 248, 192, 214, 248, 178],
     bestTimeToVisit: 'January–May for the dry season; Carnival peaks the two days before Ash Wednesday',
     popularPlaces: [
-      { name: 'Port of Spain', description: 'Energetic capital and heart of Carnival' },
-      { name: 'Tobago', description: 'Quieter sister island with coral reefs and rainforest' },
-      { name: 'Chaguaramas', description: 'Peninsula of marinas, hikes, and offshore bays' },
+      { name: 'Port of Spain', description: 'Energetic capital and heart of Carnival', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–May, Dec" },
+      { name: 'Tobago', description: 'Quieter sister island with coral reefs and rainforest', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–May" },
+      { name: 'Chaguaramas', description: 'Peninsula of marinas, hikes, and offshore bays', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–May, Dec" },
     ],
     attractions: [
       {
         name: "Maracas Beach",
         description: "Palm-lined bay famous for shark-and-bake sandwiches",
         entityId: "attraction_TT_maracas_beach",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Caroni Bird Sanctuary",
@@ -10038,6 +10566,8 @@ export const countries: Record<string, CountryData> = {
         description: "Postcard beach with a thatched jetty",
         entityId: "attraction_TT_pigeon_point_tobago",
         wikidataId: "Q185111",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Apr–May",
       },
     ],
     famousMovies: [
@@ -10076,9 +10606,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [26, 41, 79, 149, 272, 417, 325, 402, 265, 86, 35, 33],
     bestTimeToVisit: 'October–December for clear skies, comfortable temperatures, and low humidity',
     popularPlaces: [
-      { name: 'Central & Sheung Wan', description: 'Skyscraper canyons meeting old wet markets and galleries' },
-      { name: 'Tsim Sha Tsui', description: 'Kowloon waterfront with the Symphony of Lights show' },
-      { name: 'Lantau Island', description: 'Cable-car ride to the Big Buddha and Tai O fishing village' },
+      { name: 'Central & Sheung Wan', description: 'Skyscraper canyons meeting old wet markets and galleries', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Tsim Sha Tsui', description: 'Kowloon waterfront with the Symphony of Lights show', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Lantau Island', description: 'Cable-car ride to the Big Buddha and Tai O fishing village', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr" },
     ],
     attractions: [
       {
@@ -10092,11 +10622,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Daniel Case / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Star Ferry",
         description: "Historic cross-harbor ferry for less than $1",
         entityId: "attraction_HK_star_ferry",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Temple Street Night Market",
@@ -10141,15 +10675,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [76, 116, 112, 128, 198, 298, 342, 366, 186, 121, 96, 84],
     bestTimeToVisit: 'October–December for mild weather and clear mountain views; skip typhoon-prone July–September',
     popularPlaces: [
-      { name: 'Taipei', description: 'Night-market capital with mountains, museums, and hot springs' },
-      { name: 'Taroko Gorge', description: 'Marble river gorge in eastern Taiwan' },
-      { name: 'Jiufen', description: 'Hillside teahouse village that inspired Spirited Away' },
+      { name: 'Taipei', description: 'Night-market capital with mountains, museums, and hot springs', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr, Oct" },
+      { name: 'Taroko Gorge', description: 'Marble river gorge in eastern Taiwan', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Jun, Aug–Nov" },
+      { name: 'Jiufen', description: 'Hillside teahouse village that inspired Spirited Away', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr, Oct" },
     ],
     attractions: [
       {
         name: "Taipei 101",
         description: "Bamboo-shaped tower with one of the world’s fastest elevators",
         entityId: "attraction_TW_taipei_101",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb–Apr, Oct",
       },
       {
         name: "Shilin Night Market",
@@ -10166,6 +10702,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Original data: ESA Copernicus Sentinel-2\nProcessed by Tiouraren (Y.-C. Tsai)",
         imageLicense: "Attribution",
         imageAttribution: "Photo: Original data: ESA Copernicus Sentinel-2\nProcessed by Tiouraren (Y.-C. Tsai) / Attribution",
+        bestWeatherMonths: "Jan–Apr, Oct–Dec",
+        goodWeatherMonths: "May",
       },
     ],
     famousMovies: [
@@ -10205,9 +10743,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 56, 36, 18, 9, 2, 0, 6, 41, 78, 70, 86],
     bestTimeToVisit: 'April–June and September–October for warm sea and easier crowds',
     popularPlaces: [
-      { name: 'Valletta', description: 'Compact baroque capital built by the Knights of St. John' },
-      { name: 'Gozo', description: 'Quieter sister island with megalithic temples and salt pans' },
-      { name: 'Mdina', description: 'Fortified “Silent City” dating to the Middle Ages' },
+      { name: 'Valletta', description: 'Compact baroque capital built by the Knights of St. John', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
+      { name: 'Gozo', description: 'Quieter sister island with megalithic temples and salt pans', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
+      { name: 'Mdina', description: 'Fortified “Silent City” dating to the Middle Ages', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
     ],
     attractions: [
       {
@@ -10221,6 +10759,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Ninaeva Нина Силаева / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Jun, Sep–Dec",
+        goodWeatherMonths: "Jul–Aug",
       },
       {
         name: "Ħal Saflieni Hypogeum",
@@ -10238,6 +10778,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: FritzPhotography / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Jun, Sep–Dec",
+        goodWeatherMonths: "Jul–Aug",
       },
     ],
     famousMovies: [
@@ -10277,9 +10819,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [104, 68, 47, 25, 19, 7, 1, 2, 6, 27, 55, 109],
     bestTimeToVisit: 'April–June or September–November for warm sea and manageable heat',
     popularPlaces: [
-      { name: 'Paphos', description: 'Ancient port with mosaics and mythical Aphrodite’s Rock' },
-      { name: 'Limassol', description: 'Long promenade, wine country, and Crusader castle' },
-      { name: 'Nicosia', description: 'Only remaining divided capital in Europe, split by the Green Line' },
+      { name: 'Paphos', description: 'Ancient port with mosaics and mythical Aphrodite’s Rock', bestWeatherMonths: "Feb–Jun, Sep–Nov", goodWeatherMonths: "Jan, Jul–Aug, Dec" },
+      { name: 'Limassol', description: 'Long promenade, wine country, and Crusader castle', bestWeatherMonths: "Mar–Jun, Oct–Nov", goodWeatherMonths: "Jan–Feb, Sep, Dec" },
+      { name: 'Nicosia', description: 'Only remaining divided capital in Europe, split by the Green Line', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep" },
     ],
     attractions: [
       {
@@ -10293,6 +10835,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Mgiganteus1 at en.wikipedia / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb–Jun, Sep–Nov",
+        goodWeatherMonths: "Jan, Jul–Aug, Dec",
       },
       {
         name: "Troodos Mountains",
@@ -10305,6 +10849,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.5",
         imageAttribution: "Photo: Paul167 / CC BY-SA 2.5",
+        bestWeatherMonths: "Mar–Jun, Sep–Nov",
+        goodWeatherMonths: "Feb, Jul–Aug",
       },
       {
         name: "Kyrenia (Girne)",
@@ -10348,9 +10894,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [94, 75, 69, 52, 70, 69, 81, 74, 74, 82, 88, 109],
     bestTimeToVisit: 'May–September for hiking the Mullerthal and touring castles in comfortable weather',
     popularPlaces: [
-      { name: 'Luxembourg City', description: 'UNESCO old town perched over dramatic gorges' },
-      { name: 'Vianden', description: 'Fairytale hilltop castle above the Our River' },
-      { name: 'Mullerthal Region', description: '“Little Switzerland” of moss-covered sandstone trails' },
+      { name: 'Luxembourg City', description: 'UNESCO old town perched over dramatic gorges', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Vianden', description: 'Fairytale hilltop castle above the Our River', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Mullerthal Region', description: '“Little Switzerland” of moss-covered sandstone trails', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -10374,6 +10920,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Palauenc05 / CC BY-SA 4.0",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
     ],
     famousMovies: [
@@ -10412,20 +10960,22 @@ export const countries: Record<string, CountryData> = {
     precipitation: [50, 39, 35, 34, 44, 67, 66, 78, 59, 74, 63, 56],
     bestTimeToVisit: 'June–August for long white nights and open-air festivals',
     popularPlaces: [
-      { name: 'Tallinn', description: 'Fairy-tale medieval old town on the Baltic' },
-      { name: 'Tartu', description: 'Historic university town and 2024 European Capital of Culture' },
-      { name: 'Saaremaa', description: 'Largest island — windmills, spas, and juniper landscapes' },
+      { name: 'Tallinn', description: 'Fairy-tale medieval old town on the Baltic', bestWeatherMonths: "May–Sep" },
+      { name: 'Tartu', description: 'Historic university town and 2024 European Capital of Culture', bestWeatherMonths: "May–Sep" },
+      { name: 'Saaremaa', description: 'Largest island — windmills, spas, and juniper landscapes', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
     ],
     attractions: [
       {
         name: "Tallinn Old Town",
         description: "UNESCO-listed walled city with cobbled squares",
         entityId: "attraction_EE_tallinn_old_town",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Lahemaa National Park",
         description: "Bogs, manors, and forest coastline east of Tallinn",
         entityId: "attraction_EE_lahemaa_national_park",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "KGB Museum (Hotel Viru)",
@@ -10469,15 +11019,16 @@ export const countries: Record<string, CountryData> = {
     precipitation: [49, 40, 38, 37, 50, 68, 76, 76, 62, 72, 58, 54],
     bestTimeToVisit: 'May–September for warm days, Jāņi midsummer festivities, and beach weather in Jūrmala',
     popularPlaces: [
-      { name: 'Riga', description: 'Art Nouveau capital with a medieval core' },
-      { name: 'Jūrmala', description: 'Beach town of pine forests and wooden villas' },
-      { name: 'Sigulda', description: '“Latvian Switzerland” with castles, cable cars, and bobsled runs' },
+      { name: 'Riga', description: 'Art Nouveau capital with a medieval core', bestWeatherMonths: "May–Sep" },
+      { name: 'Jūrmala', description: 'Beach town of pine forests and wooden villas', bestWeatherMonths: "May–Sep" },
+      { name: 'Sigulda', description: '“Latvian Switzerland” with castles, cable cars, and bobsled runs', bestWeatherMonths: "May–Sep" },
     ],
     attractions: [
       {
         name: "Riga Old Town",
         description: "UNESCO ensemble of Hanseatic gables and Gothic spires",
         entityId: "attraction_LV_riga_old_town",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Riga Central Market",
@@ -10490,6 +11041,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Diego Delso / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Gauja National Park",
@@ -10533,9 +11085,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [49, 40, 39, 38, 55, 67, 85, 75, 60, 64, 54, 52],
     bestTimeToVisit: 'May–September for warm days and Baltic beach weather on the Curonian Spit',
     popularPlaces: [
-      { name: 'Vilnius', description: 'Baroque capital with the bohemian “Republic of Užupis”' },
-      { name: 'Kaunas', description: 'Interwar-modernist city on the Nemunas River' },
-      { name: 'Curonian Spit', description: 'UNESCO sand-dune peninsula shared with Russia' },
+      { name: 'Vilnius', description: 'Baroque capital with the bohemian “Republic of Užupis”', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
+      { name: 'Kaunas', description: 'Interwar-modernist city on the Nemunas River', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
+      { name: 'Curonian Spit', description: 'UNESCO sand-dune peninsula shared with Russia', bestWeatherMonths: "May–Sep" },
     ],
     attractions: [
       {
@@ -10559,6 +11111,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Diliff / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr",
       },
     ],
     famousMovies: [
@@ -10598,9 +11152,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [51, 43, 48, 52, 71, 74, 60, 41, 48, 62, 54, 58],
     bestTimeToVisit: 'May–June and September for hiking and towns; December–March for Rila and Pirin skiing',
     popularPlaces: [
-      { name: 'Sofia', description: 'Capital with Roman ruins, Ottoman mosques, and Orthodox domes side by side' },
-      { name: 'Plovdiv', description: 'One of Europe’s oldest continuously inhabited cities' },
-      { name: 'Veliko Tarnovo', description: 'Medieval capital cascading above the Yantra River' },
+      { name: 'Sofia', description: 'Capital with Roman ruins, Ottoman mosques, and Orthodox domes side by side', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
+      { name: 'Plovdiv', description: 'One of Europe’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov" },
+      { name: 'Veliko Tarnovo', description: 'Medieval capital cascading above the Yantra River', bestWeatherMonths: "Apr–Jun, Aug–Oct", goodWeatherMonths: "Jul, Nov" },
     ],
     attractions: [
       {
@@ -10614,6 +11168,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Raggatt2000 / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Seven Rila Lakes",
@@ -10662,9 +11218,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [125, 101, 94, 90, 77, 58, 38, 41, 92, 112, 151, 154],
     bestTimeToVisit: 'May–June and September for Riviera swimming without the peak-summer crush',
     popularPlaces: [
-      { name: 'Tirana', description: 'Riotously colorful capital of murals and cafés' },
-      { name: 'Sarandë & the Riviera', description: 'Aegean-blue coast facing Corfu' },
-      { name: 'Berat', description: 'UNESCO-listed “town of a thousand windows” climbing a hillside' },
+      { name: 'Tirana', description: 'Riotously colorful capital of murals and cafés', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug" },
+      { name: 'Sarandë & the Riviera', description: 'Aegean-blue coast facing Corfu', bestWeatherMonths: "Apr–Jun, Sep", goodWeatherMonths: "Jul–Aug, Oct" },
+      { name: 'Berat', description: 'UNESCO-listed “town of a thousand windows” climbing a hillside', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov" },
     ],
     attractions: [
       {
@@ -10680,6 +11236,8 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: Reklo18 / CC BY-SA 4.0",
         annualVisitors: 55000,
         annualVisitorsYear: 2005,
+        bestWeatherMonths: "Apr–Jun, Sep",
+        goodWeatherMonths: "Jul–Aug, Oct",
       },
       {
         name: "Blue Eye Spring (Syri i Kaltër)",
@@ -10697,6 +11255,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Pudelek / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr",
       },
     ],
     famousMovies: [
@@ -10735,15 +11295,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [118, 104, 100, 107, 104, 89, 78, 62, 123, 127, 158, 145],
     bestTimeToVisit: 'May–June and September for the Bay of Kotor without cruise crowds',
     popularPlaces: [
-      { name: 'Kotor', description: 'Fjord-like bay ringed by walled medieval towns' },
-      { name: 'Budva', description: 'Beach and nightlife hub with a walled old town' },
-      { name: 'Durmitor National Park', description: 'Glacial lakes and Balkan peaks in the north' },
+      { name: 'Kotor', description: 'Fjord-like bay ringed by walled medieval towns', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Budva', description: 'Beach and nightlife hub with a walled old town', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Durmitor National Park', description: 'Glacial lakes and Balkan peaks in the north', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
     ],
     attractions: [
       {
         name: "Bay of Kotor",
         description: "Serpentine bay called Europe’s southernmost fjord",
         entityId: "attraction_ME_bay_of_kotor",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Sveti Stefan",
@@ -10756,6 +11318,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Marcin Konsek / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Tara River Canyon",
@@ -10799,9 +11363,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [78, 79, 70, 86, 99, 95, 89, 69, 108, 105, 123, 114],
     bestTimeToVisit: 'May–October for hiking, rafting, and Mostar; January–February for cheap skiing on Bjelašnica',
     popularPlaces: [
-      { name: 'Sarajevo', description: '“Jerusalem of Europe” where mosques, churches, and synagogues share a lane' },
-      { name: 'Mostar', description: 'Ottoman town split by the emerald Neretva' },
-      { name: 'Blagaj', description: 'Dervish house tucked at the base of a cliff-face spring' },
+      { name: 'Sarajevo', description: '“Jerusalem of Europe” where mosques, churches, and synagogues share a lane', bestWeatherMonths: "May–Sep" },
+      { name: 'Mostar', description: 'Ottoman town split by the emerald Neretva', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Blagaj', description: 'Dervish house tucked at the base of a cliff-face spring', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -10820,6 +11384,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Julian Nyča / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Sep",
       },
       {
         name: "Kravice Waterfalls",
@@ -10864,9 +11429,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [293, 344, 303, 192, 140, 112, 104, 118, 88, 72, 79, 170],
     bestTimeToVisit: 'May–November for cooler, drier weather; avoid January–March cyclone risk',
     popularPlaces: [
-      { name: 'Port Louis', description: 'Colonial-era capital with a lively waterfront and Chinatown' },
-      { name: 'Grand Baie', description: 'North-coast resort hub of catamaran trips and reef snorkeling' },
-      { name: 'Chamarel', description: 'Interior village of coffee plantations and the Seven Colored Earths' },
+      { name: 'Port Louis', description: 'Colonial-era capital with a lively waterfront and Chinatown', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr" },
+      { name: 'Grand Baie', description: 'North-coast resort hub of catamaran trips and reef snorkeling', bestWeatherMonths: "Jul, Sep–Nov", goodWeatherMonths: "May–Jun, Aug" },
+      { name: 'Chamarel', description: 'Interior village of coffee plantations and the Seven Colored Earths', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr" },
     ],
     attractions: [
       {
@@ -10880,6 +11445,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: \"dronepicr\" / CC BY 2.0",
+        bestWeatherMonths: "May–Nov",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Black River Gorges NP",
@@ -10897,6 +11464,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0 de",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
         imageAttribution: "Photo: Arne Müseler / CC BY-SA 3.0 de",
+        bestWeatherMonths: "Jul, Sep–Nov",
+        goodWeatherMonths: "May–Jun, Aug",
       },
     ],
     famousMovies: [
@@ -10935,9 +11504,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [279, 181, 171, 163, 114, 68, 58, 66, 103, 109, 135, 208],
     bestTimeToVisit: 'April–May and October–November for calm seas and light winds between monsoons',
     popularPlaces: [
-      { name: 'Mahé', description: 'Largest island — mountains, capital, and Beau Vallon beach' },
-      { name: 'Praslin', description: 'Home of Vallée de Mai and the giant coco de mer palm' },
-      { name: 'La Digue', description: 'Bicycle-only island of granite boulders and Anse Source d’Argent' },
+      { name: 'Mahé', description: 'Largest island — mountains, capital, and Beau Vallon beach', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
+      { name: 'Praslin', description: 'Home of Vallée de Mai and the giant coco de mer palm', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
+      { name: 'La Digue', description: 'Bicycle-only island of granite boulders and Anse Source d’Argent', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
     ],
     attractions: [
       {
@@ -10950,6 +11519,8 @@ export const countries: Record<string, CountryData> = {
         description: "UNESCO palm forest that inspired Gordon’s “Garden of Eden” claim",
         entityId: "attraction_SC_vallee_de_mai",
         wikidataId: "Q573558",
+        bestWeatherMonths: "Jul–Aug",
+        goodWeatherMonths: "Jun",
       },
       {
         name: "Aldabra Atoll",
@@ -10993,9 +11564,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [235, 197, 162, 43, 6, 0, 0, 0, 3, 23, 110, 208],
     bestTimeToVisit: 'May–October dry season for safaris and peak Victoria Falls views (Apr–Jun for the biggest flow)',
     popularPlaces: [
-      { name: 'Livingstone', description: 'Gateway city to Victoria Falls on the Zambezi' },
-      { name: 'South Luangwa National Park', description: 'Birthplace of the walking safari' },
-      { name: 'Lower Zambezi National Park', description: 'Canoe safaris alongside elephants and hippos' },
+      { name: 'Livingstone', description: 'Gateway city to Victoria Falls on the Zambezi', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr" },
+      { name: 'South Luangwa National Park', description: 'Birthplace of the walking safari', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Apr–May, Aug" },
+      { name: 'Lower Zambezi National Park', description: 'Canoe safaris alongside elephants and hippos', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Sep" },
     ],
     attractions: [
       {
@@ -11009,6 +11580,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Hans Hillewaert / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Aug",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Devil’s Pool",
@@ -11019,6 +11592,8 @@ export const countries: Record<string, CountryData> = {
         name: "Kafue National Park",
         description: "One of Africa’s largest parks, home to the Busanga floodplains",
         entityId: "attraction_ZM_kafue_national_park",
+        bestWeatherMonths: "Apr–Aug",
+        goodWeatherMonths: "Sep",
       },
     ],
     famousMovies: [
@@ -11057,9 +11632,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [243, 203, 189, 92, 25, 9, 6, 4, 3, 16, 60, 195],
     bestTimeToVisit: 'May–October dry season — cool, clear, and great for lake and safari trips',
     popularPlaces: [
-      { name: 'Lake Malawi', description: 'Africa’s third-largest lake with hundreds of endemic cichlid fish' },
-      { name: 'Liwonde National Park', description: 'Restored park with elephants, hippos, and river safaris' },
-      { name: 'Mount Mulanje', description: 'Granite massif rising above tea estates' },
+      { name: 'Lake Malawi', description: 'Africa’s third-largest lake with hundreds of endemic cichlid fish', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Liwonde National Park', description: 'Restored park with elephants, hippos, and river safaris', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Sep–Oct" },
+      { name: 'Mount Mulanje', description: 'Granite massif rising above tea estates', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -11067,6 +11642,8 @@ export const countries: Record<string, CountryData> = {
         description: "Beach village on Lake Malawi with snorkelling among cichlids",
         entityId: "attraction_MW_cape_maclear",
         wikidataId: "Q27766501",
+        bestWeatherMonths: "May–Aug",
+        goodWeatherMonths: "Apr, Sep",
       },
       {
         name: "Majete Wildlife Reserve",
@@ -11084,6 +11661,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Felefuchs / CC BY-SA 3.0",
+        bestWeatherMonths: "Apr–Sep",
+        goodWeatherMonths: "Oct",
       },
     ],
     famousMovies: [
@@ -11122,9 +11701,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [13, 34, 79, 123, 150, 181, 148, 155, 187, 153, 59, 20],
     bestTimeToVisit: 'November–February dry season — warm, less humid, and best for coastal travel',
     popularPlaces: [
-      { name: 'Abidjan', description: 'Lagoon metropolis and West Africa’s cultural capital' },
-      { name: 'Yamoussoukro', description: 'Political capital and home to the Basilica of Our Lady of Peace' },
-      { name: 'Grand-Bassam', description: 'UNESCO colonial-era beach town near Abidjan' },
+      { name: 'Abidjan', description: 'Lagoon metropolis and West Africa’s cultural capital', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Sep, Dec" },
+      { name: 'Yamoussoukro', description: 'Political capital and home to the Basilica of Our Lady of Peace', bestWeatherMonths: "Jul–Aug, Dec", goodWeatherMonths: "Jan, Nov" },
+      { name: 'Grand-Bassam', description: 'UNESCO colonial-era beach town near Abidjan', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Sep, Dec" },
     ],
     attractions: [
       {
@@ -11143,6 +11722,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: yakovlev.alexey from Moscow, Russia / CC BY-SA 2.0",
+        bestWeatherMonths: "Jan, Aug, Dec",
+        goodWeatherMonths: "Feb, Jul, Sep, Nov",
       },
       {
         name: "Comoé National Park",
@@ -11186,9 +11767,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [15, 28, 90, 133, 175, 181, 178, 237, 266, 229, 76, 19],
     bestTimeToVisit: 'November–February dry season — best for wildlife, hiking, and coastal beaches',
     popularPlaces: [
-      { name: 'Yaoundé', description: 'Hilly capital city known as the “city of seven hills”' },
-      { name: 'Douala', description: 'Largest city, port, and economic engine' },
-      { name: 'Mount Cameroon', description: 'Active volcano and West Africa’s highest peak (4,040 m)' },
+      { name: 'Yaoundé', description: 'Hilly capital city known as the “city of seven hills”', bestWeatherMonths: "Jul–Aug, Dec", goodWeatherMonths: "Jan–Feb" },
+      { name: 'Douala', description: 'Largest city, port, and economic engine', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jun–Nov" },
+      { name: 'Mount Cameroon', description: 'Active volcano and West Africa’s highest peak (4,040 m)', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Jun–Nov" },
     ],
     attractions: [
       {
@@ -11202,6 +11783,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Dirk.heldmaier / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Nov",
       },
       {
         name: "Kribi Beaches",
@@ -11218,6 +11801,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Earwig at German Wikipedia",
         imageLicense: "Attribution",
         imageAttribution: "Photo: Earwig at German Wikipedia / Attribution",
+        bestWeatherMonths: "Jan–Feb, Jul, Dec",
+        goodWeatherMonths: "Aug, Nov",
       },
     ],
     famousMovies: [
@@ -11256,9 +11841,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [162, 149, 181, 112, 17, 1, 1, 4, 22, 77, 148, 166],
     bestTimeToVisit: 'May–October dry season — cool coast, clear skies, and open safari roads',
     popularPlaces: [
-      { name: 'Luanda', description: 'Coastal capital with Portuguese-era forts and a modern skyline' },
-      { name: 'Kissama National Park', description: 'Restored wildlife park near Luanda' },
-      { name: 'Lubango', description: 'Highland city near the dramatic Serra da Leba pass' },
+      { name: 'Luanda', description: 'Coastal capital with Portuguese-era forts and a modern skyline', bestWeatherMonths: "May–Dec", goodWeatherMonths: "Jan–Feb" },
+      { name: 'Kissama National Park', description: 'Restored wildlife park near Luanda', bestWeatherMonths: "Jan, May–Oct, Dec", goodWeatherMonths: "Feb" },
+      { name: 'Lubango', description: 'Highland city near the dramatic Serra da Leba pass', bestWeatherMonths: "Jan–Feb, Apr–Dec", goodWeatherMonths: "Mar" },
     ],
     attractions: [
       {
@@ -11272,6 +11857,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Zorglub / CC BY-SA 3.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Jan–Feb, Oct–Dec",
       },
       {
         name: "Miradouro da Lua",
@@ -11320,9 +11907,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [7, 5, 3, 5, 5, 5, 13, 37, 55, 36, 9, 7],
     bestTimeToVisit: 'November–June for warm, dry days and reliable trade winds for kitesurfing',
     popularPlaces: [
-      { name: 'Sal', description: 'Flat island of white-sand beaches and salt pans at Pedra de Lume' },
-      { name: 'Santo Antão', description: 'Green mountainous island of dramatic hiking trails' },
-      { name: 'São Vicente', description: 'Home of Mindelo, the country’s cultural and music capital' },
+      { name: 'Sal', description: 'Flat island of white-sand beaches and salt pans at Pedra de Lume', bestWeatherMonths: "Jan–Jul, Nov–Dec", goodWeatherMonths: "Aug–Oct" },
+      { name: 'Santo Antão', description: 'Green mountainous island of dramatic hiking trails', bestWeatherMonths: "Jan–Dec" },
+      { name: 'São Vicente', description: 'Home of Mindelo, the country’s cultural and music capital', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -11336,6 +11923,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Holger Reineccius / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Cidade Velha",
@@ -11348,6 +11936,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Ji-Elle / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Aug, Oct–Dec",
+        goodWeatherMonths: "Sep",
       },
       {
         name: "Santa Maria beach",
@@ -11391,9 +11981,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [148, 160, 221, 207, 178, 45, 13, 21, 116, 292, 289, 183],
     bestTimeToVisit: 'June–August dry season — best for wildlife viewing and coastal beaches',
     popularPlaces: [
-      { name: 'Libreville', description: 'Seaside capital on the Estuaire coast' },
-      { name: 'Loango National Park', description: '“Land of the surfing hippos” where forest meets Atlantic beaches' },
-      { name: 'Lopé National Park', description: 'UNESCO park of savanna, rainforest, and rock art' },
+      { name: 'Libreville', description: 'Seaside capital on the Estuaire coast', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep" },
+      { name: 'Loango National Park', description: '“Land of the surfing hippos” where forest meets Atlantic beaches', bestWeatherMonths: "Jun–Sep" },
+      { name: 'Lopé National Park', description: 'UNESCO park of savanna, rainforest, and rock art', bestWeatherMonths: "Jun–Aug" },
     ],
     attractions: [
       {
@@ -11406,6 +11996,8 @@ export const countries: Record<string, CountryData> = {
         description: "Peninsula beach across the estuary from Libreville",
         entityId: "attraction_GA_pointe_denis",
         wikidataId: "Q24635688",
+        bestWeatherMonths: "Jun–Aug",
+        goodWeatherMonths: "Sep",
       },
       {
         name: "Akanda National Park",
@@ -11449,9 +12041,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 1, 4, 15, 37, 80, 110, 61, 18, 1, 0],
     bestTimeToVisit: 'November–February cool dry season — hot but manageable, with clear skies',
     popularPlaces: [
-      { name: 'Bamako', description: 'Riverside capital on the Niger with lively markets and music' },
-      { name: 'Timbuktu', description: 'Legendary Saharan crossroads and center of Islamic scholarship' },
-      { name: 'Djenné', description: 'Home of the Great Mosque, the world’s largest mud-brick building' },
+      { name: 'Bamako', description: 'Riverside capital on the Niger with lively markets and music', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Oct–Nov" },
+      { name: 'Timbuktu', description: 'Legendary Saharan crossroads and center of Islamic scholarship', bestWeatherMonths: "Jan", goodWeatherMonths: "Dec" },
+      { name: 'Djenné', description: 'Home of the Great Mosque, the world’s largest mud-brick building', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb" },
     ],
     attractions: [
       {
@@ -11465,6 +12057,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: Devriese / CC BY 3.0",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb",
       },
       {
         name: "Bandiagara Escarpment",
@@ -11482,6 +12076,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.5",
         imageAttribution: "Photo: Senani P / CC BY 2.5",
+        bestWeatherMonths: "Jan",
+        goodWeatherMonths: "Dec",
       },
     ],
     famousMovies: [
@@ -11520,9 +12116,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 2, 7, 29, 66, 109, 178, 241, 148, 50, 4, 0],
     bestTimeToVisit: 'November–February cool dry season — coolest temperatures and festival calendar',
     popularPlaces: [
-      { name: 'Ouagadougou', description: 'Capital and host of FESPACO, Africa’s largest film festival' },
-      { name: 'Bobo-Dioulasso', description: 'Cultural second city with a famous mud mosque' },
-      { name: 'Banfora', description: 'Southwestern town near waterfalls and rock domes' },
+      { name: 'Ouagadougou', description: 'Capital and host of FESPACO, Africa’s largest film festival', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct" },
+      { name: 'Bobo-Dioulasso', description: 'Cultural second city with a famous mud mosque', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug, Oct–Nov" },
+      { name: 'Banfora', description: 'Southwestern town near waterfalls and rock domes', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Nov" },
     ],
     attractions: [
       {
@@ -11536,6 +12132,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Angeline A. van Achterberg / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Jul–Aug, Oct–Nov",
       },
       {
         name: "Domes of Fabédougou",
@@ -11548,6 +12146,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.5",
         imageAttribution: "Photo: Marco Schmidt [1] / CC BY-SA 2.5",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Jul–Nov",
       },
       {
         name: "Karfiguéla Falls",
@@ -11591,9 +12191,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [2, 9, 28, 64, 121, 145, 178, 211, 191, 91, 8, 3],
     bestTimeToVisit: 'November–February dry season — coolest along the coast, ideal for Vodun Festival in January',
     popularPlaces: [
-      { name: 'Cotonou', description: 'Coastal economic hub and gateway to Benin' },
-      { name: 'Ouidah', description: 'Historic slave-trade port and heart of Vodun culture' },
-      { name: 'Ganvié', description: 'Stilt village of 20,000+ people on Lake Nokoué' },
+      { name: 'Cotonou', description: 'Coastal economic hub and gateway to Benin', bestWeatherMonths: "Aug" },
+      { name: 'Ouidah', description: 'Historic slave-trade port and heart of Vodun culture', bestWeatherMonths: "Aug" },
+      { name: 'Ganvié', description: 'Stilt village of 20,000+ people on Lake Nokoué', bestWeatherMonths: "Aug" },
     ],
     attractions: [
       {
@@ -11612,12 +12212,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/4.0",
         imageAttribution: "Photo: US Africa Command / CC BY 4.0",
+        bestWeatherMonths: "Aug",
       },
       {
         name: "Pendjari National Park",
         description: "West Africa’s premier safari park with lions and elephants",
         entityId: "attraction_BJ_pendjari_national_park",
         wikidataId: "Q21787656",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Jul–Nov",
       },
     ],
     famousMovies: [
@@ -11656,9 +12259,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [6, 20, 55, 98, 136, 162, 176, 187, 214, 135, 24, 8],
     bestTimeToVisit: 'November–February dry season — great beach weather in Lomé',
     popularPlaces: [
-      { name: 'Lomé', description: 'Palm-lined beach capital with a huge open-air market' },
-      { name: 'Kpalimé', description: 'Green hill town near waterfalls and butterfly forests' },
-      { name: 'Koutammakou', description: 'UNESCO land of the Batammariba and their tower-houses' },
+      { name: 'Lomé', description: 'Palm-lined beach capital with a huge open-air market', bestWeatherMonths: "Aug", goodWeatherMonths: "Jul" },
+      { name: 'Kpalimé', description: 'Green hill town near waterfalls and butterfly forests', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Nov–Dec" },
+      { name: 'Koutammakou', description: 'UNESCO land of the Batammariba and their tower-houses', bestWeatherMonths: "Jan, Jul–Aug, Nov–Dec", goodWeatherMonths: "Feb–Mar, May–Jun, Sep–Oct" },
     ],
     attractions: [
       {
@@ -11672,6 +12275,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Hermannkass / CC BY-SA 4.0",
+        bestWeatherMonths: "Aug",
+        goodWeatherMonths: "Jul",
       },
       {
         name: "Akodessewa Fetish Market",
@@ -11720,9 +12325,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [34, 54, 105, 139, 237, 336, 317, 344, 414, 290, 131, 51],
     bestTimeToVisit: 'November–April dry season — the rainy season is one of the wettest in Africa',
     popularPlaces: [
-      { name: 'Monrovia', description: 'Atlantic capital named after US President James Monroe' },
-      { name: 'Robertsport', description: 'Laid-back surf town on Lake Piso' },
-      { name: 'Sapo National Park', description: 'Rainforest home to pygmy hippos and forest elephants' },
+      { name: 'Monrovia', description: 'Atlantic capital named after US President James Monroe', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Jul–Sep" },
+      { name: 'Robertsport', description: 'Laid-back surf town on Lake Piso', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug" },
+      { name: 'Sapo National Park', description: 'Rainforest home to pygmy hippos and forest elephants', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Sep" },
     ],
     attractions: [
       {
@@ -11735,6 +12340,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Johnston, Harry Hamilton, Sir, 1858-1927; Royal Geographical Society (Great Britain)",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Johnston, Harry Hamilton, Sir, 1858-1927; Royal Geographical Society (Great Britain) / Public domain",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar, Jul–Sep",
       },
       {
         name: "Kpatawee Waterfalls",
@@ -11745,6 +12352,8 @@ export const countries: Record<string, CountryData> = {
         name: "Cape Mount",
         description: "Coastal peak overlooking Robertsport’s surf breaks",
         entityId: "attraction_LR_cape_mount",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Jul–Aug",
       },
     ],
     famousMovies: [
@@ -11783,9 +12392,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [7, 17, 40, 101, 218, 313, 443, 612, 442, 318, 122, 22],
     bestTimeToVisit: 'November–April dry season — August is one of the wettest months on earth',
     popularPlaces: [
-      { name: 'Freetown', description: 'Hilly Atlantic capital founded as a home for freed slaves' },
-      { name: 'Tiwai Island', description: 'Rainforest wildlife sanctuary with chimpanzees and pygmy hippos' },
-      { name: 'Banana Islands', description: 'Small archipelago with reefs and colonial ruins' },
+      { name: 'Freetown', description: 'Hilly Atlantic capital founded as a home for freed slaves', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov" },
+      { name: 'Tiwai Island', description: 'Rainforest wildlife sanctuary with chimpanzees and pygmy hippos', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug" },
+      { name: 'Banana Islands', description: 'Small archipelago with reefs and colonial ruins', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov" },
     ],
     attractions: [
       {
@@ -11799,6 +12408,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: David Hond / CC BY 2.0",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov",
       },
       {
         name: "Cotton Tree",
@@ -11811,6 +12422,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0 de",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
         imageAttribution: "Photo: Christian Trede / CC BY-SA 2.0 de",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov",
       },
       {
         name: "Tacugama Chimpanzee Sanctuary",
@@ -11823,6 +12436,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: David Hond / CC BY 2.0",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov",
       },
     ],
     famousMovies: [
@@ -11861,9 +12476,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 0, 8, 86, 206, 344, 262, 84, 3, 0],
     bestTimeToVisit: 'November–April dry season — European “winter sun” favorite for beach travel',
     popularPlaces: [
-      { name: 'Banjul', description: 'Tiny capital on an island at the mouth of the Gambia River' },
-      { name: 'Serekunda / Kololi', description: 'Country’s largest urban area and beach resort strip' },
-      { name: 'Janjanbureh (Georgetown)', description: 'Historic river town in the country’s interior' },
+      { name: 'Banjul', description: 'Tiny capital on an island at the mouth of the Gambia River', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Jun, Oct–Nov" },
+      { name: 'Serekunda / Kololi', description: 'Country’s largest urban area and beach resort strip', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Jun, Oct–Nov" },
+      { name: 'Janjanbureh (Georgetown)', description: 'Historic river town in the country’s interior', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct–Nov" },
     ],
     attractions: [
       {
@@ -11882,6 +12497,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Atamari / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb–Jun, Oct–Nov",
       },
       {
         name: "River Gambia National Park",
@@ -11925,9 +12542,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [129, 117, 163, 151, 107, 63, 62, 90, 122, 167, 175, 154],
     bestTimeToVisit: 'June–September dry season — safer roads and better trekking conditions',
     popularPlaces: [
-      { name: 'Kinshasa', description: 'One of Africa’s largest cities, on the Congo River' },
-      { name: 'Virunga National Park', description: 'Africa’s oldest national park and home to mountain gorillas' },
-      { name: 'Goma', description: 'Lakeside city at the foot of Mount Nyiragongo' },
+      { name: 'Kinshasa', description: 'One of Africa’s largest cities, on the Congo River', bestWeatherMonths: "Jun–Sep" },
+      { name: 'Virunga National Park', description: 'Africa’s oldest national park and home to mountain gorillas', bestWeatherMonths: "Jun–Jul, Dec", goodWeatherMonths: "Jan–May, Aug–Sep, Nov" },
+      { name: 'Goma', description: 'Lakeside city at the foot of Mount Nyiragongo', bestWeatherMonths: "Feb, Jun–Sep", goodWeatherMonths: "Jan, Mar–May, Oct–Dec" },
     ],
     attractions: [
       {
@@ -11941,6 +12558,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Cai Tjeenk Willink (Caitjeenk) / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb, Jun–Sep",
+        goodWeatherMonths: "Jan, Mar–May, Oct–Dec",
       },
       {
         name: "Mountain gorilla trekking",
@@ -11958,6 +12577,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Bsm15 / CC BY-SA 3.0",
+        bestWeatherMonths: "Jun–Oct",
+        goodWeatherMonths: "May",
       },
     ],
     famousMovies: [
@@ -11996,9 +12617,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [109, 125, 166, 177, 158, 70, 51, 72, 130, 205, 210, 156],
     bestTimeToVisit: 'June–September long dry season — best for wildlife viewing in the rainforest',
     popularPlaces: [
-      { name: 'Brazzaville', description: 'Riverside capital facing Kinshasa across the Congo River' },
-      { name: 'Pointe-Noire', description: 'Atlantic port city and main beach destination' },
-      { name: 'Odzala-Kokoua National Park', description: 'Rainforest reserve famous for western lowland gorillas' },
+      { name: 'Brazzaville', description: 'Riverside capital facing Kinshasa across the Congo River', bestWeatherMonths: "Jun–Sep" },
+      { name: 'Pointe-Noire', description: 'Atlantic port city and main beach destination', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct" },
+      { name: 'Odzala-Kokoua National Park', description: 'Rainforest reserve famous for western lowland gorillas', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jan, Jun, Dec" },
     ],
     attractions: [
       {
@@ -12012,6 +12633,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.5",
         imageAttribution: "Photo: See Source / CC BY 2.5",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Jun–Aug",
       },
       {
         name: "Diosso Gorge",
@@ -12024,6 +12647,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: David Stanley / CC BY 2.0",
+        bestWeatherMonths: "Jun–Sep",
+        goodWeatherMonths: "May, Oct",
       },
       {
         name: "Basilica of Sainte-Anne",
@@ -12036,6 +12661,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Detsed1 / CC BY-SA 4.0",
+        bestWeatherMonths: "Jun–Sep",
       },
     ],
     famousMovies: [
@@ -12074,9 +12700,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [8, 6, 4, 2, 1, 0, 0, 1, 2, 4, 3, 7],
     bestTimeToVisit: 'October–April cool season — desert temperatures are extreme in summer',
     popularPlaces: [
-      { name: 'Tripoli', description: 'Mediterranean capital with a walled medina and Ottoman mosques' },
-      { name: 'Benghazi', description: 'Historic port and second city on the Gulf of Sidra' },
-      { name: 'Ghadames', description: '“Pearl of the Desert” — UNESCO Berber oasis town' },
+      { name: 'Tripoli', description: 'Mediterranean capital with a walled medina and Ottoman mosques', bestWeatherMonths: "Jan–May, Oct–Dec" },
+      { name: 'Benghazi', description: 'Historic port and second city on the Gulf of Sidra', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun–Jul, Sep" },
+      { name: 'Ghadames', description: '“Pearl of the Desert” — UNESCO Berber oasis town', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
@@ -12090,12 +12716,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: joepyrek from Richmond, Va, USA / CC BY-SA 2.0",
+        bestWeatherMonths: "Jan–May, Oct–Dec",
+        goodWeatherMonths: "Jun, Sep",
       },
       {
         name: "Sabratha",
         description: "UNESCO Roman theatre on the Mediterranean",
         entityId: "attraction_LY_sabratha",
         wikidataId: "Q1544730",
+        bestWeatherMonths: "Jan–May, Oct–Dec",
+        goodWeatherMonths: "Jun",
       },
       {
         name: "Acacus Mountains",
@@ -12108,6 +12738,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.5",
         imageAttribution: "Photo: Luca Galuzzi (Lucag) / CC BY-SA 2.5",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -12146,9 +12778,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 2, 14, 27, 66, 89, 40, 14, 1, 0],
     bestTimeToVisit: 'November–February cool dry season — extreme heat the rest of the year',
     popularPlaces: [
-      { name: 'Khartoum', description: 'Capital at the confluence of the Blue and White Niles' },
-      { name: 'Meroë', description: 'UNESCO desert site with more pyramids than all of Egypt' },
-      { name: 'Port Sudan', description: 'Red Sea coast known for coral reefs and dive sites' },
+      { name: 'Khartoum', description: 'Capital at the confluence of the Blue and White Niles', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb" },
+      { name: 'Meroë', description: 'UNESCO desert site with more pyramids than all of Egypt', bestWeatherMonths: "Jan", goodWeatherMonths: "Dec" },
+      { name: 'Port Sudan', description: 'Red Sea coast known for coral reefs and dive sites', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar" },
     ],
     attractions: [
       {
@@ -12162,6 +12794,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 1.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/1.0",
         imageAttribution: "Photo: Photographer: B N Chagny / CC BY-SA 1.0",
+        bestWeatherMonths: "Jan",
+        goodWeatherMonths: "Dec",
       },
       {
         name: "Jebel Barkal",
@@ -12174,6 +12808,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: LassiHU / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb",
       },
       {
         name: "Sanganeb Marine National Park",
@@ -12217,9 +12853,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [133, 106, 99, 53, 26, 14, 10, 17, 30, 74, 98, 124],
     bestTimeToVisit: 'March–May and September–November for mild weather; June–August for snow and skiing',
     popularPlaces: [
-      { name: 'Maseru', description: 'Lowland capital on the Caledon River border' },
-      { name: 'Sani Pass', description: 'Steep 4x4 pass climbing into the Drakensberg' },
-      { name: 'Semonkong', description: '“Place of Smoke” — home to Maletsunyane Falls' },
+      { name: 'Maseru', description: 'Lowland capital on the Caledon River border', bestWeatherMonths: "Feb–Dec", goodWeatherMonths: "Jan" },
+      { name: 'Sani Pass', description: 'Steep 4x4 pass climbing into the Drakensberg', bestWeatherMonths: "Mar–May, Sep–Nov", goodWeatherMonths: "Jan–Feb, Aug, Dec" },
+      { name: 'Semonkong', description: '“Place of Smoke” — home to Maletsunyane Falls', bestWeatherMonths: "Jan–Apr, Sep–Dec", goodWeatherMonths: "May, Aug" },
     ],
     attractions: [
       {
@@ -12232,6 +12868,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "BagelBelt",
         imageLicense: "Public domain",
         imageAttribution: "Photo: BagelBelt / Public domain",
+        bestWeatherMonths: "Jan–Apr, Sep–Dec",
+        goodWeatherMonths: "May, Aug",
       },
       {
         name: "Afriski Mountain Resort",
@@ -12243,6 +12881,8 @@ export const countries: Record<string, CountryData> = {
         description: "Sandstone plateau, birthplace of the Basotho nation",
         entityId: "attraction_LS_thaba_bosiu",
         wikidataId: "Q27480646",
+        bestWeatherMonths: "Feb–Jun, Aug–Dec",
+        goodWeatherMonths: "Jan, Jul",
       },
     ],
     famousMovies: [
@@ -12281,9 +12921,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [132, 126, 87, 44, 21, 9, 9, 16, 36, 77, 112, 132],
     bestTimeToVisit: 'May–September dry season — cool nights and great safari conditions',
     popularPlaces: [
-      { name: 'Mbabane', description: 'Highland administrative capital in the Dlangeni Hills' },
-      { name: 'Ezulwini Valley', description: '“Valley of Heaven” — cultural and tourist heartland' },
-      { name: 'Hlane Royal National Park', description: 'Country’s largest park, with lions, elephants, and rhinos' },
+      { name: 'Mbabane', description: 'Highland administrative capital in the Dlangeni Hills', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec" },
+      { name: 'Ezulwini Valley', description: '“Valley of Heaven” — cultural and tourist heartland', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec" },
+      { name: 'Hlane Royal National Park', description: 'Country’s largest park, with lions, elephants, and rhinos', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar, Nov" },
     ],
     attractions: [
       {
@@ -12295,6 +12935,8 @@ export const countries: Record<string, CountryData> = {
         name: "Sibebe Rock",
         description: "World’s second-largest exposed granite dome",
         entityId: "attraction_SZ_sibebe_rock",
+        bestWeatherMonths: "Mar–Oct",
+        goodWeatherMonths: "Jan–Feb, Nov–Dec",
       },
       {
         name: "Umhlanga (Reed) Dance",
@@ -12338,9 +12980,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [70, 39, 44, 56, 91, 59, 86, 119, 122, 149, 124, 106],
     bestTimeToVisit: 'December–April dry season — warm, sunny, and outside hurricane peak',
     popularPlaces: [
-      { name: "St. John's", description: 'Colorful Caribbean capital with a busy cruise harbor' },
-      { name: 'Nelson’s Dockyard', description: 'Restored Georgian-era naval base and UNESCO site' },
-      { name: 'Barbuda', description: 'Quiet sister island famed for pink-sand beaches' },
+      { name: "St. John's", description: 'Colorful Caribbean capital with a busy cruise harbor', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Nelson’s Dockyard', description: 'Restored Georgian-era naval base and UNESCO site', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Barbuda', description: 'Quiet sister island famed for pink-sand beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Jun" },
     ],
     attractions: [
       {
@@ -12354,6 +12996,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Paul Kowalow / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr",
       },
       {
         name: "Devil’s Bridge",
@@ -12364,6 +13008,8 @@ export const countries: Record<string, CountryData> = {
         name: "Shirley Heights",
         description: "Hilltop viewpoint famous for Sunday sunset parties",
         entityId: "attraction_AG_shirley_heights",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr",
       },
     ],
     famousMovies: [
@@ -12402,9 +13048,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [137, 119, 125, 109, 139, 100, 92, 119, 134, 118, 142, 138],
     bestTimeToVisit: 'May–October for warm beach weather; shoulder months are mild and quieter',
     popularPlaces: [
-      { name: 'Hamilton', description: 'Pastel-colored capital with harborfront shops and cafés' },
-      { name: 'St. George’s', description: 'UNESCO-listed 17th-century town in the East End' },
-      { name: 'Royal Naval Dockyard', description: 'Former British base turned tourism hub' },
+      { name: 'Hamilton', description: 'Pastel-colored capital with harborfront shops and cafés', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May–Jun, Oct–Dec" },
+      { name: 'St. George’s', description: 'UNESCO-listed 17th-century town in the East End', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May–Jun, Oct–Dec" },
+      { name: 'Royal Naval Dockyard', description: 'Former British base turned tourism hub', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May–Jun, Oct–Dec" },
     ],
     attractions: [
       {
@@ -12423,6 +13069,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Captain-tucker / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb–Apr",
+        goodWeatherMonths: "Jan, May–Jun, Oct–Dec",
       },
       {
         name: "Gibbs Hill Lighthouse",
@@ -12466,9 +13114,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [343, 212, 222, 247, 277, 223, 226, 234, 249, 311, 335, 370],
     bestTimeToVisit: 'February–April for the driest weather between monsoon peaks',
     popularPlaces: [
-      { name: 'Bandar Seri Begawan', description: 'Compact capital with grand mosques and a stilt-village on the river' },
-      { name: 'Kampong Ayer', description: 'Historic water village of wooden houses on the Brunei River' },
-      { name: 'Ulu Temburong National Park', description: 'Pristine rainforest reached by longboat, with a canopy walk' },
+      { name: 'Bandar Seri Begawan', description: 'Compact capital with grand mosques and a stilt-village on the river', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep" },
+      { name: 'Kampong Ayer', description: 'Historic water village of wooden houses on the Brunei River', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep" },
+      { name: 'Ulu Temburong National Park', description: 'Pristine rainforest reached by longboat, with a canopy walk', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep" },
     ],
     attractions: [
       {
@@ -12523,9 +13171,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [138, 86, 99, 115, 171, 177, 124, 235, 255, 276, 318, 202],
     bestTimeToVisit: 'February–April is driest — outside hurricane season and peak rains',
     popularPlaces: [
-      { name: 'Roseau', description: 'Small seaside capital with a lively market and Creole architecture' },
-      { name: 'Morne Trois Pitons National Park', description: 'UNESCO rainforest with volcanic peaks and lakes' },
-      { name: 'Kalinago Territory', description: 'Home to the Caribbean’s last Indigenous Kalinago community' },
+      { name: 'Roseau', description: 'Small seaside capital with a lively market and Creole architecture', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Morne Trois Pitons National Park', description: 'UNESCO rainforest with volcanic peaks and lakes', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Kalinago Territory', description: 'Home to the Caribbean’s last Indigenous Kalinago community', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
     ],
     attractions: [
       {
@@ -12538,6 +13186,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "No machine-readable author provided. Pembo13 assumed (based on copyright claims).",
         imageLicense: "Public domain",
         imageAttribution: "Photo: No machine-readable author provided. Pembo13 assumed (based on copyright claims). / Public domain",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr",
       },
       {
         name: "Trafalgar Falls",
@@ -12550,6 +13200,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Cheguemanu / CC BY-SA 4.0",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr",
       },
       {
         name: "Champagne Reef",
@@ -12593,9 +13245,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [41, 54, 78, 124, 221, 116, 122, 156, 188, 213, 128, 56],
     bestTimeToVisit: 'November–March dry season — check State Dept advisories before planning',
     popularPlaces: [
-      { name: 'Port-au-Prince', description: 'Capital with vibrant art scene and Iron Market bazaar' },
-      { name: 'Cap-Haïtien', description: 'Historic northern city near colonial and revolutionary sites' },
-      { name: 'Jacmel', description: 'Southern arts town famous for Carnival papier-mâché masks' },
+      { name: 'Port-au-Prince', description: 'Capital with vibrant art scene and Iron Market bazaar', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
+      { name: 'Cap-Haïtien', description: 'Historic northern city near colonial and revolutionary sites', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar" },
+      { name: 'Jacmel', description: 'Southern arts town famous for Carnival papier-mâché masks', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar" },
     ],
     attractions: [
       {
@@ -12608,6 +13260,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "SPC Gibran Torres, United States Army",
         imageLicense: "Public domain",
         imageAttribution: "Photo: SPC Gibran Torres, United States Army / Public domain",
+        bestWeatherMonths: "Jan",
+        goodWeatherMonths: "Feb–Mar",
       },
       {
         name: "Sans-Souci Palace",
@@ -12618,6 +13272,8 @@ export const countries: Record<string, CountryData> = {
         name: "Bassin Bleu",
         description: "Cascading turquoise pools in the hills above Jacmel",
         entityId: "attraction_HT_bassin_bleu",
+        bestWeatherMonths: "Jan–Mar, Dec",
+        goodWeatherMonths: "Apr, Jul",
       },
     ],
     famousMovies: [
@@ -12656,9 +13312,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [88, 44, 35, 60, 85, 72, 105, 120, 125, 126, 130, 104],
     bestTimeToVisit: 'December–April dry season — warm days, gentle trade winds',
     popularPlaces: [
-      { name: 'Basseterre', description: 'Capital port town with Georgian architecture and cruise pier' },
-      { name: 'Nevis', description: 'Quieter sister island with plantation inns beneath a cloud-topped volcano' },
-      { name: 'Frigate Bay', description: 'Beach strip with resorts and the “Strip” of beach bars' },
+      { name: 'Basseterre', description: 'Capital port town with Georgian architecture and cruise pier', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Nevis', description: 'Quieter sister island with plantation inns beneath a cloud-topped volcano', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Frigate Bay', description: 'Beach strip with resorts and the “Strip” of beach bars', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
     ],
     attractions: [
       {
@@ -12676,6 +13332,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center / Public domain",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr",
       },
       {
         name: "St. Kitts Scenic Railway",
@@ -12719,15 +13377,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [21, 12, 20, 16, 3, 0, 0, 0, 0, 2, 20, 26],
     bestTimeToVisit: 'November–March — mild, dry, and outside brutal summer heat',
     popularPlaces: [
-      { name: 'Kuwait City', description: 'Modern Gulf capital with the iconic Kuwait Towers on the corniche' },
-      { name: 'Failaka Island', description: 'Historic island with Hellenistic ruins and beach resorts' },
-      { name: 'Al Jahra', description: 'Desert-edge town near the Red Fort and open-desert camps' },
+      { name: 'Kuwait City', description: 'Modern Gulf capital with the iconic Kuwait Towers on the corniche', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Failaka Island', description: 'Historic island with Hellenistic ruins and beach resorts', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Al Jahra', description: 'Desert-edge town near the Red Fort and open-desert camps', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
     ],
     attractions: [
       {
         name: "Kuwait Towers",
         description: "Blue-tiled seaside towers with a revolving observation deck",
         entityId: "attraction_KW_kuwait_towers",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Grand Mosque",
@@ -12776,9 +13436,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [157, 118, 78, 39, 17, 2, 0, 0, 2, 31, 80, 136],
     bestTimeToVisit: 'April–June and September–October — mild weather; check advisories closely',
     popularPlaces: [
-      { name: 'Beirut', description: 'Cosmopolitan Mediterranean capital of cafés, nightlife, and ruins' },
-      { name: 'Byblos', description: 'One of the world’s oldest continuously inhabited cities' },
-      { name: 'Baalbek', description: 'Colossal Roman temple complex in the Bekaa Valley' },
+      { name: 'Beirut', description: 'Cosmopolitan Mediterranean capital of cafés, nightlife, and ruins', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar" },
+      { name: 'Byblos', description: 'One of the world’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar" },
+      { name: 'Baalbek', description: 'Colossal Roman temple complex in the Bekaa Valley', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
     ],
     attractions: [
       {
@@ -12802,6 +13462,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: Yoniw / CC BY-SA 3.0",
+        bestWeatherMonths: "Apr–Nov",
+        goodWeatherMonths: "Mar",
       },
     ],
     famousMovies: [
@@ -12841,15 +13503,17 @@ export const countries: Record<string, CountryData> = {
     precipitation: [68, 52, 55, 70, 63, 51, 26, 40, 91, 100, 120, 69],
     bestTimeToVisit: 'May–September for Riviera weather; late-May Grand Prix is peak season',
     popularPlaces: [
-      { name: 'Monte-Carlo', description: 'Glamorous quarter of casinos, luxury hotels, and yachts' },
-      { name: 'Monaco-Ville', description: 'Old town on “The Rock” with the Prince’s Palace' },
-      { name: 'La Condamine', description: 'Port district lined with restaurants and the F1 circuit’s harbor chicane' },
+      { name: 'Monte-Carlo', description: 'Glamorous quarter of casinos, luxury hotels, and yachts', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
+      { name: 'Monaco-Ville', description: 'Old town on “The Rock” with the Prince’s Palace', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
+      { name: 'La Condamine', description: 'Port district lined with restaurants and the F1 circuit’s harbor chicane', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
     ],
     attractions: [
       {
         name: "Casino de Monte-Carlo",
         description: "Belle Époque casino by architect Charles Garnier",
         entityId: "attraction_MC_casino_de_monte_carlo",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Mar",
       },
       {
         name: "Oceanographic Museum",
@@ -12899,9 +13563,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [135, 91, 110, 135, 160, 233, 271, 278, 284, 309, 303, 187],
     bestTimeToVisit: 'January–May dry season — outside hurricane months and peak rain',
     popularPlaces: [
-      { name: 'Kingstown', description: 'Compact capital of stone arches and a bustling market' },
-      { name: 'Bequia', description: 'Sailing hub island known for boatbuilding and quiet beaches' },
-      { name: 'Tobago Cays', description: 'Protected reef and cays with turtles and pristine snorkeling' },
+      { name: 'Kingstown', description: 'Compact capital of stone arches and a bustling market', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Bequia', description: 'Sailing hub island known for boatbuilding and quiet beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Tobago Cays', description: 'Protected reef and cays with turtles and pristine snorkeling', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
     ],
     attractions: [
       {
@@ -12909,6 +13573,8 @@ export const countries: Record<string, CountryData> = {
         description: "Active volcano with a demanding summit hike",
         entityId: "attraction_VC_la_soufriere_volcano",
         wikidataId: "Q26544",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr",
       },
       {
         name: "Mustique",
@@ -12920,12 +13586,16 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "United States Central Intelligence Agency",
         imageLicense: "Public domain",
         imageAttribution: "Photo: United States Central Intelligence Agency / Public domain",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr",
       },
       {
         name: "Wallilabou Bay",
         description: "Filming location for Pirates of the Caribbean",
         entityId: "attraction_VC_wallilabou_bay",
         wikidataId: "Q32041057",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr",
       },
     ],
     famousMovies: [
@@ -12977,8 +13647,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [91, 55, 84, 90, 106, 94, 67, 80, 92, 108, 100, 79],
     bestTimeToVisit: 'December–March for skiing, June–September for hiking',
     popularPlaces: [
-      { name: 'Andorra la Vella', description: 'Pyrenean capital known for duty-free shopping' },
-      { name: 'Ordino', description: 'Traditional stone village near ski slopes' },
+      { name: 'Andorra la Vella', description: 'Pyrenean capital known for duty-free shopping', bestWeatherMonths: "Jun–Sep" },
+      { name: 'Ordino', description: 'Traditional stone village near ski slopes', bestWeatherMonths: "Jun–Sep" },
     ],
     attractions: [
       {
@@ -12990,6 +13660,7 @@ export const countries: Record<string, CountryData> = {
         name: "Caldea",
         description: "Thermal spa complex fed by hot springs",
         entityId: "attraction_AD_caldea",
+        bestWeatherMonths: "Jun–Sep",
       },
     ],
     famousMovies: [
@@ -13036,14 +13707,16 @@ export const countries: Record<string, CountryData> = {
     precipitation: [45, 60, 63, 52, 32, 8, 8, 6, 3, 9, 22, 29],
     bestTimeToVisit: 'Travel is not advised — State Dept Level 4',
     popularPlaces: [
-      { name: 'Kabul', description: 'Historic capital in a mountain valley' },
-      { name: 'Bamiyan', description: 'Site of the destroyed Buddha statues and turquoise lakes' },
+      { name: 'Kabul', description: 'Historic capital in a mountain valley', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Jul–Aug, Nov" },
+      { name: 'Bamiyan', description: 'Site of the destroyed Buddha statues and turquoise lakes', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep" },
     ],
     attractions: [
       {
         name: "Band-e Amir National Park",
         description: "Cobalt-blue mineral lakes in the Hindu Kush",
         entityId: "attraction_AF_band_e_amir_national_park",
+        bestWeatherMonths: "Jun–Sep",
+        goodWeatherMonths: "May",
       },
       {
         name: "Blue Mosque of Mazar-i-Sharif",
@@ -13095,8 +13768,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 48, 40, 64, 86, 62, 96, 105, 120, 115, 133, 103],
     bestTimeToVisit: 'December–April for dry sunny weather',
     popularPlaces: [
-      { name: 'Shoal Bay East', description: 'Powder-white beach consistently rated among the world’s best' },
-      { name: 'Sandy Ground', description: 'Beachfront village with sailboats and beach bars' },
+      { name: 'Shoal Bay East', description: 'Powder-white beach consistently rated among the world’s best', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
+      { name: 'Sandy Ground', description: 'Beachfront village with sailboats and beach bars', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
     ],
     attractions: [
       {
@@ -13109,6 +13782,8 @@ export const countries: Record<string, CountryData> = {
         description: "Uninhabited islands for day-trip snorkeling",
         entityId: "attraction_AI_prickly_pear_cays",
         wikidataId: "Q3911374",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Apr–Jun, Dec",
       },
     ],
     famousMovies: [],
@@ -13153,8 +13828,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [26, 29, 47, 68, 87, 70, 57, 35, 35, 40, 35, 25],
     bestTimeToVisit: 'May–June and September–October',
     popularPlaces: [
-      { name: 'Yerevan', description: 'Pink-tuff capital with Mt. Ararat views' },
-      { name: 'Dilijan', description: 'Forested mountain town called “Armenian Switzerland”' },
+      { name: 'Yerevan', description: 'Pink-tuff capital with Mt. Ararat views', bestWeatherMonths: "May–Oct" },
+      { name: 'Dilijan', description: 'Forested mountain town called “Armenian Switzerland”', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -13172,6 +13847,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center / Public domain",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Oct",
       },
     ],
     famousMovies: [
@@ -13220,8 +13897,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [445, 344, 291, 237, 226, 142, 152, 141, 184, 223, 285, 355],
     bestTimeToVisit: 'May–September (dry season)',
     popularPlaces: [
-      { name: 'Pago Pago', description: 'Deep harbor town encircled by rainforest peaks' },
-      { name: 'Ofu Beach', description: 'Remote white-sand beach on Manuʻa Islands' },
+      { name: 'Pago Pago', description: 'Deep harbor town encircled by rainforest peaks', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–May, Sep–Dec" },
+      { name: 'Ofu Beach', description: 'Remote white-sand beach on Manuʻa Islands', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–May, Sep–Dec" },
     ],
     attractions: [
       {
@@ -13238,6 +13915,8 @@ export const countries: Record<string, CountryData> = {
         annualVisitors: 4819,
         annualVisitorsYear: 2020,
         annualVisitorsSourceUrl: "https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)",
+        bestWeatherMonths: "Jun–Aug",
+        goodWeatherMonths: "Jan–May, Sep–Dec",
       },
       {
         name: "Mount ʻAlava",
@@ -13290,8 +13969,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [27, 34, 46, 51, 60, 47, 33, 27, 42, 52, 44, 28],
     bestTimeToVisit: 'April–June and September–October',
     popularPlaces: [
-      { name: 'Baku', description: 'Caspian capital blending medieval old town and futuristic towers' },
-      { name: 'Sheki', description: 'Silk Road town with a palace of stained glass' },
+      { name: 'Baku', description: 'Caspian capital blending medieval old town and futuristic towers', bestWeatherMonths: "Apr–Jun, Sep–Nov", goodWeatherMonths: "Mar, Jul–Aug" },
+      { name: 'Sheki', description: 'Silk Road town with a palace of stained glass', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
@@ -13349,19 +14028,22 @@ export const countries: Record<string, CountryData> = {
     precipitation: [10, 20, 42, 117, 225, 368, 478, 389, 300, 190, 31, 5],
     bestTimeToVisit: 'November–February (cool, dry)',
     popularPlaces: [
-      { name: 'Dhaka', description: 'Densely packed capital famous for rickshaw art and river life' },
-      { name: 'Coxʼs Bazar', description: 'Claimed longest natural sea beach in the world' },
+      { name: 'Dhaka', description: 'Densely packed capital famous for rickshaw art and river life', bestWeatherMonths: "Jan–Feb, Nov–Dec" },
+      { name: 'Coxʼs Bazar', description: 'Claimed longest natural sea beach in the world', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
     ],
     attractions: [
       {
         name: "Sundarbans",
         description: "World’s largest mangrove forest, home to Bengal tigers",
         entityId: "attraction_BD_sundarbans",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
+        goodWeatherMonths: "Mar",
       },
       {
         name: "Srimangal",
         description: "Rolling tea gardens in the northeast",
         entityId: "attraction_BD_srimangal",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -13408,8 +14090,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [19, 13, 18, 7, 1, 0, 0, 0, 0, 0, 8, 15],
     bestTimeToVisit: 'November–March',
     popularPlaces: [
-      { name: 'Manama', description: 'Skyscraper capital with a lively souq' },
-      { name: 'Muharraq', description: 'Pearl-diving heritage island with restored merchant houses' },
+      { name: 'Manama', description: 'Skyscraper capital with a lively souq', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Muharraq', description: 'Pearl-diving heritage island with restored merchant houses', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
     ],
     attractions: [
       {
@@ -13423,6 +14105,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Peter from Riyadh, Saudi Arabia / CC BY 2.0",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Tree of Life",
@@ -13474,8 +14158,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [165, 121, 169, 147, 93, 14, 5, 15, 61, 105, 167, 156],
     bestTimeToVisit: 'June–September (dry season)',
     popularPlaces: [
-      { name: 'Bujumbura', description: 'Lakeside former capital on Lake Tanganyika' },
-      { name: 'Gitega', description: 'Current political capital in the highlands' },
+      { name: 'Bujumbura', description: 'Lakeside former capital on Lake Tanganyika', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Feb, Apr, Sep–Oct, Dec" },
+      { name: 'Gitega', description: 'Current political capital in the highlands', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Jan–Apr, Nov–Dec" },
     ],
     attractions: [
       {
@@ -13533,8 +14217,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Gustavia', description: 'Yacht-lined harbor capital with red-roofed shops' },
-      { name: 'Saint-Jean', description: 'Beach village next to the famous cliff-approach airstrip' },
+      { name: 'Gustavia', description: 'Yacht-lined harbor capital with red-roofed shops', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
+      { name: 'Saint-Jean', description: 'Beach village next to the famous cliff-approach airstrip', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
     ],
     attractions: [
       {
@@ -13588,8 +14272,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [88, 44, 35, 60, 85, 72, 105, 120, 125, 126, 130, 104],
     bestTimeToVisit: 'Year-round (outside hurricane belt)',
     popularPlaces: [
-      { name: 'Kralendijk', description: 'Compact Dutch-Caribbean capital' },
-      { name: 'Rincon', description: 'Oldest settlement in the ABC islands' },
+      { name: 'Kralendijk', description: 'Compact Dutch-Caribbean capital', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
+      { name: 'Rincon', description: 'Oldest settlement in the ABC islands', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
     ],
     attractions: [
       {
@@ -13645,8 +14329,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [42, 39, 38, 38, 64, 72, 88, 63, 54, 54, 45, 44],
     bestTimeToVisit: 'May–September',
     popularPlaces: [
-      { name: 'Minsk', description: 'Rebuilt capital of Stalinist boulevards and green parks' },
-      { name: 'Brest', description: 'Border city famous for its WWII hero-fortress' },
+      { name: 'Minsk', description: 'Rebuilt capital of Stalinist boulevards and green parks', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
+      { name: 'Brest', description: 'Border city famous for its WWII hero-fortress', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
@@ -13705,8 +14389,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [7, 14, 55, 99, 147, 167, 202, 236, 219, 183, 37, 7],
     bestTimeToVisit: 'November–February (dry) — but Level 4 advisory',
     popularPlaces: [
-      { name: 'Bangui', description: 'Riverside capital on the Ubangi' },
-      { name: 'Dzanga-Sangha', description: 'Remote rainforest reserve with forest elephants' },
+      { name: 'Bangui', description: 'Riverside capital on the Ubangi', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jun–Sep, Nov" },
+      { name: 'Dzanga-Sangha', description: 'Remote rainforest reserve with forest elephants', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Feb, Nov" },
     ],
     attractions: [
       {
@@ -13762,14 +14446,16 @@ export const countries: Record<string, CountryData> = {
     precipitation: [245, 227, 184, 216, 172, 105, 108, 113, 107, 125, 152, 207],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Rarotonga', description: 'Main island ringed by a lagoon and jungle peaks' },
-      { name: 'Aitutaki', description: 'Triangular lagoon with uninhabited motus' },
+      { name: 'Rarotonga', description: 'Main island ringed by a lagoon and jungle peaks', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "May, Nov" },
+      { name: 'Aitutaki', description: 'Triangular lagoon with uninhabited motus', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Oct" },
     ],
     attractions: [
       {
         name: "Aitutaki Lagoon",
         description: "Regularly voted the world’s most beautiful lagoon",
         entityId: "attraction_CK_aitutaki_lagoon",
+        bestWeatherMonths: "Jun–Sep",
+        goodWeatherMonths: "Oct",
       },
       {
         name: "Cross-Island Track",
@@ -13819,8 +14505,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [56, 26, 23, 25, 18, 22, 39, 33, 32, 96, 119, 91],
     bestTimeToVisit: 'Year-round (outside hurricane belt)',
     popularPlaces: [
-      { name: 'Willemstad', description: 'UNESCO capital of pastel Dutch-colonial townhouses' },
-      { name: 'Westpunt', description: 'Rugged northwest coast with quiet cove beaches' },
+      { name: 'Willemstad', description: 'UNESCO capital of pastel Dutch-colonial townhouses', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
+      { name: 'Westpunt', description: 'Rugged northwest coast with quiet cove beaches', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
     ],
     attractions: [
       {
@@ -13839,6 +14525,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: Dronepicr / CC BY 3.0",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Apr–Sep, Dec",
       },
     ],
     famousMovies: [
@@ -13886,8 +14574,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [10, 8, 23, 26, 19, 4, 33, 48, 24, 11, 11, 9],
     bestTimeToVisit: 'November–March (cooler)',
     popularPlaces: [
-      { name: 'Djibouti City', description: 'Port capital at the mouth of the Red Sea' },
-      { name: 'Lake Assal', description: 'Salt lake 509 ft below sea level — Africa’s lowest point' },
+      { name: 'Djibouti City', description: 'Port capital at the mouth of the Red Sea', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar, Nov–Dec" },
+      { name: 'Lake Assal', description: 'Salt lake 509 ft below sea level — Africa’s lowest point', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Mar, Nov" },
     ],
     attractions: [
       {
@@ -13900,6 +14588,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NASA",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NASA / Public domain",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb–Mar, Nov",
       },
       {
         name: "Whale-shark diving in Gulf of Tadjoura",
@@ -13949,8 +14639,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [9, 7, 7, 11, 16, 16, 68, 78, 26, 9, 10, 12],
     bestTimeToVisit: 'October–March',
     popularPlaces: [
-      { name: 'Asmara', description: 'UNESCO-listed “Africa’s Art Deco city”' },
-      { name: 'Massawa', description: 'Ottoman-era Red Sea port' },
+      { name: 'Asmara', description: 'UNESCO-listed “Africa’s Art Deco city”', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
+      { name: 'Massawa', description: 'Ottoman-era Red Sea port', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar, Dec" },
     ],
     attractions: [
       {
@@ -13968,6 +14658,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center / Public domain",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar",
       },
     ],
     famousMovies: [
@@ -14014,8 +14706,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [282, 224, 277, 348, 377, 346, 355, 342, 353, 333, 330, 350],
     bestTimeToVisit: 'December–April (drier)',
     popularPlaces: [
-      { name: 'Pohnpei', description: 'Green mountainous island with waterfalls' },
-      { name: 'Chuuk', description: 'World-class WWII wreck diving in the lagoon' },
+      { name: 'Pohnpei', description: 'Green mountainous island with waterfalls', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Chuuk', description: 'World-class WWII wreck diving in the lagoon', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -14028,6 +14720,7 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NOAA",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NOAA / Public domain",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Chuuk Lagoon",
@@ -14039,6 +14732,7 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NASA and Time3000",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NASA and Time3000 / Public domain",
+        bestWeatherMonths: "Jan–Dec",
       },
     ],
     famousMovies: [],
@@ -14081,8 +14775,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [201, 154, 143, 108, 76, 78, 87, 101, 145, 180, 182, 184],
     bestTimeToVisit: 'May–September for hiking and puffins',
     popularPlaces: [
-      { name: 'Tórshavn', description: 'Turf-roofed capital on a fjord' },
-      { name: 'Gásadalur', description: 'Cliffside village next to the iconic Múlafossur waterfall' },
+      { name: 'Tórshavn', description: 'Turf-roofed capital on a fjord', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Gásadalur', description: 'Cliffside village next to the iconic Múlafossur waterfall', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
     ],
     attractions: [
       {
@@ -14101,6 +14795,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Vincent van Zeijst / CC BY-SA 3.0",
+        bestWeatherMonths: "Jun–Aug",
+        goodWeatherMonths: "May, Sep",
       },
     ],
     famousMovies: [
@@ -14147,8 +14843,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [84, 58, 65, 73, 79, 152, 183, 195, 190, 205, 194, 137],
     bestTimeToVisit: 'January–April (dry season)',
     popularPlaces: [
-      { name: 'St. George\'s', description: 'Horseshoe-harbor capital of colorful houses' },
-      { name: 'Grand Anse', description: '2-mile crescent beach south of the capital' },
+      { name: 'St. George\'s', description: 'Horseshoe-harbor capital of colorful houses', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Grand Anse', description: '2-mile crescent beach south of the capital', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
     ],
     attractions: [
       {
@@ -14167,6 +14863,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Bgabel / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr",
       },
     ],
     famousMovies: [],
@@ -14211,8 +14909,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [264, 278, 262, 332, 405, 292, 197, 130, 64, 60, 116, 223],
     bestTimeToVisit: 'July–November (drier)',
     popularPlaces: [
-      { name: 'Cayenne', description: 'Creole capital on the Atlantic coast' },
-      { name: 'Kourou', description: 'Home of the European Space Centre' },
+      { name: 'Cayenne', description: 'Creole capital on the Atlantic coast', bestWeatherMonths: "Sep–Oct", goodWeatherMonths: "Jan–Aug, Nov–Dec" },
+      { name: 'Kourou', description: 'Home of the European Space Centre', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "Jan–Jul, Nov–Dec" },
     ],
     attractions: [
       {
@@ -14226,6 +14924,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: elisabetta_monaco from Munich, Germany / CC BY 2.0",
+        bestWeatherMonths: "Aug–Oct",
+        goodWeatherMonths: "Jan–Jul, Nov–Dec",
       },
       {
         name: "Îles du Salut",
@@ -14237,6 +14937,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "davric",
         imageLicense: "Public domain",
         imageAttribution: "Photo: davric / Public domain",
+        bestWeatherMonths: "Aug–Oct",
+        goodWeatherMonths: "Jan–Jul, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -14283,8 +14985,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [97, 78, 60, 57, 47, 48, 44, 54, 62, 97, 116, 116],
     bestTimeToVisit: 'May–September',
     popularPlaces: [
-      { name: 'Saint Peter Port', description: 'Steep harbor capital with Regency townhouses' },
-      { name: 'Sark', description: 'Nearby car-free island reachable by ferry' },
+      { name: 'Saint Peter Port', description: 'Steep harbor capital with Regency townhouses', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Sark', description: 'Nearby car-free island reachable by ferry', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
@@ -14298,6 +15000,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC0",
         imageLicenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
         imageAttribution: "Photo: TheKaphox / CC0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Little Chapel",
@@ -14347,8 +15051,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [88, 76, 76, 60, 34, 7, 1, 4, 29, 81, 109, 115],
     bestTimeToVisit: 'April–June and September–October',
     popularPlaces: [
-      { name: 'Main Street', description: 'Duty-free pedestrian shopping strip' },
-      { name: 'Catalan Bay', description: 'Small Genoese fishing village beach' },
+      { name: 'Main Street', description: 'Duty-free pedestrian shopping strip', bestWeatherMonths: "Jan–Nov", goodWeatherMonths: "Dec" },
+      { name: 'Catalan Bay', description: 'Small Genoese fishing village beach', bestWeatherMonths: "Jan–Nov", goodWeatherMonths: "Dec" },
     ],
     attractions: [
       {
@@ -14361,6 +15065,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Gibnews.net",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Gibnews.net / Public domain",
+        bestWeatherMonths: "Jan–Nov",
+        goodWeatherMonths: "Dec",
       },
       {
         name: "St. Michael’s Cave",
@@ -14410,8 +15116,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 8, 23, 61, 129, 211, 325, 438, 349, 193, 44, 5],
     bestTimeToVisit: 'November–April (dry season)',
     popularPlaces: [
-      { name: 'Conakry', description: 'Peninsular Atlantic capital' },
-      { name: 'Fouta Djallon', description: 'Highland region of waterfalls and plateaus' },
+      { name: 'Conakry', description: 'Peninsular Atlantic capital', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov" },
+      { name: 'Fouta Djallon', description: 'Highland region of waterfalls and plateaus', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Mar, Jul–Sep" },
     ],
     attractions: [
       {
@@ -14430,6 +15136,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Cnes - Spot Image / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov",
       },
     ],
     famousMovies: [],
@@ -14476,8 +15184,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [141, 93, 114, 154, 212, 186, 242, 250, 260, 296, 283, 209],
     bestTimeToVisit: 'December–April (dry season)',
     popularPlaces: [
-      { name: 'Pointe-à-Pitre', description: 'Largest city and cruise port' },
-      { name: 'Grande-Terre', description: 'Flatter half with the best beaches' },
+      { name: 'Pointe-à-Pitre', description: 'Largest city and cruise port', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
+      { name: 'Grande-Terre', description: 'Flatter half with the best beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar" },
     ],
     attractions: [
       {
@@ -14491,6 +15199,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.5",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.5",
         imageAttribution: "Photo: No machine-readable author provided. Ofol assumed (based on copyright claims). / CC BY 2.5",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr, Dec",
       },
       {
         name: "Chutes du Carbet",
@@ -14503,6 +15213,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: bobyfume / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb",
+        goodWeatherMonths: "Jan, Mar–Apr, Dec",
       },
     ],
     famousMovies: [],
@@ -14547,8 +15259,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [116, 130, 231, 232, 261, 142, 68, 107, 289, 455, 292, 148],
     bestTimeToVisit: 'November–March',
     popularPlaces: [
-      { name: 'Malabo', description: 'Island capital with colonial-era Spanish quarter' },
-      { name: 'Bata', description: 'Largest city on the mainland coast' },
+      { name: 'Malabo', description: 'Island capital with colonial-era Spanish quarter', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Oct" },
+      { name: 'Bata', description: 'Largest city on the mainland coast', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep–Oct" },
     ],
     attractions: [
       {
@@ -14562,11 +15274,14 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Serge Moons / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan, Dec",
+        goodWeatherMonths: "Feb, Jul–Oct",
       },
       {
         name: "Monte Alén National Park",
         description: "Mainland rainforest with lowland gorillas",
         entityId: "attraction_GQ_monte_alen_national_park",
+        bestWeatherMonths: "Jul–Aug",
       },
     ],
     famousMovies: [],
@@ -14611,8 +15326,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [130, 106, 76, 90, 102, 142, 268, 418, 354, 312, 224, 148],
     bestTimeToVisit: 'December–June (dry season)',
     popularPlaces: [
-      { name: 'Tumon', description: 'Resort strip along a turquoise crescent bay' },
-      { name: 'Hagåtña', description: 'Historic Spanish-era capital' },
+      { name: 'Tumon', description: 'Resort strip along a turquoise crescent bay', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May, Dec" },
+      { name: 'Hagåtña', description: 'Historic Spanish-era capital', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr–May, Dec" },
     ],
     attractions: [
       {
@@ -14626,11 +15341,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Gage Skidmore / CC BY-SA 4.0",
+        bestWeatherMonths: "Feb–Apr",
+        goodWeatherMonths: "Jan, May, Dec",
       },
       {
         name: "War in the Pacific National Historical Park",
         description: "WWII battle sites and jungle trails",
         entityId: "attraction_GU_war_in_the_pacific_national_historical_park",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr–May, Dec",
       },
     ],
     famousMovies: [
@@ -14678,8 +15397,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 1, 30, 160, 348, 521, 395, 173, 20, 0],
     bestTimeToVisit: 'November–May (dry season)',
     popularPlaces: [
-      { name: 'Bissau', description: 'Riverside capital with faded Portuguese architecture' },
-      { name: 'Bijagós Archipelago', description: 'Sacred islands with matriarchal culture' },
+      { name: 'Bissau', description: 'Riverside capital with faded Portuguese architecture', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–May, Jul–Aug" },
+      { name: 'Bijagós Archipelago', description: 'Sacred islands with matriarchal culture', bestWeatherMonths: "Jan–Feb, May, Nov–Dec", goodWeatherMonths: "Mar–Apr, Aug" },
     ],
     attractions: [
       {
@@ -14693,6 +15412,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/3.0",
         imageAttribution: "Photo: Nammarci / CC BY 3.0",
+        bestWeatherMonths: "Jan–Feb, May, Nov–Dec",
+        goodWeatherMonths: "Mar–Apr, Aug",
       },
       {
         name: "Bolama",
@@ -14705,6 +15426,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Helena Maria Pestana / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan, Nov–Dec",
+        goodWeatherMonths: "Feb–Mar, May, Aug–Sep",
       },
     ],
     famousMovies: [],
@@ -14749,8 +15472,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [126, 101, 90, 81, 68, 81, 85, 102, 103, 149, 151, 140],
     bestTimeToVisit: 'May–September (esp. TT race fortnight)',
     popularPlaces: [
-      { name: 'Douglas', description: 'Victorian seafront capital' },
-      { name: 'Peel', description: 'West-coast fishing town with a red-sandstone castle' },
+      { name: 'Douglas', description: 'Victorian seafront capital', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Peel', description: 'West-coast fishing town with a red-sandstone castle', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
     ],
     attractions: [
       {
@@ -14809,8 +15532,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [30, 28, 35, 28, 11, 1, 0, 0, 0, 8, 24, 29],
     bestTimeToVisit: 'October–April (cooler)',
     popularPlaces: [
-      { name: 'Baghdad', description: 'Ancient Tigris capital' },
-      { name: 'Erbil', description: 'Kurdish regional capital around a 6,000-year-old citadel' },
+      { name: 'Baghdad', description: 'Ancient Tigris capital', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Erbil', description: 'Kurdish regional capital around a 6,000-year-old citadel', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb" },
     ],
     attractions: [
       {
@@ -14824,6 +15547,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Jim Gordon / CC BY 2.0",
+        bestWeatherMonths: "Mar–May, Oct–Nov",
+        goodWeatherMonths: "Feb",
       },
       {
         name: "Ur",
@@ -14836,6 +15561,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: M.Lubinski from Iraq,USA. / CC BY-SA 2.0",
+        bestWeatherMonths: "Jan–Mar, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -14883,8 +15609,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [34, 29, 37, 29, 16, 4, 4, 3, 4, 10, 22, 28],
     bestTimeToVisit: 'March–May and September–November',
     popularPlaces: [
-      { name: 'Tehran', description: 'Mountain-backed capital with world-class museums' },
-      { name: 'Isfahan', description: 'Half-the-World city of blue-tiled Safavid squares' },
+      { name: 'Tehran', description: 'Mountain-backed capital with world-class museums', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun, Nov" },
+      { name: 'Isfahan', description: 'Half-the-World city of blue-tiled Safavid squares', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb" },
     ],
     attractions: [
       {
@@ -14898,6 +15624,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Carole Raddato from Frankfurt, Germany / CC BY-SA 2.0",
+        bestWeatherMonths: "Mar–Apr, Oct–Nov",
+        goodWeatherMonths: "Feb, May, Dec",
       },
       {
         name: "Naqsh-e Jahan Square",
@@ -14910,6 +15638,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Pedram forouzanfar / CC BY-SA 4.0",
+        bestWeatherMonths: "Mar–May, Oct–Nov",
+        goodWeatherMonths: "Feb",
       },
     ],
     famousMovies: [
@@ -14957,8 +15687,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [106, 79, 66, 63, 53, 52, 49, 59, 72, 107, 132, 128],
     bestTimeToVisit: 'May–September',
     popularPlaces: [
-      { name: 'Saint Helier', description: 'Bay-front capital' },
-      { name: 'Gorey', description: 'Fishing village beneath Mont Orgueil castle' },
+      { name: 'Saint Helier', description: 'Bay-front capital', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Gorey', description: 'Fishing village beneath Mont Orgueil castle', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
@@ -14972,6 +15702,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Bob Embleton / CC BY-SA 2.0",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
       {
         name: "Jersey War Tunnels",
@@ -15023,8 +15755,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [26, 36, 47, 56, 67, 53, 41, 36, 19, 30, 40, 36],
     bestTimeToVisit: 'June–September for mountains',
     popularPlaces: [
-      { name: 'Bishkek', description: 'Leafy Soviet-planned capital' },
-      { name: 'Karakol', description: 'Trekking hub on the eastern shore of Issyk-Kul' },
+      { name: 'Bishkek', description: 'Leafy Soviet-planned capital', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Karakol', description: 'Trekking hub on the eastern shore of Issyk-Kul', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
     ],
     attractions: [
       {
@@ -15036,6 +15768,8 @@ export const countries: Record<string, CountryData> = {
         name: "Ala-Archa National Park",
         description: "Glacier-fed canyon 30 minutes from Bishkek",
         entityId: "attraction_KG_ala_archa_national_park",
+        bestWeatherMonths: "May–Sep",
+        goodWeatherMonths: "Apr, Oct",
       },
     ],
     famousMovies: [
@@ -15082,8 +15816,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [161, 120, 150, 175, 128, 128, 120, 93, 81, 74, 79, 113],
     bestTimeToVisit: 'April–October',
     popularPlaces: [
-      { name: 'Tarawa', description: 'Ribbon of islets around a WWII battle lagoon' },
-      { name: 'Kiritimati (Christmas Island)', description: 'World’s largest coral atoll — a fly-fishing mecca' },
+      { name: 'Tarawa', description: 'Ribbon of islets around a WWII battle lagoon', bestWeatherMonths: "Jun, Aug–Nov", goodWeatherMonths: "Jan–May, Jul, Dec" },
+      { name: 'Kiritimati (Christmas Island)', description: 'World’s largest coral atoll — a fly-fishing mecca', bestWeatherMonths: "Feb, Aug–Dec", goodWeatherMonths: "Jan, Mar, May–Jul" },
     ],
     attractions: [
       {
@@ -15095,6 +15829,8 @@ export const countries: Record<string, CountryData> = {
         name: "Betio War Memorials",
         description: "Sites of the WWII Battle of Tarawa",
         entityId: "attraction_KI_betio_war_memorials",
+        bestWeatherMonths: "Jun, Aug–Nov",
+        goodWeatherMonths: "Jan–May, Jul, Dec",
       },
     ],
     famousMovies: [],
@@ -15137,8 +15873,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [314, 269, 264, 236, 159, 156, 154, 99, 64, 91, 98, 194],
     bestTimeToVisit: 'May–October (dry, cooler)',
     popularPlaces: [
-      { name: 'Moroni', description: 'Old volcanic capital with a whitewashed Friday Mosque' },
-      { name: 'Mohéli', description: 'Least-developed island with sea turtles' },
+      { name: 'Moroni', description: 'Old volcanic capital with a whitewashed Friday Mosque', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "May–Jul, Nov" },
+      { name: 'Mohéli', description: 'Least-developed island with sea turtles', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "Jun–Jul, Nov" },
     ],
     attractions: [
       {
@@ -15152,11 +15888,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: alKomor.com / CC BY-SA 2.0",
+        bestWeatherMonths: "Aug–Oct",
+        goodWeatherMonths: "May–Jul, Nov",
       },
       {
         name: "Mohéli Marine Park",
         description: "Nesting sea turtles and dugongs",
         entityId: "attraction_KM_moheli_marine_park",
+        bestWeatherMonths: "Aug–Oct",
+        goodWeatherMonths: "Jun–Jul, Nov",
       },
     ],
     famousMovies: [],
@@ -15201,8 +15941,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [13, 17, 29, 48, 90, 118, 245, 231, 103, 51, 42, 20],
     bestTimeToVisit: 'Travel by US passport holders is prohibited',
     popularPlaces: [
-      { name: 'Pyongyang', description: 'Monumental capital of grand plazas' },
-      { name: 'Mount Paektu', description: 'Sacred volcanic peak on the Chinese border' },
+      { name: 'Pyongyang', description: 'Monumental capital of grand plazas', bestWeatherMonths: "Apr–Jun, Sep–Oct" },
+      { name: 'Mount Paektu', description: 'Sacred volcanic peak on the Chinese border', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug" },
     ],
     attractions: [
       {
@@ -15214,6 +15954,8 @@ export const countries: Record<string, CountryData> = {
         name: "Kaesong",
         description: "Historic city near the DMZ",
         entityId: "attraction_KP_kaesong",
+        bestWeatherMonths: "Apr–May, Oct",
+        goodWeatherMonths: "Jun, Sep",
       },
     ],
     famousMovies: [
@@ -15260,8 +16002,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [54, 41, 34, 49, 139, 174, 180, 170, 208, 232, 118, 57],
     bestTimeToVisit: 'December–April (dry season)',
     popularPlaces: [
-      { name: 'George Town', description: 'Cruise-port capital with duty-free shops' },
-      { name: 'Seven Mile Beach', description: 'Coral-sand crescent lined with resorts' },
+      { name: 'George Town', description: 'Cruise-port capital with duty-free shops', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Apr, Dec" },
+      { name: 'Seven Mile Beach', description: 'Coral-sand crescent lined with resorts', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Apr, Dec" },
     ],
     attractions: [
       {
@@ -15319,8 +16061,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [57, 53, 60, 68, 114, 125, 137, 137, 100, 82, 80, 64],
     bestTimeToVisit: 'May–September for hiking; December–March for skiing',
     popularPlaces: [
-      { name: 'Vaduz', description: 'Tiny capital dominated by a hillside castle' },
-      { name: 'Malbun', description: 'Compact ski resort in the eastern mountains' },
+      { name: 'Vaduz', description: 'Tiny capital dominated by a hillside castle', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug" },
+      { name: 'Malbun', description: 'Compact ski resort in the eastern mountains', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug" },
     ],
     attractions: [
       {
@@ -15334,6 +16076,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Lucas Kendall / CC BY-SA 4.0",
+        bestWeatherMonths: "Jun, Sep",
+        goodWeatherMonths: "May, Jul–Aug",
       },
       {
         name: "Fürstensteig",
@@ -15346,6 +16090,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC0",
         imageLicenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
         imageAttribution: "Photo: albinfo / CC0",
+        bestWeatherMonths: "Jun, Sep",
+        goodWeatherMonths: "May, Jul–Aug",
       },
     ],
     famousMovies: [],
@@ -15388,8 +16134,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [32, 28, 30, 35, 50, 68, 58, 44, 47, 36, 36, 35],
     bestTimeToVisit: 'May–September',
     popularPlaces: [
-      { name: 'Chișinău', description: 'Leafy post-Soviet capital' },
-      { name: 'Orheiul Vechi', description: 'Cliffside cave monastery above a river bend' },
+      { name: 'Chișinău', description: 'Leafy post-Soviet capital', bestWeatherMonths: "Apr–Oct" },
+      { name: 'Orheiul Vechi', description: 'Cliffside cave monastery above a river bend', bestWeatherMonths: "Apr–Oct" },
     ],
     attractions: [
       {
@@ -15403,6 +16149,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Alexander Murvanidze / CC BY-SA 3.0",
+        bestWeatherMonths: "Apr–Oct",
       },
       {
         name: "Mileștii Mici",
@@ -15454,8 +16201,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 48, 40, 64, 86, 62, 96, 105, 120, 115, 133, 103],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Marigot', description: 'French capital with a waterfront market' },
-      { name: 'Grand Case', description: 'Beach village known as the “gastronomic capital of the Caribbean”' },
+      { name: 'Marigot', description: 'French capital with a waterfront market', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
+      { name: 'Grand Case', description: 'Beach village known as the “gastronomic capital of the Caribbean”', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
     ],
     attractions: [
       {
@@ -15469,6 +16216,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: SV Zanshin / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Apr–Jun, Dec",
       },
       {
         name: "Loterie Farm",
@@ -15516,8 +16265,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [170, 158, 156, 209, 219, 218, 243, 255, 266, 285, 265, 227],
     bestTimeToVisit: 'December–April (drier)',
     popularPlaces: [
-      { name: 'Majuro', description: 'Ribbon capital atoll' },
-      { name: 'Bikini Atoll', description: 'Nuclear-test site now a wreck-diving destination' },
+      { name: 'Majuro', description: 'Ribbon capital atoll', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Bikini Atoll', description: 'Nuclear-test site now a wreck-diving destination', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
     ],
     attractions: [
       {
@@ -15530,12 +16279,15 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NASA",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NASA / Public domain",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr, Dec",
       },
       {
         name: "Arno Atoll",
         description: "Traditional outer-island culture",
         entityId: "attraction_MH_arno_atoll",
         wikidataId: "Q27577577",
+        bestWeatherMonths: "Jan–Dec",
       },
     ],
     famousMovies: [],
@@ -15578,8 +16330,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [54, 46, 53, 53, 68, 60, 46, 39, 58, 61, 65, 66],
     bestTimeToVisit: 'May–October',
     popularPlaces: [
-      { name: 'Skopje', description: 'Statue-filled capital across a stone Ottoman bridge' },
-      { name: 'Ohrid', description: 'UNESCO lakeside town of 365 churches' },
+      { name: 'Skopje', description: 'Statue-filled capital across a stone Ottoman bridge', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
+      { name: 'Ohrid', description: 'UNESCO lakeside town of 365 churches', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
@@ -15592,6 +16344,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NASA/METI/AIST/Japan Space Systems, and U.S./Japan ASTER Science Team",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NASA/METI/AIST/Japan Space Systems, and U.S./Japan ASTER Science Team / Public domain",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr",
       },
       {
         name: "Matka Canyon",
@@ -15604,6 +16358,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: kallerna / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr",
       },
     ],
     famousMovies: [
@@ -15652,8 +16408,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [24, 37, 74, 148, 268, 376, 288, 348, 231, 82, 33, 31],
     bestTimeToVisit: 'October–December (cool, dry)',
     popularPlaces: [
-      { name: 'Historic Centre', description: 'UNESCO Portuguese-colonial old town' },
-      { name: 'Cotai Strip', description: 'Vegas-scale casino resort district' },
+      { name: 'Historic Centre', description: 'UNESCO Portuguese-colonial old town', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Cotai Strip', description: 'Vegas-scale casino resort district', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr" },
     ],
     attractions: [
       {
@@ -15709,8 +16465,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [108, 71, 72, 92, 74, 115, 225, 316, 332, 279, 179, 120],
     bestTimeToVisit: 'December–May (dry season)',
     popularPlaces: [
-      { name: 'Saipan', description: 'WWII-battle island with turquoise reefs' },
-      { name: 'Rota', description: 'Quieter island known for cave diving' },
+      { name: 'Saipan', description: 'WWII-battle island with turquoise reefs', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr–May, Dec" },
+      { name: 'Rota', description: 'Quieter island known for cave diving', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May, Dec" },
     ],
     attractions: [
       {
@@ -15718,6 +16474,8 @@ export const countries: Record<string, CountryData> = {
         description: "Collapsed limestone cavern dive site",
         entityId: "attraction_MP_grotto_saipan",
         wikidataId: "Q49755159",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr–May, Dec",
       },
       {
         name: "Banzai Cliff",
@@ -15730,6 +16488,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Gage Skidmore / CC BY-SA 4.0",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr–May, Dec",
       },
     ],
     famousMovies: [
@@ -15774,8 +16534,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [134, 95, 82, 135, 174, 199, 222, 248, 271, 281, 333, 185],
     bestTimeToVisit: 'December–May (dry season)',
     popularPlaces: [
-      { name: 'Fort-de-France', description: 'Bustling capital across the bay from Trois-Îlets' },
-      { name: 'Saint-Pierre', description: 'Former “Paris of the Caribbean” destroyed by Mt Pelée in 1902' },
+      { name: 'Fort-de-France', description: 'Bustling capital across the bay from Trois-Îlets', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
+      { name: 'Saint-Pierre', description: 'Former “Paris of the Caribbean” destroyed by Mt Pelée in 1902', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
     ],
     attractions: [
       {
@@ -15788,11 +16548,15 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Own work",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Own work / Public domain",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr, Dec",
       },
       {
         name: "Les Salines",
         description: "Long powdery beach at the southern tip",
         entityId: "attraction_MQ_les_salines",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr",
       },
     ],
     famousMovies: [
@@ -15840,8 +16604,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [1, 1, 0, 0, 1, 6, 19, 43, 28, 8, 1, 1],
     bestTimeToVisit: 'November–March',
     popularPlaces: [
-      { name: 'Nouakchott', description: 'Sand-swept Atlantic capital' },
-      { name: 'Chinguetti', description: 'Sahara caravan town of ancient libraries' },
+      { name: 'Nouakchott', description: 'Sand-swept Atlantic capital', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb, Dec" },
+      { name: 'Chinguetti', description: 'Sahara caravan town of ancient libraries', bestWeatherMonths: "Jan–Feb, Dec" },
     ],
     attractions: [
       {
@@ -15900,8 +16664,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [112, 65, 73, 93, 142, 126, 182, 183, 188, 185, 173, 139],
     bestTimeToVisit: 'December–May',
     popularPlaces: [
-      { name: 'Little Bay', description: 'New capital being built on the north coast' },
-      { name: 'Plymouth', description: 'Pompeii-like former capital buried by ash' },
+      { name: 'Little Bay', description: 'New capital being built on the north coast', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Plymouth', description: 'Pompeii-like former capital buried by ash', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
     ],
     attractions: [
       {
@@ -15959,8 +16723,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [205, 206, 271, 156, 127, 110, 87, 88, 56, 55, 83, 131],
     bestTimeToVisit: 'September–November',
     popularPlaces: [
-      { name: 'Nouméa', description: 'French Pacific capital on a huge bay' },
-      { name: 'Isle of Pines', description: '“Closest to paradise” lagoon islet' },
+      { name: 'Nouméa', description: 'French Pacific capital on a huge bay', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr, Dec" },
+      { name: 'Isle of Pines', description: '“Closest to paradise” lagoon islet', bestWeatherMonths: "May–Dec", goodWeatherMonths: "Jan, Apr" },
     ],
     attractions: [
       {
@@ -16016,8 +16780,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 2, 7, 19, 50, 74, 27, 4, 0, 0],
     bestTimeToVisit: 'November–February',
     popularPlaces: [
-      { name: 'Niamey', description: 'Sahel capital on the Niger River' },
-      { name: 'Agadez', description: 'Ancient Tuareg caravan city (UNESCO)' },
+      { name: 'Niamey', description: 'Sahel capital on the Niger River', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb" },
+      { name: 'Agadez', description: 'Ancient Tuareg caravan city (UNESCO)', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb" },
     ],
     attractions: [
       {
@@ -16073,14 +16837,15 @@ export const countries: Record<string, CountryData> = {
     precipitation: [261, 223, 219, 209, 186, 170, 208, 178, 172, 185, 176, 247],
     bestTimeToVisit: 'May–October',
     popularPlaces: [
-      { name: 'Yaren', description: 'Airport-adjacent de facto capital' },
-      { name: 'Anibare Bay', description: 'Best beach on the island’s east coast' },
+      { name: 'Yaren', description: 'Airport-adjacent de facto capital', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Anibare Bay', description: 'Best beach on the island’s east coast', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
         name: "Command Ridge",
         description: "WWII Japanese guns and island viewpoint",
         entityId: "attraction_NR_command_ridge",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Buada Lagoon",
@@ -16093,6 +16858,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Lorrie Graham/AusAID / CC BY 2.0",
+        bestWeatherMonths: "Jan–Dec",
       },
     ],
     famousMovies: [],
@@ -16135,14 +16901,16 @@ export const countries: Record<string, CountryData> = {
     precipitation: [279, 210, 302, 228, 188, 111, 85, 130, 123, 121, 152, 167],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Alofi', description: 'Tiny coral capital' },
-      { name: 'Matapa Chasm', description: 'Cliff-walled swim spot once reserved for Niuean royalty' },
+      { name: 'Alofi', description: 'Tiny coral capital', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug–Oct" },
+      { name: 'Matapa Chasm', description: 'Cliff-walled swim spot once reserved for Niuean royalty', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug–Oct" },
     ],
     attractions: [
       {
         name: "Talava Arches",
         description: "Coastal limestone arches at low tide",
         entityId: "attraction_NU_talava_arches",
+        bestWeatherMonths: "Jul",
+        goodWeatherMonths: "Jun, Aug–Oct",
       },
       {
         name: "Whale-watching",
@@ -16190,8 +16958,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [305, 315, 325, 298, 252, 206, 214, 210, 204, 238, 223, 288],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Port Moresby', description: 'Coastal capital with parliament resembling a spirit house' },
-      { name: 'Mount Hagen', description: 'Highlands town famous for the annual Sing-Sing' },
+      { name: 'Port Moresby', description: 'Coastal capital with parliament resembling a spirit house', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
+      { name: 'Mount Hagen', description: 'Highlands town famous for the annual Sing-Sing', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Feb–May, Aug–Sep" },
     ],
     attractions: [
       {
@@ -16249,8 +17017,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [21, 27, 28, 24, 16, 21, 52, 53, 24, 6, 7, 11],
     bestTimeToVisit: 'April–June and September–November',
     popularPlaces: [
-      { name: 'Lahore', description: 'Mughal cultural capital with the Badshahi Mosque' },
-      { name: 'Hunza Valley', description: 'Karakoram mountain valley of storybook villages' },
+      { name: 'Lahore', description: 'Mughal cultural capital with the Badshahi Mosque', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'Hunza Valley', description: 'Karakoram mountain valley of storybook villages', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
     ],
     attractions: [
       {
@@ -16310,8 +17078,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [120, 101, 98, 96, 98, 94, 96, 106, 115, 137, 134, 129],
     bestTimeToVisit: 'June–September',
     popularPlaces: [
-      { name: 'Saint-Pierre', description: 'Colorful French village opposite Newfoundland' },
-      { name: 'Miquelon', description: 'Larger, quieter island with wild horses' },
+      { name: 'Saint-Pierre', description: 'Colorful French village opposite Newfoundland', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Sep" },
+      { name: 'Miquelon', description: 'Larger, quieter island with wild horses', bestWeatherMonths: "Jun–Sep" },
     ],
     attractions: [
       {
@@ -16319,12 +17087,16 @@ export const countries: Record<string, CountryData> = {
         description: "Preserved former fishing village on a small islet",
         entityId: "attraction_PM_ile_aux_marins",
         wikidataId: "Q292246",
+        bestWeatherMonths: "Jul–Aug",
+        goodWeatherMonths: "Sep",
       },
       {
         name: "Grand Barachois",
         description: "Seal-filled lagoon on Miquelon",
         entityId: "attraction_PM_grand_barachois",
         wikidataId: "Q2742744",
+        bestWeatherMonths: "Jul–Aug",
+        goodWeatherMonths: "Sep",
       },
     ],
     famousMovies: [
@@ -16369,8 +17141,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [117, 93, 52, 16, 4, 0, 0, 0, 0, 15, 51, 92],
     bestTimeToVisit: 'March–May and September–November',
     popularPlaces: [
-      { name: 'Bethlehem', description: 'Church of the Nativity pilgrimage town' },
-      { name: 'Ramallah', description: 'Cultural capital of the West Bank' },
+      { name: 'Bethlehem', description: 'Church of the Nativity pilgrimage town', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep" },
+      { name: 'Ramallah', description: 'Cultural capital of the West Bank', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep" },
     ],
     attractions: [
       {
@@ -16384,6 +17156,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Neil Ward / CC BY 2.0",
+        bestWeatherMonths: "Feb–May, Oct–Dec",
+        goodWeatherMonths: "Jan, Jun, Sep",
       },
       {
         name: "Hisham’s Palace",
@@ -16436,8 +17210,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [274, 207, 187, 220, 318, 347, 362, 322, 329, 281, 265, 298],
     bestTimeToVisit: 'November–April (drier)',
     popularPlaces: [
-      { name: 'Koror', description: 'Main tourist hub' },
-      { name: 'Rock Islands', description: 'UNESCO-listed lagoon of 445 forested limestone islets' },
+      { name: 'Koror', description: 'Main tourist hub', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Rock Islands', description: 'UNESCO-listed lagoon of 445 forested limestone islets', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -16451,6 +17225,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Lukas from Munich, Germany / CC BY 2.0",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Blue Corner",
@@ -16500,8 +17275,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [351, 340, 362, 272, 230, 190, 260, 231, 224, 223, 223, 272],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Honiara', description: 'Guadalcanal capital with WWII battlefield sites' },
-      { name: 'Marovo Lagoon', description: 'World’s largest saltwater lagoon' },
+      { name: 'Honiara', description: 'Guadalcanal capital with WWII battlefield sites', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec" },
+      { name: 'Marovo Lagoon', description: 'World’s largest saltwater lagoon', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Jan–Apr, Sep–Dec" },
     ],
     attractions: [
       {
@@ -16559,8 +17334,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [49, 58, 57, 71, 69, 60, 43, 45, 86, 90, 119, 77],
     bestTimeToVisit: 'April–October',
     popularPlaces: [
-      { name: 'San Marino City', description: 'Cliffside old town on Monte Titano' },
-      { name: 'Borgo Maggiore', description: 'Cable-car linked lower town' },
+      { name: 'San Marino City', description: 'Cliffside old town on Monte Titano', bestWeatherMonths: "Apr–Oct" },
+      { name: 'Borgo Maggiore', description: 'Cable-car linked lower town', bestWeatherMonths: "Apr–Oct" },
     ],
     attractions: [
       {
@@ -16614,14 +17389,16 @@ export const countries: Record<string, CountryData> = {
     precipitation: [3, 3, 13, 56, 56, 18, 14, 11, 12, 45, 38, 11],
     bestTimeToVisit: 'Travel not advised — Level 4',
     popularPlaces: [
-      { name: 'Mogadishu', description: 'Coastal capital with pastel Italianate ruins' },
-      { name: 'Hargeisa', description: 'Capital of self-declared Somaliland' },
+      { name: 'Mogadishu', description: 'Coastal capital with pastel Italianate ruins', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–Feb, Oct, Dec" },
+      { name: 'Hargeisa', description: 'Capital of self-declared Somaliland', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May–Sep" },
     ],
     attractions: [
       {
         name: "Laas Geel",
         description: "9,000-year-old rock art in Somaliland",
         entityId: "attraction_SO_laas_geel",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
+        goodWeatherMonths: "Mar, Jun–Aug, Oct",
       },
       {
         name: "Berbera",
@@ -16633,6 +17410,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Siirski",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Siirski / Public domain",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar, Nov",
       },
     ],
     famousMovies: [
@@ -16680,8 +17459,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [3, 6, 26, 70, 117, 141, 171, 186, 143, 107, 25, 6],
     bestTimeToVisit: 'Travel not advised — Level 4',
     popularPlaces: [
-      { name: 'Juba', description: 'Nile-side capital' },
-      { name: 'Boma National Park', description: 'Site of one of the world’s largest wildlife migrations' },
+      { name: 'Juba', description: 'Nile-side capital', bestWeatherMonths: "Jun–Sep, Nov–Dec", goodWeatherMonths: "Jan–May, Oct" },
+      { name: 'Boma National Park', description: 'Site of one of the world’s largest wildlife migrations', bestWeatherMonths: "Jun–Sep, Nov–Dec", goodWeatherMonths: "Jan–Mar, May, Oct" },
     ],
     attractions: [
       {
@@ -16695,6 +17474,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Rigan123 / CC BY-SA 4.0",
+        bestWeatherMonths: "Jun–Sep, Nov–Dec",
+        goodWeatherMonths: "Jan–May, Oct",
       },
       {
         name: "Sudd wetlands",
@@ -16747,8 +17528,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [186, 149, 210, 213, 228, 55, 40, 89, 187, 340, 284, 216],
     bestTimeToVisit: 'June–September (dry, cooler)',
     popularPlaces: [
-      { name: 'São Tomé City', description: 'Sleepy Portuguese-colonial capital' },
-      { name: 'Príncipe', description: 'Tiny UNESCO biosphere island to the north' },
+      { name: 'São Tomé City', description: 'Sleepy Portuguese-colonial capital', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep–Oct" },
+      { name: 'Príncipe', description: 'Tiny UNESCO biosphere island to the north', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug" },
     ],
     attractions: [
       {
@@ -16762,6 +17543,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Helena Van Eykeren from Gent, Belgium / CC BY 2.0",
+        bestWeatherMonths: "Jun–Aug",
+        goodWeatherMonths: "Sep–Oct",
       },
       {
         name: "Roça São João",
@@ -16811,14 +17594,16 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 48, 40, 64, 86, 62, 96, 105, 120, 115, 133, 103],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Philipsburg', description: 'Cruise-port capital along Great Bay' },
-      { name: 'Maho Beach', description: 'Famous plane-landing beach next to the airport' },
+      { name: 'Philipsburg', description: 'Cruise-port capital along Great Bay', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
+      { name: 'Maho Beach', description: 'Famous plane-landing beach next to the airport', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
     ],
     attractions: [
       {
         name: "Maho Beach",
         description: "Watch jumbo jets land just over your head",
         entityId: "attraction_SX_maho_beach",
+        bestWeatherMonths: "Jan–Mar",
+        goodWeatherMonths: "Apr–Jun, Dec",
       },
       {
         name: "Front Street",
@@ -16868,8 +17653,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [57, 48, 42, 27, 17, 2, 0, 0, 2, 16, 33, 50],
     bestTimeToVisit: 'Travel not advised — Level 4',
     popularPlaces: [
-      { name: 'Damascus', description: 'One of the world’s oldest continuously inhabited cities' },
-      { name: 'Aleppo', description: 'Ancient citadel city with a partly restored souq' },
+      { name: 'Damascus', description: 'One of the world’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
+      { name: 'Aleppo', description: 'Ancient citadel city with a partly restored souq', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb, Dec" },
     ],
     attractions: [
       {
@@ -16877,12 +17662,16 @@ export const countries: Record<string, CountryData> = {
         description: "8th-century mosque in the heart of old Damascus",
         entityId: "attraction_SY_umayyad_mosque",
         wikidataId: "Q183562",
+        bestWeatherMonths: "Apr–Oct",
+        goodWeatherMonths: "Nov",
       },
       {
         name: "Palmyra",
         description: "Roman-era desert ruins (heavily damaged during war)",
         entityId: "attraction_SY_palmyra",
         wikidataId: "Q31458392",
+        bestWeatherMonths: "Mar–May, Oct–Nov",
+        goodWeatherMonths: "Feb",
       },
     ],
     famousMovies: [
@@ -16929,14 +17718,16 @@ export const countries: Record<string, CountryData> = {
     precipitation: [46, 44, 43, 44, 50, 38, 34, 48, 76, 97, 135, 88],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Providenciales', description: 'Main tourist island with Grace Bay Beach' },
-      { name: 'Grand Turk', description: 'Historic capital island with a small colonial center' },
+      { name: 'Providenciales', description: 'Main tourist island with Grace Bay Beach', bestWeatherMonths: "Jan–Apr, Dec", goodWeatherMonths: "May" },
+      { name: 'Grand Turk', description: 'Historic capital island with a small colonial center', bestWeatherMonths: "Jan–Apr, Dec", goodWeatherMonths: "May–Jun" },
     ],
     attractions: [
       {
         name: "Grace Bay Beach",
         description: "Regularly voted world’s best beach",
         entityId: "attraction_TC_grace_bay_beach",
+        bestWeatherMonths: "Jan–Apr, Dec",
+        goodWeatherMonths: "May",
       },
       {
         name: "Salt Cay",
@@ -16948,6 +17739,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NASA",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NASA / Public domain",
+        bestWeatherMonths: "Jan–Apr, Dec",
+        goodWeatherMonths: "May–Jun",
       },
     ],
     famousMovies: [
@@ -16994,8 +17787,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 1, 2, 7, 22, 34, 80, 124, 62, 19, 1, 0],
     bestTimeToVisit: 'November–February',
     popularPlaces: [
-      { name: 'N\'Djamena', description: 'Sahel capital across from Cameroon' },
-      { name: 'Zakouma National Park', description: 'One of Africa’s great wildlife comeback stories' },
+      { name: 'N\'Djamena', description: 'Sahel capital across from Cameroon', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
+      { name: 'Zakouma National Park', description: 'One of Africa’s great wildlife comeback stories', bestWeatherMonths: "Jan, Aug, Oct–Dec", goodWeatherMonths: "Feb, Jun–Jul, Sep" },
     ],
     attractions: [
       {
@@ -17009,6 +17802,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: YACOUB DOUNGOUS / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan, Aug, Oct–Dec",
+        goodWeatherMonths: "Feb, Jun–Jul, Sep",
       },
       {
         name: "Ennedi Plateau",
@@ -17060,8 +17855,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [67, 86, 96, 93, 87, 40, 20, 14, 10, 36, 68, 75],
     bestTimeToVisit: 'June–September (mountains)',
     popularPlaces: [
-      { name: 'Dushanbe', description: 'Leafy capital with the world’s tallest flagpole (until 2014)' },
-      { name: 'Khorog', description: 'Trekking hub in the Pamir Mountains' },
+      { name: 'Dushanbe', description: 'Leafy capital with the world’s tallest flagpole (until 2014)', bestWeatherMonths: "May–Oct" },
+      { name: 'Khorog', description: 'Trekking hub in the Pamir Mountains', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep" },
     ],
     attractions: [
       {
@@ -17080,6 +17875,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Rjruiziii / CC BY-SA 3.0",
+        bestWeatherMonths: "Jun–Sep",
       },
     ],
     famousMovies: [
@@ -17126,8 +17922,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [226, 201, 191, 98, 95, 72, 45, 19, 26, 43, 96, 203],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Dili', description: 'Waterfront capital ringed by mountains' },
-      { name: 'Atauro Island', description: 'Reef-fringed island known for the world’s highest fish diversity' },
+      { name: 'Dili', description: 'Waterfront capital ringed by mountains', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "Apr–May, Nov" },
+      { name: 'Atauro Island', description: 'Reef-fringed island known for the world’s highest fish diversity', bestWeatherMonths: "Jul–Oct", goodWeatherMonths: "Apr–Jun, Nov" },
     ],
     attractions: [
       {
@@ -17141,6 +17937,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
         imageAttribution: "Photo: Yu Hui / CC BY-SA 2.0",
+        bestWeatherMonths: "Jul–Oct",
+        goodWeatherMonths: "Apr–Jun, Nov",
       },
       {
         name: "Cristo Rei of Dili",
@@ -17153,6 +17951,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Jose Fernando Real / CC BY-SA 4.0",
+        bestWeatherMonths: "Jun–Oct",
+        goodWeatherMonths: "Apr–May, Nov",
       },
     ],
     famousMovies: [
@@ -17200,8 +18000,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [18, 23, 30, 23, 14, 3, 2, 1, 2, 7, 15, 15],
     bestTimeToVisit: 'April–June and September–October',
     popularPlaces: [
-      { name: 'Ashgabat', description: 'White-marble capital of grand monuments' },
-      { name: 'Darvaza', description: 'Desert village next to the “Gates of Hell” gas crater' },
+      { name: 'Ashgabat', description: 'White-marble capital of grand monuments', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Jun, Aug" },
+      { name: 'Darvaza', description: 'Desert village next to the “Gates of Hell” gas crater', bestWeatherMonths: "Mar–Apr, Oct", goodWeatherMonths: "May, Sep, Nov" },
     ],
     attractions: [
       {
@@ -17215,11 +18015,15 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: ZhouKerim / CC BY-SA 3.0",
+        bestWeatherMonths: "Mar–Apr, Oct",
+        goodWeatherMonths: "May, Sep, Nov",
       },
       {
         name: "Merv",
         description: "Ancient Silk Road city (UNESCO)",
         entityId: "attraction_TM_merv",
+        bestWeatherMonths: "Mar–Apr, Oct–Nov",
+        goodWeatherMonths: "May, Sep",
       },
     ],
     famousMovies: [
@@ -17266,8 +18070,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [192, 194, 264, 174, 105, 85, 92, 110, 114, 110, 132, 143],
     bestTimeToVisit: 'May–October (dry season, whale season starts Jul)',
     popularPlaces: [
-      { name: 'Nukuʻalofa', description: 'Small royal capital' },
-      { name: 'Vavaʻu', description: 'Sailing archipelago and humpback-whale nursery' },
+      { name: 'Nukuʻalofa', description: 'Small royal capital', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Nov–Dec" },
+      { name: 'Vavaʻu', description: 'Sailing archipelago and humpback-whale nursery', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep–Oct" },
     ],
     attractions: [
       {
@@ -17323,8 +18127,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [340, 285, 287, 228, 208, 188, 212, 193, 184, 193, 213, 289],
     bestTimeToVisit: 'May–October (drier)',
     popularPlaces: [
-      { name: 'Funafuti', description: 'Coral-atoll capital 15 ft above the sea' },
-      { name: 'Funafala', description: 'Uninhabited outer islet reachable by boat' },
+      { name: 'Funafuti', description: 'Coral-atoll capital 15 ft above the sea', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Funafala', description: 'Uninhabited outer islet reachable by boat', bestWeatherMonths: "Jan–Dec" },
     ],
     attractions: [
       {
@@ -17338,6 +18142,7 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Davidarfonjones / CC BY-SA 3.0",
+        bestWeatherMonths: "Jan–Dec",
       },
       {
         name: "Nanumea",
@@ -17349,6 +18154,7 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "NASA",
         imageLicense: "Public domain",
         imageAttribution: "Photo: NASA / Public domain",
+        bestWeatherMonths: "Jan–Dec",
       },
     ],
     famousMovies: [
@@ -17395,8 +18201,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [74, 62, 56, 59, 40, 34, 13, 21, 80, 88, 118, 94],
     bestTimeToVisit: 'October–April (fewer crowds)',
     popularPlaces: [
-      { name: 'St. Peter\'s Square', description: 'Bernini’s embracing colonnade' },
-      { name: 'Vatican Museums', description: 'Miles of galleries ending at the Sistine Chapel' },
+      { name: 'St. Peter\'s Square', description: 'Bernini’s embracing colonnade', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec" },
+      { name: 'Vatican Museums', description: 'Miles of galleries ending at the Sistine Chapel', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec" },
     ],
     attractions: [
       {
@@ -17410,6 +18216,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
         imageAttribution: "Photo: The original uploader was Snowdog at Italian Wikipedia. / CC BY-SA 3.0",
+        bestWeatherMonths: "Mar–Jun, Sep–Oct",
+        goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec",
       },
       {
         name: "St. Peter's Basilica",
@@ -17424,6 +18232,8 @@ export const countries: Record<string, CountryData> = {
         imageAttribution: "Photo: Alvesgaspar / CC BY-SA 4.0",
         annualVisitors: 11000000,
         annualVisitorsYear: 2018,
+        bestWeatherMonths: "Mar–Jun, Sep–Oct",
+        goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec",
       },
     ],
     famousMovies: [
@@ -17470,8 +18280,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [84, 60, 51, 93, 117, 78, 110, 131, 142, 168, 180, 133],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Tortola', description: 'Main island with the capital' },
-      { name: 'Virgin Gorda', description: 'Home of The Baths granite boulders' },
+      { name: 'Tortola', description: 'Main island with the capital', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Virgin Gorda', description: 'Home of The Baths granite boulders', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
     ],
     attractions: [
       {
@@ -17485,12 +18295,16 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 3.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
         imageAttribution: "Photo: Jaro Nemčok / CC BY-SA 3.0",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr",
       },
       {
         name: "Anegada",
         description: "Flat coral island famed for lobster",
         entityId: "attraction_VG_anegada",
         wikidataId: "Q2901593",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr",
       },
     ],
     famousMovies: [
@@ -17537,14 +18351,16 @@ export const countries: Record<string, CountryData> = {
     precipitation: [82, 53, 44, 80, 106, 73, 103, 123, 138, 153, 169, 125],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'St. Thomas', description: 'Cruise hub with Magens Bay beach' },
-      { name: 'St. John', description: 'Two-thirds national park' },
+      { name: 'St. Thomas', description: 'Cruise hub with Magens Bay beach', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'St. John', description: 'Two-thirds national park', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
     ],
     attractions: [
       {
         name: "Virgin Islands National Park",
         description: "Rainforest, ruins, and turquoise coves on St. John",
         entityId: "attraction_VI_virgin_islands_national_park",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr",
       },
       {
         name: "Trunk Bay",
@@ -17556,6 +18372,8 @@ export const countries: Record<string, CountryData> = {
         imageCreator: "Ben Whitney",
         imageLicense: "Public domain",
         imageAttribution: "Photo: Ben Whitney / Public domain",
+        bestWeatherMonths: "Feb–Mar",
+        goodWeatherMonths: "Jan, Apr",
       },
     ],
     famousMovies: [
@@ -17603,8 +18421,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [344, 328, 315, 291, 219, 174, 185, 153, 194, 271, 293, 364],
     bestTimeToVisit: 'May–October',
     popularPlaces: [
-      { name: 'Mata-Utu', description: 'Sleepy capital on Wallis' },
-      { name: 'Futuna', description: 'Second, more traditional island group' },
+      { name: 'Mata-Utu', description: 'Sleepy capital on Wallis', bestWeatherMonths: "Jan, Mar, May–Oct", goodWeatherMonths: "Feb, Apr, Nov–Dec" },
+      { name: 'Futuna', description: 'Second, more traditional island group', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Mar–Jul, Sep–Nov" },
     ],
     attractions: [
       {
@@ -17658,8 +18476,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [72, 61, 68, 71, 84, 78, 63, 52, 85, 81, 86, 88],
     bestTimeToVisit: 'May–October',
     popularPlaces: [
-      { name: 'Pristina', description: 'Youthful capital dotted with Cold-War-era monuments' },
-      { name: 'Prizren', description: 'Ottoman-era river city under a hilltop fortress' },
+      { name: 'Pristina', description: 'Youthful capital dotted with Cold-War-era monuments', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
+      { name: 'Prizren', description: 'Ottoman-era river city under a hilltop fortress', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
     ],
     attractions: [
       {
@@ -17719,8 +18537,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 8, 20, 25, 28, 17, 21, 28, 20, 10, 6, 4],
     bestTimeToVisit: 'Travel not advised — Level 4',
     popularPlaces: [
-      { name: 'Sana\'a', description: 'Old city of gingerbread tower-houses (UNESCO)' },
-      { name: 'Socotra', description: 'Otherworldly island of dragon-blood trees' },
+      { name: 'Sana\'a', description: 'Old city of gingerbread tower-houses (UNESCO)', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Socotra', description: 'Otherworldly island of dragon-blood trees', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Jul–Nov" },
     ],
     attractions: [
       {
@@ -17734,6 +18552,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY 2.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0",
         imageAttribution: "Photo: Gerry & Bonni / CC BY 2.0",
+        bestWeatherMonths: "Jan–Feb, Dec",
+        goodWeatherMonths: "Mar, Jul–Nov",
       },
       {
         name: "Shibam",
@@ -17746,6 +18566,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Bkar6190 / CC BY-SA 4.0",
+        bestWeatherMonths: "Jan–Feb, Nov–Dec",
+        goodWeatherMonths: "Mar, Oct",
       },
     ],
     famousMovies: [
@@ -17792,8 +18614,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [251, 206, 188, 99, 43, 32, 29, 24, 27, 53, 79, 161],
     bestTimeToVisit: 'May–October (dry, cooler)',
     popularPlaces: [
-      { name: 'Mamoudzou', description: 'Main town on Grande-Terre' },
-      { name: 'Petite-Terre', description: 'Airport island with the volcanic Dziani Lake' },
+      { name: 'Mamoudzou', description: 'Main town on Grande-Terre', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov" },
+      { name: 'Petite-Terre', description: 'Airport island with the volcanic Dziani Lake', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov" },
     ],
     attractions: [
       {
@@ -17812,6 +18634,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC0",
         imageLicenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
         imageAttribution: "Photo: https://www.hippopx.com/fr/mayotte-indian-ocean-dziani-lake-landscape-209446 / CC0",
+        bestWeatherMonths: "May–Oct",
+        goodWeatherMonths: "Apr, Nov",
       },
     ],
     famousMovies: [],
@@ -17856,8 +18680,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [220, 234, 242, 134, 97, 69, 58, 71, 55, 55, 69, 119],
     bestTimeToVisit: 'April–November (cooler, drier)',
     popularPlaces: [
-      { name: 'Saint-Denis', description: 'Creole-Art-Deco capital in the north' },
-      { name: 'Cirque de Mafate', description: 'Roadless caldera accessible only on foot' },
+      { name: 'Saint-Denis', description: 'Creole-Art-Deco capital in the north', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr, Dec" },
+      { name: 'Cirque de Mafate', description: 'Roadless caldera accessible only on foot', bestWeatherMonths: "May–Dec", goodWeatherMonths: "Jan–Apr" },
     ],
     attractions: [
       {
@@ -17871,6 +18695,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Alexandre Péribé / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Dec",
+        goodWeatherMonths: "Jan–Apr",
       },
       {
         name: "Cirque de Salazie",
@@ -17883,6 +18709,8 @@ export const countries: Record<string, CountryData> = {
         imageLicense: "CC BY-SA 4.0",
         imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
         imageAttribution: "Photo: Jean-Louis Sicot / CC BY-SA 4.0",
+        bestWeatherMonths: "May–Dec",
+        goodWeatherMonths: "Jan–Apr",
       },
     ],
     famousMovies: [

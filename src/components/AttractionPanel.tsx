@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ArrowLeft, X, MapPin, Users } from 'lucide-react'
+import { ArrowLeft, X, MapPin, Users, CalendarHeart } from 'lucide-react'
 import type { CountryData } from '@/data/countries'
 
 type Attraction = CountryData['attractions'][number]
@@ -120,6 +120,29 @@ export function AttractionPanel({
         <p className="mb-6 mt-4 text-sm leading-relaxed text-[#1E2A44]/80">
           {attraction.description}
         </p>
+
+        {attraction.bestWeatherMonths && (
+          <div
+            className="mb-6 flex items-start gap-3 rounded-xl border px-4 py-3"
+            style={{ borderColor: accent + '40', backgroundColor: accent + '14' }}
+          >
+            <CalendarHeart className="mt-0.5 h-5 w-5 shrink-0" style={{ color: accent }} />
+            <div>
+              <div className="text-xs font-medium uppercase tracking-wider text-[#1E2A44]/50">
+                Most comfortable weather
+              </div>
+              <div className="text-sm font-semibold text-[#1E2A44]">
+                {attraction.bestWeatherMonths}
+              </div>
+              {attraction.goodWeatherMonths && (
+                <div className="mt-0.5 text-xs text-[#1E2A44]/60">
+                  Also pleasant: {attraction.goodWeatherMonths}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
 
         {visitorText && (
           <div
