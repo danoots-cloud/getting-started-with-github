@@ -32,6 +32,8 @@ import { travelRequirements, type TravelDifficulty } from '@/data/travel-require
 interface CountryPanelProps {
   country: CountryData
   onClose: () => void
+  recommendedPlaceName?: string | null
+  recommendationMonthName?: string | null
 }
 
 function Section({
