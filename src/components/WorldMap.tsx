@@ -53,6 +53,11 @@ async function loadCountriesGeoJSON(): Promise<CountryGeoJSON> {
       id: alpha2 ?? `x${idx}`,
       geometry: f.geometry,
       properties: { name, code: alpha2, hasData },
+    }
+  })
+
+  cachedGeo = { type: 'FeatureCollection', features }
+  return cachedGeo
 }
 
 type FillExpr = maplibregl.DataDrivenPropertyValueSpecification<string> | string
@@ -98,11 +103,8 @@ function buildFillOpacityExpression(
     0.55,
   ] as unknown as maplibregl.DataDrivenPropertyValueSpecification<number>
 }
-  })
 
-  cachedGeo = { type: 'FeatureCollection', features }
-  return cachedGeo
-}
+
 
 
 function WorldMapInner({
