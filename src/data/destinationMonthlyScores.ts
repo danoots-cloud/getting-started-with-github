@@ -37,9 +37,9 @@ export interface DestinationMonthlyScore {
 }
 
 export const destinationMonthlyScores: DestinationMonthlyScore[] = [
-  ...chunk0,
-  ...chunk1,
-  ...chunk2,
+  ...(chunk0 as DestinationMonthlyScore[]),
+  ...(chunk1 as DestinationMonthlyScore[]),
+  ...(chunk2 as DestinationMonthlyScore[]),
 ];
 
 // Indexes so lookups don't scan the full 16k-row array.
