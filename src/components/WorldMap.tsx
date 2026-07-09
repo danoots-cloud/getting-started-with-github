@@ -282,9 +282,10 @@ function WorldMapInner({
         if (!e.features?.length) return
         const feat = e.features[0]
         const props = feat.properties as { name: string; hasData: boolean; code: string | null }
-        if (props.hasData && props.code) {
-          clickHandlerRef.current(props.code, props.name)
-        }
+        if (!props.code) return
+        const el = eligibleRef.current
+        const clickable = el ? el.has(props.code) : props.hasData
+        if (clickable) clickHandlerRef.current(props.code, props.name)
       })
 
       setReady(true)
@@ -298,7 +299,12 @@ function WorldMapInner({
   }, [])
   // ^ We intentionally exclude flagColors here — updates handled below to avoid re-init.
 
-  // Update selection + selected fill color when props change
+  // Sync eligible set into ref for event handlers.
+  useEffect(() => {
+    eligibleRef.current = eligibleCountries ?? null
+  }, [eligibleCountries])
+
+  // Update selection + repaint fills when selection, flag colors, or eligibility change.
   useEffect(() => {
     const map = mapRef.current
     if (!map || !ready) return
@@ -317,20 +323,19 @@ function WorldMapInner({
     }
     selectedIdRef.current = nextId
 
-    // Update fill color paint property so selected color reflects current flag
     if (map.getLayer('countries-fill')) {
-      map.setPaintProperty('countries-fill', 'fill-color', [
-        'case',
-        ['boolean', ['feature-state', 'selected'], false],
-        flagColors?.[0] ?? COLOR_LAND_HOVER,
-        ['boolean', ['feature-state', 'hover'], false],
-        COLOR_LAND_HOVER,
-        ['get', 'hasData'],
-        COLOR_LAND_DATA,
-        COLOR_LAND_EMPTY,
-      ])
+      map.setPaintProperty(
+        'countries-fill',
+        'fill-color',
+        buildFillExpression(flagColors, eligibleCountries),
+      )
+      map.setPaintProperty(
+        'countries-fill',
+        'fill-opacity',
+        buildFillOpacityExpression(eligibleCountries),
+      )
     }
-  }, [selectedCountry, flagColors, ready])
+  }, [selectedCountry, flagColors, eligibleCountries, ready])
 
   return (
     <div className="relative w-full" style={{ aspectRatio: '16 / 10' }}>
