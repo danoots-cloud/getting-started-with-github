@@ -65,11 +65,13 @@ function WorldMapInner({
   onCountryClick,
   selectedCountry,
   flagColors,
+  eligibleCountries,
 }: WorldMapProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MLMap | null>(null)
   const hoveredIdRef = useRef<string | null>(null)
   const selectedIdRef = useRef<string | null>(null)
+  const eligibleRef = useRef<Set<string> | null>(eligibleCountries ?? null)
   const [tooltip, setTooltip] = useState<{
     name: string
     x: number
