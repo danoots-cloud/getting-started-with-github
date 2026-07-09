@@ -6,6 +6,8 @@ export interface PopularPlace {
   temperatures?: { month: string; high: number; low: number }[]
   precipitation?: number[]
   photos?: string[]
+  bestWeatherMonths?: string
+  goodWeatherMonths?: string
 }
 
 export interface CountryData {
