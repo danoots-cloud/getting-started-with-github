@@ -2,9 +2,9 @@
 // chunk files under src/data/destinationMonthlyScores/ to respect per-file
 // size limits; this module reassembles and indexes them.
 
-import { chunk as chunk0 } from "./destinationMonthlyScores/chunk0";
-import { chunk as chunk1 } from "./destinationMonthlyScores/chunk1";
-import { chunk as chunk2 } from "./destinationMonthlyScores/chunk2";
+import chunk0 from "./destinationMonthlyScores/chunk0.json";
+import chunk1 from "./destinationMonthlyScores/chunk1.json";
+import chunk2 from "./destinationMonthlyScores/chunk2.json";
 
 export type DestinationEntityType = "country" | "place" | "attraction";
 
