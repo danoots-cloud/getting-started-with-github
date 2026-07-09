@@ -230,12 +230,19 @@ function WorldMapInner({
         },
       })
 
+      const isEligible = (code: string | null | undefined, hasData: boolean) => {
+        if (!code) return false
+        const el = eligibleRef.current
+        return el ? el.has(code) : hasData
+      }
+
       map.on('mousemove', 'countries-fill', (e) => {
         if (!e.features?.length) return
         const feat = e.features[0] as MapGeoJSONFeature
         const id = feat.id as string | undefined
         const props = feat.properties as { name: string; hasData: boolean; code: string | null }
-        map.getCanvas().style.cursor = props.hasData ? 'pointer' : ''
+        const clickable = isEligible(props.code, props.hasData)
+        map.getCanvas().style.cursor = clickable ? 'pointer' : ''
 
         if (hoveredIdRef.current && hoveredIdRef.current !== id) {
           map.setFeatureState(
@@ -243,7 +250,7 @@ function WorldMapInner({
             { hover: false }
           )
         }
-        if (id && props.hasData) {
+        if (id && clickable) {
           hoveredIdRef.current = id
           map.setFeatureState({ source: 'countries', id }, { hover: true })
         } else {
@@ -255,7 +262,7 @@ function WorldMapInner({
           name: props.name,
           x: e.originalEvent.clientX - rect.left,
           y: e.originalEvent.clientY - rect.top,
-          hasData: !!props.hasData,
+          hasData: clickable,
         })
       })
 
