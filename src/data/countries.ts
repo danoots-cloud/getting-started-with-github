@@ -24,6 +24,7 @@ export interface CountryData {
   temperatures: { month: string; high: number; low: number }[]
   precipitation: number[]
   bestTimeToVisit: string
+  bestVisitMonths?: number[]
   popularPlaces: PopularPlace[]
   attractions: {
     name: string
@@ -78,7 +79,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 35, low: 24 },
     ],
     precipitation: [57, 56, 73, 76, 110, 134, 141, 133, 108, 92, 82, 70],
-    bestTimeToVisit: 'April–October for cities and lakes, or December–March for Alpine skiing',
+    bestTimeToVisit: 'April–October works well for cities, lakes, and hiking; December–March is peak season for Alpine skiing.',
+    bestVisitMonths: [4, 5, 6, 7, 8, 9, 10, 12, 1, 2, 3],
     popularPlaces: [
       { name: 'Vienna', description: 'Imperial capital with palaces, coffeehouses, and world-class music', bestWeatherMonths: "Apr–Oct" },
       { name: 'Salzburg', description: 'Baroque Alpine city known for Mozart and The Sound of Music', bestWeatherMonths: "May, Sep", goodWeatherMonths: "Jun–Aug, Oct" },
@@ -939,8 +941,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 44, low: 30 },
     ],
     precipitation: [81, 74, 105, 116, 136, 198, 224, 181, 200, 140, 101, 89],
-    bestTimeToVisit:
-      'Spring (March–May) for cherry blossoms, or Autumn (October–November) for fall foliage',
+    bestTimeToVisit: 'March–April is prized for cherry blossoms, while October–November brings comfortable weather and fall color. Avoid Golden Week if you want fewer crowds, and expect hot, humid conditions in midsummer.',
+    bestVisitMonths: [3, 4, 10, 11],
     popularPlaces: [
       { name: 'Tokyo', description: 'Ultra-modern capital blending neon-lit skyscrapers with ancient temples', bestWeatherMonths: "Apr–May, Nov", goodWeatherMonths: "Jun, Oct, Dec" },
       { name: 'Kyoto', description: 'Cultural heart of Japan with over 2,000 temples and shrines', bestWeatherMonths: "Oct", goodWeatherMonths: "Apr–Jun, Sep, Nov" },
@@ -1047,8 +1049,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 46, low: 36 },
     ],
     precipitation: [72, 57, 57, 64, 71, 69, 59, 65, 74, 82, 90, 82],
-    bestTimeToVisit:
-      'Late spring (April–June) or early fall (September–October) for mild weather and fewer crowds',
+    bestTimeToVisit: 'Spring and early fall offer the best mix of comfortable weather and lighter crowds across much of France. Summer is warmer and busier, while the Alps have their own winter season.',
+    bestVisitMonths: [3, 4, 5, 9, 10],
     popularPlaces: [
       { name: 'Paris', description: 'City of Light — art, fashion, cuisine, and romance', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
       { name: 'French Riviera', description: 'Glamorous Mediterranean coastline from Nice to Saint-Tropez', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec" },
@@ -1303,7 +1305,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 88, low: 70 },
     ],
     precipitation: [235, 226, 241, 188, 135, 85, 66, 53, 73, 117, 160, 199],
-    bestTimeToVisit: 'September–March for beach season; February for Carnival in Rio',
+    bestTimeToVisit: 'September–March suits many beach destinations, while June–September is especially strong for Pantanal wildlife. Carnival brings peak energy and crowds in February or March.',
+    bestVisitMonths: [9, 10, 11, 12, 1, 2, 3, 6, 7, 8],
     popularPlaces: [
       { name: 'Rio de Janeiro', description: 'Samba, stunning beaches, and the iconic Christ the Redeemer', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
       { name: 'São Paulo', description: 'Massive cultural metropolis with world-class dining and art', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Mar, Oct–Dec" },
@@ -2007,7 +2010,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 86, low: 65 },
     ],
     precipitation: [22, 17, 46, 90, 191, 211, 221, 271, 262, 158, 73, 38],
-    bestTimeToVisit: 'November–February (cool season) for the most pleasant weather',
+    bestTimeToVisit: 'November–February brings the coolest, driest weather for most of Thailand; regional monsoon patterns mean some islands have different sweet spots.',
+    bestVisitMonths: [11, 12, 1, 2],
     popularPlaces: [
       { name: 'Bangkok', description: 'Dazzling capital blending golden temples with modern skyscrapers', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Mar" },
       { name: 'Chiang Mai', description: 'Northern cultural hub surrounded by mountains and ancient temples', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb" },
@@ -2365,7 +2369,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 66, low: 48 },
     ],
     precipitation: [114, 102, 122, 127, 143, 151, 139, 146, 146, 146, 120, 135],
-    bestTimeToVisit: 'December–February (summer) for outdoor adventures, or March–May for autumn colors and fewer tourists',
+    bestTimeToVisit: 'December–February is prime summer weather for outdoor adventures, while March–May brings pleasant autumn conditions and fewer crowds.',
+    bestVisitMonths: [12, 1, 2, 3, 4, 5],
     popularPlaces: [
       { name: 'Queenstown', description: 'Adventure capital of the world — bungee jumping, skiing, and jet boating', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Nov–Dec" },
       { name: 'Milford Sound', description: 'Dramatic fjord with towering cliffs and cascading waterfalls', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec" },
@@ -4560,7 +4565,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 8, low: -7 },
     ],
     precipitation: [36, 28, 32, 32, 40, 58, 67, 63, 57, 52, 45, 39],
-    bestTimeToVisit: 'June–September for warm cities and hiking, or December–March for skiing and northern lights',
+    bestTimeToVisit: 'June–September is best for warm-weather city trips, hiking, and national parks; May and September can be quieter. December–March suits skiing and many northern-lights trips.',
+    bestVisitMonths: [5, 6, 7, 8, 9, 12, 1, 2, 3],
     popularPlaces: [
       { name: 'Banff National Park', description: 'Turquoise lakes and soaring Rocky Mountain peaks in Alberta', bestWeatherMonths: "Jul–Aug" },
       { name: 'Vancouver', description: 'Pacific coastal city wedged between ocean and mountains', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
@@ -4665,7 +4671,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: -11, low: -25 },
     ],
     precipitation: [45, 41, 41, 34, 29, 29, 34, 39, 45, 40, 45, 46],
-    bestTimeToVisit: 'June–September for hiking and boat tours, or winter for northern lights and dog sledding',
+    bestTimeToVisit: 'June–August is the main season for hiking, boating, and long daylight; late winter and spring suit dog sledding and snow travel, while the darker months bring aurora opportunities.',
+    bestVisitMonths: [6, 7, 8, 2, 3, 4],
     popularPlaces: [
       { name: 'Nuuk', description: 'Colorful capital blending Inuit heritage and Nordic design', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
       { name: 'Ilulissat', description: 'Gateway to a UNESCO-listed icefjord of giant icebergs', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
@@ -5198,7 +5205,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 26, low: 14 },
     ],
     precipitation: [42, 33, 32, 31, 43, 64, 76, 70, 55, 57, 50, 47],
-    bestTimeToVisit: 'June–August for the midnight sun, or December–March for aurora and snow',
+    bestTimeToVisit: 'June–August brings long days and the mildest weather; December–March is best for Lapland snow experiences and northern lights.',
+    bestVisitMonths: [6, 7, 8, 12, 1, 2, 3],
     popularPlaces: [
       { name: 'Helsinki', description: 'Design-forward seaside capital of bold architecture', bestWeatherMonths: "May–Sep" },
       { name: 'Lapland', description: 'Arctic north of reindeer, snow, and Santa’s village', bestWeatherMonths: "Jun–Aug" },
@@ -5793,7 +5801,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 85, low: 71 },
     ],
     precipitation: [162, 119, 117, 115, 200, 249, 287, 307, 274, 281, 251, 257],
-    bestTimeToVisit: 'December–April (dry season) for beaches and island hopping',
+    bestTimeToVisit: 'December–February offers the coolest, driest conditions for most travelers; the broader November–April dry season is also good for beaches and island hopping.',
+    bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
       { name: 'Palawan', description: 'Island paradise of lagoons, limestone cliffs, and an underground river', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr" },
       { name: 'Boracay', description: 'Famous for its powdery White Beach and nightlife', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
@@ -5890,7 +5899,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 79, low: 59 },
     ],
     precipitation: [7, 17, 16, 6, 2, 0, 0, 1, 0, 0, 2, 7],
-    bestTimeToVisit: 'November–March for pleasant warmth before the scorching summer',
+    bestTimeToVisit: 'November–April is the most comfortable time for outdoor sightseeing and beaches, with December–February the coolest and busiest period.',
+    bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
       { name: 'Dubai', description: 'Futuristic metropolis of record-breaking towers and luxury malls', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
       { name: 'Abu Dhabi', description: 'Stately capital of grand mosques and cultural landmarks', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
@@ -6083,7 +6093,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 86, low: 74 },
     ],
     precipitation: [250, 149, 218, 207, 186, 163, 168, 188, 161, 204, 257, 336],
-    bestTimeToVisit: 'February–April for slightly drier weather, though it is a year-round city',
+    bestTimeToVisit: 'February–April is generally a little drier, but Singapore is hot, humid, and visitable year-round.',
+    bestVisitMonths: [2, 3, 4],
     popularPlaces: [
       { name: 'Marina Bay', description: 'Glittering waterfront of futuristic towers and light shows', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
       { name: 'Sentosa', description: 'Resort island of beaches, theme parks, and attractions', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
@@ -7382,7 +7393,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 87, low: 72 },
     ],
     precipitation: [198, 194, 194, 269, 359, 305, 240, 150, 68, 53, 90, 157],
-    bestTimeToVisit: 'February–April or August–November during the drier stretches',
+    bestTimeToVisit: 'February–April and mid-August–November are the drier windows; September–October are especially dry but also among the hottest months.',
+    bestVisitMonths: [2, 3, 4, 8, 9, 10, 11],
     popularPlaces: [
       { name: 'Paramaribo', description: 'Capital with UNESCO-listed Dutch wooden architecture', bestWeatherMonths: "Mar, Sep–Nov", goodWeatherMonths: "Jan–Feb, Apr–Aug, Dec" },
       { name: 'Central Suriname Reserve', description: 'Enormous untouched tropical rainforest', bestWeatherMonths: "Sep–Nov", goodWeatherMonths: "Jan–Jul, Dec" },
@@ -7623,7 +7635,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 93, low: 70 },
     ],
     precipitation: [10, 28, 67, 115, 148, 170, 147, 140, 178, 150, 44, 15],
-    bestTimeToVisit: 'November–March for dry, sunny coastal weather',
+    bestTimeToVisit: 'October–March is the drier season and generally the easiest time for coastal, cultural, and wildlife travel.',
+    bestVisitMonths: [10, 11, 12, 1, 2, 3],
     popularPlaces: [
       { name: 'Accra', description: 'Lively coastal capital of markets and music', bestWeatherMonths: "Aug", goodWeatherMonths: "Jul, Sep" },
       { name: 'Cape Coast', description: 'Historic town beside sobering slave-trade castles', bestWeatherMonths: "Aug–Sep", goodWeatherMonths: "Jan, Jul, Dec" },
@@ -8394,7 +8407,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 85, low: 72 },
     ],
     precipitation: [306, 220, 232, 234, 235, 197, 185, 219, 216, 275, 302, 375],
-    bestTimeToVisit: 'March–October for the west coast and islands',
+    bestTimeToVisit: 'April–June is a useful crossover period for a broader Malaysia trip, but the best timing depends on coast: the west is generally better in winter and early spring, while east-coast islands favor spring through early fall.',
+    bestVisitMonths: [4, 5, 6],
     popularPlaces: [
       { name: 'Kuala Lumpur', description: 'Skyline capital crowned by the Petronas Towers', bestWeatherMonths: "Jan–Feb, Jun–Dec", goodWeatherMonths: "Mar–May" },
       { name: 'Penang', description: 'Island of heritage streets and famous street food', bestWeatherMonths: "Jan–Feb, Jun–Dec", goodWeatherMonths: "Mar–May" },
@@ -9058,7 +9072,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 87, low: 77 },
     ],
     precipitation: [155, 98, 106, 150, 223, 178, 187, 192, 212, 261, 209, 217],
-    bestTimeToVisit: 'November–April for sunny skies and calm seas',
+    bestTimeToVisit: 'November–April is the dry season for the clearest skies and best beach weather; late April and late October can offer a shoulder-season compromise.',
+    bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
       { name: 'Malé', description: 'Compact, colorful capital packed onto a single island', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
       { name: 'Maafushi', description: 'Local island popular for budget-friendly guesthouses', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
@@ -9129,7 +9144,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 88, low: 77 },
     ],
     precipitation: [450, 355, 306, 250, 230, 155, 162, 153, 185, 249, 297, 385],
-    bestTimeToVisit: 'May–October for the drier, cooler trade-wind season',
+    bestTimeToVisit: 'May–October is the drier, cooler season; June–September is usually the sunniest stretch, while May and October can mean fewer visitors.',
+    bestVisitMonths: [5, 6, 7, 8, 9, 10],
     popularPlaces: [
       { name: 'Apia', description: 'Easygoing capital with a colonial waterfront and markets', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec" },
       { name: 'Lalomanu', description: 'Postcard beach of white sand and turquoise water', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec" },
@@ -9801,7 +9817,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 34, low: 26 },
     ],
     precipitation: [41, 41, 43, 50, 80, 93, 108, 78, 68, 63, 53, 48],
-    bestTimeToVisit: 'May–September for hiking, or winter for Tatras skiing',
+    bestTimeToVisit: 'May–September is best for hiking and general touring, with September especially appealing; winter is the season for Tatras skiing.',
+    bestVisitMonths: [5, 6, 7, 8, 9, 12, 1, 2],
     popularPlaces: [
       { name: 'Bratislava', description: 'Compact riverside capital crowned by a white castle', bestWeatherMonths: "Apr–Oct" },
       { name: 'High Tatras', description: 'Jagged alpine range of lakes and mountain huts', bestWeatherMonths: "Jun, Aug–Sep", goodWeatherMonths: "May, Jul" },
@@ -10395,7 +10412,8 @@ export const countries: Record<string, CountryData> = {
     government: 'Parliamentary democracy (Kingdom of the Netherlands)',
     temperatures: [{ month: 'Jan', high: 87, low: 76 }, { month: 'Feb', high: 87, low: 76 }, { month: 'Mar', high: 88, low: 77 }, { month: 'Apr', high: 89, low: 78 }, { month: 'May', high: 91, low: 79 }, { month: 'Jun', high: 92, low: 79 }, { month: 'Jul', high: 92, low: 80 }, { month: 'Aug', high: 93, low: 81 }, { month: 'Sep', high: 94, low: 81 }, { month: 'Oct', high: 92, low: 80 }, { month: 'Nov', high: 89, low: 78 }, { month: 'Dec', high: 88, low: 77 }],
     precipitation: [32, 14, 11, 14, 18, 18, 26, 22, 42, 81, 91, 58],
-    bestTimeToVisit: 'Year-round — outside the Atlantic hurricane belt with steady trade winds',
+    bestTimeToVisit: 'Aruba is a strong year-round destination outside the main hurricane belt; January–March is the busiest period, while later spring can offer a quieter trade-off.',
+    bestVisitMonths: [1, 2, 3, 4, 5],
     popularPlaces: [
       { name: 'Oranjestad', description: 'Pastel Dutch-colonial capital with a walkable waterfront', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov" },
       { name: 'Palm Beach', description: 'High-rise resort strip along calm turquoise water', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov" },
@@ -10673,7 +10691,8 @@ export const countries: Record<string, CountryData> = {
     government: 'Semi-presidential republic',
     temperatures: [{ month: 'Jan', high: 65, low: 52 }, { month: 'Feb', high: 66, low: 51 }, { month: 'Mar', high: 69, low: 55 }, { month: 'Apr', high: 74, low: 60 }, { month: 'May', high: 78, low: 66 }, { month: 'Jun', high: 81, low: 70 }, { month: 'Jul', high: 83, low: 71 }, { month: 'Aug', high: 82, low: 71 }, { month: 'Sep', high: 81, low: 69 }, { month: 'Oct', high: 78, low: 64 }, { month: 'Nov', high: 73, low: 60 }, { month: 'Dec', high: 67, low: 55 }],
     precipitation: [76, 116, 112, 128, 198, 298, 342, 366, 186, 121, 96, 84],
-    bestTimeToVisit: 'October–December for mild weather and clear mountain views; skip typhoon-prone July–September',
+    bestTimeToVisit: 'October–November and April are especially good for mild weather and outdoor travel; July–September carries the greatest typhoon risk.',
+    bestVisitMonths: [4, 10, 11],
     popularPlaces: [
       { name: 'Taipei', description: 'Night-market capital with mountains, museums, and hot springs', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr, Oct" },
       { name: 'Taroko Gorge', description: 'Marble river gorge in eastern Taiwan', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Jun, Aug–Nov" },
@@ -11150,7 +11169,8 @@ export const countries: Record<string, CountryData> = {
     government: 'Parliamentary republic',
     temperatures: [{ month: 'Jan', high: 38, low: 25 }, { month: 'Feb', high: 43, low: 28 }, { month: 'Mar', high: 52, low: 33 }, { month: 'Apr', high: 61, low: 41 }, { month: 'May', high: 71, low: 50 }, { month: 'Jun', high: 78, low: 57 }, { month: 'Jul', high: 83, low: 60 }, { month: 'Aug', high: 83, low: 60 }, { month: 'Sep', high: 74, low: 52 }, { month: 'Oct', high: 63, low: 45 }, { month: 'Nov', high: 52, low: 37 }, { month: 'Dec', high: 41, low: 28 }],
     precipitation: [51, 43, 48, 52, 71, 74, 60, 41, 48, 62, 54, 58],
-    bestTimeToVisit: 'May–June and September for hiking and towns; December–March for Rila and Pirin skiing',
+    bestTimeToVisit: 'April–May and September–October are excellent for cities, hiking, and fewer crowds; December–February is the main ski season.',
+    bestVisitMonths: [4, 5, 9, 10, 12, 1, 2],
     popularPlaces: [
       { name: 'Sofia', description: 'Capital with Roman ruins, Ottoman mosques, and Orthodox domes side by side', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
       { name: 'Plovdiv', description: 'One of Europe’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov" },
@@ -11502,7 +11522,8 @@ export const countries: Record<string, CountryData> = {
     government: 'Presidential republic',
     temperatures: [{ month: 'Jan', high: 86, low: 76 }, { month: 'Feb', high: 87, low: 77 }, { month: 'Mar', high: 88, low: 77 }, { month: 'Apr', high: 88, low: 78 }, { month: 'May', high: 87, low: 77 }, { month: 'Jun', high: 85, low: 76 }, { month: 'Jul', high: 84, low: 75 }, { month: 'Aug', high: 84, low: 75 }, { month: 'Sep', high: 85, low: 75 }, { month: 'Oct', high: 86, low: 76 }, { month: 'Nov', high: 87, low: 76 }, { month: 'Dec', high: 87, low: 76 }],
     precipitation: [279, 181, 171, 163, 114, 68, 58, 66, 103, 109, 135, 208],
-    bestTimeToVisit: 'April–May and October–November for calm seas and light winds between monsoons',
+    bestTimeToVisit: 'April–May and October–November bring calmer seas and lighter winds between the two monsoon patterns.',
+    bestVisitMonths: [4, 5, 10, 11],
     popularPlaces: [
       { name: 'Mahé', description: 'Largest island — mountains, capital, and Beau Vallon beach', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
       { name: 'Praslin', description: 'Home of Vallée de Mai and the giant coco de mer palm', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
@@ -12114,7 +12135,8 @@ export const countries: Record<string, CountryData> = {
     government: 'Transitional government',
     temperatures: [{ month: 'Jan', high: 92, low: 65 }, { month: 'Feb', high: 97, low: 70 }, { month: 'Mar', high: 103, low: 77 }, { month: 'Apr', high: 104, low: 81 }, { month: 'May', high: 101, low: 81 }, { month: 'Jun', high: 96, low: 77 }, { month: 'Jul', high: 91, low: 75 }, { month: 'Aug', high: 89, low: 74 }, { month: 'Sep', high: 91, low: 74 }, { month: 'Oct', high: 96, low: 74 }, { month: 'Nov', high: 98, low: 70 }, { month: 'Dec', high: 93, low: 66 }],
     precipitation: [0, 2, 7, 29, 66, 109, 178, 241, 148, 50, 4, 0],
-    bestTimeToVisit: 'November–February cool dry season — coolest temperatures and festival calendar',
+    bestTimeToVisit: 'November–February is the cooler dry season and the most comfortable weather window for travel.',
+    bestVisitMonths: [11, 12, 1, 2],
     popularPlaces: [
       { name: 'Ouagadougou', description: 'Capital and host of FESPACO, Africa’s largest film festival', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct" },
       { name: 'Bobo-Dioulasso', description: 'Cultural second city with a famous mud mosque', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug, Oct–Nov" },
@@ -13112,7 +13134,8 @@ export const countries: Record<string, CountryData> = {
     government: 'Absolute monarchy (sultanate)',
     temperatures: [{ month: 'Jan', high: 86, low: 73 }, { month: 'Feb', high: 86, low: 73 }, { month: 'Mar', high: 88, low: 73 }, { month: 'Apr', high: 89, low: 74 }, { month: 'May', high: 89, low: 74 }, { month: 'Jun', high: 89, low: 73 }, { month: 'Jul', high: 89, low: 73 }, { month: 'Aug', high: 89, low: 73 }, { month: 'Sep', high: 89, low: 73 }, { month: 'Oct', high: 88, low: 73 }, { month: 'Nov', high: 87, low: 73 }, { month: 'Dec', high: 87, low: 73 }],
     precipitation: [343, 212, 222, 247, 277, 223, 226, 234, 249, 311, 335, 370],
-    bestTimeToVisit: 'February–April for the driest weather between monsoon peaks',
+    bestTimeToVisit: 'February–March is typically the driest period; January–May is generally the most favorable broader window.',
+    bestVisitMonths: [1, 2, 3, 4, 5],
     popularPlaces: [
       { name: 'Bandar Seri Begawan', description: 'Compact capital with grand mosques and a stilt-village on the river', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep" },
       { name: 'Kampong Ayer', description: 'Historic water village of wooden houses on the Brunei River', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep" },
@@ -13375,7 +13398,8 @@ export const countries: Record<string, CountryData> = {
     government: 'Constitutional emirate',
     temperatures: [{ month: 'Jan', high: 66, low: 46 }, { month: 'Feb', high: 71, low: 50 }, { month: 'Mar', high: 80, low: 57 }, { month: 'Apr', high: 91, low: 66 }, { month: 'May', high: 104, low: 77 }, { month: 'Jun', high: 112, low: 83 }, { month: 'Jul', high: 114, low: 87 }, { month: 'Aug', high: 114, low: 85 }, { month: 'Sep', high: 108, low: 78 }, { month: 'Oct', high: 97, low: 70 }, { month: 'Nov', high: 79, low: 57 }, { month: 'Dec', high: 69, low: 48 }],
     precipitation: [21, 12, 20, 16, 3, 0, 0, 0, 0, 2, 20, 26],
-    bestTimeToVisit: 'November–March — mild, dry, and outside brutal summer heat',
+    bestTimeToVisit: 'November–March brings mild, dry weather and avoids the extreme heat of summer.',
+    bestVisitMonths: [11, 12, 1, 2, 3],
     popularPlaces: [
       { name: 'Kuwait City', description: 'Modern Gulf capital with the iconic Kuwait Towers on the corniche', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
       { name: 'Failaka Island', description: 'Historic island with Hellenistic ruins and beach resorts', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
@@ -13645,7 +13669,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 42, low: 29 },
     ],
     precipitation: [91, 55, 84, 90, 106, 94, 67, 80, 92, 108, 100, 79],
-    bestTimeToVisit: 'December–March for skiing, June–September for hiking',
+    bestTimeToVisit: 'December–March is best for skiing; June–September is the main season for hiking and mountain scenery.',
+    bestVisitMonths: [12, 1, 2, 3, 6, 7, 8, 9],
     popularPlaces: [
       { name: 'Andorra la Vella', description: 'Pyrenean capital known for duty-free shopping', bestWeatherMonths: "Jun–Sep" },
       { name: 'Ordino', description: 'Traditional stone village near ski slopes', bestWeatherMonths: "Jun–Sep" },
@@ -13705,7 +13730,7 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 49, low: 26 },
     ],
     precipitation: [45, 60, 63, 52, 32, 8, 8, 6, 3, 9, 22, 29],
-    bestTimeToVisit: 'Travel is not advised — State Dept Level 4',
+    bestTimeToVisit: 'Travel is not advised — State Dept Level 4.',
     popularPlaces: [
       { name: 'Kabul', description: 'Historic capital in a mountain valley', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Jul–Aug, Nov" },
       { name: 'Bamiyan', description: 'Site of the destroyed Buddha statues and turquoise lakes', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep" },
@@ -13895,7 +13920,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 87, low: 77 },
     ],
     precipitation: [445, 344, 291, 237, 226, 142, 152, 141, 184, 223, 285, 355],
-    bestTimeToVisit: 'May–September (dry season)',
+    bestTimeToVisit: 'June–September is the slightly cooler, drier season; late May and October can also work well around the edges of the wet season.',
+    bestVisitMonths: [5, 6, 7, 8, 9, 10],
     popularPlaces: [
       { name: 'Pago Pago', description: 'Deep harbor town encircled by rainforest peaks', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–May, Sep–Dec" },
       { name: 'Ofu Beach', description: 'Remote white-sand beach on Manuʻa Islands', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–May, Sep–Dec" },
@@ -14270,7 +14296,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 85, low: 75 },
     ],
     precipitation: [88, 44, 35, 60, 85, 72, 105, 120, 125, 126, 130, 104],
-    bestTimeToVisit: 'Year-round (outside hurricane belt)',
+    bestTimeToVisit: 'Bonaire is a strong year-round destination outside the main hurricane belt; winter and early spring are popular for dry, sunny conditions.',
+    bestVisitMonths: [1, 2, 3, 4],
     popularPlaces: [
       { name: 'Kralendijk', description: 'Compact Dutch-Caribbean capital', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
       { name: 'Rincon', description: 'Oldest settlement in the ABC islands', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
@@ -14503,7 +14530,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 86, low: 77 },
     ],
     precipitation: [56, 26, 23, 25, 18, 22, 39, 33, 32, 96, 119, 91],
-    bestTimeToVisit: 'Year-round (outside hurricane belt)',
+    bestTimeToVisit: 'Curaçao is warm year-round and lies outside the main hurricane belt; February–September is generally drier, while October–February is the wetter stretch.',
+    bestVisitMonths: [2, 3, 4, 5, 6, 7, 8, 9],
     popularPlaces: [
       { name: 'Willemstad', description: 'UNESCO capital of pastel Dutch-colonial townhouses', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
       { name: 'Westpunt', description: 'Rugged northwest coast with quiet cove beaches', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
@@ -14704,7 +14732,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 87, low: 76 },
     ],
     precipitation: [282, 224, 277, 348, 377, 346, 355, 342, 353, 333, 330, 350],
-    bestTimeToVisit: 'December–April (drier)',
+    bestTimeToVisit: 'December–April is generally the drier part of the year, though rain remains possible in this tropical island climate.',
+    bestVisitMonths: [12, 1, 2, 3, 4],
     popularPlaces: [
       { name: 'Pohnpei', description: 'Green mountainous island with waterfalls', bestWeatherMonths: "Jan–Dec" },
       { name: 'Chuuk', description: 'World-class WWII wreck diving in the lagoon', bestWeatherMonths: "Jan–Dec" },
@@ -14773,7 +14802,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 42, low: 36 },
     ],
     precipitation: [201, 154, 143, 108, 76, 78, 87, 101, 145, 180, 182, 184],
-    bestTimeToVisit: 'May–September for hiking and puffins',
+    bestTimeToVisit: 'June–August offers the longest days, best access, and most reliable hiking conditions; late May or early June can be quieter.',
+    bestVisitMonths: [5, 6, 7, 8],
     popularPlaces: [
       { name: 'Tórshavn', description: 'Turf-roofed capital on a fjord', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
       { name: 'Gásadalur', description: 'Cliffside village next to the iconic Múlafossur waterfall', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
@@ -15871,7 +15901,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 83, low: 71 },
     ],
     precipitation: [314, 269, 264, 236, 159, 156, 154, 99, 64, 91, 98, 194],
-    bestTimeToVisit: 'May–October (dry, cooler)',
+    bestTimeToVisit: 'May–October is the cooler, drier season and the best general window for island travel.',
+    bestVisitMonths: [5, 6, 7, 8, 9, 10],
     popularPlaces: [
       { name: 'Moroni', description: 'Old volcanic capital with a whitewashed Friday Mosque', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "May–Jul, Nov" },
       { name: 'Mohéli', description: 'Least-developed island with sea turtles', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "Jun–Jul, Nov" },
@@ -15939,7 +15970,7 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 27, low: 10 },
     ],
     precipitation: [13, 17, 29, 48, 90, 118, 245, 231, 103, 51, 42, 20],
-    bestTimeToVisit: 'Travel by US passport holders is prohibited',
+    bestTimeToVisit: 'Travel by U.S. passport holders is prohibited.',
     popularPlaces: [
       { name: 'Pyongyang', description: 'Monumental capital of grand plazas', bestWeatherMonths: "Apr–Jun, Sep–Oct" },
       { name: 'Mount Paektu', description: 'Sacred volcanic peak on the Chinese border', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug" },
@@ -16263,7 +16294,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 86, low: 78 },
     ],
     precipitation: [170, 158, 156, 209, 219, 218, 243, 255, 266, 285, 265, 227],
-    bestTimeToVisit: 'December–April (drier)',
+    bestTimeToVisit: 'December–April is generally drier, with February–March offering some of the most favorable weather for water activities.',
+    bestVisitMonths: [12, 1, 2, 3, 4],
     popularPlaces: [
       { name: 'Majuro', description: 'Ribbon capital atoll', bestWeatherMonths: "Jan–Dec" },
       { name: 'Bikini Atoll', description: 'Nuclear-test site now a wreck-diving destination', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
@@ -16602,7 +16634,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 82, low: 60 },
     ],
     precipitation: [1, 1, 0, 0, 1, 6, 19, 43, 28, 8, 1, 1],
-    bestTimeToVisit: 'November–March',
+    bestTimeToVisit: 'November–April brings cooler, drier conditions and is the best general window for desert and cultural travel.',
+    bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
       { name: 'Nouakchott', description: 'Sand-swept Atlantic capital', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb, Dec" },
       { name: 'Chinguetti', description: 'Sahara caravan town of ancient libraries', bestWeatherMonths: "Jan–Feb, Dec" },
@@ -16835,7 +16868,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 88, low: 77 },
     ],
     precipitation: [261, 223, 219, 209, 186, 170, 208, 178, 172, 185, 176, 247],
-    bestTimeToVisit: 'May–October',
+    bestTimeToVisit: 'March–October avoids the wettest part of the year; May–September is generally the better bet for drier conditions.',
+    bestVisitMonths: [3, 4, 5, 6, 7, 8, 9, 10],
     popularPlaces: [
       { name: 'Yaren', description: 'Airport-adjacent de facto capital', bestWeatherMonths: "Jan–Dec" },
       { name: 'Anibare Bay', description: 'Best beach on the island’s east coast', bestWeatherMonths: "Jan–Dec" },
@@ -17015,7 +17049,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 66, low: 40 },
     ],
     precipitation: [21, 27, 28, 24, 16, 21, 52, 53, 24, 6, 7, 11],
-    bestTimeToVisit: 'April–June and September–November',
+    bestTimeToVisit: 'February–March and October–November suit many cities and cultural trips, while May–October is the main season for the northern mountains. Monsoon and extreme heat make midsummer timing highly regional.',
+    bestVisitMonths: [2, 3, 5, 6, 7, 8, 9, 10, 11],
     popularPlaces: [
       { name: 'Lahore', description: 'Mughal cultural capital with the Badshahi Mosque', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
       { name: 'Hunza Valley', description: 'Karakoram mountain valley of storybook villages', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
@@ -17208,7 +17243,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 88, low: 76 },
     ],
     precipitation: [274, 207, 187, 220, 318, 347, 362, 322, 329, 281, 265, 298],
-    bestTimeToVisit: 'November–April (drier)',
+    bestTimeToVisit: 'November–April is the drier season and the best general window for diving, snorkeling, and island trips.',
+    bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
       { name: 'Koror', description: 'Main tourist hub', bestWeatherMonths: "Jan–Dec" },
       { name: 'Rock Islands', description: 'UNESCO-listed lagoon of 445 forested limestone islets', bestWeatherMonths: "Jan–Dec" },
@@ -17387,7 +17423,7 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 88, low: 67 },
     ],
     precipitation: [3, 3, 13, 56, 56, 18, 14, 11, 12, 45, 38, 11],
-    bestTimeToVisit: 'Travel not advised — Level 4',
+    bestTimeToVisit: 'Travel not advised — Level 4.',
     popularPlaces: [
       { name: 'Mogadishu', description: 'Coastal capital with pastel Italianate ruins', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–Feb, Oct, Dec" },
       { name: 'Hargeisa', description: 'Capital of self-declared Somaliland', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May–Sep" },
@@ -17457,7 +17493,7 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 95, low: 66 },
     ],
     precipitation: [3, 6, 26, 70, 117, 141, 171, 186, 143, 107, 25, 6],
-    bestTimeToVisit: 'Travel not advised — Level 4',
+    bestTimeToVisit: 'Travel not advised — Level 4.',
     popularPlaces: [
       { name: 'Juba', description: 'Nile-side capital', bestWeatherMonths: "Jun–Sep, Nov–Dec", goodWeatherMonths: "Jan–May, Oct" },
       { name: 'Boma National Park', description: 'Site of one of the world’s largest wildlife migrations', bestWeatherMonths: "Jun–Sep, Nov–Dec", goodWeatherMonths: "Jan–Mar, May, Oct" },
@@ -17651,7 +17687,7 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 56, low: 38 },
     ],
     precipitation: [57, 48, 42, 27, 17, 2, 0, 0, 2, 16, 33, 50],
-    bestTimeToVisit: 'Travel not advised — Level 4',
+    bestTimeToVisit: 'Travel not advised — Level 4.',
     popularPlaces: [
       { name: 'Damascus', description: 'One of the world’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
       { name: 'Aleppo', description: 'Ancient citadel city with a partly restored souq', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb, Dec" },
@@ -17785,7 +17821,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 87, low: 56 },
     ],
     precipitation: [0, 1, 2, 7, 22, 34, 80, 124, 62, 19, 1, 0],
-    bestTimeToVisit: 'November–February',
+    bestTimeToVisit: 'November–February is the cooler dry season and the most comfortable general window for travel.',
+    bestVisitMonths: [11, 12, 1, 2],
     popularPlaces: [
       { name: 'N\'Djamena', description: 'Sahel capital across from Cameroon', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
       { name: 'Zakouma National Park', description: 'One of Africa’s great wildlife comeback stories', bestWeatherMonths: "Jan, Aug, Oct–Dec", goodWeatherMonths: "Feb, Jun–Jul, Sep" },
@@ -18419,7 +18456,8 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 88, low: 76 },
     ],
     precipitation: [344, 328, 315, 291, 219, 174, 185, 153, 194, 271, 293, 364],
-    bestTimeToVisit: 'May–October',
+    bestTimeToVisit: 'May–October is the cooler, drier season; June–September is especially favorable for outdoor and beach activities.',
+    bestVisitMonths: [5, 6, 7, 8, 9, 10],
     popularPlaces: [
       { name: 'Mata-Utu', description: 'Sleepy capital on Wallis', bestWeatherMonths: "Jan, Mar, May–Oct", goodWeatherMonths: "Feb, Apr, Nov–Dec" },
       { name: 'Futuna', description: 'Second, more traditional island group', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Mar–Jul, Sep–Nov" },
@@ -18535,7 +18573,7 @@ export const countries: Record<string, CountryData> = {
       { month: 'Dec', high: 79, low: 56 },
     ],
     precipitation: [4, 8, 20, 25, 28, 17, 21, 28, 20, 10, 6, 4],
-    bestTimeToVisit: 'Travel not advised — Level 4',
+    bestTimeToVisit: 'Travel not advised — Level 4.',
     popularPlaces: [
       { name: 'Sana\'a', description: 'Old city of gingerbread tower-houses (UNESCO)', bestWeatherMonths: "Jan–Dec" },
       { name: 'Socotra', description: 'Otherworldly island of dragon-blood trees', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Jul–Nov" },
