@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ArrowLeft, X, MapPin, Users } from 'lucide-react'
+import { ArrowLeft, X, MapPin, Users, CalendarHeart } from 'lucide-react'
 import type { CountryData } from '@/data/countries'
 
 type Attraction = CountryData['attractions'][number]
