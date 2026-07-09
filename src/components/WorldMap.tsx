@@ -22,6 +22,11 @@ interface WorldMapProps {
   onCountryClick: (countryCode: string, countryName: string) => void
   selectedCountry: string | null
   flagColors: [string, string, string] | null
+  /**
+   * When provided, only these country codes are clickable/highlighted.
+   * Non-listed countries render as muted geographic context.
+   */
+  eligibleCountries?: Set<string> | null
 }
 
 type CountryGeoJSON = FeatureCollection<Geometry, { name: string; code: string | null; hasData: boolean }>
@@ -55,16 +60,64 @@ async function loadCountriesGeoJSON(): Promise<CountryGeoJSON> {
   return cachedGeo
 }
 
+type FillExpr = maplibregl.DataDrivenPropertyValueSpecification<string> | string
+
+function buildFillExpression(
+  flagColors: [string, string, string] | null,
+  eligible?: Set<string> | null,
+): FillExpr {
+  const selected = flagColors?.[0] ?? COLOR_LAND_HOVER
+  if (eligible) {
+    const codes = Array.from(eligible)
+    return [
+      'case',
+      ['boolean', ['feature-state', 'selected'], false], selected,
+      ['boolean', ['feature-state', 'hover'], false], COLOR_LAND_HOVER,
+      ['in', ['get', 'code'], ['literal', codes]], COLOR_LAND_DATA,
+      COLOR_LAND_EMPTY,
+    ] as unknown as FillExpr
+  }
+  return [
+    'case',
+    ['boolean', ['feature-state', 'selected'], false], selected,
+    ['boolean', ['feature-state', 'hover'], false], COLOR_LAND_HOVER,
+    ['get', 'hasData'], COLOR_LAND_DATA,
+    COLOR_LAND_EMPTY,
+  ] as unknown as FillExpr
+}
+
+function buildFillOpacityExpression(
+  eligible?: Set<string> | null,
+): maplibregl.DataDrivenPropertyValueSpecification<number> {
+  if (eligible) {
+    const codes = Array.from(eligible)
+    return [
+      'case',
+      ['in', ['get', 'code'], ['literal', codes]], 0.92,
+      0.18,
+    ] as unknown as maplibregl.DataDrivenPropertyValueSpecification<number>
+  }
+  return [
+    'case',
+    ['get', 'hasData'], 0.92,
+    0.55,
+  ] as unknown as maplibregl.DataDrivenPropertyValueSpecification<number>
+}
+
+
+
 
 function WorldMapInner({
   onCountryClick,
   selectedCountry,
   flagColors,
+  eligibleCountries,
 }: WorldMapProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MLMap | null>(null)
   const hoveredIdRef = useRef<string | null>(null)
   const selectedIdRef = useRef<string | null>(null)
+  const eligibleRef = useRef<Set<string> | null>(eligibleCountries ?? null)
   const [tooltip, setTooltip] = useState<{
     name: string
     x: number
@@ -156,22 +209,8 @@ function WorldMapInner({
         type: 'fill',
         source: 'countries',
         paint: {
-          'fill-color': [
-            'case',
-            ['boolean', ['feature-state', 'selected'], false],
-            flagColors?.[0] ?? COLOR_LAND_HOVER,
-            ['boolean', ['feature-state', 'hover'], false],
-            COLOR_LAND_HOVER,
-            ['get', 'hasData'],
-            COLOR_LAND_DATA,
-            COLOR_LAND_EMPTY,
-          ],
-          'fill-opacity': [
-            'case',
-            ['get', 'hasData'],
-            0.92,
-            0.55,
-          ],
+          'fill-color': buildFillExpression(flagColors, eligibleCountries),
+          'fill-opacity': buildFillOpacityExpression(eligibleCountries),
         },
       })
 
@@ -191,12 +230,19 @@ function WorldMapInner({
         },
       })
 
+      const isEligible = (code: string | null | undefined, hasData: boolean) => {
+        if (!code) return false
+        const el = eligibleRef.current
+        return el ? el.has(code) : hasData
+      }
+
       map.on('mousemove', 'countries-fill', (e) => {
         if (!e.features?.length) return
         const feat = e.features[0] as MapGeoJSONFeature
         const id = feat.id as string | undefined
         const props = feat.properties as { name: string; hasData: boolean; code: string | null }
-        map.getCanvas().style.cursor = props.hasData ? 'pointer' : ''
+        const clickable = isEligible(props.code, props.hasData)
+        map.getCanvas().style.cursor = clickable ? 'pointer' : ''
 
         if (hoveredIdRef.current && hoveredIdRef.current !== id) {
           map.setFeatureState(
@@ -204,7 +250,7 @@ function WorldMapInner({
             { hover: false }
           )
         }
-        if (id && props.hasData) {
+        if (id && clickable) {
           hoveredIdRef.current = id
           map.setFeatureState({ source: 'countries', id }, { hover: true })
         } else {
@@ -216,7 +262,7 @@ function WorldMapInner({
           name: props.name,
           x: e.originalEvent.clientX - rect.left,
           y: e.originalEvent.clientY - rect.top,
-          hasData: !!props.hasData,
+          hasData: clickable,
         })
       })
 
@@ -236,9 +282,10 @@ function WorldMapInner({
         if (!e.features?.length) return
         const feat = e.features[0]
         const props = feat.properties as { name: string; hasData: boolean; code: string | null }
-        if (props.hasData && props.code) {
-          clickHandlerRef.current(props.code, props.name)
-        }
+        if (!props.code) return
+        const el = eligibleRef.current
+        const clickable = el ? el.has(props.code) : props.hasData
+        if (clickable) clickHandlerRef.current(props.code, props.name)
       })
 
       setReady(true)
@@ -252,7 +299,12 @@ function WorldMapInner({
   }, [])
   // ^ We intentionally exclude flagColors here — updates handled below to avoid re-init.
 
-  // Update selection + selected fill color when props change
+  // Sync eligible set into ref for event handlers.
+  useEffect(() => {
+    eligibleRef.current = eligibleCountries ?? null
+  }, [eligibleCountries])
+
+  // Update selection + repaint fills when selection, flag colors, or eligibility change.
   useEffect(() => {
     const map = mapRef.current
     if (!map || !ready) return
@@ -271,20 +323,19 @@ function WorldMapInner({
     }
     selectedIdRef.current = nextId
 
-    // Update fill color paint property so selected color reflects current flag
     if (map.getLayer('countries-fill')) {
-      map.setPaintProperty('countries-fill', 'fill-color', [
-        'case',
-        ['boolean', ['feature-state', 'selected'], false],
-        flagColors?.[0] ?? COLOR_LAND_HOVER,
-        ['boolean', ['feature-state', 'hover'], false],
-        COLOR_LAND_HOVER,
-        ['get', 'hasData'],
-        COLOR_LAND_DATA,
-        COLOR_LAND_EMPTY,
-      ])
+      map.setPaintProperty(
+        'countries-fill',
+        'fill-color',
+        buildFillExpression(flagColors, eligibleCountries),
+      )
+      map.setPaintProperty(
+        'countries-fill',
+        'fill-opacity',
+        buildFillOpacityExpression(eligibleCountries),
+      )
     }
-  }, [selectedCountry, flagColors, ready])
+  }, [selectedCountry, flagColors, eligibleCountries, ready])
 
   return (
     <div className="relative w-full" style={{ aspectRatio: '16 / 10' }}>
