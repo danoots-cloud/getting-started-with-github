@@ -173,7 +173,10 @@ function Home() {
               <div className="mb-4 px-2">
                 <RecommendationFilters
                   filters={filters}
-                  onChange={setFilters}
+                  onChange={(next) => {
+                    if (recoActive) clearReco();
+                    setFilters(next);
+                  }}
                   active={recoActive}
                   onActivate={() => setRecoActive(true)}
                   onClear={clearReco}
