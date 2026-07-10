@@ -9,6 +9,7 @@ import {
 import { placeEntityIds } from '@/data/placeEntityIds'
 import { isPlaceEligibleAsLead } from '@/data/popularPlaceSeasonalAvailability'
 import type { Advisory } from '@/lib/advisories.functions'
+import { getMonthlyRecommendationReason } from '@/data/destinationMonthlyRecommendationReasons'
 
 export const MAX_RECOMMENDATIONS = 24
 const EXCLUDED_PUBLIC_LABEL = 'Worth considering'
