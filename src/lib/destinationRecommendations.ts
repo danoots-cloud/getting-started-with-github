@@ -7,7 +7,11 @@ import {
   type DestinationMonthlyScore,
 } from '@/data/destinationMonthlyScores'
 import { placeEntityIds } from '@/data/placeEntityIds'
+import { isPlaceEligibleAsLead } from '@/data/popularPlaceSeasonalAvailability'
 import type { Advisory } from '@/lib/advisories.functions'
+
+export const MAX_RECOMMENDATIONS = 24
+const EXCLUDED_PUBLIC_LABEL = 'Worth considering'
 
 export type AdvisoryPreference = 'levels-1-2' | 'include-level-3'
 
