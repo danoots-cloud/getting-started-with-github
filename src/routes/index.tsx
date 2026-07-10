@@ -317,6 +317,15 @@ function Home() {
                   recoActive ? selectedReco?.leadPlace?.name ?? null : null
                 }
                 recommendationMonthName={recoActive ? monthName : null}
+                recommendationReasonLabel={
+                  recoActive ? selectedReco?.recommendationReasonLabel ?? null : null
+                }
+                recommendationReason={
+                  recoActive ? selectedReco?.recommendationReason ?? null : null
+                }
+                recommendationIsCountryFallback={
+                  recoActive ? !!selectedReco && selectedReco.leadPlace === null : false
+                }
               />
             </div>
           </div>
