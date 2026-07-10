@@ -26,9 +26,12 @@ export interface DestinationRecommendation {
   countryCode: string
   country: CountryData
   leadPlace: PopularPlace | null // null when country fallback used
+  leadEntityId: string // the entityId used for scoring and reason lookup
   score: DestinationMonthlyScore
   advisoryLevel: 1 | 2 | 3 // level used for eligibility (never 4)
   publicLabel: string // "Excellent fit" etc — derived from visitTier
+  recommendationReasonLabel?: string
+  recommendationReason?: string
 }
 
 const NAME_NORM = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
