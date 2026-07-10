@@ -93,7 +93,7 @@ export function getDestinationRecommendations(
       if (hours > filters.maxFlightHours) continue
     }
 
-    // Score popular places → pick the highest combinedVisitScore.
+    // Score popular places → pick the highest recommendationScore.
     // Apply explicit seasonal-availability overrides (by entityId) before comparing.
     let leadPlace: PopularPlace | null = null
     let leadScore: DestinationMonthlyScore | null = null
@@ -103,8 +103,8 @@ export function getDestinationRecommendations(
       if (!entityId) continue
       if (!isPlaceEligibleAsLead(entityId, filters.month)) continue
       const s = monthIndex.get(entityId)
-      if (!s || s.combinedVisitScore == null) continue
-      if (!leadScore || (s.combinedVisitScore ?? -Infinity) > (leadScore.combinedVisitScore ?? -Infinity)) {
+      if (!s || s.recommendationScore == null) continue
+      if (!leadScore || (s.recommendationScore ?? -Infinity) > (leadScore.recommendationScore ?? -Infinity)) {
         leadScore = s
         leadPlace = place
       }
@@ -113,7 +113,7 @@ export function getDestinationRecommendations(
     // Fallback to the country-level score row when no place matched.
     if (!leadScore) {
       const fallback = monthIndex.get(`country_${country.code}`)
-      if (!fallback || fallback.combinedVisitScore == null) continue
+      if (!fallback || fallback.recommendationScore == null) continue
       leadScore = fallback
       leadPlace = null
     }
@@ -133,7 +133,7 @@ export function getDestinationRecommendations(
   }
 
   results.sort(
-    (a, b) => (b.score.combinedVisitScore ?? -Infinity) - (a.score.combinedVisitScore ?? -Infinity),
+    (a, b) => (b.score.recommendationScore ?? -Infinity) - (a.score.recommendationScore ?? -Infinity),
   )
   // Cap the actual result set — map and list must share this exact set.
   return results.slice(0, MAX_RECOMMENDATIONS)
