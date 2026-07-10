@@ -94,10 +94,15 @@ export function getDestinationRecommendations(
     }
 
     // Score popular places → pick the highest combinedVisitScore.
+    // Apply explicit seasonal-availability overrides (by entityId) before comparing.
     let leadPlace: PopularPlace | null = null
     let leadScore: DestinationMonthlyScore | null = null
+    const byCountryIds = placeEntityIds[country.code]
     for (const place of country.popularPlaces) {
-      const s = scoreForPlace(country.code, place.name, monthIndex)
+      const entityId = byCountryIds?.[NAME_NORM(place.name)]
+      if (!entityId) continue
+      if (!isPlaceEligibleAsLead(entityId, filters.month)) continue
+      const s = monthIndex.get(entityId)
       if (!s || s.combinedVisitScore == null) continue
       if (!leadScore || (s.combinedVisitScore ?? -Infinity) > (leadScore.combinedVisitScore ?? -Infinity)) {
         leadScore = s
@@ -113,20 +118,25 @@ export function getDestinationRecommendations(
       leadPlace = null
     }
 
+    const publicLabel = visitTierLabel(leadScore.visitTier)
+    // Curate: hide "Worth considering" tier from recommendation results.
+    if (publicLabel === EXCLUDED_PUBLIC_LABEL) continue
+
     results.push({
       countryCode: country.code,
       country,
       leadPlace,
       score: leadScore,
       advisoryLevel: adv.level as 1 | 2 | 3,
-      publicLabel: visitTierLabel(leadScore.visitTier),
+      publicLabel,
     })
   }
 
   results.sort(
     (a, b) => (b.score.combinedVisitScore ?? -Infinity) - (a.score.combinedVisitScore ?? -Infinity),
   )
-  return results
+  // Cap the actual result set — map and list must share this exact set.
+  return results.slice(0, MAX_RECOMMENDATIONS)
 }
 
 export const MONTH_NAMES = [
