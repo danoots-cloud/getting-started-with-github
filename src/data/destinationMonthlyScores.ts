@@ -34,6 +34,9 @@ export interface DestinationMonthlyScore {
   experienceWeight: number | null;
   climateSource: string;
   climateMatchStatus: string;
+  seasonalTravelerIntentAdjustment: number;
+  seasonalTravelerIntentReason: string;
+  recommendationScore: number;
 }
 
 export const destinationMonthlyScores: DestinationMonthlyScore[] = [
