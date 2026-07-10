@@ -221,17 +221,17 @@ function Home() {
                           className="mt-0.5 h-6 w-9 rounded-sm object-cover shadow ring-1 ring-[#1E2A44]/15"
                         />
                         <div className="min-w-0">
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            <span className="truncate text-sm font-semibold text-[#1E2A44]">
-                              {r.country.name}
-                            </span>
-                            <span className="rounded-full bg-[#E86A5C]/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#c74a3d]">
-                              {r.publicLabel}
-                            </span>
+                          <div className="truncate text-sm font-semibold text-[#1E2A44]">
+                            {r.country.name}
                           </div>
                           {r.leadPlace && (
-                            <div className="mt-0.5 truncate text-xs text-[#1E2A44]/70">
-                              Lead: {r.leadPlace.name}
+                            <div className="mt-0.5 truncate text-xs font-medium text-[#1E2A44]/75">
+                              {r.leadPlace.name}
+                            </div>
+                          )}
+                          {r.recommendationReasonLabel && (
+                            <div className="mt-1 truncate text-xs font-semibold text-[#c74a3d]">
+                              {r.recommendationReasonLabel}
                             </div>
                           )}
                           <div className="mt-0.5 truncate text-xs text-[#1E2A44]/50">
@@ -317,6 +317,15 @@ function Home() {
                   recoActive ? selectedReco?.leadPlace?.name ?? null : null
                 }
                 recommendationMonthName={recoActive ? monthName : null}
+                recommendationReasonLabel={
+                  recoActive ? selectedReco?.recommendationReasonLabel ?? null : null
+                }
+                recommendationReason={
+                  recoActive ? selectedReco?.recommendationReason ?? null : null
+                }
+                recommendationIsCountryFallback={
+                  recoActive ? !!selectedReco && selectedReco.leadPlace === null : false
+                }
               />
             </div>
           </div>

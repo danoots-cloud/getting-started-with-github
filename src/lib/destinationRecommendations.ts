@@ -9,6 +9,7 @@ import {
 import { placeEntityIds } from '@/data/placeEntityIds'
 import { isPlaceEligibleAsLead } from '@/data/popularPlaceSeasonalAvailability'
 import type { Advisory } from '@/lib/advisories.functions'
+import { getMonthlyRecommendationReason } from '@/data/destinationMonthlyRecommendationReasons'
 
 export const MAX_RECOMMENDATIONS = 24
 const EXCLUDED_PUBLIC_LABEL = 'Worth considering'
@@ -25,9 +26,12 @@ export interface DestinationRecommendation {
   countryCode: string
   country: CountryData
   leadPlace: PopularPlace | null // null when country fallback used
+  leadEntityId: string // the entityId used for scoring and reason lookup
   score: DestinationMonthlyScore
   advisoryLevel: 1 | 2 | 3 // level used for eligibility (never 4)
   publicLabel: string // "Excellent fit" etc — derived from visitTier
+  recommendationReasonLabel?: string
+  recommendationReason?: string
 }
 
 const NAME_NORM = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
@@ -97,6 +101,7 @@ export function getDestinationRecommendations(
     // Apply explicit seasonal-availability overrides (by entityId) before comparing.
     let leadPlace: PopularPlace | null = null
     let leadScore: DestinationMonthlyScore | null = null
+    let leadEntityId: string | null = null
     const byCountryIds = placeEntityIds[country.code]
     for (const place of country.popularPlaces) {
       const entityId = byCountryIds?.[NAME_NORM(place.name)]
@@ -107,28 +112,38 @@ export function getDestinationRecommendations(
       if (!leadScore || (s.recommendationScore ?? -Infinity) > (leadScore.recommendationScore ?? -Infinity)) {
         leadScore = s
         leadPlace = place
+        leadEntityId = entityId
       }
     }
 
     // Fallback to the country-level score row when no place matched.
     if (!leadScore) {
-      const fallback = monthIndex.get(`country_${country.code}`)
+      const fallbackId = `country_${country.code}`
+      const fallback = monthIndex.get(fallbackId)
       if (!fallback || fallback.recommendationScore == null) continue
       leadScore = fallback
       leadPlace = null
+      leadEntityId = fallbackId
     }
 
     const publicLabel = visitTierLabel(leadScore.visitTier)
     // Curate: hide "Worth considering" tier from recommendation results.
     if (publicLabel === EXCLUDED_PUBLIC_LABEL) continue
 
+    const reason = leadEntityId
+      ? getMonthlyRecommendationReason(leadEntityId, filters.month)
+      : undefined
+
     results.push({
       countryCode: country.code,
       country,
       leadPlace,
+      leadEntityId: leadEntityId!,
       score: leadScore,
       advisoryLevel: adv.level as 1 | 2 | 3,
       publicLabel,
+      recommendationReasonLabel: reason?.recommendationReasonLabel,
+      recommendationReason: reason?.recommendationReason,
     })
   }
 

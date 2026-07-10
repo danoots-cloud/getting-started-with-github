@@ -34,6 +34,9 @@ interface CountryPanelProps {
   onClose: () => void
   recommendedPlaceName?: string | null
   recommendationMonthName?: string | null
+  recommendationReasonLabel?: string | null
+  recommendationReason?: string | null
+  recommendationIsCountryFallback?: boolean
 }
 
 function Section({
@@ -160,7 +163,7 @@ function TravelRequirementsSection({
 
 type Attraction = CountryData['attractions'][number]
 
-export function CountryPanel({ country, onClose, recommendedPlaceName, recommendationMonthName }: CountryPanelProps) {
+export function CountryPanel({ country, onClose, recommendedPlaceName, recommendationMonthName, recommendationReasonLabel, recommendationReason, recommendationIsCountryFallback }: CountryPanelProps) {
   const [openPlace, setOpenPlace] = useState<PopularPlace | null>(null)
   const [openAttraction, setOpenAttraction] = useState<Attraction | null>(null)
 
@@ -213,6 +216,24 @@ export function CountryPanel({ country, onClose, recommendedPlaceName, recommend
       </div>
 
       <div className="flex-1 overflow-y-auto px-6 py-6" style={{ scrollbarGutter: 'stable' }}>
+        {recommendationIsCountryFallback && recommendationReasonLabel && recommendationMonthName && (
+          <div
+            className="mb-6 rounded-xl border px-4 py-3"
+            style={{ borderColor: '#E86A5C55', backgroundColor: '#E86A5C14' }}
+          >
+            <div className="text-xs font-semibold uppercase tracking-wider text-[#c74a3d]">
+              Why this month · {recommendationMonthName}
+            </div>
+            <div className="mt-1 text-sm font-semibold text-[#1E2A44]">
+              {recommendationReasonLabel}
+            </div>
+            {recommendationReason && (
+              <div className="mt-1 text-sm leading-relaxed text-[#1E2A44]/80">
+                {recommendationReason}
+              </div>
+            )}
+          </div>
+        )}
         <div className="mb-6 grid grid-cols-2 gap-2">
           <InfoBadge label="Capital" value={country.capital} />
           <InfoBadge label="Population" value={country.population} />
@@ -299,6 +320,18 @@ export function CountryPanel({ country, onClose, recommendedPlaceName, recommend
                         </span>
                       )}
                     </div>
+                    {recommendedPlaceName === place.name && recommendationReasonLabel && (
+                      <div className="mt-2 rounded-lg border border-[#E86A5C]/30 bg-[#E86A5C]/08 px-3 py-2" style={{ backgroundColor: '#E86A5C14' }}>
+                        <div className="text-sm font-semibold text-[#c74a3d]">
+                          {recommendationReasonLabel}
+                        </div>
+                        {recommendationReason && (
+                          <div className="mt-1 text-sm leading-relaxed text-[#1E2A44]/80">
+                            {recommendationReason}
+                          </div>
+                        )}
+                      </div>
+                    )}
                     <div className="mt-0.5 text-sm text-[#1E2A44]/65">
                       {place.description}
                     </div>
