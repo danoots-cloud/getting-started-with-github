@@ -163,7 +163,7 @@ function TravelRequirementsSection({
 
 type Attraction = CountryData['attractions'][number]
 
-export function CountryPanel({ country, onClose, recommendedPlaceName, recommendationMonthName }: CountryPanelProps) {
+export function CountryPanel({ country, onClose, recommendedPlaceName, recommendationMonthName, recommendationReasonLabel, recommendationReason, recommendationIsCountryFallback }: CountryPanelProps) {
   const [openPlace, setOpenPlace] = useState<PopularPlace | null>(null)
   const [openAttraction, setOpenAttraction] = useState<Attraction | null>(null)
 
