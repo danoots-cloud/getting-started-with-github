@@ -302,6 +302,18 @@ export function CountryPanel({ country, onClose, recommendedPlaceName, recommend
                         </span>
                       )}
                     </div>
+                    {recommendedPlaceName === place.name && recommendationReasonLabel && (
+                      <div className="mt-2 rounded-lg border border-[#E86A5C]/30 bg-[#E86A5C]/08 px-3 py-2" style={{ backgroundColor: '#E86A5C14' }}>
+                        <div className="text-sm font-semibold text-[#c74a3d]">
+                          {recommendationReasonLabel}
+                        </div>
+                        {recommendationReason && (
+                          <div className="mt-1 text-sm leading-relaxed text-[#1E2A44]/80">
+                            {recommendationReason}
+                          </div>
+                        )}
+                      </div>
+                    )}
                     <div className="mt-0.5 text-sm text-[#1E2A44]/65">
                       {place.description}
                     </div>
