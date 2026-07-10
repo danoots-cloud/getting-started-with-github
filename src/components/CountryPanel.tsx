@@ -34,6 +34,9 @@ interface CountryPanelProps {
   onClose: () => void
   recommendedPlaceName?: string | null
   recommendationMonthName?: string | null
+  recommendationReasonLabel?: string | null
+  recommendationReason?: string | null
+  recommendationIsCountryFallback?: boolean
 }
 
 function Section({
