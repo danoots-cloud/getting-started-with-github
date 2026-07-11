@@ -1,41 +1,29 @@
-## What's happening
+## Fix: selected country color not updating on the world map
 
-The data is fine — every Canadian place has its correct coordinates in `src/data/places-climate.ts` (Banff `51.6, -116.05`, Vancouver `49.2, -123.1`, Toronto `43.7, -79.4`, Quebec City `46.8, -71.2`). The bug is in **`PlaceMap`**: it fits the map to the **whole country's bounding box**.
+### Diagnose
+Add a temporary `console.log` in the WorldMap selection `useEffect` recording `nextId`, whether the source is loaded (`map.isSourceLoaded('countries')`), and the feature state before/after. Click a country in the running preview via Playwright, capture the console output plus a screenshot, and confirm which of these is happening:
 
-Canada spans roughly 5,500 km east-to-west and 4,600 km north-to-south. In a ~500×310 px panel, the whole country is drawn at the same scale for every Canadian place. The 14 px marker dot **is** rendered at the correct lat/lng, but it lands somewhere inside a country that fills the frame — visually every map looks identical, and the pin is easy to miss because it's tiny relative to the country outline.
+1. Effect never runs (prop not updated).
+2. Effect runs but `setFeatureState` no-ops (source not loaded / wrong feature id).
+3. Feature state is set correctly but the fill layer isn't repainting (paint-expression / ordering issue).
 
-Same class of bug applies to Russia, USA, China, Brazil, Australia, Argentina, India, Kazakhstan, DRC, Algeria, Greenland — anywhere the country is much larger than a single point of interest can meaningfully sit in.
+### Likely fixes (apply whichever the diagnosis points to)
 
-Symptomatic small countries (Bahrain, Luxembourg, Singapore) look fine today for the same reason: their bounds are small enough that fitting the country IS a place-level view.
+- **If the feature id doesn't match**: geometries whose ISO code parses as `null` fall back to `id: x${idx}`. Countries with unusual ISO fields (e.g. Norway, France in some Natural Earth builds) resolve to a non-uppercase or missing code, so `selectedCode` (uppercase alpha-2) won't match the feature id. Fix by always uppercasing on both sides and, when `alpha2` is present, using it verbatim as the feature id (already done) — but also ensure the click handler passes the same casing back (`props.code`). Add a guard that logs a warning if `map.getFeatureState({source,id:nextId})` returns empty after `setFeatureState`.
 
-## Fix
+- **If the source isn't loaded yet at click time** (unlikely but possible on slow loads): wrap the `setFeatureState` calls in an `isSourceLoaded('countries')` check, and if false, queue them on the next `sourcedata` event for that source.
 
-Change `PlaceMap`'s framing rule from "always fit to country bounds" to a hybrid:
+- **If the paint expression isn't repainting**: MapLibre sometimes needs the fill-color expression to actually change to trigger a repaint. Since `buildFillExpression` doesn't reference `flagColors`, calling `setPaintProperty` with an identical expression can be a no-op. Fix by either (a) removing the redundant `setPaintProperty` call from the selection effect (feature-state changes alone should repaint), or (b) calling `map.triggerRepaint()` after `setFeatureState`.
 
-```text
-country_span_deg = max(bounds.width, bounds.height)  // in degrees
+- **If hover state is masking selected**: the `case` order already puts `selected` before `hover`, but confirm by explicitly clearing the hover feature-state on the newly selected id right after setting `selected: true`.
 
-if country_span_deg <= SMALL_COUNTRY_THRESHOLD (≈ 12°):
-    fit to country bounds          // small country → full outline + pin
-else:
-    fit to a place-centered window ≈ ±3.5° around the pin,
-    with the country outline still rendered as context
-```
+### Verify
+- Click a country in the preview; confirm the fill turns dark navy (`#0F172A`).
+- Close the panel; confirm the country returns to its previous orange/sand fill.
+- Open a different country; confirm the previous one resets and the new one turns navy.
+- Repeat with recommendation mode active — the selected country should still turn navy over the recommendation orange.
+- Remove the diagnostic `console.log` before finishing.
+- Run typecheck.
 
-Threshold values are tunable, but ~12° covers the UK, Italy, Japan, Germany, Vietnam, most of Europe as "small country" (full outline shown) and drops the US/Canada/Russia/etc. to the regional view. ±3.5° gives a window roughly 500–800 km wide — big enough to show a chunk of the country outline around the place, small enough that the marker reads clearly.
-
-The country outline stays highlighted in the accent color regardless — for a place in Canada you'll see the marker centered, a slice of Canada shaded around it, and neighboring US/Alaska greyed where they intrude into the viewport. That gives geographic context without hiding the pin.
-
-Also, make the marker itself slightly more legible on busy backgrounds: bump it to 16 px with a white ring and a soft drop shadow (already partly done — just increase contrast).
-
-## Files touched
-
-1. `src/components/PlaceMap.tsx` — replace the `fitBounds(countryBounds)` call with the hybrid framing logic; bump marker size/contrast.
-
-That's it. No changes to data, `CountryPanel`, `PlacePanel`, or the CSV import. The lookup is correct; only the map framing is wrong.
-
-## Out of scope
-
-- Interactive pan/zoom on the place map.
-- Multiple markers per view (e.g. all popular places in a country).
-- Switching map providers.
+### Files expected to change
+- `src/components/WorldMap.tsx` (only)

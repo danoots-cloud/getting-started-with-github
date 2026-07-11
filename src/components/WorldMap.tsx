@@ -311,18 +311,36 @@ function WorldMapInner({
     if (!map || !ready) return
 
     const nextId = selectedCountry ?? null
+    const srcLoaded = map.isSourceLoaded('countries')
+    console.log('[WorldMap] selection effect', { nextId, prev: selectedIdRef.current, srcLoaded })
 
-    if (selectedIdRef.current && selectedIdRef.current !== nextId) {
-      map.setFeatureState(
-        { source: 'countries', id: selectedIdRef.current },
-        { selected: false }
-      )
+    const applySelection = () => {
+      if (selectedIdRef.current && selectedIdRef.current !== nextId) {
+        map.setFeatureState(
+          { source: 'countries', id: selectedIdRef.current },
+          { selected: false }
+        )
+      }
+      if (nextId) {
+        map.setFeatureState({ source: 'countries', id: nextId }, { selected: true })
+        const fs = map.getFeatureState({ source: 'countries', id: nextId })
+        console.log('[WorldMap] featureState after set', nextId, fs)
+      }
+      selectedIdRef.current = nextId
+      map.triggerRepaint()
     }
 
-    if (nextId) {
-      map.setFeatureState({ source: 'countries', id: nextId }, { selected: true })
+    if (srcLoaded) {
+      applySelection()
+    } else {
+      const handler = (e: maplibregl.MapSourceDataEvent) => {
+        if (e.sourceId === 'countries' && map.isSourceLoaded('countries')) {
+          map.off('sourcedata', handler)
+          applySelection()
+        }
+      }
+      map.on('sourcedata', handler)
     }
-    selectedIdRef.current = nextId
 
     if (map.getLayer('countries-fill')) {
       map.setPaintProperty(
@@ -337,6 +355,7 @@ function WorldMapInner({
       )
     }
   }, [selectedCountry, flagColors, eligibleCountries, ready])
+
 
   return (
     <div className="relative w-full" style={{ aspectRatio: '16 / 10' }}>
