@@ -16,6 +16,7 @@ const COLOR_OCEAN = '#EAD9BE' // slightly warmer than page bg so land pops
 const COLOR_LAND_DATA = '#F2A65A' // countries with detailed data (warm sunset)
 const COLOR_LAND_EMPTY = '#D9C4A3' // countries without data (muted sand)
 const COLOR_LAND_HOVER = '#E86A5C' // hover accent
+const COLOR_LAND_SELECTED = '#0F172A' // country currently open in the side panel
 const COLOR_BORDER = '#1E2A44'
 
 interface WorldMapProps {
