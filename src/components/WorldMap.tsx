@@ -324,8 +324,10 @@ function WorldMapInner({
       if (nextId) {
         map.setFeatureState({ source: 'countries', id: nextId }, { selected: true })
         const fs = map.getFeatureState({ source: 'countries', id: nextId })
-        console.log('[WorldMap] featureState after set', nextId, fs)
+        const feats = map.querySourceFeatures('countries', { filter: ['==', ['get', 'code'], nextId] })
+        console.log('[WorldMap] featureState after set', nextId, fs, 'querySourceFeatures.count=', feats.length, 'ids=', feats.slice(0,3).map(f => f.id))
       }
+
       selectedIdRef.current = nextId
       map.triggerRepaint()
     }
