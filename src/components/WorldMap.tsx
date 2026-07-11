@@ -67,7 +67,7 @@ function buildFillExpression(
   flagColors: [string, string, string] | null,
   eligible?: Set<string> | null,
 ): FillExpr {
-  const selected = flagColors?.[0] ?? COLOR_LAND_HOVER
+  const selected = COLOR_LAND_SELECTED
   if (eligible) {
     const codes = Array.from(eligible)
     return [
