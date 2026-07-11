@@ -201,7 +201,9 @@ function WorldMapInner({
       map.addSource('countries', {
         type: 'geojson',
         data: geo,
+        promoteId: 'code',
       })
+
 
 
       // Fill layer — differentiates data-rich vs. empty countries, with hover + selected states.
