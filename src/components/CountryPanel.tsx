@@ -482,6 +482,7 @@ export function CountryPanel({ country, onClose, recommendedPlaceName, recommend
           country={country}
           onBack={() => setOpenPlace(null)}
           onClose={onClose}
+          onOpenAttraction={setOpenAttraction}
         />
       )}
 

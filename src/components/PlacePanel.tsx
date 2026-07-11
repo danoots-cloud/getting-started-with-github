@@ -1,18 +1,50 @@
-import { useEffect } from 'react'
-import { ArrowLeft, X, MapPin, Thermometer, CalendarHeart } from 'lucide-react'
+import { useEffect, useMemo, useState } from 'react'
+import { ArrowLeft, X, MapPin, Thermometer, CalendarHeart, Sparkles } from 'lucide-react'
 import type { CountryData, PopularPlace } from '@/data/countries'
 import { TemperatureChart } from '@/components/TemperatureChart'
 import { PlaceMap } from '@/components/PlaceMap'
 import { getPlaceClimate } from '@/data/places-climate'
+import { placeEntityIds } from '@/data/placeEntityIds'
+import { getAttractionsForPlace } from '@/data/placeAttractionRelationships'
+
+type Attraction = CountryData['attractions'][number]
 
 interface PlacePanelProps {
   place: PopularPlace
   country: CountryData
   onBack: () => void
   onClose: () => void
+  onOpenAttraction?: (attraction: Attraction) => void
 }
 
-export function PlacePanel({ place, country, onBack, onClose }: PlacePanelProps) {
+const NAME_NORM = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+const RELATIONSHIP_LABELS: Record<string, string> = {
+  in_place: 'In this area',
+  in_place_or_immediate_area: 'In this area',
+  existing_editorial_link: 'In this area',
+  nearby: 'Nearby',
+  nearby_or_day_trip: 'Nearby',
+  day_trip: 'Popular excursion',
+  researched_excursion_or_local_link: 'Popular excursion',
+  regional_excursion: 'Regional excursion',
+}
+
+const CATEGORY_ORDER: Record<string, number> = {
+  'In this area': 0,
+  Nearby: 1,
+  'Popular excursion': 2,
+  'Regional excursion': 3,
+}
+
+interface ResolvedHighlight {
+  attraction: Attraction
+  label: string | null
+  order: number
+  index: number
+}
+
+export function PlacePanel({ place, country, onBack, onClose, onOpenAttraction }: PlacePanelProps) {
   const [primary, , tertiary] = country.flagColors
   const accent = primary === '#FFFFFF' ? tertiary : primary
   const secondaryAccent = tertiary === '#FFFFFF' ? primary : tertiary
@@ -22,6 +54,32 @@ export function PlacePanel({ place, country, onBack, onClose }: PlacePanelProps)
   const temperatures = place.temperatures ?? lookup?.temperatures
   const precipitation = place.precipitation ?? lookup?.precipitation
 
+  const [expanded, setExpanded] = useState(false)
+
+  const highlights = useMemo<ResolvedHighlight[]>(() => {
+    const entityId = placeEntityIds[country.code]?.[NAME_NORM(place.name)]
+    if (!entityId) return []
+    const rels = getAttractionsForPlace(entityId)
+    if (!rels.length) return []
+    const attractionsById = new Map<string, Attraction>()
+    for (const a of country.attractions) {
+      if (a.entityId) attractionsById.set(a.entityId, a)
+    }
+    const seen = new Set<string>()
+    const list: ResolvedHighlight[] = []
+    rels.forEach((rel, i) => {
+      const attr = attractionsById.get(rel.attractionEntityId)
+      if (!attr) return
+      if (seen.has(rel.attractionEntityId)) return
+      seen.add(rel.attractionEntityId)
+      const label = RELATIONSHIP_LABELS[rel.relationshipType] ?? null
+      const order = label ? CATEGORY_ORDER[label] : 4
+      list.push({ attraction: attr, label, order, index: i })
+    })
+    list.sort((a, b) => a.order - b.order || a.index - b.index)
+    return list
+  }, [country.code, country.attractions, place.name])
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onBack()
@@ -29,6 +87,9 @@ export function PlacePanel({ place, country, onBack, onClose }: PlacePanelProps)
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [onBack])
+
+  const visibleHighlights = expanded ? highlights : highlights.slice(0, 4)
+  const hasMore = highlights.length > 4
 
   return (
     <div className="animate-slideIn absolute inset-0 z-10 flex h-full flex-col overflow-hidden bg-[#FBF5EC]">
@@ -103,6 +164,71 @@ export function PlacePanel({ place, country, onBack, onClose }: PlacePanelProps)
           </div>
         )}
 
+        {highlights.length > 0 && onOpenAttraction && (
+          <div className="mb-6">
+            <div className="mb-3 flex items-center gap-2">
+              <Sparkles className="h-5 w-5" style={{ color: accent }} />
+              <h3 className="text-lg font-semibold text-[#1E2A44]">Nearby highlights</h3>
+            </div>
+            <ul className="flex flex-col gap-2.5">
+              {visibleHighlights.map(({ attraction, label }) => (
+                <li key={attraction.entityId ?? attraction.name}>
+                  <button
+                    onClick={() => onOpenAttraction(attraction)}
+                    className="group flex w-full items-stretch gap-3 rounded-xl border border-[#1E2A44]/10 bg-white/60 p-2.5 text-left transition-colors hover:border-[#1E2A44]/20 hover:bg-white"
+                  >
+                    {attraction.imageUrl ? (
+                      <div className="h-16 w-24 shrink-0 overflow-hidden rounded-lg bg-[#1E2A44]/5 sm:h-20 sm:w-28">
+                        <img
+                          src={attraction.imageUrl}
+                          alt={attraction.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="h-16 w-24 shrink-0 rounded-lg sm:h-20 sm:w-28"
+                        style={{ backgroundColor: accent + '22' }}
+                      />
+                    )}
+                    <div className="flex min-w-0 flex-1 flex-col justify-center">
+                      <div className="flex items-center gap-2">
+                        <div className="truncate text-sm font-semibold text-[#1E2A44]">
+                          {attraction.name}
+                        </div>
+                        {label && (
+                          <span
+                            className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider"
+                            style={{
+                              backgroundColor: accent + '1F',
+                              color: '#1E2A44',
+                            }}
+                          >
+                            {label}
+                          </span>
+                        )}
+                      </div>
+                      {attraction.description && (
+                        <div className="mt-0.5 line-clamp-2 text-xs text-[#1E2A44]/70">
+                          {attraction.description}
+                        </div>
+                      )}
+                    </div>
+                  </button>
+                </li>
+              ))}
+            </ul>
+            {hasMore && (
+              <button
+                onClick={() => setExpanded((v) => !v)}
+                className="mt-3 text-xs font-semibold uppercase tracking-wider text-[#1E2A44]/70 hover:text-[#1E2A44]"
+              >
+                {expanded ? 'Show fewer highlights' : `Show all highlights (${highlights.length})`}
+              </button>
+            )}
+          </div>
+        )}
 
         {temperatures && temperatures.length > 0 ? (
           <div className="mb-6">
