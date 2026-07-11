@@ -201,8 +201,10 @@ function WorldMapInner({
       map.addSource('countries', {
         type: 'geojson',
         data: geo,
-        promoteId: 'id',
+        promoteId: 'code',
       })
+
+
 
       // Fill layer — differentiates data-rich vs. empty countries, with hover + selected states.
       map.addLayer({
@@ -311,18 +313,35 @@ function WorldMapInner({
     if (!map || !ready) return
 
     const nextId = selectedCountry ?? null
+    const srcLoaded = map.isSourceLoaded('countries')
 
-    if (selectedIdRef.current && selectedIdRef.current !== nextId) {
-      map.setFeatureState(
-        { source: 'countries', id: selectedIdRef.current },
-        { selected: false }
-      )
+    const applySelection = () => {
+      if (selectedIdRef.current && selectedIdRef.current !== nextId) {
+        map.setFeatureState(
+          { source: 'countries', id: selectedIdRef.current },
+          { selected: false }
+        )
+      }
+      if (nextId) {
+        map.setFeatureState({ source: 'countries', id: nextId }, { selected: true })
+      }
+
+
+      selectedIdRef.current = nextId
+      map.triggerRepaint()
     }
 
-    if (nextId) {
-      map.setFeatureState({ source: 'countries', id: nextId }, { selected: true })
+    if (srcLoaded) {
+      applySelection()
+    } else {
+      const handler = (e: maplibregl.MapSourceDataEvent) => {
+        if (e.sourceId === 'countries' && map.isSourceLoaded('countries')) {
+          map.off('sourcedata', handler)
+          applySelection()
+        }
+      }
+      map.on('sourcedata', handler)
     }
-    selectedIdRef.current = nextId
 
     if (map.getLayer('countries-fill')) {
       map.setPaintProperty(
@@ -337,6 +356,7 @@ function WorldMapInner({
       )
     }
   }, [selectedCountry, flagColors, eligibleCountries, ready])
+
 
   return (
     <div className="relative w-full" style={{ aspectRatio: '16 / 10' }}>
