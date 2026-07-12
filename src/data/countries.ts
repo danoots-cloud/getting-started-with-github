@@ -50,6 +50,7 @@ export interface CountryData {
   notableFacts: string[]
   popularSouvenirs: { name: string; description: string }[]
   flightTimeFromEWR: string
+  summary?: string
 }
 
 
@@ -57,6 +58,7 @@ export const countries: Record<string, CountryData> = {
   AT: {
     name: 'Austria',
     code: 'AT',
+    summary: 'Austria blends imperial cities, alpine scenery, and a deep musical tradition. Vienna offers palaces, cafés, museums, and concert halls, while Salzburg evokes Mozart and baroque Europe. Its food, culture, and everyday rhythms make the experience engaging beyond the major sights.',
     flagEmoji: '🇦🇹',
     flagColors: ['#ED2939', '#FFFFFF', '#ED2939'],
     continent: 'Europe',
@@ -153,6 +155,7 @@ export const countries: Record<string, CountryData> = {
   CH: {
     name: 'Switzerland',
     code: 'CH',
+    summary: 'Switzerland is defined by dramatic Alps, clear lakes, orderly cities, and exceptional rail journeys. Travelers can move easily between cosmopolitan Zürich and Geneva, medieval towns, vineyard terraces, and high-mountain resorts. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇨🇭',
     flagColors: ['#FF0000', '#FFFFFF', '#FF0000'],
     continent: 'Europe',
@@ -249,6 +252,7 @@ export const countries: Record<string, CountryData> = {
   CZ: {
     name: 'Czechia',
     code: 'CZ',
+    summary: 'Czechia combines one of Europe’s most beautiful capitals with storybook towns, castles, spa cities, and a lively beer culture. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
     flagEmoji: '🇨🇿',
     flagColors: ['#11457E', '#FFFFFF', '#D7141A'],
     continent: 'Europe',
@@ -350,6 +354,7 @@ export const countries: Record<string, CountryData> = {
   HU: {
     name: 'Hungary',
     code: 'HU',
+    summary: 'Hungary offers grand architecture, thermal bathing, distinctive cuisine, and a cultural identity shaped by Central Europe and the Danube. Budapest is the main draw, with hilltop views, cafés, markets, and historic baths. That mix gives travelers plenty to discover.',
     flagEmoji: '🇭🇺',
     flagColors: ['#CE2939', '#FFFFFF', '#477050'],
     continent: 'Europe',
@@ -444,6 +449,7 @@ export const countries: Record<string, CountryData> = {
   PL: {
     name: 'Poland',
     code: 'PL',
+    summary: 'Poland rewards travelers with historic cities, resilient cultural traditions, varied landscapes, and excellent value. Kraków, Warsaw, Gdańsk, and Wrocław each have a distinct atmosphere, while castles, forests, Baltic beaches, and the Tatra Mountains add variety.',
     flagEmoji: '🇵🇱',
     flagColors: ['#FFFFFF', '#DC143C', '#DC143C'],
     continent: 'Europe',
@@ -532,6 +538,7 @@ export const countries: Record<string, CountryData> = {
   AR: {
     name: 'Argentina',
     code: 'AR',
+    summary: 'Argentina stretches from subtropical waterfalls to Patagonian glaciers, with vast plains, high Andes, wine country, and a long Atlantic coast between them. Buenos Aires brings tango, architecture, nightlife, and outstanding food. That mix gives travelers plenty to discover.',
     flagEmoji: '🇦🇷',
     flagColors: ['#74ACDF', '#FFFFFF', '#F6B40E'],
     continent: 'South America',
@@ -629,6 +636,7 @@ export const countries: Record<string, CountryData> = {
   CL: {
     name: 'Chile',
     code: 'CL',
+    summary: 'Chile is a long, narrow country of extraordinary geographic variety, including the Atacama Desert, Andean peaks, Pacific coastline, wine valleys, forests, and Patagonian fjords. It invites travelers to slow down, explore the coast, and enjoy local culture alongside the scenery.',
     flagEmoji: '🇨🇱',
     flagColors: ['#0039A6', '#FFFFFF', '#D52B1E'],
     continent: 'South America',
@@ -722,6 +730,7 @@ export const countries: Record<string, CountryData> = {
   EC: {
     name: 'Ecuador',
     code: 'EC',
+    summary: 'Ecuador packs remarkable diversity into a relatively small area. Travelers can explore Andean cities and volcanoes, Amazon rainforest, Pacific beaches, colonial Quito, Indigenous markets, and cloud forests within short distances. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇪🇨',
     flagColors: ['#FFD100', '#003893', '#CE1126'],
     continent: 'South America',
@@ -818,6 +827,7 @@ export const countries: Record<string, CountryData> = {
   BO: {
     name: 'Bolivia',
     code: 'BO',
+    summary: 'Bolivia is one of South America’s most visually and culturally distinctive countries. Its highlights include the vast Uyuni salt flats, high-altitude cities, colorful lakes, Andean peaks, Amazonian lowlands, and strong Indigenous traditions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇴',
     flagColors: ['#D52B1E', '#F9E300', '#007934'],
     continent: 'South America',
@@ -916,6 +926,7 @@ export const countries: Record<string, CountryData> = {
   UY: {
     name: 'Uruguay',
     code: 'UY',
+    summary: 'Uruguay offers a relaxed version of South America, known for beaches, colonial towns, ranch country, and an easygoing social culture. Montevideo combines waterfront life, markets, music, and architecture, while Colonia del Sacramento preserves cobbled historic streets.',
     flagEmoji: '🇺🇾',
     flagColors: ['#0038A8', '#FFFFFF', '#FCD116'],
     continent: 'South America',
@@ -1006,6 +1017,7 @@ export const countries: Record<string, CountryData> = {
   JP: {
     name: 'Japan',
     code: 'JP',
+    summary: 'Japan pairs ancient traditions with highly modern cities in a way few countries can match. Visitors can experience temples, gardens, castles, hot springs, regional cuisine, and seasonal festivals alongside bullet trains, design, technology, and vibrant urban neighborhoods.',
     flagEmoji: '🇯🇵',
     flagColors: ['#BC002D', '#FFFFFF', '#BC002D'],
     continent: 'Asia',
@@ -1137,6 +1149,7 @@ export const countries: Record<string, CountryData> = {
   FR: {
     name: 'France',
     code: 'FR',
+    summary: 'France offers an unusually rich combination of art, history, food, landscapes, and regional identity. Paris remains a global cultural capital, but Provence, Normandy, Brittany, Alsace, the Loire Valley, the Alps, and the Mediterranean coast each feel distinct.',
     flagEmoji: '🇫🇷',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'Europe',
@@ -1275,6 +1288,7 @@ export const countries: Record<string, CountryData> = {
   IT: {
     name: 'Italy',
     code: 'IT',
+    summary: 'Italy’s appeal comes from the density of its art, history, food, and beautiful landscapes. Rome, Florence, Venice, and Milan anchor the experience, but smaller towns, archaeological sites, islands, lakes, vineyards, and coastlines are equally memorable.',
     flagEmoji: '🇮🇹',
     flagColors: ['#009246', '#FFFFFF', '#CE2B37'],
     continent: 'Europe',
@@ -1415,6 +1429,7 @@ export const countries: Record<string, CountryData> = {
   BR: {
     name: 'Brazil',
     code: 'BR',
+    summary: 'Brazil is a vast, energetic country shaped by rainforest, beaches, music, diverse cultures, and some of the world’s most recognizable cities and natural wonders. It invites travelers to slow down, explore the coast, and enjoy local culture alongside the scenery.',
     flagEmoji: '🇧🇷',
     flagColors: ['#009C3B', '#FFDF00', '#002776'],
     continent: 'South America',
@@ -1554,6 +1569,7 @@ export const countries: Record<string, CountryData> = {
   AU: {
     name: 'Australia',
     code: 'AU',
+    summary: 'Australia combines sophisticated coastal cities with vast wilderness, distinctive wildlife, and some of the planet’s most unusual landscapes. Sydney, Melbourne, and Brisbane offer food, arts, and beaches, while the Great Barrier Reef, Outback, Tasmania, tropical north, and national parks provide adventure.',
     flagEmoji: '🇦🇺',
     flagColors: ['#00008B', '#FFFFFF', '#FF0000'],
     continent: 'Oceania',
@@ -1694,6 +1710,7 @@ export const countries: Record<string, CountryData> = {
   EG: {
     name: 'Egypt',
     code: 'EG',
+    summary: 'Egypt is defined by the Nile and an ancient civilization whose monuments remain among the world’s most extraordinary. Cairo, Giza, Luxor, and Aswan reveal pyramids, temples, tombs, museums, and living urban culture. That mix gives travelers plenty to discover.',
     flagEmoji: '🇪🇬',
     flagColors: ['#CE1126', '#FFFFFF', '#000000'],
     continent: 'Africa',
@@ -1823,6 +1840,7 @@ export const countries: Record<string, CountryData> = {
   MX: {
     name: 'Mexico',
     code: 'MX',
+    summary: 'Mexico is exceptionally diverse, combining Indigenous civilizations, colonial cities, major modern centers, beaches, deserts, mountains, forests, and one of the world’s great cuisines. Mexico City, Oaxaca, Yucatán, Baja California, Chiapas, and the Caribbean coast each offer distinct experiences.',
     flagEmoji: '🇲🇽',
     flagColors: ['#006341', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -1943,6 +1961,7 @@ export const countries: Record<string, CountryData> = {
   IN: {
     name: 'India',
     code: 'IN',
+    summary: 'India is a vast, complex country of extraordinary cultural, religious, linguistic, and geographic diversity. Travelers encounter monumental architecture, sacred cities, Himalayan landscapes, tropical coasts, deserts, wildlife reserves, and intense urban life. That mix gives travelers plenty to discover.',
     flagEmoji: '🇮🇳',
     flagColors: ['#FF9933', '#FFFFFF', '#138808'],
     continent: 'Asia',
@@ -2075,6 +2094,7 @@ export const countries: Record<string, CountryData> = {
   GR: {
     name: 'Greece',
     code: 'GR',
+    summary: 'Greece combines ancient history, island life, mountain scenery, and a food culture built around simple, seasonal ingredients. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
     flagEmoji: '🇬🇷',
     flagColors: ['#0D5EAF', '#FFFFFF', '#0D5EAF'],
     continent: 'Europe',
@@ -2207,6 +2227,7 @@ export const countries: Record<string, CountryData> = {
   TH: {
     name: 'Thailand',
     code: 'TH',
+    summary: 'Thailand is known for welcoming hospitality, flavorful cuisine, ornate temples, tropical islands, and an easy mix of cultural depth and travel convenience. Bangkok provides markets, nightlife, and historic sites, while Chiang Mai, the northern mountains, southern beaches, and national parks offer contrasting experiences.',
     flagEmoji: '🇹🇭',
     flagColors: ['#A51931', '#F4F5F8', '#2D2A4A'],
     continent: 'Asia',
@@ -2344,6 +2365,7 @@ export const countries: Record<string, CountryData> = {
   ZA: {
     name: 'South Africa',
     code: 'ZA',
+    summary: 'South Africa offers an exceptional mix of wildlife, cities, coastlines, mountains, wine regions, and layered history. Cape Town, Johannesburg, the Garden Route, Kruger National Park, and the Drakensberg provide very different experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇿🇦',
     flagColors: ['#007749', '#FFB81C', '#000000'],
     continent: 'Africa',
@@ -2478,6 +2500,7 @@ export const countries: Record<string, CountryData> = {
   ES: {
     name: 'Spain',
     code: 'ES',
+    summary: 'Spain is a country of strong regional identities, celebrated for architecture, food, art, festivals, beaches, and lively public life. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
     flagEmoji: '🇪🇸',
     flagColors: ['#AA151B', '#F1BF00', '#AA151B'],
     continent: 'Europe',
@@ -2611,6 +2634,7 @@ export const countries: Record<string, CountryData> = {
   NZ: {
     name: 'New Zealand',
     code: 'NZ',
+    summary: 'New Zealand is prized for dramatic landscapes that are easy to experience outdoors, including mountains, fjords, beaches, geothermal areas, forests, and lakes. Auckland and Wellington provide urban culture, while the South Island delivers iconic scenery and adventure.',
     flagEmoji: '🇳🇿',
     flagColors: ['#00247D', '#CC142B', '#FFFFFF'],
     continent: 'Oceania',
@@ -2740,6 +2764,7 @@ export const countries: Record<string, CountryData> = {
   PE: {
     name: 'Peru',
     code: 'PE',
+    summary: 'Peru combines monumental archaeology, living Indigenous traditions, dramatic Andean landscapes, Amazon rainforest, desert coast, and one of Latin America’s most acclaimed food cultures. It is especially appealing to travelers who enjoy coastal scenery, local culture, good food, and time outdoors.',
     flagEmoji: '🇵🇪',
     flagColors: ['#D91023', '#FFFFFF', '#D91023'],
     continent: 'South America',
@@ -2876,6 +2901,7 @@ export const countries: Record<string, CountryData> = {
   IS: {
     name: 'Iceland',
     code: 'IS',
+    summary: 'Iceland’s appeal lies in raw volcanic scenery, powerful waterfalls, glaciers, hot springs, black-sand beaches, and a small, creative capital. Road trips reveal landscapes that change quickly and often feel otherworldly. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇮🇸',
     flagColors: ['#003897', '#FFFFFF', '#D72828'],
     continent: 'Europe',
@@ -3000,6 +3026,7 @@ export const countries: Record<string, CountryData> = {
   KR: {
     name: 'South Korea',
     code: 'KR',
+    summary: 'South Korea blends deeply rooted traditions with fast-moving modern culture. Seoul offers palaces, markets, design, nightlife, and technology, while Busan, historic Gyeongju, mountain temples, coastal villages, and Jeju Island reveal other sides of the country.',
     flagEmoji: '🇰🇷',
     flagColors: ['#CD2E3A', '#0047A0', '#FFFFFF'],
     continent: 'Asia',
@@ -3131,6 +3158,7 @@ export const countries: Record<string, CountryData> = {
   MA: {
     name: 'Morocco',
     code: 'MA',
+    summary: 'Morocco offers a vivid mix of historic cities, desert landscapes, mountains, Atlantic coast, markets, gardens, and richly layered architecture. Marrakech, Fez, Chefchaouen, the Sahara, and the High Atlas provide contrasting experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇲🇦',
     flagColors: ['#C1272D', '#006233', '#C1272D'],
     continent: 'Africa',
@@ -3264,6 +3292,7 @@ export const countries: Record<string, CountryData> = {
   NO: {
     name: 'Norway',
     code: 'NO',
+    summary: 'Norway is celebrated for fjords, mountains, Arctic landscapes, scenic roads, and an outdoor culture closely tied to nature. Oslo and Bergen provide museums, architecture, and food, while the Lofoten Islands, western fjords, and far north offer unforgettable scenery.',
     flagEmoji: '🇳🇴',
     flagColors: ['#EF2B2D', '#002868', '#FFFFFF'],
     continent: 'Europe',
@@ -3397,6 +3426,7 @@ export const countries: Record<string, CountryData> = {
   CN: {
     name: 'China',
     code: 'CN',
+    summary: 'China offers an immense range of history, landscapes, cuisines, and regional cultures. Beijing, Shanghai, Xi’an, Chengdu, and Hong Kong reveal different faces of urban China, while the Great Wall, karst mountains, deserts, rice terraces, sacred peaks, and ancient towns show its geographic variety.',
     flagEmoji: '🇨🇳',
     flagColors: ['#DE2910', '#FFDE00', '#DE2910'],
     continent: 'Asia',
@@ -3530,6 +3560,7 @@ export const countries: Record<string, CountryData> = {
   CO: {
     name: 'Colombia',
     code: 'CO',
+    summary: 'Colombia combines Caribbean beaches, Andean cities, coffee landscapes, rainforest, colonial towns, and an energetic cultural scene. Bogotá, Medellín, Cartagena, the Coffee Region, and the Sierra Nevada each feel distinct. Travelers come for close encounters with nature, varied landscapes, and rewarding outdoor adventures.',
     flagEmoji: '🇨🇴',
     flagColors: ['#FCD116', '#003893', '#CE1126'],
     continent: 'South America',
@@ -3656,6 +3687,7 @@ export const countries: Record<string, CountryData> = {
   TR: {
     name: 'Turkey',
     code: 'TR',
+    summary: 'Turkey sits at the meeting point of Europe and Asia, offering ancient sites, layered cities, Mediterranean coasts, dramatic landscapes, and a celebrated food culture. Istanbul is the cultural heart, while Cappadocia, Ephesus, the Turquoise Coast, and southeastern cities reveal different histories and environments.',
     flagEmoji: '🇹🇷',
     flagColors: ['#E30A17', '#FFFFFF', '#E30A17'],
     continent: 'Europe/Asia',
@@ -3791,6 +3823,7 @@ export const countries: Record<string, CountryData> = {
   GB: {
     name: 'United Kingdom',
     code: 'GB',
+    summary: 'The United Kingdom combines historic cities, literary and musical heritage, varied landscapes, and four nations with distinct identities. London offers unmatched museums and neighborhoods, while Scotland, Wales, Northern Ireland, and regional England provide castles, coastlines, mountains, villages, and industrial history.',
     flagEmoji: '🇬🇧',
     flagColors: ['#012169', '#FFFFFF', '#C8102E'],
     continent: 'Europe',
@@ -3938,6 +3971,7 @@ export const countries: Record<string, CountryData> = {
   DE: {
     name: 'Germany',
     code: 'DE',
+    summary: 'Germany offers historic cities, castles, forests, river valleys, modern design, and strong regional cultures. Berlin, Munich, Hamburg, Cologne, and Dresden differ greatly in atmosphere, while Bavaria, the Rhine, the Black Forest, and Baltic coast add scenic variety.',
     flagEmoji: '🇩🇪',
     flagColors: ['#000000', '#DD0000', '#FFCE00'],
     continent: 'Europe',
@@ -4079,6 +4113,7 @@ export const countries: Record<string, CountryData> = {
   PT: {
     name: 'Portugal',
     code: 'PT',
+    summary: 'Portugal combines historic cities, Atlantic beaches, vineyards, tiled architecture, and a relaxed pace. Lisbon and Porto are the main urban draws, while the Algarve, Douro Valley, Alentejo, Madeira, and the Azores offer very different landscapes.',
     flagEmoji: '🇵🇹',
     flagColors: ['#006600', '#FF0000', '#FFCC00'],
     continent: 'Europe',
@@ -4219,6 +4254,7 @@ export const countries: Record<string, CountryData> = {
   JM: {
     name: 'Jamaica',
     code: 'JM',
+    summary: 'Jamaica is known for music, beaches, mountain scenery, waterfalls, and a cultural influence far larger than its size. Beyond the resorts, Kingston, the Blue Mountains, rural communities, and the north coast reveal the island’s history and creative energy.',
     flagEmoji: '🇯🇲',
     flagColors: ['#009B3A', '#FED100', '#000000'],
     continent: 'North America',
@@ -4346,6 +4382,7 @@ export const countries: Record<string, CountryData> = {
   VN: {
     name: 'Vietnam',
     code: 'VN',
+    summary: 'Vietnam stretches from northern mountains and rice terraces to historic cities, river deltas, caves, and tropical beaches. Hanoi, Ho Chi Minh City, Hội An, Huế, and Ha Long Bay each offer distinct experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇻🇳',
     flagColors: ['#DA251D', '#FFFF00', '#DA251D'],
     continent: 'Asia',
@@ -4471,6 +4508,7 @@ export const countries: Record<string, CountryData> = {
   CR: {
     name: 'Costa Rica',
     code: 'CR',
+    summary: 'Costa Rica is a leader in nature-focused travel, with rainforests, volcanoes, cloud forests, beaches, and exceptional biodiversity within a compact area. National parks protect wildlife ranging from sloths and monkeys to sea turtles and tropical birds.',
     flagEmoji: '🇨🇷',
     flagColors: ['#002B7F', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -4600,6 +4638,7 @@ export const countries: Record<string, CountryData> = {
   KE: {
     name: 'Kenya',
     code: 'KE',
+    summary: 'Kenya is one of Africa’s classic safari destinations, known for abundant wildlife, dramatic savannas, highlands, Indian Ocean beaches, and diverse cultures. The Maasai Mara, Amboseli, Mount Kenya, and coastal towns offer contrasting experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇪',
     flagColors: ['#000000', '#BB0000', '#006600'],
     continent: 'Africa',
@@ -4735,6 +4774,7 @@ export const countries: Record<string, CountryData> = {
   IE: {
     name: 'Ireland',
     code: 'IE',
+    summary: 'Ireland combines green landscapes, rugged coastline, historic towns, literary tradition, music, and a famously social pub culture. Dublin provides museums and lively neighborhoods, while the west coast, islands, castles, and small villages offer scenic drives and walks.',
     flagEmoji: '🇮🇪',
     flagColors: ['#169B62', '#FFFFFF', '#FF883E'],
     continent: 'Europe',
@@ -4870,6 +4910,7 @@ export const countries: Record<string, CountryData> = {
   ID: {
     name: 'Indonesia',
     code: 'ID',
+    summary: 'Indonesia is a vast archipelago of volcanoes, rainforests, beaches, coral reefs, and hundreds of distinct cultures. Bali is the best-known destination, but Java, Sumatra, Komodo, Sulawesi, and eastern islands offer temples, wildlife, diving, hiking, and traditional communities.',
     flagEmoji: '🇮🇩',
     flagColors: ['#FF0000', '#FFFFFF', '#FF0000'],
     continent: 'Asia',
@@ -5002,6 +5043,7 @@ export const countries: Record<string, CountryData> = {
   CA: {
     name: 'Canada',
     code: 'CA',
+    summary: 'Canada offers immense natural landscapes alongside multicultural cities and a strong outdoor culture. Travelers can experience the Rocky Mountains, Atlantic villages, Arctic tundra, Pacific rainforest, lakes, and national parks, as well as Toronto, Montréal, Vancouver, and Québec City.',
     flagEmoji: '🇨🇦',
     flagColors: ['#FF0000', '#FFFFFF', '#FF0000'],
     continent: 'North America',
@@ -5118,6 +5160,7 @@ export const countries: Record<string, CountryData> = {
   GL: {
     name: 'Greenland',
     code: 'GL',
+    summary: 'Greenland is an Arctic destination of vast ice, rugged mountains, colorful coastal settlements, and a culture shaped by Inuit traditions and the sea. Visitors come for glaciers, fjords, dog sledding, hiking, whales, and northern lights.',
     flagEmoji: '🇬🇱',
     flagColors: ['#FFFFFF', '#D00C33', '#D00C33'],
     continent: 'North America',
@@ -5212,6 +5255,7 @@ export const countries: Record<string, CountryData> = {
   VE: {
     name: 'Venezuela',
     code: 'VE',
+    summary: 'Venezuela contains extraordinary natural landscapes, including Angel Falls, Caribbean beaches, the Andes, the Orinoco Delta, and the tabletop mountains of Canaima. Its cities, music, cuisine, and regional cultures add depth to the scenery. That mix gives travelers plenty to discover.',
     flagEmoji: '🇻🇪',
     flagColors: ['#FCD116', '#00247D', '#CF142B'],
     continent: 'South America',
@@ -5313,6 +5357,7 @@ export const countries: Record<string, CountryData> = {
   CU: {
     name: 'Cuba',
     code: 'CU',
+    summary: 'Cuba is distinctive for its preserved historic cities, music, dance, beaches, classic cars, and revolutionary history. Havana’s architecture and street life are central, while Trinidad, Viñales, Santiago de Cuba, and the northern cays show different sides of the island.',
     flagEmoji: '🇨🇺',
     flagColors: ['#002A8F', '#FFFFFF', '#CF142B'],
     continent: 'North America',
@@ -5416,6 +5461,7 @@ export const countries: Record<string, CountryData> = {
   DO: {
     name: 'Dominican Republic',
     code: 'DO',
+    summary: 'The Dominican Republic combines long Caribbean beaches with mountains, colonial history, lively cities, and a strong music culture. Punta Cana is the best-known resort area, but Santo Domingo, Samaná, the Cordillera Central, and smaller coastal towns broaden the experience.',
     flagEmoji: '🇩🇴',
     flagColors: ['#002D62', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -5510,6 +5556,7 @@ export const countries: Record<string, CountryData> = {
   DZ: {
     name: 'Algeria',
     code: 'DZ',
+    summary: 'Algeria is Africa’s largest country by area, offering Roman ruins, Ottoman architecture, Mediterranean cities, mountain landscapes, and the immense Sahara. Algiers, Constantine, Timgad, Ghardaïa, and desert oases reveal layers of history and culture. That mix gives travelers plenty to discover.',
     flagEmoji: '🇩🇿',
     flagColors: ['#006233', '#FFFFFF', '#D21034'],
     continent: 'Africa',
@@ -5604,6 +5651,7 @@ export const countries: Record<string, CountryData> = {
   SE: {
     name: 'Sweden',
     code: 'SE',
+    summary: 'Sweden pairs stylish cities, design, and modern culture with forests, lakes, islands, and an accessible outdoor lifestyle. Stockholm spreads across an archipelago, while Gothenburg, Malmö, Lapland, and the countryside offer different rhythms. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇪',
     flagColors: ['#006AA7', '#FECC00', '#006AA7'],
     continent: 'Europe',
@@ -5706,6 +5754,7 @@ export const countries: Record<string, CountryData> = {
   FI: {
     name: 'Finland',
     code: 'FI',
+    summary: 'Finland is a country of forests, lakes, saunas, clean design, and strong seasonal contrasts. Helsinki offers architecture, islands, and contemporary culture, while Lapland draws visitors for northern lights, winter activities, and Arctic landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇫🇮',
     flagColors: ['#FFFFFF', '#003580', '#003580'],
     continent: 'Europe',
@@ -5803,6 +5852,7 @@ export const countries: Record<string, CountryData> = {
   NL: {
     name: 'Netherlands',
     code: 'NL',
+    summary: 'The Netherlands is known for canals, cycling, art, innovative design, and compact cities that are easy to explore. Amsterdam is the main draw, but Rotterdam, Utrecht, Delft, Haarlem, and the countryside offer different architecture and atmosphere.',
     flagEmoji: '🇳🇱',
     flagColors: ['#AE1C28', '#FFFFFF', '#21468B'],
     continent: 'Europe',
@@ -5917,6 +5967,7 @@ export const countries: Record<string, CountryData> = {
   SA: {
     name: 'Saudi Arabia',
     code: 'SA',
+    summary: 'Saudi Arabia combines deep Islamic history, rapidly changing cities, desert landscapes, Red Sea coast, and important archaeological sites. Riyadh and Jeddah show different urban identities, while AlUla, the Empty Quarter, mountain regions, and coral reefs reveal surprising natural diversity.',
     flagEmoji: '🇸🇦',
     flagColors: ['#006C35', '#FFFFFF', '#006C35'],
     continent: 'Asia',
@@ -6011,6 +6062,7 @@ export const countries: Record<string, CountryData> = {
   KH: {
     name: 'Cambodia',
     code: 'KH',
+    summary: 'Cambodia is best known for Angkor’s extraordinary temple complex, but the country also offers river landscapes, colonial towns, islands, markets, and a resilient contemporary culture. Phnom Penh provides history and urban energy, while Battambang, Kampot, and the southern coast add quieter experiences.',
     flagEmoji: '🇰🇭',
     flagColors: ['#032EA1', '#E00025', '#032EA1'],
     continent: 'Asia',
@@ -6115,6 +6167,7 @@ export const countries: Record<string, CountryData> = {
   LK: {
     name: 'Sri Lanka',
     code: 'LK',
+    summary: 'Sri Lanka combines ancient cities, Buddhist temples, tea-covered highlands, wildlife reserves, tropical beaches, and flavorful cuisine within a compact island. Colombo, Kandy, Galle, Sigiriya, and the hill country offer distinct experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇱🇰',
     flagColors: ['#8D2029', '#FFBE29', '#005641'],
     continent: 'Asia',
@@ -6215,6 +6268,7 @@ export const countries: Record<string, CountryData> = {
   US: {
     name: 'United States',
     code: 'US',
+    summary: 'The United States spans an enormous range of landscapes, cultures, cities, and regional identities. Visitors can explore major urban centers, national parks, deserts, mountains, beaches, music capitals, historic towns, and distinctive food traditions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇺🇸',
     flagColors: ['#3C3B6E', '#FFFFFF', '#B22234'],
     continent: 'North America',
@@ -6326,6 +6380,7 @@ export const countries: Record<string, CountryData> = {
   PH: {
     name: 'Philippines',
     code: 'PH',
+    summary: 'The Philippines is an archipelago of tropical islands, coral reefs, mountains, rice terraces, and lively cities. Palawan, the Visayas, Luzon, and Mindanao offer very different landscapes and cultures. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇵🇭',
     flagColors: ['#0038A8', '#FFFFFF', '#CE1126'],
     continent: 'Asia',
@@ -6429,6 +6484,7 @@ export const countries: Record<string, CountryData> = {
   AE: {
     name: 'United Arab Emirates',
     code: 'AE',
+    summary: 'The United Arab Emirates is known for futuristic cities, ambitious architecture, luxury hotels, desert experiences, and major cultural attractions. Dubai offers spectacle, shopping, and beaches, while Abu Dhabi adds museums, mosques, and a more measured pace.',
     flagEmoji: '🇦🇪',
     flagColors: ['#00732F', '#FFFFFF', '#FF0000'],
     continent: 'Asia',
@@ -6534,6 +6590,7 @@ export const countries: Record<string, CountryData> = {
   HR: {
     name: 'Croatia',
     code: 'HR',
+    summary: 'Croatia combines a long Adriatic coastline with historic stone towns, islands, national parks, and a relaxed Mediterranean culture. Dubrovnik and Split are the best-known cities, but Istria, Zagreb, inland villages, and quieter islands add variety.',
     flagEmoji: '🇭🇷',
     flagColors: ['#FF0000', '#FFFFFF', '#171796'],
     continent: 'Europe',
@@ -6632,6 +6689,7 @@ export const countries: Record<string, CountryData> = {
   SG: {
     name: 'Singapore',
     code: 'SG',
+    summary: 'Singapore is a compact city-state where futuristic architecture, efficient transport, multicultural neighborhoods, gardens, and exceptional food come together. Hawker centers are as important as luxury restaurants, while Chinatown, Little India, Kampong Glam, and the waterfront show different cultural layers.',
     flagEmoji: '🇸🇬',
     flagColors: ['#EF3340', '#FFFFFF', '#EF3340'],
     continent: 'Asia',
@@ -6733,6 +6791,7 @@ export const countries: Record<string, CountryData> = {
   NP: {
     name: 'Nepal',
     code: 'NP',
+    summary: 'Nepal is defined by the Himalayas, but its appeal extends beyond trekking. Kathmandu Valley offers temples, palaces, and layered urban history, while Pokhara, Chitwan, and rural villages provide lakes, wildlife, and cultural experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇳🇵',
     flagColors: ['#DC143C', '#003893', '#DC143C'],
     continent: 'Asia',
@@ -6831,6 +6890,7 @@ export const countries: Record<string, CountryData> = {
   TZ: {
     name: 'Tanzania',
     code: 'TZ',
+    summary: 'Tanzania combines world-class wildlife, immense landscapes, Indian Ocean beaches, and rich cultural diversity. The Serengeti, Ngorongoro Crater, Mount Kilimanjaro, and Zanzibar are major highlights, but lesser-known parks and coastal towns also reward exploration. That mix gives travelers plenty to discover.',
     flagEmoji: '🇹🇿',
     flagColors: ['#1EB53A', '#000000', '#00A3DD'],
     continent: 'Africa',
@@ -6933,6 +6993,7 @@ export const countries: Record<string, CountryData> = {
   FJ: {
     name: 'Fiji',
     code: 'FJ',
+    summary: 'Fiji is an island nation of coral reefs, tropical forests, beaches, and a culture known for warmth and community. Resort islands provide easy relaxation, while larger islands, villages, waterfalls, and inland landscapes offer deeper experiences.',
     flagEmoji: '🇫🇯',
     flagColors: ['#68BFE5', '#FFFFFF', '#D21034'],
     continent: 'Oceania',
@@ -7027,6 +7088,7 @@ export const countries: Record<string, CountryData> = {
   BZ: {
     name: 'Belize',
     code: 'BZ',
+    summary: 'Belize combines Caribbean culture, Maya archaeology, rainforest, wildlife, and one of the world’s great barrier reefs. English is widely spoken, making travel relatively straightforward. It invites travelers to slow down, explore the coast, and enjoy local culture alongside the scenery.',
     flagEmoji: '🇧🇿',
     flagColors: ['#003F87', '#CE1126', '#FFFFFF'],
     continent: 'North America',
@@ -7123,6 +7185,7 @@ export const countries: Record<string, CountryData> = {
   GT: {
     name: 'Guatemala',
     code: 'GT',
+    summary: 'Guatemala offers dramatic volcanoes, highland lakes, Maya heritage, colonial architecture, markets, and rainforest ruins. Antigua and Lake Atitlán are major highlights, while Tikal reveals one of the ancient Maya world’s great cities. That mix gives travelers plenty to discover.',
     flagEmoji: '🇬🇹',
     flagColors: ['#4997D0', '#FFFFFF', '#4997D0'],
     continent: 'North America',
@@ -7215,6 +7278,7 @@ export const countries: Record<string, CountryData> = {
   SV: {
     name: 'El Salvador',
     code: 'SV',
+    summary: 'El Salvador is Central America’s smallest mainland country, but it offers volcanic landscapes, Pacific surf beaches, coffee regions, colorful towns, and Maya sites within easy reach. San Salvador provides museums and food, while the Ruta de las Flores and coast are major draws.',
     flagEmoji: '🇸🇻',
     flagColors: ['#0F47AF', '#FFFFFF', '#0F47AF'],
     continent: 'North America',
@@ -7301,6 +7365,7 @@ export const countries: Record<string, CountryData> = {
   HN: {
     name: 'Honduras',
     code: 'HN',
+    summary: 'Honduras combines Caribbean islands, coral reefs, Maya archaeology, cloud forests, and less-visited colonial towns. The Bay Islands are renowned for diving, while Copán preserves exceptional sculptures and ruins. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇭🇳',
     flagColors: ['#0073CF', '#FFFFFF', '#0073CF'],
     continent: 'North America',
@@ -7392,6 +7457,7 @@ export const countries: Record<string, CountryData> = {
   NI: {
     name: 'Nicaragua',
     code: 'NI',
+    summary: 'Nicaragua is a land of volcanoes, lakes, colonial cities, Pacific beaches, and Caribbean culture. Granada and León offer architecture and history, while Ometepe, surf towns, coffee regions, and nature reserves provide outdoor adventure. That mix gives travelers plenty to discover.',
     flagEmoji: '🇳🇮',
     flagColors: ['#0067C6', '#FFFFFF', '#0067C6'],
     continent: 'North America',
@@ -7486,6 +7552,7 @@ export const countries: Record<string, CountryData> = {
   PA: {
     name: 'Panama',
     code: 'PA',
+    summary: 'Panama is more than its famous canal, offering tropical islands, rainforests, beaches, highlands, Indigenous communities, and a modern capital. Panama City combines skyline, history, and nightlife, while Bocas del Toro, San Blas, Boquete, and Darién reveal very different environments.',
     flagEmoji: '🇵🇦',
     flagColors: ['#005293', '#FFFFFF', '#D21034'],
     continent: 'North America',
@@ -7580,6 +7647,7 @@ export const countries: Record<string, CountryData> = {
   RU: {
     name: 'Russia',
     code: 'RU',
+    summary: 'Russia spans eleven time zones and contains monumental cities, vast wilderness, deep cultural traditions, and extraordinary geographic scale. Moscow and Saint Petersburg hold major museums, architecture, and history, while Siberia, the Caucasus, Lake Baikal, and the Arctic reveal other worlds.',
     flagEmoji: '🇷🇺',
     flagColors: ['#FFFFFF', '#0039A6', '#D52B1E'],
     continent: 'Europe/Asia',
@@ -7674,6 +7742,7 @@ export const countries: Record<string, CountryData> = {
   DK: {
     name: 'Denmark',
     code: 'DK',
+    summary: 'Denmark combines appealing cities, coastal landscapes, design, cycling, and a strong everyday food culture. Copenhagen is the main attraction, with architecture, canals, museums, and restaurants, while Aarhus, castles, islands, and seaside towns broaden the picture.',
     flagEmoji: '🇩🇰',
     flagColors: ['#C8102E', '#FFFFFF', '#C8102E'],
     continent: 'Europe',
@@ -7772,6 +7841,7 @@ export const countries: Record<string, CountryData> = {
   BE: {
     name: 'Belgium',
     code: 'BE',
+    summary: 'Belgium is small but culturally dense, with medieval cities, Art Nouveau architecture, major art collections, beer, chocolate, and distinctive regional identities. Brussels, Bruges, Ghent, Antwerp, and Liège each offer different experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇪',
     flagColors: ['#000000', '#FFD90C', '#F31830'],
     continent: 'Europe',
@@ -7869,6 +7939,7 @@ export const countries: Record<string, CountryData> = {
   GY: {
     name: 'Guyana',
     code: 'GY',
+    summary: 'Guyana is an English-speaking South American country known for immense rainforest, powerful rivers, wildlife, and dramatic Kaieteur Falls. Georgetown reflects Caribbean and colonial influences, while the interior offers remote eco-lodges and Indigenous communities. That mix gives travelers plenty to discover.',
     flagEmoji: '🇬🇾',
     flagColors: ['#009E49', '#FCD116', '#CE1126'],
     continent: 'South America',
@@ -7960,6 +8031,7 @@ export const countries: Record<string, CountryData> = {
   PY: {
     name: 'Paraguay',
     code: 'PY',
+    summary: 'Paraguay is a landlocked country with a strong bilingual culture, subtropical landscapes, historic missions, and a quieter travel scene than its neighbors. Asunción offers museums, markets, and riverfront life, while the Chaco, Jesuit ruins, and rural towns reveal different histories and environments.',
     flagEmoji: '🇵🇾',
     flagColors: ['#D52B1E', '#FFFFFF', '#0038A8'],
     continent: 'South America',
@@ -8045,6 +8117,7 @@ export const countries: Record<string, CountryData> = {
   SR: {
     name: 'Suriname',
     code: 'SR',
+    summary: 'Suriname blends South American rainforest with Dutch colonial heritage and remarkable ethnic and religious diversity. Paramaribo is known for wooden architecture, markets, and multicultural food, while the interior offers rivers, wildlife, and Maroon and Indigenous communities.',
     flagEmoji: '🇸🇷',
     flagColors: ['#377E3F', '#FFFFFF', '#B40A2D'],
     continent: 'South America',
@@ -8131,6 +8204,7 @@ export const countries: Record<string, CountryData> = {
   NG: {
     name: 'Nigeria',
     code: 'NG',
+    summary: 'Nigeria is Africa’s most populous country and a major center of music, film, fashion, food, and entrepreneurship. Lagos delivers intense urban energy, while Abuja, historic cities, national parks, beaches, and diverse regional cultures reveal a broader nation.',
     flagEmoji: '🇳🇬',
     flagColors: ['#008751', '#FFFFFF', '#008751'],
     continent: 'Africa',
@@ -8219,6 +8293,7 @@ export const countries: Record<string, CountryData> = {
   ET: {
     name: 'Ethiopia',
     code: 'ET',
+    summary: 'Ethiopia has one of Africa’s deepest historical traditions, with ancient churches, castles, rock-hewn sites, highland landscapes, and distinctive food and coffee culture. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
     flagEmoji: '🇪🇹',
     flagColors: ['#078930', '#FCDD09', '#DA1212'],
     continent: 'Africa',
@@ -8315,6 +8390,7 @@ export const countries: Record<string, CountryData> = {
   GH: {
     name: 'Ghana',
     code: 'GH',
+    summary: 'Ghana is known for welcoming people, Atlantic beaches, historic forts, lively cities, music, and strong cultural traditions. Accra offers contemporary art, food, and nightlife, while Cape Coast, Kumasi, and smaller towns reveal the histories of the Ashanti kingdom and transatlantic slave trade.',
     flagEmoji: '🇬🇭',
     flagColors: ['#CE1126', '#FCD116', '#006B3F'],
     continent: 'Africa',
@@ -8409,6 +8485,7 @@ export const countries: Record<string, CountryData> = {
   TN: {
     name: 'Tunisia',
     code: 'TN',
+    summary: 'Tunisia combines Mediterranean beaches, Roman ruins, desert landscapes, whitewashed towns, and a layered Arab, Berber, Ottoman, and French heritage. Tunis, Carthage, Sidi Bou Said, El Jem, and the Sahara offer very different experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇹🇳',
     flagColors: ['#E70013', '#FFFFFF', '#E70013'],
     continent: 'Africa',
@@ -8503,6 +8580,7 @@ export const countries: Record<string, CountryData> = {
   SN: {
     name: 'Senegal',
     code: 'SN',
+    summary: 'Senegal is celebrated for music, hospitality, Atlantic coastline, historic islands, and a strong cultural identity. Dakar is an energetic center of art, food, and nightlife, while Saint-Louis, Gorée Island, national parks, and fishing villages offer history and nature.',
     flagEmoji: '🇸🇳',
     flagColors: ['#00853F', '#FDEF42', '#E31B23'],
     continent: 'Africa',
@@ -8590,6 +8668,7 @@ export const countries: Record<string, CountryData> = {
   NA: {
     name: 'Namibia',
     code: 'NA',
+    summary: 'Namibia is a land of immense desert scenery, wildlife, and open space. The towering dunes of Sossusvlei, Skeleton Coast, Etosha National Park, and remote mountain regions create unforgettable road trips. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇳🇦',
     flagColors: ['#003580', '#D21034', '#009543'],
     continent: 'Africa',
@@ -8682,6 +8761,7 @@ export const countries: Record<string, CountryData> = {
   BW: {
     name: 'Botswana',
     code: 'BW',
+    summary: 'Botswana is known for high-quality wildlife experiences, low tourism density, and vast protected landscapes. The Okavango Delta, Chobe National Park, and Kalahari offer safaris by vehicle, boat, and traditional canoe. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇼',
     flagColors: ['#75AADB', '#FFFFFF', '#000000'],
     continent: 'Africa',
@@ -8778,6 +8858,7 @@ export const countries: Record<string, CountryData> = {
   UG: {
     name: 'Uganda',
     code: 'UG',
+    summary: 'Uganda combines equatorial forests, lakes, savannas, mountains, and some of Africa’s most memorable wildlife experiences. Gorilla and chimpanzee trekking are major highlights, while the Nile, Queen Elizabeth National Park, and the Rwenzori Mountains add variety.',
     flagEmoji: '🇺🇬',
     flagColors: ['#000000', '#FCDC04', '#D90000'],
     continent: 'Africa',
@@ -8869,6 +8950,7 @@ export const countries: Record<string, CountryData> = {
   RW: {
     name: 'Rwanda',
     code: 'RW',
+    summary: 'Rwanda is a compact, mountainous country known for cleanliness, striking scenery, and carefully managed tourism. Gorilla trekking in Volcanoes National Park is the signature experience, while Lake Kivu, Nyungwe Forest, and Kigali add hiking, wildlife, culture, and history.',
     flagEmoji: '🇷🇼',
     flagColors: ['#00A1DE', '#FAD201', '#20603D'],
     continent: 'Africa',
@@ -8963,6 +9045,7 @@ export const countries: Record<string, CountryData> = {
   IL: {
     name: 'Israel',
     code: 'IL',
+    summary: 'Israel contains an extraordinary concentration of religious history, archaeology, Mediterranean landscapes, and modern urban life. Jerusalem, Tel Aviv, the Dead Sea, Galilee, and the Negev offer sharply different experiences. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇮🇱',
     flagColors: ['#0038B8', '#FFFFFF', '#0038B8'],
     continent: 'Asia',
@@ -9060,6 +9143,7 @@ export const countries: Record<string, CountryData> = {
   JO: {
     name: 'Jordan',
     code: 'JO',
+    summary: 'Jordan combines world-famous archaeological sites with desert scenery, warm hospitality, and a rich food culture. Petra is the centerpiece, while Wadi Rum, the Dead Sea, Amman, Jerash, and Dana Biosphere Reserve broaden the experience. The result is varied and rewarding.',
     flagEmoji: '🇯🇴',
     flagColors: ['#000000', '#FFFFFF', '#007A3D'],
     continent: 'Asia',
@@ -9159,6 +9243,7 @@ export const countries: Record<string, CountryData> = {
   MY: {
     name: 'Malaysia',
     code: 'MY',
+    summary: 'Malaysia blends modern cities, tropical islands, rainforests, highlands, and one of Asia’s most diverse food cultures. Kuala Lumpur offers architecture and shopping, while Penang, Malacca, Borneo, and the east coast reveal distinct histories and ecosystems.',
     flagEmoji: '🇲🇾',
     flagColors: ['#CC0001', '#FFFFFF', '#010066'],
     continent: 'Asia',
@@ -9256,6 +9341,7 @@ export const countries: Record<string, CountryData> = {
   MN: {
     name: 'Mongolia',
     code: 'MN',
+    summary: 'Mongolia offers vast steppe, desert, mountains, nomadic traditions, and an extraordinary sense of space. Ulaanbaatar provides museums and modern culture, but the country’s essence lies in the countryside, where travelers stay in gers, ride horses, and explore the Gobi or northern lakes.',
     flagEmoji: '🇲🇳',
     flagColors: ['#C4272E', '#015197', '#C4272E'],
     continent: 'Asia',
@@ -9341,6 +9427,7 @@ export const countries: Record<string, CountryData> = {
   KZ: {
     name: 'Kazakhstan',
     code: 'KZ',
+    summary: 'Kazakhstan is a vast Central Asian country of steppe, mountains, deserts, canyons, and ambitious modern cities. Almaty offers food, culture, and easy access to alpine landscapes, while Astana showcases bold contemporary architecture. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇿',
     flagColors: ['#00AFCA', '#FEC50C', '#00AFCA'],
     continent: 'Asia',
@@ -9434,6 +9521,7 @@ export const countries: Record<string, CountryData> = {
   UZ: {
     name: 'Uzbekistan',
     code: 'UZ',
+    summary: 'Uzbekistan is one of the Silk Road’s great cultural destinations, with dazzling Islamic architecture, historic bazaars, and well-preserved cities. Samarkand, Bukhara, and Khiva offer turquoise domes, courtyards, and centuries of trade history. That mix gives travelers plenty to discover.',
     flagEmoji: '🇺🇿',
     flagColors: ['#1EB53A', '#FFFFFF', '#0099B5'],
     continent: 'Asia',
@@ -9532,6 +9620,7 @@ export const countries: Record<string, CountryData> = {
   QA: {
     name: 'Qatar',
     code: 'QA',
+    summary: 'Qatar combines futuristic architecture, desert landscapes, museums, traditional markets, and a growing cultural scene within a compact country. Doha’s Museum of Islamic Art, National Museum, Corniche, and Souq Waqif are major attractions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇶🇦',
     flagColors: ['#8A1538', '#FFFFFF', '#8A1538'],
     continent: 'Asia',
@@ -9619,6 +9708,7 @@ export const countries: Record<string, CountryData> = {
   OM: {
     name: 'Oman',
     code: 'OM',
+    summary: 'Oman is known for dramatic mountains, desert dunes, wadis, coastline, forts, and a measured approach to modernization. Muscat feels low-rise and elegant, while Nizwa, Jebel Akhdar, Wahiba Sands, and coastal villages reveal the country’s history and landscapes.',
     flagEmoji: '🇴🇲',
     flagColors: ['#DB161B', '#FFFFFF', '#008000'],
     continent: 'Asia',
@@ -9716,6 +9806,7 @@ export const countries: Record<string, CountryData> = {
   BT: {
     name: 'Bhutan',
     code: 'BT',
+    summary: 'Bhutan is a Himalayan kingdom known for Buddhist culture, mountain landscapes, fortified monasteries, and carefully managed tourism. Paro, Thimphu, Punakha, and the Tiger’s Nest monastery are major highlights. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇧🇹',
     flagColors: ['#FFD520', '#FF4E12', '#FFD520'],
     continent: 'Asia',
@@ -9805,6 +9896,7 @@ export const countries: Record<string, CountryData> = {
   PF: {
     name: 'Tahiti',
     code: 'PF',
+    summary: 'Tahiti, part of French Polynesia, combines volcanic mountains, waterfalls, lagoons, black-sand beaches, and a strong Polynesian cultural identity. Papeete offers markets and urban life, while the island’s interior and coast provide hiking, surfing, and scenery.',
     flagEmoji: '🇵🇫',
     flagColors: ['#CE1126', '#FFFFFF', '#CE1126'],
     continent: 'Oceania',
@@ -9888,6 +9980,7 @@ export const countries: Record<string, CountryData> = {
   MV: {
     name: 'Maldives',
     code: 'MV',
+    summary: 'The Maldives is an Indian Ocean archipelago known for clear lagoons, coral reefs, white-sand islands, and overwater resorts. Diving, snorkeling, and marine life are central attractions, but local islands also offer insight into Maldivian culture and daily life.',
     flagEmoji: '🇲🇻',
     flagColors: ['#D21034', '#007E3A', '#FFFFFF'],
     continent: 'Asia',
@@ -9973,6 +10066,7 @@ export const countries: Record<string, CountryData> = {
   WS: {
     name: 'Samoa',
     code: 'WS',
+    summary: 'Samoa offers lush volcanic landscapes, waterfalls, natural swimming holes, beaches, and a strong Polynesian culture centered on family and village life. Upolu and Savai‘i provide scenic drives, traditional communities, hiking, and coastal attractions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇼🇸',
     flagColors: ['#CE1126', '#002B7F', '#FFFFFF'],
     continent: 'Oceania',
@@ -10062,6 +10156,7 @@ export const countries: Record<string, CountryData> = {
   VU: {
     name: 'Vanuatu',
     code: 'VU',
+    summary: 'Vanuatu is an island nation of active volcanoes, coral reefs, rainforests, beaches, and exceptionally diverse Indigenous cultures. Efate offers easier access, while Tanna, Espiritu Santo, and outer islands provide volcano visits, diving, blue holes, and village experiences.',
     flagEmoji: '🇻🇺',
     flagColors: ['#D21034', '#009543', '#000000'],
     continent: 'Oceania',
@@ -10155,6 +10250,7 @@ export const countries: Record<string, CountryData> = {
   MM: {
     name: 'Myanmar',
     code: 'MM',
+    summary: 'Myanmar has extraordinary temples, landscapes, ethnic diversity, and cultural heritage, including Bagan, Inle Lake, Yangon, and Mandalay. Buddhist traditions, markets, food, and historic architecture are major draws. Curious travelers will find layers of history, memorable architecture, and strong local character.',
     flagEmoji: '🇲🇲',
     flagColors: ['#FECB00', '#34B233', '#EA2839'],
     continent: 'Asia',
@@ -10251,6 +10347,7 @@ export const countries: Record<string, CountryData> = {
   LA: {
     name: 'Laos',
     code: 'LA',
+    summary: 'Laos is a landlocked country of mountains, rivers, Buddhist temples, caves, and a slower pace than many neighbors. Luang Prabang is the cultural highlight, while Vang Vieng, the Mekong, southern islands, and rural villages offer scenery and outdoor activity.',
     flagEmoji: '🇱🇦',
     flagColors: ['#CE1126', '#002868', '#FFFFFF'],
     continent: 'Asia',
@@ -10349,6 +10446,7 @@ export const countries: Record<string, CountryData> = {
   GE: {
     name: 'Georgia',
     code: 'GE',
+    summary: 'Georgia combines Caucasus mountain scenery, ancient churches, wine traditions, Black Sea coast, and a distinctive cuisine. Tbilisi’s old neighborhoods, baths, and creative culture are a major draw, while Kazbegi, Svaneti, Kakheti, and cave monasteries offer nature and history.',
     flagEmoji: '🇬🇪',
     flagColors: ['#FF0000', '#FFFFFF', '#FF0000'],
     continent: 'Asia',
@@ -10443,6 +10541,7 @@ export const countries: Record<string, CountryData> = {
   RO: {
     name: 'Romania',
     code: 'RO',
+    summary: 'Romania offers medieval towns, fortified churches, castles, forests, mountains, and vibrant cities. Bucharest provides architecture and nightlife, while Transylvania, Maramureș, the Carpathians, and the Danube Delta reveal rural traditions and natural diversity. That mix gives travelers plenty to discover.',
     flagEmoji: '🇷🇴',
     flagColors: ['#002B7F', '#FCD116', '#CE1126'],
     continent: 'Europe',
@@ -10528,6 +10627,7 @@ export const countries: Record<string, CountryData> = {
   RS: {
     name: 'Serbia',
     code: 'RS',
+    summary: 'Serbia combines lively cities, historic monasteries, river landscapes, mountain regions, and a strong café and music culture. Belgrade is known for nightlife, architecture, and the Danube and Sava rivers, while Novi Sad, rural towns, and national parks offer a quieter pace.',
     flagEmoji: '🇷🇸',
     flagColors: ['#C6363C', '#0C4076', '#FFFFFF'],
     continent: 'Europe',
@@ -10615,6 +10715,7 @@ export const countries: Record<string, CountryData> = {
   SI: {
     name: 'Slovenia',
     code: 'SI',
+    summary: 'Slovenia packs alpine peaks, emerald rivers, caves, vineyards, and a short Adriatic coast into a compact, easy-to-travel country. Ljubljana is charming and walkable, while Lake Bled, the Julian Alps, Soča Valley, and Karst region offer outdoor adventure.',
     flagEmoji: '🇸🇮',
     flagColors: ['#FFFFFF', '#0000FF', '#FF0000'],
     continent: 'Europe',
@@ -10706,6 +10807,7 @@ export const countries: Record<string, CountryData> = {
   SK: {
     name: 'Slovakia',
     code: 'SK',
+    summary: 'Slovakia offers castles, medieval towns, caves, mountain landscapes, and a less-touristed Central European experience. Bratislava is compact and attractive, while the High Tatras, Spiš Castle, traditional villages, and national parks provide hiking and history. The result is varied and rewarding.',
     flagEmoji: '🇸🇰',
     flagColors: ['#FFFFFF', '#0B4EA2', '#EE1C25'],
     continent: 'Europe',
@@ -10801,6 +10903,7 @@ export const countries: Record<string, CountryData> = {
   UA: {
     name: 'Ukraine',
     code: 'UA',
+    summary: 'Ukraine is a large country with historic cities, Black Sea coast, Carpathian mountains, rich food traditions, and a strong cultural identity. Kyiv, Lviv, Odesa, and rural regions each offer distinct architecture and atmosphere. That mix gives travelers plenty to discover.',
     flagEmoji: '🇺🇦',
     flagColors: ['#0057B7', '#FFD700', '#0057B7'],
     continent: 'Europe',
@@ -10891,6 +10994,7 @@ export const countries: Record<string, CountryData> = {
   MG: {
     name: 'Madagascar',
     code: 'MG',
+    summary: 'Madagascar is one of the world’s most distinctive wildlife destinations, with lemurs, baobabs, chameleons, rainforests, deserts, and coral reefs found nowhere else. National parks such as Andasibe, Ranomafana, and Isalo anchor most trips. That mix gives travelers plenty to discover.',
     flagEmoji: '🇲🇬',
     flagColors: ['#FC3D32', '#007E3A', '#FFFFFF'],
     continent: 'Africa',
@@ -10978,6 +11082,7 @@ export const countries: Record<string, CountryData> = {
   MZ: {
     name: 'Mozambique',
     code: 'MZ',
+    summary: 'Mozambique combines a long Indian Ocean coastline with coral reefs, islands, seafood, music, and a blend of African, Arab, and Portuguese influences. The Bazaruto and Quirimbas archipelagos are major highlights, while Maputo offers architecture and culture.',
     flagEmoji: '🇲🇿',
     flagColors: ['#007168', '#000000', '#FCE100'],
     continent: 'Africa',
@@ -11067,6 +11172,7 @@ export const countries: Record<string, CountryData> = {
   ZW: {
     name: 'Zimbabwe',
     code: 'ZW',
+    summary: 'Zimbabwe is home to major natural and cultural attractions, including Victoria Falls, Great Zimbabwe, Hwange National Park, and striking granite landscapes. Wildlife viewing is excellent, and the country’s guides are highly regarded. That mix gives travelers plenty to discover.',
     flagEmoji: '🇿🇼',
     flagColors: ['#319208', '#FFD200', '#D40000'],
     continent: 'Africa',
@@ -11159,6 +11265,7 @@ export const countries: Record<string, CountryData> = {
   BS: {
     name: 'The Bahamas',
     code: 'BS',
+    summary: 'The Bahamas is an archipelago of clear water, coral reefs, white and pink-sand beaches, and hundreds of islands with distinct personalities. Nassau and Paradise Island are the busiest centers, while the Out Islands offer quieter settlements, boating, diving, fishing, and wildlife.',
     flagEmoji: '🇧🇸',
     flagColors: ['#00778B', '#FFC72C', '#000000'],
     continent: 'North America',
@@ -11229,6 +11336,7 @@ export const countries: Record<string, CountryData> = {
   BB: {
     name: 'Barbados',
     code: 'BB',
+    summary: 'Barbados combines attractive beaches, historic plantation and colonial sites, lively food and rum culture, and a strong sense of local identity. Bridgetown, the west coast, rugged Atlantic shore, and inland villages offer different experiences. The result is varied and rewarding.',
     flagEmoji: '🇧🇧',
     flagColors: ['#00267F', '#FFC726', '#00267F'],
     continent: 'North America',
@@ -11307,6 +11415,7 @@ export const countries: Record<string, CountryData> = {
   LC: {
     name: 'Saint Lucia',
     code: 'LC',
+    summary: 'Saint Lucia is known for the dramatic Pitons, lush rainforest, volcanic landscapes, beaches, and romantic resorts. Soufrière is the scenic heart, with hiking, waterfalls, hot springs, and coastal views. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇱🇨',
     flagColors: ['#65CFE9', '#FFCE00', '#000000'],
     continent: 'North America',
@@ -11380,6 +11489,7 @@ export const countries: Record<string, CountryData> = {
   AW: {
     name: 'Aruba',
     code: 'AW',
+    summary: 'Aruba is a sunny, dry Caribbean island known for broad beaches, reliable weather, clear water, and easy resort travel. Beyond Palm Beach, visitors find desert-like landscapes, wind-shaped divi-divi trees, rocky coasts, and colorful Oranjestad. The result is varied and rewarding.',
     flagEmoji: '🇦🇼',
     flagColors: ['#4189DD', '#F9E813', '#EF3340'],
     continent: 'North America',
@@ -11457,6 +11567,7 @@ export const countries: Record<string, CountryData> = {
   PR: {
     name: 'Puerto Rico',
     code: 'PR',
+    summary: 'Puerto Rico combines Caribbean beaches, rainforest, mountains, historic cities, music, and a lively food culture without requiring a passport for U.S. citizens. Old San Juan, El Yunque, Vieques, and the central highlands offer different experiences.',
     flagEmoji: '🇵🇷',
     flagColors: ['#ED0000', '#FFFFFF', '#0050F0'],
     continent: 'North America',
@@ -11541,6 +11652,7 @@ export const countries: Record<string, CountryData> = {
   TT: {
     name: 'Trinidad and Tobago',
     code: 'TT',
+    summary: 'Trinidad and Tobago offers two distinct island experiences. Trinidad is larger, energetic, and culturally diverse, known for Carnival, music, food, and wildlife-rich wetlands. Tobago is quieter, with beaches, reefs, and rainforest. That mix gives travelers plenty to discover.',
     flagEmoji: '🇹🇹',
     flagColors: ['#DA1A35', '#FFFFFF', '#000000'],
     continent: 'North America',
@@ -11612,6 +11724,7 @@ export const countries: Record<string, CountryData> = {
   HK: {
     name: 'Hong Kong',
     code: 'HK',
+    summary: 'Hong Kong is a dense, energetic city where skyscrapers, mountains, markets, temples, beaches, and exceptional food sit close together. Victoria Harbour and the skyline are iconic, but hiking trails, outlying islands, historic neighborhoods, and village areas reveal a greener side.',
     flagEmoji: '🇭🇰',
     flagColors: ['#DE2910', '#FFFFFF', '#DE2910'],
     continent: 'Asia',
@@ -11690,6 +11803,7 @@ export const countries: Record<string, CountryData> = {
   TW: {
     name: 'Taiwan',
     code: 'TW',
+    summary: 'Taiwan combines dynamic cities, mountain scenery, hot springs, temples, night markets, beaches, and one of Asia’s most approachable food cultures. Taipei is the main gateway, while Taroko, Alishan, Tainan, the east coast, and offshore islands add nature and history.',
     flagEmoji: '🇹🇼',
     flagColors: ['#FE0000', '#000095', '#FFFFFF'],
     continent: 'Asia',
@@ -11770,6 +11884,7 @@ export const countries: Record<string, CountryData> = {
   MT: {
     name: 'Malta',
     code: 'MT',
+    summary: 'Malta offers fortified cities, prehistoric temples, clear Mediterranean water, and a dense concentration of history shaped by Phoenicians, Romans, Arabs, knights, and the British. Valletta, Mdina, Gozo, and the coast provide architecture, diving, and scenic walks.',
     flagEmoji: '🇲🇹',
     flagColors: ['#FFFFFF', '#CE0B24', '#FFFFFF'],
     continent: 'Europe',
@@ -11851,6 +11966,7 @@ export const countries: Record<string, CountryData> = {
   CY: {
     name: 'Cyprus',
     code: 'CY',
+    summary: 'Cyprus combines Mediterranean beaches, mountain villages, ancient ruins, Byzantine churches, and a cuisine shaped by Greek, Turkish, and Middle Eastern influences. Nicosia offers a divided capital with layered history, while Paphos, Limassol, Troodos, and the coast provide archaeology and relaxation.',
     flagEmoji: '🇨🇾',
     flagColors: ['#FFFFFF', '#D57800', '#4E5B31'],
     continent: 'Europe',
@@ -11930,6 +12046,7 @@ export const countries: Record<string, CountryData> = {
   LU: {
     name: 'Luxembourg',
     code: 'LU',
+    summary: 'Luxembourg is a small, affluent country of fortified towns, wooded valleys, castles, vineyards, and multilingual culture. Luxembourg City’s dramatic old quarters and modern institutions are the main draw, while the Moselle and Ardennes offer scenery and villages.',
     flagEmoji: '🇱🇺',
     flagColors: ['#ED2939', '#FFFFFF', '#00A1DE'],
     continent: 'Europe',
@@ -12008,6 +12125,7 @@ export const countries: Record<string, CountryData> = {
   EE: {
     name: 'Estonia',
     code: 'EE',
+    summary: 'Estonia blends medieval architecture, Baltic coastline, forests, islands, and a highly digital modern society. Tallinn’s old town is the centerpiece, but Tartu, Saaremaa, national parks, and coastal villages reveal a quieter side. That mix gives travelers plenty to discover.',
     flagEmoji: '🇪🇪',
     flagColors: ['#0072CE', '#000000', '#FFFFFF'],
     continent: 'Europe',
@@ -12082,6 +12200,7 @@ export const countries: Record<string, CountryData> = {
   LV: {
     name: 'Latvia',
     code: 'LV',
+    summary: 'Latvia combines Art Nouveau architecture, medieval streets, forests, beaches, and a strong choral and folk tradition. Riga is the main cultural center, while Gauja National Park, Cēsis, Kuldīga, and the Baltic coast provide nature and smaller-town charm.',
     flagEmoji: '🇱🇻',
     flagColors: ['#9E3039', '#FFFFFF', '#9E3039'],
     continent: 'Europe',
@@ -12158,6 +12277,7 @@ export const countries: Record<string, CountryData> = {
   LT: {
     name: 'Lithuania',
     code: 'LT',
+    summary: 'Lithuania offers baroque cities, medieval castles, forests, lakes, and a Baltic coastline with distinctive dunes. Vilnius is known for its old town and creative energy, while Kaunas, Trakai, the Curonian Spit, and countryside reveal other layers.',
     flagEmoji: '🇱🇹',
     flagColors: ['#FDB913', '#006A44', '#C1272D'],
     continent: 'Europe',
@@ -12236,6 +12356,7 @@ export const countries: Record<string, CountryData> = {
   BG: {
     name: 'Bulgaria',
     code: 'BG',
+    summary: 'Bulgaria combines Black Sea beaches, mountain ranges, monasteries, ancient ruins, and historic towns at relatively affordable prices. Sofia, Plovdiv, Veliko Tarnovo, and Rila Monastery are major cultural highlights, while ski areas and coastal resorts add seasonal variety.',
     flagEmoji: '🇧🇬',
     flagColors: ['#FFFFFF', '#00966E', '#D62612'],
     continent: 'Europe',
@@ -12312,6 +12433,7 @@ export const countries: Record<string, CountryData> = {
   AL: {
     name: 'Albania',
     code: 'AL',
+    summary: 'Albania offers rugged mountains, clear Ionian beaches, Ottoman towns, archaeological sites, and a rapidly changing travel scene. Tirana is colorful and energetic, while Berat, Gjirokastër, the Albanian Alps, and the Riviera provide history and scenery.',
     flagEmoji: '🇦🇱',
     flagColors: ['#E41E20', '#000000', '#E41E20'],
     continent: 'Europe',
@@ -12394,6 +12516,7 @@ export const countries: Record<string, CountryData> = {
   ME: {
     name: 'Montenegro',
     code: 'ME',
+    summary: 'Montenegro combines dramatic mountains, Adriatic bays, medieval towns, and national parks within a very small area. Kotor and the Bay of Kotor are the main attractions, while Durmitor, Lake Skadar, and the coast offer hiking, rafting, beaches, and scenic drives.',
     flagEmoji: '🇲🇪',
     flagColors: ['#D4AF37', '#C40308', '#D4AF37'],
     continent: 'Europe',
@@ -12472,6 +12595,7 @@ export const countries: Record<string, CountryData> = {
   BA: {
     name: 'Bosnia and Herzegovina',
     code: 'BA',
+    summary: 'Bosnia and Herzegovina offers Ottoman and Austro-Hungarian architecture, mountain landscapes, rivers, historic towns, and a complex recent history. Sarajevo and Mostar are the main cultural centers, while rural areas provide hiking, rafting, and traditional food.',
     flagEmoji: '🇧🇦',
     flagColors: ['#002F6C', '#FECB00', '#FFFFFF'],
     continent: 'Europe',
@@ -12548,6 +12672,7 @@ export const countries: Record<string, CountryData> = {
   MU: {
     name: 'Mauritius',
     code: 'MU',
+    summary: 'Mauritius combines beaches, coral reefs, volcanic mountains, sugarcane landscapes, and a multicultural society shaped by African, Indian, Chinese, and European influences. Resorts are a major draw, but markets, villages, hiking, and food reveal more of the island.',
     flagEmoji: '🇲🇺',
     flagColors: ['#EA2839', '#1A206D', '#00A551'],
     continent: 'Africa',
@@ -12628,6 +12753,7 @@ export const countries: Record<string, CountryData> = {
   SC: {
     name: 'Seychelles',
     code: 'SC',
+    summary: 'Seychelles is an Indian Ocean archipelago known for granite boulders, clear water, coral reefs, tropical forests, and exceptionally beautiful beaches. Mahé, Praslin, and La Digue are the main islands, each with a different pace. The result is varied and rewarding.',
     flagEmoji: '🇸🇨',
     flagColors: ['#003F87', '#FCD856', '#D62828'],
     continent: 'Africa',
@@ -12698,6 +12824,7 @@ export const countries: Record<string, CountryData> = {
   ZM: {
     name: 'Zambia',
     code: 'ZM',
+    summary: 'Zambia is best known for Victoria Falls and excellent wildlife viewing in relatively uncrowded parks. South Luangwa is famous for walking safaris, while the Lower Zambezi, Kafue, and Lake Kariba offer rivers, wilderness, and diverse ecosystems.',
     flagEmoji: '🇿🇲',
     flagColors: ['#198A00', '#EF7D00', '#DE2010'],
     continent: 'Africa',
@@ -12775,6 +12902,7 @@ export const countries: Record<string, CountryData> = {
   MW: {
     name: 'Malawi',
     code: 'MW',
+    summary: 'Malawi is centered on vast Lake Malawi, whose beaches, clear water, islands, and colorful fish create a relaxed inland-coast experience. Mountains, tea estates, wildlife reserves, and friendly towns add variety. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇲🇼',
     flagColors: ['#000000', '#CE1126', '#339E35'],
     continent: 'Africa',
@@ -12853,6 +12981,7 @@ export const countries: Record<string, CountryData> = {
   CI: {
     name: 'Côte d’Ivoire',
     code: 'CI',
+    summary: 'Côte d’Ivoire combines energetic cities, Atlantic beaches, forests, music, food, and strong regional cultures. Abidjan is the economic and creative center, while Grand-Bassam, Yamoussoukro, national parks, and traditional villages offer history and nature. Ivorian music, dance, fashion, and cuisine have wide influence across West Africa.',
     flagEmoji: '🇨🇮',
     flagColors: ['#F77F00', '#FFFFFF', '#009E60'],
     continent: 'Africa',
@@ -12927,6 +13056,7 @@ export const countries: Record<string, CountryData> = {
   CM: {
     name: 'Cameroon',
     code: 'CM',
+    summary: 'Cameroon is sometimes called Africa in miniature because it contains beaches, rainforest, savanna, mountains, and varied cultures within one country. Douala and Yaoundé are major urban centers, while Mount Cameroon, wildlife reserves, western highlands, and coastal areas offer outdoor experiences.',
     flagEmoji: '🇨🇲',
     flagColors: ['#007A5E', '#CE1126', '#FCD116'],
     continent: 'Africa',
@@ -13006,6 +13136,7 @@ export const countries: Record<string, CountryData> = {
   AO: {
     name: 'Angola',
     code: 'AO',
+    summary: 'Angola offers Atlantic beaches, dramatic escarpments, waterfalls, desert landscapes, and Portuguese-influenced cities. Luanda is the main gateway, while Kalandula Falls, the Namib Desert, and highland regions reveal the country’s scale and natural beauty. That mix gives travelers plenty to discover.',
     flagEmoji: '🇦🇴',
     flagColors: ['#CE1126', '#000000', '#FFCB00'],
     continent: 'Africa',
@@ -13084,6 +13215,7 @@ export const countries: Record<string, CountryData> = {
   CV: {
     name: 'Cape Verde',
     code: 'CV',
+    summary: 'Cape Verde is an Atlantic island nation of volcanic peaks, dry landscapes, beaches, music, and a culture shaped by African and Portuguese influences. Sal and Boa Vista attract beach travelers, while Santo Antão and Fogo offer hiking and dramatic scenery.',
     flagEmoji: '🇨🇻',
     flagColors: ['#003893', '#CF2027', '#F7D116'],
     continent: 'Africa',
@@ -13163,6 +13295,7 @@ export const countries: Record<string, CountryData> = {
   GA: {
     name: 'Gabon',
     code: 'GA',
+    summary: 'Gabon is one of Africa’s most forested countries, known for national parks, Atlantic beaches, wildlife, and low visitor numbers. Loango offers rare combinations of rainforest and coast, while Ivindo and Lopé protect elephants, gorillas, and other species.',
     flagEmoji: '🇬🇦',
     flagColors: ['#009E60', '#FCD116', '#3A75C4'],
     continent: 'Africa',
@@ -13233,6 +13366,7 @@ export const countries: Record<string, CountryData> = {
   ML: {
     name: 'Mali',
     code: 'ML',
+    summary: 'Mali has an extraordinary cultural legacy shaped by ancient empires, desert trade, music, mud-brick architecture, and cities such as Timbuktu, Djenné, and Bamako. The Niger River and Dogon region are also central to its identity.',
     flagEmoji: '🇲🇱',
     flagColors: ['#14B53A', '#FCD116', '#CE1126'],
     continent: 'Africa',
@@ -13313,6 +13447,7 @@ export const countries: Record<string, CountryData> = {
   BF: {
     name: 'Burkina Faso',
     code: 'BF',
+    summary: 'Burkina Faso is known for music, film, crafts, markets, and strong community traditions. Ouagadougou is a major cultural center, hosting important African arts events, while Bobo-Dioulasso offers historic architecture and live music. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇫',
     flagColors: ['#EF2B2D', '#009E49', '#FCD116'],
     continent: 'Africa',
@@ -13393,6 +13528,7 @@ export const countries: Record<string, CountryData> = {
   BJ: {
     name: 'Benin',
     code: 'BJ',
+    summary: 'Benin offers royal history, Atlantic coast, wildlife parks, and traditions closely associated with Vodun. Abomey, Ouidah, Ganvié, and Pendjari National Park are key attractions. Markets, festivals, music, and distinctive spiritual practices give the country strong cultural depth, though northern security conditions require careful attention.',
     flagEmoji: '🇧🇯',
     flagColors: ['#008751', '#FCD116', '#E8112D'],
     continent: 'Africa',
@@ -13470,6 +13606,7 @@ export const countries: Record<string, CountryData> = {
   TG: {
     name: 'Togo',
     code: 'TG',
+    summary: 'Togo is a narrow West African country with beaches, markets, mountains, villages, and varied cultural traditions. Lomé is known for its waterfront and energetic markets, while Kpalimé, northern landscapes, and local craft centers offer different experiences.',
     flagEmoji: '🇹🇬',
     flagColors: ['#006A4E', '#FFCE00', '#D21034'],
     continent: 'Africa',
@@ -13548,6 +13685,7 @@ export const countries: Record<string, CountryData> = {
   LR: {
     name: 'Liberia',
     code: 'LR',
+    summary: 'Liberia has Atlantic beaches, rainforest, historic ties to the United States, and a distinct culture shaped by Indigenous communities and descendants of formerly enslaved settlers. Monrovia is the main center, while Robertsport, Sapo National Park, and coastal areas offer nature and surfing.',
     flagEmoji: '🇱🇷',
     flagColors: ['#BF0A30', '#FFFFFF', '#002868'],
     continent: 'Africa',
@@ -13627,6 +13765,7 @@ export const countries: Record<string, CountryData> = {
   SL: {
     name: 'Sierra Leone',
     code: 'SL',
+    summary: 'Sierra Leone combines beautiful Atlantic beaches, rainforest, wildlife, and a resilient culture shaped by music, food, and community. Freetown’s history and markets are central, while the Banana Islands, Tacugama sanctuary, and inland landscapes broaden the experience.',
     flagEmoji: '🇸🇱',
     flagColors: ['#1EB53A', '#FFFFFF', '#0072C6'],
     continent: 'Africa',
@@ -13711,6 +13850,7 @@ export const countries: Record<string, CountryData> = {
   GM: {
     name: 'The Gambia',
     code: 'GM',
+    summary: 'The Gambia is a small country centered on the Gambia River, with Atlantic beaches, birdlife, villages, markets, and accessible cultural experiences. Coastal resorts provide easy entry, while river trips and inland communities show more of local life.',
     flagEmoji: '🇬🇲',
     flagColors: ['#CE1126', '#0C1C8C', '#3A7728'],
     continent: 'Africa',
@@ -13786,6 +13926,7 @@ export const countries: Record<string, CountryData> = {
   CD: {
     name: 'Democratic Republic of the Congo',
     code: 'CD',
+    summary: 'The Democratic Republic of the Congo contains immense rainforest, major rivers, volcanoes, rare wildlife, and extraordinary cultural diversity. Virunga, the Congo Basin, and the music of Kinshasa are internationally significant. Yet conflict, weak infrastructure, and political instability make travel difficult and dangerous in many regions.',
     flagEmoji: '🇨🇩',
     flagColors: ['#007FFF', '#F7D618', '#CE1021'],
     continent: 'Africa',
@@ -13866,6 +14007,7 @@ export const countries: Record<string, CountryData> = {
   CG: {
     name: 'Republic of the Congo',
     code: 'CG',
+    summary: 'The Republic of the Congo offers vast rainforest, rivers, wildlife, and relatively little tourism. Brazzaville has a relaxed cultural scene across the Congo River from Kinshasa, while Odzala-Kokoua National Park is known for gorillas and forest ecosystems.',
     flagEmoji: '🇨🇬',
     flagColors: ['#009543', '#FBDE4A', '#DC241F'],
     continent: 'Africa',
@@ -13949,6 +14091,7 @@ export const countries: Record<string, CountryData> = {
   LY: {
     name: 'Libya',
     code: 'LY',
+    summary: 'Libya contains extraordinary Roman and Greek ruins, Mediterranean coastline, desert oases, and Saharan landscapes. Leptis Magna, Sabratha, and the old city of Tripoli reflect its deep history. Travelers can combine beautiful coastal scenery with local food, culture, and time outdoors.',
     flagEmoji: '🇱🇾',
     flagColors: ['#E70013', '#000000', '#239E46'],
     continent: 'Africa',
@@ -14032,6 +14175,7 @@ export const countries: Record<string, CountryData> = {
   SD: {
     name: 'Sudan',
     code: 'SD',
+    summary: 'Sudan has a remarkable Nile Valley heritage, including more pyramids than Egypt, ancient Nubian sites, desert landscapes, and Red Sea diving. Khartoum and the archaeological regions around Meroë once formed the main travel circuit. The result is varied and rewarding.',
     flagEmoji: '🇸🇩',
     flagColors: ['#D21034', '#000000', '#007A3D'],
     continent: 'Africa',
@@ -14112,6 +14256,7 @@ export const countries: Record<string, CountryData> = {
   LS: {
     name: 'Lesotho',
     code: 'LS',
+    summary: 'Lesotho is a high-altitude kingdom of mountains, valleys, waterfalls, and traditional Basotho culture. Entirely surrounded by South Africa, it offers hiking, pony trekking, scenic drives, and winter snow in some areas. That mix gives travelers plenty to discover.',
     flagEmoji: '🇱🇸',
     flagColors: ['#00209F', '#009543', '#000000'],
     continent: 'Africa',
@@ -14189,6 +14334,7 @@ export const countries: Record<string, CountryData> = {
   SZ: {
     name: 'Eswatini',
     code: 'SZ',
+    summary: 'Eswatini is a small kingdom of mountains, valleys, wildlife reserves, crafts, and living royal traditions. Mlilwane, Hlane, and the Ezulwini Valley are major attractions, while festivals such as Umhlanga display important cultural customs. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇿',
     flagColors: ['#3E5EB9', '#FFD900', '#B10C0C'],
     continent: 'Africa',
@@ -14258,6 +14404,7 @@ export const countries: Record<string, CountryData> = {
   AG: {
     name: 'Antigua and Barbuda',
     code: 'AG',
+    summary: 'Antigua and Barbuda is known for numerous beaches, clear water, sailing, and a strong maritime history. Antigua offers resorts, historic Nelson’s Dockyard, and scenic viewpoints, while smaller Barbuda is quieter, with long beaches and important bird habitat.',
     flagEmoji: '🇦🇬',
     flagColors: ['#CE1126', '#000000', '#FCD116'],
     continent: 'North America',
@@ -14340,6 +14487,7 @@ export const countries: Record<string, CountryData> = {
   BM: {
     name: 'Bermuda',
     code: 'BM',
+    summary: 'Bermuda combines pink-sand beaches, clear Atlantic water, pastel architecture, British traditions, and a compact, polished travel experience. Hamilton and St. George’s offer history and shopping, while caves, coastal trails, and small coves add natural beauty.',
     flagEmoji: '🇧🇲',
     flagColors: ['#CF142B', '#FFFFFF', '#00247D'],
     continent: 'North America',
@@ -14418,6 +14566,7 @@ export const countries: Record<string, CountryData> = {
   BN: {
     name: 'Brunei',
     code: 'BN',
+    summary: 'Brunei is a small, wealthy sultanate on Borneo known for grand mosques, water villages, rainforest, and Malay Islamic culture. Bandar Seri Begawan is the main center, while Ulu Temburong National Park offers canopy walks and jungle scenery.',
     flagEmoji: '🇧🇳',
     flagColors: ['#F7E017', '#FFFFFF', '#000000'],
     continent: 'Asia',
@@ -14490,6 +14639,7 @@ export const countries: Record<string, CountryData> = {
   DM: {
     name: 'Dominica',
     code: 'DM',
+    summary: 'Dominica is a rugged Caribbean island of rainforest, waterfalls, volcanic landscapes, hot springs, and excellent hiking. Unlike more resort-oriented islands, its appeal is primarily natural and adventurous. Morne Trois Pitons National Park, the Waitukubuli Trail, diving, and strong Creole and Kalinago heritage define the experience.',
     flagEmoji: '🇩🇲',
     flagColors: ['#006B3F', '#FCD116', '#000000'],
     continent: 'North America',
@@ -14564,6 +14714,7 @@ export const countries: Record<string, CountryData> = {
   HT: {
     name: 'Haiti',
     code: 'HT',
+    summary: 'Haiti has a powerful artistic, musical, religious, and revolutionary heritage, along with mountains, historic architecture, and Caribbean coastline. The Citadelle and Sans-Souci Palace are major cultural landmarks. Travelers can combine beautiful coastal scenery with local food, culture, and time outdoors.',
     flagEmoji: '🇭🇹',
     flagColors: ['#00209F', '#D21034', '#FFFFFF'],
     continent: 'North America',
@@ -14639,6 +14790,7 @@ export const countries: Record<string, CountryData> = {
   KN: {
     name: 'Saint Kitts and Nevis',
     code: 'KN',
+    summary: 'Saint Kitts and Nevis combines beaches, rainforest, volcanic scenery, plantation history, and a relaxed two-island atmosphere. Saint Kitts offers Brimstone Hill Fortress and a scenic railway, while Nevis feels quieter and more intimate. Hiking, snorkeling, historic estates, and small-scale hospitality are central to the experience.',
     flagEmoji: '🇰🇳',
     flagColors: ['#009E49', '#000000', '#CE1126'],
     continent: 'North America',
@@ -14713,6 +14865,7 @@ export const countries: Record<string, CountryData> = {
   KW: {
     name: 'Kuwait',
     code: 'KW',
+    summary: 'Kuwait is a small Gulf country known for modern architecture, waterfront life, museums, markets, and a strong food culture. Kuwait City’s towers, souqs, mosques, and cultural centers are the main attractions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇼',
     flagColors: ['#007A3D', '#FFFFFF', '#CE1126'],
     continent: 'Asia',
@@ -14794,6 +14947,7 @@ export const countries: Record<string, CountryData> = {
   LB: {
     name: 'Lebanon',
     code: 'LB',
+    summary: 'Lebanon combines Mediterranean coastline, mountains, ancient ruins, vibrant cities, and one of the region’s most influential food cultures. Beirut, Byblos, Baalbek, the Cedars, and mountain villages show remarkable variety within short distances. Political and economic instability complicate travel, but the country’s cultural richness is exceptional.',
     flagEmoji: '🇱🇧',
     flagColors: ['#EE161F', '#FFFFFF', '#00A651'],
     continent: 'Asia',
@@ -14870,6 +15024,7 @@ export const countries: Record<string, CountryData> = {
   MC: {
     name: 'Monaco',
     code: 'MC',
+    summary: 'Monaco is a tiny Mediterranean principality associated with luxury, yachts, casinos, Formula One, and dramatic coastal architecture. Monte Carlo, the Prince’s Palace, and the Oceanographic Museum are major attractions. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇲🇨',
     flagColors: ['#CE1126', '#FFFFFF', '#CE1126'],
     continent: 'Europe',
@@ -14942,6 +15097,7 @@ export const countries: Record<string, CountryData> = {
   VC: {
     name: 'Saint Vincent and the Grenadines',
     code: 'VC',
+    summary: 'Saint Vincent and the Grenadines combines a mountainous main island with a chain of smaller islands known for sailing, clear water, and quiet beaches. Saint Vincent offers volcano hikes and local life, while Bequia, Mustique, and the Tobago Cays provide more relaxed island experiences.',
     flagEmoji: '🇻🇨',
     flagColors: ['#0072C6', '#FCD116', '#009E60'],
     continent: 'North America',
@@ -15018,6 +15174,7 @@ export const countries: Record<string, CountryData> = {
   AD: {
     name: 'Andorra',
     code: 'AD',
+    summary: 'Andorra is a small Pyrenean country known for mountain scenery, skiing, hiking, shopping, and compact stone villages. Andorra la Vella provides urban amenities and thermal spas, while surrounding valleys offer trails and winter sports. The result is varied and rewarding.',
     flagEmoji: '🇦🇩',
     flagColors: ['#10069F', '#FEDD00', '#D52B1E'],
     continent: 'Europe',
@@ -15088,6 +15245,7 @@ export const countries: Record<string, CountryData> = {
   AF: {
     name: 'Afghanistan',
     code: 'AF',
+    summary: 'Afghanistan has extraordinary mountains, historic cities, Buddhist and Islamic heritage, and deep traditions of poetry, craft, and hospitality. Bamyan, Herat, Mazar-i-Sharif, and the Hindu Kush reflect its cultural and natural richness. Decades of conflict, Taliban rule, and severe security risks make leisure travel highly dangerous.',
     flagEmoji: '🇦🇫',
     flagColors: ['#000000', '#D32011', '#007A36'],
     continent: 'Asia',
@@ -15163,6 +15321,7 @@ export const countries: Record<string, CountryData> = {
   AI: {
     name: 'Anguilla',
     code: 'AI',
+    summary: 'Anguilla is a low-lying Caribbean island celebrated for exceptionally clear water, long white-sand beaches, relaxed luxury, and excellent dining. It lacks the large resorts and cruise crowds found elsewhere, creating a quieter atmosphere. That mix gives travelers plenty to discover.',
     flagEmoji: '🇦🇮',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -15223,6 +15382,7 @@ export const countries: Record<string, CountryData> = {
   AM: {
     name: 'Armenia',
     code: 'AM',
+    summary: 'Armenia offers ancient monasteries, mountain landscapes, distinctive stone architecture, and a strong cultural identity shaped by Christianity, diaspora, and resilience. Yerevan is lively and walkable, while Geghard, Tatev, Lake Sevan, and the countryside reveal deeper history.',
     flagEmoji: '🇦🇲',
     flagColors: ['#D90012', '#0033A0', '#F2A800'],
     continent: 'Asia',
@@ -15297,6 +15457,7 @@ export const countries: Record<string, CountryData> = {
   AS: {
     name: 'American Samoa',
     code: 'AS',
+    summary: 'American Samoa combines volcanic mountains, rainforest, coral reefs, and a Polynesian culture strongly centered on family and village life. The National Park of American Samoa protects dramatic coastal scenery and tropical ecosystems. That mix gives travelers plenty to discover.',
     flagEmoji: '🇦🇸',
     flagColors: ['#0033A0', '#FFFFFF', '#BF0A30'],
     continent: 'Oceania',
@@ -15375,6 +15536,7 @@ export const countries: Record<string, CountryData> = {
   AZ: {
     name: 'Azerbaijan',
     code: 'AZ',
+    summary: 'Azerbaijan blends Caucasus mountains, Caspian coastline, Silk Road history, and striking modern architecture. Baku combines a medieval old city with bold contemporary towers, while Sheki, Gobustan, mountain villages, and mud volcanoes broaden the experience. The result is varied and rewarding.',
     flagEmoji: '🇦🇿',
     flagColors: ['#00B5E2', '#EF3340', '#00AF66'],
     continent: 'Asia',
@@ -15443,6 +15605,7 @@ export const countries: Record<string, CountryData> = {
   BD: {
     name: 'Bangladesh',
     code: 'BD',
+    summary: 'Bangladesh is a densely populated river country of delta landscapes, vibrant cities, tea regions, beaches, and deep Bengali cultural traditions. Dhaka is intense and historic, while the Sundarbans, Srimangal, Chittagong Hill Tracts, and rural waterways offer nature and slower travel.',
     flagEmoji: '🇧🇩',
     flagColors: ['#006A4E', '#F42A41', '#006A4E'],
     continent: 'Asia',
@@ -15514,6 +15677,7 @@ export const countries: Record<string, CountryData> = {
   BH: {
     name: 'Bahrain',
     code: 'BH',
+    summary: 'Bahrain is a compact Gulf island kingdom with archaeological sites, modern city life, souqs, mosques, and a long history of trade and pearl diving. Manama offers museums, dining, and nightlife, while ancient burial mounds, forts, and the Tree of Life reveal older layers.',
     flagEmoji: '🇧🇭',
     flagColors: ['#FFFFFF', '#DA291C', '#DA291C'],
     continent: 'Asia',
@@ -15589,6 +15753,7 @@ export const countries: Record<string, CountryData> = {
   BI: {
     name: 'Burundi',
     code: 'BI',
+    summary: 'Burundi is a small, mountainous country on Lake Tanganyika, with green highlands, beaches, drumming traditions, and less-visited national parks. Bujumbura is the main gateway, while Kibira and Rusizi offer wildlife and forest landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇮',
     flagColors: ['#CE1126', '#FFFFFF', '#1EB53A'],
     continent: 'Africa',
@@ -15660,6 +15825,7 @@ export const countries: Record<string, CountryData> = {
   BL: {
     name: 'Saint Barthélemy',
     code: 'BL',
+    summary: 'Saint Barthélemy is a small French Caribbean island known for stylish villages, beautiful coves, excellent restaurants, yachts, and discreet luxury. Gustavia is the main harbor town, while beaches such as Colombier and Salines offer quieter scenery.',
     flagEmoji: '🇧🇱',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -15723,6 +15889,7 @@ export const countries: Record<string, CountryData> = {
   BQ: {
     name: 'Bonaire',
     code: 'BQ',
+    summary: 'Bonaire is a Dutch Caribbean island renowned for shore diving, coral reefs, clear water, and a dry, rugged landscape. Kralendijk is the main town, while Washington-Slagbaai National Park, salt flats, flamingos, and quiet beaches broaden the experience.',
     flagEmoji: '🇧🇶',
     flagColors: ['#012169', '#FFD100', '#000000'],
     continent: 'North America',
@@ -15789,6 +15956,7 @@ export const countries: Record<string, CountryData> = {
   BY: {
     name: 'Belarus',
     code: 'BY',
+    summary: 'Belarus offers broad forests, lakes, castles, Soviet-era architecture, and a strong cultural identity shaped by Eastern Europe. Minsk is orderly and monumental, while Mir, Nesvizh, and rural regions preserve historic and traditional landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇾',
     flagColors: ['#D22730', '#009739', '#FFFFFF'],
     continent: 'Europe',
@@ -15858,6 +16026,7 @@ export const countries: Record<string, CountryData> = {
   CF: {
     name: 'Central African Republic',
     code: 'CF',
+    summary: 'The Central African Republic contains rich wildlife, rainforest, savanna, and culturally diverse communities. Dzanga-Sangha is internationally known for forest elephants and gorillas. However, long-running conflict, weak infrastructure, and severe security risks make tourism highly dangerous and largely impractical outside tightly controlled specialist expeditions.',
     flagEmoji: '🇨🇫',
     flagColors: ['#003082', '#FFCE00', '#009543'],
     continent: 'Africa',
@@ -15924,6 +16093,7 @@ export const countries: Record<string, CountryData> = {
   CK: {
     name: 'Cook Islands',
     code: 'CK',
+    summary: 'The Cook Islands combine turquoise lagoons, coral reefs, volcanic interiors, and a relaxed Polynesian culture. Rarotonga offers the main concentration of restaurants, beaches, and hiking, while Aitutaki is famous for its lagoon. That mix gives travelers plenty to discover.',
     flagEmoji: '🇨🇰',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'Oceania',
@@ -15997,6 +16167,7 @@ export const countries: Record<string, CountryData> = {
   CW: {
     name: 'Curaçao',
     code: 'CW',
+    summary: 'Curaçao combines colorful Dutch-Caribbean architecture, clear water, small beaches, diving, and a lively food and arts scene. Willemstad’s Handelskade and historic districts are the visual centerpiece, while the island’s dry interior, coves, and national parks add variety.',
     flagEmoji: '🇨🇼',
     flagColors: ['#002B7F', '#F9E814', '#FFFFFF'],
     continent: 'North America',
@@ -16071,6 +16242,7 @@ export const countries: Record<string, CountryData> = {
   DJ: {
     name: 'Djibouti',
     code: 'DJ',
+    summary: 'Djibouti is a small Horn of Africa country of salt lakes, volcanic landscapes, desert, and rich marine life. Lake Assal, Lake Abbe, and the Gulf of Tadjoura are major natural attractions, including seasonal whale-shark encounters.',
     flagEmoji: '🇩🇯',
     flagColors: ['#6AB2E7', '#12AD2B', '#D7141A'],
     continent: 'Africa',
@@ -16136,6 +16308,7 @@ export const countries: Record<string, CountryData> = {
   ER: {
     name: 'Eritrea',
     code: 'ER',
+    summary: 'Eritrea offers Red Sea islands, Italian modernist architecture, highland scenery, and a distinctive cultural mix. Asmara is celebrated for its preserved twentieth-century buildings, while Massawa and the Dahlak Archipelago provide coastal history and marine life.',
     flagEmoji: '🇪🇷',
     flagColors: ['#4189DD', '#EA0437', '#12AD2B'],
     continent: 'Africa',
@@ -16208,6 +16381,7 @@ export const countries: Record<string, CountryData> = {
   FM: {
     name: 'Micronesia',
     code: 'FM',
+    summary: 'Micronesia, formally the Federated States of Micronesia, is a Pacific nation of hundreds of islands spread across a vast ocean area. Pohnpei, Chuuk, Yap, and Kosrae each have distinct cultures and landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇫🇲',
     flagColors: ['#75B2DD', '#FFFFFF', '#75B2DD'],
     continent: 'Oceania',
@@ -16278,6 +16452,7 @@ export const countries: Record<string, CountryData> = {
   FO: {
     name: 'Faroe Islands',
     code: 'FO',
+    summary: 'The Faroe Islands offer steep sea cliffs, grass-roofed villages, waterfalls, seabirds, and dramatic North Atlantic weather. Tórshavn provides a compact cultural base, while road tunnels and ferries connect remote settlements and hiking areas. That mix gives travelers plenty to discover.',
     flagEmoji: '🇫🇴',
     flagColors: ['#FFFFFF', '#0065BD', '#ED2939'],
     continent: 'Europe',
@@ -16351,6 +16526,7 @@ export const countries: Record<string, CountryData> = {
   GD: {
     name: 'Grenada',
     code: 'GD',
+    summary: 'Grenada is known as the Spice Island for its nutmeg, cocoa, and fragrant plantations. It combines beaches, rainforest, waterfalls, diving, and a colorful capital, St. George’s. It is especially rewarding for travelers drawn to wildlife, scenery, and memorable outdoor experiences.',
     flagEmoji: '🇬🇩',
     flagColors: ['#CE1126', '#FCD116', '#007A5E'],
     continent: 'North America',
@@ -16422,6 +16598,7 @@ export const countries: Record<string, CountryData> = {
   GF: {
     name: 'French Guiana',
     code: 'GF',
+    summary: 'French Guiana combines Amazon rainforest, Atlantic coast, Indigenous and Creole cultures, and the unusual presence of Europe’s spaceport at Kourou. Cayenne offers markets and colonial history, while the interior is remote and biodiversity-rich. That mix gives travelers plenty to discover.',
     flagEmoji: '🇬🇫',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'South America',
@@ -16498,6 +16675,7 @@ export const countries: Record<string, CountryData> = {
   GG: {
     name: 'Guernsey',
     code: 'GG',
+    summary: 'Guernsey is a compact Channel Island of cliffs, beaches, harbors, and British-French cultural influences. St. Peter Port is the picturesque center, with historic streets and views toward smaller islands. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇬🇬',
     flagColors: ['#FFFFFF', '#E8112D', '#F9DD16'],
     continent: 'Europe',
@@ -16569,6 +16747,7 @@ export const countries: Record<string, CountryData> = {
   GI: {
     name: 'Gibraltar',
     code: 'GI',
+    summary: 'Gibraltar is a tiny British territory dominated by the Rock, with caves, fortifications, sea views, and a curious blend of British, Spanish, Mediterranean, and North African influences. Visitors come for the upper rock reserve, macaques, tunnels, and maritime history.',
     flagEmoji: '🇬🇮',
     flagColors: ['#FFFFFF', '#CE1126', '#FFFFFF'],
     continent: 'Europe',
@@ -16641,6 +16820,7 @@ export const countries: Record<string, CountryData> = {
   GN: {
     name: 'Guinea',
     code: 'GN',
+    summary: 'Guinea offers dramatic highlands, waterfalls, forests, music, and important river sources, including headwaters of the Niger, Senegal, and Gambia. Conakry is the main urban center, while Fouta Djallon and forest regions offer natural beauty. The result is varied and rewarding.',
     flagEmoji: '🇬🇳',
     flagColors: ['#CE1126', '#FCD116', '#009460'],
     continent: 'Africa',
@@ -16716,6 +16896,7 @@ export const countries: Record<string, CountryData> = {
   GP: {
     name: 'Guadeloupe',
     code: 'GP',
+    summary: 'Guadeloupe is a French Caribbean archipelago combining rainforest, volcanoes, beaches, waterfalls, and Creole culture. Basse-Terre is lush and mountainous, while Grande-Terre offers flatter landscapes and popular beaches. Smaller islands, local markets, rum, seafood, and hiking create a varied destination with both French and Caribbean character.',
     flagEmoji: '🇬🇵',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -16791,6 +16972,7 @@ export const countries: Record<string, CountryData> = {
   GQ: {
     name: 'Equatorial Guinea',
     code: 'GQ',
+    summary: 'Equatorial Guinea combines tropical islands, mainland rainforest, volcanic landscapes, and Spanish colonial influences. Malabo and Bioko Island offer mountain scenery and architecture, while Monte Alén National Park protects rich biodiversity. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇬🇶',
     flagColors: ['#3E9A00', '#FFFFFF', '#E32118'],
     continent: 'Africa',
@@ -16858,6 +17040,7 @@ export const countries: Record<string, CountryData> = {
   GU: {
     name: 'Guam',
     code: 'GU',
+    summary: 'Guam combines tropical beaches, coral reefs, Chamorro culture, and significant World War II history. Tumon provides resorts and shopping, while southern villages, coastal drives, and War in the Pacific sites offer a broader experience. The result is varied and rewarding.',
     flagEmoji: '🇬🇺',
     flagColors: ['#0033A0', '#DA291C', '#FFFFFF'],
     continent: 'Oceania',
@@ -16936,6 +17119,7 @@ export const countries: Record<string, CountryData> = {
   GW: {
     name: 'Guinea-Bissau',
     code: 'GW',
+    summary: 'Guinea-Bissau is a little-visited West African country known for mangroves, islands, wildlife, music, and diverse ethnic traditions. The Bijagós Archipelago is the main natural attraction, with beaches, marine life, and traditional communities. That mix gives travelers plenty to discover.',
     flagEmoji: '🇬🇼',
     flagColors: ['#CE1126', '#FCD116', '#009543'],
     continent: 'Africa',
@@ -17011,6 +17195,7 @@ export const countries: Record<string, CountryData> = {
   IM: {
     name: 'Isle of Man',
     code: 'IM',
+    summary: 'The Isle of Man combines rugged coastline, green hills, castles, heritage railways, and a strong independent identity in the Irish Sea. Douglas is the main town, while the TT motorcycle course, Snaefell, and coastal villages provide distinctive attractions.',
     flagEmoji: '🇮🇲',
     flagColors: ['#CF142B', '#FFFFFF', '#FFCC00'],
     continent: 'Europe',
@@ -17076,6 +17261,7 @@ export const countries: Record<string, CountryData> = {
   IQ: {
     name: 'Iraq',
     code: 'IQ',
+    summary: 'Iraq is the heartland of ancient Mesopotamia, with archaeological sites, sacred cities, marshes, mountain regions, and deeply rooted cultural traditions. Baghdad, Babylon, Najaf, Karbala, and Iraqi Kurdistan reveal very different histories and landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇮🇶',
     flagColors: ['#CE1126', '#FFFFFF', '#000000'],
     continent: 'Asia',
@@ -17153,6 +17339,7 @@ export const countries: Record<string, CountryData> = {
   IR: {
     name: 'Iran',
     code: 'IR',
+    summary: 'Iran offers extraordinary architecture, ancient ruins, deserts, mountains, gardens, bazaars, and one of the world’s great culinary traditions. Tehran, Isfahan, Shiraz, Yazd, and Persepolis are major highlights. Curious travelers will find layers of history, memorable architecture, and strong local character.',
     flagEmoji: '🇮🇷',
     flagColors: ['#239F40', '#FFFFFF', '#DA0000'],
     continent: 'Asia',
@@ -17231,6 +17418,7 @@ export const countries: Record<string, CountryData> = {
   JE: {
     name: 'Jersey',
     code: 'JE',
+    summary: 'Jersey is the largest Channel Island, offering beaches, cliffs, castles, seafood, and a blend of British and French influences. St. Helier is the main town, while coastal walks, tidal landscapes, and wartime tunnels provide variety.',
     flagEmoji: '🇯🇪',
     flagColors: ['#FFFFFF', '#E8112D', '#FFCC00'],
     continent: 'Europe',
@@ -17304,6 +17492,7 @@ export const countries: Record<string, CountryData> = {
   KG: {
     name: 'Kyrgyzstan',
     code: 'KG',
+    summary: 'Kyrgyzstan is a mountainous Central Asian country known for alpine lakes, horse culture, nomadic traditions, and excellent trekking. Bishkek is the gateway, while Issyk-Kul, Song-Kul, Ala-Archa, and remote valleys provide the main experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇬',
     flagColors: ['#E8112D', '#FCD116', '#E8112D'],
     continent: 'Asia',
@@ -17375,6 +17564,7 @@ export const countries: Record<string, CountryData> = {
   KI: {
     name: 'Kiribati',
     code: 'KI',
+    summary: 'Kiribati is a widely scattered Pacific nation of low-lying coral atolls, lagoons, fishing communities, and strong island traditions. South Tarawa is densely populated, while outer islands feel remote and quiet. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇮',
     flagColors: ['#CE1126', '#FCD116', '#003F87'],
     continent: 'Oceania',
@@ -17432,6 +17622,7 @@ export const countries: Record<string, CountryData> = {
   KM: {
     name: 'Comoros',
     code: 'KM',
+    summary: 'Comoros is a volcanic Indian Ocean archipelago of beaches, reefs, fragrant plantations, and a culture blending African, Arab, and French influences. Grande Comore, Mohéli, and Anjouan each have distinct landscapes. Tourism is limited, but marine life, traditional villages, and dramatic volcanic scenery offer strong potential.',
     flagEmoji: '🇰🇲',
     flagColors: ['#FFCE00', '#FFFFFF', '#3B5AA3'],
     continent: 'Africa',
@@ -17505,6 +17696,7 @@ export const countries: Record<string, CountryData> = {
   KP: {
     name: 'North Korea',
     code: 'KP',
+    summary: 'North Korea is one of the world’s most closed states, with monumental architecture, highly controlled public life, mountain scenery, and important historic sites. Visits, when permitted, are tightly supervised and provide limited independent contact with local people.',
     flagEmoji: '🇰🇵',
     flagColors: ['#024FA2', '#ED1C27', '#FFFFFF'],
     continent: 'Asia',
@@ -17575,6 +17767,7 @@ export const countries: Record<string, CountryData> = {
   KY: {
     name: 'Cayman Islands',
     code: 'KY',
+    summary: 'The Cayman Islands are known for clear water, coral reefs, diving, financial services, and polished beach resorts. Grand Cayman offers Seven Mile Beach, restaurants, and most visitor facilities, while Cayman Brac and Little Cayman are quieter and more nature-focused.',
     flagEmoji: '🇰🇾',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -17639,6 +17832,7 @@ export const countries: Record<string, CountryData> = {
   LI: {
     name: 'Liechtenstein',
     code: 'LI',
+    summary: 'Liechtenstein is a tiny Alpine principality of mountains, castles, vineyards, and carefully maintained villages. Vaduz offers museums and the princely castle view, while hiking and cycling routes connect the surrounding slopes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇱🇮',
     flagColors: ['#002B7F', '#CE1126', '#FFFFFF'],
     continent: 'Europe',
@@ -17712,6 +17906,7 @@ export const countries: Record<string, CountryData> = {
   MD: {
     name: 'Moldova',
     code: 'MD',
+    summary: 'Moldova is a small, under-visited country known for wine, monasteries, rolling countryside, and a mix of Romanian, Russian, and Soviet influences. Chișinău offers parks, markets, and food, while vast underground wineries are major attractions. The result is varied and rewarding.',
     flagEmoji: '🇲🇩',
     flagColors: ['#0033A0', '#FFD100', '#CE1126'],
     continent: 'Europe',
@@ -17784,6 +17979,7 @@ export const countries: Record<string, CountryData> = {
   MF: {
     name: 'Saint Martin',
     code: 'MF',
+    summary: 'Saint Martin is the French northern half of a Caribbean island shared with Dutch Sint Maarten. It is known for beaches, French-Creole dining, small villages, and a relaxed atmosphere. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇲🇫',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -17848,6 +18044,7 @@ export const countries: Record<string, CountryData> = {
   MH: {
     name: 'Marshall Islands',
     code: 'MH',
+    summary: 'The Marshall Islands are a remote Pacific nation of coral atolls, lagoons, diving, fishing, and strong seafaring traditions. Majuro is the main center, while outer atolls are far quieter. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇲🇭',
     flagColors: ['#003893', '#DD7500', '#FFFFFF'],
     continent: 'Oceania',
@@ -17919,6 +18116,7 @@ export const countries: Record<string, CountryData> = {
   MK: {
     name: 'North Macedonia',
     code: 'MK',
+    summary: 'North Macedonia combines Ottoman towns, Orthodox monasteries, mountain landscapes, lakes, and a mix of Balkan cultural influences. Skopje is the capital, while Ohrid, Matka Canyon, and wine regions are major attractions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇲🇰',
     flagColors: ['#D20000', '#FFE600', '#D20000'],
     continent: 'Europe',
@@ -17997,6 +18195,7 @@ export const countries: Record<string, CountryData> = {
   MO: {
     name: 'Macao',
     code: 'MO',
+    summary: 'Macao is a compact city where Portuguese colonial architecture, Chinese temples, casinos, food, and dense urban neighborhoods coexist. The historic center reflects centuries of cultural exchange, while Cotai offers large-scale entertainment resorts. That mix gives travelers plenty to discover.',
     flagEmoji: '🇲🇴',
     flagColors: ['#00785E', '#FFCE00', '#FFFFFF'],
     continent: 'Asia',
@@ -18064,6 +18263,7 @@ export const countries: Record<string, CountryData> = {
   MP: {
     name: 'Northern Mariana Islands',
     code: 'MP',
+    summary: 'The Northern Mariana Islands combine tropical beaches, diving, wartime history, and Chamorro and Carolinian culture. Saipan has most visitor facilities, while Tinian and Rota are quieter. The mix of coastal scenery, local culture, and outdoor experiences makes it especially enjoyable.',
     flagEmoji: '🇲🇵',
     flagColors: ['#0033A0', '#FFFFFF', '#8B4513'],
     continent: 'Oceania',
@@ -18140,6 +18340,7 @@ export const countries: Record<string, CountryData> = {
   MQ: {
     name: 'Martinique',
     code: 'MQ',
+    summary: 'Martinique is a French Caribbean island of beaches, rainforest, volcanic mountains, rum estates, and Creole culture. Fort-de-France provides markets and urban life, while Mount Pelée, Les Salines, and northern villages offer nature and history. The result is varied and rewarding.',
     flagEmoji: '🇲🇶',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -18217,6 +18418,7 @@ export const countries: Record<string, CountryData> = {
   MR: {
     name: 'Mauritania',
     code: 'MR',
+    summary: 'Mauritania is a vast Saharan country of dunes, ancient caravan towns, desert plateaus, and Atlantic coast. Chinguetti, Ouadane, the Adrar, and the iron-ore train are its best-known attractions. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇲🇷',
     flagColors: ['#D01C1F', '#00A95C', '#FFD700'],
     continent: 'Africa',
@@ -18290,6 +18492,7 @@ export const countries: Record<string, CountryData> = {
   MS: {
     name: 'Montserrat',
     code: 'MS',
+    summary: 'Montserrat is a small Caribbean island transformed by the Soufrière Hills volcano, which buried its former capital, Plymouth. Visitors come for volcanic landscapes, hiking, quiet beaches, and a close-knit community. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇲🇸',
     flagColors: ['#012169', '#009543', '#FFCE00'],
     continent: 'North America',
@@ -18354,6 +18557,7 @@ export const countries: Record<string, CountryData> = {
   NC: {
     name: 'New Caledonia',
     code: 'NC',
+    summary: 'New Caledonia combines a huge lagoon, coral reefs, beaches, mountains, and a culture shaped by Indigenous Kanak and French influences. Nouméa offers urban comforts, while the Loyalty Islands and Grande Terre provide quieter landscapes and traditions.',
     flagEmoji: '🇳🇨',
     flagColors: ['#009543', '#ED4135', '#0035AD'],
     continent: 'Oceania',
@@ -18421,6 +18625,7 @@ export const countries: Record<string, CountryData> = {
   NE: {
     name: 'Niger',
     code: 'NE',
+    summary: 'Niger contains immense Sahara landscapes, the Aïr Mountains, historic caravan towns, and Tuareg cultural traditions. Agadez has long been a key desert crossroads, while remote reserves protect unusual wildlife. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇳🇪',
     flagColors: ['#E05206', '#FFFFFF', '#0DB02B'],
     continent: 'Africa',
@@ -18490,6 +18695,7 @@ export const countries: Record<string, CountryData> = {
   NR: {
     name: 'Nauru',
     code: 'NR',
+    summary: 'Nauru is one of the world’s smallest countries, a remote Pacific island shaped profoundly by phosphate mining. Visitors find a ring road, coral coast, a mined interior, and a close-knit community. That mix gives travelers plenty to discover.',
     flagEmoji: '🇳🇷',
     flagColors: ['#002B7F', '#FFCE00', '#FFFFFF'],
     continent: 'Oceania',
@@ -18560,6 +18766,7 @@ export const countries: Record<string, CountryData> = {
   NU: {
     name: 'Niue',
     code: 'NU',
+    summary: 'Niue is a raised coral island known for clear water, caves, chasms, reef pools, and seasonal humpback whales. With a small population and limited tourism, it feels quiet and personal. That mix gives travelers plenty to discover.',
     flagEmoji: '🇳🇺',
     flagColors: ['#FFCC00', '#012169', '#FFFFFF'],
     continent: 'Oceania',
@@ -18622,6 +18829,7 @@ export const countries: Record<string, CountryData> = {
   PG: {
     name: 'Papua New Guinea',
     code: 'PG',
+    summary: 'Papua New Guinea is one of the world’s most culturally and biologically diverse countries, with hundreds of languages, mountain valleys, tropical islands, reefs, and traditional communities. Trekking, diving, birdwatching, and festivals are major draws. The result is varied and rewarding.',
     flagEmoji: '🇵🇬',
     flagColors: ['#CE1126', '#000000', '#FCD116'],
     continent: 'Oceania',
@@ -18691,6 +18899,7 @@ export const countries: Record<string, CountryData> = {
   PK: {
     name: 'Pakistan',
     code: 'PK',
+    summary: 'Pakistan offers high mountain ranges, ancient civilizations, Islamic architecture, deserts, cities, and exceptionally varied regional cultures. Lahore, Islamabad, the Karakoram Highway, Hunza, and archaeological sites such as Mohenjo-daro are major highlights. Hospitality and food are strong attractions, though security and infrastructure require careful planning.',
     flagEmoji: '🇵🇰',
     flagColors: ['#01411C', '#FFFFFF', '#01411C'],
     continent: 'Asia',
@@ -18763,6 +18972,7 @@ export const countries: Record<string, CountryData> = {
   PM: {
     name: 'Saint Pierre and Miquelon',
     code: 'PM',
+    summary: 'Saint Pierre and Miquelon is a small French archipelago near Newfoundland, offering colorful towns, rugged coast, maritime history, and a distinctly European atmosphere in North America. Saint-Pierre is the main center, while Miquelon-Langlade provides nature and quiet landscapes.',
     flagEmoji: '🇵🇲',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -18833,6 +19043,7 @@ export const countries: Record<string, CountryData> = {
   PS: {
     name: 'Palestinian Territories',
     code: 'PS',
+    summary: 'The Palestinian Territories contain profound religious history, ancient towns, cultural traditions, and landscapes stretching from hill country to the Dead Sea. Bethlehem, Jericho, Hebron, Nablus, and Ramallah each offer distinct experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇵🇸',
     flagColors: ['#000000', '#FFFFFF', '#009639'],
     continent: 'Asia',
@@ -18909,6 +19120,7 @@ export const countries: Record<string, CountryData> = {
   PW: {
     name: 'Palau',
     code: 'PW',
+    summary: 'Palau is a Pacific island nation celebrated for world-class diving, clear lagoons, limestone islands, marine wildlife, and strong conservation policies. Koror is the main base, while the Rock Islands, Jellyfish Lake, and outer states provide the main natural attractions.',
     flagEmoji: '🇵🇼',
     flagColors: ['#4AADD6', '#FFDE00', '#4AADD6'],
     continent: 'Oceania',
@@ -18982,6 +19194,7 @@ export const countries: Record<string, CountryData> = {
   SB: {
     name: 'Solomon Islands',
     code: 'SB',
+    summary: 'The Solomon Islands combine rainforest, coral reefs, remote islands, traditional communities, and significant World War II history. Honiara is the main gateway, while Western Province and outer islands offer diving, surfing, lagoons, and village stays.',
     flagEmoji: '🇸🇧',
     flagColors: ['#0051BA', '#FCD116', '#215B33'],
     continent: 'Oceania',
@@ -19041,6 +19254,7 @@ export const countries: Record<string, CountryData> = {
   SM: {
     name: 'San Marino',
     code: 'SM',
+    summary: 'San Marino is a tiny republic perched on Mount Titano, known for medieval towers, steep lanes, panoramic views, and one of Europe’s oldest political traditions. The compact historic center is easily explored on foot. The result is varied and rewarding.',
     flagEmoji: '🇸🇲',
     flagColors: ['#FFFFFF', '#5EB6E4', '#FFFFFF'],
     continent: 'Europe',
@@ -19108,6 +19322,7 @@ export const countries: Record<string, CountryData> = {
   SO: {
     name: 'Somalia',
     code: 'SO',
+    summary: 'Somalia has a long Indian Ocean coastline, historic trading cities, pastoral traditions, distinctive cuisine, and important archaeological and cultural heritage. Mogadishu, Somaliland, and Puntland have very different conditions. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇸🇴',
     flagColors: ['#4189DD', '#FFFFFF', '#FFFFFF'],
     continent: 'Africa',
@@ -19185,6 +19400,7 @@ export const countries: Record<string, CountryData> = {
   SS: {
     name: 'South Sudan',
     code: 'SS',
+    summary: 'South Sudan is a young country of vast wetlands, savannas, diverse ethnic cultures, and major wildlife migrations. The Sudd and remote national parks hold exceptional ecological importance. Travelers come for close encounters with nature, varied landscapes, and rewarding outdoor adventures.',
     flagEmoji: '🇸🇸',
     flagColors: ['#000000', '#DE2010', '#078930'],
     continent: 'Africa',
@@ -19254,6 +19470,7 @@ export const countries: Record<string, CountryData> = {
   ST: {
     name: 'São Tomé and Príncipe',
     code: 'ST',
+    summary: 'São Tomé and Príncipe is a lush volcanic island nation of rainforest, cocoa plantations, beaches, and Portuguese-Creole culture. São Tomé is the larger island, while Príncipe is quieter and more pristine. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇹',
     flagColors: ['#12AD2B', '#FFCE00', '#D21034'],
     continent: 'Africa',
@@ -19327,6 +19544,7 @@ export const countries: Record<string, CountryData> = {
   SX: {
     name: 'Sint Maarten',
     code: 'SX',
+    summary: 'Sint Maarten is the Dutch southern half of an island shared with French Saint Martin. It is known for beaches, cruise tourism, nightlife, shopping, and the famous low-flying aircraft at Maho Beach. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇽',
     flagColors: ['#CE2029', '#FFFFFF', '#0033A0'],
     continent: 'North America',
@@ -19398,6 +19616,7 @@ export const countries: Record<string, CountryData> = {
   SY: {
     name: 'Syria',
     code: 'SY',
+    summary: 'Syria has an extraordinary cultural heritage, including ancient cities, Roman ruins, castles, souqs, and some of the world’s oldest continuously inhabited settlements. Damascus, Aleppo, Palmyra, and coastal regions hold immense historical importance. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇾',
     flagColors: ['#CE1126', '#FFFFFF', '#000000'],
     continent: 'Asia',
@@ -19468,6 +19687,7 @@ export const countries: Record<string, CountryData> = {
   TC: {
     name: 'Turks and Caicos',
     code: 'TC',
+    summary: 'Turks and Caicos is known for exceptionally clear water, white-sand beaches, coral reefs, and upscale but relaxed resorts. Providenciales has most visitor facilities, while Grand Turk and the smaller islands offer history, diving, and quieter settings.',
     flagEmoji: '🇹🇨',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -19542,6 +19762,7 @@ export const countries: Record<string, CountryData> = {
   TD: {
     name: 'Chad',
     code: 'TD',
+    summary: 'Chad contains vast Sahara desert, striking rock formations, savanna, and culturally diverse communities. The Ennedi Plateau and Zakouma National Park are exceptional natural attractions. However, remote logistics, political instability, and serious security risks make tourism highly challenging and usually limited to specialist expeditions.',
     flagEmoji: '🇹🇩',
     flagColors: ['#002664', '#FECB00', '#C60C30'],
     continent: 'Africa',
@@ -19616,6 +19837,7 @@ export const countries: Record<string, CountryData> = {
   TJ: {
     name: 'Tajikistan',
     code: 'TJ',
+    summary: 'Tajikistan is a mountainous Central Asian country known for the Pamir Highway, high-altitude lakes, rugged valleys, and Persian cultural traditions. Dushanbe is the main gateway, while the Pamirs and Fann Mountains attract adventurous road-trippers and trekkers.',
     flagEmoji: '🇹🇯',
     flagColors: ['#CC0000', '#FFFFFF', '#006600'],
     continent: 'Asia',
@@ -19688,6 +19910,7 @@ export const countries: Record<string, CountryData> = {
   TL: {
     name: 'Timor-Leste',
     code: 'TL',
+    summary: 'Timor-Leste is a young island nation of mountains, coral reefs, beaches, and a culture shaped by Indigenous traditions and Portuguese influence. Dili is the main gateway, while Atauro Island, mountain villages, and the eastern coast offer diving and quiet scenery.',
     flagEmoji: '🇹🇱',
     flagColors: ['#DC241F', '#FFC726', '#000000'],
     continent: 'Asia',
@@ -19766,6 +19989,7 @@ export const countries: Record<string, CountryData> = {
   TM: {
     name: 'Turkmenistan',
     code: 'TM',
+    summary: 'Turkmenistan is known for monumental Ashgabat, desert landscapes, Silk Road ruins, and the unusual Darvaza gas crater. Merv, Konye-Urgench, and the Karakum Desert reveal deeper history and geography. Tourism is tightly controlled, visas can be difficult, and independent travel is restricted, making visits highly structured.',
     flagEmoji: '🇹🇲',
     flagColors: ['#00843D', '#FFFFFF', '#CE1126'],
     continent: 'Asia',
@@ -19843,6 +20067,7 @@ export const countries: Record<string, CountryData> = {
   TO: {
     name: 'Tonga',
     code: 'TO',
+    summary: 'Tonga is a Polynesian kingdom of coral islands, beaches, caves, traditional villages, and strong royal and church traditions. Vavaʻu is famous for sailing and seasonal humpback whales, while Tongatapu offers archaeological sites and everyday culture.',
     flagEmoji: '🇹🇴',
     flagColors: ['#FFFFFF', '#C10000', '#C10000'],
     continent: 'Oceania',
@@ -19907,6 +20132,7 @@ export const countries: Record<string, CountryData> = {
   TV: {
     name: 'Tuvalu',
     code: 'TV',
+    summary: 'Tuvalu is a tiny Pacific nation of low-lying atolls, lagoons, close-knit communities, and few conventional tourist facilities. Funafuti is the main settlement, while outer islands are even quieter. Travelers can combine beautiful coastal scenery with local food, culture, and time outdoors.',
     flagEmoji: '🇹🇻',
     flagColors: ['#41B8E6', '#FCD116', '#012169'],
     continent: 'Oceania',
@@ -19981,6 +20207,7 @@ export const countries: Record<string, CountryData> = {
   VA: {
     name: 'Vatican City',
     code: 'VA',
+    summary: 'Vatican City is the world’s smallest independent state and the spiritual center of the Roman Catholic Church. St. Peter’s Basilica, the Vatican Museums, and the Sistine Chapel contain extraordinary art and architecture. That mix gives travelers plenty to discover.',
     flagEmoji: '🇻🇦',
     flagColors: ['#FFE000', '#FFFFFF', '#FFE000'],
     continent: 'Europe',
@@ -20060,6 +20287,7 @@ export const countries: Record<string, CountryData> = {
   VG: {
     name: 'British Virgin Islands',
     code: 'VG',
+    summary: 'The British Virgin Islands are a sailing-focused Caribbean territory of sheltered bays, coral reefs, beaches, and small islands. Tortola is the main center, while Virgin Gorda, Jost Van Dyke, and Anegada offer different landscapes and atmospheres.',
     flagEmoji: '🇻🇬',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -20138,6 +20366,7 @@ export const countries: Record<string, CountryData> = {
   VI: {
     name: 'US Virgin Islands',
     code: 'VI',
+    summary: 'The US Virgin Islands combine Caribbean beaches, reefs, historic towns, and easy access for American travelers. St. Thomas offers shopping and resorts, St. John is dominated by national parkland, and St. Croix provides plantation history and a broader local culture.',
     flagEmoji: '🇻🇮',
     flagColors: ['#FFFFFF', '#FFCC00', '#0033A0'],
     continent: 'North America',
@@ -20215,6 +20444,7 @@ export const countries: Record<string, CountryData> = {
   WF: {
     name: 'Wallis and Futuna',
     code: 'WF',
+    summary: 'Wallis and Futuna is a remote French Pacific territory of volcanic islands, lagoons, traditional Polynesian kingdoms, and very limited tourism. Wallis offers crater lakes and archaeological sites, while Futuna is mountainous and deeply traditional. The result is varied and rewarding.',
     flagEmoji: '🇼🇫',
     flagColors: ['#ED2939', '#FFFFFF', '#002395'],
     continent: 'Oceania',
@@ -20278,6 +20508,7 @@ export const countries: Record<string, CountryData> = {
   XK: {
     name: 'Kosovo',
     code: 'XK',
+    summary: 'Kosovo combines Ottoman towns, Orthodox monasteries, mountain landscapes, lively cafés, and a young, energetic population. Pristina is the modern center, while Prizren, Rugova Canyon, and medieval religious sites provide history and scenery. That mix gives travelers plenty to discover.',
     flagEmoji: '🇽🇰',
     flagColors: ['#244AA5', '#D0A650', '#FFFFFF'],
     continent: 'Europe',
@@ -20353,6 +20584,7 @@ export const countries: Record<string, CountryData> = {
   YE: {
     name: 'Yemen',
     code: 'YE',
+    summary: 'Yemen possesses extraordinary mud-brick cities, mountain villages, desert landscapes, islands, and deep Arabian history. Sana’a, Shibam, and Socotra are among its remarkable cultural and natural treasures. Ongoing war, humanitarian crisis, and severe security risks make travel extremely dangerous, but Yemen’s heritage remains globally important.',
     flagEmoji: '🇾🇪',
     flagColors: ['#CE1126', '#FFFFFF', '#000000'],
     continent: 'Asia',
@@ -20430,6 +20662,7 @@ export const countries: Record<string, CountryData> = {
   YT: {
     name: 'Mayotte',
     code: 'YT',
+    summary: 'Mayotte is a French-administered island in the Indian Ocean known for a vast lagoon, coral reefs, marine life, volcanic landscapes, and a blend of African, Comorian, and French influences. Diving and beaches are major draws, while everyday life reflects complex regional migration and social pressures.',
     flagEmoji: '🇾🇹',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'Africa',
@@ -20503,6 +20736,7 @@ export const countries: Record<string, CountryData> = {
   RE: {
     name: 'Réunion',
     code: 'RE',
+    summary: 'Réunion is a French volcanic island in the Indian Ocean, celebrated for rugged mountains, active Piton de la Fournaise, waterfalls, cirques, and excellent hiking. Coastal towns offer beaches and Creole culture, while the interior feels wild and dramatic.',
     flagEmoji: '🇷🇪',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'Africa',
