@@ -1,6 +1,8 @@
 export interface PopularPlace {
   name: string
   description: string
+  // Longer detail-panel-only prose. Do not use for cards/promotional surfaces.
+  panelSummary?: string
   // Optional richer detail — populated per-place as we roll it out.
   coords?: { lat: number; lng: number }
   temperatures?: { month: string; high: number; low: number }[]
@@ -29,6 +31,7 @@ export interface CountryData {
   attractions: {
     name: string
     description: string
+    panelSummary?: string
     entityId?: string
     wikidataId?: string
     imageUrl?: string
@@ -50,7 +53,8 @@ export interface CountryData {
   notableFacts: string[]
   popularSouvenirs: { name: string; description: string }[]
   flightTimeFromEWR: string
-  summary?: string
+  
+  panelSummary?: string
 }
 
 
@@ -58,7 +62,7 @@ export const countries: Record<string, CountryData> = {
   AT: {
     name: 'Austria',
     code: 'AT',
-    summary: 'Austria blends imperial cities, alpine scenery, and a deep musical tradition. Vienna offers palaces, cafés, museums, and concert halls, while Salzburg evokes Mozart and baroque Europe. Its food, culture, and everyday rhythms make the experience engaging beyond the major sights.',
+    panelSummary: 'Austria blends imperial cities, alpine scenery, and a deep musical tradition. Vienna offers palaces, cafés, museums, and concert halls, while Salzburg evokes Mozart and baroque Europe. Its food, culture, and everyday rhythms make the experience engaging beyond the major sights.',
     flagEmoji: '🇦🇹',
     flagColors: ['#ED2939', '#FFFFFF', '#ED2939'],
     continent: 'Europe',
@@ -85,9 +89,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'April–October works well for cities, lakes, and hiking; December–March is peak season for Alpine skiing.',
     bestVisitMonths: [4, 5, 6, 7, 8, 9, 10, 12, 1, 2, 3],
     popularPlaces: [
-      { name: 'Vienna', description: 'Imperial capital with palaces, coffeehouses, and world-class music', bestWeatherMonths: "Apr–Oct" },
-      { name: 'Salzburg', description: 'Baroque Alpine city known for Mozart and The Sound of Music', bestWeatherMonths: "May, Sep", goodWeatherMonths: "Jun–Aug, Oct" },
-      { name: 'Innsbruck', description: 'Mountain city with colorful old-town streets and ski access', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Vienna', description: 'Imperial capital with palaces, coffeehouses, and world-class music', bestWeatherMonths: "Apr–Oct", panelSummary: "Vienna is an imperial capital with palaces, coffeehouses, and world-class music. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Salzburg', description: 'Baroque Alpine city known for Mozart and The Sound of Music', bestWeatherMonths: "May, Sep", goodWeatherMonths: "Jun–Aug, Oct", panelSummary: "Salzburg is a baroque Alpine city known for Mozart and The Sound of Music. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Innsbruck', description: 'Mountain city with colorful old-town streets and ski access', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep", panelSummary: "Innsbruck is a mountain city with colorful old-town streets and ski access. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -155,7 +159,7 @@ export const countries: Record<string, CountryData> = {
   CH: {
     name: 'Switzerland',
     code: 'CH',
-    summary: 'Switzerland is defined by dramatic Alps, clear lakes, orderly cities, and exceptional rail journeys. Travelers can move easily between cosmopolitan Zürich and Geneva, medieval towns, vineyard terraces, and high-mountain resorts. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
+    panelSummary: 'Switzerland is defined by dramatic Alps, clear lakes, orderly cities, and exceptional rail journeys. Travelers can move easily between cosmopolitan Zürich and Geneva, medieval towns, vineyard terraces, and high-mountain resorts. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇨🇭',
     flagColors: ['#FF0000', '#FFFFFF', '#FF0000'],
     continent: 'Europe',
@@ -181,9 +185,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 67, 72, 86, 125, 130, 135, 143, 112, 98, 98, 92],
     bestTimeToVisit: 'June–September for hiking and lakes, or December–March for skiing',
     popularPlaces: [
-      { name: 'Zürich', description: 'Lakeside city with museums, shopping, and easy rail connections', bestWeatherMonths: "Sep", goodWeatherMonths: "Apr–Aug, Oct" },
-      { name: 'Lucerne', description: 'Medieval old town beside a lake and mountain scenery', bestWeatherMonths: "May, Sep", goodWeatherMonths: "Apr, Jun–Aug, Oct" },
-      { name: 'Zermatt', description: 'Car-free Alpine resort beneath the Matterhorn', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Zürich', description: 'Lakeside city with museums, shopping, and easy rail connections', bestWeatherMonths: "Sep", goodWeatherMonths: "Apr–Aug, Oct", panelSummary: "Zürich is a lakeside city with museums, shopping, and easy rail connections. The city works well for travelers who like to combine museums and architecture with neighborhood wandering, regional food, and an active street life." },
+      { name: 'Lucerne', description: 'Medieval old town beside a lake and mountain scenery', bestWeatherMonths: "May, Sep", goodWeatherMonths: "Apr, Jun–Aug, Oct", panelSummary: "Lucerne is a medieval old town beside a lake and mountain scenery. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Zermatt', description: 'Car-free Alpine resort beneath the Matterhorn', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep", panelSummary: "Zermatt is a car-free Alpine resort beneath the Matterhorn. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -252,7 +256,7 @@ export const countries: Record<string, CountryData> = {
   CZ: {
     name: 'Czechia',
     code: 'CZ',
-    summary: 'Czechia combines one of Europe’s most beautiful capitals with storybook towns, castles, spa cities, and a lively beer culture. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
+    panelSummary: 'Czechia combines one of Europe’s most beautiful capitals with storybook towns, castles, spa cities, and a lively beer culture. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
     flagEmoji: '🇨🇿',
     flagColors: ['#11457E', '#FFFFFF', '#D7141A'],
     continent: 'Europe',
@@ -278,9 +282,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [41, 33, 44, 39, 71, 80, 92, 77, 60, 48, 44, 45],
     bestTimeToVisit: 'April–June or September–October for mild weather and smaller crowds',
     popularPlaces: [
-      { name: 'Prague', description: 'Storybook capital of bridges, spires, and old-town squares', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Český Krumlov', description: 'UNESCO river town with a hilltop castle', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
-      { name: 'Karlovy Vary', description: 'Elegant spa town known for hot springs', bestWeatherMonths: "May–Sep" },
+      { name: 'Prague', description: 'Storybook capital of bridges, spires, and old-town squares', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Prague is a storybook capital of bridges, spires, and old-town squares. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Český Krumlov', description: 'UNESCO river town with a hilltop castle', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr", panelSummary: "Český Krumlov is a UNESCO river town with a hilltop castle. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Karlovy Vary', description: 'Elegant spa town known for hot springs', bestWeatherMonths: "May–Sep", panelSummary: "Karlovy Vary is an elegant spa town known for hot springs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -354,7 +358,7 @@ export const countries: Record<string, CountryData> = {
   HU: {
     name: 'Hungary',
     code: 'HU',
-    summary: 'Hungary offers grand architecture, thermal bathing, distinctive cuisine, and a cultural identity shaped by Central Europe and the Danube. Budapest is the main draw, with hilltop views, cafés, markets, and historic baths. That mix gives travelers plenty to discover.',
+    panelSummary: 'Hungary offers grand architecture, thermal bathing, distinctive cuisine, and a cultural identity shaped by Central Europe and the Danube. Budapest is the main draw, with hilltop views, cafés, markets, and historic baths. That mix gives travelers plenty to discover.',
     flagEmoji: '🇭🇺',
     flagColors: ['#CE2939', '#FFFFFF', '#477050'],
     continent: 'Europe',
@@ -380,9 +384,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [32, 34, 32, 42, 65, 76, 75, 59, 57, 54, 48, 45],
     bestTimeToVisit: 'April–June or September–October for comfortable city exploring',
     popularPlaces: [
-      { name: 'Budapest', description: 'Danube capital with thermal baths and grand architecture', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
-      { name: 'Lake Balaton', description: 'Central Europe’s largest lake and summer retreat', bestWeatherMonths: "Apr–Oct" },
-      { name: 'Eger', description: 'Baroque town known for castle history and red wine', bestWeatherMonths: "Apr–Oct" },
+      { name: 'Budapest', description: 'Danube capital with thermal baths and grand architecture', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar", panelSummary: "Budapest is a Danube capital with thermal baths and grand architecture. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Lake Balaton', description: 'Central Europe’s largest lake and summer retreat', bestWeatherMonths: "Apr–Oct", panelSummary: "Lake Balaton is central Europe’s largest lake and summer retreat. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Eger', description: 'Baroque town known for castle history and red wine', bestWeatherMonths: "Apr–Oct", panelSummary: "Eger is a baroque town known for castle history and red wine. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -449,7 +453,7 @@ export const countries: Record<string, CountryData> = {
   PL: {
     name: 'Poland',
     code: 'PL',
-    summary: 'Poland rewards travelers with historic cities, resilient cultural traditions, varied landscapes, and excellent value. Kraków, Warsaw, Gdańsk, and Wrocław each have a distinct atmosphere, while castles, forests, Baltic beaches, and the Tatra Mountains add variety.',
+    panelSummary: 'Poland rewards travelers with historic cities, resilient cultural traditions, varied landscapes, and excellent value. Kraków, Warsaw, Gdańsk, and Wrocław each have a distinct atmosphere, while castles, forests, Baltic beaches, and the Tatra Mountains add variety.',
     flagEmoji: '🇵🇱',
     flagColors: ['#FFFFFF', '#DC143C', '#DC143C'],
     continent: 'Europe',
@@ -475,9 +479,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [37, 32, 36, 36, 59, 69, 91, 66, 56, 47, 38, 39],
     bestTimeToVisit: 'May–September for cities, mountains, and Baltic coast trips',
     popularPlaces: [
-      { name: 'Kraków', description: 'Historic royal city with a beautifully preserved old town', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Warsaw', description: 'Resilient capital blending reconstruction and modern culture', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Gdańsk', description: 'Baltic port city with colorful merchant houses', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Kraków', description: 'Historic royal city with a beautifully preserved old town', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Kraków is a historic royal city with a beautifully preserved old town. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Warsaw', description: 'Resilient capital blending reconstruction and modern culture', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Warsaw is a resilient capital blending reconstruction and modern culture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'Gdańsk', description: 'Baltic port city with colorful merchant houses', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct", panelSummary: "Gdańsk is a Baltic port city with colorful merchant houses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
     ],
     attractions: [
       {
@@ -538,7 +542,7 @@ export const countries: Record<string, CountryData> = {
   AR: {
     name: 'Argentina',
     code: 'AR',
-    summary: 'Argentina stretches from subtropical waterfalls to Patagonian glaciers, with vast plains, high Andes, wine country, and a long Atlantic coast between them. Buenos Aires brings tango, architecture, nightlife, and outstanding food. That mix gives travelers plenty to discover.',
+    panelSummary: 'Argentina stretches from subtropical waterfalls to Patagonian glaciers, with vast plains, high Andes, wine country, and a long Atlantic coast between them. Buenos Aires brings tango, architecture, nightlife, and outstanding food. That mix gives travelers plenty to discover.',
     flagEmoji: '🇦🇷',
     flagColors: ['#74ACDF', '#FFFFFF', '#F6B40E'],
     continent: 'South America',
@@ -564,9 +568,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [75, 73, 71, 57, 40, 33, 24, 25, 30, 56, 60, 73],
     bestTimeToVisit: 'March–May or September–November for Buenos Aires and Patagonia shoulder seasons',
     popularPlaces: [
-      { name: 'Buenos Aires', description: 'Tango-filled capital with grand boulevards and late-night dining', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec" },
-      { name: 'Patagonia', description: 'Glaciers, peaks, and vast southern landscapes', bestWeatherMonths: "Jan–Apr, Sep–Dec", goodWeatherMonths: "May" },
-      { name: 'Mendoza', description: 'Wine region at the foot of the Andes', bestWeatherMonths: "Feb–May, Aug–Nov", goodWeatherMonths: "Jan, Jun–Jul, Dec" },
+      { name: 'Buenos Aires', description: 'Tango-filled capital with grand boulevards and late-night dining', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec", panelSummary: "Buenos Aires is a tango-filled capital with grand boulevards and late-night dining. Visitors can pair the major landmarks with local food, lively streets, cultural venues, and quieter corners that reveal a stronger sense of place." },
+      { name: 'Patagonia', description: 'Glaciers, peaks, and vast southern landscapes', bestWeatherMonths: "Jan–Apr, Sep–Dec", goodWeatherMonths: "May", panelSummary: "Patagonia offers glaciers, peaks, and vast southern landscapes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Mendoza', description: 'Wine region at the foot of the Andes', bestWeatherMonths: "Feb–May, Aug–Nov", goodWeatherMonths: "Jan, Jun–Jul, Dec", panelSummary: "Mendoza is a wine region at the foot of the Andes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -636,7 +640,7 @@ export const countries: Record<string, CountryData> = {
   CL: {
     name: 'Chile',
     code: 'CL',
-    summary: 'Chile is a long, narrow country of extraordinary geographic variety, including the Atacama Desert, Andean peaks, Pacific coastline, wine valleys, forests, and Patagonian fjords. It invites travelers to slow down, explore the coast, and enjoy local culture alongside the scenery.',
+    panelSummary: 'Chile is a long, narrow country of extraordinary geographic variety, including the Atacama Desert, Andean peaks, Pacific coastline, wine valleys, forests, and Patagonian fjords. It invites travelers to slow down, explore the coast, and enjoy local culture alongside the scenery.',
     flagEmoji: '🇨🇱',
     flagColors: ['#0039A6', '#FFFFFF', '#D52B1E'],
     continent: 'South America',
@@ -662,9 +666,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [50, 63, 75, 78, 97, 126, 99, 97, 67, 62, 59, 59],
     bestTimeToVisit: 'October–March for Patagonia and wine country; year-round for the Atacama',
     popularPlaces: [
-      { name: 'Santiago', description: 'Andean capital with museums, markets, and mountain views', bestWeatherMonths: "Jan–May, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
-      { name: 'Valparaíso', description: 'Colorful Pacific port city covered in street art', bestWeatherMonths: "Jan–May, Aug–Dec", goodWeatherMonths: "Jun–Jul" },
-      { name: 'Atacama Desert', description: 'Otherworldly desert landscapes and stargazing', bestWeatherMonths: "Jan–Apr, Sep–Dec", goodWeatherMonths: "May–Aug" },
+      { name: 'Santiago', description: 'Andean capital with museums, markets, and mountain views', bestWeatherMonths: "Jan–May, Sep–Dec", goodWeatherMonths: "Jul–Aug", panelSummary: "Santiago is an Andean capital with museums, markets, and mountain views. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Valparaíso', description: 'Colorful Pacific port city covered in street art', bestWeatherMonths: "Jan–May, Aug–Dec", goodWeatherMonths: "Jun–Jul", panelSummary: "Valparaíso is a colorful Pacific port city covered in street art. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Atacama Desert', description: 'Otherworldly desert landscapes and stargazing', bestWeatherMonths: "Jan–Apr, Sep–Dec", goodWeatherMonths: "May–Aug", panelSummary: "Atacama Desert is an otherworldly desert landscapes and stargazing. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The setting makes every outing feel memorable." },
     ],
     attractions: [
       {
@@ -730,7 +734,7 @@ export const countries: Record<string, CountryData> = {
   EC: {
     name: 'Ecuador',
     code: 'EC',
-    summary: 'Ecuador packs remarkable diversity into a relatively small area. Travelers can explore Andean cities and volcanoes, Amazon rainforest, Pacific beaches, colonial Quito, Indigenous markets, and cloud forests within short distances. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
+    panelSummary: 'Ecuador packs remarkable diversity into a relatively small area. Travelers can explore Andean cities and volcanoes, Amazon rainforest, Pacific beaches, colonial Quito, Indigenous markets, and cloud forests within short distances. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇪🇨',
     flagColors: ['#FFD100', '#003893', '#CE1126'],
     continent: 'South America',
@@ -756,9 +760,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [171, 220, 272, 267, 246, 185, 166, 96, 102, 124, 145, 131],
     bestTimeToVisit: 'June–September for the Andes and Galápagos wildlife viewing',
     popularPlaces: [
-      { name: 'Quito', description: 'High-altitude capital with a UNESCO-listed old town', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "Jan–May, Nov–Dec" },
-      { name: 'Galápagos Islands', description: 'Legendary wildlife islands that shaped Darwin’s work', bestWeatherMonths: "Jun–Dec", goodWeatherMonths: "Jan, May" },
-      { name: 'Cuenca', description: 'Colonial city known for architecture and crafts', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Quito', description: 'High-altitude capital with a UNESCO-listed old town', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "Jan–May, Nov–Dec", panelSummary: "Quito is a high-altitude capital with a UNESCO-listed old town. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The atmosphere encourages travelers to look more closely." },
+      { name: 'Galápagos Islands', description: 'Legendary wildlife islands that shaped Darwin’s work', bestWeatherMonths: "Jun–Dec", goodWeatherMonths: "Jan, May", panelSummary: "Galápagos Islands offers legendary wildlife islands that shaped Darwin’s work. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The natural setting makes every encounter more memorable." },
+      { name: 'Cuenca', description: 'Colonial city known for architecture and crafts', bestWeatherMonths: "Jan–Dec", panelSummary: "Cuenca is a colonial city known for architecture and crafts. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The atmosphere encourages travelers to look more closely." },
     ],
     attractions: [
       {
@@ -827,7 +831,7 @@ export const countries: Record<string, CountryData> = {
   BO: {
     name: 'Bolivia',
     code: 'BO',
-    summary: 'Bolivia is one of South America’s most visually and culturally distinctive countries. Its highlights include the vast Uyuni salt flats, high-altitude cities, colorful lakes, Andean peaks, Amazonian lowlands, and strong Indigenous traditions. That mix gives travelers plenty to discover.',
+    panelSummary: 'Bolivia is one of South America’s most visually and culturally distinctive countries. Its highlights include the vast Uyuni salt flats, high-altitude cities, colorful lakes, Andean peaks, Amazonian lowlands, and strong Indigenous traditions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇴',
     flagColors: ['#D52B1E', '#F9E300', '#007934'],
     continent: 'South America',
@@ -853,9 +857,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [186, 178, 148, 81, 49, 27, 20, 25, 43, 84, 109, 158],
     bestTimeToVisit: 'May–October for the dry season on the Altiplano and salt flats',
     popularPlaces: [
-      { name: 'La Paz', description: 'Dramatic high-altitude city set in a canyon', bestWeatherMonths: "Apr, Oct–Nov", goodWeatherMonths: "Mar, May, Aug–Sep, Dec" },
-      { name: 'Sucre', description: 'Whitewashed constitutional capital with colonial charm', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Uyuni', description: 'Gateway to the world’s largest salt flat', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Sep–Oct" },
+      { name: 'La Paz', description: 'Dramatic high-altitude city set in a canyon', bestWeatherMonths: "Apr, Oct–Nov", goodWeatherMonths: "Mar, May, Aug–Sep, Dec", panelSummary: "La Paz is a dramatic high-altitude city set in a canyon. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Sucre', description: 'Whitewashed constitutional capital with colonial charm', bestWeatherMonths: "Jan–Dec", panelSummary: "Sucre is a whitewashed constitutional capital with colonial charm. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The atmosphere encourages travelers to look more closely." },
+      { name: 'Uyuni', description: 'Gateway to the world’s largest salt flat', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Sep–Oct", panelSummary: "Uyuni is a gateway to the world’s largest salt flat. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -926,7 +930,7 @@ export const countries: Record<string, CountryData> = {
   UY: {
     name: 'Uruguay',
     code: 'UY',
-    summary: 'Uruguay offers a relaxed version of South America, known for beaches, colonial towns, ranch country, and an easygoing social culture. Montevideo combines waterfront life, markets, music, and architecture, while Colonia del Sacramento preserves cobbled historic streets.',
+    panelSummary: 'Uruguay offers a relaxed version of South America, known for beaches, colonial towns, ranch country, and an easygoing social culture. Montevideo combines waterfront life, markets, music, and architecture, while Colonia del Sacramento preserves cobbled historic streets.',
     flagEmoji: '🇺🇾',
     flagColors: ['#0038A8', '#FFFFFF', '#FCD116'],
     continent: 'South America',
@@ -952,9 +956,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [115, 116, 110, 139, 113, 102, 88, 88, 100, 121, 91, 107],
     bestTimeToVisit: 'December–March for beaches, or October–November for quieter coastal weather',
     popularPlaces: [
-      { name: 'Montevideo', description: 'Relaxed capital with rambla waterfront and historic neighborhoods', bestWeatherMonths: "Feb–Jun, Aug–Dec", goodWeatherMonths: "Jan, Jul" },
-      { name: 'Punta del Este', description: 'Beach resort known for nightlife and Atlantic views', bestWeatherMonths: "Jan–Mar, May, Aug–Dec", goodWeatherMonths: "Apr, Jun–Jul" },
-      { name: 'Colonia del Sacramento', description: 'UNESCO colonial town across the Río de la Plata', bestWeatherMonths: "Feb–Dec", goodWeatherMonths: "Jan" },
+      { name: 'Montevideo', description: 'Relaxed capital with rambla waterfront and historic neighborhoods', bestWeatherMonths: "Feb–Jun, Aug–Dec", goodWeatherMonths: "Jan, Jul", panelSummary: "Montevideo is a relaxed capital with rambla waterfront and historic neighborhoods. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Punta del Este', description: 'Beach resort known for nightlife and Atlantic views', bestWeatherMonths: "Jan–Mar, May, Aug–Dec", goodWeatherMonths: "Apr, Jun–Jul", panelSummary: "Punta del Este is a beach resort known for nightlife and Atlantic views. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
+      { name: 'Colonia del Sacramento', description: 'UNESCO colonial town across the Río de la Plata', bestWeatherMonths: "Feb–Dec", goodWeatherMonths: "Jan", panelSummary: "Colonia del Sacramento is a UNESCO colonial town across the Río de la Plata. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -1017,7 +1021,7 @@ export const countries: Record<string, CountryData> = {
   JP: {
     name: 'Japan',
     code: 'JP',
-    summary: 'Japan pairs ancient traditions with highly modern cities in a way few countries can match. Visitors can experience temples, gardens, castles, hot springs, regional cuisine, and seasonal festivals alongside bullet trains, design, technology, and vibrant urban neighborhoods.',
+    panelSummary: 'Japan pairs ancient traditions with highly modern cities in a way few countries can match. Visitors can experience temples, gardens, castles, hot springs, regional cuisine, and seasonal festivals alongside bullet trains, design, technology, and vibrant urban neighborhoods.',
     flagEmoji: '🇯🇵',
     flagColors: ['#BC002D', '#FFFFFF', '#BC002D'],
     continent: 'Asia',
@@ -1044,11 +1048,11 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'March–April is prized for cherry blossoms, while October–November brings comfortable weather and fall color. Avoid Golden Week if you want fewer crowds, and expect hot, humid conditions in midsummer.',
     bestVisitMonths: [3, 4, 10, 11],
     popularPlaces: [
-      { name: 'Tokyo', description: 'Ultra-modern capital blending neon-lit skyscrapers with ancient temples', bestWeatherMonths: "Apr–May, Nov", goodWeatherMonths: "Jun, Oct, Dec" },
-      { name: 'Kyoto', description: 'Cultural heart of Japan with over 2,000 temples and shrines', bestWeatherMonths: "Oct", goodWeatherMonths: "Apr–Jun, Sep, Nov" },
-      { name: 'Osaka', description: "Japan's kitchen — famous for street food and vibrant nightlife", bestWeatherMonths: "Apr, Nov", goodWeatherMonths: "May–Jun, Oct" },
-      { name: 'Hokkaido', description: 'Northern island paradise for skiing, hot springs, and lavender fields', bestWeatherMonths: "Jun", goodWeatherMonths: "Jul–Sep" },
-      { name: 'Okinawa', description: 'Tropical islands with pristine beaches and unique Ryukyu culture', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–May, Nov" },
+      { name: 'Tokyo', description: 'Ultra-modern capital blending neon-lit skyscrapers with ancient temples', bestWeatherMonths: "Apr–May, Nov", goodWeatherMonths: "Jun, Oct, Dec", panelSummary: "Tokyo is an ultra-modern capital blending neon-lit skyscrapers with ancient temples. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Kyoto', description: 'Cultural heart of Japan with over 2,000 temples and shrines', bestWeatherMonths: "Oct", goodWeatherMonths: "Apr–Jun, Sep, Nov", panelSummary: "Kyoto offers cultural heart of Japan with over 2,000 temples and shrines. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Osaka', description: "Japan's kitchen — famous for street food and vibrant nightlife", bestWeatherMonths: "Apr, Nov", goodWeatherMonths: "May–Jun, Oct", panelSummary: "Osaka offers japan's kitchen — famous for street food and vibrant nightlife. Visitors can build a trip around local specialties, markets, vineyards or restaurants while still finding culture, scenery, and a strong sense of place." },
+      { name: 'Hokkaido', description: 'Northern island paradise for skiing, hot springs, and lavender fields', bestWeatherMonths: "Jun", goodWeatherMonths: "Jul–Sep", panelSummary: "Hokkaido is a northern island paradise for skiing, hot springs, and lavender fields. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Okinawa', description: 'Tropical islands with pristine beaches and unique Ryukyu culture', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–May, Nov", panelSummary: "Okinawa offers tropical islands with pristine beaches and unique Ryukyu culture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -1149,7 +1153,7 @@ export const countries: Record<string, CountryData> = {
   FR: {
     name: 'France',
     code: 'FR',
-    summary: 'France offers an unusually rich combination of art, history, food, landscapes, and regional identity. Paris remains a global cultural capital, but Provence, Normandy, Brittany, Alsace, the Loire Valley, the Alps, and the Mediterranean coast each feel distinct.',
+    panelSummary: 'France offers an unusually rich combination of art, history, food, landscapes, and regional identity. Paris remains a global cultural capital, but Provence, Normandy, Brittany, Alsace, the Loire Valley, the Alps, and the Mediterranean coast each feel distinct.',
     flagEmoji: '🇫🇷',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'Europe',
@@ -1176,11 +1180,11 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'Spring and early fall offer the best mix of comfortable weather and lighter crowds across much of France. Summer is warmer and busier, while the Alps have their own winter season.',
     bestVisitMonths: [3, 4, 5, 9, 10],
     popularPlaces: [
-      { name: 'Paris', description: 'City of Light — art, fashion, cuisine, and romance', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
-      { name: 'French Riviera', description: 'Glamorous Mediterranean coastline from Nice to Saint-Tropez', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec" },
-      { name: 'Provence', description: 'Lavender fields, hilltop villages, and world-class rosé wine', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Loire Valley', description: 'Fairy-tale châteaux and vineyards stretching for miles', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
-      { name: 'Bordeaux', description: 'Wine capital of the world with stunning 18th-century architecture', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar, Nov" },
+      { name: 'Paris', description: 'City of Light — art, fashion, cuisine, and romance', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar", panelSummary: "Paris is a city of Light — art, fashion, cuisine, and romance. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'French Riviera', description: 'Glamorous Mediterranean coastline from Nice to Saint-Tropez', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec", panelSummary: "French Riviera offers glamorous Mediterranean coastline from Nice to Saint-Tropez. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Provence', description: 'Lavender fields, hilltop villages, and world-class rosé wine', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct", panelSummary: "Provence offers lavender fields, hilltop villages, and world-class rosé wine. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace. The regional flavors are an essential part of visiting." },
+      { name: 'Loire Valley', description: 'Fairy-tale châteaux and vineyards stretching for miles', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar", panelSummary: "Loire Valley offers fairy-tale châteaux and vineyards stretching for miles. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace. The destination rewards travelers who linger a little longer." },
+      { name: 'Bordeaux', description: 'Wine capital of the world with stunning 18th-century architecture', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar, Nov", panelSummary: "Bordeaux is a wine capital of the world with stunning 18th-century architecture. It is an inviting choice for travelers who enjoy regional flavors, local traditions, scenic outings, and meals that become part of the journey." },
     ],
     attractions: [
       {
@@ -1288,7 +1292,7 @@ export const countries: Record<string, CountryData> = {
   IT: {
     name: 'Italy',
     code: 'IT',
-    summary: 'Italy’s appeal comes from the density of its art, history, food, and beautiful landscapes. Rome, Florence, Venice, and Milan anchor the experience, but smaller towns, archaeological sites, islands, lakes, vineyards, and coastlines are equally memorable.',
+    panelSummary: 'Italy’s appeal comes from the density of its art, history, food, and beautiful landscapes. Rome, Florence, Venice, and Milan anchor the experience, but smaller towns, archaeological sites, islands, lakes, vineyards, and coastlines are equally memorable.',
     flagEmoji: '🇮🇹',
     flagColors: ['#009246', '#FFFFFF', '#CE2B37'],
     continent: 'Europe',
@@ -1314,11 +1318,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [64, 55, 56, 66, 67, 58, 45, 53, 80, 91, 103, 78],
     bestTimeToVisit: 'April–June or September–October for pleasant weather and thinner crowds',
     popularPlaces: [
-      { name: 'Rome', description: 'The Eternal City — 2,500 years of art, architecture, and culture', bestWeatherMonths: "Mar–Jul, Sep–Oct", goodWeatherMonths: "Feb, Aug, Nov" },
-      { name: 'Florence', description: 'Birthplace of the Renaissance with unmatched artistic heritage', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
-      { name: 'Venice', description: 'Enchanting city of canals, gondolas, and Carnival masks', bestWeatherMonths: "Apr–Jul, Sep–Oct", goodWeatherMonths: "Mar, Aug" },
-      { name: 'Amalfi Coast', description: 'Dramatic cliffs, pastel villages, and sparkling Mediterranean waters', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar, Nov" },
-      { name: 'Tuscany', description: 'Rolling hills, vineyards, and medieval hilltop towns', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Nov" },
+      { name: 'Rome', description: 'The Eternal City — 2,500 years of art, architecture, and culture', bestWeatherMonths: "Mar–Jul, Sep–Oct", goodWeatherMonths: "Feb, Aug, Nov", panelSummary: "Rome is a the Eternal City — 2,500 years of art, architecture, and culture. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Florence', description: 'Birthplace of the Renaissance with unmatched artistic heritage', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar", panelSummary: "Florence is the birthplace of the Renaissance with unmatched artistic heritage. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Venice', description: 'Enchanting city of canals, gondolas, and Carnival masks', bestWeatherMonths: "Apr–Jul, Sep–Oct", goodWeatherMonths: "Mar, Aug", panelSummary: "Venice is an enchanting city of canals, gondolas, and Carnival masks. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Amalfi Coast', description: 'Dramatic cliffs, pastel villages, and sparkling Mediterranean waters', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar, Nov", panelSummary: "Amalfi Coast offers dramatic cliffs, pastel villages, and sparkling Mediterranean waters. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Tuscany', description: 'Rolling hills, vineyards, and medieval hilltop towns', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Nov", panelSummary: "Tuscany offers rolling hills, vineyards, and medieval hilltop towns. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -1429,7 +1433,7 @@ export const countries: Record<string, CountryData> = {
   BR: {
     name: 'Brazil',
     code: 'BR',
-    summary: 'Brazil is a vast, energetic country shaped by rainforest, beaches, music, diverse cultures, and some of the world’s most recognizable cities and natural wonders. It invites travelers to slow down, explore the coast, and enjoy local culture alongside the scenery.',
+    panelSummary: 'Brazil is a vast, energetic country shaped by rainforest, beaches, music, diverse cultures, and some of the world’s most recognizable cities and natural wonders. It invites travelers to slow down, explore the coast, and enjoy local culture alongside the scenery.',
     flagEmoji: '🇧🇷',
     flagColors: ['#009C3B', '#FFDF00', '#002776'],
     continent: 'South America',
@@ -1456,11 +1460,11 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'September–March suits many beach destinations, while June–September is especially strong for Pantanal wildlife. Carnival brings peak energy and crowds in February or March.',
     bestVisitMonths: [9, 10, 11, 12, 1, 2, 3, 6, 7, 8],
     popularPlaces: [
-      { name: 'Rio de Janeiro', description: 'Samba, stunning beaches, and the iconic Christ the Redeemer', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'São Paulo', description: 'Massive cultural metropolis with world-class dining and art', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Mar, Oct–Dec" },
-      { name: 'Salvador', description: 'Afro-Brazilian heritage capital with colorful colonial architecture', bestWeatherMonths: "Sep", goodWeatherMonths: "Jul–Aug, Oct, Dec" },
-      { name: 'Amazon Rainforest', description: "Earth's largest tropical rainforest with incredible biodiversity", bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jan–Jun, Sep–Oct, Dec" },
-      { name: 'Iguazu Falls', description: 'Breathtaking system of 275 waterfalls on the Argentine border', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Apr–May, Sep" },
+      { name: 'Rio de Janeiro', description: 'Samba, stunning beaches, and the iconic Christ the Redeemer', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Rio de Janeiro offers samba, stunning beaches, and the iconic Christ the Redeemer. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
+      { name: 'São Paulo', description: 'Massive cultural metropolis with world-class dining and art', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Mar, Oct–Dec", panelSummary: "São Paulo is a massive cultural metropolis with world-class dining and art. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Salvador', description: 'Afro-Brazilian heritage capital with colorful colonial architecture', bestWeatherMonths: "Sep", goodWeatherMonths: "Jul–Aug, Oct, Dec", panelSummary: "Salvador is an afro-Brazilian heritage capital with colorful colonial architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Amazon Rainforest', description: "Earth's largest tropical rainforest with incredible biodiversity", bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jan–Jun, Sep–Oct, Dec", panelSummary: "Amazon Rainforest offers earth's largest tropical rainforest with incredible biodiversity. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Iguazu Falls', description: 'Breathtaking system of 275 waterfalls on the Argentine border', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Apr–May, Sep", panelSummary: "Iguazu Falls offers breathtaking system of 275 waterfalls on the Argentine border. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
 
     attractions: [
@@ -1569,7 +1573,7 @@ export const countries: Record<string, CountryData> = {
   AU: {
     name: 'Australia',
     code: 'AU',
-    summary: 'Australia combines sophisticated coastal cities with vast wilderness, distinctive wildlife, and some of the planet’s most unusual landscapes. Sydney, Melbourne, and Brisbane offer food, arts, and beaches, while the Great Barrier Reef, Outback, Tasmania, tropical north, and national parks provide adventure.',
+    panelSummary: 'Australia combines sophisticated coastal cities with vast wilderness, distinctive wildlife, and some of the planet’s most unusual landscapes. Sydney, Melbourne, and Brisbane offer food, arts, and beaches, while the Great Barrier Reef, Outback, Tasmania, tropical north, and national parks provide adventure.',
     flagEmoji: '🇦🇺',
     flagColors: ['#00008B', '#FFFFFF', '#FF0000'],
     continent: 'Oceania',
@@ -1595,11 +1599,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [87, 92, 57, 28, 24, 24, 20, 17, 17, 24, 36, 58],
     bestTimeToVisit: 'September–November (spring) or March–May (autumn) for comfortable temperatures',
     popularPlaces: [
-      { name: 'Sydney', description: 'Harbour city famous for its Opera House and stunning beaches', bestWeatherMonths: "Jan, Mar–May, Jul–Dec", goodWeatherMonths: "Feb, Jun" },
-      { name: 'Melbourne', description: 'Cultural capital with world-class coffee, street art, and food', bestWeatherMonths: "Jan–Jun, Aug–Dec", goodWeatherMonths: "Jul" },
-      { name: 'Great Barrier Reef', description: "World's largest coral reef system visible from space", bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "May–Jun, Oct" },
-      { name: 'Uluru', description: 'Sacred sandstone monolith glowing red in the outback', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Tasmania', description: 'Rugged wilderness island with pristine temperate rainforests', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Sydney', description: 'Harbour city famous for its Opera House and stunning beaches', bestWeatherMonths: "Jan, Mar–May, Jul–Dec", goodWeatherMonths: "Feb, Jun", panelSummary: "Sydney is a harbour city famous for its Opera House and stunning beaches. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Melbourne', description: 'Cultural capital with world-class coffee, street art, and food', bestWeatherMonths: "Jan–Jun, Aug–Dec", goodWeatherMonths: "Jul", panelSummary: "Melbourne is a cultural capital with world-class coffee, street art, and food. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace." },
+      { name: 'Great Barrier Reef', description: "World's largest coral reef system visible from space", bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "May–Jun, Oct", panelSummary: "Great Barrier Reef offers the world's largest coral reef system visible from space. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Uluru', description: 'Sacred sandstone monolith glowing red in the outback', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Uluru offers sacred sandstone monolith glowing red in the outback. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Tasmania', description: 'Rugged wilderness island with pristine temperate rainforests', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct", panelSummary: "Tasmania is a rugged wilderness island with pristine temperate rainforests. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
     ],
     attractions: [
       {
@@ -1710,7 +1714,7 @@ export const countries: Record<string, CountryData> = {
   EG: {
     name: 'Egypt',
     code: 'EG',
-    summary: 'Egypt is defined by the Nile and an ancient civilization whose monuments remain among the world’s most extraordinary. Cairo, Giza, Luxor, and Aswan reveal pyramids, temples, tombs, museums, and living urban culture. That mix gives travelers plenty to discover.',
+    panelSummary: 'Egypt is defined by the Nile and an ancient civilization whose monuments remain among the world’s most extraordinary. Cairo, Giza, Luxor, and Aswan reveal pyramids, temples, tombs, museums, and living urban culture. That mix gives travelers plenty to discover.',
     flagEmoji: '🇪🇬',
     flagColors: ['#CE1126', '#FFFFFF', '#000000'],
     continent: 'Africa',
@@ -1736,11 +1740,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 3, 2, 1, 1, 0, 1, 1, 0, 1, 2, 3],
     bestTimeToVisit: 'October–April for cooler temperatures ideal for sightseeing and desert tours',
     popularPlaces: [
-      { name: 'Cairo', description: 'Sprawling capital at the foot of the Giza Pyramids', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "May, Oct" },
-      { name: 'Luxor', description: "World's greatest open-air museum with Valley of the Kings", bestWeatherMonths: "Jan–Mar, Nov–Dec" },
-      { name: 'Aswan', description: 'Serene Nile-side city with Nubian culture and Philae Temple', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
-      { name: 'Sharm el-Sheikh', description: 'Red Sea resort with world-class diving and coral reefs', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "Oct" },
-      { name: 'Alexandria', description: 'Mediterranean port city with ancient Greek and Roman heritage', bestWeatherMonths: "Jan–Jun, Oct–Dec", goodWeatherMonths: "Jul–Sep" },
+      { name: 'Cairo', description: 'Sprawling capital at the foot of the Giza Pyramids', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "May, Oct", panelSummary: "Cairo is a sprawling capital at the foot of the Giza Pyramids. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Luxor', description: "World's greatest open-air museum with Valley of the Kings", bestWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "Luxor offers world's greatest open-air museum with Valley of the Kings. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Aswan', description: 'Serene Nile-side city with Nubian culture and Philae Temple', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov", panelSummary: "Aswan is a serene Nile-side city with Nubian culture and Philae Temple. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Sharm el-Sheikh', description: 'Red Sea resort with world-class diving and coral reefs', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "Oct", panelSummary: "Sharm el-Sheikh is a red Sea resort with world-class diving and coral reefs. Days can move easily between the water, scenic viewpoints, casual local meals, and communities whose character is closely tied to the coast." },
+      { name: 'Alexandria', description: 'Mediterranean port city with ancient Greek and Roman heritage', bestWeatherMonths: "Jan–Jun, Oct–Dec", goodWeatherMonths: "Jul–Sep", panelSummary: "Alexandria is a mediterranean port city with ancient Greek and Roman heritage. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -1840,7 +1844,7 @@ export const countries: Record<string, CountryData> = {
   MX: {
     name: 'Mexico',
     code: 'MX',
-    summary: 'Mexico is exceptionally diverse, combining Indigenous civilizations, colonial cities, major modern centers, beaches, deserts, mountains, forests, and one of the world’s great cuisines. Mexico City, Oaxaca, Yucatán, Baja California, Chiapas, and the Caribbean coast each offer distinct experiences.',
+    panelSummary: 'Mexico is exceptionally diverse, combining Indigenous civilizations, colonial cities, major modern centers, beaches, deserts, mountains, forests, and one of the world’s great cuisines. Mexico City, Oaxaca, Yucatán, Baja California, Chiapas, and the Caribbean coast each offer distinct experiences.',
     flagEmoji: '🇲🇽',
     flagColors: ['#006341', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -1866,11 +1870,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [21, 16, 15, 17, 44, 106, 128, 133, 146, 84, 33, 22],
     bestTimeToVisit: 'December–April for dry season; late October–early November for Día de los Muertos',
     popularPlaces: [
-      { name: 'Mexico City', description: 'Vibrant capital built atop the ancient Aztec city of Tenochtitlan', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun–Sep" },
-      { name: 'Cancún & Riviera Maya', description: 'Caribbean paradise with turquoise waters and Mayan ruins', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Nov" },
-      { name: 'Oaxaca', description: 'Cultural gem famous for mole, mezcal, and indigenous traditions', bestWeatherMonths: "Jan–May, Jul–Aug, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
-      { name: 'San Miguel de Allende', description: 'Colonial-era jewel with cobblestone streets and art galleries', bestWeatherMonths: "Jan–Apr, Aug–Dec", goodWeatherMonths: "May–Jul" },
-      { name: 'Tulum', description: 'Cliff-top Mayan ruins overlooking pristine Caribbean beaches', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec" },
+      { name: 'Mexico City', description: 'Vibrant capital built atop the ancient Aztec city of Tenochtitlan', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun–Sep", panelSummary: "Mexico City is a vibrant capital built atop the ancient Aztec city of Tenochtitlan. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Cancún & Riviera Maya', description: 'Caribbean paradise with turquoise waters and Mayan ruins', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Nov", panelSummary: "Cancún & Riviera Maya offers Caribbean paradise with turquoise waters and Mayan ruins. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Oaxaca', description: 'Cultural gem famous for mole, mezcal, and indigenous traditions', bestWeatherMonths: "Jan–May, Jul–Aug, Oct–Dec", goodWeatherMonths: "Jun, Sep", panelSummary: "Oaxaca offers cultural gem famous for mole, mezcal, and indigenous traditions. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'San Miguel de Allende', description: 'Colonial-era jewel with cobblestone streets and art galleries', bestWeatherMonths: "Jan–Apr, Aug–Dec", goodWeatherMonths: "May–Jul", panelSummary: "San Miguel de Allende offers colonial-era jewel with cobblestone streets and art galleries. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Tulum', description: 'Cliff-top Mayan ruins overlooking pristine Caribbean beaches', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec", panelSummary: "Tulum offers cliff-top Mayan ruins overlooking pristine Caribbean beaches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -1961,7 +1965,7 @@ export const countries: Record<string, CountryData> = {
   IN: {
     name: 'India',
     code: 'IN',
-    summary: 'India is a vast, complex country of extraordinary cultural, religious, linguistic, and geographic diversity. Travelers encounter monumental architecture, sacred cities, Himalayan landscapes, tropical coasts, deserts, wildlife reserves, and intense urban life. That mix gives travelers plenty to discover.',
+    panelSummary: 'India is a vast, complex country of extraordinary cultural, religious, linguistic, and geographic diversity. Travelers encounter monumental architecture, sacred cities, Himalayan landscapes, tropical coasts, deserts, wildlife reserves, and intense urban life. That mix gives travelers plenty to discover.',
     flagEmoji: '🇮🇳',
     flagColors: ['#FF9933', '#FFFFFF', '#138808'],
     continent: 'Asia',
@@ -1987,11 +1991,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [12, 13, 17, 31, 53, 152, 283, 255, 178, 81, 26, 10],
     bestTimeToVisit: 'October–March (winter) for comfortable temperatures across most of the country',
     popularPlaces: [
-      { name: 'Rajasthan', description: 'Land of maharajas with majestic forts, palaces, and desert safaris', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Nov" },
-      { name: 'Kerala', description: "God's Own Country — backwaters, tea plantations, and tropical beaches", bestWeatherMonths: "Dec", goodWeatherMonths: "Jan" },
-      { name: 'Goa', description: 'Tropical paradise blending Portuguese heritage with beach culture', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–May, Jul–Aug, Nov–Dec" },
-      { name: 'Varanasi', description: 'One of the oldest living cities, spiritual heart of Hinduism', bestWeatherMonths: "Jan–Feb, Nov–Dec" },
-      { name: 'Ladakh', description: 'High-altitude desert with Buddhist monasteries and stunning passes', bestWeatherMonths: "Jul–Aug" },
+      { name: 'Rajasthan', description: 'Land of maharajas with majestic forts, palaces, and desert safaris', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Nov", panelSummary: "Rajasthan offers land of maharajas with majestic forts, palaces, and desert safaris. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Kerala', description: "God's Own Country — backwaters, tea plantations, and tropical beaches", bestWeatherMonths: "Dec", goodWeatherMonths: "Jan", panelSummary: "Kerala offers god's Own Country — backwaters, tea plantations, and tropical beaches. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Goa', description: 'Tropical paradise blending Portuguese heritage with beach culture', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–May, Jul–Aug, Nov–Dec", panelSummary: "Goa is a tropical paradise blending Portuguese heritage with beach culture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Varanasi', description: 'One of the oldest living cities, spiritual heart of Hinduism', bestWeatherMonths: "Jan–Feb, Nov–Dec", panelSummary: "Varanasi is one of the oldest living cities, spiritual heart of Hinduism. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Ladakh', description: 'High-altitude desert with Buddhist monasteries and stunning passes', bestWeatherMonths: "Jul–Aug", panelSummary: "Ladakh is a high-altitude desert with Buddhist monasteries and stunning passes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -2094,7 +2098,7 @@ export const countries: Record<string, CountryData> = {
   GR: {
     name: 'Greece',
     code: 'GR',
-    summary: 'Greece combines ancient history, island life, mountain scenery, and a food culture built around simple, seasonal ingredients. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
+    panelSummary: 'Greece combines ancient history, island life, mountain scenery, and a food culture built around simple, seasonal ingredients. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
     flagEmoji: '🇬🇷',
     flagColors: ['#0D5EAF', '#FFFFFF', '#0D5EAF'],
     continent: 'Europe',
@@ -2120,11 +2124,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [86, 67, 61, 46, 44, 34, 24, 20, 45, 68, 84, 100],
     bestTimeToVisit: 'May–June or September–October for warm weather without peak summer crowds and heat',
     popularPlaces: [
-      { name: 'Santorini', description: 'Iconic white-and-blue island with dramatic caldera sunsets', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb, Dec" },
-      { name: 'Athens', description: 'Ancient capital where Western civilization was born', bestWeatherMonths: "Feb–May, Sep–Nov", goodWeatherMonths: "Jan, Jun, Dec" },
-      { name: 'Mykonos', description: 'Cosmopolitan island with vibrant nightlife and windmills', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec" },
-      { name: 'Crete', description: 'Largest Greek island with gorges, beaches, and Minoan palaces', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar" },
-      { name: 'Meteora', description: 'Monasteries perched atop soaring rock pillars', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov" },
+      { name: 'Santorini', description: 'Iconic white-and-blue island with dramatic caldera sunsets', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb, Dec", panelSummary: "Santorini is an iconic white-and-blue island with dramatic caldera sunsets. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Athens', description: 'Ancient capital where Western civilization was born', bestWeatherMonths: "Feb–May, Sep–Nov", goodWeatherMonths: "Jan, Jun, Dec", panelSummary: "Athens is an ancient capital where Western civilization was born. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Mykonos', description: 'Cosmopolitan island with vibrant nightlife and windmills', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec", panelSummary: "Mykonos is a cosmopolitan island with vibrant nightlife and windmills. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Crete', description: 'Largest Greek island with gorges, beaches, and Minoan palaces', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar", panelSummary: "Crete is a largest Greek island with gorges, beaches, and Minoan palaces. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Meteora', description: 'Monasteries perched atop soaring rock pillars', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov", panelSummary: "Meteora offers monasteries perched atop soaring rock pillars. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -2227,7 +2231,7 @@ export const countries: Record<string, CountryData> = {
   TH: {
     name: 'Thailand',
     code: 'TH',
-    summary: 'Thailand is known for welcoming hospitality, flavorful cuisine, ornate temples, tropical islands, and an easy mix of cultural depth and travel convenience. Bangkok provides markets, nightlife, and historic sites, while Chiang Mai, the northern mountains, southern beaches, and national parks offer contrasting experiences.',
+    panelSummary: 'Thailand is known for welcoming hospitality, flavorful cuisine, ornate temples, tropical islands, and an easy mix of cultural depth and travel convenience. Bangkok provides markets, nightlife, and historic sites, while Chiang Mai, the northern mountains, southern beaches, and national parks offer contrasting experiences.',
     flagEmoji: '🇹🇭',
     flagColors: ['#A51931', '#F4F5F8', '#2D2A4A'],
     continent: 'Asia',
@@ -2254,11 +2258,11 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'November–February brings the coolest, driest weather for most of Thailand; regional monsoon patterns mean some islands have different sweet spots.',
     bestVisitMonths: [11, 12, 1, 2],
     popularPlaces: [
-      { name: 'Bangkok', description: 'Dazzling capital blending golden temples with modern skyscrapers', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Mar" },
-      { name: 'Chiang Mai', description: 'Northern cultural hub surrounded by mountains and ancient temples', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb" },
-      { name: 'Phuket', description: 'Largest island with stunning beaches and vibrant nightlife', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Sep–Oct" },
-      { name: 'Krabi', description: 'Dramatic limestone karsts, emerald waters, and island-hopping', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Oct–Dec" },
-      { name: 'Koh Samui', description: 'Tropical island paradise with luxury resorts and palm-fringed beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar" },
+      { name: 'Bangkok', description: 'Dazzling capital blending golden temples with modern skyscrapers', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Mar", panelSummary: "Bangkok is a dazzling capital blending golden temples with modern skyscrapers. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Chiang Mai', description: 'Northern cultural hub surrounded by mountains and ancient temples', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb", panelSummary: "Chiang Mai is a northern cultural hub surrounded by mountains and ancient temples. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Phuket', description: 'Largest island with stunning beaches and vibrant nightlife', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Sep–Oct", panelSummary: "Phuket is a largest island with stunning beaches and vibrant nightlife. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Krabi', description: 'Dramatic limestone karsts, emerald waters, and island-hopping', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Oct–Dec", panelSummary: "Krabi is a dramatic limestone karsts, emerald waters, and island-hopping. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
+      { name: 'Koh Samui', description: 'Tropical island paradise with luxury resorts and palm-fringed beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar", panelSummary: "Koh Samui is a tropical island paradise with luxury resorts and palm-fringed beaches. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
     ],
     attractions: [
       {
@@ -2365,7 +2369,7 @@ export const countries: Record<string, CountryData> = {
   ZA: {
     name: 'South Africa',
     code: 'ZA',
-    summary: 'South Africa offers an exceptional mix of wildlife, cities, coastlines, mountains, wine regions, and layered history. Cape Town, Johannesburg, the Garden Route, Kruger National Park, and the Drakensberg provide very different experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'South Africa offers an exceptional mix of wildlife, cities, coastlines, mountains, wine regions, and layered history. Cape Town, Johannesburg, the Garden Route, Kruger National Park, and the Drakensberg provide very different experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇿🇦',
     flagColors: ['#007749', '#FFB81C', '#000000'],
     continent: 'Africa',
@@ -2391,11 +2395,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [71, 65, 57, 33, 19, 14, 12, 14, 19, 38, 55, 67],
     bestTimeToVisit: 'May–September (dry winter) for wildlife safaris; November–March for beaches and whale watching',
     popularPlaces: [
-      { name: 'Cape Town', description: 'Stunning coastal city at the foot of Table Mountain', bestWeatherMonths: "Jan–Jun, Aug–Dec", goodWeatherMonths: "Jul" },
-      { name: 'Kruger National Park', description: 'Premier safari destination with the Big Five', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Mar, Oct" },
-      { name: 'Johannesburg', description: 'Economic hub with vibrant art scene and Apartheid Museum', bestWeatherMonths: "Feb–Dec", goodWeatherMonths: "Jan" },
-      { name: 'Garden Route', description: '300km scenic coastal road with forests, lagoons, and beaches', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Stellenbosch', description: 'Heart of South African wine country with Cape Dutch architecture', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Cape Town', description: 'Stunning coastal city at the foot of Table Mountain', bestWeatherMonths: "Jan–Jun, Aug–Dec", goodWeatherMonths: "Jul", panelSummary: "Cape Town is a stunning coastal city at the foot of Table Mountain. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Kruger National Park', description: 'Premier safari destination with the Big Five', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Mar, Oct", panelSummary: "Kruger National Park offers premier safari destination with the Big Five. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Johannesburg', description: 'Economic hub with vibrant art scene and Apartheid Museum', bestWeatherMonths: "Feb–Dec", goodWeatherMonths: "Jan", panelSummary: "Johannesburg is an economic hub with vibrant art scene and Apartheid Museum. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Garden Route', description: '300km scenic coastal road with forests, lagoons, and beaches', bestWeatherMonths: "Jan–Dec", panelSummary: "Garden Route offers 300km scenic coastal road with forests, lagoons, and beaches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Stellenbosch', description: 'Heart of South African wine country with Cape Dutch architecture', bestWeatherMonths: "Jan–Dec", panelSummary: "Stellenbosch offers heart of South African wine country with Cape Dutch architecture. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace." },
     ],
     attractions: [
       {
@@ -2500,7 +2504,7 @@ export const countries: Record<string, CountryData> = {
   ES: {
     name: 'Spain',
     code: 'ES',
-    summary: 'Spain is a country of strong regional identities, celebrated for architecture, food, art, festivals, beaches, and lively public life. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
+    panelSummary: 'Spain is a country of strong regional identities, celebrated for architecture, food, art, festivals, beaches, and lively public life. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
     flagEmoji: '🇪🇸',
     flagColors: ['#AA151B', '#F1BF00', '#AA151B'],
     continent: 'Europe',
@@ -2526,11 +2530,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [61, 49, 59, 59, 56, 32, 18, 23, 44, 79, 73, 70],
     bestTimeToVisit: 'April–June or September–October for warm weather and thinner crowds',
     popularPlaces: [
-      { name: 'Barcelona', description: 'Gaudí architecture, Mediterranean beaches, and legendary nightlife', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Madrid', description: 'Elegant capital with world-class art museums and tapas culture', bestWeatherMonths: "Mar–Jun, Sep–Nov", goodWeatherMonths: "Feb" },
-      { name: 'Seville', description: 'Flamenco capital with stunning Moorish architecture', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
-      { name: 'San Sebastián', description: 'Basque coastal gem with the highest concentration of Michelin stars', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
-      { name: 'Granada', description: 'Home of the Alhambra and the last Moorish kingdom in Europe', bestWeatherMonths: "Mar–Jun, Sep–Nov", goodWeatherMonths: "Feb" },
+      { name: 'Barcelona', description: 'Gaudí architecture, Mediterranean beaches, and legendary nightlife', bestWeatherMonths: "Jan–Dec", panelSummary: "Barcelona offers gaudí architecture, Mediterranean beaches, and legendary nightlife. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
+      { name: 'Madrid', description: 'Elegant capital with world-class art museums and tapas culture', bestWeatherMonths: "Mar–Jun, Sep–Nov", goodWeatherMonths: "Feb", panelSummary: "Madrid is an elegant capital with world-class art museums and tapas culture. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Seville', description: 'Flamenco capital with stunning Moorish architecture', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep", panelSummary: "Seville is a flamenco capital with stunning Moorish architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'San Sebastián', description: 'Basque coastal gem with the highest concentration of Michelin stars', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr", panelSummary: "San Sebastián offers basque coastal gem with the highest concentration of Michelin stars. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Granada', description: 'Home of the Alhambra and the last Moorish kingdom in Europe', bestWeatherMonths: "Mar–Jun, Sep–Nov", goodWeatherMonths: "Feb", panelSummary: "Granada is home to the Alhambra and the last Moorish kingdom in Europe. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
     ],
     attractions: [
       {
@@ -2634,7 +2638,7 @@ export const countries: Record<string, CountryData> = {
   NZ: {
     name: 'New Zealand',
     code: 'NZ',
-    summary: 'New Zealand is prized for dramatic landscapes that are easy to experience outdoors, including mountains, fjords, beaches, geothermal areas, forests, and lakes. Auckland and Wellington provide urban culture, while the South Island delivers iconic scenery and adventure.',
+    panelSummary: 'New Zealand is prized for dramatic landscapes that are easy to experience outdoors, including mountains, fjords, beaches, geothermal areas, forests, and lakes. Auckland and Wellington provide urban culture, while the South Island delivers iconic scenery and adventure.',
     flagEmoji: '🇳🇿',
     flagColors: ['#00247D', '#CC142B', '#FFFFFF'],
     continent: 'Oceania',
@@ -2661,11 +2665,11 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'December–February is prime summer weather for outdoor adventures, while March–May brings pleasant autumn conditions and fewer crowds.',
     bestVisitMonths: [12, 1, 2, 3, 4, 5],
     popularPlaces: [
-      { name: 'Queenstown', description: 'Adventure capital of the world — bungee jumping, skiing, and jet boating', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Nov–Dec" },
-      { name: 'Milford Sound', description: 'Dramatic fjord with towering cliffs and cascading waterfalls', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec" },
-      { name: 'Rotorua', description: 'Geothermal wonderland with bubbling mud pools and Māori culture', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Apr, Oct–Dec" },
-      { name: 'Auckland', description: 'City of Sails with harbors, volcanoes, and diverse food scene', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Aug–Sep" },
-      { name: 'Hobbiton', description: 'The real Shire movie set in the rolling hills of Matamata', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May, Sep" },
+      { name: 'Queenstown', description: 'Adventure capital of the world — bungee jumping, skiing, and jet boating', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Nov–Dec", panelSummary: "Queenstown is an adventure capital of the world — bungee jumping, skiing, and jet boating. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Milford Sound', description: 'Dramatic fjord with towering cliffs and cascading waterfalls', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec", panelSummary: "Milford Sound offers dramatic fjord with towering cliffs and cascading waterfalls. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Rotorua', description: 'Geothermal wonderland with bubbling mud pools and Māori culture', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Apr, Oct–Dec", panelSummary: "Rotorua offers geothermal wonderland with bubbling mud pools and Māori culture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Auckland', description: 'City of Sails with harbors, volcanoes, and diverse food scene', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Aug–Sep", panelSummary: "Auckland is a city of Sails with harbors, volcanoes, and diverse food scene. Days can move easily between the water, scenic viewpoints, casual local meals, and communities whose character is closely tied to the coast." },
+      { name: 'Hobbiton', description: 'The real Shire movie set in the rolling hills of Matamata', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May, Sep", panelSummary: "Hobbiton offers the real Shire movie set in the rolling hills of Matamata. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
     ],
     attractions: [
       {
@@ -2764,7 +2768,7 @@ export const countries: Record<string, CountryData> = {
   PE: {
     name: 'Peru',
     code: 'PE',
-    summary: 'Peru combines monumental archaeology, living Indigenous traditions, dramatic Andean landscapes, Amazon rainforest, desert coast, and one of Latin America’s most acclaimed food cultures. It is especially appealing to travelers who enjoy coastal scenery, local culture, good food, and time outdoors.',
+    panelSummary: 'Peru combines monumental archaeology, living Indigenous traditions, dramatic Andean landscapes, Amazon rainforest, desert coast, and one of Latin America’s most acclaimed food cultures. It is especially appealing to travelers who enjoy coastal scenery, local culture, good food, and time outdoors.',
     flagEmoji: '🇵🇪',
     flagColors: ['#D91023', '#FFFFFF', '#D91023'],
     continent: 'South America',
@@ -2790,11 +2794,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [177, 197, 208, 153, 117, 88, 74, 69, 89, 125, 143, 168],
     bestTimeToVisit: 'May–September (dry season) for Machu Picchu and the highlands',
     popularPlaces: [
-      { name: 'Cusco', description: 'Former Inca capital blending colonial architecture with ancient ruins', bestWeatherMonths: "Apr–May, Sep–Nov", goodWeatherMonths: "Mar, Jun–Aug, Dec" },
-      { name: 'Lima', description: 'Culinary capital of South America with world-renowned ceviche', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Sacred Valley', description: 'Lush Andean valley with Inca terraces, markets, and ruins', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar, Dec" },
-      { name: 'Lake Titicaca', description: 'Highest navigable lake with floating islands and Andean culture', bestWeatherMonths: "Apr, Oct–Nov", goodWeatherMonths: "May–Sep, Dec" },
-      { name: 'Amazon Rainforest (Iquitos)', description: 'Gateway to Peru\'s vast jungle wilderness', bestWeatherMonths: "Jan–Aug, Nov–Dec", goodWeatherMonths: "Sep–Oct" },
+      { name: 'Cusco', description: 'Former Inca capital blending colonial architecture with ancient ruins', bestWeatherMonths: "Apr–May, Sep–Nov", goodWeatherMonths: "Mar, Jun–Aug, Dec", panelSummary: "Cusco is a former Inca capital blending colonial architecture with ancient ruins. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lima', description: 'Culinary capital of South America with world-renowned ceviche', bestWeatherMonths: "Jan–Dec", panelSummary: "Lima is a culinary capital of South America with world-renowned ceviche. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace." },
+      { name: 'Sacred Valley', description: 'Lush Andean valley with Inca terraces, markets, and ruins', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar, Dec", panelSummary: "Sacred Valley is a lush Andean valley with Inca terraces, markets, and ruins. A visit offers more than a landmark: the surrounding streets, local traditions, and architectural details help the past feel immediate and tangible." },
+      { name: 'Lake Titicaca', description: 'Highest navigable lake with floating islands and Andean culture', bestWeatherMonths: "Apr, Oct–Nov", goodWeatherMonths: "May–Sep, Dec", panelSummary: "Lake Titicaca is a highest navigable lake with floating islands and Andean culture. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Amazon Rainforest (Iquitos)', description: 'Gateway to Peru\'s vast jungle wilderness', bestWeatherMonths: "Jan–Aug, Nov–Dec", goodWeatherMonths: "Sep–Oct", panelSummary: "Amazon Rainforest (Iquitos) is a gateway to Peru's vast jungle wilderness. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -2901,7 +2905,7 @@ export const countries: Record<string, CountryData> = {
   IS: {
     name: 'Iceland',
     code: 'IS',
-    summary: 'Iceland’s appeal lies in raw volcanic scenery, powerful waterfalls, glaciers, hot springs, black-sand beaches, and a small, creative capital. Road trips reveal landscapes that change quickly and often feel otherworldly. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
+    panelSummary: 'Iceland’s appeal lies in raw volcanic scenery, powerful waterfalls, glaciers, hot springs, black-sand beaches, and a small, creative capital. Road trips reveal landscapes that change quickly and often feel otherworldly. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇮🇸',
     flagColors: ['#003897', '#FFFFFF', '#D72828'],
     continent: 'Europe',
@@ -2927,11 +2931,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [120, 106, 99, 74, 76, 63, 78, 94, 127, 127, 120, 118],
     bestTimeToVisit: 'June–August for midnight sun and hiking; September–March for the Northern Lights',
     popularPlaces: [
-      { name: 'Reykjavík', description: 'World\'s northernmost capital with colorful houses and vibrant culture', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
-      { name: 'Golden Circle', description: 'Classic route through geysers, waterfalls, and tectonic plates', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug" },
-      { name: 'South Coast', description: 'Black sand beaches, glacier lagoons, and towering waterfalls', bestWeatherMonths: "Jun–Aug" },
-      { name: 'Westfjords', description: 'Remote peninsulas with dramatic cliffs and Arctic fox colonies', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
-      { name: 'Snæfellsnes Peninsula', description: '"Iceland in miniature" with glaciers, lava fields, and a famous volcano', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
+      { name: 'Reykjavík', description: 'World\'s northernmost capital with colorful houses and vibrant culture', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun", panelSummary: "Reykjavík offers world's northernmost capital with colorful houses and vibrant culture. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Golden Circle', description: 'Classic route through geysers, waterfalls, and tectonic plates', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug", panelSummary: "Golden Circle offers classic route through geysers, waterfalls, and tectonic plates. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'South Coast', description: 'Black sand beaches, glacier lagoons, and towering waterfalls', bestWeatherMonths: "Jun–Aug", panelSummary: "South Coast offers black sand beaches, glacier lagoons, and towering waterfalls. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Westfjords', description: 'Remote peninsulas with dramatic cliffs and Arctic fox colonies', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun", panelSummary: "Westfjords offers remote peninsulas with dramatic cliffs and Arctic fox colonies. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Snæfellsnes Peninsula', description: '"Iceland in miniature" with glaciers, lava fields, and a famous volcano', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun", panelSummary: "Snæfellsnes Peninsula offers \"Iceland in miniature\" with glaciers, lava fields, and a famous volcano. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -3026,7 +3030,7 @@ export const countries: Record<string, CountryData> = {
   KR: {
     name: 'South Korea',
     code: 'KR',
-    summary: 'South Korea blends deeply rooted traditions with fast-moving modern culture. Seoul offers palaces, markets, design, nightlife, and technology, while Busan, historic Gyeongju, mountain temples, coastal villages, and Jeju Island reveal other sides of the country.',
+    panelSummary: 'South Korea blends deeply rooted traditions with fast-moving modern culture. Seoul offers palaces, markets, design, nightlife, and technology, while Busan, historic Gyeongju, mountain temples, coastal villages, and Jeju Island reveal other sides of the country.',
     flagEmoji: '🇰🇷',
     flagColors: ['#CD2E3A', '#0047A0', '#FFFFFF'],
     continent: 'Asia',
@@ -3052,11 +3056,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [27, 38, 56, 93, 107, 166, 302, 284, 153, 64, 48, 29],
     bestTimeToVisit: 'September–November for stunning fall foliage, or April–May for cherry blossoms',
     popularPlaces: [
-      { name: 'Seoul', description: 'High-tech megacity blending ancient palaces with K-pop culture', bestWeatherMonths: "Apr–May, Oct", goodWeatherMonths: "Jun, Sep" },
-      { name: 'Busan', description: 'Coastal city with colorful villages, beaches, and seafood markets', bestWeatherMonths: "Apr, Oct–Nov", goodWeatherMonths: "Mar, May–Jun, Sep" },
-      { name: 'Jeju Island', description: 'Volcanic island paradise with lava tubes and tangerine orchards', bestWeatherMonths: "Oct–Nov", goodWeatherMonths: "Apr–Jun, Sep" },
-      { name: 'Gyeongju', description: '"Museum without walls" — former capital of the ancient Silla kingdom', bestWeatherMonths: "Apr–May, Oct", goodWeatherMonths: "Jun, Sep, Nov" },
-      { name: 'DMZ', description: 'The world\'s most heavily fortified border offers surreal tours', bestWeatherMonths: "Apr–May, Oct", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Seoul', description: 'High-tech megacity blending ancient palaces with K-pop culture', bestWeatherMonths: "Apr–May, Oct", goodWeatherMonths: "Jun, Sep", panelSummary: "Seoul is a high-tech megacity blending ancient palaces with K-pop culture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Busan', description: 'Coastal city with colorful villages, beaches, and seafood markets', bestWeatherMonths: "Apr, Oct–Nov", goodWeatherMonths: "Mar, May–Jun, Sep", panelSummary: "Busan is a coastal city with colorful villages, beaches, and seafood markets. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Jeju Island', description: 'Volcanic island paradise with lava tubes and tangerine orchards', bestWeatherMonths: "Oct–Nov", goodWeatherMonths: "Apr–Jun, Sep", panelSummary: "Jeju Island is a volcanic island paradise with lava tubes and tangerine orchards. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Gyeongju', description: '"Museum without walls" — former capital of the ancient Silla kingdom', bestWeatherMonths: "Apr–May, Oct", goodWeatherMonths: "Jun, Sep, Nov", panelSummary: "Gyeongju is a \"Museum without walls\" — former capital of the ancient Silla kingdom. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'DMZ', description: 'The world\'s most heavily fortified border offers surreal tours', bestWeatherMonths: "Apr–May, Oct", goodWeatherMonths: "Jun, Sep", panelSummary: "DMZ offers the world's most heavily fortified border offers surreal tours. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -3158,7 +3162,7 @@ export const countries: Record<string, CountryData> = {
   MA: {
     name: 'Morocco',
     code: 'MA',
-    summary: 'Morocco offers a vivid mix of historic cities, desert landscapes, mountains, Atlantic coast, markets, gardens, and richly layered architecture. Marrakech, Fez, Chefchaouen, the Sahara, and the High Atlas provide contrasting experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'Morocco offers a vivid mix of historic cities, desert landscapes, mountains, Atlantic coast, markets, gardens, and richly layered architecture. Marrakech, Fez, Chefchaouen, the Sahara, and the High Atlas provide contrasting experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇲🇦',
     flagColors: ['#C1272D', '#006233', '#C1272D'],
     continent: 'Africa',
@@ -3184,11 +3188,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [39, 35, 39, 28, 18, 6, 4, 7, 17, 34, 40, 47],
     bestTimeToVisit: 'March–May or September–November for pleasant temperatures',
     popularPlaces: [
-      { name: 'Marrakech', description: 'The Red City with vibrant souks, palaces, and Jemaa el-Fnaa square', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
-      { name: 'Fes', description: 'Medieval medina with the world\'s oldest university and leather tanneries', bestWeatherMonths: "Jan–Jun, Sep–Dec" },
-      { name: 'Chefchaouen', description: 'Dreamy blue-painted mountain town in the Rif Mountains', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb, Dec" },
-      { name: 'Sahara Desert', description: 'Camel treks and stargazing among golden sand dunes of Erg Chebbi', bestWeatherMonths: "Jan–Apr, Oct–Dec" },
-      { name: 'Essaouira', description: 'Breezy coastal town with fortified walls and world-class kitesurfing', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Marrakech', description: 'The Red City with vibrant souks, palaces, and Jemaa el-Fnaa square', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep", panelSummary: "Marrakech is a the Red City with vibrant souks, palaces, and Jemaa el-Fnaa square. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Fes', description: 'Medieval medina with the world\'s oldest university and leather tanneries', bestWeatherMonths: "Jan–Jun, Sep–Dec", panelSummary: "Fes offers medieval medina with the world's oldest university and leather tanneries. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Chefchaouen', description: 'Dreamy blue-painted mountain town in the Rif Mountains', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb, Dec", panelSummary: "Chefchaouen is a dreamy blue-painted mountain town in the Rif Mountains. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Sahara Desert', description: 'Camel treks and stargazing among golden sand dunes of Erg Chebbi', bestWeatherMonths: "Jan–Apr, Oct–Dec", panelSummary: "Sahara Desert offers camel treks and stargazing among golden sand dunes of Erg Chebbi. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Essaouira', description: 'Breezy coastal town with fortified walls and world-class kitesurfing', bestWeatherMonths: "Jan–Dec", panelSummary: "Essaouira is a breezy coastal town with fortified walls and world-class kitesurfing. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
     attractions: [
       {
@@ -3292,7 +3296,7 @@ export const countries: Record<string, CountryData> = {
   NO: {
     name: 'Norway',
     code: 'NO',
-    summary: 'Norway is celebrated for fjords, mountains, Arctic landscapes, scenic roads, and an outdoor culture closely tied to nature. Oslo and Bergen provide museums, architecture, and food, while the Lofoten Islands, western fjords, and far north offer unforgettable scenery.',
+    panelSummary: 'Norway is celebrated for fjords, mountains, Arctic landscapes, scenic roads, and an outdoor culture closely tied to nature. Oslo and Bergen provide museums, architecture, and food, while the Lofoten Islands, western fjords, and far north offer unforgettable scenery.',
     flagEmoji: '🇳🇴',
     flagColors: ['#EF2B2D', '#002868', '#FFFFFF'],
     continent: 'Europe',
@@ -3318,11 +3322,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [107, 84, 80, 60, 64, 81, 91, 106, 108, 121, 105, 116],
     bestTimeToVisit: 'June–August for midnight sun and fjord cruises; November–February for Northern Lights',
     popularPlaces: [
-      { name: 'Bergen', description: 'Gateway to the fjords with colorful Bryggen wharf', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
-      { name: 'Tromsø', description: 'Arctic city perfect for Northern Lights and midnight sun', bestWeatherMonths: "Jul", goodWeatherMonths: "Aug" },
-      { name: 'Oslo', description: 'Modern capital with Viking museums and stunning fjord setting', bestWeatherMonths: "May–Sep" },
-      { name: 'Lofoten Islands', description: 'Dramatic Arctic archipelago with fishing villages and surfing', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
-      { name: 'Geirangerfjord', description: 'UNESCO-listed fjord with towering waterfalls and emerald waters', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug" },
+      { name: 'Bergen', description: 'Gateway to the fjords with colorful Bryggen wharf', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Bergen is a gateway to the fjords with colorful Bryggen wharf. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Tromsø', description: 'Arctic city perfect for Northern Lights and midnight sun', bestWeatherMonths: "Jul", goodWeatherMonths: "Aug", panelSummary: "Tromsø is an Arctic city perfect for Northern Lights and midnight sun. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Oslo', description: 'Modern capital with Viking museums and stunning fjord setting', bestWeatherMonths: "May–Sep", panelSummary: "Oslo is a modern capital with Viking museums and stunning fjord setting. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Lofoten Islands', description: 'Dramatic Arctic archipelago with fishing villages and surfing', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun", panelSummary: "Lofoten Islands is a dramatic Arctic archipelago with fishing villages and surfing. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Geirangerfjord', description: 'UNESCO-listed fjord with towering waterfalls and emerald waters', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug", panelSummary: "Geirangerfjord offers UNESCO-listed fjord with towering waterfalls and emerald waters. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Small details make the history feel especially vivid." },
     ],
     attractions: [
       {
@@ -3426,7 +3430,7 @@ export const countries: Record<string, CountryData> = {
   CN: {
     name: 'China',
     code: 'CN',
-    summary: 'China offers an immense range of history, landscapes, cuisines, and regional cultures. Beijing, Shanghai, Xi’an, Chengdu, and Hong Kong reveal different faces of urban China, while the Great Wall, karst mountains, deserts, rice terraces, sacred peaks, and ancient towns show its geographic variety.',
+    panelSummary: 'China offers an immense range of history, landscapes, cuisines, and regional cultures. Beijing, Shanghai, Xi’an, Chengdu, and Hong Kong reveal different faces of urban China, while the Great Wall, karst mountains, deserts, rice terraces, sacred peaks, and ancient towns show its geographic variety.',
     flagEmoji: '🇨🇳',
     flagColors: ['#DE2910', '#FFDE00', '#DE2910'],
     continent: 'Asia',
@@ -3452,11 +3456,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [13, 16, 29, 42, 69, 101, 114, 101, 60, 33, 19, 12],
     bestTimeToVisit: 'September–October (autumn) for comfortable weather and golden foliage',
     popularPlaces: [
-      { name: 'Beijing', description: 'Imperial capital with the Forbidden City and ancient hutongs', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun" },
-      { name: 'Shanghai', description: 'Futuristic skyline on the Bund with vibrant nightlife and dining', bestWeatherMonths: "Apr–May, Oct–Nov", goodWeatherMonths: "Mar, Sep" },
-      { name: 'Xi\'an', description: 'Home of the Terracotta Warriors and ancient Silk Road starting point', bestWeatherMonths: "Mar–May, Sep–Oct", goodWeatherMonths: "Jun, Nov" },
-      { name: 'Guilin', description: 'Surreal karst landscapes along the Li River', bestWeatherMonths: "Oct–Dec", goodWeatherMonths: "Feb–Apr, Sep" },
-      { name: 'Chengdu', description: 'Panda capital with legendary Sichuan cuisine and tea houses', bestWeatherMonths: "Mar–May, Sep–Nov", goodWeatherMonths: "Feb, Jun, Dec" },
+      { name: 'Beijing', description: 'Imperial capital with the Forbidden City and ancient hutongs', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun", panelSummary: "Beijing is an imperial capital with the Forbidden City and ancient hutongs. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Shanghai', description: 'Futuristic skyline on the Bund with vibrant nightlife and dining', bestWeatherMonths: "Apr–May, Oct–Nov", goodWeatherMonths: "Mar, Sep", panelSummary: "Shanghai offers futuristic skyline on the Bund with vibrant nightlife and dining. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Xi\'an', description: 'Home of the Terracotta Warriors and ancient Silk Road starting point', bestWeatherMonths: "Mar–May, Sep–Oct", goodWeatherMonths: "Jun, Nov", panelSummary: "Xi'an is home to the Terracotta Warriors and ancient Silk Road starting point. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Guilin', description: 'Surreal karst landscapes along the Li River', bestWeatherMonths: "Oct–Dec", goodWeatherMonths: "Feb–Apr, Sep", panelSummary: "Guilin is a surreal karst landscapes along the Li River. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Chengdu', description: 'Panda capital with legendary Sichuan cuisine and tea houses', bestWeatherMonths: "Mar–May, Sep–Nov", goodWeatherMonths: "Feb, Jun, Dec", panelSummary: "Chengdu is a panda capital with legendary Sichuan cuisine and tea houses. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
     ],
     attractions: [
       {
@@ -3560,7 +3564,7 @@ export const countries: Record<string, CountryData> = {
   CO: {
     name: 'Colombia',
     code: 'CO',
-    summary: 'Colombia combines Caribbean beaches, Andean cities, coffee landscapes, rainforest, colonial towns, and an energetic cultural scene. Bogotá, Medellín, Cartagena, the Coffee Region, and the Sierra Nevada each feel distinct. Travelers come for close encounters with nature, varied landscapes, and rewarding outdoor adventures.',
+    panelSummary: 'Colombia combines Caribbean beaches, Andean cities, coffee landscapes, rainforest, colonial towns, and an energetic cultural scene. Bogotá, Medellín, Cartagena, the Coffee Region, and the Sierra Nevada each feel distinct. Travelers come for close encounters with nature, varied landscapes, and rewarding outdoor adventures.',
     flagEmoji: '🇨🇴',
     flagColors: ['#FCD116', '#003893', '#CE1126'],
     continent: 'South America',
@@ -3586,11 +3590,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [102, 116, 182, 243, 299, 281, 263, 234, 234, 235, 221, 152],
     bestTimeToVisit: 'December–March or July–August during the dry seasons',
     popularPlaces: [
-      { name: 'Cartagena', description: 'Colorful colonial walled city on the Caribbean coast', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jun" },
-      { name: 'Medellín', description: 'City of Eternal Spring with innovative urban culture and nightlife', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Dec" },
-      { name: 'Bogotá', description: 'Highland capital with world-class museums and street art', bestWeatherMonths: "Jan–Mar, Jun–Sep, Dec", goodWeatherMonths: "Apr–May, Oct–Nov" },
-      { name: 'Coffee Triangle', description: 'Lush coffee-growing region with haciendas and mountain trails', bestWeatherMonths: "Jul", goodWeatherMonths: "Jan–Jun, Aug–Dec" },
-      { name: 'Tayrona National Park', description: 'Pristine Caribbean beaches backed by jungle-clad mountains', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr" },
+      { name: 'Cartagena', description: 'Colorful colonial walled city on the Caribbean coast', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jun", panelSummary: "Cartagena is a colorful colonial walled city on the Caribbean coast. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Medellín', description: 'City of Eternal Spring with innovative urban culture and nightlife', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Dec", panelSummary: "Medellín is a city of Eternal Spring with innovative urban culture and nightlife. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Bogotá', description: 'Highland capital with world-class museums and street art', bestWeatherMonths: "Jan–Mar, Jun–Sep, Dec", goodWeatherMonths: "Apr–May, Oct–Nov", panelSummary: "Bogotá is a highland capital with world-class museums and street art. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Coffee Triangle', description: 'Lush coffee-growing region with haciendas and mountain trails', bestWeatherMonths: "Jul", goodWeatherMonths: "Jan–Jun, Aug–Dec", panelSummary: "Coffee Triangle is a lush coffee-growing region with haciendas and mountain trails. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace." },
+      { name: 'Tayrona National Park', description: 'Pristine Caribbean beaches backed by jungle-clad mountains', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr", panelSummary: "Tayrona National Park offers pristine Caribbean beaches backed by jungle-clad mountains. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -3687,7 +3691,7 @@ export const countries: Record<string, CountryData> = {
   TR: {
     name: 'Turkey',
     code: 'TR',
-    summary: 'Turkey sits at the meeting point of Europe and Asia, offering ancient sites, layered cities, Mediterranean coasts, dramatic landscapes, and a celebrated food culture. Istanbul is the cultural heart, while Cappadocia, Ephesus, the Turquoise Coast, and southeastern cities reveal different histories and environments.',
+    panelSummary: 'Turkey sits at the meeting point of Europe and Asia, offering ancient sites, layered cities, Mediterranean coasts, dramatic landscapes, and a celebrated food culture. Istanbul is the cultural heart, while Cappadocia, Ephesus, the Turquoise Coast, and southeastern cities reveal different histories and environments.',
     flagEmoji: '🇹🇷',
     flagColors: ['#E30A17', '#FFFFFF', '#E30A17'],
     continent: 'Europe/Asia',
@@ -3713,11 +3717,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [74, 63, 66, 62, 60, 38, 17, 15, 23, 49, 60, 78],
     bestTimeToVisit: 'April–May or September–November for comfortable weather and fewer crowds',
     popularPlaces: [
-      { name: 'Istanbul', description: 'Transcontinental city straddling Europe and Asia with Byzantine and Ottoman splendor', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
-      { name: 'Cappadocia', description: 'Fairy chimneys, underground cities, and iconic hot air balloon rides', bestWeatherMonths: "Apr–Oct" },
-      { name: 'Antalya', description: 'Turkish Riviera with turquoise waters and ancient Roman ruins', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Jun, Sep" },
-      { name: 'Ephesus', description: 'One of the best-preserved ancient cities in the Mediterranean', bestWeatherMonths: "Mar–Jun, Sep–Nov" },
-      { name: 'Pamukkale', description: 'Dazzling white travertine terraces filled with thermal waters', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov" },
+      { name: 'Istanbul', description: 'Transcontinental city straddling Europe and Asia with Byzantine and Ottoman splendor', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov", panelSummary: "Istanbul is a transcontinental city straddling Europe and Asia with Byzantine and Ottoman splendor. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Cappadocia', description: 'Fairy chimneys, underground cities, and iconic hot air balloon rides', bestWeatherMonths: "Apr–Oct", panelSummary: "Cappadocia offers fairy chimneys, underground cities, and iconic hot air balloon rides. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Antalya', description: 'Turkish Riviera with turquoise waters and ancient Roman ruins', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Jun, Sep", panelSummary: "Antalya offers turkish Riviera with turquoise waters and ancient Roman ruins. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Ephesus', description: 'One of the best-preserved ancient cities in the Mediterranean', bestWeatherMonths: "Mar–Jun, Sep–Nov", panelSummary: "Ephesus is one of the best-preserved ancient cities in the Mediterranean. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Pamukkale', description: 'Dazzling white travertine terraces filled with thermal waters', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov", panelSummary: "Pamukkale offers dazzling white travertine terraces filled with thermal waters. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -3823,7 +3827,7 @@ export const countries: Record<string, CountryData> = {
   GB: {
     name: 'United Kingdom',
     code: 'GB',
-    summary: 'The United Kingdom combines historic cities, literary and musical heritage, varied landscapes, and four nations with distinct identities. London offers unmatched museums and neighborhoods, while Scotland, Wales, Northern Ireland, and regional England provide castles, coastlines, mountains, villages, and industrial history.',
+    panelSummary: 'The United Kingdom combines historic cities, literary and musical heritage, varied landscapes, and four nations with distinct identities. London offers unmatched museums and neighborhoods, while Scotland, Wales, Northern Ireland, and regional England provide castles, coastlines, mountains, villages, and industrial history.',
     flagEmoji: '🇬🇧',
     flagColors: ['#012169', '#FFFFFF', '#C8102E'],
     continent: 'Europe',
@@ -3849,11 +3853,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [120, 94, 86, 72, 72, 79, 84, 94, 95, 131, 129, 130],
     bestTimeToVisit: 'May–September for the warmest weather, long days, and outdoor festivals',
     popularPlaces: [
-      { name: 'London', description: 'Cosmopolitan capital blending centuries of royal history with cutting-edge culture', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
-      { name: 'Edinburgh', description: "Scotland's atmospheric capital with a medieval Old Town and stunning castle", bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
-      { name: 'Cotswolds', description: 'Rolling hills dotted with honey-colored stone villages and thatched cottages', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Lake District', description: 'Stunning national park of mountains and lakes that inspired the Romantic poets', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Sep" },
-      { name: 'Bath', description: 'Elegant Georgian city built around ancient Roman hot springs', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'London', description: 'Cosmopolitan capital blending centuries of royal history with cutting-edge culture', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr", panelSummary: "London is a cosmopolitan capital blending centuries of royal history with cutting-edge culture. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Edinburgh', description: "Scotland's atmospheric capital with a medieval Old Town and stunning castle", bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Edinburgh offers scotland's atmospheric capital with a medieval Old Town and stunning castle. The pleasure lies in combining major historic sights with local food, walkable streets, and the smaller details that reveal the destination’s character." },
+      { name: 'Cotswolds', description: 'Rolling hills dotted with honey-colored stone villages and thatched cottages', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Cotswolds offers rolling hills dotted with honey-colored stone villages and thatched cottages. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Lake District', description: 'Stunning national park of mountains and lakes that inspired the Romantic poets', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Sep", panelSummary: "Lake District is a stunning national park of mountains and lakes that inspired the Romantic poets. It is a strong choice for travelers drawn to dramatic scenery, active days outdoors, and landscapes that feel far removed from ordinary routines." },
+      { name: 'Bath', description: 'Elegant Georgian city built around ancient Roman hot springs', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Bath is an elegant Georgian city built around ancient Roman hot springs. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -3971,7 +3975,7 @@ export const countries: Record<string, CountryData> = {
   DE: {
     name: 'Germany',
     code: 'DE',
-    summary: 'Germany offers historic cities, castles, forests, river valleys, modern design, and strong regional cultures. Berlin, Munich, Hamburg, Cologne, and Dresden differ greatly in atmosphere, while Bavaria, the Rhine, the Black Forest, and Baltic coast add scenic variety.',
+    panelSummary: 'Germany offers historic cities, castles, forests, river valleys, modern design, and strong regional cultures. Berlin, Munich, Hamburg, Cologne, and Dresden differ greatly in atmosphere, while Bavaria, the Rhine, the Black Forest, and Baltic coast add scenic variety.',
     flagEmoji: '🇩🇪',
     flagColors: ['#000000', '#DD0000', '#FFCE00'],
     continent: 'Europe',
@@ -3997,11 +4001,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [54, 45, 48, 42, 66, 75, 89, 78, 59, 59, 55, 60],
     bestTimeToVisit: 'May–September for warm weather, or late November–December for magical Christmas markets',
     popularPlaces: [
-      { name: 'Berlin', description: 'Vibrant capital where history, nightlife, and street art collide', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Munich', description: 'Bavarian gem known for beer gardens, Oktoberfest, and Alpine access', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Black Forest', description: 'Dense forested mountain region famous for cuckoo clocks and cherry cake', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
-      { name: 'Neuschwanstein', description: 'Fairy-tale castle that inspired the Disney Cinderella castle', bestWeatherMonths: "Sep", goodWeatherMonths: "Apr–Aug, Oct" },
-      { name: 'Rhine Valley', description: 'Romantic river valley lined with vineyards and medieval castles', bestWeatherMonths: "Apr–Oct" },
+      { name: 'Berlin', description: 'Vibrant capital where history, nightlife, and street art collide', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Berlin is a vibrant capital where history, nightlife, and street art collide. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Munich', description: 'Bavarian gem known for beer gardens, Oktoberfest, and Alpine access', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Munich offers bavarian gem known for beer gardens, Oktoberfest, and Alpine access. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Black Forest', description: 'Dense forested mountain region famous for cuckoo clocks and cherry cake', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May", panelSummary: "Black Forest is a dense forested mountain region famous for cuckoo clocks and cherry cake. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Neuschwanstein', description: 'Fairy-tale castle that inspired the Disney Cinderella castle', bestWeatherMonths: "Sep", goodWeatherMonths: "Apr–Aug, Oct", panelSummary: "Neuschwanstein offers fairy-tale castle that inspired the Disney Cinderella castle. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Rhine Valley', description: 'Romantic river valley lined with vineyards and medieval castles', bestWeatherMonths: "Apr–Oct", panelSummary: "Rhine Valley is a Romantic river valley lined with vineyards and medieval castles. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
     attractions: [
       {
@@ -4113,7 +4117,7 @@ export const countries: Record<string, CountryData> = {
   PT: {
     name: 'Portugal',
     code: 'PT',
-    summary: 'Portugal combines historic cities, Atlantic beaches, vineyards, tiled architecture, and a relaxed pace. Lisbon and Porto are the main urban draws, while the Algarve, Douro Valley, Alentejo, Madeira, and the Azores offer very different landscapes.',
+    panelSummary: 'Portugal combines historic cities, Atlantic beaches, vineyards, tiled architecture, and a relaxed pace. Lisbon and Porto are the main urban draws, while the Algarve, Douro Valley, Alentejo, Madeira, and the Azores offer very different landscapes.',
     flagEmoji: '🇵🇹',
     flagColors: ['#006600', '#FF0000', '#FFCC00'],
     continent: 'Europe',
@@ -4139,11 +4143,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [107, 84, 81, 78, 64, 25, 9, 12, 44, 123, 114, 120],
     bestTimeToVisit: 'March–May or September–October for warm weather, smaller crowds, and lower prices',
     popularPlaces: [
-      { name: 'Lisbon', description: 'Hilly coastal capital with pastel buildings, vintage trams, and vibrant nightlife', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec" },
-      { name: 'Porto', description: 'Charming riverside city famous for port wine cellars and tile-covered facades', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Feb–Mar, Oct–Nov" },
-      { name: 'Algarve', description: 'Dramatic coastline with golden cliffs, sea caves, and turquoise waters', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Sintra', description: 'Fairytale town of colorful palaces and gardens nestled in misty mountains', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec" },
-      { name: 'Madeira', description: 'Subtropical island paradise known as the "Floating Garden of the Atlantic"', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Lisbon', description: 'Hilly coastal capital with pastel buildings, vintage trams, and vibrant nightlife', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec", panelSummary: "Lisbon is a hilly coastal capital with pastel buildings, vintage trams, and vibrant nightlife. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Porto', description: 'Charming riverside city famous for port wine cellars and tile-covered facades', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Feb–Mar, Oct–Nov", panelSummary: "Porto is a charming riverside city famous for port wine cellars and tile-covered facades. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace." },
+      { name: 'Algarve', description: 'Dramatic coastline with golden cliffs, sea caves, and turquoise waters', bestWeatherMonths: "Jan–Dec", panelSummary: "Algarve offers dramatic coastline with golden cliffs, sea caves, and turquoise waters. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Sintra', description: 'Fairytale town of colorful palaces and gardens nestled in misty mountains', bestWeatherMonths: "Feb–Nov", goodWeatherMonths: "Jan, Dec", panelSummary: "Sintra is a fairytale town of colorful palaces and gardens nestled in misty mountains. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Madeira', description: 'Subtropical island paradise known as the "Floating Garden of the Atlantic"', bestWeatherMonths: "Jan–Dec", panelSummary: "Madeira is a subtropical island paradise known as the \"Floating Garden of the Atlantic\". Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -4254,7 +4258,7 @@ export const countries: Record<string, CountryData> = {
   JM: {
     name: 'Jamaica',
     code: 'JM',
-    summary: 'Jamaica is known for music, beaches, mountain scenery, waterfalls, and a cultural influence far larger than its size. Beyond the resorts, Kingston, the Blue Mountains, rural communities, and the north coast reveal the island’s history and creative energy.',
+    panelSummary: 'Jamaica is known for music, beaches, mountain scenery, waterfalls, and a cultural influence far larger than its size. Beyond the resorts, Kingston, the Blue Mountains, rural communities, and the north coast reveal the island’s history and creative energy.',
     flagEmoji: '🇯🇲',
     flagColors: ['#009B3A', '#FED100', '#000000'],
     continent: 'North America',
@@ -4280,11 +4284,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [78, 62, 106, 142, 280, 134, 165, 168, 226, 312, 200, 119],
     bestTimeToVisit: 'November–mid-December for pleasant weather before peak season, or January–March for dry season',
     popularPlaces: [
-      { name: 'Montego Bay', description: 'Popular resort city with white-sand beaches and vibrant nightlife', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Dec" },
-      { name: 'Negril', description: 'Famous for Seven Mile Beach and spectacular sunset cliffs', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Dec" },
-      { name: 'Ocho Rios', description: 'Cruise port town with waterfalls, gardens, and dolphin encounters', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Apr, Dec" },
-      { name: 'Kingston', description: 'Cultural capital and birthplace of reggae music', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Dec" },
-      { name: 'Port Antonio', description: 'Lush, laid-back parish with hidden beaches and the Blue Lagoon', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr" },
+      { name: 'Montego Bay', description: 'Popular resort city with white-sand beaches and vibrant nightlife', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Dec", panelSummary: "Montego Bay is a popular resort city with white-sand beaches and vibrant nightlife. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Negril', description: 'Famous for Seven Mile Beach and spectacular sunset cliffs', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Dec", panelSummary: "Negril offers famous for Seven Mile Beach and spectacular sunset cliffs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Ocho Rios', description: 'Cruise port town with waterfalls, gardens, and dolphin encounters', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Apr, Dec", panelSummary: "Ocho Rios is a cruise port town with waterfalls, gardens, and dolphin encounters. The destination is best appreciated slowly, with time for outdoor activity, changing light, broad views, and the communities connected to the landscape." },
+      { name: 'Kingston', description: 'Cultural capital and birthplace of reggae music', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Dec", panelSummary: "Kingston is a cultural capital and birthplace of reggae music. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Port Antonio', description: 'Lush, laid-back parish with hidden beaches and the Blue Lagoon', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr", panelSummary: "Port Antonio offers lush, laid-back parish with hidden beaches and the Blue Lagoon. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
     ],
     attractions: [
       {
@@ -4382,7 +4386,7 @@ export const countries: Record<string, CountryData> = {
   VN: {
     name: 'Vietnam',
     code: 'VN',
-    summary: 'Vietnam stretches from northern mountains and rice terraces to historic cities, river deltas, caves, and tropical beaches. Hanoi, Ho Chi Minh City, Hội An, Huế, and Ha Long Bay each offer distinct experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'Vietnam stretches from northern mountains and rice terraces to historic cities, river deltas, caves, and tropical beaches. Hanoi, Ho Chi Minh City, Hội An, Huế, and Ha Long Bay each offer distinct experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇻🇳',
     flagColors: ['#DA251D', '#FFFF00', '#DA251D'],
     continent: 'Asia',
@@ -4408,11 +4412,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [39, 25, 44, 76, 162, 214, 248, 263, 240, 218, 163, 83],
     bestTimeToVisit: 'February–April or October–December for dry weather in most regions',
     popularPlaces: [
-      { name: 'Hanoi', description: 'Ancient capital with French colonial architecture and legendary street food', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Ho Chi Minh City', description: 'Energetic southern metropolis blending skyscrapers and historic pagodas', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar" },
-      { name: 'Ha Long Bay', description: 'UNESCO-listed bay with thousands of limestone karsts and emerald waters', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "Oct" },
-      { name: 'Hoi An', description: 'Charming lantern-lit ancient town with tailor shops and riverside cafés', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Dec" },
-      { name: 'Sapa', description: 'Mountain town with terraced rice paddies and ethnic minority villages', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Hanoi', description: 'Ancient capital with French colonial architecture and legendary street food', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct", panelSummary: "Hanoi is an ancient capital with French colonial architecture and legendary street food. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Ho Chi Minh City', description: 'Energetic southern metropolis blending skyscrapers and historic pagodas', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar", panelSummary: "Ho Chi Minh City is an energetic southern metropolis blending skyscrapers and historic pagodas. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Ha Long Bay', description: 'UNESCO-listed bay with thousands of limestone karsts and emerald waters', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "Oct", panelSummary: "Ha Long Bay is an UNESCO-listed bay with thousands of limestone karsts and emerald waters. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Hoi An', description: 'Charming lantern-lit ancient town with tailor shops and riverside cafés', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Dec", panelSummary: "Hoi An is a charming lantern-lit ancient town with tailor shops and riverside cafés. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Sapa', description: 'Mountain town with terraced rice paddies and ethnic minority villages', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr", panelSummary: "Sapa is a mountain town with terraced rice paddies and ethnic minority villages. The destination is best appreciated slowly, with time for outdoor activity, changing light, broad views, and the communities connected to the landscape." },
     ],
     attractions: [
       {
@@ -4508,7 +4512,7 @@ export const countries: Record<string, CountryData> = {
   CR: {
     name: 'Costa Rica',
     code: 'CR',
-    summary: 'Costa Rica is a leader in nature-focused travel, with rainforests, volcanoes, cloud forests, beaches, and exceptional biodiversity within a compact area. National parks protect wildlife ranging from sloths and monkeys to sea turtles and tropical birds.',
+    panelSummary: 'Costa Rica is a leader in nature-focused travel, with rainforests, volcanoes, cloud forests, beaches, and exceptional biodiversity within a compact area. National parks protect wildlife ranging from sloths and monkeys to sea turtles and tropical birds.',
     flagEmoji: '🇨🇷',
     flagColors: ['#002B7F', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -4534,11 +4538,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [123, 87, 83, 139, 323, 319, 326, 300, 331, 443, 311, 178],
     bestTimeToVisit: 'December–April (dry season) for sunny skies, or June–August for green season deals and fewer crowds',
     popularPlaces: [
-      { name: 'Arenal Volcano', description: 'Iconic cone-shaped volcano surrounded by hot springs and rainforest', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Jun–Dec" },
-      { name: 'Manuel Antonio', description: 'Tiny national park with white-sand beaches, sloths, and monkeys', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Nov–Dec" },
-      { name: 'Monteverde Cloud Forest', description: 'Misty highland reserve teeming with hummingbirds and quetzals', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Jun–Dec" },
-      { name: 'Guanacaste', description: 'Pacific coast province with golden beaches and world-class surfing', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Nov–Dec" },
-      { name: 'Tortuguero', description: 'Remote Caribbean canals where sea turtles nest on wild beaches', bestWeatherMonths: "Jan, Sep–Dec", goodWeatherMonths: "Feb–Mar, May–Aug" },
+      { name: 'Arenal Volcano', description: 'Iconic cone-shaped volcano surrounded by hot springs and rainforest', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Jun–Dec", panelSummary: "Arenal Volcano offers iconic cone-shaped volcano surrounded by hot springs and rainforest. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Manuel Antonio', description: 'Tiny national park with white-sand beaches, sloths, and monkeys', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Nov–Dec", panelSummary: "Manuel Antonio is a tiny national park with white-sand beaches, sloths, and monkeys. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Monteverde Cloud Forest', description: 'Misty highland reserve teeming with hummingbirds and quetzals', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Jun–Dec", panelSummary: "Monteverde Cloud Forest is a misty highland reserve teeming with hummingbirds and quetzals. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
+      { name: 'Guanacaste', description: 'Pacific coast province with golden beaches and world-class surfing', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Nov–Dec", panelSummary: "Guanacaste is a Pacific coast province with golden beaches and world-class surfing. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Tortuguero', description: 'Remote Caribbean canals where sea turtles nest on wild beaches', bestWeatherMonths: "Jan, Sep–Dec", goodWeatherMonths: "Feb–Mar, May–Aug", panelSummary: "Tortuguero offers remote Caribbean canals where sea turtles nest on wild beaches. It is especially appealing to nature lovers seeking wildlife encounters, open landscapes, and memorable experiences led by the rhythms of the natural world." },
     ],
     attractions: [
       {
@@ -4638,7 +4642,7 @@ export const countries: Record<string, CountryData> = {
   KE: {
     name: 'Kenya',
     code: 'KE',
-    summary: 'Kenya is one of Africa’s classic safari destinations, known for abundant wildlife, dramatic savannas, highlands, Indian Ocean beaches, and diverse cultures. The Maasai Mara, Amboseli, Mount Kenya, and coastal towns offer contrasting experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'Kenya is one of Africa’s classic safari destinations, known for abundant wildlife, dramatic savannas, highlands, Indian Ocean beaches, and diverse cultures. The Maasai Mara, Amboseli, Mount Kenya, and coastal towns offer contrasting experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇪',
     flagColors: ['#000000', '#BB0000', '#006600'],
     continent: 'Africa',
@@ -4664,11 +4668,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [32, 25, 64, 134, 93, 37, 32, 35, 28, 78, 113, 60],
     bestTimeToVisit: 'July–October for the Great Migration in Masai Mara, or January–February for dry, warm weather',
     popularPlaces: [
-      { name: 'Masai Mara', description: 'World-famous reserve hosting the annual Great Migration of wildebeest', bestWeatherMonths: "Feb, Jun–Sep", goodWeatherMonths: "Jan, Apr–May, Oct–Dec" },
-      { name: 'Nairobi', description: 'Dynamic capital with a national park, vibrant food scene, and tech hub', bestWeatherMonths: "Jan–Mar, Jun–Oct, Dec", goodWeatherMonths: "Apr–May, Nov" },
-      { name: 'Diani Beach', description: 'Stunning white-sand Indian Ocean beach on the south coast', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jun" },
-      { name: 'Amboseli', description: 'Elephant herds roaming with Mount Kilimanjaro as the backdrop', bestWeatherMonths: "Jan–Mar, Jun–Oct, Dec", goodWeatherMonths: "Apr–May, Nov" },
-      { name: 'Lamu Island', description: 'Car-free Swahili town with donkey-lined alleys and ancient coral architecture', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Sep–Oct" },
+      { name: 'Masai Mara', description: 'World-famous reserve hosting the annual Great Migration of wildebeest', bestWeatherMonths: "Feb, Jun–Sep", goodWeatherMonths: "Jan, Apr–May, Oct–Dec", panelSummary: "Masai Mara offers world-famous reserve hosting the annual Great Migration of wildebeest. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Nairobi', description: 'Dynamic capital with a national park, vibrant food scene, and tech hub', bestWeatherMonths: "Jan–Mar, Jun–Oct, Dec", goodWeatherMonths: "Apr–May, Nov", panelSummary: "Nairobi is a dynamic capital with a national park, vibrant food scene, and tech hub. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Diani Beach', description: 'Stunning white-sand Indian Ocean beach on the south coast', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jun", panelSummary: "Diani Beach is a stunning white-sand Indian Ocean beach on the south coast. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Amboseli', description: 'Elephant herds roaming with Mount Kilimanjaro as the backdrop', bestWeatherMonths: "Jan–Mar, Jun–Oct, Dec", goodWeatherMonths: "Apr–May, Nov", panelSummary: "Amboseli offers elephant herds roaming with Mount Kilimanjaro as the backdrop. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lamu Island', description: 'Car-free Swahili town with donkey-lined alleys and ancient coral architecture', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Sep–Oct", panelSummary: "Lamu Island is a car-free Swahili town with donkey-lined alleys and ancient coral architecture. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -4774,7 +4778,7 @@ export const countries: Record<string, CountryData> = {
   IE: {
     name: 'Ireland',
     code: 'IE',
-    summary: 'Ireland combines green landscapes, rugged coastline, historic towns, literary tradition, music, and a famously social pub culture. Dublin provides museums and lively neighborhoods, while the west coast, islands, castles, and small villages offer scenic drives and walks.',
+    panelSummary: 'Ireland combines green landscapes, rugged coastline, historic towns, literary tradition, music, and a famously social pub culture. Dublin provides museums and lively neighborhoods, while the west coast, islands, castles, and small villages offer scenic drives and walks.',
     flagEmoji: '🇮🇪',
     flagColors: ['#169B62', '#FFFFFF', '#FF883E'],
     continent: 'Europe',
@@ -4800,11 +4804,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [120, 96, 85, 78, 77, 79, 92, 94, 99, 122, 134, 133],
     bestTimeToVisit: 'May–September for the longest daylight hours and warmest (relatively!) weather',
     popularPlaces: [
-      { name: 'Dublin', description: 'Lively capital known for literary pubs, Georgian architecture, and craic (fun)', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
-      { name: 'Ring of Kerry', description: 'Spectacular 179 km coastal drive through mountains, lakes, and villages', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
-      { name: 'Galway', description: 'Bohemian coastal city with traditional music sessions and oyster festivals', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
-      { name: 'Cliffs of Moher', description: 'Dramatic 700-foot sea cliffs on the Atlantic coast of County Clare', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
-      { name: 'Dingle Peninsula', description: 'Rugged coastal beauty with ancient stone forts and dolphin-watching', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "May–Jun, Sep" },
+      { name: 'Dublin', description: 'Lively capital known for literary pubs, Georgian architecture, and craic (fun)', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May", panelSummary: "Dublin is a lively capital known for literary pubs, Georgian architecture, and craic (fun). Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Ring of Kerry', description: 'Spectacular 179 km coastal drive through mountains, lakes, and villages', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Ring of Kerry offers spectacular 179 km coastal drive through mountains, lakes, and villages. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Galway', description: 'Bohemian coastal city with traditional music sessions and oyster festivals', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr", panelSummary: "Galway is a bohemian coastal city with traditional music sessions and oyster festivals. Days can move easily between the water, scenic viewpoints, casual local meals, and communities whose character is closely tied to the coast." },
+      { name: 'Cliffs of Moher', description: 'Dramatic 700-foot sea cliffs on the Atlantic coast of County Clare', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr", panelSummary: "Cliffs of Moher is a dramatic 700-foot sea cliffs on the Atlantic coast of County Clare. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Dingle Peninsula', description: 'Rugged coastal beauty with ancient stone forts and dolphin-watching', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "May–Jun, Sep", panelSummary: "Dingle Peninsula offers rugged coastal beauty with ancient stone forts and dolphin-watching. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
     ],
     attractions: [
       {
@@ -4910,7 +4914,7 @@ export const countries: Record<string, CountryData> = {
   ID: {
     name: 'Indonesia',
     code: 'ID',
-    summary: 'Indonesia is a vast archipelago of volcanoes, rainforests, beaches, coral reefs, and hundreds of distinct cultures. Bali is the best-known destination, but Java, Sumatra, Komodo, Sulawesi, and eastern islands offer temples, wildlife, diving, hiking, and traditional communities.',
+    panelSummary: 'Indonesia is a vast archipelago of volcanoes, rainforests, beaches, coral reefs, and hundreds of distinct cultures. Bali is the best-known destination, but Java, Sumatra, Komodo, Sulawesi, and eastern islands offer temples, wildlife, diving, hiking, and traditional communities.',
     flagEmoji: '🇮🇩',
     flagColors: ['#FF0000', '#FFFFFF', '#FF0000'],
     continent: 'Asia',
@@ -4936,11 +4940,11 @@ export const countries: Record<string, CountryData> = {
     precipitation: [281, 255, 289, 277, 227, 186, 168, 162, 166, 210, 255, 297],
     bestTimeToVisit: 'April–October (dry season) for the best weather, especially for Bali and Komodo',
     popularPlaces: [
-      { name: 'Bali', description: 'Island of the Gods — temples, rice terraces, surf breaks, and yoga retreats', bestWeatherMonths: "Aug", goodWeatherMonths: "Jun–Jul, Sep" },
-      { name: 'Jakarta', description: 'Massive, fast-paced capital with colonial history and vibrant street food', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jan–Mar, Jun, Nov–Dec" },
-      { name: 'Yogyakarta', description: 'Cultural capital of Java, gateway to Borobudur and Prambanan temples', bestWeatherMonths: "Jun–Sep" },
-      { name: 'Komodo National Park', description: 'Home of the famous Komodo dragon and pristine pink sand beaches', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep–Oct" },
-      { name: 'Raja Ampat', description: 'Remote archipelago with the richest marine biodiversity on Earth', bestWeatherMonths: "Jan–Mar, May–Sep, Dec", goodWeatherMonths: "Apr, Oct–Nov" },
+      { name: 'Bali', description: 'Island of the Gods — temples, rice terraces, surf breaks, and yoga retreats', bestWeatherMonths: "Aug", goodWeatherMonths: "Jun–Jul, Sep", panelSummary: "Bali is an island of the Gods — temples, rice terraces, surf breaks, and yoga retreats. Days can move easily between the water, scenic viewpoints, casual local meals, and communities whose character is closely tied to the coast." },
+      { name: 'Jakarta', description: 'Massive, fast-paced capital with colonial history and vibrant street food', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jan–Mar, Jun, Nov–Dec", panelSummary: "Jakarta is a massive, fast-paced capital with colonial history and vibrant street food. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Yogyakarta', description: 'Cultural capital of Java, gateway to Borobudur and Prambanan temples', bestWeatherMonths: "Jun–Sep", panelSummary: "Yogyakarta is a cultural capital of Java, gateway to Borobudur and Prambanan temples. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Komodo National Park', description: 'Home of the famous Komodo dragon and pristine pink sand beaches', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep–Oct", panelSummary: "Komodo National Park is home to the famous Komodo dragon and pristine pink sand beaches. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Raja Ampat', description: 'Remote archipelago with the richest marine biodiversity on Earth', bestWeatherMonths: "Jan–Mar, May–Sep, Dec", goodWeatherMonths: "Apr, Oct–Nov", panelSummary: "Raja Ampat is a remote archipelago with the richest marine biodiversity on Earth. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
     ],
     attractions: [
       {
@@ -5043,7 +5047,7 @@ export const countries: Record<string, CountryData> = {
   CA: {
     name: 'Canada',
     code: 'CA',
-    summary: 'Canada offers immense natural landscapes alongside multicultural cities and a strong outdoor culture. Travelers can experience the Rocky Mountains, Atlantic villages, Arctic tundra, Pacific rainforest, lakes, and national parks, as well as Toronto, Montréal, Vancouver, and Québec City.',
+    panelSummary: 'Canada offers immense natural landscapes alongside multicultural cities and a strong outdoor culture. Travelers can experience the Rocky Mountains, Atlantic villages, Arctic tundra, Pacific rainforest, lakes, and national parks, as well as Toronto, Montréal, Vancouver, and Québec City.',
     flagEmoji: '🇨🇦',
     flagColors: ['#FF0000', '#FFFFFF', '#FF0000'],
     continent: 'North America',
@@ -5070,10 +5074,10 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'June–September is best for warm-weather city trips, hiking, and national parks; May and September can be quieter. December–March suits skiing and many northern-lights trips.',
     bestVisitMonths: [5, 6, 7, 8, 9, 12, 1, 2, 3],
     popularPlaces: [
-      { name: 'Banff National Park', description: 'Turquoise lakes and soaring Rocky Mountain peaks in Alberta', bestWeatherMonths: "Jul–Aug" },
-      { name: 'Vancouver', description: 'Pacific coastal city wedged between ocean and mountains', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
-      { name: 'Toronto', description: 'Canada’s largest city, multicultural with the iconic CN Tower', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Quebec City', description: 'Walled old town with French charm and cobblestone streets', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
+      { name: 'Banff National Park', description: 'Turquoise lakes and soaring Rocky Mountain peaks in Alberta', bestWeatherMonths: "Jul–Aug", panelSummary: "Banff National Park is a turquoise lakes and soaring Rocky Mountain peaks in Alberta. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Vancouver', description: 'Pacific coastal city wedged between ocean and mountains', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May", panelSummary: "Vancouver is a Pacific coastal city wedged between ocean and mountains. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Toronto', description: 'Canada’s largest city, multicultural with the iconic CN Tower', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct", panelSummary: "Toronto offers canada’s largest city, multicultural with the iconic CN Tower. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Quebec City', description: 'Walled old town with French charm and cobblestone streets', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May", panelSummary: "Quebec City is a walled old town with French charm and cobblestone streets. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -5160,7 +5164,7 @@ export const countries: Record<string, CountryData> = {
   GL: {
     name: 'Greenland',
     code: 'GL',
-    summary: 'Greenland is an Arctic destination of vast ice, rugged mountains, colorful coastal settlements, and a culture shaped by Inuit traditions and the sea. Visitors come for glaciers, fjords, dog sledding, hiking, whales, and northern lights.',
+    panelSummary: 'Greenland is an Arctic destination of vast ice, rugged mountains, colorful coastal settlements, and a culture shaped by Inuit traditions and the sea. Visitors come for glaciers, fjords, dog sledding, hiking, whales, and northern lights.',
     flagEmoji: '🇬🇱',
     flagColors: ['#FFFFFF', '#D00C33', '#D00C33'],
     continent: 'North America',
@@ -5187,9 +5191,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'June–August is the main season for hiking, boating, and long daylight; late winter and spring suit dog sledding and snow travel, while the darker months bring aurora opportunities.',
     bestVisitMonths: [6, 7, 8, 2, 3, 4],
     popularPlaces: [
-      { name: 'Nuuk', description: 'Colorful capital blending Inuit heritage and Nordic design', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
-      { name: 'Ilulissat', description: 'Gateway to a UNESCO-listed icefjord of giant icebergs', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
-      { name: 'Disko Bay', description: 'Dramatic bay famous for whale watching and floating ice', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
+      { name: 'Nuuk', description: 'Colorful capital blending Inuit heritage and Nordic design', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug", panelSummary: "Nuuk is a colorful capital blending Inuit heritage and Nordic design. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Ilulissat', description: 'Gateway to a UNESCO-listed icefjord of giant icebergs', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug", panelSummary: "Ilulissat is a gateway to a UNESCO-listed icefjord of giant icebergs. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Disko Bay', description: 'Dramatic bay famous for whale watching and floating ice', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun", panelSummary: "Disko Bay is a dramatic bay famous for whale watching and floating ice. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -5255,7 +5259,7 @@ export const countries: Record<string, CountryData> = {
   VE: {
     name: 'Venezuela',
     code: 'VE',
-    summary: 'Venezuela contains extraordinary natural landscapes, including Angel Falls, Caribbean beaches, the Andes, the Orinoco Delta, and the tabletop mountains of Canaima. Its cities, music, cuisine, and regional cultures add depth to the scenery. That mix gives travelers plenty to discover.',
+    panelSummary: 'Venezuela contains extraordinary natural landscapes, including Angel Falls, Caribbean beaches, the Andes, the Orinoco Delta, and the tabletop mountains of Canaima. Its cities, music, cuisine, and regional cultures add depth to the scenery. That mix gives travelers plenty to discover.',
     flagEmoji: '🇻🇪',
     flagColors: ['#FCD116', '#00247D', '#CF142B'],
     continent: 'South America',
@@ -5281,9 +5285,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [48, 46, 61, 132, 230, 296, 295, 266, 200, 166, 141, 85],
     bestTimeToVisit: 'December–April (dry season) for the best access to Angel Falls and the coast',
     popularPlaces: [
-      { name: 'Canaima National Park', description: 'Otherworldly tepui plateaus and the world’s tallest waterfall', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Nov" },
-      { name: 'Los Roques', description: 'Caribbean archipelago of turquoise lagoons and white sand', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–May, Dec" },
-      { name: 'Mérida', description: 'Andean city with the world’s highest cable car', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Canaima National Park', description: 'Otherworldly tepui plateaus and the world’s tallest waterfall', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Nov", panelSummary: "Canaima National Park offers otherworldly tepui plateaus and the world’s tallest waterfall. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Los Roques', description: 'Caribbean archipelago of turquoise lagoons and white sand', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–May, Dec", panelSummary: "Los Roques is a Caribbean archipelago of turquoise lagoons and white sand. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Mérida', description: 'Andean city with the world’s highest cable car', bestWeatherMonths: "Jan–Dec", panelSummary: "Mérida is an Andean city with the world’s highest cable car. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -5357,7 +5361,7 @@ export const countries: Record<string, CountryData> = {
   CU: {
     name: 'Cuba',
     code: 'CU',
-    summary: 'Cuba is distinctive for its preserved historic cities, music, dance, beaches, classic cars, and revolutionary history. Havana’s architecture and street life are central, while Trinidad, Viñales, Santiago de Cuba, and the northern cays show different sides of the island.',
+    panelSummary: 'Cuba is distinctive for its preserved historic cities, music, dance, beaches, classic cars, and revolutionary history. Havana’s architecture and street life are central, while Trinidad, Viñales, Santiago de Cuba, and the northern cays show different sides of the island.',
     flagEmoji: '🇨🇺',
     flagColors: ['#002A8F', '#FFFFFF', '#CF142B'],
     continent: 'North America',
@@ -5383,10 +5387,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [38, 32, 54, 86, 184, 176, 149, 165, 211, 159, 81, 41],
     bestTimeToVisit: 'November–April (dry season) for warm sunshine and lower humidity',
     popularPlaces: [
-      { name: 'Havana', description: 'Time-capsule capital of vintage cars and crumbling colonial grandeur', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr, Nov" },
-      { name: 'Trinidad', description: 'Pastel-hued colonial town frozen in the 19th century', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr, Nov" },
-      { name: 'Viñales Valley', description: 'Tobacco country of limestone mogotes and ox-plowed fields', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr, Nov" },
-      { name: 'Varadero', description: 'Resort peninsula with miles of white-sand beach', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'Havana', description: 'Time-capsule capital of vintage cars and crumbling colonial grandeur', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr, Nov", panelSummary: "Havana is a time-capsule capital of vintage cars and crumbling colonial grandeur. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Trinidad', description: 'Pastel-hued colonial town frozen in the 19th century', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr, Nov", panelSummary: "Trinidad is a pastel-hued colonial town frozen in the 19th century. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Viñales Valley', description: 'Tobacco country of limestone mogotes and ox-plowed fields', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr, Nov", panelSummary: "Viñales Valley offers tobacco country of limestone mogotes and ox-plowed fields. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Varadero', description: 'Resort peninsula with miles of white-sand beach', bestWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "Varadero is a resort peninsula with miles of white-sand beach. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -5461,7 +5465,7 @@ export const countries: Record<string, CountryData> = {
   DO: {
     name: 'Dominican Republic',
     code: 'DO',
-    summary: 'The Dominican Republic combines long Caribbean beaches with mountains, colonial history, lively cities, and a strong music culture. Punta Cana is the best-known resort area, but Santo Domingo, Samaná, the Cordillera Central, and smaller coastal towns broaden the experience.',
+    panelSummary: 'The Dominican Republic combines long Caribbean beaches with mountains, colonial history, lively cities, and a strong music culture. Punta Cana is the best-known resort area, but Santo Domingo, Samaná, the Cordillera Central, and smaller coastal towns broaden the experience.',
     flagEmoji: '🇩🇴',
     flagColors: ['#002D62', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -5487,10 +5491,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [65, 69, 64, 108, 198, 114, 129, 149, 176, 178, 163, 95],
     bestTimeToVisit: 'December–April for dry, sunny beach weather before hurricane season',
     popularPlaces: [
-      { name: 'Punta Cana', description: 'Resort coast of palm-lined beaches and turquoise water', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
-      { name: 'Santo Domingo', description: 'Oldest European-founded city in the Americas', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Apr, Dec" },
-      { name: 'Samaná Peninsula', description: 'Lush coast famous for humpback whale season', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Dec" },
-      { name: 'Puerto Plata', description: 'North-coast city with a cable car and Victorian architecture', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Jun–Aug, Nov–Dec" },
+      { name: 'Punta Cana', description: 'Resort coast of palm-lined beaches and turquoise water', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec", panelSummary: "Punta Cana is a resort coast of palm-lined beaches and turquoise water. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Santo Domingo', description: 'Oldest European-founded city in the Americas', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Apr, Dec", panelSummary: "Santo Domingo is the oldest European-founded city in the Americas. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Samaná Peninsula', description: 'Lush coast famous for humpback whale season', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Dec", panelSummary: "Samaná Peninsula is a lush coast famous for humpback whale season. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Puerto Plata', description: 'North-coast city with a cable car and Victorian architecture', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr, Jun–Aug, Nov–Dec", panelSummary: "Puerto Plata is a north-coast city with a cable car and Victorian architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -5556,7 +5560,7 @@ export const countries: Record<string, CountryData> = {
   DZ: {
     name: 'Algeria',
     code: 'DZ',
-    summary: 'Algeria is Africa’s largest country by area, offering Roman ruins, Ottoman architecture, Mediterranean cities, mountain landscapes, and the immense Sahara. Algiers, Constantine, Timgad, Ghardaïa, and desert oases reveal layers of history and culture. That mix gives travelers plenty to discover.',
+    panelSummary: 'Algeria is Africa’s largest country by area, offering Roman ruins, Ottoman architecture, Mediterranean cities, mountain landscapes, and the immense Sahara. Algiers, Constantine, Timgad, Ghardaïa, and desert oases reveal layers of history and culture. That mix gives travelers plenty to discover.',
     flagEmoji: '🇩🇿',
     flagColors: ['#006233', '#FFFFFF', '#D21034'],
     continent: 'Africa',
@@ -5582,10 +5586,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [10, 7, 8, 7, 6, 3, 3, 7, 8, 9, 9, 9],
     bestTimeToVisit: 'March–May and September–November for mild weather across coast and desert',
     popularPlaces: [
-      { name: 'Algiers', description: 'Whitewashed Mediterranean capital tumbling down to the sea', bestWeatherMonths: "Feb–Jun, Sep–Dec", goodWeatherMonths: "Jan, Jul" },
-      { name: 'Sahara Desert', description: 'Endless dunes, oases, and star-filled nights', bestWeatherMonths: "Jan–Apr, Oct–Dec" },
-      { name: 'Constantine', description: 'Dramatic city of suspension bridges spanning a deep gorge', bestWeatherMonths: "Apr–Jun, Sep–Nov", goodWeatherMonths: "Mar" },
-      { name: 'Timgad', description: 'Remarkably preserved Roman ruins on the edge of the desert', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun, Nov" },
+      { name: 'Algiers', description: 'Whitewashed Mediterranean capital tumbling down to the sea', bestWeatherMonths: "Feb–Jun, Sep–Dec", goodWeatherMonths: "Jan, Jul", panelSummary: "Algiers is a whitewashed Mediterranean capital tumbling down to the sea. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Sahara Desert', description: 'Endless dunes, oases, and star-filled nights', bestWeatherMonths: "Jan–Apr, Oct–Dec", panelSummary: "Sahara Desert offers endless dunes, oases, and star-filled nights. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Constantine', description: 'Dramatic city of suspension bridges spanning a deep gorge', bestWeatherMonths: "Apr–Jun, Sep–Nov", goodWeatherMonths: "Mar", panelSummary: "Constantine is a dramatic city of suspension bridges spanning a deep gorge. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Timgad', description: 'Remarkably preserved Roman ruins on the edge of the desert', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun, Nov", panelSummary: "Timgad offers remarkably preserved Roman ruins on the edge of the desert. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
     attractions: [
       {
@@ -5651,7 +5655,7 @@ export const countries: Record<string, CountryData> = {
   SE: {
     name: 'Sweden',
     code: 'SE',
-    summary: 'Sweden pairs stylish cities, design, and modern culture with forests, lakes, islands, and an accessible outdoor lifestyle. Stockholm spreads across an archipelago, while Gothenburg, Malmö, Lapland, and the countryside offer different rhythms. That mix gives travelers plenty to discover.',
+    panelSummary: 'Sweden pairs stylish cities, design, and modern culture with forests, lakes, islands, and an accessible outdoor lifestyle. Stockholm spreads across an archipelago, while Gothenburg, Malmö, Lapland, and the countryside offer different rhythms. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇪',
     flagColors: ['#006AA7', '#FECC00', '#006AA7'],
     continent: 'Europe',
@@ -5677,10 +5681,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [47, 37, 34, 36, 46, 68, 80, 79, 59, 59, 56, 53],
     bestTimeToVisit: 'June–August for long bright days, or December–March for snow and northern lights',
     popularPlaces: [
-      { name: 'Stockholm', description: 'Elegant capital spread across 14 islands', bestWeatherMonths: "May–Sep" },
-      { name: 'Gothenburg', description: 'Friendly seafaring city with canals and seafood', bestWeatherMonths: "May–Sep" },
-      { name: 'Swedish Lapland', description: 'Arctic wilderness of reindeer, aurora, and the Ice Hotel', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
-      { name: 'Gotland', description: 'Medieval Baltic island with the walled town of Visby', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct" },
+      { name: 'Stockholm', description: 'Elegant capital spread across 14 islands', bestWeatherMonths: "May–Sep", panelSummary: "Stockholm is an elegant capital spread across 14 islands. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The relaxed setting is part of the appeal." },
+      { name: 'Gothenburg', description: 'Friendly seafaring city with canals and seafood', bestWeatherMonths: "May–Sep", panelSummary: "Gothenburg is a friendly seafaring city with canals and seafood. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace. The regional flavors are an essential part of visiting." },
+      { name: 'Swedish Lapland', description: 'Arctic wilderness of reindeer, aurora, and the Ice Hotel', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun", panelSummary: "Swedish Lapland offers Arctic wilderness of reindeer, aurora, and the Ice Hotel. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Gotland', description: 'Medieval Baltic island with the walled town of Visby', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct", panelSummary: "Gotland is a medieval Baltic island with the walled town of Visby. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
     ],
     attractions: [
       {
@@ -5754,7 +5758,7 @@ export const countries: Record<string, CountryData> = {
   FI: {
     name: 'Finland',
     code: 'FI',
-    summary: 'Finland is a country of forests, lakes, saunas, clean design, and strong seasonal contrasts. Helsinki offers architecture, islands, and contemporary culture, while Lapland draws visitors for northern lights, winter activities, and Arctic landscapes. That mix gives travelers plenty to discover.',
+    panelSummary: 'Finland is a country of forests, lakes, saunas, clean design, and strong seasonal contrasts. Helsinki offers architecture, islands, and contemporary culture, while Lapland draws visitors for northern lights, winter activities, and Arctic landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇫🇮',
     flagColors: ['#FFFFFF', '#003580', '#003580'],
     continent: 'Europe',
@@ -5781,10 +5785,10 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'June–August brings long days and the mildest weather; December–March is best for Lapland snow experiences and northern lights.',
     bestVisitMonths: [6, 7, 8, 12, 1, 2, 3],
     popularPlaces: [
-      { name: 'Helsinki', description: 'Design-forward seaside capital of bold architecture', bestWeatherMonths: "May–Sep" },
-      { name: 'Lapland', description: 'Arctic north of reindeer, snow, and Santa’s village', bestWeatherMonths: "Jun–Aug" },
-      { name: 'Finnish Lakeland', description: 'Tranquil region of forests, lakes, and lakeside saunas', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Sep" },
-      { name: 'Turku', description: 'Oldest city in Finland, set on a riverside archipelago', bestWeatherMonths: "May–Sep" },
+      { name: 'Helsinki', description: 'Design-forward seaside capital of bold architecture', bestWeatherMonths: "May–Sep", panelSummary: "Helsinki is a design-forward seaside capital of bold architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
+      { name: 'Lapland', description: 'Arctic north of reindeer, snow, and Santa’s village', bestWeatherMonths: "Jun–Aug", panelSummary: "Lapland is an Arctic north of reindeer, snow, and Santa’s village. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Finnish Lakeland', description: 'Tranquil region of forests, lakes, and lakeside saunas', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Sep", panelSummary: "Finnish Lakeland is a tranquil region of forests, lakes, and lakeside saunas. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Turku', description: 'Oldest city in Finland, set on a riverside archipelago', bestWeatherMonths: "May–Sep", panelSummary: "Turku is the oldest city in Finland, set on a riverside archipelago. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
     ],
     attractions: [
       {
@@ -5852,7 +5856,7 @@ export const countries: Record<string, CountryData> = {
   NL: {
     name: 'Netherlands',
     code: 'NL',
-    summary: 'The Netherlands is known for canals, cycling, art, innovative design, and compact cities that are easy to explore. Amsterdam is the main draw, but Rotterdam, Utrecht, Delft, Haarlem, and the countryside offer different architecture and atmosphere.',
+    panelSummary: 'The Netherlands is known for canals, cycling, art, innovative design, and compact cities that are easy to explore. Amsterdam is the main draw, but Rotterdam, Utrecht, Delft, Haarlem, and the countryside offer different architecture and atmosphere.',
     flagEmoji: '🇳🇱',
     flagColors: ['#AE1C28', '#FFFFFF', '#21468B'],
     continent: 'Europe',
@@ -5878,10 +5882,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [70, 56, 54, 40, 55, 67, 79, 81, 71, 77, 74, 80],
     bestTimeToVisit: 'April–May for tulip season, or June–August for warm canal-side days',
     popularPlaces: [
-      { name: 'Amsterdam', description: 'Canal-ringed capital of gabled houses, bikes, and museums', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Keukenhof', description: 'World’s largest flower garden, ablaze with spring tulips', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Rotterdam', description: 'Modern port city of daring contemporary architecture', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Giethoorn', description: 'Car-free “Venice of the North” laced with canals', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Amsterdam', description: 'Canal-ringed capital of gabled houses, bikes, and museums', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Amsterdam is a canal-ringed capital of gabled houses, bikes, and museums. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Keukenhof', description: 'World’s largest flower garden, ablaze with spring tulips', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Keukenhof offers world’s largest flower garden, ablaze with spring tulips. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Rotterdam', description: 'Modern port city of daring contemporary architecture', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Rotterdam is a modern port city of daring contemporary architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
+      { name: 'Giethoorn', description: 'Car-free “Venice of the North” laced with canals', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Giethoorn offers car-free “Venice of the North” laced with canals. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -5967,7 +5971,7 @@ export const countries: Record<string, CountryData> = {
   SA: {
     name: 'Saudi Arabia',
     code: 'SA',
-    summary: 'Saudi Arabia combines deep Islamic history, rapidly changing cities, desert landscapes, Red Sea coast, and important archaeological sites. Riyadh and Jeddah show different urban identities, while AlUla, the Empty Quarter, mountain regions, and coral reefs reveal surprising natural diversity.',
+    panelSummary: 'Saudi Arabia combines deep Islamic history, rapidly changing cities, desert landscapes, Red Sea coast, and important archaeological sites. Riyadh and Jeddah show different urban identities, while AlUla, the Empty Quarter, mountain regions, and coral reefs reveal surprising natural diversity.',
     flagEmoji: '🇸🇦',
     flagColors: ['#006C35', '#FFFFFF', '#006C35'],
     continent: 'Asia',
@@ -5993,10 +5997,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [13, 7, 21, 19, 10, 1, 1, 2, 1, 4, 13, 10],
     bestTimeToVisit: 'November–March for comfortable temperatures across the desert and cities',
     popularPlaces: [
-      { name: 'Riyadh', description: 'Fast-modernizing capital of skyscrapers and old mud-brick forts', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
-      { name: 'AlUla', description: 'Desert valley of dramatic rock formations and ancient tombs', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May" },
-      { name: 'Jeddah', description: 'Red Sea gateway with a UNESCO-listed coral-stone old town', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb, Dec" },
-      { name: 'Edge of the World', description: 'Sheer cliffs dropping into an endless desert horizon', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'Riyadh', description: 'Fast-modernizing capital of skyscrapers and old mud-brick forts', bestWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "Riyadh is a fast-modernizing capital of skyscrapers and old mud-brick forts. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'AlUla', description: 'Desert valley of dramatic rock formations and ancient tombs', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May", panelSummary: "AlUla is a desert valley of dramatic rock formations and ancient tombs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Jeddah', description: 'Red Sea gateway with a UNESCO-listed coral-stone old town', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb, Dec", panelSummary: "Jeddah is a red Sea gateway with a UNESCO-listed coral-stone old town. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Edge of the World', description: 'Sheer cliffs dropping into an endless desert horizon', bestWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "Edge of the World is a sheer cliffs dropping into an endless desert horizon. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -6062,7 +6066,7 @@ export const countries: Record<string, CountryData> = {
   KH: {
     name: 'Cambodia',
     code: 'KH',
-    summary: 'Cambodia is best known for Angkor’s extraordinary temple complex, but the country also offers river landscapes, colonial towns, islands, markets, and a resilient contemporary culture. Phnom Penh provides history and urban energy, while Battambang, Kampot, and the southern coast add quieter experiences.',
+    panelSummary: 'Cambodia is best known for Angkor’s extraordinary temple complex, but the country also offers river landscapes, colonial towns, islands, markets, and a resilient contemporary culture. Phnom Penh provides history and urban energy, while Battambang, Kampot, and the southern coast add quieter experiences.',
     flagEmoji: '🇰🇭',
     flagColors: ['#032EA1', '#E00025', '#032EA1'],
     continent: 'Asia',
@@ -6088,10 +6092,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [12, 16, 50, 88, 170, 249, 279, 308, 311, 236, 94, 25],
     bestTimeToVisit: 'November–March (dry season) for cooler, more comfortable temple-hopping',
     popularPlaces: [
-      { name: 'Siem Reap', description: 'Gateway town to the temples of Angkor', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb" },
-      { name: 'Phnom Penh', description: 'Riverside capital of royal palaces and poignant history', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Mar, Nov" },
-      { name: 'Koh Rong', description: 'Tropical island of white beaches and bioluminescent water', bestWeatherMonths: "Jan–Feb, Dec" },
-      { name: 'Battambang', description: 'Laid-back town of French colonial charm and the bamboo train', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb" },
+      { name: 'Siem Reap', description: 'Gateway town to the temples of Angkor', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb", panelSummary: "Siem Reap is a gateway town to the temples of Angkor. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Phnom Penh', description: 'Riverside capital of royal palaces and poignant history', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Mar, Nov", panelSummary: "Phnom Penh is a riverside capital of royal palaces and poignant history. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Koh Rong', description: 'Tropical island of white beaches and bioluminescent water', bestWeatherMonths: "Jan–Feb, Dec", panelSummary: "Koh Rong is a tropical island of white beaches and bioluminescent water. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Battambang', description: 'Laid-back town of French colonial charm and the bamboo train', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb", panelSummary: "Battambang is a laid-back town of French colonial charm and the bamboo train. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
     ],
     attractions: [
       {
@@ -6167,7 +6171,7 @@ export const countries: Record<string, CountryData> = {
   LK: {
     name: 'Sri Lanka',
     code: 'LK',
-    summary: 'Sri Lanka combines ancient cities, Buddhist temples, tea-covered highlands, wildlife reserves, tropical beaches, and flavorful cuisine within a compact island. Colombo, Kandy, Galle, Sigiriya, and the hill country offer distinct experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'Sri Lanka combines ancient cities, Buddhist temples, tea-covered highlands, wildlife reserves, tropical beaches, and flavorful cuisine within a compact island. Colombo, Kandy, Galle, Sigiriya, and the hill country offer distinct experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇱🇰',
     flagColors: ['#8D2029', '#FFBE29', '#005641'],
     continent: 'Asia',
@@ -6193,10 +6197,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [116, 103, 76, 146, 128, 68, 65, 91, 137, 242, 329, 241],
     bestTimeToVisit: 'December–March for the south and west coasts, May–September for the east',
     popularPlaces: [
-      { name: 'Kandy', description: 'Hill-country cultural capital around a sacred lake and temple', bestWeatherMonths: "Jan, Jun–Jul", goodWeatherMonths: "Feb–Mar, May, Aug–Sep, Nov–Dec" },
-      { name: 'Ella', description: 'Misty mountain town of tea plantations and waterfalls', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Jan–Mar, May, Aug–Sep, Nov–Dec" },
-      { name: 'Galle', description: 'Atmospheric Dutch fort town on the southern coast', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar, May–Dec" },
-      { name: 'Sigiriya', description: 'Ancient rock fortress rising from the central jungle', bestWeatherMonths: "Jan, Jun–Aug", goodWeatherMonths: "Feb–Mar, May, Sep, Nov–Dec" },
+      { name: 'Kandy', description: 'Hill-country cultural capital around a sacred lake and temple', bestWeatherMonths: "Jan, Jun–Jul", goodWeatherMonths: "Feb–Mar, May, Aug–Sep, Nov–Dec", panelSummary: "Kandy is a hill-country cultural capital around a sacred lake and temple. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Ella', description: 'Misty mountain town of tea plantations and waterfalls', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Jan–Mar, May, Aug–Sep, Nov–Dec", panelSummary: "Ella is a misty mountain town of tea plantations and waterfalls. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Galle', description: 'Atmospheric Dutch fort town on the southern coast', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar, May–Dec", panelSummary: "Galle is an atmospheric Dutch fort town on the southern coast. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Sigiriya', description: 'Ancient rock fortress rising from the central jungle', bestWeatherMonths: "Jan, Jun–Aug", goodWeatherMonths: "Feb–Mar, May, Sep, Nov–Dec", panelSummary: "Sigiriya offers ancient rock fortress rising from the central jungle. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -6268,7 +6272,7 @@ export const countries: Record<string, CountryData> = {
   US: {
     name: 'United States',
     code: 'US',
-    summary: 'The United States spans an enormous range of landscapes, cultures, cities, and regional identities. Visitors can explore major urban centers, national parks, deserts, mountains, beaches, music capitals, historic towns, and distinctive food traditions. That mix gives travelers plenty to discover.',
+    panelSummary: 'The United States spans an enormous range of landscapes, cultures, cities, and regional identities. Visitors can explore major urban centers, national parks, deserts, mountains, beaches, music capitals, historic towns, and distinctive food traditions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇺🇸',
     flagColors: ['#3C3B6E', '#FFFFFF', '#B22234'],
     continent: 'North America',
@@ -6294,10 +6298,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [56, 50, 56, 61, 69, 73, 72, 70, 64, 61, 54, 58],
     bestTimeToVisit: 'Year-round depending on region; spring and fall are ideal for most of the country',
     popularPlaces: [
-      { name: 'New York City', description: 'Iconic metropolis of skyscrapers, Broadway, and global culture', bestWeatherMonths: "May–Jun, Sep–Oct", goodWeatherMonths: "Apr, Aug" },
-      { name: 'Grand Canyon', description: 'Mile-deep chasm carved by the Colorado River in Arizona', bestWeatherMonths: "May–Jun, Aug–Oct", goodWeatherMonths: "Apr, Jul" },
-      { name: 'San Francisco', description: 'Hilly bay city of cable cars and the Golden Gate Bridge', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb" },
-      { name: 'New Orleans', description: 'Birthplace of jazz with Creole food and Mardi Gras spirit', bestWeatherMonths: "Feb–Mar, Oct–Dec", goodWeatherMonths: "Jan, Apr" },
+      { name: 'New York City', description: 'Iconic metropolis of skyscrapers, Broadway, and global culture', bestWeatherMonths: "May–Jun, Sep–Oct", goodWeatherMonths: "Apr, Aug", panelSummary: "New York City is an iconic metropolis of skyscrapers, Broadway, and global culture. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Grand Canyon', description: 'Mile-deep chasm carved by the Colorado River in Arizona', bestWeatherMonths: "May–Jun, Aug–Oct", goodWeatherMonths: "Apr, Jul", panelSummary: "Grand Canyon is a mile-deep chasm carved by the Colorado River in Arizona. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'San Francisco', description: 'Hilly bay city of cable cars and the Golden Gate Bridge', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb", panelSummary: "San Francisco is a hilly bay city of cable cars and the Golden Gate Bridge. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'New Orleans', description: 'Birthplace of jazz with Creole food and Mardi Gras spirit', bestWeatherMonths: "Feb–Mar, Oct–Dec", goodWeatherMonths: "Jan, Apr", panelSummary: "New Orleans is the birthplace of jazz with Creole food and Mardi Gras spirit. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace." },
     ],
     attractions: [
       {
@@ -6380,7 +6384,7 @@ export const countries: Record<string, CountryData> = {
   PH: {
     name: 'Philippines',
     code: 'PH',
-    summary: 'The Philippines is an archipelago of tropical islands, coral reefs, mountains, rice terraces, and lively cities. Palawan, the Visayas, Luzon, and Mindanao offer very different landscapes and cultures. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
+    panelSummary: 'The Philippines is an archipelago of tropical islands, coral reefs, mountains, rice terraces, and lively cities. Palawan, the Visayas, Luzon, and Mindanao offer very different landscapes and cultures. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇵🇭',
     flagColors: ['#0038A8', '#FFFFFF', '#CE1126'],
     continent: 'Asia',
@@ -6407,10 +6411,10 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'December–February offers the coolest, driest conditions for most travelers; the broader November–April dry season is also good for beaches and island hopping.',
     bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
-      { name: 'Palawan', description: 'Island paradise of lagoons, limestone cliffs, and an underground river', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr" },
-      { name: 'Boracay', description: 'Famous for its powdery White Beach and nightlife', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
-      { name: 'Cebu', description: 'Historic island hub for diving with whale sharks and waterfalls', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
-      { name: 'Banaue', description: 'Ancient rice terraces carved into the mountains of Luzon', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec" },
+      { name: 'Palawan', description: 'Island paradise of lagoons, limestone cliffs, and an underground river', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr", panelSummary: "Palawan is an island paradise of lagoons, limestone cliffs, and an underground river. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Boracay', description: 'Famous for its powdery White Beach and nightlife', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Boracay offers famous for its powdery White Beach and nightlife. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The relaxed setting is part of the appeal." },
+      { name: 'Cebu', description: 'Historic island hub for diving with whale sharks and waterfalls', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Cebu is a historic island hub for diving with whale sharks and waterfalls. It is especially appealing to nature lovers seeking wildlife encounters, open landscapes, and memorable experiences led by the rhythms of the natural world." },
+      { name: 'Banaue', description: 'Ancient rice terraces carved into the mountains of Luzon', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar, Dec", panelSummary: "Banaue offers ancient rice terraces carved into the mountains of Luzon. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -6484,7 +6488,7 @@ export const countries: Record<string, CountryData> = {
   AE: {
     name: 'United Arab Emirates',
     code: 'AE',
-    summary: 'The United Arab Emirates is known for futuristic cities, ambitious architecture, luxury hotels, desert experiences, and major cultural attractions. Dubai offers spectacle, shopping, and beaches, while Abu Dhabi adds museums, mosques, and a more measured pace.',
+    panelSummary: 'The United Arab Emirates is known for futuristic cities, ambitious architecture, luxury hotels, desert experiences, and major cultural attractions. Dubai offers spectacle, shopping, and beaches, while Abu Dhabi adds museums, mosques, and a more measured pace.',
     flagEmoji: '🇦🇪',
     flagColors: ['#00732F', '#FFFFFF', '#FF0000'],
     continent: 'Asia',
@@ -6511,10 +6515,10 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'November–April is the most comfortable time for outdoor sightseeing and beaches, with December–February the coolest and busiest period.',
     bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
-      { name: 'Dubai', description: 'Futuristic metropolis of record-breaking towers and luxury malls', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
-      { name: 'Abu Dhabi', description: 'Stately capital of grand mosques and cultural landmarks', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
-      { name: 'Sharjah', description: 'The cultural capital with museums and heritage districts', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
-      { name: 'Liwa Oasis', description: 'Gateway to the towering dunes of the Empty Quarter', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov" },
+      { name: 'Dubai', description: 'Futuristic metropolis of record-breaking towers and luxury malls', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov", panelSummary: "Dubai is a futuristic metropolis of record-breaking towers and luxury malls. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Abu Dhabi', description: 'Stately capital of grand mosques and cultural landmarks', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov", panelSummary: "Abu Dhabi is a stately capital of grand mosques and cultural landmarks. Visitors can pair the major landmarks with local food, lively streets, cultural venues, and quieter corners that reveal a stronger sense of place." },
+      { name: 'Sharjah', description: 'The cultural capital with museums and heritage districts', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov", panelSummary: "Sharjah is a the cultural capital with museums and heritage districts. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Liwa Oasis', description: 'Gateway to the towering dunes of the Empty Quarter', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Nov", panelSummary: "Liwa Oasis is a gateway to the towering dunes of the Empty Quarter. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
     ],
     attractions: [
       {
@@ -6590,7 +6594,7 @@ export const countries: Record<string, CountryData> = {
   HR: {
     name: 'Croatia',
     code: 'HR',
-    summary: 'Croatia combines a long Adriatic coastline with historic stone towns, islands, national parks, and a relaxed Mediterranean culture. Dubrovnik and Split are the best-known cities, but Istria, Zagreb, inland villages, and quieter islands add variety.',
+    panelSummary: 'Croatia combines a long Adriatic coastline with historic stone towns, islands, national parks, and a relaxed Mediterranean culture. Dubrovnik and Split are the best-known cities, but Istria, Zagreb, inland villages, and quieter islands add variety.',
     flagEmoji: '🇭🇷',
     flagColors: ['#FF0000', '#FFFFFF', '#171796'],
     continent: 'Europe',
@@ -6616,10 +6620,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [74, 74, 69, 84, 94, 93, 80, 82, 116, 114, 123, 106],
     bestTimeToVisit: 'May–June and September for warm seas and fewer crowds along the coast',
     popularPlaces: [
-      { name: 'Dubrovnik', description: 'Walled “Pearl of the Adriatic” above shimmering blue water', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Split', description: 'Coastal city built around a Roman emperor’s palace', bestWeatherMonths: "Apr–Oct" },
-      { name: 'Hvar', description: 'Sun-drenched island of lavender fields and chic harbors', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Feb, Jul–Aug, Nov" },
-      { name: 'Zagreb', description: 'Cafe-lined capital with an atmospheric upper town', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Sep–Oct" },
+      { name: 'Dubrovnik', description: 'Walled “Pearl of the Adriatic” above shimmering blue water', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Dubrovnik offers walled “Pearl of the Adriatic” above shimmering blue water. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Split', description: 'Coastal city built around a Roman emperor’s palace', bestWeatherMonths: "Apr–Oct", panelSummary: "Split is a coastal city built around a Roman emperor’s palace. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Hvar', description: 'Sun-drenched island of lavender fields and chic harbors', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Feb, Jul–Aug, Nov", panelSummary: "Hvar is a sun-drenched island of lavender fields and chic harbors. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Zagreb', description: 'Cafe-lined capital with an atmospheric upper town', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Sep–Oct", panelSummary: "Zagreb is a cafe-lined capital with an atmospheric upper town. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
     ],
     attractions: [
       {
@@ -6689,7 +6693,7 @@ export const countries: Record<string, CountryData> = {
   SG: {
     name: 'Singapore',
     code: 'SG',
-    summary: 'Singapore is a compact city-state where futuristic architecture, efficient transport, multicultural neighborhoods, gardens, and exceptional food come together. Hawker centers are as important as luxury restaurants, while Chinatown, Little India, Kampong Glam, and the waterfront show different cultural layers.',
+    panelSummary: 'Singapore is a compact city-state where futuristic architecture, efficient transport, multicultural neighborhoods, gardens, and exceptional food come together. Hawker centers are as important as luxury restaurants, while Chinatown, Little India, Kampong Glam, and the waterfront show different cultural layers.',
     flagEmoji: '🇸🇬',
     flagColors: ['#EF3340', '#FFFFFF', '#EF3340'],
     continent: 'Asia',
@@ -6716,10 +6720,10 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'February–April is generally a little drier, but Singapore is hot, humid, and visitable year-round.',
     bestVisitMonths: [2, 3, 4],
     popularPlaces: [
-      { name: 'Marina Bay', description: 'Glittering waterfront of futuristic towers and light shows', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
-      { name: 'Sentosa', description: 'Resort island of beaches, theme parks, and attractions', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
-      { name: 'Chinatown', description: 'Heritage shophouses, temples, and hawker food', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
-      { name: 'Little India', description: 'Vibrant district of textiles, spices, and colorful temples', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct" },
+      { name: 'Marina Bay', description: 'Glittering waterfront of futuristic towers and light shows', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct", panelSummary: "Marina Bay offers glittering waterfront of futuristic towers and light shows. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Sentosa', description: 'Resort island of beaches, theme parks, and attractions', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct", panelSummary: "Sentosa is a resort island of beaches, theme parks, and attractions. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Chinatown', description: 'Heritage shophouses, temples, and hawker food', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct", panelSummary: "Chinatown offers heritage shophouses, temples, and hawker food. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Little India', description: 'Vibrant district of textiles, spices, and colorful temples', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–Oct", panelSummary: "Little India is a vibrant district of textiles, spices, and colorful temples. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -6791,7 +6795,7 @@ export const countries: Record<string, CountryData> = {
   NP: {
     name: 'Nepal',
     code: 'NP',
-    summary: 'Nepal is defined by the Himalayas, but its appeal extends beyond trekking. Kathmandu Valley offers temples, palaces, and layered urban history, while Pokhara, Chitwan, and rural villages provide lakes, wildlife, and cultural experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'Nepal is defined by the Himalayas, but its appeal extends beyond trekking. Kathmandu Valley offers temples, palaces, and layered urban history, while Pokhara, Chitwan, and rural villages provide lakes, wildlife, and cultural experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇳🇵',
     flagColors: ['#DC143C', '#003893', '#DC143C'],
     continent: 'Asia',
@@ -6817,10 +6821,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [19, 32, 34, 50, 110, 182, 320, 262, 191, 42, 9, 12],
     bestTimeToVisit: 'October–November and March–April for clear skies and prime trekking',
     popularPlaces: [
-      { name: 'Kathmandu', description: 'Ancient capital of temples, stupas, and bustling bazaars', bestWeatherMonths: "Jan–Apr, Oct–Dec" },
-      { name: 'Pokhara', description: 'Lakeside town with mirror views of the Annapurna range', bestWeatherMonths: "Feb–Apr, Oct–Dec", goodWeatherMonths: "Jan, May–Sep" },
-      { name: 'Everest Base Camp', description: 'Legendary trek to the foot of the world’s highest peak', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug–Sep" },
-      { name: 'Chitwan National Park', description: 'Jungle reserve home to rhinos, tigers, and elephants', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Oct" },
+      { name: 'Kathmandu', description: 'Ancient capital of temples, stupas, and bustling bazaars', bestWeatherMonths: "Jan–Apr, Oct–Dec", panelSummary: "Kathmandu is an ancient capital of temples, stupas, and bustling bazaars. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Pokhara', description: 'Lakeside town with mirror views of the Annapurna range', bestWeatherMonths: "Feb–Apr, Oct–Dec", goodWeatherMonths: "Jan, May–Sep", panelSummary: "Pokhara is a lakeside town with mirror views of the Annapurna range. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Everest Base Camp', description: 'Legendary trek to the foot of the world’s highest peak', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug–Sep", panelSummary: "Everest Base Camp offers legendary trek to the foot of the world’s highest peak. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Chitwan National Park', description: 'Jungle reserve home to rhinos, tigers, and elephants', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Oct", panelSummary: "Chitwan National Park is a jungle reserve home to rhinos, tigers, and elephants. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
     ],
     attractions: [
       {
@@ -6890,7 +6894,7 @@ export const countries: Record<string, CountryData> = {
   TZ: {
     name: 'Tanzania',
     code: 'TZ',
-    summary: 'Tanzania combines world-class wildlife, immense landscapes, Indian Ocean beaches, and rich cultural diversity. The Serengeti, Ngorongoro Crater, Mount Kilimanjaro, and Zanzibar are major highlights, but lesser-known parks and coastal towns also reward exploration. That mix gives travelers plenty to discover.',
+    panelSummary: 'Tanzania combines world-class wildlife, immense landscapes, Indian Ocean beaches, and rich cultural diversity. The Serengeti, Ngorongoro Crater, Mount Kilimanjaro, and Zanzibar are major highlights, but lesser-known parks and coastal towns also reward exploration. That mix gives travelers plenty to discover.',
     flagEmoji: '🇹🇿',
     flagColors: ['#1EB53A', '#000000', '#00A3DD'],
     continent: 'Africa',
@@ -6916,10 +6920,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [155, 140, 166, 141, 57, 11, 5, 7, 15, 33, 85, 144],
     bestTimeToVisit: 'June–October (dry season) for safari and the Great Migration',
     popularPlaces: [
-      { name: 'Serengeti', description: 'Endless plains hosting the world’s greatest wildlife migration', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Jan–Apr, Nov–Dec" },
-      { name: 'Zanzibar', description: 'Spice-island archipelago of white beaches and Stone Town', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep" },
-      { name: 'Ngorongoro Crater', description: 'Vast volcanic caldera teeming with wildlife', bestWeatherMonths: "Jan–Mar, May–Dec", goodWeatherMonths: "Apr" },
-      { name: 'Mount Kilimanjaro', description: 'Africa’s highest peak, a snow-capped free-standing volcano', bestWeatherMonths: "Jan–Feb, Jun–Oct, Dec", goodWeatherMonths: "Mar–May, Nov" },
+      { name: 'Serengeti', description: 'Endless plains hosting the world’s greatest wildlife migration', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Jan–Apr, Nov–Dec", panelSummary: "Serengeti offers endless plains hosting the world’s greatest wildlife migration. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Zanzibar', description: 'Spice-island archipelago of white beaches and Stone Town', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep", panelSummary: "Zanzibar is a spice-island archipelago of white beaches and Stone Town. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Ngorongoro Crater', description: 'Vast volcanic caldera teeming with wildlife', bestWeatherMonths: "Jan–Mar, May–Dec", goodWeatherMonths: "Apr", panelSummary: "Ngorongoro Crater offers vast volcanic caldera teeming with wildlife. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Mount Kilimanjaro', description: 'Africa’s highest peak, a snow-capped free-standing volcano', bestWeatherMonths: "Jan–Feb, Jun–Oct, Dec", goodWeatherMonths: "Mar–May, Nov", panelSummary: "Mount Kilimanjaro offers africa’s highest peak, a snow-capped free-standing volcano. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -6993,7 +6997,7 @@ export const countries: Record<string, CountryData> = {
   FJ: {
     name: 'Fiji',
     code: 'FJ',
-    summary: 'Fiji is an island nation of coral reefs, tropical forests, beaches, and a culture known for warmth and community. Resort islands provide easy relaxation, while larger islands, villages, waterfalls, and inland landscapes offer deeper experiences.',
+    panelSummary: 'Fiji is an island nation of coral reefs, tropical forests, beaches, and a culture known for warmth and community. Resort islands provide easy relaxation, while larger islands, villages, waterfalls, and inland landscapes offer deeper experiences.',
     flagEmoji: '🇫🇯',
     flagColors: ['#68BFE5', '#FFFFFF', '#D21034'],
     continent: 'Oceania',
@@ -7019,10 +7023,10 @@ export const countries: Record<string, CountryData> = {
     precipitation: [344, 345, 433, 303, 135, 75, 76, 99, 89, 120, 173, 293],
     bestTimeToVisit: 'May–October (dry season) for sunny, less humid island weather',
     popularPlaces: [
-      { name: 'Mamanuca Islands', description: 'Postcard chain of resort islands and clear lagoons', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct" },
-      { name: 'Yasawa Islands', description: 'Remote volcanic islands of blue caves and quiet beaches', bestWeatherMonths: "Jun–Jul, Sep", goodWeatherMonths: "Aug, Oct" },
-      { name: 'Nadi', description: 'Main gateway town with markets and a colorful Hindu temple', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct" },
-      { name: 'Taveuni', description: 'The lush “Garden Island” of waterfalls and rainforest', bestWeatherMonths: "Jun–Sep" },
+      { name: 'Mamanuca Islands', description: 'Postcard chain of resort islands and clear lagoons', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct", panelSummary: "Mamanuca Islands is a postcard chain of resort islands and clear lagoons. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Yasawa Islands', description: 'Remote volcanic islands of blue caves and quiet beaches', bestWeatherMonths: "Jun–Jul, Sep", goodWeatherMonths: "Aug, Oct", panelSummary: "Yasawa Islands offers remote volcanic islands of blue caves and quiet beaches. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Nadi', description: 'Main gateway town with markets and a colorful Hindu temple', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct", panelSummary: "Nadi is a main gateway town with markets and a colorful Hindu temple. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
+      { name: 'Taveuni', description: 'The lush “Garden Island” of waterfalls and rainforest', bestWeatherMonths: "Jun–Sep", panelSummary: "Taveuni is a the lush “Garden Island” of waterfalls and rainforest. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -7088,7 +7092,7 @@ export const countries: Record<string, CountryData> = {
   BZ: {
     name: 'Belize',
     code: 'BZ',
-    summary: 'Belize combines Caribbean culture, Maya archaeology, rainforest, wildlife, and one of the world’s great barrier reefs. English is widely spoken, making travel relatively straightforward. It invites travelers to slow down, explore the coast, and enjoy local culture alongside the scenery.',
+    panelSummary: 'Belize combines Caribbean culture, Maya archaeology, rainforest, wildlife, and one of the world’s great barrier reefs. English is widely spoken, making travel relatively straightforward. It invites travelers to slow down, explore the coast, and enjoy local culture alongside the scenery.',
     flagEmoji: '🇧🇿',
     flagColors: ['#003F87', '#CE1126', '#FFFFFF'],
     continent: 'North America',
@@ -7114,9 +7118,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [118, 58, 51, 58, 173, 255, 239, 248, 262, 290, 207, 112],
     bestTimeToVisit: 'Late November–April during the dry season for reef trips and inland ruins',
     popularPlaces: [
-      { name: 'San Pedro (Ambergris Caye)', description: 'Laid-back island town beside the Belize Barrier Reef', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
-      { name: 'Caye Caulker', description: 'Car-free island living by the motto “go slow”', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
-      { name: 'San Ignacio', description: 'Jungle hub for Maya ruins, caves, and river adventures', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar" },
+      { name: 'San Pedro (Ambergris Caye)', description: 'Laid-back island town beside the Belize Barrier Reef', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec", panelSummary: "San Pedro (Ambergris Caye) is a laid-back island town beside the Belize Barrier Reef. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Caye Caulker', description: 'Car-free island living by the motto “go slow”', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec", panelSummary: "Caye Caulker is a car-free island living by the motto “go slow”. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'San Ignacio', description: 'Jungle hub for Maya ruins, caves, and river adventures', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar", panelSummary: "San Ignacio is a jungle hub for Maya ruins, caves, and river adventures. The pleasure lies in combining major historic sights with local food, walkable streets, and the smaller details that reveal the destination’s character." },
     ],
     attractions: [
       {
@@ -7185,7 +7189,7 @@ export const countries: Record<string, CountryData> = {
   GT: {
     name: 'Guatemala',
     code: 'GT',
-    summary: 'Guatemala offers dramatic volcanoes, highland lakes, Maya heritage, colonial architecture, markets, and rainforest ruins. Antigua and Lake Atitlán are major highlights, while Tikal reveals one of the ancient Maya world’s great cities. That mix gives travelers plenty to discover.',
+    panelSummary: 'Guatemala offers dramatic volcanoes, highland lakes, Maya heritage, colonial architecture, markets, and rainforest ruins. Antigua and Lake Atitlán are major highlights, while Tikal reveals one of the ancient Maya world’s great cities. That mix gives travelers plenty to discover.',
     flagEmoji: '🇬🇹',
     flagColors: ['#4997D0', '#FFFFFF', '#4997D0'],
     continent: 'North America',
@@ -7211,9 +7215,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [64, 41, 49, 69, 220, 317, 263, 290, 325, 301, 145, 82],
     bestTimeToVisit: 'November–April for dry, mild highland weather and clear volcano views',
     popularPlaces: [
-      { name: 'Antigua', description: 'Cobblestone colonial city ringed by volcanoes', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "May–Oct" },
-      { name: 'Lake Atitlán', description: 'Volcanic crater lake fringed by Maya villages', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "May–Oct" },
-      { name: 'Tikal', description: 'Towering Maya temples rising above the jungle canopy', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
+      { name: 'Antigua', description: 'Cobblestone colonial city ringed by volcanoes', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "May–Oct", panelSummary: "Antigua is a cobblestone colonial city ringed by volcanoes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Every corner adds another layer to the story." },
+      { name: 'Lake Atitlán', description: 'Volcanic crater lake fringed by Maya villages', bestWeatherMonths: "Jan–Apr, Nov–Dec", goodWeatherMonths: "May–Oct", panelSummary: "Lake Atitlán is a volcanic crater lake fringed by Maya villages. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Tikal', description: 'Towering Maya temples rising above the jungle canopy', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov", panelSummary: "Tikal offers towering Maya temples rising above the jungle canopy. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Small details make the history feel especially vivid." },
     ],
     attractions: [
       {
@@ -7278,7 +7282,7 @@ export const countries: Record<string, CountryData> = {
   SV: {
     name: 'El Salvador',
     code: 'SV',
-    summary: 'El Salvador is Central America’s smallest mainland country, but it offers volcanic landscapes, Pacific surf beaches, coffee regions, colorful towns, and Maya sites within easy reach. San Salvador provides museums and food, while the Ruta de las Flores and coast are major draws.',
+    panelSummary: 'El Salvador is Central America’s smallest mainland country, but it offers volcanic landscapes, Pacific surf beaches, coffee regions, colorful towns, and Maya sites within easy reach. San Salvador provides museums and food, while the Ruta de las Flores and coast are major draws.',
     flagEmoji: '🇸🇻',
     flagColors: ['#0F47AF', '#FFFFFF', '#0F47AF'],
     continent: 'North America',
@@ -7304,9 +7308,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [6, 4, 13, 45, 195, 307, 237, 273, 336, 231, 41, 9],
     bestTimeToVisit: 'November–April for dry weather and consistent Pacific surf',
     popularPlaces: [
-      { name: 'El Tunco', description: 'Black-sand surf town with a buzzing beach scene', bestWeatherMonths: "Nov–Dec", goodWeatherMonths: "Jan–Apr" },
-      { name: 'Santa Ana', description: 'Colonial city near the country’s tallest volcano', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr" },
-      { name: 'Suchitoto', description: 'Cobblestone arts town above Lake Suchitlán', bestWeatherMonths: "Nov", goodWeatherMonths: "Jan–Feb, Dec" },
+      { name: 'El Tunco', description: 'Black-sand surf town with a buzzing beach scene', bestWeatherMonths: "Nov–Dec", goodWeatherMonths: "Jan–Apr", panelSummary: "El Tunco is a black-sand surf town with a buzzing beach scene. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Santa Ana', description: 'Colonial city near the country’s tallest volcano', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr", panelSummary: "Santa Ana is a colonial city near the country’s tallest volcano. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Suchitoto', description: 'Cobblestone arts town above Lake Suchitlán', bestWeatherMonths: "Nov", goodWeatherMonths: "Jan–Feb, Dec", panelSummary: "Suchitoto is a cobblestone arts town above Lake Suchitlán. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its scale and scenery reward unhurried exploration." },
     ],
     attractions: [
       {
@@ -7365,7 +7369,7 @@ export const countries: Record<string, CountryData> = {
   HN: {
     name: 'Honduras',
     code: 'HN',
-    summary: 'Honduras combines Caribbean islands, coral reefs, Maya archaeology, cloud forests, and less-visited colonial towns. The Bay Islands are renowned for diving, while Copán preserves exceptional sculptures and ruins. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Honduras combines Caribbean islands, coral reefs, Maya archaeology, cloud forests, and less-visited colonial towns. The Bay Islands are renowned for diving, while Copán preserves exceptional sculptures and ruins. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇭🇳',
     flagColors: ['#0073CF', '#FFFFFF', '#0073CF'],
     continent: 'North America',
@@ -7391,9 +7395,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [84, 49, 38, 49, 174, 259, 215, 212, 243, 257, 157, 109],
     bestTimeToVisit: 'February–May for the best diving visibility on the Bay Islands',
     popularPlaces: [
-      { name: 'Roatán', description: 'Caribbean island ringed by reefs and dive shops', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, Nov–Dec" },
-      { name: 'Copán', description: 'Town beside one of the great Maya archaeological sites', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Utila', description: 'Budget-friendly island famed for whale sharks', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, Nov–Dec" },
+      { name: 'Roatán', description: 'Caribbean island ringed by reefs and dive shops', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, Nov–Dec", panelSummary: "Roatán is a Caribbean island ringed by reefs and dive shops. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Copán', description: 'Town beside one of the great Maya archaeological sites', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct", panelSummary: "Copán is a town beside one of the great Maya archaeological sites. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Utila', description: 'Budget-friendly island famed for whale sharks', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, Nov–Dec", panelSummary: "Utila is a budget-friendly island famed for whale sharks. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The natural setting makes every encounter more memorable." },
     ],
     attractions: [
       {
@@ -7457,7 +7461,7 @@ export const countries: Record<string, CountryData> = {
   NI: {
     name: 'Nicaragua',
     code: 'NI',
-    summary: 'Nicaragua is a land of volcanoes, lakes, colonial cities, Pacific beaches, and Caribbean culture. Granada and León offer architecture and history, while Ometepe, surf towns, coffee regions, and nature reserves provide outdoor adventure. That mix gives travelers plenty to discover.',
+    panelSummary: 'Nicaragua is a land of volcanoes, lakes, colonial cities, Pacific beaches, and Caribbean culture. Granada and León offer architecture and history, while Ometepe, surf towns, coffee regions, and nature reserves provide outdoor adventure. That mix gives travelers plenty to discover.',
     flagEmoji: '🇳🇮',
     flagColors: ['#0067C6', '#FFFFFF', '#0067C6'],
     continent: 'North America',
@@ -7483,9 +7487,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [102, 55, 40, 50, 203, 333, 332, 290, 272, 296, 181, 135],
     bestTimeToVisit: 'December–April for dry, sunny weather across lakes and coasts',
     popularPlaces: [
-      { name: 'Granada', description: 'Colorful colonial city on the shore of Lake Nicaragua', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr" },
-      { name: 'Ometepe Island', description: 'Twin-volcano island rising from a vast freshwater lake', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Apr, Nov" },
-      { name: 'San Juan del Sur', description: 'Pacific surf town with crescent beaches', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Apr, Nov" },
+      { name: 'Granada', description: 'Colorful colonial city on the shore of Lake Nicaragua', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr", panelSummary: "Granada is a colorful colonial city on the shore of Lake Nicaragua. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Ometepe Island', description: 'Twin-volcano island rising from a vast freshwater lake', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Apr, Nov", panelSummary: "Ometepe Island is a twin-volcano island rising from a vast freshwater lake. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'San Juan del Sur', description: 'Pacific surf town with crescent beaches', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Apr, Nov", panelSummary: "San Juan del Sur is a Pacific surf town with crescent beaches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -7552,7 +7556,7 @@ export const countries: Record<string, CountryData> = {
   PA: {
     name: 'Panama',
     code: 'PA',
-    summary: 'Panama is more than its famous canal, offering tropical islands, rainforests, beaches, highlands, Indigenous communities, and a modern capital. Panama City combines skyline, history, and nightlife, while Bocas del Toro, San Blas, Boquete, and Darién reveal very different environments.',
+    panelSummary: 'Panama is more than its famous canal, offering tropical islands, rainforests, beaches, highlands, Indigenous communities, and a modern capital. Panama City combines skyline, history, and nightlife, while Bocas del Toro, San Blas, Boquete, and Darién reveal very different environments.',
     flagEmoji: '🇵🇦',
     flagColors: ['#005293', '#FFFFFF', '#D21034'],
     continent: 'North America',
@@ -7578,9 +7582,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [83, 50, 59, 124, 284, 251, 229, 248, 254, 357, 327, 172],
     bestTimeToVisit: 'December–April for the dry season across the canal and coasts',
     popularPlaces: [
-      { name: 'Panama City', description: 'Skyline metropolis beside the historic Casco Viejo', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Apr" },
-      { name: 'San Blas Islands', description: 'Indigenous Guna archipelago of palm-dotted cays', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
-      { name: 'Bocas del Toro', description: 'Caribbean island chain of stilt villages and reefs', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr–Oct" },
+      { name: 'Panama City', description: 'Skyline metropolis beside the historic Casco Viejo', bestWeatherMonths: "Jan–Feb", goodWeatherMonths: "Mar–Apr", panelSummary: "Panama City is a skyline metropolis beside the historic Casco Viejo. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'San Blas Islands', description: 'Indigenous Guna archipelago of palm-dotted cays', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan", panelSummary: "San Blas Islands offers indigenous Guna archipelago of palm-dotted cays. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The relaxed setting is part of the appeal." },
+      { name: 'Bocas del Toro', description: 'Caribbean island chain of stilt villages and reefs', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr–Oct", panelSummary: "Bocas del Toro is a Caribbean island chain of stilt villages and reefs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -7647,7 +7651,7 @@ export const countries: Record<string, CountryData> = {
   RU: {
     name: 'Russia',
     code: 'RU',
-    summary: 'Russia spans eleven time zones and contains monumental cities, vast wilderness, deep cultural traditions, and extraordinary geographic scale. Moscow and Saint Petersburg hold major museums, architecture, and history, while Siberia, the Caucasus, Lake Baikal, and the Arctic reveal other worlds.',
+    panelSummary: 'Russia spans eleven time zones and contains monumental cities, vast wilderness, deep cultural traditions, and extraordinary geographic scale. Moscow and Saint Petersburg hold major museums, architecture, and history, while Siberia, the Caucasus, Lake Baikal, and the Arctic reveal other worlds.',
     flagEmoji: '🇷🇺',
     flagColors: ['#FFFFFF', '#0039A6', '#D52B1E'],
     continent: 'Europe/Asia',
@@ -7673,9 +7677,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [23, 19, 22, 26, 40, 57, 68, 68, 51, 42, 33, 27],
     bestTimeToVisit: 'May–September for mild weather and long daylight in the cities',
     popularPlaces: [
-      { name: 'Moscow', description: 'Capital of Red Square, the Kremlin, and grand metro halls', bestWeatherMonths: "May–Sep" },
-      { name: 'St. Petersburg', description: 'Imperial city of palaces, canals, and white nights', bestWeatherMonths: "May–Sep" },
-      { name: 'Lake Baikal', description: 'The world’s deepest and oldest freshwater lake', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Moscow', description: 'Capital of Red Square, the Kremlin, and grand metro halls', bestWeatherMonths: "May–Sep", panelSummary: "Moscow is a capital of Red Square, the Kremlin, and grand metro halls. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'St. Petersburg', description: 'Imperial city of palaces, canals, and white nights', bestWeatherMonths: "May–Sep", panelSummary: "St. Petersburg is an imperial city of palaces, canals, and white nights. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Lake Baikal', description: 'The world’s deepest and oldest freshwater lake', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Lake Baikal is a the world’s deepest and oldest freshwater lake. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -7742,7 +7746,7 @@ export const countries: Record<string, CountryData> = {
   DK: {
     name: 'Denmark',
     code: 'DK',
-    summary: 'Denmark combines appealing cities, coastal landscapes, design, cycling, and a strong everyday food culture. Copenhagen is the main attraction, with architecture, canals, museums, and restaurants, while Aarhus, castles, islands, and seaside towns broaden the picture.',
+    panelSummary: 'Denmark combines appealing cities, coastal landscapes, design, cycling, and a strong everyday food culture. Copenhagen is the main attraction, with architecture, canals, museums, and restaurants, while Aarhus, castles, islands, and seaside towns broaden the picture.',
     flagEmoji: '🇩🇰',
     flagColors: ['#C8102E', '#FFFFFF', '#C8102E'],
     continent: 'Europe',
@@ -7768,9 +7772,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [60, 47, 42, 36, 49, 62, 66, 79, 70, 81, 69, 66],
     bestTimeToVisit: 'June–August for long days, gardens, and seaside towns',
     popularPlaces: [
-      { name: 'Copenhagen', description: 'Design-forward capital of canals, bikes, and hygge', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Aarhus', description: 'Coastal university city with a vibrant arts scene', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Odense', description: 'Hans Christian Andersen’s storybook hometown', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Copenhagen', description: 'Design-forward capital of canals, bikes, and hygge', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Copenhagen is a design-forward capital of canals, bikes, and hygge. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Aarhus', description: 'Coastal university city with a vibrant arts scene', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct", panelSummary: "Aarhus is a coastal university city with a vibrant arts scene. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Odense', description: 'Hans Christian Andersen’s storybook hometown', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct", panelSummary: "Odense offers hans Christian Andersen’s storybook hometown. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -7841,7 +7845,7 @@ export const countries: Record<string, CountryData> = {
   BE: {
     name: 'Belgium',
     code: 'BE',
-    summary: 'Belgium is small but culturally dense, with medieval cities, Art Nouveau architecture, major art collections, beer, chocolate, and distinctive regional identities. Brussels, Bruges, Ghent, Antwerp, and Liège each offer different experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'Belgium is small but culturally dense, with medieval cities, Art Nouveau architecture, major art collections, beer, chocolate, and distinctive regional identities. Brussels, Bruges, Ghent, Antwerp, and Liège each offer different experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇪',
     flagColors: ['#000000', '#FFD90C', '#F31830'],
     continent: 'Europe',
@@ -7867,9 +7871,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [79, 68, 64, 51, 68, 76, 83, 80, 71, 80, 84, 94],
     bestTimeToVisit: 'April–September for mild weather and lively city squares',
     popularPlaces: [
-      { name: 'Brussels', description: 'EU capital of grand squares, comics, and chocolate', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Bruges', description: 'Fairy-tale medieval city laced with canals', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Ghent', description: 'Lively historic city with riverside guild houses', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Brussels', description: 'EU capital of grand squares, comics, and chocolate', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Brussels is an eU capital of grand squares, comics, and chocolate. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Bruges', description: 'Fairy-tale medieval city laced with canals', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Bruges is a fairy-tale medieval city laced with canals. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Ghent', description: 'Lively historic city with riverside guild houses', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Ghent is a lively historic city with riverside guild houses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -7939,7 +7943,7 @@ export const countries: Record<string, CountryData> = {
   GY: {
     name: 'Guyana',
     code: 'GY',
-    summary: 'Guyana is an English-speaking South American country known for immense rainforest, powerful rivers, wildlife, and dramatic Kaieteur Falls. Georgetown reflects Caribbean and colonial influences, while the interior offers remote eco-lodges and Indigenous communities. That mix gives travelers plenty to discover.',
+    panelSummary: 'Guyana is an English-speaking South American country known for immense rainforest, powerful rivers, wildlife, and dramatic Kaieteur Falls. Georgetown reflects Caribbean and colonial influences, while the interior offers remote eco-lodges and Indigenous communities. That mix gives travelers plenty to discover.',
     flagEmoji: '🇬🇾',
     flagColors: ['#009E49', '#FCD116', '#CE1126'],
     continent: 'South America',
@@ -7965,9 +7969,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [169, 147, 139, 205, 365, 358, 310, 214, 115, 89, 123, 186],
     bestTimeToVisit: 'September–November or February–April for drier rainforest travel',
     popularPlaces: [
-      { name: 'Georgetown', description: 'Capital known for wooden colonial architecture', bestWeatherMonths: "Mar, Sep–Oct", goodWeatherMonths: "Jan–Feb, Apr–Aug, Nov–Dec" },
-      { name: 'Kaieteur National Park', description: 'Pristine rainforest around a giant waterfall', bestWeatherMonths: "Jan–Aug, Oct, Dec", goodWeatherMonths: "Sep, Nov" },
-      { name: 'Iwokrama Forest', description: 'Vast conservation rainforest rich in wildlife', bestWeatherMonths: "Jan–Feb, Apr–Jul, Sep–Oct", goodWeatherMonths: "Mar, Aug, Nov–Dec" },
+      { name: 'Georgetown', description: 'Capital known for wooden colonial architecture', bestWeatherMonths: "Mar, Sep–Oct", goodWeatherMonths: "Jan–Feb, Apr–Aug, Nov–Dec", panelSummary: "Georgetown is a capital known for wooden colonial architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Every corner adds another layer to the story." },
+      { name: 'Kaieteur National Park', description: 'Pristine rainforest around a giant waterfall', bestWeatherMonths: "Jan–Aug, Oct, Dec", goodWeatherMonths: "Sep, Nov", panelSummary: "Kaieteur National Park offers pristine rainforest around a giant waterfall. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its scale and scenery reward unhurried exploration." },
+      { name: 'Iwokrama Forest', description: 'Vast conservation rainforest rich in wildlife', bestWeatherMonths: "Jan–Feb, Apr–Jul, Sep–Oct", goodWeatherMonths: "Mar, Aug, Nov–Dec", panelSummary: "Iwokrama Forest offers a vast conservation rainforest rich in wildlife. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time here feels closely connected to the landscape." },
     ],
     attractions: [
       {
@@ -8031,7 +8035,7 @@ export const countries: Record<string, CountryData> = {
   PY: {
     name: 'Paraguay',
     code: 'PY',
-    summary: 'Paraguay is a landlocked country with a strong bilingual culture, subtropical landscapes, historic missions, and a quieter travel scene than its neighbors. Asunción offers museums, markets, and riverfront life, while the Chaco, Jesuit ruins, and rural towns reveal different histories and environments.',
+    panelSummary: 'Paraguay is a landlocked country with a strong bilingual culture, subtropical landscapes, historic missions, and a quieter travel scene than its neighbors. Asunción offers museums, markets, and riverfront life, while the Chaco, Jesuit ruins, and rural towns reveal different histories and environments.',
     flagEmoji: '🇵🇾',
     flagColors: ['#D52B1E', '#FFFFFF', '#0038A8'],
     continent: 'South America',
@@ -8057,9 +8061,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [134, 131, 108, 105, 95, 56, 41, 32, 63, 132, 138, 136],
     bestTimeToVisit: 'May–September for cooler, more comfortable weather',
     popularPlaces: [
-      { name: 'Asunción', description: 'Riverside capital with leafy plazas and colonial charm', bestWeatherMonths: "May–Sep" },
-      { name: 'Encarnación', description: 'Sunny city with a beach boardwalk and nearby ruins', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Apr–May, Sep–Oct" },
-      { name: 'Filadelfia', description: 'Mennonite town and gateway to the Chaco wilderness', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr, Sep" },
+      { name: 'Asunción', description: 'Riverside capital with leafy plazas and colonial charm', bestWeatherMonths: "May–Sep", panelSummary: "Asunción is a riverside capital with leafy plazas and colonial charm. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Encarnación', description: 'Sunny city with a beach boardwalk and nearby ruins', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Apr–May, Sep–Oct", panelSummary: "Encarnación is a sunny city with a beach boardwalk and nearby ruins. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Filadelfia', description: 'Mennonite town and gateway to the Chaco wilderness', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr, Sep", panelSummary: "Filadelfia is a mennonite town and gateway to the Chaco wilderness. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -8117,7 +8121,7 @@ export const countries: Record<string, CountryData> = {
   SR: {
     name: 'Suriname',
     code: 'SR',
-    summary: 'Suriname blends South American rainforest with Dutch colonial heritage and remarkable ethnic and religious diversity. Paramaribo is known for wooden architecture, markets, and multicultural food, while the interior offers rivers, wildlife, and Maroon and Indigenous communities.',
+    panelSummary: 'Suriname blends South American rainforest with Dutch colonial heritage and remarkable ethnic and religious diversity. Paramaribo is known for wooden architecture, markets, and multicultural food, while the interior offers rivers, wildlife, and Maroon and Indigenous communities.',
     flagEmoji: '🇸🇷',
     flagColors: ['#377E3F', '#FFFFFF', '#B40A2D'],
     continent: 'South America',
@@ -8144,9 +8148,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'February–April and mid-August–November are the drier windows; September–October are especially dry but also among the hottest months.',
     bestVisitMonths: [2, 3, 4, 8, 9, 10, 11],
     popularPlaces: [
-      { name: 'Paramaribo', description: 'Capital with UNESCO-listed Dutch wooden architecture', bestWeatherMonths: "Mar, Sep–Nov", goodWeatherMonths: "Jan–Feb, Apr–Aug, Dec" },
-      { name: 'Central Suriname Reserve', description: 'Enormous untouched tropical rainforest', bestWeatherMonths: "Sep–Nov", goodWeatherMonths: "Jan–Jul, Dec" },
-      { name: 'Commewijne', description: 'Plantation district explored by bike and boat', bestWeatherMonths: "Sep–Nov", goodWeatherMonths: "Jan–Aug, Dec" },
+      { name: 'Paramaribo', description: 'Capital with UNESCO-listed Dutch wooden architecture', bestWeatherMonths: "Mar, Sep–Nov", goodWeatherMonths: "Jan–Feb, Apr–Aug, Dec", panelSummary: "Paramaribo is a capital with UNESCO-listed Dutch wooden architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Central Suriname Reserve', description: 'Enormous untouched tropical rainforest', bestWeatherMonths: "Sep–Nov", goodWeatherMonths: "Jan–Jul, Dec", panelSummary: "Central Suriname Reserve offers enormous untouched tropical rainforest. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Even quiet moments outdoors feel worthwhile here." },
+      { name: 'Commewijne', description: 'Plantation district explored by bike and boat', bestWeatherMonths: "Sep–Nov", goodWeatherMonths: "Jan–Aug, Dec", panelSummary: "Commewijne is a plantation district explored by bike and boat. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -8204,7 +8208,7 @@ export const countries: Record<string, CountryData> = {
   NG: {
     name: 'Nigeria',
     code: 'NG',
-    summary: 'Nigeria is Africa’s most populous country and a major center of music, film, fashion, food, and entrepreneurship. Lagos delivers intense urban energy, while Abuja, historic cities, national parks, beaches, and diverse regional cultures reveal a broader nation.',
+    panelSummary: 'Nigeria is Africa’s most populous country and a major center of music, film, fashion, food, and entrepreneurship. Lagos delivers intense urban energy, while Abuja, historic cities, national parks, beaches, and diverse regional cultures reveal a broader nation.',
     flagEmoji: '🇳🇬',
     flagColors: ['#008751', '#FFFFFF', '#008751'],
     continent: 'Africa',
@@ -8230,9 +8234,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 8, 29, 67, 124, 165, 208, 235, 216, 110, 16, 4],
     bestTimeToVisit: 'November–February during the cooler, drier harmattan season',
     popularPlaces: [
-      { name: 'Lagos', description: 'Pulsing megacity of beaches, markets, and nightlife', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan–Feb, Jul, Sep, Nov–Dec" },
-      { name: 'Abuja', description: 'Planned capital beneath the monolithic Aso Rock', bestWeatherMonths: "Jan, Jul–Aug, Nov–Dec", goodWeatherMonths: "Feb, Apr, Jun, Sep–Oct" },
-      { name: 'Calabar', description: 'Coastal city famed for its dazzling December carnival', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Sep" },
+      { name: 'Lagos', description: 'Pulsing megacity of beaches, markets, and nightlife', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan–Feb, Jul, Sep, Nov–Dec", panelSummary: "Lagos is a pulsing megacity of beaches, markets, and nightlife. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Abuja', description: 'Planned capital beneath the monolithic Aso Rock', bestWeatherMonths: "Jan, Jul–Aug, Nov–Dec", goodWeatherMonths: "Feb, Apr, Jun, Sep–Oct", panelSummary: "Abuja is a planned capital beneath the monolithic Aso Rock. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'Calabar', description: 'Coastal city famed for its dazzling December carnival', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Sep", panelSummary: "Calabar is a coastal city famed for its dazzling December carnival. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -8293,7 +8297,7 @@ export const countries: Record<string, CountryData> = {
   ET: {
     name: 'Ethiopia',
     code: 'ET',
-    summary: 'Ethiopia has one of Africa’s deepest historical traditions, with ancient churches, castles, rock-hewn sites, highland landscapes, and distinctive food and coffee culture. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
+    panelSummary: 'Ethiopia has one of Africa’s deepest historical traditions, with ancient churches, castles, rock-hewn sites, highland landscapes, and distinctive food and coffee culture. For curious travelers, its food, music, art, and everyday traditions offer many ways to connect with local life.',
     flagEmoji: '🇪🇹',
     flagColors: ['#078930', '#FCDD09', '#DA1212'],
     continent: 'Africa',
@@ -8319,9 +8323,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [12, 15, 43, 90, 107, 78, 128, 144, 98, 86, 36, 13],
     bestTimeToVisit: 'October–March for dry weather across the highlands',
     popularPlaces: [
-      { name: 'Addis Ababa', description: 'High-altitude capital and seat of the African Union', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun–Sep" },
-      { name: 'Lalibela', description: 'Town of medieval churches carved from solid rock', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
-      { name: 'Gondar', description: 'Former imperial capital of castles and palaces', bestWeatherMonths: "Jan, Oct–Dec", goodWeatherMonths: "Feb, Jul–Sep" },
+      { name: 'Addis Ababa', description: 'High-altitude capital and seat of the African Union', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun–Sep", panelSummary: "Addis Ababa is a high-altitude capital and seat of the African Union. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lalibela', description: 'Town of medieval churches carved from solid rock', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug", panelSummary: "Lalibela is a town of medieval churches carved from solid rock. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Gondar', description: 'Former imperial capital of castles and palaces', bestWeatherMonths: "Jan, Oct–Dec", goodWeatherMonths: "Feb, Jul–Sep", panelSummary: "Gondar is a former imperial capital of castles and palaces. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -8390,7 +8394,7 @@ export const countries: Record<string, CountryData> = {
   GH: {
     name: 'Ghana',
     code: 'GH',
-    summary: 'Ghana is known for welcoming people, Atlantic beaches, historic forts, lively cities, music, and strong cultural traditions. Accra offers contemporary art, food, and nightlife, while Cape Coast, Kumasi, and smaller towns reveal the histories of the Ashanti kingdom and transatlantic slave trade.',
+    panelSummary: 'Ghana is known for welcoming people, Atlantic beaches, historic forts, lively cities, music, and strong cultural traditions. Accra offers contemporary art, food, and nightlife, while Cape Coast, Kumasi, and smaller towns reveal the histories of the Ashanti kingdom and transatlantic slave trade.',
     flagEmoji: '🇬🇭',
     flagColors: ['#CE1126', '#FCD116', '#006B3F'],
     continent: 'Africa',
@@ -8417,9 +8421,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'October–March is the drier season and generally the easiest time for coastal, cultural, and wildlife travel.',
     bestVisitMonths: [10, 11, 12, 1, 2, 3],
     popularPlaces: [
-      { name: 'Accra', description: 'Lively coastal capital of markets and music', bestWeatherMonths: "Aug", goodWeatherMonths: "Jul, Sep" },
-      { name: 'Cape Coast', description: 'Historic town beside sobering slave-trade castles', bestWeatherMonths: "Aug–Sep", goodWeatherMonths: "Jan, Jul, Dec" },
-      { name: 'Kumasi', description: 'Cultural heart of the Ashanti Kingdom', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Nov–Dec" },
+      { name: 'Accra', description: 'Lively coastal capital of markets and music', bestWeatherMonths: "Aug", goodWeatherMonths: "Jul, Sep", panelSummary: "Accra is a lively coastal capital of markets and music. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
+      { name: 'Cape Coast', description: 'Historic town beside sobering slave-trade castles', bestWeatherMonths: "Aug–Sep", goodWeatherMonths: "Jan, Jul, Dec", panelSummary: "Cape Coast is a historic town beside sobering slave-trade castles. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Kumasi', description: 'Cultural heart of the Ashanti Kingdom', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Nov–Dec", panelSummary: "Kumasi offers cultural heart of the Ashanti Kingdom. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -8485,7 +8489,7 @@ export const countries: Record<string, CountryData> = {
   TN: {
     name: 'Tunisia',
     code: 'TN',
-    summary: 'Tunisia combines Mediterranean beaches, Roman ruins, desert landscapes, whitewashed towns, and a layered Arab, Berber, Ottoman, and French heritage. Tunis, Carthage, Sidi Bou Said, El Jem, and the Sahara offer very different experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'Tunisia combines Mediterranean beaches, Roman ruins, desert landscapes, whitewashed towns, and a layered Arab, Berber, Ottoman, and French heritage. Tunis, Carthage, Sidi Bou Said, El Jem, and the Sahara offer very different experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇹🇳',
     flagColors: ['#E70013', '#FFFFFF', '#E70013'],
     continent: 'Africa',
@@ -8511,9 +8515,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [35, 27, 30, 26, 17, 6, 2, 7, 28, 35, 29, 34],
     bestTimeToVisit: 'April–June or September–October for warm, comfortable sightseeing',
     popularPlaces: [
-      { name: 'Tunis', description: 'Capital beside the ancient ruins of Carthage', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
-      { name: 'Sidi Bou Said', description: 'Blue-and-white clifftop village above the sea', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
-      { name: 'Djerba', description: 'Sun-soaked island of beaches and whitewashed towns', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Tunis', description: 'Capital beside the ancient ruins of Carthage', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep", panelSummary: "Tunis is a capital beside the ancient ruins of Carthage. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Every corner adds another layer to the story." },
+      { name: 'Sidi Bou Said', description: 'Blue-and-white clifftop village above the sea', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep", panelSummary: "Sidi Bou Said is a blue-and-white clifftop village above the sea. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Djerba', description: 'Sun-soaked island of beaches and whitewashed towns', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun, Sep", panelSummary: "Djerba is a sun-soaked island of beaches and whitewashed towns. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
     ],
     attractions: [
       {
@@ -8580,7 +8584,7 @@ export const countries: Record<string, CountryData> = {
   SN: {
     name: 'Senegal',
     code: 'SN',
-    summary: 'Senegal is celebrated for music, hospitality, Atlantic coastline, historic islands, and a strong cultural identity. Dakar is an energetic center of art, food, and nightlife, while Saint-Louis, Gorée Island, national parks, and fishing villages offer history and nature.',
+    panelSummary: 'Senegal is celebrated for music, hospitality, Atlantic coastline, historic islands, and a strong cultural identity. Dakar is an energetic center of art, food, and nightlife, while Saint-Louis, Gorée Island, national parks, and fishing villages offer history and nature.',
     flagEmoji: '🇸🇳',
     flagColors: ['#00853F', '#FDEF42', '#E31B23'],
     continent: 'Africa',
@@ -8606,9 +8610,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 1, 11, 69, 144, 242, 194, 59, 2, 0],
     bestTimeToVisit: 'November–May during the dry season for coast and safaris',
     popularPlaces: [
-      { name: 'Dakar', description: 'Vibrant Atlantic capital of music and markets', bestWeatherMonths: "Jan–Apr", goodWeatherMonths: "May–Jun, Dec" },
-      { name: 'Saint-Louis', description: 'Faded colonial city on a UNESCO-listed island', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Jul" },
-      { name: 'Saly', description: 'Popular beach resort town on the Petite Côte', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct–Nov" },
+      { name: 'Dakar', description: 'Vibrant Atlantic capital of music and markets', bestWeatherMonths: "Jan–Apr", goodWeatherMonths: "May–Jun, Dec", panelSummary: "Dakar is a vibrant Atlantic capital of music and markets. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace. Meals and local traditions become lasting trip memories." },
+      { name: 'Saint-Louis', description: 'Faded colonial city on a UNESCO-listed island', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Jul", panelSummary: "Saint-Louis is a faded colonial city on a UNESCO-listed island. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Saly', description: 'Popular beach resort town on the Petite Côte', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct–Nov", panelSummary: "Saly is a popular beach resort town on the Petite Côte. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -8668,7 +8672,7 @@ export const countries: Record<string, CountryData> = {
   NA: {
     name: 'Namibia',
     code: 'NA',
-    summary: 'Namibia is a land of immense desert scenery, wildlife, and open space. The towering dunes of Sossusvlei, Skeleton Coast, Etosha National Park, and remote mountain regions create unforgettable road trips. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Namibia is a land of immense desert scenery, wildlife, and open space. The towering dunes of Sossusvlei, Skeleton Coast, Etosha National Park, and remote mountain regions create unforgettable road trips. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇳🇦',
     flagColors: ['#003580', '#D21034', '#009543'],
     continent: 'Africa',
@@ -8694,9 +8698,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [67, 66, 55, 19, 3, 1, 1, 1, 2, 9, 22, 36],
     bestTimeToVisit: 'May–October (dry season) for prime wildlife viewing',
     popularPlaces: [
-      { name: 'Windhoek', description: 'Compact capital blending German and African heritage', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb, Dec" },
-      { name: 'Sossusvlei', description: 'Towering red dunes of the Namib Desert', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Swakopmund', description: 'Seaside town of colonial charm and dune adventures', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Windhoek', description: 'Compact capital blending German and African heritage', bestWeatherMonths: "Mar–Nov", goodWeatherMonths: "Jan–Feb, Dec", panelSummary: "Windhoek is a compact capital blending German and African heritage. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The atmosphere encourages travelers to look more closely." },
+      { name: 'Sossusvlei', description: 'Towering red dunes of the Namib Desert', bestWeatherMonths: "Jan–Dec", panelSummary: "Sossusvlei is a towering red dunes of the Namib Desert. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Swakopmund', description: 'Seaside town of colonial charm and dune adventures', bestWeatherMonths: "Jan–Dec", panelSummary: "Swakopmund is a seaside town of colonial charm and dune adventures. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -8761,7 +8765,7 @@ export const countries: Record<string, CountryData> = {
   BW: {
     name: 'Botswana',
     code: 'BW',
-    summary: 'Botswana is known for high-quality wildlife experiences, low tourism density, and vast protected landscapes. The Okavango Delta, Chobe National Park, and Kalahari offer safaris by vehicle, boat, and traditional canoe. That mix gives travelers plenty to discover.',
+    panelSummary: 'Botswana is known for high-quality wildlife experiences, low tourism density, and vast protected landscapes. The Okavango Delta, Chobe National Park, and Kalahari offer safaris by vehicle, boat, and traditional canoe. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇼',
     flagColors: ['#75AADB', '#FFFFFF', '#000000'],
     continent: 'Africa',
@@ -8787,9 +8791,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [93, 76, 56, 26, 6, 1, 1, 1, 4, 19, 46, 67],
     bestTimeToVisit: 'May–September (dry season) for exceptional safari wildlife',
     popularPlaces: [
-      { name: 'Okavango Delta', description: 'Lush inland delta teeming with wildlife', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Mar–Apr" },
-      { name: 'Chobe National Park', description: 'Home to one of Africa’s largest elephant herds', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr" },
-      { name: 'Maun', description: 'Safari gateway town at the delta’s edge', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr" },
+      { name: 'Okavango Delta', description: 'Lush inland delta teeming with wildlife', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Mar–Apr", panelSummary: "Okavango Delta offers lush inland delta teeming with wildlife. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The natural setting makes every encounter more memorable." },
+      { name: 'Chobe National Park', description: 'Home to one of Africa’s largest elephant herds', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr", panelSummary: "Chobe National Park offers home to one of Africa’s largest elephant herds. It is especially appealing to nature lovers seeking wildlife encounters, open landscapes, and memorable experiences led by the rhythms of the natural world." },
+      { name: 'Maun', description: 'Safari gateway town at the delta’s edge', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr", panelSummary: "Maun is a safari gateway town at the delta’s edge. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The natural setting makes every encounter more memorable." },
     ],
     attractions: [
       {
@@ -8858,7 +8862,7 @@ export const countries: Record<string, CountryData> = {
   UG: {
     name: 'Uganda',
     code: 'UG',
-    summary: 'Uganda combines equatorial forests, lakes, savannas, mountains, and some of Africa’s most memorable wildlife experiences. Gorilla and chimpanzee trekking are major highlights, while the Nile, Queen Elizabeth National Park, and the Rwenzori Mountains add variety.',
+    panelSummary: 'Uganda combines equatorial forests, lakes, savannas, mountains, and some of Africa’s most memorable wildlife experiences. Gorilla and chimpanzee trekking are major highlights, while the Nile, Queen Elizabeth National Park, and the Rwenzori Mountains add variety.',
     flagEmoji: '🇺🇬',
     flagColors: ['#000000', '#FCDC04', '#D90000'],
     continent: 'Africa',
@@ -8884,9 +8888,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [51, 49, 109, 158, 148, 92, 91, 119, 121, 155, 119, 74],
     bestTimeToVisit: 'June–September or December–February during drier gorilla-trekking months',
     popularPlaces: [
-      { name: 'Kampala', description: 'Hilly, energetic capital near Lake Victoria', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–Feb, Sep, Dec" },
-      { name: 'Bwindi', description: 'Impenetrable forest sheltering mountain gorillas', bestWeatherMonths: "Jan–Feb, May–Sep, Dec", goodWeatherMonths: "Mar–Apr, Oct–Nov" },
-      { name: 'Jinja', description: 'Adventure hub at the source of the Nile', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–Feb, Sep" },
+      { name: 'Kampala', description: 'Hilly, energetic capital near Lake Victoria', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–Feb, Sep, Dec", panelSummary: "Kampala is a hilly, energetic capital near Lake Victoria. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its atmosphere rewards time beyond the main sights." },
+      { name: 'Bwindi', description: 'Impenetrable forest sheltering mountain gorillas', bestWeatherMonths: "Jan–Feb, May–Sep, Dec", goodWeatherMonths: "Mar–Apr, Oct–Nov", panelSummary: "Bwindi is an impenetrable forest sheltering mountain gorillas. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time here feels closely connected to the landscape." },
+      { name: 'Jinja', description: 'Adventure hub at the source of the Nile', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–Feb, Sep", panelSummary: "Jinja is an adventure hub at the source of the Nile. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -8950,7 +8954,7 @@ export const countries: Record<string, CountryData> = {
   RW: {
     name: 'Rwanda',
     code: 'RW',
-    summary: 'Rwanda is a compact, mountainous country known for cleanliness, striking scenery, and carefully managed tourism. Gorilla trekking in Volcanoes National Park is the signature experience, while Lake Kivu, Nyungwe Forest, and Kigali add hiking, wildlife, culture, and history.',
+    panelSummary: 'Rwanda is a compact, mountainous country known for cleanliness, striking scenery, and carefully managed tourism. Gorilla trekking in Volcanoes National Park is the signature experience, while Lake Kivu, Nyungwe Forest, and Kigali add hiking, wildlife, culture, and history.',
     flagEmoji: '🇷🇼',
     flagColors: ['#00A1DE', '#FAD201', '#20603D'],
     continent: 'Africa',
@@ -8976,9 +8980,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [115, 95, 137, 143, 118, 30, 15, 37, 94, 131, 149, 119],
     bestTimeToVisit: 'June–September during the long dry season for gorilla trekking',
     popularPlaces: [
-      { name: 'Kigali', description: 'Clean, green capital set across rolling hills', bestWeatherMonths: "Jan–Mar, May–Oct, Dec", goodWeatherMonths: "Apr, Nov" },
-      { name: 'Volcanoes National Park', description: 'Mountain home of the famous gorillas', bestWeatherMonths: "Jan–Feb, May–Sep, Dec", goodWeatherMonths: "Mar–Apr, Oct–Nov" },
-      { name: 'Lake Kivu', description: 'Scenic lakeshore towns and beaches', bestWeatherMonths: "Feb, Jun–Sep", goodWeatherMonths: "Jan, Mar–May, Oct–Dec" },
+      { name: 'Kigali', description: 'Clean, green capital set across rolling hills', bestWeatherMonths: "Jan–Mar, May–Oct, Dec", goodWeatherMonths: "Apr, Nov", panelSummary: "Kigali is a clean, green capital set across rolling hills. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Volcanoes National Park', description: 'Mountain home of the famous gorillas', bestWeatherMonths: "Jan–Feb, May–Sep, Dec", goodWeatherMonths: "Mar–Apr, Oct–Nov", panelSummary: "Volcanoes National Park is a mountain home of the famous gorillas. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lake Kivu', description: 'Scenic lakeshore towns and beaches', bestWeatherMonths: "Feb, Jun–Sep", goodWeatherMonths: "Jan, Mar–May, Oct–Dec", panelSummary: "Lake Kivu offers scenic lakeshore towns and beaches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -9045,7 +9049,7 @@ export const countries: Record<string, CountryData> = {
   IL: {
     name: 'Israel',
     code: 'IL',
-    summary: 'Israel contains an extraordinary concentration of religious history, archaeology, Mediterranean landscapes, and modern urban life. Jerusalem, Tel Aviv, the Dead Sea, Galilee, and the Negev offer sharply different experiences. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Israel contains an extraordinary concentration of religious history, archaeology, Mediterranean landscapes, and modern urban life. Jerusalem, Tel Aviv, the Dead Sea, Galilee, and the Negev offer sharply different experiences. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇮🇱',
     flagColors: ['#0038B8', '#FFFFFF', '#0038B8'],
     continent: 'Asia',
@@ -9071,9 +9075,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [71, 54, 28, 11, 3, 0, 0, 0, 0, 11, 32, 57],
     bestTimeToVisit: 'March–May or September–November for mild, pleasant weather',
     popularPlaces: [
-      { name: 'Jerusalem', description: 'Ancient holy city sacred to three faiths', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep" },
-      { name: 'Tel Aviv', description: 'Modern beach city of nightlife and Bauhaus design', bestWeatherMonths: "Feb–Jun, Oct–Nov", goodWeatherMonths: "Jan, Jul, Sep, Dec" },
-      { name: 'Dead Sea', description: 'Mineral-rich sea at the lowest point on Earth', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Jerusalem', description: 'Ancient holy city sacred to three faiths', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep", panelSummary: "Jerusalem is an ancient holy city sacred to three faiths. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Tel Aviv', description: 'Modern beach city of nightlife and Bauhaus design', bestWeatherMonths: "Feb–Jun, Oct–Nov", goodWeatherMonths: "Jan, Jul, Sep, Dec", panelSummary: "Tel Aviv is a modern beach city of nightlife and Bauhaus design. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Dead Sea', description: 'Mineral-rich sea at the lowest point on Earth', bestWeatherMonths: "Jan–Dec", panelSummary: "Dead Sea offers mineral-rich sea at the lowest point on Earth. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -9143,7 +9147,7 @@ export const countries: Record<string, CountryData> = {
   JO: {
     name: 'Jordan',
     code: 'JO',
-    summary: 'Jordan combines world-famous archaeological sites with desert scenery, warm hospitality, and a rich food culture. Petra is the centerpiece, while Wadi Rum, the Dead Sea, Amman, Jerash, and Dana Biosphere Reserve broaden the experience. The result is varied and rewarding.',
+    panelSummary: 'Jordan combines world-famous archaeological sites with desert scenery, warm hospitality, and a rich food culture. Petra is the centerpiece, while Wadi Rum, the Dead Sea, Amman, Jerash, and Dana Biosphere Reserve broaden the experience. The result is varied and rewarding.',
     flagEmoji: '🇯🇴',
     flagColors: ['#000000', '#FFFFFF', '#007A3D'],
     continent: 'Asia',
@@ -9169,9 +9173,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [25, 23, 15, 7, 4, 0, 0, 0, 0, 5, 12, 17],
     bestTimeToVisit: 'March–May or September–November for comfortable desert weather',
     popularPlaces: [
-      { name: 'Petra', description: 'Rose-red city carved into desert cliffs', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May" },
-      { name: 'Wadi Rum', description: 'Sweeping Mars-like desert of sandstone and dunes', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May" },
-      { name: 'Amman', description: 'Hilltop capital layering Roman ruins and modern cafés', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Petra', description: 'Rose-red city carved into desert cliffs', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May", panelSummary: "Petra is a rose-red city carved into desert cliffs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Wadi Rum', description: 'Sweeping Mars-like desert of sandstone and dunes', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May", panelSummary: "Wadi Rum is a sweeping Mars-like desert of sandstone and dunes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Amman', description: 'Hilltop capital layering Roman ruins and modern cafés', bestWeatherMonths: "Jan–Dec", panelSummary: "Amman is a hilltop capital layering Roman ruins and modern cafés. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -9243,7 +9247,7 @@ export const countries: Record<string, CountryData> = {
   MY: {
     name: 'Malaysia',
     code: 'MY',
-    summary: 'Malaysia blends modern cities, tropical islands, rainforests, highlands, and one of Asia’s most diverse food cultures. Kuala Lumpur offers architecture and shopping, while Penang, Malacca, Borneo, and the east coast reveal distinct histories and ecosystems.',
+    panelSummary: 'Malaysia blends modern cities, tropical islands, rainforests, highlands, and one of Asia’s most diverse food cultures. Kuala Lumpur offers architecture and shopping, while Penang, Malacca, Borneo, and the east coast reveal distinct histories and ecosystems.',
     flagEmoji: '🇲🇾',
     flagColors: ['#CC0001', '#FFFFFF', '#010066'],
     continent: 'Asia',
@@ -9270,9 +9274,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'April–June is a useful crossover period for a broader Malaysia trip, but the best timing depends on coast: the west is generally better in winter and early spring, while east-coast islands favor spring through early fall.',
     bestVisitMonths: [4, 5, 6],
     popularPlaces: [
-      { name: 'Kuala Lumpur', description: 'Skyline capital crowned by the Petronas Towers', bestWeatherMonths: "Jan–Feb, Jun–Dec", goodWeatherMonths: "Mar–May" },
-      { name: 'Penang', description: 'Island of heritage streets and famous street food', bestWeatherMonths: "Jan–Feb, Jun–Dec", goodWeatherMonths: "Mar–May" },
-      { name: 'Langkawi', description: 'Tropical archipelago of beaches and rainforest', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Jul–Oct" },
+      { name: 'Kuala Lumpur', description: 'Skyline capital crowned by the Petronas Towers', bestWeatherMonths: "Jan–Feb, Jun–Dec", goodWeatherMonths: "Mar–May", panelSummary: "Kuala Lumpur is a skyline capital crowned by the Petronas Towers. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Penang', description: 'Island of heritage streets and famous street food', bestWeatherMonths: "Jan–Feb, Jun–Dec", goodWeatherMonths: "Mar–May", panelSummary: "Penang is an island of heritage streets and famous street food. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Langkawi', description: 'Tropical archipelago of beaches and rainforest', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Jul–Oct", panelSummary: "Langkawi is a tropical archipelago of beaches and rainforest. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
     ],
     attractions: [
       {
@@ -9341,7 +9345,7 @@ export const countries: Record<string, CountryData> = {
   MN: {
     name: 'Mongolia',
     code: 'MN',
-    summary: 'Mongolia offers vast steppe, desert, mountains, nomadic traditions, and an extraordinary sense of space. Ulaanbaatar provides museums and modern culture, but the country’s essence lies in the countryside, where travelers stay in gers, ride horses, and explore the Gobi or northern lakes.',
+    panelSummary: 'Mongolia offers vast steppe, desert, mountains, nomadic traditions, and an extraordinary sense of space. Ulaanbaatar provides museums and modern culture, but the country’s essence lies in the countryside, where travelers stay in gers, ride horses, and explore the Gobi or northern lakes.',
     flagEmoji: '🇲🇳',
     flagColors: ['#C4272E', '#015197', '#C4272E'],
     continent: 'Asia',
@@ -9367,9 +9371,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [2, 3, 5, 10, 19, 40, 59, 49, 22, 9, 6, 4],
     bestTimeToVisit: 'June–September for mild steppe weather and the Naadam festival',
     popularPlaces: [
-      { name: 'Ulaanbaatar', description: 'High, modern capital amid vast open steppe', bestWeatherMonths: "May–Sep" },
-      { name: 'Gobi Desert', description: 'Immense desert of dunes and dinosaur fossils', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
-      { name: 'Lake Khövsgöl', description: 'Pristine alpine lake near the Siberian border', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
+      { name: 'Ulaanbaatar', description: 'High, modern capital amid vast open steppe', bestWeatherMonths: "May–Sep", panelSummary: "Ulaanbaatar is a high, modern capital amid vast open steppe. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Gobi Desert', description: 'Immense desert of dunes and dinosaur fossils', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr", panelSummary: "Gobi Desert is an immense desert of dunes and dinosaur fossils. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lake Khövsgöl', description: 'Pristine alpine lake near the Siberian border', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug", panelSummary: "Lake Khövsgöl is a pristine alpine lake near the Siberian border. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -9427,7 +9431,7 @@ export const countries: Record<string, CountryData> = {
   KZ: {
     name: 'Kazakhstan',
     code: 'KZ',
-    summary: 'Kazakhstan is a vast Central Asian country of steppe, mountains, deserts, canyons, and ambitious modern cities. Almaty offers food, culture, and easy access to alpine landscapes, while Astana showcases bold contemporary architecture. That mix gives travelers plenty to discover.',
+    panelSummary: 'Kazakhstan is a vast Central Asian country of steppe, mountains, deserts, canyons, and ambitious modern cities. Almaty offers food, culture, and easy access to alpine landscapes, while Astana showcases bold contemporary architecture. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇿',
     flagColors: ['#00AFCA', '#FEC50C', '#00AFCA'],
     continent: 'Asia',
@@ -9453,9 +9457,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [18, 17, 20, 24, 26, 27, 28, 20, 14, 21, 22, 21],
     bestTimeToVisit: 'May–September for warm weather across cities and steppe',
     popularPlaces: [
-      { name: 'Almaty', description: 'Leafy former capital beneath snow-capped mountains', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Astana', description: 'Futuristic capital of striking modern architecture', bestWeatherMonths: "May–Sep" },
-      { name: 'Charyn Canyon', description: 'Dramatic gorge nicknamed the “Grand Canyon’s little brother”', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Almaty', description: 'Leafy former capital beneath snow-capped mountains', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Almaty is a leafy former capital beneath snow-capped mountains. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
+      { name: 'Astana', description: 'Futuristic capital of striking modern architecture', bestWeatherMonths: "May–Sep", panelSummary: "Astana is a futuristic capital of striking modern architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Charyn Canyon', description: 'Dramatic gorge nicknamed the “Grand Canyon’s little brother”', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Charyn Canyon is a dramatic gorge nicknamed the “Grand Canyon’s little brother”. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -9521,7 +9525,7 @@ export const countries: Record<string, CountryData> = {
   UZ: {
     name: 'Uzbekistan',
     code: 'UZ',
-    summary: 'Uzbekistan is one of the Silk Road’s great cultural destinations, with dazzling Islamic architecture, historic bazaars, and well-preserved cities. Samarkand, Bukhara, and Khiva offer turquoise domes, courtyards, and centuries of trade history. That mix gives travelers plenty to discover.',
+    panelSummary: 'Uzbekistan is one of the Silk Road’s great cultural destinations, with dazzling Islamic architecture, historic bazaars, and well-preserved cities. Samarkand, Bukhara, and Khiva offer turquoise domes, courtyards, and centuries of trade history. That mix gives travelers plenty to discover.',
     flagEmoji: '🇺🇿',
     flagColors: ['#1EB53A', '#FFFFFF', '#0099B5'],
     continent: 'Asia',
@@ -9547,9 +9551,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [24, 27, 35, 33, 24, 9, 4, 3, 3, 11, 23, 23],
     bestTimeToVisit: 'April–May or September–October for mild Silk Road touring',
     popularPlaces: [
-      { name: 'Samarkand', description: 'Silk Road jewel of turquoise-domed madrasas', bestWeatherMonths: "Mar–May, Sep–Oct", goodWeatherMonths: "Nov" },
-      { name: 'Bukhara', description: 'Ancient holy city of mosques and minarets', bestWeatherMonths: "Mar–Apr, Oct", goodWeatherMonths: "May, Sep, Nov" },
-      { name: 'Khiva', description: 'Walled desert city frozen in time', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar" },
+      { name: 'Samarkand', description: 'Silk Road jewel of turquoise-domed madrasas', bestWeatherMonths: "Mar–May, Sep–Oct", goodWeatherMonths: "Nov", panelSummary: "Samarkand offers silk Road jewel of turquoise-domed madrasas. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Bukhara', description: 'Ancient holy city of mosques and minarets', bestWeatherMonths: "Mar–Apr, Oct", goodWeatherMonths: "May, Sep, Nov", panelSummary: "Bukhara is an ancient holy city of mosques and minarets. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Khiva', description: 'Walled desert city frozen in time', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar", panelSummary: "Khiva is a walled desert city frozen in time. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -9620,7 +9624,7 @@ export const countries: Record<string, CountryData> = {
   QA: {
     name: 'Qatar',
     code: 'QA',
-    summary: 'Qatar combines futuristic architecture, desert landscapes, museums, traditional markets, and a growing cultural scene within a compact country. Doha’s Museum of Islamic Art, National Museum, Corniche, and Souq Waqif are major attractions. That mix gives travelers plenty to discover.',
+    panelSummary: 'Qatar combines futuristic architecture, desert landscapes, museums, traditional markets, and a growing cultural scene within a compact country. Doha’s Museum of Islamic Art, National Museum, Corniche, and Souq Waqif are major attractions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇶🇦',
     flagColors: ['#8A1538', '#FFFFFF', '#8A1538'],
     continent: 'Asia',
@@ -9646,9 +9650,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [15, 13, 16, 7, 1, NaN, NaN, NaN, NaN, 0, 5, 12],
     bestTimeToVisit: 'November–March for comfortable, sunny weather',
     popularPlaces: [
-      { name: 'Doha', description: 'Gleaming capital of futuristic towers and souqs', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
-      { name: 'Souq Waqif', description: 'Restored market of spices, crafts, and cafés', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
-      { name: 'The Pearl-Qatar', description: 'Artificial island of marinas and luxury living', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
+      { name: 'Doha', description: 'Gleaming capital of futuristic towers and souqs', bestWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "Doha is a gleaming capital of futuristic towers and souqs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Souq Waqif', description: 'Restored market of spices, crafts, and cafés', bestWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "Souq Waqif offers restored market of spices, crafts, and cafés. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace. The regional flavors are an essential part of visiting." },
+      { name: 'The Pearl-Qatar', description: 'Artificial island of marinas and luxury living', bestWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "The Pearl-Qatar is an artificial island of marinas and luxury living. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -9708,7 +9712,7 @@ export const countries: Record<string, CountryData> = {
   OM: {
     name: 'Oman',
     code: 'OM',
-    summary: 'Oman is known for dramatic mountains, desert dunes, wadis, coastline, forts, and a measured approach to modernization. Muscat feels low-rise and elegant, while Nizwa, Jebel Akhdar, Wahiba Sands, and coastal villages reveal the country’s history and landscapes.',
+    panelSummary: 'Oman is known for dramatic mountains, desert dunes, wadis, coastline, forts, and a measured approach to modernization. Muscat feels low-rise and elegant, while Nizwa, Jebel Akhdar, Wahiba Sands, and coastal villages reveal the country’s history and landscapes.',
     flagEmoji: '🇴🇲',
     flagColors: ['#DB161B', '#FFFFFF', '#008000'],
     continent: 'Asia',
@@ -9734,9 +9738,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 9, 11, 8, 2, 4, 3, 4, 0, 0, 3, 6],
     bestTimeToVisit: 'October–April for warm but pleasant weather across the country',
     popularPlaces: [
-      { name: 'Muscat', description: 'Elegant capital of forts, mosques, and a grand souq', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
-      { name: 'Nizwa', description: 'Historic interior town with a famous round fort', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
-      { name: 'Wahiba Sands', description: 'Rolling desert of golden dunes and Bedouin camps', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
+      { name: 'Muscat', description: 'Elegant capital of forts, mosques, and a grand souq', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov", panelSummary: "Muscat is an elegant capital of forts, mosques, and a grand souq. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Nizwa', description: 'Historic interior town with a famous round fort', bestWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "Nizwa is a historic interior town with a famous round fort. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Wahiba Sands', description: 'Rolling desert of golden dunes and Bedouin camps', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov", panelSummary: "Wahiba Sands is a rolling desert of golden dunes and Bedouin camps. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -9806,7 +9810,7 @@ export const countries: Record<string, CountryData> = {
   BT: {
     name: 'Bhutan',
     code: 'BT',
-    summary: 'Bhutan is a Himalayan kingdom known for Buddhist culture, mountain landscapes, fortified monasteries, and carefully managed tourism. Paro, Thimphu, Punakha, and the Tiger’s Nest monastery are major highlights. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Bhutan is a Himalayan kingdom known for Buddhist culture, mountain landscapes, fortified monasteries, and carefully managed tourism. Paro, Thimphu, Punakha, and the Tiger’s Nest monastery are major highlights. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇧🇹',
     flagColors: ['#FFD520', '#FF4E12', '#FFD520'],
     continent: 'Asia',
@@ -9832,9 +9836,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [9, 12, 35, 110, 221, 387, 449, 345, 234, 84, 9, 4],
     bestTimeToVisit: 'March–May or September–November for clear Himalayan views',
     popularPlaces: [
-      { name: 'Thimphu', description: 'Capital where tradition meets the modern Himalaya', bestWeatherMonths: "Oct", goodWeatherMonths: "Mar–Sep, Nov" },
-      { name: 'Paro', description: 'Valley town beneath the cliffside Tiger’s Nest', bestWeatherMonths: "Jun, Aug, Oct", goodWeatherMonths: "Mar–May, Jul, Sep, Nov" },
-      { name: 'Punakha', description: 'Warm valley home to a majestic riverside dzong', bestWeatherMonths: "Jun–Aug, Oct", goodWeatherMonths: "Apr–May, Sep" },
+      { name: 'Thimphu', description: 'Capital where tradition meets the modern Himalaya', bestWeatherMonths: "Oct", goodWeatherMonths: "Mar–Sep, Nov", panelSummary: "Thimphu is a capital where tradition meets the modern Himalaya. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Paro', description: 'Valley town beneath the cliffside Tiger’s Nest', bestWeatherMonths: "Jun, Aug, Oct", goodWeatherMonths: "Mar–May, Jul, Sep, Nov", panelSummary: "Paro is a valley town beneath the cliffside Tiger’s Nest. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Punakha', description: 'Warm valley home to a majestic riverside dzong', bestWeatherMonths: "Jun–Aug, Oct", goodWeatherMonths: "Apr–May, Sep", panelSummary: "Punakha is a warm valley home to a majestic riverside dzong. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -9896,7 +9900,7 @@ export const countries: Record<string, CountryData> = {
   PF: {
     name: 'Tahiti',
     code: 'PF',
-    summary: 'Tahiti, part of French Polynesia, combines volcanic mountains, waterfalls, lagoons, black-sand beaches, and a strong Polynesian cultural identity. Papeete offers markets and urban life, while the island’s interior and coast provide hiking, surfing, and scenery.',
+    panelSummary: 'Tahiti, part of French Polynesia, combines volcanic mountains, waterfalls, lagoons, black-sand beaches, and a strong Polynesian cultural identity. Papeete offers markets and urban life, while the island’s interior and coast provide hiking, surfing, and scenery.',
     flagEmoji: '🇵🇫',
     flagColors: ['#CE1126', '#FFFFFF', '#CE1126'],
     continent: 'Oceania',
@@ -9922,9 +9926,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [196, 187, 160, 123, 106, 102, 84, 71, 62, 100, 110, 181],
     bestTimeToVisit: 'May–October during the cooler, drier season',
     popularPlaces: [
-      { name: 'Papeete', description: 'Lively harbor capital with markets and waterfront dining', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Jan–Mar, Dec" },
-      { name: 'Bora Bora', description: 'Iconic lagoon ringed by overwater bungalows', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jun" },
-      { name: 'Moorea', description: 'Heart-shaped island of jagged green peaks and bays', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Jan–Mar, Dec" },
+      { name: 'Papeete', description: 'Lively harbor capital with markets and waterfront dining', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Jan–Mar, Dec", panelSummary: "Papeete is a lively harbor capital with markets and waterfront dining. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Bora Bora', description: 'Iconic lagoon ringed by overwater bungalows', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jun", panelSummary: "Bora Bora offers iconic lagoon ringed by overwater bungalows. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
+      { name: 'Moorea', description: 'Heart-shaped island of jagged green peaks and bays', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Jan–Mar, Dec", panelSummary: "Moorea is a heart-shaped island of jagged green peaks and bays. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -9980,7 +9984,7 @@ export const countries: Record<string, CountryData> = {
   MV: {
     name: 'Maldives',
     code: 'MV',
-    summary: 'The Maldives is an Indian Ocean archipelago known for clear lagoons, coral reefs, white-sand islands, and overwater resorts. Diving, snorkeling, and marine life are central attractions, but local islands also offer insight into Maldivian culture and daily life.',
+    panelSummary: 'The Maldives is an Indian Ocean archipelago known for clear lagoons, coral reefs, white-sand islands, and overwater resorts. Diving, snorkeling, and marine life are central attractions, but local islands also offer insight into Maldivian culture and daily life.',
     flagEmoji: '🇲🇻',
     flagColors: ['#D21034', '#007E3A', '#FFFFFF'],
     continent: 'Asia',
@@ -10007,9 +10011,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'November–April is the dry season for the clearest skies and best beach weather; late April and late October can offer a shoulder-season compromise.',
     bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
-      { name: 'Malé', description: 'Compact, colorful capital packed onto a single island', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
-      { name: 'Maafushi', description: 'Local island popular for budget-friendly guesthouses', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
-      { name: 'Baa Atoll', description: 'UNESCO biosphere famed for manta rays and reefs', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan" },
+      { name: 'Malé', description: 'Compact, colorful capital packed onto a single island', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan", panelSummary: "Malé is a compact, colorful capital packed onto a single island. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Maafushi', description: 'Local island popular for budget-friendly guesthouses', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan", panelSummary: "Maafushi is a local island popular for budget-friendly guesthouses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The relaxed setting is part of the appeal." },
+      { name: 'Baa Atoll', description: 'UNESCO biosphere famed for manta rays and reefs', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan", panelSummary: "Baa Atoll offers UNESCO biosphere famed for manta rays and reefs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -10066,7 +10070,7 @@ export const countries: Record<string, CountryData> = {
   WS: {
     name: 'Samoa',
     code: 'WS',
-    summary: 'Samoa offers lush volcanic landscapes, waterfalls, natural swimming holes, beaches, and a strong Polynesian culture centered on family and village life. Upolu and Savai‘i provide scenic drives, traditional communities, hiking, and coastal attractions. That mix gives travelers plenty to discover.',
+    panelSummary: 'Samoa offers lush volcanic landscapes, waterfalls, natural swimming holes, beaches, and a strong Polynesian culture centered on family and village life. Upolu and Savai‘i provide scenic drives, traditional communities, hiking, and coastal attractions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇼🇸',
     flagColors: ['#CE1126', '#002B7F', '#FFFFFF'],
     continent: 'Oceania',
@@ -10093,9 +10097,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'May–October is the drier, cooler season; June–September is usually the sunniest stretch, while May and October can mean fewer visitors.',
     bestVisitMonths: [5, 6, 7, 8, 9, 10],
     popularPlaces: [
-      { name: 'Apia', description: 'Easygoing capital with a colonial waterfront and markets', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec" },
-      { name: 'Lalomanu', description: 'Postcard beach of white sand and turquoise water', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec" },
-      { name: 'Savaiʻi', description: 'Larger, wilder island of lava fields and rainforest', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "Jan–May, Nov–Dec" },
+      { name: 'Apia', description: 'Easygoing capital with a colonial waterfront and markets', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec", panelSummary: "Apia is an easygoing capital with a colonial waterfront and markets. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lalomanu', description: 'Postcard beach of white sand and turquoise water', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec", panelSummary: "Lalomanu is a postcard beach of white sand and turquoise water. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Savaiʻi', description: 'Larger, wilder island of lava fields and rainforest', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "Jan–May, Nov–Dec", panelSummary: "Savaiʻi is a larger, wilder island of lava fields and rainforest. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -10156,7 +10160,7 @@ export const countries: Record<string, CountryData> = {
   VU: {
     name: 'Vanuatu',
     code: 'VU',
-    summary: 'Vanuatu is an island nation of active volcanoes, coral reefs, rainforests, beaches, and exceptionally diverse Indigenous cultures. Efate offers easier access, while Tanna, Espiritu Santo, and outer islands provide volcano visits, diving, blue holes, and village experiences.',
+    panelSummary: 'Vanuatu is an island nation of active volcanoes, coral reefs, rainforests, beaches, and exceptionally diverse Indigenous cultures. Efate offers easier access, while Tanna, Espiritu Santo, and outer islands provide volcano visits, diving, blue holes, and village experiences.',
     flagEmoji: '🇻🇺',
     flagColors: ['#D21034', '#009543', '#000000'],
     continent: 'Oceania',
@@ -10182,9 +10186,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [311, 276, 365, 225, 195, 168, 159, 161, 162, 151, 215, 213],
     bestTimeToVisit: 'April–October during the cooler, drier season',
     popularPlaces: [
-      { name: 'Port Vila', description: 'Harbor capital with markets, reefs, and island day trips', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jun, Oct" },
-      { name: 'Tanna', description: 'Volcanic island home to accessible Mount Yasur', bestWeatherMonths: "Jul, Sep–Oct", goodWeatherMonths: "May–Jun, Aug, Nov" },
-      { name: 'Espiritu Santo', description: 'Blue holes, white beaches, and WWII wreck dives', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Jan–Apr, Nov–Dec" },
+      { name: 'Port Vila', description: 'Harbor capital with markets, reefs, and island day trips', bestWeatherMonths: "Jul–Sep", goodWeatherMonths: "Jun, Oct", panelSummary: "Port Vila is a harbor capital with markets, reefs, and island day trips. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
+      { name: 'Tanna', description: 'Volcanic island home to accessible Mount Yasur', bestWeatherMonths: "Jul, Sep–Oct", goodWeatherMonths: "May–Jun, Aug, Nov", panelSummary: "Tanna is a volcanic island home to accessible Mount Yasur. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Espiritu Santo', description: 'Blue holes, white beaches, and WWII wreck dives', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Jan–Apr, Nov–Dec", panelSummary: "Espiritu Santo offers blue holes, white beaches, and WWII wreck dives. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -10250,7 +10254,7 @@ export const countries: Record<string, CountryData> = {
   MM: {
     name: 'Myanmar',
     code: 'MM',
-    summary: 'Myanmar has extraordinary temples, landscapes, ethnic diversity, and cultural heritage, including Bagan, Inle Lake, Yangon, and Mandalay. Buddhist traditions, markets, food, and historic architecture are major draws. Curious travelers will find layers of history, memorable architecture, and strong local character.',
+    panelSummary: 'Myanmar has extraordinary temples, landscapes, ethnic diversity, and cultural heritage, including Bagan, Inle Lake, Yangon, and Mandalay. Buddhist traditions, markets, food, and historic architecture are major draws. Curious travelers will find layers of history, memorable architecture, and strong local character.',
     flagEmoji: '🇲🇲',
     flagColors: ['#FECB00', '#34B233', '#EA2839'],
     continent: 'Asia',
@@ -10276,9 +10280,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [10, 11, 23, 64, 195, 339, 420, 437, 308, 186, 52, 10],
     bestTimeToVisit: 'November–February for cooler, dry weather',
     popularPlaces: [
-      { name: 'Yangon', description: 'Former capital crowned by the golden Shwedagon Pagoda', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
-      { name: 'Bagan', description: 'Plain dotted with thousands of ancient temples', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
-      { name: 'Inle Lake', description: 'Serene lake of stilt villages and leg-rowing fishermen', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Jun–Oct" },
+      { name: 'Yangon', description: 'Former capital crowned by the golden Shwedagon Pagoda', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov", panelSummary: "Yangon is a former capital crowned by the golden Shwedagon Pagoda. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Bagan', description: 'Plain dotted with thousands of ancient temples', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov", panelSummary: "Bagan offers a plain dotted with thousands of ancient temples. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Inle Lake', description: 'Serene lake of stilt villages and leg-rowing fishermen', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Jun–Oct", panelSummary: "Inle Lake is a serene lake of stilt villages and leg-rowing fishermen. It is a strong choice for travelers drawn to dramatic scenery, active days outdoors, and landscapes that feel far removed from ordinary routines." },
     ],
     attractions: [
       {
@@ -10347,7 +10351,7 @@ export const countries: Record<string, CountryData> = {
   LA: {
     name: 'Laos',
     code: 'LA',
-    summary: 'Laos is a landlocked country of mountains, rivers, Buddhist temples, caves, and a slower pace than many neighbors. Luang Prabang is the cultural highlight, while Vang Vieng, the Mekong, southern islands, and rural villages offer scenery and outdoor activity.',
+    panelSummary: 'Laos is a landlocked country of mountains, rivers, Buddhist temples, caves, and a slower pace than many neighbors. Luang Prabang is the cultural highlight, while Vang Vieng, the Mekong, southern islands, and rural villages offer scenery and outdoor activity.',
     flagEmoji: '🇱🇦',
     flagColors: ['#CE1126', '#002868', '#FFFFFF'],
     continent: 'Asia',
@@ -10373,9 +10377,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [30, 22, 51, 93, 188, 255, 312, 355, 245, 144, 90, 46],
     bestTimeToVisit: 'November–February for mild, dry days',
     popularPlaces: [
-      { name: 'Luang Prabang', description: 'UNESCO town of temples, monks, and Mekong sunsets', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar, Oct" },
-      { name: 'Vientiane', description: 'Laid-back riverside capital with French-era streets', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
-      { name: 'Vang Vieng', description: 'Karst-ringed valley for caves, lagoons, and tubing', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb" },
+      { name: 'Luang Prabang', description: 'UNESCO town of temples, monks, and Mekong sunsets', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar, Oct", panelSummary: "Luang Prabang is a UNESCO town of temples, monks, and Mekong sunsets. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Vientiane', description: 'Laid-back riverside capital with French-era streets', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov", panelSummary: "Vientiane is a laid-back riverside capital with French-era streets. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Vang Vieng', description: 'Karst-ringed valley for caves, lagoons, and tubing', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb", panelSummary: "Vang Vieng is a karst-ringed valley for caves, lagoons, and tubing. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -10446,7 +10450,7 @@ export const countries: Record<string, CountryData> = {
   GE: {
     name: 'Georgia',
     code: 'GE',
-    summary: 'Georgia combines Caucasus mountain scenery, ancient churches, wine traditions, Black Sea coast, and a distinctive cuisine. Tbilisi’s old neighborhoods, baths, and creative culture are a major draw, while Kazbegi, Svaneti, Kakheti, and cave monasteries offer nature and history.',
+    panelSummary: 'Georgia combines Caucasus mountain scenery, ancient churches, wine traditions, Black Sea coast, and a distinctive cuisine. Tbilisi’s old neighborhoods, baths, and creative culture are a major draw, while Kazbegi, Svaneti, Kakheti, and cave monasteries offer nature and history.',
     flagEmoji: '🇬🇪',
     flagColors: ['#FF0000', '#FFFFFF', '#FF0000'],
     continent: 'Asia',
@@ -10472,9 +10476,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [79, 72, 85, 88, 111, 124, 98, 83, 89, 95, 83, 77],
     bestTimeToVisit: 'May–June and September–October for mild weather',
     popularPlaces: [
-      { name: 'Tbilisi', description: 'Old-town capital of sulfur baths and balconied lanes', bestWeatherMonths: "Apr–Jun, Aug–Oct", goodWeatherMonths: "Jul" },
-      { name: 'Kazbegi', description: 'Mountain region beneath the dramatic Caucasus peaks', bestWeatherMonths: "Aug–Sep", goodWeatherMonths: "Jun–Jul" },
-      { name: 'Kakheti', description: 'Sun-soaked valleys at the heart of Georgian wine', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Jun–Aug, Nov" },
+      { name: 'Tbilisi', description: 'Old-town capital of sulfur baths and balconied lanes', bestWeatherMonths: "Apr–Jun, Aug–Oct", goodWeatherMonths: "Jul", panelSummary: "Tbilisi is an old-town capital of sulfur baths and balconied lanes. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Kazbegi', description: 'Mountain region beneath the dramatic Caucasus peaks', bestWeatherMonths: "Aug–Sep", goodWeatherMonths: "Jun–Jul", panelSummary: "Kazbegi is a mountain region beneath the dramatic Caucasus peaks. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Kakheti', description: 'Sun-soaked valleys at the heart of Georgian wine', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Jun–Aug, Nov", panelSummary: "Kakheti offers sun-soaked valleys at the heart of Georgian wine. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -10541,7 +10545,7 @@ export const countries: Record<string, CountryData> = {
   RO: {
     name: 'Romania',
     code: 'RO',
-    summary: 'Romania offers medieval towns, fortified churches, castles, forests, mountains, and vibrant cities. Bucharest provides architecture and nightlife, while Transylvania, Maramureș, the Carpathians, and the Danube Delta reveal rural traditions and natural diversity. That mix gives travelers plenty to discover.',
+    panelSummary: 'Romania offers medieval towns, fortified churches, castles, forests, mountains, and vibrant cities. Bucharest provides architecture and nightlife, while Transylvania, Maramureș, the Carpathians, and the Danube Delta reveal rural traditions and natural diversity. That mix gives travelers plenty to discover.',
     flagEmoji: '🇷🇴',
     flagColors: ['#002B7F', '#FCD116', '#CE1126'],
     continent: 'Europe',
@@ -10567,9 +10571,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [37, 34, 39, 50, 74, 88, 77, 60, 56, 51, 42, 43],
     bestTimeToVisit: 'May–September for warm days across cities and mountains',
     popularPlaces: [
-      { name: 'Bucharest', description: 'Lively capital of grand boulevards and Belle Époque cafés', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Jul–Aug" },
-      { name: 'Brașov', description: 'Saxon town beneath the Carpathian Mountains', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Sibiu', description: 'Cobbled medieval center with pastel guild houses', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Bucharest', description: 'Lively capital of grand boulevards and Belle Époque cafés', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Jul–Aug", panelSummary: "Bucharest is a lively capital of grand boulevards and Belle Époque cafés. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Brașov', description: 'Saxon town beneath the Carpathian Mountains', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Brașov is a saxon town beneath the Carpathian Mountains. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its scale and scenery reward unhurried exploration." },
+      { name: 'Sibiu', description: 'Cobbled medieval center with pastel guild houses', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Sibiu is a cobbled medieval center with pastel guild houses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -10627,7 +10631,7 @@ export const countries: Record<string, CountryData> = {
   RS: {
     name: 'Serbia',
     code: 'RS',
-    summary: 'Serbia combines lively cities, historic monasteries, river landscapes, mountain regions, and a strong café and music culture. Belgrade is known for nightlife, architecture, and the Danube and Sava rivers, while Novi Sad, rural towns, and national parks offer a quieter pace.',
+    panelSummary: 'Serbia combines lively cities, historic monasteries, river landscapes, mountain regions, and a strong café and music culture. Belgrade is known for nightlife, architecture, and the Danube and Sava rivers, while Novi Sad, rural towns, and national parks offer a quieter pace.',
     flagEmoji: '🇷🇸',
     flagColors: ['#C6363C', '#0C4076', '#FFFFFF'],
     continent: 'Europe',
@@ -10653,9 +10657,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [49, 48, 49, 57, 79, 89, 72, 55, 73, 65, 60, 63],
     bestTimeToVisit: 'May–September for festivals and warm weather',
     popularPlaces: [
-      { name: 'Belgrade', description: 'Energetic capital where the Sava meets the Danube', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
-      { name: 'Novi Sad', description: 'Cultured riverside city beneath a hilltop fortress', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
-      { name: 'Zlatibor', description: 'Rolling highland resort of villages and trails', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Belgrade', description: 'Energetic capital where the Sava meets the Danube', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar", panelSummary: "Belgrade is an energetic capital where the Sava meets the Danube. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Novi Sad', description: 'Cultured riverside city beneath a hilltop fortress', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar", panelSummary: "Novi Sad is a cultured riverside city beneath a hilltop fortress. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Zlatibor', description: 'Rolling highland resort of villages and trails', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Zlatibor is a rolling highland resort of villages and trails. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -10715,7 +10719,7 @@ export const countries: Record<string, CountryData> = {
   SI: {
     name: 'Slovenia',
     code: 'SI',
-    summary: 'Slovenia packs alpine peaks, emerald rivers, caves, vineyards, and a short Adriatic coast into a compact, easy-to-travel country. Ljubljana is charming and walkable, while Lake Bled, the Julian Alps, Soča Valley, and Karst region offer outdoor adventure.',
+    panelSummary: 'Slovenia packs alpine peaks, emerald rivers, caves, vineyards, and a short Adriatic coast into a compact, easy-to-travel country. Ljubljana is charming and walkable, while Lake Bled, the Julian Alps, Soča Valley, and Karst region offer outdoor adventure.',
     flagEmoji: '🇸🇮',
     flagColors: ['#FFFFFF', '#0000FF', '#FF0000'],
     continent: 'Europe',
@@ -10741,9 +10745,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [72, 77, 82, 108, 125, 139, 125, 137, 158, 159, 142, 104],
     bestTimeToVisit: 'May–September for lakes, hiking, and city life',
     popularPlaces: [
-      { name: 'Ljubljana', description: 'Green capital of café-lined riverbanks and a hilltop castle', bestWeatherMonths: "May", goodWeatherMonths: "Jun–Sep" },
-      { name: 'Lake Bled', description: 'Alpine lake with an island church and clifftop castle', bestWeatherMonths: "May–Sep" },
-      { name: 'Piran', description: 'Venetian-flavored town on the Adriatic coast', bestWeatherMonths: "Jul", goodWeatherMonths: "Apr–Jun, Aug–Oct" },
+      { name: 'Ljubljana', description: 'Green capital of café-lined riverbanks and a hilltop castle', bestWeatherMonths: "May", goodWeatherMonths: "Jun–Sep", panelSummary: "Ljubljana is a green capital of café-lined riverbanks and a hilltop castle. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lake Bled', description: 'Alpine lake with an island church and clifftop castle', bestWeatherMonths: "May–Sep", panelSummary: "Lake Bled is an Alpine lake with an island church and clifftop castle. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Piran', description: 'Venetian-flavored town on the Adriatic coast', bestWeatherMonths: "Jul", goodWeatherMonths: "Apr–Jun, Aug–Oct", panelSummary: "Piran is a venetian-flavored town on the Adriatic coast. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
     ],
     attractions: [
       {
@@ -10807,7 +10811,7 @@ export const countries: Record<string, CountryData> = {
   SK: {
     name: 'Slovakia',
     code: 'SK',
-    summary: 'Slovakia offers castles, medieval towns, caves, mountain landscapes, and a less-touristed Central European experience. Bratislava is compact and attractive, while the High Tatras, Spiš Castle, traditional villages, and national parks provide hiking and history. The result is varied and rewarding.',
+    panelSummary: 'Slovakia offers castles, medieval towns, caves, mountain landscapes, and a less-touristed Central European experience. Bratislava is compact and attractive, while the High Tatras, Spiš Castle, traditional villages, and national parks provide hiking and history. The result is varied and rewarding.',
     flagEmoji: '🇸🇰',
     flagColors: ['#FFFFFF', '#0B4EA2', '#EE1C25'],
     continent: 'Europe',
@@ -10834,9 +10838,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'May–September is best for hiking and general touring, with September especially appealing; winter is the season for Tatras skiing.',
     bestVisitMonths: [5, 6, 7, 8, 9, 12, 1, 2],
     popularPlaces: [
-      { name: 'Bratislava', description: 'Compact riverside capital crowned by a white castle', bestWeatherMonths: "Apr–Oct" },
-      { name: 'High Tatras', description: 'Jagged alpine range of lakes and mountain huts', bestWeatherMonths: "Jun, Aug–Sep", goodWeatherMonths: "May, Jul" },
-      { name: 'Košice', description: 'Eastern city with a soaring Gothic cathedral', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Bratislava', description: 'Compact riverside capital crowned by a white castle', bestWeatherMonths: "Apr–Oct", panelSummary: "Bratislava is a compact riverside capital crowned by a white castle. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'High Tatras', description: 'Jagged alpine range of lakes and mountain huts', bestWeatherMonths: "Jun, Aug–Sep", goodWeatherMonths: "May, Jul", panelSummary: "High Tatras is a jagged alpine range of lakes and mountain huts. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Košice', description: 'Eastern city with a soaring Gothic cathedral', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Košice is an eastern city with a soaring Gothic cathedral. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
     ],
     attractions: [
       {
@@ -10903,7 +10907,7 @@ export const countries: Record<string, CountryData> = {
   UA: {
     name: 'Ukraine',
     code: 'UA',
-    summary: 'Ukraine is a large country with historic cities, Black Sea coast, Carpathian mountains, rich food traditions, and a strong cultural identity. Kyiv, Lviv, Odesa, and rural regions each offer distinct architecture and atmosphere. That mix gives travelers plenty to discover.',
+    panelSummary: 'Ukraine is a large country with historic cities, Black Sea coast, Carpathian mountains, rich food traditions, and a strong cultural identity. Kyiv, Lviv, Odesa, and rural regions each offer distinct architecture and atmosphere. That mix gives travelers plenty to discover.',
     flagEmoji: '🇺🇦',
     flagColors: ['#0057B7', '#FFD700', '#0057B7'],
     continent: 'Europe',
@@ -10929,9 +10933,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [40, 35, 36, 37, 56, 67, 65, 46, 49, 42, 40, 42],
     bestTimeToVisit: 'May–September for warm, green days',
     popularPlaces: [
-      { name: 'Kyiv', description: 'Historic capital of golden-domed cathedrals on the Dnipro', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Lviv', description: 'Cobbled UNESCO old town with coffeehouse culture', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Carpathians', description: 'Forested mountains of villages and ski resorts', bestWeatherMonths: "May–Sep" },
+      { name: 'Kyiv', description: 'Historic capital of golden-domed cathedrals on the Dnipro', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Kyiv is a historic capital of golden-domed cathedrals on the Dnipro. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lviv', description: 'Cobbled UNESCO old town with coffeehouse culture', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Lviv is a cobbled UNESCO old town with coffeehouse culture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Carpathians', description: 'Forested mountains of villages and ski resorts', bestWeatherMonths: "May–Sep", panelSummary: "Carpathians offers forested mountains of villages and ski resorts. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its scale and scenery reward unhurried exploration." },
     ],
     attractions: [
       {
@@ -10994,7 +10998,7 @@ export const countries: Record<string, CountryData> = {
   MG: {
     name: 'Madagascar',
     code: 'MG',
-    summary: 'Madagascar is one of the world’s most distinctive wildlife destinations, with lemurs, baobabs, chameleons, rainforests, deserts, and coral reefs found nowhere else. National parks such as Andasibe, Ranomafana, and Isalo anchor most trips. That mix gives travelers plenty to discover.',
+    panelSummary: 'Madagascar is one of the world’s most distinctive wildlife destinations, with lemurs, baobabs, chameleons, rainforests, deserts, and coral reefs found nowhere else. National parks such as Andasibe, Ranomafana, and Isalo anchor most trips. That mix gives travelers plenty to discover.',
     flagEmoji: '🇲🇬',
     flagColors: ['#FC3D32', '#007E3A', '#FFFFFF'],
     continent: 'Africa',
@@ -11020,9 +11024,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [312, 272, 204, 88, 51, 46, 51, 42, 32, 52, 102, 217],
     bestTimeToVisit: 'April–October for drier, cooler conditions',
     popularPlaces: [
-      { name: 'Antananarivo', description: 'Hillside capital of stairways, markets, and palaces', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Jan–Mar, Nov–Dec" },
-      { name: 'Andasibe', description: 'Rainforest reserve echoing with indri lemur calls', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
-      { name: 'Nosy Be', description: 'Tropical island of beaches and ylang-ylang plantations', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Antananarivo', description: 'Hillside capital of stairways, markets, and palaces', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "Antananarivo is a hillside capital of stairways, markets, and palaces. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The atmosphere encourages travelers to look more closely." },
+      { name: 'Andasibe', description: 'Rainforest reserve echoing with indri lemur calls', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov", panelSummary: "Andasibe is a rainforest reserve echoing with indri lemur calls. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Each outing offers a fresh sense of discovery." },
+      { name: 'Nosy Be', description: 'Tropical island of beaches and ylang-ylang plantations', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Nosy Be is a tropical island of beaches and ylang-ylang plantations. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -11082,7 +11086,7 @@ export const countries: Record<string, CountryData> = {
   MZ: {
     name: 'Mozambique',
     code: 'MZ',
-    summary: 'Mozambique combines a long Indian Ocean coastline with coral reefs, islands, seafood, music, and a blend of African, Arab, and Portuguese influences. The Bazaruto and Quirimbas archipelagos are major highlights, while Maputo offers architecture and culture.',
+    panelSummary: 'Mozambique combines a long Indian Ocean coastline with coral reefs, islands, seafood, music, and a blend of African, Arab, and Portuguese influences. The Bazaruto and Quirimbas archipelagos are major highlights, while Maputo offers architecture and culture.',
     flagEmoji: '🇲🇿',
     flagColors: ['#007168', '#000000', '#FCE100'],
     continent: 'Africa',
@@ -11108,9 +11112,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [235, 199, 152, 66, 19, 14, 13, 9, 9, 18, 68, 168],
     bestTimeToVisit: 'May–November for dry weather and clear diving',
     popularPlaces: [
-      { name: 'Maputo', description: 'Coastal capital of Portuguese-era avenues and seafood', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
-      { name: 'Bazaruto Archipelago', description: 'Sandbar islands fringed by turquoise reefs', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov" },
-      { name: 'Tofo', description: 'Laid-back beach town famed for whale sharks', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov" },
+      { name: 'Maputo', description: 'Coastal capital of Portuguese-era avenues and seafood', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov", panelSummary: "Maputo is a coastal capital of Portuguese-era avenues and seafood. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The relaxed setting is part of the appeal." },
+      { name: 'Bazaruto Archipelago', description: 'Sandbar islands fringed by turquoise reefs', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov", panelSummary: "Bazaruto Archipelago offers sandbar islands fringed by turquoise reefs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
+      { name: 'Tofo', description: 'Laid-back beach town famed for whale sharks', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov", panelSummary: "Tofo is a laid-back beach town famed for whale sharks. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The natural setting makes every encounter more memorable." },
     ],
     attractions: [
       {
@@ -11172,7 +11176,7 @@ export const countries: Record<string, CountryData> = {
   ZW: {
     name: 'Zimbabwe',
     code: 'ZW',
-    summary: 'Zimbabwe is home to major natural and cultural attractions, including Victoria Falls, Great Zimbabwe, Hwange National Park, and striking granite landscapes. Wildlife viewing is excellent, and the country’s guides are highly regarded. That mix gives travelers plenty to discover.',
+    panelSummary: 'Zimbabwe is home to major natural and cultural attractions, including Victoria Falls, Great Zimbabwe, Hwange National Park, and striking granite landscapes. Wildlife viewing is excellent, and the country’s guides are highly regarded. That mix gives travelers plenty to discover.',
     flagEmoji: '🇿🇼',
     flagColors: ['#319208', '#FFD200', '#D40000'],
     continent: 'Africa',
@@ -11198,9 +11202,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [172, 122, 84, 28, 5, 4, 2, 1, 5, 20, 82, 146],
     bestTimeToVisit: 'May–October for cool, dry game-viewing season',
     popularPlaces: [
-      { name: 'Victoria Falls', description: 'Town beside one of the world’s greatest waterfalls', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr" },
-      { name: 'Hwange National Park', description: 'Vast reserve with huge elephant herds', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Mar, Sep" },
-      { name: 'Harare', description: 'Leafy capital of jacaranda-lined avenues', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov" },
+      { name: 'Victoria Falls', description: 'Town beside one of the world’s greatest waterfalls', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr", panelSummary: "Victoria Falls is a town beside one of the world’s greatest waterfalls. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Hwange National Park', description: 'Vast reserve with huge elephant herds', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Mar, Sep", panelSummary: "Hwange National Park is a vast reserve with huge elephant herds. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Harare', description: 'Leafy capital of jacaranda-lined avenues', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov", panelSummary: "Harare is a leafy capital of jacaranda-lined avenues. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -11265,7 +11269,7 @@ export const countries: Record<string, CountryData> = {
   BS: {
     name: 'The Bahamas',
     code: 'BS',
-    summary: 'The Bahamas is an archipelago of clear water, coral reefs, white and pink-sand beaches, and hundreds of islands with distinct personalities. Nassau and Paradise Island are the busiest centers, while the Out Islands offer quieter settlements, boating, diving, fishing, and wildlife.',
+    panelSummary: 'The Bahamas is an archipelago of clear water, coral reefs, white and pink-sand beaches, and hundreds of islands with distinct personalities. Nassau and Paradise Island are the busiest centers, while the Out Islands offer quieter settlements, boating, diving, fishing, and wildlife.',
     flagEmoji: '🇧🇸',
     flagColors: ['#00778B', '#FFC72C', '#000000'],
     continent: 'North America',
@@ -11278,9 +11282,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [44, 45, 45, 68, 114, 152, 105, 129, 185, 170, 81, 50],
     bestTimeToVisit: 'December–April for the driest, mildest weather (peak season)',
     popularPlaces: [
-      { name: 'Nassau', description: 'Colorful capital with colonial forts and the Straw Market', bestWeatherMonths: "Jan–Apr, Nov–Dec" },
-      { name: 'Exumas', description: 'Chain of cays famous for swimming pigs and turquoise water', bestWeatherMonths: "Jan–Apr, Dec", goodWeatherMonths: "Nov" },
-      { name: 'Grand Bahama', description: 'Freeport, nature preserves, and long beaches', bestWeatherMonths: "Jan–Apr, Nov–Dec" },
+      { name: 'Nassau', description: 'Colorful capital with colonial forts and the Straw Market', bestWeatherMonths: "Jan–Apr, Nov–Dec", panelSummary: "Nassau is a colorful capital with colonial forts and the Straw Market. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Exumas', description: 'Chain of cays famous for swimming pigs and turquoise water', bestWeatherMonths: "Jan–Apr, Dec", goodWeatherMonths: "Nov", panelSummary: "Exumas is a chain of cays famous for swimming pigs and turquoise water. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Grand Bahama', description: 'Freeport, nature preserves, and long beaches', bestWeatherMonths: "Jan–Apr, Nov–Dec", panelSummary: "Grand Bahama offers freeport, nature preserves, and long beaches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
     ],
     attractions: [
       {
@@ -11336,7 +11340,7 @@ export const countries: Record<string, CountryData> = {
   BB: {
     name: 'Barbados',
     code: 'BB',
-    summary: 'Barbados combines attractive beaches, historic plantation and colonial sites, lively food and rum culture, and a strong sense of local identity. Bridgetown, the west coast, rugged Atlantic shore, and inland villages offer different experiences. The result is varied and rewarding.',
+    panelSummary: 'Barbados combines attractive beaches, historic plantation and colonial sites, lively food and rum culture, and a strong sense of local identity. Bridgetown, the west coast, rugged Atlantic shore, and inland villages offer different experiences. The result is varied and rewarding.',
     flagEmoji: '🇧🇧',
     flagColors: ['#00267F', '#FFC726', '#00267F'],
     continent: 'North America',
@@ -11349,9 +11353,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [86, 54, 53, 77, 91, 134, 144, 169, 194, 189, 218, 122],
     bestTimeToVisit: 'January–April for dry, sunny weather; Crop Over festival peaks in July–August',
     popularPlaces: [
-      { name: 'Bridgetown', description: 'UNESCO-listed capital with Georgian architecture', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
-      { name: 'Oistins', description: 'Fishing town famous for Friday-night fish fry', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
-      { name: 'Speightstown', description: 'Historic port town on the calm west coast', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
+      { name: 'Bridgetown', description: 'UNESCO-listed capital with Georgian architecture', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec", panelSummary: "Bridgetown is an UNESCO-listed capital with Georgian architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Small details make the history feel especially vivid." },
+      { name: 'Oistins', description: 'Fishing town famous for Friday-night fish fry', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec", panelSummary: "Oistins is a fishing town famous for Friday-night fish fry. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Speightstown', description: 'Historic port town on the calm west coast', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec", panelSummary: "Speightstown is a historic port town on the calm west coast. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -11415,7 +11419,7 @@ export const countries: Record<string, CountryData> = {
   LC: {
     name: 'Saint Lucia',
     code: 'LC',
-    summary: 'Saint Lucia is known for the dramatic Pitons, lush rainforest, volcanic landscapes, beaches, and romantic resorts. Soufrière is the scenic heart, with hiking, waterfalls, hot springs, and coastal views. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
+    panelSummary: 'Saint Lucia is known for the dramatic Pitons, lush rainforest, volcanic landscapes, beaches, and romantic resorts. Soufrière is the scenic heart, with hiking, waterfalls, hot springs, and coastal views. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇱🇨',
     flagColors: ['#65CFE9', '#FFCE00', '#000000'],
     continent: 'North America',
@@ -11428,9 +11432,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [114, 80, 72, 117, 144, 187, 208, 207, 239, 265, 292, 152],
     bestTimeToVisit: 'December–April for the dry season and the calmest sailing conditions',
     popularPlaces: [
-      { name: 'Soufrière', description: 'Coastal town under the twin Piton peaks', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
-      { name: 'Rodney Bay', description: 'Nightlife, marina, and long Reduit Beach', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
-      { name: 'Marigot Bay', description: 'Hidden yacht harbor called “the most beautiful bay in the Caribbean”', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Soufrière', description: 'Coastal town under the twin Piton peaks', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Soufrière is a coastal town under the twin Piton peaks. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
+      { name: 'Rodney Bay', description: 'Nightlife, marina, and long Reduit Beach', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Rodney Bay is a nightlife, marina, and long Reduit Beach. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Marigot Bay', description: 'Hidden yacht harbor called “the most beautiful bay in the Caribbean”', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Marigot Bay is a hidden yacht harbor called “the most beautiful bay in the Caribbean”. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
     ],
     attractions: [
       {
@@ -11489,7 +11493,7 @@ export const countries: Record<string, CountryData> = {
   AW: {
     name: 'Aruba',
     code: 'AW',
-    summary: 'Aruba is a sunny, dry Caribbean island known for broad beaches, reliable weather, clear water, and easy resort travel. Beyond Palm Beach, visitors find desert-like landscapes, wind-shaped divi-divi trees, rocky coasts, and colorful Oranjestad. The result is varied and rewarding.',
+    panelSummary: 'Aruba is a sunny, dry Caribbean island known for broad beaches, reliable weather, clear water, and easy resort travel. Beyond Palm Beach, visitors find desert-like landscapes, wind-shaped divi-divi trees, rocky coasts, and colorful Oranjestad. The result is varied and rewarding.',
     flagEmoji: '🇦🇼',
     flagColors: ['#4189DD', '#F9E813', '#EF3340'],
     continent: 'North America',
@@ -11503,9 +11507,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'Aruba is a strong year-round destination outside the main hurricane belt; January–March is the busiest period, while later spring can offer a quieter trade-off.',
     bestVisitMonths: [1, 2, 3, 4, 5],
     popularPlaces: [
-      { name: 'Oranjestad', description: 'Pastel Dutch-colonial capital with a walkable waterfront', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov" },
-      { name: 'Palm Beach', description: 'High-rise resort strip along calm turquoise water', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov" },
-      { name: 'Arikok National Park', description: 'Rugged windward coast with caves and desert landscapes', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov" },
+      { name: 'Oranjestad', description: 'Pastel Dutch-colonial capital with a walkable waterfront', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov", panelSummary: "Oranjestad is a pastel Dutch-colonial capital with a walkable waterfront. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Every corner adds another layer to the story." },
+      { name: 'Palm Beach', description: 'High-rise resort strip along calm turquoise water', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov", panelSummary: "Palm Beach is a high-rise resort strip along calm turquoise water. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Arikok National Park', description: 'Rugged windward coast with caves and desert landscapes', bestWeatherMonths: "Jan–Mar, Dec", goodWeatherMonths: "Apr–Jul, Nov", panelSummary: "Arikok National Park is a rugged windward coast with caves and desert landscapes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -11567,7 +11571,7 @@ export const countries: Record<string, CountryData> = {
   PR: {
     name: 'Puerto Rico',
     code: 'PR',
-    summary: 'Puerto Rico combines Caribbean beaches, rainforest, mountains, historic cities, music, and a lively food culture without requiring a passport for U.S. citizens. Old San Juan, El Yunque, Vieques, and the central highlands offer different experiences.',
+    panelSummary: 'Puerto Rico combines Caribbean beaches, rainforest, mountains, historic cities, music, and a lively food culture without requiring a passport for U.S. citizens. Old San Juan, El Yunque, Vieques, and the central highlands offer different experiences.',
     flagEmoji: '🇵🇷',
     flagColors: ['#ED0000', '#FFFFFF', '#0050F0'],
     continent: 'North America',
@@ -11580,9 +11584,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [125, 89, 69, 148, 190, 172, 208, 218, 242, 210, 203, 132],
     bestTimeToVisit: 'Mid-December through April for the driest weather outside hurricane season',
     popularPlaces: [
-      { name: 'Old San Juan', description: 'Cobblestone streets and 16th-century Spanish forts', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
-      { name: 'Rincón', description: 'West-coast surf town with Caribbean sunsets', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Dec" },
-      { name: 'Vieques', description: 'Island getaway with wild horses and a bioluminescent bay', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
+      { name: 'Old San Juan', description: 'Cobblestone streets and 16th-century Spanish forts', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec", panelSummary: "Old San Juan offers cobblestone streets and 16th-century Spanish forts. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The atmosphere encourages travelers to look more closely." },
+      { name: 'Rincón', description: 'West-coast surf town with Caribbean sunsets', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Dec", panelSummary: "Rincón is a west-coast surf town with Caribbean sunsets. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Vieques', description: 'Island getaway with wild horses and a bioluminescent bay', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec", panelSummary: "Vieques is an island getaway with wild horses and a bioluminescent bay. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
     attractions: [
       {
@@ -11652,7 +11656,7 @@ export const countries: Record<string, CountryData> = {
   TT: {
     name: 'Trinidad and Tobago',
     code: 'TT',
-    summary: 'Trinidad and Tobago offers two distinct island experiences. Trinidad is larger, energetic, and culturally diverse, known for Carnival, music, food, and wildlife-rich wetlands. Tobago is quieter, with beaches, reefs, and rainforest. That mix gives travelers plenty to discover.',
+    panelSummary: 'Trinidad and Tobago offers two distinct island experiences. Trinidad is larger, energetic, and culturally diverse, known for Carnival, music, food, and wildlife-rich wetlands. Tobago is quieter, with beaches, reefs, and rainforest. That mix gives travelers plenty to discover.',
     flagEmoji: '🇹🇹',
     flagColors: ['#DA1A35', '#FFFFFF', '#000000'],
     continent: 'North America',
@@ -11665,9 +11669,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [98, 67, 59, 87, 127, 242, 227, 248, 192, 214, 248, 178],
     bestTimeToVisit: 'January–May for the dry season; Carnival peaks the two days before Ash Wednesday',
     popularPlaces: [
-      { name: 'Port of Spain', description: 'Energetic capital and heart of Carnival', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–May, Dec" },
-      { name: 'Tobago', description: 'Quieter sister island with coral reefs and rainforest', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–May" },
-      { name: 'Chaguaramas', description: 'Peninsula of marinas, hikes, and offshore bays', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–May, Dec" },
+      { name: 'Port of Spain', description: 'Energetic capital and heart of Carnival', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–May, Dec", panelSummary: "Port of Spain is an energetic capital and heart of Carnival. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Tobago', description: 'Quieter sister island with coral reefs and rainforest', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–May", panelSummary: "Tobago is a quieter sister island with coral reefs and rainforest. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Chaguaramas', description: 'Peninsula of marinas, hikes, and offshore bays', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–May, Dec", panelSummary: "Chaguaramas is a peninsula of marinas, hikes, and offshore bays. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
     ],
     attractions: [
       {
@@ -11724,7 +11728,7 @@ export const countries: Record<string, CountryData> = {
   HK: {
     name: 'Hong Kong',
     code: 'HK',
-    summary: 'Hong Kong is a dense, energetic city where skyscrapers, mountains, markets, temples, beaches, and exceptional food sit close together. Victoria Harbour and the skyline are iconic, but hiking trails, outlying islands, historic neighborhoods, and village areas reveal a greener side.',
+    panelSummary: 'Hong Kong is a dense, energetic city where skyscrapers, mountains, markets, temples, beaches, and exceptional food sit close together. Victoria Harbour and the skyline are iconic, but hiking trails, outlying islands, historic neighborhoods, and village areas reveal a greener side.',
     flagEmoji: '🇭🇰',
     flagColors: ['#DE2910', '#FFFFFF', '#DE2910'],
     continent: 'Asia',
@@ -11737,9 +11741,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [26, 41, 79, 149, 272, 417, 325, 402, 265, 86, 35, 33],
     bestTimeToVisit: 'October–December for clear skies, comfortable temperatures, and low humidity',
     popularPlaces: [
-      { name: 'Central & Sheung Wan', description: 'Skyscraper canyons meeting old wet markets and galleries', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Tsim Sha Tsui', description: 'Kowloon waterfront with the Symphony of Lights show', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Lantau Island', description: 'Cable-car ride to the Big Buddha and Tai O fishing village', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Central & Sheung Wan', description: 'Skyscraper canyons meeting old wet markets and galleries', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct", panelSummary: "Central & Sheung Wan offers skyscraper canyons meeting old wet markets and galleries. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace." },
+      { name: 'Tsim Sha Tsui', description: 'Kowloon waterfront with the Symphony of Lights show', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct", panelSummary: "Tsim Sha Tsui offers kowloon waterfront with the Symphony of Lights show. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lantau Island', description: 'Cable-car ride to the Big Buddha and Tai O fishing village', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr", panelSummary: "Lantau Island offers cable-car ride to the Big Buddha and Tai O fishing village. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -11803,7 +11807,7 @@ export const countries: Record<string, CountryData> = {
   TW: {
     name: 'Taiwan',
     code: 'TW',
-    summary: 'Taiwan combines dynamic cities, mountain scenery, hot springs, temples, night markets, beaches, and one of Asia’s most approachable food cultures. Taipei is the main gateway, while Taroko, Alishan, Tainan, the east coast, and offshore islands add nature and history.',
+    panelSummary: 'Taiwan combines dynamic cities, mountain scenery, hot springs, temples, night markets, beaches, and one of Asia’s most approachable food cultures. Taipei is the main gateway, while Taroko, Alishan, Tainan, the east coast, and offshore islands add nature and history.',
     flagEmoji: '🇹🇼',
     flagColors: ['#FE0000', '#000095', '#FFFFFF'],
     continent: 'Asia',
@@ -11817,9 +11821,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'October–November and April are especially good for mild weather and outdoor travel; July–September carries the greatest typhoon risk.',
     bestVisitMonths: [4, 10, 11],
     popularPlaces: [
-      { name: 'Taipei', description: 'Night-market capital with mountains, museums, and hot springs', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr, Oct" },
-      { name: 'Taroko Gorge', description: 'Marble river gorge in eastern Taiwan', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Jun, Aug–Nov" },
-      { name: 'Jiufen', description: 'Hillside teahouse village that inspired Spirited Away', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr, Oct" },
+      { name: 'Taipei', description: 'Night-market capital with mountains, museums, and hot springs', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr, Oct", panelSummary: "Taipei is a night-market capital with mountains, museums, and hot springs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Taroko Gorge', description: 'Marble river gorge in eastern Taiwan', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Jun, Aug–Nov", panelSummary: "Taroko Gorge is a marble river gorge in eastern Taiwan. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its scale and scenery reward unhurried exploration." },
+      { name: 'Jiufen', description: 'Hillside teahouse village that inspired Spirited Away', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Apr, Oct", panelSummary: "Jiufen is a hillside teahouse village that inspired Spirited Away. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -11884,7 +11888,7 @@ export const countries: Record<string, CountryData> = {
   MT: {
     name: 'Malta',
     code: 'MT',
-    summary: 'Malta offers fortified cities, prehistoric temples, clear Mediterranean water, and a dense concentration of history shaped by Phoenicians, Romans, Arabs, knights, and the British. Valletta, Mdina, Gozo, and the coast provide architecture, diving, and scenic walks.',
+    panelSummary: 'Malta offers fortified cities, prehistoric temples, clear Mediterranean water, and a dense concentration of history shaped by Phoenicians, Romans, Arabs, knights, and the British. Valletta, Mdina, Gozo, and the coast provide architecture, diving, and scenic walks.',
     flagEmoji: '🇲🇹',
     flagColors: ['#FFFFFF', '#CE0B24', '#FFFFFF'],
     continent: 'Europe',
@@ -11897,9 +11901,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 56, 36, 18, 9, 2, 0, 6, 41, 78, 70, 86],
     bestTimeToVisit: 'April–June and September–October for warm sea and easier crowds',
     popularPlaces: [
-      { name: 'Valletta', description: 'Compact baroque capital built by the Knights of St. John', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
-      { name: 'Gozo', description: 'Quieter sister island with megalithic temples and salt pans', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
-      { name: 'Mdina', description: 'Fortified “Silent City” dating to the Middle Ages', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
+      { name: 'Valletta', description: 'Compact baroque capital built by the Knights of St. John', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug", panelSummary: "Valletta is a compact baroque capital built by the Knights of St. John. Visitors can pair the major landmarks with local food, lively streets, cultural venues, and quieter corners that reveal a stronger sense of place." },
+      { name: 'Gozo', description: 'Quieter sister island with megalithic temples and salt pans', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug", panelSummary: "Gozo is a quieter sister island with megalithic temples and salt pans. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Mdina', description: 'Fortified “Silent City” dating to the Middle Ages', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug", panelSummary: "Mdina is a fortified “Silent City” dating to the Middle Ages. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -11966,7 +11970,7 @@ export const countries: Record<string, CountryData> = {
   CY: {
     name: 'Cyprus',
     code: 'CY',
-    summary: 'Cyprus combines Mediterranean beaches, mountain villages, ancient ruins, Byzantine churches, and a cuisine shaped by Greek, Turkish, and Middle Eastern influences. Nicosia offers a divided capital with layered history, while Paphos, Limassol, Troodos, and the coast provide archaeology and relaxation.',
+    panelSummary: 'Cyprus combines Mediterranean beaches, mountain villages, ancient ruins, Byzantine churches, and a cuisine shaped by Greek, Turkish, and Middle Eastern influences. Nicosia offers a divided capital with layered history, while Paphos, Limassol, Troodos, and the coast provide archaeology and relaxation.',
     flagEmoji: '🇨🇾',
     flagColors: ['#FFFFFF', '#D57800', '#4E5B31'],
     continent: 'Europe',
@@ -11979,9 +11983,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [104, 68, 47, 25, 19, 7, 1, 2, 6, 27, 55, 109],
     bestTimeToVisit: 'April–June or September–November for warm sea and manageable heat',
     popularPlaces: [
-      { name: 'Paphos', description: 'Ancient port with mosaics and mythical Aphrodite’s Rock', bestWeatherMonths: "Feb–Jun, Sep–Nov", goodWeatherMonths: "Jan, Jul–Aug, Dec" },
-      { name: 'Limassol', description: 'Long promenade, wine country, and Crusader castle', bestWeatherMonths: "Mar–Jun, Oct–Nov", goodWeatherMonths: "Jan–Feb, Sep, Dec" },
-      { name: 'Nicosia', description: 'Only remaining divided capital in Europe, split by the Green Line', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep" },
+      { name: 'Paphos', description: 'Ancient port with mosaics and mythical Aphrodite’s Rock', bestWeatherMonths: "Feb–Jun, Sep–Nov", goodWeatherMonths: "Jan, Jul–Aug, Dec", panelSummary: "Paphos is an ancient port with mosaics and mythical Aphrodite’s Rock. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Limassol', description: 'Long promenade, wine country, and Crusader castle', bestWeatherMonths: "Mar–Jun, Oct–Nov", goodWeatherMonths: "Jan–Feb, Sep, Dec", panelSummary: "Limassol offers a long promenade, wine country, and Crusader castle. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Nicosia', description: 'Only remaining divided capital in Europe, split by the Green Line', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep", panelSummary: "Nicosia is an only remaining divided capital in Europe, split by the Green Line. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -12046,7 +12050,7 @@ export const countries: Record<string, CountryData> = {
   LU: {
     name: 'Luxembourg',
     code: 'LU',
-    summary: 'Luxembourg is a small, affluent country of fortified towns, wooded valleys, castles, vineyards, and multilingual culture. Luxembourg City’s dramatic old quarters and modern institutions are the main draw, while the Moselle and Ardennes offer scenery and villages.',
+    panelSummary: 'Luxembourg is a small, affluent country of fortified towns, wooded valleys, castles, vineyards, and multilingual culture. Luxembourg City’s dramatic old quarters and modern institutions are the main draw, while the Moselle and Ardennes offer scenery and villages.',
     flagEmoji: '🇱🇺',
     flagColors: ['#ED2939', '#FFFFFF', '#00A1DE'],
     continent: 'Europe',
@@ -12059,9 +12063,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [94, 75, 69, 52, 70, 69, 81, 74, 74, 82, 88, 109],
     bestTimeToVisit: 'May–September for hiking the Mullerthal and touring castles in comfortable weather',
     popularPlaces: [
-      { name: 'Luxembourg City', description: 'UNESCO old town perched over dramatic gorges', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Vianden', description: 'Fairytale hilltop castle above the Our River', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Mullerthal Region', description: '“Little Switzerland” of moss-covered sandstone trails', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Luxembourg City', description: 'UNESCO old town perched over dramatic gorges', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Luxembourg City is a UNESCO old town perched over dramatic gorges. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Vianden', description: 'Fairytale hilltop castle above the Our River', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Vianden is a fairytale hilltop castle above the Our River. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Mullerthal Region', description: '“Little Switzerland” of moss-covered sandstone trails', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Mullerthal Region offers “Little Switzerland” of moss-covered sandstone trails. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -12125,7 +12129,7 @@ export const countries: Record<string, CountryData> = {
   EE: {
     name: 'Estonia',
     code: 'EE',
-    summary: 'Estonia blends medieval architecture, Baltic coastline, forests, islands, and a highly digital modern society. Tallinn’s old town is the centerpiece, but Tartu, Saaremaa, national parks, and coastal villages reveal a quieter side. That mix gives travelers plenty to discover.',
+    panelSummary: 'Estonia blends medieval architecture, Baltic coastline, forests, islands, and a highly digital modern society. Tallinn’s old town is the centerpiece, but Tartu, Saaremaa, national parks, and coastal villages reveal a quieter side. That mix gives travelers plenty to discover.',
     flagEmoji: '🇪🇪',
     flagColors: ['#0072CE', '#000000', '#FFFFFF'],
     continent: 'Europe',
@@ -12138,9 +12142,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [50, 39, 35, 34, 44, 67, 66, 78, 59, 74, 63, 56],
     bestTimeToVisit: 'June–August for long white nights and open-air festivals',
     popularPlaces: [
-      { name: 'Tallinn', description: 'Fairy-tale medieval old town on the Baltic', bestWeatherMonths: "May–Sep" },
-      { name: 'Tartu', description: 'Historic university town and 2024 European Capital of Culture', bestWeatherMonths: "May–Sep" },
-      { name: 'Saaremaa', description: 'Largest island — windmills, spas, and juniper landscapes', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
+      { name: 'Tallinn', description: 'Fairy-tale medieval old town on the Baltic', bestWeatherMonths: "May–Sep", panelSummary: "Tallinn is a fairy-tale medieval old town on the Baltic. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Tartu', description: 'Historic university town and 2024 European Capital of Culture', bestWeatherMonths: "May–Sep", panelSummary: "Tartu is a historic university town and 2024 European Capital of Culture. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Saaremaa', description: 'Largest island — windmills, spas, and juniper landscapes', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May", panelSummary: "Saaremaa is a largest island — windmills, spas, and juniper landscapes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -12200,7 +12204,7 @@ export const countries: Record<string, CountryData> = {
   LV: {
     name: 'Latvia',
     code: 'LV',
-    summary: 'Latvia combines Art Nouveau architecture, medieval streets, forests, beaches, and a strong choral and folk tradition. Riga is the main cultural center, while Gauja National Park, Cēsis, Kuldīga, and the Baltic coast provide nature and smaller-town charm.',
+    panelSummary: 'Latvia combines Art Nouveau architecture, medieval streets, forests, beaches, and a strong choral and folk tradition. Riga is the main cultural center, while Gauja National Park, Cēsis, Kuldīga, and the Baltic coast provide nature and smaller-town charm.',
     flagEmoji: '🇱🇻',
     flagColors: ['#9E3039', '#FFFFFF', '#9E3039'],
     continent: 'Europe',
@@ -12213,9 +12217,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [49, 40, 38, 37, 50, 68, 76, 76, 62, 72, 58, 54],
     bestTimeToVisit: 'May–September for warm days, Jāņi midsummer festivities, and beach weather in Jūrmala',
     popularPlaces: [
-      { name: 'Riga', description: 'Art Nouveau capital with a medieval core', bestWeatherMonths: "May–Sep" },
-      { name: 'Jūrmala', description: 'Beach town of pine forests and wooden villas', bestWeatherMonths: "May–Sep" },
-      { name: 'Sigulda', description: '“Latvian Switzerland” with castles, cable cars, and bobsled runs', bestWeatherMonths: "May–Sep" },
+      { name: 'Riga', description: 'Art Nouveau capital with a medieval core', bestWeatherMonths: "May–Sep", panelSummary: "Riga is an art Nouveau capital with a medieval core. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Jūrmala', description: 'Beach town of pine forests and wooden villas', bestWeatherMonths: "May–Sep", panelSummary: "Jūrmala is a beach town of pine forests and wooden villas. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Sigulda', description: '“Latvian Switzerland” with castles, cable cars, and bobsled runs', bestWeatherMonths: "May–Sep", panelSummary: "Sigulda offers “Latvian Switzerland” with castles, cable cars, and bobsled runs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -12277,7 +12281,7 @@ export const countries: Record<string, CountryData> = {
   LT: {
     name: 'Lithuania',
     code: 'LT',
-    summary: 'Lithuania offers baroque cities, medieval castles, forests, lakes, and a Baltic coastline with distinctive dunes. Vilnius is known for its old town and creative energy, while Kaunas, Trakai, the Curonian Spit, and countryside reveal other layers.',
+    panelSummary: 'Lithuania offers baroque cities, medieval castles, forests, lakes, and a Baltic coastline with distinctive dunes. Vilnius is known for its old town and creative energy, while Kaunas, Trakai, the Curonian Spit, and countryside reveal other layers.',
     flagEmoji: '🇱🇹',
     flagColors: ['#FDB913', '#006A44', '#C1272D'],
     continent: 'Europe',
@@ -12290,9 +12294,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [49, 40, 39, 38, 55, 67, 85, 75, 60, 64, 54, 52],
     bestTimeToVisit: 'May–September for warm days and Baltic beach weather on the Curonian Spit',
     popularPlaces: [
-      { name: 'Vilnius', description: 'Baroque capital with the bohemian “Republic of Užupis”', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
-      { name: 'Kaunas', description: 'Interwar-modernist city on the Nemunas River', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
-      { name: 'Curonian Spit', description: 'UNESCO sand-dune peninsula shared with Russia', bestWeatherMonths: "May–Sep" },
+      { name: 'Vilnius', description: 'Baroque capital with the bohemian “Republic of Užupis”', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr", panelSummary: "Vilnius is a baroque capital with the bohemian “Republic of Užupis”. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Kaunas', description: 'Interwar-modernist city on the Nemunas River', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr", panelSummary: "Kaunas is an interwar-modernist city on the Nemunas River. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'Curonian Spit', description: 'UNESCO sand-dune peninsula shared with Russia', bestWeatherMonths: "May–Sep", panelSummary: "Curonian Spit is a UNESCO sand-dune peninsula shared with Russia. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Small details make the history feel especially vivid." },
     ],
     attractions: [
       {
@@ -12356,7 +12360,7 @@ export const countries: Record<string, CountryData> = {
   BG: {
     name: 'Bulgaria',
     code: 'BG',
-    summary: 'Bulgaria combines Black Sea beaches, mountain ranges, monasteries, ancient ruins, and historic towns at relatively affordable prices. Sofia, Plovdiv, Veliko Tarnovo, and Rila Monastery are major cultural highlights, while ski areas and coastal resorts add seasonal variety.',
+    panelSummary: 'Bulgaria combines Black Sea beaches, mountain ranges, monasteries, ancient ruins, and historic towns at relatively affordable prices. Sofia, Plovdiv, Veliko Tarnovo, and Rila Monastery are major cultural highlights, while ski areas and coastal resorts add seasonal variety.',
     flagEmoji: '🇧🇬',
     flagColors: ['#FFFFFF', '#00966E', '#D62612'],
     continent: 'Europe',
@@ -12370,9 +12374,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'April–May and September–October are excellent for cities, hiking, and fewer crowds; December–February is the main ski season.',
     bestVisitMonths: [4, 5, 9, 10, 12, 1, 2],
     popularPlaces: [
-      { name: 'Sofia', description: 'Capital with Roman ruins, Ottoman mosques, and Orthodox domes side by side', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
-      { name: 'Plovdiv', description: 'One of Europe’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov" },
-      { name: 'Veliko Tarnovo', description: 'Medieval capital cascading above the Yantra River', bestWeatherMonths: "Apr–Jun, Aug–Oct", goodWeatherMonths: "Jul, Nov" },
+      { name: 'Sofia', description: 'Capital with Roman ruins, Ottoman mosques, and Orthodox domes side by side', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr", panelSummary: "Sofia is a capital with Roman ruins, Ottoman mosques, and Orthodox domes side by side. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Plovdiv', description: 'One of Europe’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov", panelSummary: "Plovdiv is one of Europe’s oldest continuously inhabited cities. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Veliko Tarnovo', description: 'Medieval capital cascading above the Yantra River', bestWeatherMonths: "Apr–Jun, Aug–Oct", goodWeatherMonths: "Jul, Nov", panelSummary: "Veliko Tarnovo is a medieval capital cascading above the Yantra River. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -12433,7 +12437,7 @@ export const countries: Record<string, CountryData> = {
   AL: {
     name: 'Albania',
     code: 'AL',
-    summary: 'Albania offers rugged mountains, clear Ionian beaches, Ottoman towns, archaeological sites, and a rapidly changing travel scene. Tirana is colorful and energetic, while Berat, Gjirokastër, the Albanian Alps, and the Riviera provide history and scenery.',
+    panelSummary: 'Albania offers rugged mountains, clear Ionian beaches, Ottoman towns, archaeological sites, and a rapidly changing travel scene. Tirana is colorful and energetic, while Berat, Gjirokastër, the Albanian Alps, and the Riviera provide history and scenery.',
     flagEmoji: '🇦🇱',
     flagColors: ['#E41E20', '#000000', '#E41E20'],
     continent: 'Europe',
@@ -12446,9 +12450,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [125, 101, 94, 90, 77, 58, 38, 41, 92, 112, 151, 154],
     bestTimeToVisit: 'May–June and September for Riviera swimming without the peak-summer crush',
     popularPlaces: [
-      { name: 'Tirana', description: 'Riotously colorful capital of murals and cafés', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug" },
-      { name: 'Sarandë & the Riviera', description: 'Aegean-blue coast facing Corfu', bestWeatherMonths: "Apr–Jun, Sep", goodWeatherMonths: "Jul–Aug, Oct" },
-      { name: 'Berat', description: 'UNESCO-listed “town of a thousand windows” climbing a hillside', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov" },
+      { name: 'Tirana', description: 'Riotously colorful capital of murals and cafés', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug", panelSummary: "Tirana is a riotously colorful capital of murals and cafés. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Sarandë & the Riviera', description: 'Aegean-blue coast facing Corfu', bestWeatherMonths: "Apr–Jun, Sep", goodWeatherMonths: "Jul–Aug, Oct", panelSummary: "Sarandë & the Riviera is an aegean-blue coast facing Corfu. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Berat', description: 'UNESCO-listed “town of a thousand windows” climbing a hillside', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Mar, Jul–Aug, Nov", panelSummary: "Berat is an UNESCO-listed “town of a thousand windows” climbing a hillside. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -12516,7 +12520,7 @@ export const countries: Record<string, CountryData> = {
   ME: {
     name: 'Montenegro',
     code: 'ME',
-    summary: 'Montenegro combines dramatic mountains, Adriatic bays, medieval towns, and national parks within a very small area. Kotor and the Bay of Kotor are the main attractions, while Durmitor, Lake Skadar, and the coast offer hiking, rafting, beaches, and scenic drives.',
+    panelSummary: 'Montenegro combines dramatic mountains, Adriatic bays, medieval towns, and national parks within a very small area. Kotor and the Bay of Kotor are the main attractions, while Durmitor, Lake Skadar, and the coast offer hiking, rafting, beaches, and scenic drives.',
     flagEmoji: '🇲🇪',
     flagColors: ['#D4AF37', '#C40308', '#D4AF37'],
     continent: 'Europe',
@@ -12529,9 +12533,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [118, 104, 100, 107, 104, 89, 78, 62, 123, 127, 158, 145],
     bestTimeToVisit: 'May–June and September for the Bay of Kotor without cruise crowds',
     popularPlaces: [
-      { name: 'Kotor', description: 'Fjord-like bay ringed by walled medieval towns', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Budva', description: 'Beach and nightlife hub with a walled old town', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Durmitor National Park', description: 'Glacial lakes and Balkan peaks in the north', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May" },
+      { name: 'Kotor', description: 'Fjord-like bay ringed by walled medieval towns', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Kotor is a fjord-like bay ringed by walled medieval towns. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
+      { name: 'Budva', description: 'Beach and nightlife hub with a walled old town', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Budva is a beach and nightlife hub with a walled old town. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Durmitor National Park', description: 'Glacial lakes and Balkan peaks in the north', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May", panelSummary: "Durmitor National Park offers glacial lakes and Balkan peaks in the north. It is a strong choice for travelers drawn to dramatic scenery, active days outdoors, and landscapes that feel far removed from ordinary routines." },
     ],
     attractions: [
       {
@@ -12595,7 +12599,7 @@ export const countries: Record<string, CountryData> = {
   BA: {
     name: 'Bosnia and Herzegovina',
     code: 'BA',
-    summary: 'Bosnia and Herzegovina offers Ottoman and Austro-Hungarian architecture, mountain landscapes, rivers, historic towns, and a complex recent history. Sarajevo and Mostar are the main cultural centers, while rural areas provide hiking, rafting, and traditional food.',
+    panelSummary: 'Bosnia and Herzegovina offers Ottoman and Austro-Hungarian architecture, mountain landscapes, rivers, historic towns, and a complex recent history. Sarajevo and Mostar are the main cultural centers, while rural areas provide hiking, rafting, and traditional food.',
     flagEmoji: '🇧🇦',
     flagColors: ['#002F6C', '#FECB00', '#FFFFFF'],
     continent: 'Europe',
@@ -12608,9 +12612,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [78, 79, 70, 86, 99, 95, 89, 69, 108, 105, 123, 114],
     bestTimeToVisit: 'May–October for hiking, rafting, and Mostar; January–February for cheap skiing on Bjelašnica',
     popularPlaces: [
-      { name: 'Sarajevo', description: '“Jerusalem of Europe” where mosques, churches, and synagogues share a lane', bestWeatherMonths: "May–Sep" },
-      { name: 'Mostar', description: 'Ottoman town split by the emerald Neretva', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Blagaj', description: 'Dervish house tucked at the base of a cliff-face spring', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Sarajevo', description: '“Jerusalem of Europe” where mosques, churches, and synagogues share a lane', bestWeatherMonths: "May–Sep", panelSummary: "Sarajevo offers “Jerusalem of Europe” where mosques, churches, and synagogues share a lane. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Mostar', description: 'Ottoman town split by the emerald Neretva', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Mostar is an ottoman town split by the emerald Neretva. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Blagaj', description: 'Dervish house tucked at the base of a cliff-face spring', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Blagaj is a dervish house tucked at the base of a cliff-face spring. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
     ],
     attractions: [
       {
@@ -12672,7 +12676,7 @@ export const countries: Record<string, CountryData> = {
   MU: {
     name: 'Mauritius',
     code: 'MU',
-    summary: 'Mauritius combines beaches, coral reefs, volcanic mountains, sugarcane landscapes, and a multicultural society shaped by African, Indian, Chinese, and European influences. Resorts are a major draw, but markets, villages, hiking, and food reveal more of the island.',
+    panelSummary: 'Mauritius combines beaches, coral reefs, volcanic mountains, sugarcane landscapes, and a multicultural society shaped by African, Indian, Chinese, and European influences. Resorts are a major draw, but markets, villages, hiking, and food reveal more of the island.',
     flagEmoji: '🇲🇺',
     flagColors: ['#EA2839', '#1A206D', '#00A551'],
     continent: 'Africa',
@@ -12685,9 +12689,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [293, 344, 303, 192, 140, 112, 104, 118, 88, 72, 79, 170],
     bestTimeToVisit: 'May–November for cooler, drier weather; avoid January–March cyclone risk',
     popularPlaces: [
-      { name: 'Port Louis', description: 'Colonial-era capital with a lively waterfront and Chinatown', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr" },
-      { name: 'Grand Baie', description: 'North-coast resort hub of catamaran trips and reef snorkeling', bestWeatherMonths: "Jul, Sep–Nov", goodWeatherMonths: "May–Jun, Aug" },
-      { name: 'Chamarel', description: 'Interior village of coffee plantations and the Seven Colored Earths', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr" },
+      { name: 'Port Louis', description: 'Colonial-era capital with a lively waterfront and Chinatown', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr", panelSummary: "Port Louis is a colonial-era capital with a lively waterfront and Chinatown. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Grand Baie', description: 'North-coast resort hub of catamaran trips and reef snorkeling', bestWeatherMonths: "Jul, Sep–Nov", goodWeatherMonths: "May–Jun, Aug", panelSummary: "Grand Baie is a north-coast resort hub of catamaran trips and reef snorkeling. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
+      { name: 'Chamarel', description: 'Interior village of coffee plantations and the Seven Colored Earths', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr", panelSummary: "Chamarel is an interior village of coffee plantations and the Seven Colored Earths. It is an inviting choice for travelers who enjoy regional flavors, local traditions, scenic outings, and meals that become part of the journey." },
     ],
     attractions: [
       {
@@ -12753,7 +12757,7 @@ export const countries: Record<string, CountryData> = {
   SC: {
     name: 'Seychelles',
     code: 'SC',
-    summary: 'Seychelles is an Indian Ocean archipelago known for granite boulders, clear water, coral reefs, tropical forests, and exceptionally beautiful beaches. Mahé, Praslin, and La Digue are the main islands, each with a different pace. The result is varied and rewarding.',
+    panelSummary: 'Seychelles is an Indian Ocean archipelago known for granite boulders, clear water, coral reefs, tropical forests, and exceptionally beautiful beaches. Mahé, Praslin, and La Digue are the main islands, each with a different pace. The result is varied and rewarding.',
     flagEmoji: '🇸🇨',
     flagColors: ['#003F87', '#FCD856', '#D62828'],
     continent: 'Africa',
@@ -12767,9 +12771,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'April–May and October–November bring calmer seas and lighter winds between the two monsoon patterns.',
     bestVisitMonths: [4, 5, 10, 11],
     popularPlaces: [
-      { name: 'Mahé', description: 'Largest island — mountains, capital, and Beau Vallon beach', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
-      { name: 'Praslin', description: 'Home of Vallée de Mai and the giant coco de mer palm', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
-      { name: 'La Digue', description: 'Bicycle-only island of granite boulders and Anse Source d’Argent', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
+      { name: 'Mahé', description: 'Largest island — mountains, capital, and Beau Vallon beach', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug", panelSummary: "Mahé is a largest island — mountains, capital, and Beau Vallon beach. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Praslin', description: 'Home of Vallée de Mai and the giant coco de mer palm', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun", panelSummary: "Praslin is home to Vallée de Mai and the giant coco de mer palm. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'La Digue', description: 'Bicycle-only island of granite boulders and Anse Source d’Argent', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun", panelSummary: "La Digue is a bicycle-only island of granite boulders and Anse Source d’Argent. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
     ],
     attractions: [
       {
@@ -12824,7 +12828,7 @@ export const countries: Record<string, CountryData> = {
   ZM: {
     name: 'Zambia',
     code: 'ZM',
-    summary: 'Zambia is best known for Victoria Falls and excellent wildlife viewing in relatively uncrowded parks. South Luangwa is famous for walking safaris, while the Lower Zambezi, Kafue, and Lake Kariba offer rivers, wilderness, and diverse ecosystems.',
+    panelSummary: 'Zambia is best known for Victoria Falls and excellent wildlife viewing in relatively uncrowded parks. South Luangwa is famous for walking safaris, while the Lower Zambezi, Kafue, and Lake Kariba offer rivers, wilderness, and diverse ecosystems.',
     flagEmoji: '🇿🇲',
     flagColors: ['#198A00', '#EF7D00', '#DE2010'],
     continent: 'Africa',
@@ -12837,9 +12841,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [235, 197, 162, 43, 6, 0, 0, 0, 3, 23, 110, 208],
     bestTimeToVisit: 'May–October dry season for safaris and peak Victoria Falls views (Apr–Jun for the biggest flow)',
     popularPlaces: [
-      { name: 'Livingstone', description: 'Gateway city to Victoria Falls on the Zambezi', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr" },
-      { name: 'South Luangwa National Park', description: 'Birthplace of the walking safari', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Apr–May, Aug" },
-      { name: 'Lower Zambezi National Park', description: 'Canoe safaris alongside elephants and hippos', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Sep" },
+      { name: 'Livingstone', description: 'Gateway city to Victoria Falls on the Zambezi', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Apr", panelSummary: "Livingstone is a gateway city to Victoria Falls on the Zambezi. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'South Luangwa National Park', description: 'Birthplace of the walking safari', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Apr–May, Aug", panelSummary: "South Luangwa National Park is the birthplace of the walking safari. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lower Zambezi National Park', description: 'Canoe safaris alongside elephants and hippos', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Sep", panelSummary: "Lower Zambezi National Park offers canoe safaris alongside elephants and hippos. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -12902,7 +12906,7 @@ export const countries: Record<string, CountryData> = {
   MW: {
     name: 'Malawi',
     code: 'MW',
-    summary: 'Malawi is centered on vast Lake Malawi, whose beaches, clear water, islands, and colorful fish create a relaxed inland-coast experience. Mountains, tea estates, wildlife reserves, and friendly towns add variety. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
+    panelSummary: 'Malawi is centered on vast Lake Malawi, whose beaches, clear water, islands, and colorful fish create a relaxed inland-coast experience. Mountains, tea estates, wildlife reserves, and friendly towns add variety. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇲🇼',
     flagColors: ['#000000', '#CE1126', '#339E35'],
     continent: 'Africa',
@@ -12915,9 +12919,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [243, 203, 189, 92, 25, 9, 6, 4, 3, 16, 60, 195],
     bestTimeToVisit: 'May–October dry season — cool, clear, and great for lake and safari trips',
     popularPlaces: [
-      { name: 'Lake Malawi', description: 'Africa’s third-largest lake with hundreds of endemic cichlid fish', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
-      { name: 'Liwonde National Park', description: 'Restored park with elephants, hippos, and river safaris', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Sep–Oct" },
-      { name: 'Mount Mulanje', description: 'Granite massif rising above tea estates', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Lake Malawi', description: 'Africa’s third-largest lake with hundreds of endemic cichlid fish', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct", panelSummary: "Lake Malawi offers africa’s third-largest lake with hundreds of endemic cichlid fish. It is a strong choice for travelers drawn to dramatic scenery, active days outdoors, and landscapes that feel far removed from ordinary routines." },
+      { name: 'Liwonde National Park', description: 'Restored park with elephants, hippos, and river safaris', bestWeatherMonths: "Apr–Aug", goodWeatherMonths: "Sep–Oct", panelSummary: "Liwonde National Park is a restored park with elephants, hippos, and river safaris. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Mount Mulanje', description: 'Granite massif rising above tea estates', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Mount Mulanje offers granite massif rising above tea estates. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -12981,7 +12985,7 @@ export const countries: Record<string, CountryData> = {
   CI: {
     name: 'Côte d’Ivoire',
     code: 'CI',
-    summary: 'Côte d’Ivoire combines energetic cities, Atlantic beaches, forests, music, food, and strong regional cultures. Abidjan is the economic and creative center, while Grand-Bassam, Yamoussoukro, national parks, and traditional villages offer history and nature. Ivorian music, dance, fashion, and cuisine have wide influence across West Africa.',
+    panelSummary: 'Côte d’Ivoire combines energetic cities, Atlantic beaches, forests, music, food, and strong regional cultures. Abidjan is the economic and creative center, while Grand-Bassam, Yamoussoukro, national parks, and traditional villages offer history and nature. Ivorian music, dance, fashion, and cuisine have wide influence across West Africa.',
     flagEmoji: '🇨🇮',
     flagColors: ['#F77F00', '#FFFFFF', '#009E60'],
     continent: 'Africa',
@@ -12994,9 +12998,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [13, 34, 79, 123, 150, 181, 148, 155, 187, 153, 59, 20],
     bestTimeToVisit: 'November–February dry season — warm, less humid, and best for coastal travel',
     popularPlaces: [
-      { name: 'Abidjan', description: 'Lagoon metropolis and West Africa’s cultural capital', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Sep, Dec" },
-      { name: 'Yamoussoukro', description: 'Political capital and home to the Basilica of Our Lady of Peace', bestWeatherMonths: "Jul–Aug, Dec", goodWeatherMonths: "Jan, Nov" },
-      { name: 'Grand-Bassam', description: 'UNESCO colonial-era beach town near Abidjan', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Sep, Dec" },
+      { name: 'Abidjan', description: 'Lagoon metropolis and West Africa’s cultural capital', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Sep, Dec", panelSummary: "Abidjan is a lagoon metropolis and West Africa’s cultural capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Yamoussoukro', description: 'Political capital and home to the Basilica of Our Lady of Peace', bestWeatherMonths: "Jul–Aug, Dec", goodWeatherMonths: "Jan, Nov", panelSummary: "Yamoussoukro is a political capital and home to the Basilica of Our Lady of Peace. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Grand-Bassam', description: 'UNESCO colonial-era beach town near Abidjan', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Sep, Dec", panelSummary: "Grand-Bassam is a UNESCO colonial-era beach town near Abidjan. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -13056,7 +13060,7 @@ export const countries: Record<string, CountryData> = {
   CM: {
     name: 'Cameroon',
     code: 'CM',
-    summary: 'Cameroon is sometimes called Africa in miniature because it contains beaches, rainforest, savanna, mountains, and varied cultures within one country. Douala and Yaoundé are major urban centers, while Mount Cameroon, wildlife reserves, western highlands, and coastal areas offer outdoor experiences.',
+    panelSummary: 'Cameroon is sometimes called Africa in miniature because it contains beaches, rainforest, savanna, mountains, and varied cultures within one country. Douala and Yaoundé are major urban centers, while Mount Cameroon, wildlife reserves, western highlands, and coastal areas offer outdoor experiences.',
     flagEmoji: '🇨🇲',
     flagColors: ['#007A5E', '#CE1126', '#FCD116'],
     continent: 'Africa',
@@ -13069,9 +13073,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [15, 28, 90, 133, 175, 181, 178, 237, 266, 229, 76, 19],
     bestTimeToVisit: 'November–February dry season — best for wildlife, hiking, and coastal beaches',
     popularPlaces: [
-      { name: 'Yaoundé', description: 'Hilly capital city known as the “city of seven hills”', bestWeatherMonths: "Jul–Aug, Dec", goodWeatherMonths: "Jan–Feb" },
-      { name: 'Douala', description: 'Largest city, port, and economic engine', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jun–Nov" },
-      { name: 'Mount Cameroon', description: 'Active volcano and West Africa’s highest peak (4,040 m)', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Jun–Nov" },
+      { name: 'Yaoundé', description: 'Hilly capital city known as the “city of seven hills”', bestWeatherMonths: "Jul–Aug, Dec", goodWeatherMonths: "Jan–Feb", panelSummary: "Yaoundé is a hilly capital city known as the “city of seven hills”. The city works well for travelers who like to combine museums and architecture with neighborhood wandering, regional food, and an active street life." },
+      { name: 'Douala', description: 'Largest city, port, and economic engine', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jun–Nov", panelSummary: "Douala is a largest city, port, and economic engine. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its atmosphere rewards time beyond the main sights." },
+      { name: 'Mount Cameroon', description: 'Active volcano and West Africa’s highest peak (4,040 m)', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Jun–Nov", panelSummary: "Mount Cameroon offers active volcano and West Africa’s highest peak (4,040 m). It is a strong choice for travelers drawn to dramatic scenery, active days outdoors, and landscapes that feel far removed from ordinary routines." },
     ],
     attractions: [
       {
@@ -13136,7 +13140,7 @@ export const countries: Record<string, CountryData> = {
   AO: {
     name: 'Angola',
     code: 'AO',
-    summary: 'Angola offers Atlantic beaches, dramatic escarpments, waterfalls, desert landscapes, and Portuguese-influenced cities. Luanda is the main gateway, while Kalandula Falls, the Namib Desert, and highland regions reveal the country’s scale and natural beauty. That mix gives travelers plenty to discover.',
+    panelSummary: 'Angola offers Atlantic beaches, dramatic escarpments, waterfalls, desert landscapes, and Portuguese-influenced cities. Luanda is the main gateway, while Kalandula Falls, the Namib Desert, and highland regions reveal the country’s scale and natural beauty. That mix gives travelers plenty to discover.',
     flagEmoji: '🇦🇴',
     flagColors: ['#CE1126', '#000000', '#FFCB00'],
     continent: 'Africa',
@@ -13149,9 +13153,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [162, 149, 181, 112, 17, 1, 1, 4, 22, 77, 148, 166],
     bestTimeToVisit: 'May–October dry season — cool coast, clear skies, and open safari roads',
     popularPlaces: [
-      { name: 'Luanda', description: 'Coastal capital with Portuguese-era forts and a modern skyline', bestWeatherMonths: "May–Dec", goodWeatherMonths: "Jan–Feb" },
-      { name: 'Kissama National Park', description: 'Restored wildlife park near Luanda', bestWeatherMonths: "Jan, May–Oct, Dec", goodWeatherMonths: "Feb" },
-      { name: 'Lubango', description: 'Highland city near the dramatic Serra da Leba pass', bestWeatherMonths: "Jan–Feb, Apr–Dec", goodWeatherMonths: "Mar" },
+      { name: 'Luanda', description: 'Coastal capital with Portuguese-era forts and a modern skyline', bestWeatherMonths: "May–Dec", goodWeatherMonths: "Jan–Feb", panelSummary: "Luanda is a coastal capital with Portuguese-era forts and a modern skyline. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Kissama National Park', description: 'Restored wildlife park near Luanda', bestWeatherMonths: "Jan, May–Oct, Dec", goodWeatherMonths: "Feb", panelSummary: "Kissama National Park is a restored wildlife park near Luanda. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time here feels closely connected to the landscape." },
+      { name: 'Lubango', description: 'Highland city near the dramatic Serra da Leba pass', bestWeatherMonths: "Jan–Feb, Apr–Dec", goodWeatherMonths: "Mar", panelSummary: "Lubango is a highland city near the dramatic Serra da Leba pass. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -13215,7 +13219,7 @@ export const countries: Record<string, CountryData> = {
   CV: {
     name: 'Cape Verde',
     code: 'CV',
-    summary: 'Cape Verde is an Atlantic island nation of volcanic peaks, dry landscapes, beaches, music, and a culture shaped by African and Portuguese influences. Sal and Boa Vista attract beach travelers, while Santo Antão and Fogo offer hiking and dramatic scenery.',
+    panelSummary: 'Cape Verde is an Atlantic island nation of volcanic peaks, dry landscapes, beaches, music, and a culture shaped by African and Portuguese influences. Sal and Boa Vista attract beach travelers, while Santo Antão and Fogo offer hiking and dramatic scenery.',
     flagEmoji: '🇨🇻',
     flagColors: ['#003893', '#CF2027', '#F7D116'],
     continent: 'Africa',
@@ -13228,9 +13232,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [7, 5, 3, 5, 5, 5, 13, 37, 55, 36, 9, 7],
     bestTimeToVisit: 'November–June for warm, dry days and reliable trade winds for kitesurfing',
     popularPlaces: [
-      { name: 'Sal', description: 'Flat island of white-sand beaches and salt pans at Pedra de Lume', bestWeatherMonths: "Jan–Jul, Nov–Dec", goodWeatherMonths: "Aug–Oct" },
-      { name: 'Santo Antão', description: 'Green mountainous island of dramatic hiking trails', bestWeatherMonths: "Jan–Dec" },
-      { name: 'São Vicente', description: 'Home of Mindelo, the country’s cultural and music capital', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Sal', description: 'Flat island of white-sand beaches and salt pans at Pedra de Lume', bestWeatherMonths: "Jan–Jul, Nov–Dec", goodWeatherMonths: "Aug–Oct", panelSummary: "Sal is a flat island of white-sand beaches and salt pans at Pedra de Lume. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Santo Antão', description: 'Green mountainous island of dramatic hiking trails', bestWeatherMonths: "Jan–Dec", panelSummary: "Santo Antão is a green mountainous island of dramatic hiking trails. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'São Vicente', description: 'Home of Mindelo, the country’s cultural and music capital', bestWeatherMonths: "Jan–Dec", panelSummary: "São Vicente is home to Mindelo, the country’s cultural and music capital. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
     attractions: [
       {
@@ -13295,7 +13299,7 @@ export const countries: Record<string, CountryData> = {
   GA: {
     name: 'Gabon',
     code: 'GA',
-    summary: 'Gabon is one of Africa’s most forested countries, known for national parks, Atlantic beaches, wildlife, and low visitor numbers. Loango offers rare combinations of rainforest and coast, while Ivindo and Lopé protect elephants, gorillas, and other species.',
+    panelSummary: 'Gabon is one of Africa’s most forested countries, known for national parks, Atlantic beaches, wildlife, and low visitor numbers. Loango offers rare combinations of rainforest and coast, while Ivindo and Lopé protect elephants, gorillas, and other species.',
     flagEmoji: '🇬🇦',
     flagColors: ['#009E60', '#FCD116', '#3A75C4'],
     continent: 'Africa',
@@ -13308,9 +13312,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [148, 160, 221, 207, 178, 45, 13, 21, 116, 292, 289, 183],
     bestTimeToVisit: 'June–August dry season — best for wildlife viewing and coastal beaches',
     popularPlaces: [
-      { name: 'Libreville', description: 'Seaside capital on the Estuaire coast', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep" },
-      { name: 'Loango National Park', description: '“Land of the surfing hippos” where forest meets Atlantic beaches', bestWeatherMonths: "Jun–Sep" },
-      { name: 'Lopé National Park', description: 'UNESCO park of savanna, rainforest, and rock art', bestWeatherMonths: "Jun–Aug" },
+      { name: 'Libreville', description: 'Seaside capital on the Estuaire coast', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep", panelSummary: "Libreville is a seaside capital on the Estuaire coast. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Loango National Park', description: '“Land of the surfing hippos” where forest meets Atlantic beaches', bestWeatherMonths: "Jun–Sep", panelSummary: "Loango National Park is a “Land of the surfing hippos” where forest meets Atlantic beaches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Lopé National Park', description: 'UNESCO park of savanna, rainforest, and rock art', bestWeatherMonths: "Jun–Aug", panelSummary: "Lopé National Park is a UNESCO park of savanna, rainforest, and rock art. Travelers who enjoy understanding how places evolved will find architecture, traditions, and everyday details that bring the larger historical story to life." },
     ],
     attractions: [
       {
@@ -13366,7 +13370,7 @@ export const countries: Record<string, CountryData> = {
   ML: {
     name: 'Mali',
     code: 'ML',
-    summary: 'Mali has an extraordinary cultural legacy shaped by ancient empires, desert trade, music, mud-brick architecture, and cities such as Timbuktu, Djenné, and Bamako. The Niger River and Dogon region are also central to its identity.',
+    panelSummary: 'Mali has an extraordinary cultural legacy shaped by ancient empires, desert trade, music, mud-brick architecture, and cities such as Timbuktu, Djenné, and Bamako. The Niger River and Dogon region are also central to its identity.',
     flagEmoji: '🇲🇱',
     flagColors: ['#14B53A', '#FCD116', '#CE1126'],
     continent: 'Africa',
@@ -13379,9 +13383,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 1, 4, 15, 37, 80, 110, 61, 18, 1, 0],
     bestTimeToVisit: 'November–February cool dry season — hot but manageable, with clear skies',
     popularPlaces: [
-      { name: 'Bamako', description: 'Riverside capital on the Niger with lively markets and music', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Oct–Nov" },
-      { name: 'Timbuktu', description: 'Legendary Saharan crossroads and center of Islamic scholarship', bestWeatherMonths: "Jan", goodWeatherMonths: "Dec" },
-      { name: 'Djenné', description: 'Home of the Great Mosque, the world’s largest mud-brick building', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb" },
+      { name: 'Bamako', description: 'Riverside capital on the Niger with lively markets and music', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Oct–Nov", panelSummary: "Bamako is a riverside capital on the Niger with lively markets and music. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Timbuktu', description: 'Legendary Saharan crossroads and center of Islamic scholarship', bestWeatherMonths: "Jan", goodWeatherMonths: "Dec", panelSummary: "Timbuktu is a legendary Saharan crossroads and center of Islamic scholarship. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Djenné', description: 'Home of the Great Mosque, the world’s largest mud-brick building', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb", panelSummary: "Djenné is home to the Great Mosque, the world’s largest mud-brick building. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -13447,7 +13451,7 @@ export const countries: Record<string, CountryData> = {
   BF: {
     name: 'Burkina Faso',
     code: 'BF',
-    summary: 'Burkina Faso is known for music, film, crafts, markets, and strong community traditions. Ouagadougou is a major cultural center, hosting important African arts events, while Bobo-Dioulasso offers historic architecture and live music. That mix gives travelers plenty to discover.',
+    panelSummary: 'Burkina Faso is known for music, film, crafts, markets, and strong community traditions. Ouagadougou is a major cultural center, hosting important African arts events, while Bobo-Dioulasso offers historic architecture and live music. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇫',
     flagColors: ['#EF2B2D', '#009E49', '#FCD116'],
     continent: 'Africa',
@@ -13461,9 +13465,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'November–February is the cooler dry season and the most comfortable weather window for travel.',
     bestVisitMonths: [11, 12, 1, 2],
     popularPlaces: [
-      { name: 'Ouagadougou', description: 'Capital and host of FESPACO, Africa’s largest film festival', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct" },
-      { name: 'Bobo-Dioulasso', description: 'Cultural second city with a famous mud mosque', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug, Oct–Nov" },
-      { name: 'Banfora', description: 'Southwestern town near waterfalls and rock domes', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Nov" },
+      { name: 'Ouagadougou', description: 'Capital and host of FESPACO, Africa’s largest film festival', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct", panelSummary: "Ouagadougou is a capital and host of FESPACO, Africa’s largest film festival. Visitors can pair the major landmarks with local food, lively streets, cultural venues, and quieter corners that reveal a stronger sense of place." },
+      { name: 'Bobo-Dioulasso', description: 'Cultural second city with a famous mud mosque', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug, Oct–Nov", panelSummary: "Bobo-Dioulasso is a cultural second city with a famous mud mosque. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Banfora', description: 'Southwestern town near waterfalls and rock domes', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Nov", panelSummary: "Banfora is a southwestern town near waterfalls and rock domes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -13528,7 +13532,7 @@ export const countries: Record<string, CountryData> = {
   BJ: {
     name: 'Benin',
     code: 'BJ',
-    summary: 'Benin offers royal history, Atlantic coast, wildlife parks, and traditions closely associated with Vodun. Abomey, Ouidah, Ganvié, and Pendjari National Park are key attractions. Markets, festivals, music, and distinctive spiritual practices give the country strong cultural depth, though northern security conditions require careful attention.',
+    panelSummary: 'Benin offers royal history, Atlantic coast, wildlife parks, and traditions closely associated with Vodun. Abomey, Ouidah, Ganvié, and Pendjari National Park are key attractions. Markets, festivals, music, and distinctive spiritual practices give the country strong cultural depth, though northern security conditions require careful attention.',
     flagEmoji: '🇧🇯',
     flagColors: ['#008751', '#FCD116', '#E8112D'],
     continent: 'Africa',
@@ -13541,9 +13545,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [2, 9, 28, 64, 121, 145, 178, 211, 191, 91, 8, 3],
     bestTimeToVisit: 'November–February dry season — coolest along the coast, ideal for Vodun Festival in January',
     popularPlaces: [
-      { name: 'Cotonou', description: 'Coastal economic hub and gateway to Benin', bestWeatherMonths: "Aug" },
-      { name: 'Ouidah', description: 'Historic slave-trade port and heart of Vodun culture', bestWeatherMonths: "Aug" },
-      { name: 'Ganvié', description: 'Stilt village of 20,000+ people on Lake Nokoué', bestWeatherMonths: "Aug" },
+      { name: 'Cotonou', description: 'Coastal economic hub and gateway to Benin', bestWeatherMonths: "Aug", panelSummary: "Cotonou is a coastal economic hub and gateway to Benin. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
+      { name: 'Ouidah', description: 'Historic slave-trade port and heart of Vodun culture', bestWeatherMonths: "Aug", panelSummary: "Ouidah is a historic slave-trade port and heart of Vodun culture. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Ganvié', description: 'Stilt village of 20,000+ people on Lake Nokoué', bestWeatherMonths: "Aug", panelSummary: "Ganvié is a stilt village of 20,000+ people on Lake Nokoué. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -13606,7 +13610,7 @@ export const countries: Record<string, CountryData> = {
   TG: {
     name: 'Togo',
     code: 'TG',
-    summary: 'Togo is a narrow West African country with beaches, markets, mountains, villages, and varied cultural traditions. Lomé is known for its waterfront and energetic markets, while Kpalimé, northern landscapes, and local craft centers offer different experiences.',
+    panelSummary: 'Togo is a narrow West African country with beaches, markets, mountains, villages, and varied cultural traditions. Lomé is known for its waterfront and energetic markets, while Kpalimé, northern landscapes, and local craft centers offer different experiences.',
     flagEmoji: '🇹🇬',
     flagColors: ['#006A4E', '#FFCE00', '#D21034'],
     continent: 'Africa',
@@ -13619,9 +13623,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [6, 20, 55, 98, 136, 162, 176, 187, 214, 135, 24, 8],
     bestTimeToVisit: 'November–February dry season — great beach weather in Lomé',
     popularPlaces: [
-      { name: 'Lomé', description: 'Palm-lined beach capital with a huge open-air market', bestWeatherMonths: "Aug", goodWeatherMonths: "Jul" },
-      { name: 'Kpalimé', description: 'Green hill town near waterfalls and butterfly forests', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Nov–Dec" },
-      { name: 'Koutammakou', description: 'UNESCO land of the Batammariba and their tower-houses', bestWeatherMonths: "Jan, Jul–Aug, Nov–Dec", goodWeatherMonths: "Feb–Mar, May–Jun, Sep–Oct" },
+      { name: 'Lomé', description: 'Palm-lined beach capital with a huge open-air market', bestWeatherMonths: "Aug", goodWeatherMonths: "Jul", panelSummary: "Lomé is a palm-lined beach capital with a huge open-air market. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Kpalimé', description: 'Green hill town near waterfalls and butterfly forests', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Jul, Nov–Dec", panelSummary: "Kpalimé is a green hill town near waterfalls and butterfly forests. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Koutammakou', description: 'UNESCO land of the Batammariba and their tower-houses', bestWeatherMonths: "Jan, Jul–Aug, Nov–Dec", goodWeatherMonths: "Feb–Mar, May–Jun, Sep–Oct", panelSummary: "Koutammakou offers UNESCO land of the Batammariba and their tower-houses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Small details make the history feel especially vivid." },
     ],
     attractions: [
       {
@@ -13685,7 +13689,7 @@ export const countries: Record<string, CountryData> = {
   LR: {
     name: 'Liberia',
     code: 'LR',
-    summary: 'Liberia has Atlantic beaches, rainforest, historic ties to the United States, and a distinct culture shaped by Indigenous communities and descendants of formerly enslaved settlers. Monrovia is the main center, while Robertsport, Sapo National Park, and coastal areas offer nature and surfing.',
+    panelSummary: 'Liberia has Atlantic beaches, rainforest, historic ties to the United States, and a distinct culture shaped by Indigenous communities and descendants of formerly enslaved settlers. Monrovia is the main center, while Robertsport, Sapo National Park, and coastal areas offer nature and surfing.',
     flagEmoji: '🇱🇷',
     flagColors: ['#BF0A30', '#FFFFFF', '#002868'],
     continent: 'Africa',
@@ -13698,9 +13702,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [34, 54, 105, 139, 237, 336, 317, 344, 414, 290, 131, 51],
     bestTimeToVisit: 'November–April dry season — the rainy season is one of the wettest in Africa',
     popularPlaces: [
-      { name: 'Monrovia', description: 'Atlantic capital named after US President James Monroe', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Jul–Sep" },
-      { name: 'Robertsport', description: 'Laid-back surf town on Lake Piso', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug" },
-      { name: 'Sapo National Park', description: 'Rainforest home to pygmy hippos and forest elephants', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Sep" },
+      { name: 'Monrovia', description: 'Atlantic capital named after US President James Monroe', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Jul–Sep", panelSummary: "Monrovia is an Atlantic capital named after US President James Monroe. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Robertsport', description: 'Laid-back surf town on Lake Piso', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug", panelSummary: "Robertsport is a laid-back surf town on Lake Piso. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Even quiet moments outdoors feel worthwhile here." },
+      { name: 'Sapo National Park', description: 'Rainforest home to pygmy hippos and forest elephants', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Sep", panelSummary: "Sapo National Park is a rainforest home to pygmy hippos and forest elephants. It is especially appealing to nature lovers seeking wildlife encounters, open landscapes, and memorable experiences led by the rhythms of the natural world." },
     ],
     attractions: [
       {
@@ -13765,7 +13769,7 @@ export const countries: Record<string, CountryData> = {
   SL: {
     name: 'Sierra Leone',
     code: 'SL',
-    summary: 'Sierra Leone combines beautiful Atlantic beaches, rainforest, wildlife, and a resilient culture shaped by music, food, and community. Freetown’s history and markets are central, while the Banana Islands, Tacugama sanctuary, and inland landscapes broaden the experience.',
+    panelSummary: 'Sierra Leone combines beautiful Atlantic beaches, rainforest, wildlife, and a resilient culture shaped by music, food, and community. Freetown’s history and markets are central, while the Banana Islands, Tacugama sanctuary, and inland landscapes broaden the experience.',
     flagEmoji: '🇸🇱',
     flagColors: ['#1EB53A', '#FFFFFF', '#0072C6'],
     continent: 'Africa',
@@ -13778,9 +13782,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [7, 17, 40, 101, 218, 313, 443, 612, 442, 318, 122, 22],
     bestTimeToVisit: 'November–April dry season — August is one of the wettest months on earth',
     popularPlaces: [
-      { name: 'Freetown', description: 'Hilly Atlantic capital founded as a home for freed slaves', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov" },
-      { name: 'Tiwai Island', description: 'Rainforest wildlife sanctuary with chimpanzees and pygmy hippos', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug" },
-      { name: 'Banana Islands', description: 'Small archipelago with reefs and colonial ruins', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov" },
+      { name: 'Freetown', description: 'Hilly Atlantic capital founded as a home for freed slaves', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov", panelSummary: "Freetown is a hilly Atlantic capital founded as a home for freed slaves. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Tiwai Island', description: 'Rainforest wildlife sanctuary with chimpanzees and pygmy hippos', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Aug", panelSummary: "Tiwai Island offers rainforest wildlife sanctuary with chimpanzees and pygmy hippos. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Banana Islands', description: 'Small archipelago with reefs and colonial ruins', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov", panelSummary: "Banana Islands is a small archipelago with reefs and colonial ruins. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -13850,7 +13854,7 @@ export const countries: Record<string, CountryData> = {
   GM: {
     name: 'The Gambia',
     code: 'GM',
-    summary: 'The Gambia is a small country centered on the Gambia River, with Atlantic beaches, birdlife, villages, markets, and accessible cultural experiences. Coastal resorts provide easy entry, while river trips and inland communities show more of local life.',
+    panelSummary: 'The Gambia is a small country centered on the Gambia River, with Atlantic beaches, birdlife, villages, markets, and accessible cultural experiences. Coastal resorts provide easy entry, while river trips and inland communities show more of local life.',
     flagEmoji: '🇬🇲',
     flagColors: ['#CE1126', '#0C1C8C', '#3A7728'],
     continent: 'Africa',
@@ -13863,9 +13867,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 0, 8, 86, 206, 344, 262, 84, 3, 0],
     bestTimeToVisit: 'November–April dry season — European “winter sun” favorite for beach travel',
     popularPlaces: [
-      { name: 'Banjul', description: 'Tiny capital on an island at the mouth of the Gambia River', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Jun, Oct–Nov" },
-      { name: 'Serekunda / Kololi', description: 'Country’s largest urban area and beach resort strip', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Jun, Oct–Nov" },
-      { name: 'Janjanbureh (Georgetown)', description: 'Historic river town in the country’s interior', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct–Nov" },
+      { name: 'Banjul', description: 'Tiny capital on an island at the mouth of the Gambia River', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Jun, Oct–Nov", panelSummary: "Banjul is a tiny capital on an island at the mouth of the Gambia River. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Serekunda / Kololi', description: 'Country’s largest urban area and beach resort strip', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Jun, Oct–Nov", panelSummary: "Serekunda / Kololi offers country’s largest urban area and beach resort strip. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Janjanbureh (Georgetown)', description: 'Historic river town in the country’s interior', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Oct–Nov", panelSummary: "Janjanbureh (Georgetown) is a historic river town in the country’s interior. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -13926,7 +13930,7 @@ export const countries: Record<string, CountryData> = {
   CD: {
     name: 'Democratic Republic of the Congo',
     code: 'CD',
-    summary: 'The Democratic Republic of the Congo contains immense rainforest, major rivers, volcanoes, rare wildlife, and extraordinary cultural diversity. Virunga, the Congo Basin, and the music of Kinshasa are internationally significant. Yet conflict, weak infrastructure, and political instability make travel difficult and dangerous in many regions.',
+    panelSummary: 'The Democratic Republic of the Congo contains immense rainforest, major rivers, volcanoes, rare wildlife, and extraordinary cultural diversity. Virunga, the Congo Basin, and the music of Kinshasa are internationally significant. Yet conflict, weak infrastructure, and political instability make travel difficult and dangerous in many regions.',
     flagEmoji: '🇨🇩',
     flagColors: ['#007FFF', '#F7D618', '#CE1021'],
     continent: 'Africa',
@@ -13939,9 +13943,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [129, 117, 163, 151, 107, 63, 62, 90, 122, 167, 175, 154],
     bestTimeToVisit: 'June–September dry season — safer roads and better trekking conditions',
     popularPlaces: [
-      { name: 'Kinshasa', description: 'One of Africa’s largest cities, on the Congo River', bestWeatherMonths: "Jun–Sep" },
-      { name: 'Virunga National Park', description: 'Africa’s oldest national park and home to mountain gorillas', bestWeatherMonths: "Jun–Jul, Dec", goodWeatherMonths: "Jan–May, Aug–Sep, Nov" },
-      { name: 'Goma', description: 'Lakeside city at the foot of Mount Nyiragongo', bestWeatherMonths: "Feb, Jun–Sep", goodWeatherMonths: "Jan, Mar–May, Oct–Dec" },
+      { name: 'Kinshasa', description: 'One of Africa’s largest cities, on the Congo River', bestWeatherMonths: "Jun–Sep", panelSummary: "Kinshasa is one of Africa’s largest cities, on the Congo River. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Virunga National Park', description: 'Africa’s oldest national park and home to mountain gorillas', bestWeatherMonths: "Jun–Jul, Dec", goodWeatherMonths: "Jan–May, Aug–Sep, Nov", panelSummary: "Virunga National Park offers africa’s oldest national park and home to mountain gorillas. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Goma', description: 'Lakeside city at the foot of Mount Nyiragongo', bestWeatherMonths: "Feb, Jun–Sep", goodWeatherMonths: "Jan, Mar–May, Oct–Dec", panelSummary: "Goma is a lakeside city at the foot of Mount Nyiragongo. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -14007,7 +14011,7 @@ export const countries: Record<string, CountryData> = {
   CG: {
     name: 'Republic of the Congo',
     code: 'CG',
-    summary: 'The Republic of the Congo offers vast rainforest, rivers, wildlife, and relatively little tourism. Brazzaville has a relaxed cultural scene across the Congo River from Kinshasa, while Odzala-Kokoua National Park is known for gorillas and forest ecosystems.',
+    panelSummary: 'The Republic of the Congo offers vast rainforest, rivers, wildlife, and relatively little tourism. Brazzaville has a relaxed cultural scene across the Congo River from Kinshasa, while Odzala-Kokoua National Park is known for gorillas and forest ecosystems.',
     flagEmoji: '🇨🇬',
     flagColors: ['#009543', '#FBDE4A', '#DC241F'],
     continent: 'Africa',
@@ -14020,9 +14024,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [109, 125, 166, 177, 158, 70, 51, 72, 130, 205, 210, 156],
     bestTimeToVisit: 'June–September long dry season — best for wildlife viewing in the rainforest',
     popularPlaces: [
-      { name: 'Brazzaville', description: 'Riverside capital facing Kinshasa across the Congo River', bestWeatherMonths: "Jun–Sep" },
-      { name: 'Pointe-Noire', description: 'Atlantic port city and main beach destination', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct" },
-      { name: 'Odzala-Kokoua National Park', description: 'Rainforest reserve famous for western lowland gorillas', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jan, Jun, Dec" },
+      { name: 'Brazzaville', description: 'Riverside capital facing Kinshasa across the Congo River', bestWeatherMonths: "Jun–Sep", panelSummary: "Brazzaville is a riverside capital facing Kinshasa across the Congo River. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Pointe-Noire', description: 'Atlantic port city and main beach destination', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "May, Oct", panelSummary: "Pointe-Noire is an Atlantic port city and main beach destination. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
+      { name: 'Odzala-Kokoua National Park', description: 'Rainforest reserve famous for western lowland gorillas', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jan, Jun, Dec", panelSummary: "Odzala-Kokoua National Park is a rainforest reserve famous for western lowland gorillas. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
     attractions: [
       {
@@ -14091,7 +14095,7 @@ export const countries: Record<string, CountryData> = {
   LY: {
     name: 'Libya',
     code: 'LY',
-    summary: 'Libya contains extraordinary Roman and Greek ruins, Mediterranean coastline, desert oases, and Saharan landscapes. Leptis Magna, Sabratha, and the old city of Tripoli reflect its deep history. Travelers can combine beautiful coastal scenery with local food, culture, and time outdoors.',
+    panelSummary: 'Libya contains extraordinary Roman and Greek ruins, Mediterranean coastline, desert oases, and Saharan landscapes. Leptis Magna, Sabratha, and the old city of Tripoli reflect its deep history. Travelers can combine beautiful coastal scenery with local food, culture, and time outdoors.',
     flagEmoji: '🇱🇾',
     flagColors: ['#E70013', '#000000', '#239E46'],
     continent: 'Africa',
@@ -14104,9 +14108,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [8, 6, 4, 2, 1, 0, 0, 1, 2, 4, 3, 7],
     bestTimeToVisit: 'October–April cool season — desert temperatures are extreme in summer',
     popularPlaces: [
-      { name: 'Tripoli', description: 'Mediterranean capital with a walled medina and Ottoman mosques', bestWeatherMonths: "Jan–May, Oct–Dec" },
-      { name: 'Benghazi', description: 'Historic port and second city on the Gulf of Sidra', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun–Jul, Sep" },
-      { name: 'Ghadames', description: '“Pearl of the Desert” — UNESCO Berber oasis town', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Tripoli', description: 'Mediterranean capital with a walled medina and Ottoman mosques', bestWeatherMonths: "Jan–May, Oct–Dec", panelSummary: "Tripoli is a mediterranean capital with a walled medina and Ottoman mosques. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Benghazi', description: 'Historic port and second city on the Gulf of Sidra', bestWeatherMonths: "Jan–May, Oct–Dec", goodWeatherMonths: "Jun–Jul, Sep", panelSummary: "Benghazi is a historic port and second city on the Gulf of Sidra. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Ghadames', description: '“Pearl of the Desert” — UNESCO Berber oasis town', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr, Oct", panelSummary: "Ghadames is a “Pearl of the Desert” — UNESCO Berber oasis town. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
     attractions: [
       {
@@ -14175,7 +14179,7 @@ export const countries: Record<string, CountryData> = {
   SD: {
     name: 'Sudan',
     code: 'SD',
-    summary: 'Sudan has a remarkable Nile Valley heritage, including more pyramids than Egypt, ancient Nubian sites, desert landscapes, and Red Sea diving. Khartoum and the archaeological regions around Meroë once formed the main travel circuit. The result is varied and rewarding.',
+    panelSummary: 'Sudan has a remarkable Nile Valley heritage, including more pyramids than Egypt, ancient Nubian sites, desert landscapes, and Red Sea diving. Khartoum and the archaeological regions around Meroë once formed the main travel circuit. The result is varied and rewarding.',
     flagEmoji: '🇸🇩',
     flagColors: ['#D21034', '#000000', '#007A3D'],
     continent: 'Africa',
@@ -14188,9 +14192,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 2, 14, 27, 66, 89, 40, 14, 1, 0],
     bestTimeToVisit: 'November–February cool dry season — extreme heat the rest of the year',
     popularPlaces: [
-      { name: 'Khartoum', description: 'Capital at the confluence of the Blue and White Niles', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb" },
-      { name: 'Meroë', description: 'UNESCO desert site with more pyramids than all of Egypt', bestWeatherMonths: "Jan", goodWeatherMonths: "Dec" },
-      { name: 'Port Sudan', description: 'Red Sea coast known for coral reefs and dive sites', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar" },
+      { name: 'Khartoum', description: 'Capital at the confluence of the Blue and White Niles', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb", panelSummary: "Khartoum is a capital at the confluence of the Blue and White Niles. It is well suited to curious travelers who enjoy combining landmark sights with local culture, regional food, scenery, and time to explore." },
+      { name: 'Meroë', description: 'UNESCO desert site with more pyramids than all of Egypt', bestWeatherMonths: "Jan", goodWeatherMonths: "Dec", panelSummary: "Meroë is a UNESCO desert site with more pyramids than all of Egypt. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Port Sudan', description: 'Red Sea coast known for coral reefs and dive sites', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar", panelSummary: "Port Sudan is a red Sea coast known for coral reefs and dive sites. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -14256,7 +14260,7 @@ export const countries: Record<string, CountryData> = {
   LS: {
     name: 'Lesotho',
     code: 'LS',
-    summary: 'Lesotho is a high-altitude kingdom of mountains, valleys, waterfalls, and traditional Basotho culture. Entirely surrounded by South Africa, it offers hiking, pony trekking, scenic drives, and winter snow in some areas. That mix gives travelers plenty to discover.',
+    panelSummary: 'Lesotho is a high-altitude kingdom of mountains, valleys, waterfalls, and traditional Basotho culture. Entirely surrounded by South Africa, it offers hiking, pony trekking, scenic drives, and winter snow in some areas. That mix gives travelers plenty to discover.',
     flagEmoji: '🇱🇸',
     flagColors: ['#00209F', '#009543', '#000000'],
     continent: 'Africa',
@@ -14269,9 +14273,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [133, 106, 99, 53, 26, 14, 10, 17, 30, 74, 98, 124],
     bestTimeToVisit: 'March–May and September–November for mild weather; June–August for snow and skiing',
     popularPlaces: [
-      { name: 'Maseru', description: 'Lowland capital on the Caledon River border', bestWeatherMonths: "Feb–Dec", goodWeatherMonths: "Jan" },
-      { name: 'Sani Pass', description: 'Steep 4x4 pass climbing into the Drakensberg', bestWeatherMonths: "Mar–May, Sep–Nov", goodWeatherMonths: "Jan–Feb, Aug, Dec" },
-      { name: 'Semonkong', description: '“Place of Smoke” — home to Maletsunyane Falls', bestWeatherMonths: "Jan–Apr, Sep–Dec", goodWeatherMonths: "May, Aug" },
+      { name: 'Maseru', description: 'Lowland capital on the Caledon River border', bestWeatherMonths: "Feb–Dec", goodWeatherMonths: "Jan", panelSummary: "Maseru is a lowland capital on the Caledon River border. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Sani Pass', description: 'Steep 4x4 pass climbing into the Drakensberg', bestWeatherMonths: "Mar–May, Sep–Nov", goodWeatherMonths: "Jan–Feb, Aug, Dec", panelSummary: "Sani Pass offers steep 4x4 pass climbing into the Drakensberg. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Semonkong', description: '“Place of Smoke” — home to Maletsunyane Falls', bestWeatherMonths: "Jan–Apr, Sep–Dec", goodWeatherMonths: "May, Aug", panelSummary: "Semonkong offers “Place of Smoke” — home to Maletsunyane Falls. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -14334,7 +14338,7 @@ export const countries: Record<string, CountryData> = {
   SZ: {
     name: 'Eswatini',
     code: 'SZ',
-    summary: 'Eswatini is a small kingdom of mountains, valleys, wildlife reserves, crafts, and living royal traditions. Mlilwane, Hlane, and the Ezulwini Valley are major attractions, while festivals such as Umhlanga display important cultural customs. That mix gives travelers plenty to discover.',
+    panelSummary: 'Eswatini is a small kingdom of mountains, valleys, wildlife reserves, crafts, and living royal traditions. Mlilwane, Hlane, and the Ezulwini Valley are major attractions, while festivals such as Umhlanga display important cultural customs. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇿',
     flagColors: ['#3E5EB9', '#FFD900', '#B10C0C'],
     continent: 'Africa',
@@ -14347,9 +14351,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [132, 126, 87, 44, 21, 9, 9, 16, 36, 77, 112, 132],
     bestTimeToVisit: 'May–September dry season — cool nights and great safari conditions',
     popularPlaces: [
-      { name: 'Mbabane', description: 'Highland administrative capital in the Dlangeni Hills', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec" },
-      { name: 'Ezulwini Valley', description: '“Valley of Heaven” — cultural and tourist heartland', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec" },
-      { name: 'Hlane Royal National Park', description: 'Country’s largest park, with lions, elephants, and rhinos', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar, Nov" },
+      { name: 'Mbabane', description: 'Highland administrative capital in the Dlangeni Hills', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec", panelSummary: "Mbabane is a highland administrative capital in the Dlangeni Hills. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Ezulwini Valley', description: '“Valley of Heaven” — cultural and tourist heartland', bestWeatherMonths: "Mar–Oct", goodWeatherMonths: "Jan–Feb, Nov–Dec", panelSummary: "Ezulwini Valley is a “Valley of Heaven” — cultural and tourist heartland. It is a strong choice for travelers drawn to dramatic scenery, active days outdoors, and landscapes that feel far removed from ordinary routines." },
+      { name: 'Hlane Royal National Park', description: 'Country’s largest park, with lions, elephants, and rhinos', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar, Nov", panelSummary: "Hlane Royal National Park offers country’s largest park, with lions, elephants, and rhinos. It is especially appealing to nature lovers seeking wildlife encounters, open landscapes, and memorable experiences led by the rhythms of the natural world." },
     ],
     attractions: [
       {
@@ -14404,7 +14408,7 @@ export const countries: Record<string, CountryData> = {
   AG: {
     name: 'Antigua and Barbuda',
     code: 'AG',
-    summary: 'Antigua and Barbuda is known for numerous beaches, clear water, sailing, and a strong maritime history. Antigua offers resorts, historic Nelson’s Dockyard, and scenic viewpoints, while smaller Barbuda is quieter, with long beaches and important bird habitat.',
+    panelSummary: 'Antigua and Barbuda is known for numerous beaches, clear water, sailing, and a strong maritime history. Antigua offers resorts, historic Nelson’s Dockyard, and scenic viewpoints, while smaller Barbuda is quieter, with long beaches and important bird habitat.',
     flagEmoji: '🇦🇬',
     flagColors: ['#CE1126', '#000000', '#FCD116'],
     continent: 'North America',
@@ -14417,9 +14421,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [70, 39, 44, 56, 91, 59, 86, 119, 122, 149, 124, 106],
     bestTimeToVisit: 'December–April dry season — warm, sunny, and outside hurricane peak',
     popularPlaces: [
-      { name: "St. John's", description: 'Colorful Caribbean capital with a busy cruise harbor', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
-      { name: 'Nelson’s Dockyard', description: 'Restored Georgian-era naval base and UNESCO site', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
-      { name: 'Barbuda', description: 'Quiet sister island famed for pink-sand beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Jun" },
+      { name: "St. John's", description: 'Colorful Caribbean capital with a busy cruise harbor', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "St. John's is a colorful Caribbean capital with a busy cruise harbor. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Nelson’s Dockyard', description: 'Restored Georgian-era naval base and UNESCO site', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Nelson’s Dockyard is a restored Georgian-era naval base and UNESCO site. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Barbuda', description: 'Quiet sister island famed for pink-sand beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Jun", panelSummary: "Barbuda is a quiet sister island famed for pink-sand beaches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -14487,7 +14491,7 @@ export const countries: Record<string, CountryData> = {
   BM: {
     name: 'Bermuda',
     code: 'BM',
-    summary: 'Bermuda combines pink-sand beaches, clear Atlantic water, pastel architecture, British traditions, and a compact, polished travel experience. Hamilton and St. George’s offer history and shopping, while caves, coastal trails, and small coves add natural beauty.',
+    panelSummary: 'Bermuda combines pink-sand beaches, clear Atlantic water, pastel architecture, British traditions, and a compact, polished travel experience. Hamilton and St. George’s offer history and shopping, while caves, coastal trails, and small coves add natural beauty.',
     flagEmoji: '🇧🇲',
     flagColors: ['#CF142B', '#FFFFFF', '#00247D'],
     continent: 'North America',
@@ -14500,9 +14504,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [137, 119, 125, 109, 139, 100, 92, 119, 134, 118, 142, 138],
     bestTimeToVisit: 'May–October for warm beach weather; shoulder months are mild and quieter',
     popularPlaces: [
-      { name: 'Hamilton', description: 'Pastel-colored capital with harborfront shops and cafés', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May–Jun, Oct–Dec" },
-      { name: 'St. George’s', description: 'UNESCO-listed 17th-century town in the East End', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May–Jun, Oct–Dec" },
-      { name: 'Royal Naval Dockyard', description: 'Former British base turned tourism hub', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May–Jun, Oct–Dec" },
+      { name: 'Hamilton', description: 'Pastel-colored capital with harborfront shops and cafés', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May–Jun, Oct–Dec", panelSummary: "Hamilton is a pastel-colored capital with harborfront shops and cafés. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'St. George’s', description: 'UNESCO-listed 17th-century town in the East End', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May–Jun, Oct–Dec", panelSummary: "St. George’s is an UNESCO-listed 17th-century town in the East End. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Royal Naval Dockyard', description: 'Former British base turned tourism hub', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May–Jun, Oct–Dec", panelSummary: "Royal Naval Dockyard is a former British base turned tourism hub. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -14566,7 +14570,7 @@ export const countries: Record<string, CountryData> = {
   BN: {
     name: 'Brunei',
     code: 'BN',
-    summary: 'Brunei is a small, wealthy sultanate on Borneo known for grand mosques, water villages, rainforest, and Malay Islamic culture. Bandar Seri Begawan is the main center, while Ulu Temburong National Park offers canopy walks and jungle scenery.',
+    panelSummary: 'Brunei is a small, wealthy sultanate on Borneo known for grand mosques, water villages, rainforest, and Malay Islamic culture. Bandar Seri Begawan is the main center, while Ulu Temburong National Park offers canopy walks and jungle scenery.',
     flagEmoji: '🇧🇳',
     flagColors: ['#F7E017', '#FFFFFF', '#000000'],
     continent: 'Asia',
@@ -14580,9 +14584,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'February–March is typically the driest period; January–May is generally the most favorable broader window.',
     bestVisitMonths: [1, 2, 3, 4, 5],
     popularPlaces: [
-      { name: 'Bandar Seri Begawan', description: 'Compact capital with grand mosques and a stilt-village on the river', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep" },
-      { name: 'Kampong Ayer', description: 'Historic water village of wooden houses on the Brunei River', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep" },
-      { name: 'Ulu Temburong National Park', description: 'Pristine rainforest reached by longboat, with a canopy walk', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep" },
+      { name: 'Bandar Seri Begawan', description: 'Compact capital with grand mosques and a stilt-village on the river', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep", panelSummary: "Bandar Seri Begawan is a compact capital with grand mosques and a stilt-village on the river. It is especially rewarding for travelers who enjoy architecture, food, culture, and the pleasure of exploring distinctive neighborhoods at an unhurried pace." },
+      { name: 'Kampong Ayer', description: 'Historic water village of wooden houses on the Brunei River', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep", panelSummary: "Kampong Ayer is a historic water village of wooden houses on the Brunei River. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Ulu Temburong National Park', description: 'Pristine rainforest reached by longboat, with a canopy walk', bestWeatherMonths: "Jan–Feb, Oct–Dec", goodWeatherMonths: "Mar–Sep", panelSummary: "Ulu Temburong National Park offers pristine rainforest reached by longboat, with a canopy walk. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -14639,7 +14643,7 @@ export const countries: Record<string, CountryData> = {
   DM: {
     name: 'Dominica',
     code: 'DM',
-    summary: 'Dominica is a rugged Caribbean island of rainforest, waterfalls, volcanic landscapes, hot springs, and excellent hiking. Unlike more resort-oriented islands, its appeal is primarily natural and adventurous. Morne Trois Pitons National Park, the Waitukubuli Trail, diving, and strong Creole and Kalinago heritage define the experience.',
+    panelSummary: 'Dominica is a rugged Caribbean island of rainforest, waterfalls, volcanic landscapes, hot springs, and excellent hiking. Unlike more resort-oriented islands, its appeal is primarily natural and adventurous. Morne Trois Pitons National Park, the Waitukubuli Trail, diving, and strong Creole and Kalinago heritage define the experience.',
     flagEmoji: '🇩🇲',
     flagColors: ['#006B3F', '#FCD116', '#000000'],
     continent: 'North America',
@@ -14652,9 +14656,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [138, 86, 99, 115, 171, 177, 124, 235, 255, 276, 318, 202],
     bestTimeToVisit: 'February–April is driest — outside hurricane season and peak rains',
     popularPlaces: [
-      { name: 'Roseau', description: 'Small seaside capital with a lively market and Creole architecture', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
-      { name: 'Morne Trois Pitons National Park', description: 'UNESCO rainforest with volcanic peaks and lakes', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
-      { name: 'Kalinago Territory', description: 'Home to the Caribbean’s last Indigenous Kalinago community', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Roseau', description: 'Small seaside capital with a lively market and Creole architecture', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Roseau is a small seaside capital with a lively market and Creole architecture. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
+      { name: 'Morne Trois Pitons National Park', description: 'UNESCO rainforest with volcanic peaks and lakes', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Morne Trois Pitons National Park offers UNESCO rainforest with volcanic peaks and lakes. The pleasure lies in combining major historic sights with local food, walkable streets, and the smaller details that reveal the destination’s character." },
+      { name: 'Kalinago Territory', description: 'Home to the Caribbean’s last Indigenous Kalinago community', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Kalinago Territory offers home to the Caribbean’s last Indigenous Kalinago community. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -14714,7 +14718,7 @@ export const countries: Record<string, CountryData> = {
   HT: {
     name: 'Haiti',
     code: 'HT',
-    summary: 'Haiti has a powerful artistic, musical, religious, and revolutionary heritage, along with mountains, historic architecture, and Caribbean coastline. The Citadelle and Sans-Souci Palace are major cultural landmarks. Travelers can combine beautiful coastal scenery with local food, culture, and time outdoors.',
+    panelSummary: 'Haiti has a powerful artistic, musical, religious, and revolutionary heritage, along with mountains, historic architecture, and Caribbean coastline. The Citadelle and Sans-Souci Palace are major cultural landmarks. Travelers can combine beautiful coastal scenery with local food, culture, and time outdoors.',
     flagEmoji: '🇭🇹',
     flagColors: ['#00209F', '#D21034', '#FFFFFF'],
     continent: 'North America',
@@ -14727,9 +14731,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [41, 54, 78, 124, 221, 116, 122, 156, 188, 213, 128, 56],
     bestTimeToVisit: 'November–March dry season — check State Dept advisories before planning',
     popularPlaces: [
-      { name: 'Port-au-Prince', description: 'Capital with vibrant art scene and Iron Market bazaar', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
-      { name: 'Cap-Haïtien', description: 'Historic northern city near colonial and revolutionary sites', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar" },
-      { name: 'Jacmel', description: 'Southern arts town famous for Carnival papier-mâché masks', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar" },
+      { name: 'Port-au-Prince', description: 'Capital with vibrant art scene and Iron Market bazaar', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov", panelSummary: "Port-au-Prince is a capital with vibrant art scene and Iron Market bazaar. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Cap-Haïtien', description: 'Historic northern city near colonial and revolutionary sites', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar", panelSummary: "Cap-Haïtien is a historic northern city near colonial and revolutionary sites. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Jacmel', description: 'Southern arts town famous for Carnival papier-mâché masks', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar", panelSummary: "Jacmel is a southern arts town famous for Carnival papier-mâché masks. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -14790,7 +14794,7 @@ export const countries: Record<string, CountryData> = {
   KN: {
     name: 'Saint Kitts and Nevis',
     code: 'KN',
-    summary: 'Saint Kitts and Nevis combines beaches, rainforest, volcanic scenery, plantation history, and a relaxed two-island atmosphere. Saint Kitts offers Brimstone Hill Fortress and a scenic railway, while Nevis feels quieter and more intimate. Hiking, snorkeling, historic estates, and small-scale hospitality are central to the experience.',
+    panelSummary: 'Saint Kitts and Nevis combines beaches, rainforest, volcanic scenery, plantation history, and a relaxed two-island atmosphere. Saint Kitts offers Brimstone Hill Fortress and a scenic railway, while Nevis feels quieter and more intimate. Hiking, snorkeling, historic estates, and small-scale hospitality are central to the experience.',
     flagEmoji: '🇰🇳',
     flagColors: ['#009E49', '#000000', '#CE1126'],
     continent: 'North America',
@@ -14803,9 +14807,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [88, 44, 35, 60, 85, 72, 105, 120, 125, 126, 130, 104],
     bestTimeToVisit: 'December–April dry season — warm days, gentle trade winds',
     popularPlaces: [
-      { name: 'Basseterre', description: 'Capital port town with Georgian architecture and cruise pier', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
-      { name: 'Nevis', description: 'Quieter sister island with plantation inns beneath a cloud-topped volcano', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
-      { name: 'Frigate Bay', description: 'Beach strip with resorts and the “Strip” of beach bars', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Basseterre', description: 'Capital port town with Georgian architecture and cruise pier', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Basseterre is a capital port town with Georgian architecture and cruise pier. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Nevis', description: 'Quieter sister island with plantation inns beneath a cloud-topped volcano', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Nevis is a quieter sister island with plantation inns beneath a cloud-topped volcano. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Frigate Bay', description: 'Beach strip with resorts and the “Strip” of beach bars', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Frigate Bay is a beach strip with resorts and the “Strip” of beach bars. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -14865,7 +14869,7 @@ export const countries: Record<string, CountryData> = {
   KW: {
     name: 'Kuwait',
     code: 'KW',
-    summary: 'Kuwait is a small Gulf country known for modern architecture, waterfront life, museums, markets, and a strong food culture. Kuwait City’s towers, souqs, mosques, and cultural centers are the main attractions. That mix gives travelers plenty to discover.',
+    panelSummary: 'Kuwait is a small Gulf country known for modern architecture, waterfront life, museums, markets, and a strong food culture. Kuwait City’s towers, souqs, mosques, and cultural centers are the main attractions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇼',
     flagColors: ['#007A3D', '#FFFFFF', '#CE1126'],
     continent: 'Asia',
@@ -14879,9 +14883,9 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'November–March brings mild, dry weather and avoids the extreme heat of summer.',
     bestVisitMonths: [11, 12, 1, 2, 3],
     popularPlaces: [
-      { name: 'Kuwait City', description: 'Modern Gulf capital with the iconic Kuwait Towers on the corniche', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
-      { name: 'Failaka Island', description: 'Historic island with Hellenistic ruins and beach resorts', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
-      { name: 'Al Jahra', description: 'Desert-edge town near the Red Fort and open-desert camps', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Kuwait City', description: 'Modern Gulf capital with the iconic Kuwait Towers on the corniche', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr", panelSummary: "Kuwait City is a modern Gulf capital with the iconic Kuwait Towers on the corniche. Visitors can pair the major landmarks with local food, lively streets, cultural venues, and quieter corners that reveal a stronger sense of place." },
+      { name: 'Failaka Island', description: 'Historic island with Hellenistic ruins and beach resorts', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr", panelSummary: "Failaka Island is a historic island with Hellenistic ruins and beach resorts. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Al Jahra', description: 'Desert-edge town near the Red Fort and open-desert camps', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr", panelSummary: "Al Jahra is a desert-edge town near the Red Fort and open-desert camps. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -14947,7 +14951,7 @@ export const countries: Record<string, CountryData> = {
   LB: {
     name: 'Lebanon',
     code: 'LB',
-    summary: 'Lebanon combines Mediterranean coastline, mountains, ancient ruins, vibrant cities, and one of the region’s most influential food cultures. Beirut, Byblos, Baalbek, the Cedars, and mountain villages show remarkable variety within short distances. Political and economic instability complicate travel, but the country’s cultural richness is exceptional.',
+    panelSummary: 'Lebanon combines Mediterranean coastline, mountains, ancient ruins, vibrant cities, and one of the region’s most influential food cultures. Beirut, Byblos, Baalbek, the Cedars, and mountain villages show remarkable variety within short distances. Political and economic instability complicate travel, but the country’s cultural richness is exceptional.',
     flagEmoji: '🇱🇧',
     flagColors: ['#EE161F', '#FFFFFF', '#00A651'],
     continent: 'Asia',
@@ -14960,9 +14964,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [157, 118, 78, 39, 17, 2, 0, 0, 2, 31, 80, 136],
     bestTimeToVisit: 'April–June and September–October — mild weather; check advisories closely',
     popularPlaces: [
-      { name: 'Beirut', description: 'Cosmopolitan Mediterranean capital of cafés, nightlife, and ruins', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar" },
-      { name: 'Byblos', description: 'One of the world’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar" },
-      { name: 'Baalbek', description: 'Colossal Roman temple complex in the Bekaa Valley', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
+      { name: 'Beirut', description: 'Cosmopolitan Mediterranean capital of cafés, nightlife, and ruins', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar", panelSummary: "Beirut is a cosmopolitan Mediterranean capital of cafés, nightlife, and ruins. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Byblos', description: 'One of the world’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Nov", goodWeatherMonths: "Mar", panelSummary: "Byblos is one of the world’s oldest continuously inhabited cities. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Baalbek', description: 'Colossal Roman temple complex in the Bekaa Valley', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov", panelSummary: "Baalbek is a colossal Roman temple complex in the Bekaa Valley. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -15024,7 +15028,7 @@ export const countries: Record<string, CountryData> = {
   MC: {
     name: 'Monaco',
     code: 'MC',
-    summary: 'Monaco is a tiny Mediterranean principality associated with luxury, yachts, casinos, Formula One, and dramatic coastal architecture. Monte Carlo, the Prince’s Palace, and the Oceanographic Museum are major attractions. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Monaco is a tiny Mediterranean principality associated with luxury, yachts, casinos, Formula One, and dramatic coastal architecture. Monte Carlo, the Prince’s Palace, and the Oceanographic Museum are major attractions. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇲🇨',
     flagColors: ['#CE1126', '#FFFFFF', '#CE1126'],
     continent: 'Europe',
@@ -15037,9 +15041,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [68, 52, 55, 70, 63, 51, 26, 40, 91, 100, 120, 69],
     bestTimeToVisit: 'May–September for Riviera weather; late-May Grand Prix is peak season',
     popularPlaces: [
-      { name: 'Monte-Carlo', description: 'Glamorous quarter of casinos, luxury hotels, and yachts', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
-      { name: 'Monaco-Ville', description: 'Old town on “The Rock” with the Prince’s Palace', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
-      { name: 'La Condamine', description: 'Port district lined with restaurants and the F1 circuit’s harbor chicane', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar" },
+      { name: 'Monte-Carlo', description: 'Glamorous quarter of casinos, luxury hotels, and yachts', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar", panelSummary: "Monte-Carlo offers glamorous quarter of casinos, luxury hotels, and yachts. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Monaco-Ville', description: 'Old town on “The Rock” with the Prince’s Palace', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar", panelSummary: "Monaco-Ville is an old town on “The Rock” with the Prince’s Palace. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'La Condamine', description: 'Port district lined with restaurants and the F1 circuit’s harbor chicane', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Mar", panelSummary: "La Condamine is a port district lined with restaurants and the F1 circuit’s harbor chicane. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
     ],
     attractions: [
       {
@@ -15097,7 +15101,7 @@ export const countries: Record<string, CountryData> = {
   VC: {
     name: 'Saint Vincent and the Grenadines',
     code: 'VC',
-    summary: 'Saint Vincent and the Grenadines combines a mountainous main island with a chain of smaller islands known for sailing, clear water, and quiet beaches. Saint Vincent offers volcano hikes and local life, while Bequia, Mustique, and the Tobago Cays provide more relaxed island experiences.',
+    panelSummary: 'Saint Vincent and the Grenadines combines a mountainous main island with a chain of smaller islands known for sailing, clear water, and quiet beaches. Saint Vincent offers volcano hikes and local life, while Bequia, Mustique, and the Tobago Cays provide more relaxed island experiences.',
     flagEmoji: '🇻🇨',
     flagColors: ['#0072C6', '#FCD116', '#009E60'],
     continent: 'North America',
@@ -15110,9 +15114,9 @@ export const countries: Record<string, CountryData> = {
     precipitation: [135, 91, 110, 135, 160, 233, 271, 278, 284, 309, 303, 187],
     bestTimeToVisit: 'January–May dry season — outside hurricane months and peak rain',
     popularPlaces: [
-      { name: 'Kingstown', description: 'Compact capital of stone arches and a bustling market', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
-      { name: 'Bequia', description: 'Sailing hub island known for boatbuilding and quiet beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
-      { name: 'Tobago Cays', description: 'Protected reef and cays with turtles and pristine snorkeling', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'Kingstown', description: 'Compact capital of stone arches and a bustling market', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Kingstown is a compact capital of stone arches and a bustling market. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Bequia', description: 'Sailing hub island known for boatbuilding and quiet beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Bequia is a sailing hub island known for boatbuilding and quiet beaches. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Tobago Cays', description: 'Protected reef and cays with turtles and pristine snorkeling', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Tobago Cays is a protected reef and cays with turtles and pristine snorkeling. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
     ],
     attractions: [
       {
@@ -15174,7 +15178,7 @@ export const countries: Record<string, CountryData> = {
   AD: {
     name: 'Andorra',
     code: 'AD',
-    summary: 'Andorra is a small Pyrenean country known for mountain scenery, skiing, hiking, shopping, and compact stone villages. Andorra la Vella provides urban amenities and thermal spas, while surrounding valleys offer trails and winter sports. The result is varied and rewarding.',
+    panelSummary: 'Andorra is a small Pyrenean country known for mountain scenery, skiing, hiking, shopping, and compact stone villages. Andorra la Vella provides urban amenities and thermal spas, while surrounding valleys offer trails and winter sports. The result is varied and rewarding.',
     flagEmoji: '🇦🇩',
     flagColors: ['#10069F', '#FEDD00', '#D52B1E'],
     continent: 'Europe',
@@ -15201,8 +15205,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'December–March is best for skiing; June–September is the main season for hiking and mountain scenery.',
     bestVisitMonths: [12, 1, 2, 3, 6, 7, 8, 9],
     popularPlaces: [
-      { name: 'Andorra la Vella', description: 'Pyrenean capital known for duty-free shopping', bestWeatherMonths: "Jun–Sep" },
-      { name: 'Ordino', description: 'Traditional stone village near ski slopes', bestWeatherMonths: "Jun–Sep" },
+      { name: 'Andorra la Vella', description: 'Pyrenean capital known for duty-free shopping', bestWeatherMonths: "Jun–Sep", panelSummary: "Andorra la Vella is a pyrenean capital known for duty-free shopping. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Ordino', description: 'Traditional stone village near ski slopes', bestWeatherMonths: "Jun–Sep", panelSummary: "Ordino is a traditional stone village near ski slopes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -15245,7 +15249,7 @@ export const countries: Record<string, CountryData> = {
   AF: {
     name: 'Afghanistan',
     code: 'AF',
-    summary: 'Afghanistan has extraordinary mountains, historic cities, Buddhist and Islamic heritage, and deep traditions of poetry, craft, and hospitality. Bamyan, Herat, Mazar-i-Sharif, and the Hindu Kush reflect its cultural and natural richness. Decades of conflict, Taliban rule, and severe security risks make leisure travel highly dangerous.',
+    panelSummary: 'Afghanistan has extraordinary mountains, historic cities, Buddhist and Islamic heritage, and deep traditions of poetry, craft, and hospitality. Bamyan, Herat, Mazar-i-Sharif, and the Hindu Kush reflect its cultural and natural richness. Decades of conflict, Taliban rule, and severe security risks make leisure travel highly dangerous.',
     flagEmoji: '🇦🇫',
     flagColors: ['#000000', '#D32011', '#007A36'],
     continent: 'Asia',
@@ -15271,8 +15275,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [45, 60, 63, 52, 32, 8, 8, 6, 3, 9, 22, 29],
     bestTimeToVisit: 'Travel is not advised — State Dept Level 4.',
     popularPlaces: [
-      { name: 'Kabul', description: 'Historic capital in a mountain valley', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Jul–Aug, Nov" },
-      { name: 'Bamiyan', description: 'Site of the destroyed Buddha statues and turquoise lakes', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep" },
+      { name: 'Kabul', description: 'Historic capital in a mountain valley', bestWeatherMonths: "Apr–Jun, Sep–Oct", goodWeatherMonths: "Jul–Aug, Nov", panelSummary: "Kabul is a historic capital in a mountain valley. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Bamiyan', description: 'Site of the destroyed Buddha statues and turquoise lakes', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep", panelSummary: "Bamiyan offers site of the destroyed Buddha statues and turquoise lakes. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -15321,7 +15325,7 @@ export const countries: Record<string, CountryData> = {
   AI: {
     name: 'Anguilla',
     code: 'AI',
-    summary: 'Anguilla is a low-lying Caribbean island celebrated for exceptionally clear water, long white-sand beaches, relaxed luxury, and excellent dining. It lacks the large resorts and cruise crowds found elsewhere, creating a quieter atmosphere. That mix gives travelers plenty to discover.',
+    panelSummary: 'Anguilla is a low-lying Caribbean island celebrated for exceptionally clear water, long white-sand beaches, relaxed luxury, and excellent dining. It lacks the large resorts and cruise crowds found elsewhere, creating a quieter atmosphere. That mix gives travelers plenty to discover.',
     flagEmoji: '🇦🇮',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -15347,8 +15351,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 48, 40, 64, 86, 62, 96, 105, 120, 115, 133, 103],
     bestTimeToVisit: 'December–April for dry sunny weather',
     popularPlaces: [
-      { name: 'Shoal Bay East', description: 'Powder-white beach consistently rated among the world’s best', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
-      { name: 'Sandy Ground', description: 'Beachfront village with sailboats and beach bars', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
+      { name: 'Shoal Bay East', description: 'Powder-white beach consistently rated among the world’s best', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec", panelSummary: "Shoal Bay East is a powder-white beach consistently rated among the world’s best. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Sandy Ground', description: 'Beachfront village with sailboats and beach bars', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec", panelSummary: "Sandy Ground is a beachfront village with sailboats and beach bars. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -15382,7 +15386,7 @@ export const countries: Record<string, CountryData> = {
   AM: {
     name: 'Armenia',
     code: 'AM',
-    summary: 'Armenia offers ancient monasteries, mountain landscapes, distinctive stone architecture, and a strong cultural identity shaped by Christianity, diaspora, and resilience. Yerevan is lively and walkable, while Geghard, Tatev, Lake Sevan, and the countryside reveal deeper history.',
+    panelSummary: 'Armenia offers ancient monasteries, mountain landscapes, distinctive stone architecture, and a strong cultural identity shaped by Christianity, diaspora, and resilience. Yerevan is lively and walkable, while Geghard, Tatev, Lake Sevan, and the countryside reveal deeper history.',
     flagEmoji: '🇦🇲',
     flagColors: ['#D90012', '#0033A0', '#F2A800'],
     continent: 'Asia',
@@ -15408,8 +15412,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [26, 29, 47, 68, 87, 70, 57, 35, 35, 40, 35, 25],
     bestTimeToVisit: 'May–June and September–October',
     popularPlaces: [
-      { name: 'Yerevan', description: 'Pink-tuff capital with Mt. Ararat views', bestWeatherMonths: "May–Oct" },
-      { name: 'Dilijan', description: 'Forested mountain town called “Armenian Switzerland”', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Yerevan', description: 'Pink-tuff capital with Mt. Ararat views', bestWeatherMonths: "May–Oct", panelSummary: "Yerevan is a pink-tuff capital with Mt. Ararat views. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Dilijan', description: 'Forested mountain town called “Armenian Switzerland”', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Oct", panelSummary: "Dilijan is a forested mountain town called “Armenian Switzerland”. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The setting makes every outing feel memorable." },
     ],
     attractions: [
       {
@@ -15457,7 +15461,7 @@ export const countries: Record<string, CountryData> = {
   AS: {
     name: 'American Samoa',
     code: 'AS',
-    summary: 'American Samoa combines volcanic mountains, rainforest, coral reefs, and a Polynesian culture strongly centered on family and village life. The National Park of American Samoa protects dramatic coastal scenery and tropical ecosystems. That mix gives travelers plenty to discover.',
+    panelSummary: 'American Samoa combines volcanic mountains, rainforest, coral reefs, and a Polynesian culture strongly centered on family and village life. The National Park of American Samoa protects dramatic coastal scenery and tropical ecosystems. That mix gives travelers plenty to discover.',
     flagEmoji: '🇦🇸',
     flagColors: ['#0033A0', '#FFFFFF', '#BF0A30'],
     continent: 'Oceania',
@@ -15484,8 +15488,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'June–September is the slightly cooler, drier season; late May and October can also work well around the edges of the wet season.',
     bestVisitMonths: [5, 6, 7, 8, 9, 10],
     popularPlaces: [
-      { name: 'Pago Pago', description: 'Deep harbor town encircled by rainforest peaks', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–May, Sep–Dec" },
-      { name: 'Ofu Beach', description: 'Remote white-sand beach on Manuʻa Islands', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–May, Sep–Dec" },
+      { name: 'Pago Pago', description: 'Deep harbor town encircled by rainforest peaks', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–May, Sep–Dec", panelSummary: "Pago Pago is a deep harbor town encircled by rainforest peaks. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Ofu Beach', description: 'Remote white-sand beach on Manuʻa Islands', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Jan–May, Sep–Dec", panelSummary: "Ofu Beach is a remote white-sand beach on Manuʻa Islands. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
     ],
     attractions: [
       {
@@ -15536,7 +15540,7 @@ export const countries: Record<string, CountryData> = {
   AZ: {
     name: 'Azerbaijan',
     code: 'AZ',
-    summary: 'Azerbaijan blends Caucasus mountains, Caspian coastline, Silk Road history, and striking modern architecture. Baku combines a medieval old city with bold contemporary towers, while Sheki, Gobustan, mountain villages, and mud volcanoes broaden the experience. The result is varied and rewarding.',
+    panelSummary: 'Azerbaijan blends Caucasus mountains, Caspian coastline, Silk Road history, and striking modern architecture. Baku combines a medieval old city with bold contemporary towers, while Sheki, Gobustan, mountain villages, and mud volcanoes broaden the experience. The result is varied and rewarding.',
     flagEmoji: '🇦🇿',
     flagColors: ['#00B5E2', '#EF3340', '#00AF66'],
     continent: 'Asia',
@@ -15562,8 +15566,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [27, 34, 46, 51, 60, 47, 33, 27, 42, 52, 44, 28],
     bestTimeToVisit: 'April–June and September–October',
     popularPlaces: [
-      { name: 'Baku', description: 'Caspian capital blending medieval old town and futuristic towers', bestWeatherMonths: "Apr–Jun, Sep–Nov", goodWeatherMonths: "Mar, Jul–Aug" },
-      { name: 'Sheki', description: 'Silk Road town with a palace of stained glass', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Baku', description: 'Caspian capital blending medieval old town and futuristic towers', bestWeatherMonths: "Apr–Jun, Sep–Nov", goodWeatherMonths: "Mar, Jul–Aug", panelSummary: "Baku is a caspian capital blending medieval old town and futuristic towers. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
+      { name: 'Sheki', description: 'Silk Road town with a palace of stained glass', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Sheki is a silk Road town with a palace of stained glass. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
     attractions: [
       {
@@ -15605,7 +15609,7 @@ export const countries: Record<string, CountryData> = {
   BD: {
     name: 'Bangladesh',
     code: 'BD',
-    summary: 'Bangladesh is a densely populated river country of delta landscapes, vibrant cities, tea regions, beaches, and deep Bengali cultural traditions. Dhaka is intense and historic, while the Sundarbans, Srimangal, Chittagong Hill Tracts, and rural waterways offer nature and slower travel.',
+    panelSummary: 'Bangladesh is a densely populated river country of delta landscapes, vibrant cities, tea regions, beaches, and deep Bengali cultural traditions. Dhaka is intense and historic, while the Sundarbans, Srimangal, Chittagong Hill Tracts, and rural waterways offer nature and slower travel.',
     flagEmoji: '🇧🇩',
     flagColors: ['#006A4E', '#F42A41', '#006A4E'],
     continent: 'Asia',
@@ -15631,8 +15635,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [10, 20, 42, 117, 225, 368, 478, 389, 300, 190, 31, 5],
     bestTimeToVisit: 'November–February (cool, dry)',
     popularPlaces: [
-      { name: 'Dhaka', description: 'Densely packed capital famous for rickshaw art and river life', bestWeatherMonths: "Jan–Feb, Nov–Dec" },
-      { name: 'Coxʼs Bazar', description: 'Claimed longest natural sea beach in the world', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov" },
+      { name: 'Dhaka', description: 'Densely packed capital famous for rickshaw art and river life', bestWeatherMonths: "Jan–Feb, Nov–Dec", panelSummary: "Dhaka is a densely packed capital famous for rickshaw art and river life. Beyond the headline sights, travelers can enjoy local neighborhoods, cafés, markets, museums, and the everyday rhythms that give the destination its character." },
+      { name: 'Coxʼs Bazar', description: 'Claimed longest natural sea beach in the world', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Nov", panelSummary: "Coxʼs Bazar is a claimed longest natural sea beach in the world. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
     ],
     attractions: [
       {
@@ -15677,7 +15681,7 @@ export const countries: Record<string, CountryData> = {
   BH: {
     name: 'Bahrain',
     code: 'BH',
-    summary: 'Bahrain is a compact Gulf island kingdom with archaeological sites, modern city life, souqs, mosques, and a long history of trade and pearl diving. Manama offers museums, dining, and nightlife, while ancient burial mounds, forts, and the Tree of Life reveal older layers.',
+    panelSummary: 'Bahrain is a compact Gulf island kingdom with archaeological sites, modern city life, souqs, mosques, and a long history of trade and pearl diving. Manama offers museums, dining, and nightlife, while ancient burial mounds, forts, and the Tree of Life reveal older layers.',
     flagEmoji: '🇧🇭',
     flagColors: ['#FFFFFF', '#DA291C', '#DA291C'],
     continent: 'Asia',
@@ -15703,8 +15707,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [19, 13, 18, 7, 1, 0, 0, 0, 0, 0, 8, 15],
     bestTimeToVisit: 'November–March',
     popularPlaces: [
-      { name: 'Manama', description: 'Skyscraper capital with a lively souq', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
-      { name: 'Muharraq', description: 'Pearl-diving heritage island with restored merchant houses', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Manama', description: 'Skyscraper capital with a lively souq', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr", panelSummary: "Manama is a skyscraper capital with a lively souq. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Muharraq', description: 'Pearl-diving heritage island with restored merchant houses', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr", panelSummary: "Muharraq is a pearl-diving heritage island with restored merchant houses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -15753,7 +15757,7 @@ export const countries: Record<string, CountryData> = {
   BI: {
     name: 'Burundi',
     code: 'BI',
-    summary: 'Burundi is a small, mountainous country on Lake Tanganyika, with green highlands, beaches, drumming traditions, and less-visited national parks. Bujumbura is the main gateway, while Kibira and Rusizi offer wildlife and forest landscapes. That mix gives travelers plenty to discover.',
+    panelSummary: 'Burundi is a small, mountainous country on Lake Tanganyika, with green highlands, beaches, drumming traditions, and less-visited national parks. Bujumbura is the main gateway, while Kibira and Rusizi offer wildlife and forest landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇮',
     flagColors: ['#CE1126', '#FFFFFF', '#1EB53A'],
     continent: 'Africa',
@@ -15779,8 +15783,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [165, 121, 169, 147, 93, 14, 5, 15, 61, 105, 167, 156],
     bestTimeToVisit: 'June–September (dry season)',
     popularPlaces: [
-      { name: 'Bujumbura', description: 'Lakeside former capital on Lake Tanganyika', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Feb, Apr, Sep–Oct, Dec" },
-      { name: 'Gitega', description: 'Current political capital in the highlands', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Jan–Apr, Nov–Dec" },
+      { name: 'Bujumbura', description: 'Lakeside former capital on Lake Tanganyika', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Feb, Apr, Sep–Oct, Dec", panelSummary: "Bujumbura is a lakeside former capital on Lake Tanganyika. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Gitega', description: 'Current political capital in the highlands', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Jan–Apr, Nov–Dec", panelSummary: "Gitega is a current political capital in the highlands. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -15825,7 +15829,7 @@ export const countries: Record<string, CountryData> = {
   BL: {
     name: 'Saint Barthélemy',
     code: 'BL',
-    summary: 'Saint Barthélemy is a small French Caribbean island known for stylish villages, beautiful coves, excellent restaurants, yachts, and discreet luxury. Gustavia is the main harbor town, while beaches such as Colombier and Salines offer quieter scenery.',
+    panelSummary: 'Saint Barthélemy is a small French Caribbean island known for stylish villages, beautiful coves, excellent restaurants, yachts, and discreet luxury. Gustavia is the main harbor town, while beaches such as Colombier and Salines offer quieter scenery.',
     flagEmoji: '🇧🇱',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -15851,8 +15855,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Gustavia', description: 'Yacht-lined harbor capital with red-roofed shops', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
-      { name: 'Saint-Jean', description: 'Beach village next to the famous cliff-approach airstrip', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
+      { name: 'Gustavia', description: 'Yacht-lined harbor capital with red-roofed shops', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec", panelSummary: "Gustavia is a yacht-lined harbor capital with red-roofed shops. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Saint-Jean', description: 'Beach village next to the famous cliff-approach airstrip', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec", panelSummary: "Saint-Jean is a beach village next to the famous cliff-approach airstrip. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -15889,7 +15893,7 @@ export const countries: Record<string, CountryData> = {
   BQ: {
     name: 'Bonaire',
     code: 'BQ',
-    summary: 'Bonaire is a Dutch Caribbean island renowned for shore diving, coral reefs, clear water, and a dry, rugged landscape. Kralendijk is the main town, while Washington-Slagbaai National Park, salt flats, flamingos, and quiet beaches broaden the experience.',
+    panelSummary: 'Bonaire is a Dutch Caribbean island renowned for shore diving, coral reefs, clear water, and a dry, rugged landscape. Kralendijk is the main town, while Washington-Slagbaai National Park, salt flats, flamingos, and quiet beaches broaden the experience.',
     flagEmoji: '🇧🇶',
     flagColors: ['#012169', '#FFD100', '#000000'],
     continent: 'North America',
@@ -15916,8 +15920,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'Bonaire is a strong year-round destination outside the main hurricane belt; winter and early spring are popular for dry, sunny conditions.',
     bestVisitMonths: [1, 2, 3, 4],
     popularPlaces: [
-      { name: 'Kralendijk', description: 'Compact Dutch-Caribbean capital', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
-      { name: 'Rincon', description: 'Oldest settlement in the ABC islands', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
+      { name: 'Kralendijk', description: 'Compact Dutch-Caribbean capital', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec", panelSummary: "Kralendijk is a compact Dutch-Caribbean capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
+      { name: 'Rincon', description: 'Oldest settlement in the ABC islands', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec", panelSummary: "Rincon is the oldest settlement in the ABC islands. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
     ],
     attractions: [
       {
@@ -15956,7 +15960,7 @@ export const countries: Record<string, CountryData> = {
   BY: {
     name: 'Belarus',
     code: 'BY',
-    summary: 'Belarus offers broad forests, lakes, castles, Soviet-era architecture, and a strong cultural identity shaped by Eastern Europe. Minsk is orderly and monumental, while Mir, Nesvizh, and rural regions preserve historic and traditional landscapes. That mix gives travelers plenty to discover.',
+    panelSummary: 'Belarus offers broad forests, lakes, castles, Soviet-era architecture, and a strong cultural identity shaped by Eastern Europe. Minsk is orderly and monumental, while Mir, Nesvizh, and rural regions preserve historic and traditional landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇧🇾',
     flagColors: ['#D22730', '#009739', '#FFFFFF'],
     continent: 'Europe',
@@ -15982,8 +15986,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [42, 39, 38, 38, 64, 72, 88, 63, 54, 54, 45, 44],
     bestTimeToVisit: 'May–September',
     popularPlaces: [
-      { name: 'Minsk', description: 'Rebuilt capital of Stalinist boulevards and green parks', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr" },
-      { name: 'Brest', description: 'Border city famous for its WWII hero-fortress', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Minsk', description: 'Rebuilt capital of Stalinist boulevards and green parks', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr", panelSummary: "Minsk is a rebuilt capital of Stalinist boulevards and green parks. Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Brest', description: 'Border city famous for its WWII hero-fortress', bestWeatherMonths: "Apr–Sep", goodWeatherMonths: "Oct", panelSummary: "Brest is a border city famous for its WWII hero-fortress. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -16026,7 +16030,7 @@ export const countries: Record<string, CountryData> = {
   CF: {
     name: 'Central African Republic',
     code: 'CF',
-    summary: 'The Central African Republic contains rich wildlife, rainforest, savanna, and culturally diverse communities. Dzanga-Sangha is internationally known for forest elephants and gorillas. However, long-running conflict, weak infrastructure, and severe security risks make tourism highly dangerous and largely impractical outside tightly controlled specialist expeditions.',
+    panelSummary: 'The Central African Republic contains rich wildlife, rainforest, savanna, and culturally diverse communities. Dzanga-Sangha is internationally known for forest elephants and gorillas. However, long-running conflict, weak infrastructure, and severe security risks make tourism highly dangerous and largely impractical outside tightly controlled specialist expeditions.',
     flagEmoji: '🇨🇫',
     flagColors: ['#003082', '#FFCE00', '#009543'],
     continent: 'Africa',
@@ -16052,8 +16056,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [7, 14, 55, 99, 147, 167, 202, 236, 219, 183, 37, 7],
     bestTimeToVisit: 'November–February (dry) — but Level 4 advisory',
     popularPlaces: [
-      { name: 'Bangui', description: 'Riverside capital on the Ubangi', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jun–Sep, Nov" },
-      { name: 'Dzanga-Sangha', description: 'Remote rainforest reserve with forest elephants', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Feb, Nov" },
+      { name: 'Bangui', description: 'Riverside capital on the Ubangi', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jun–Sep, Nov", panelSummary: "Bangui is a riverside capital on the Ubangi. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its atmosphere rewards time beyond the main sights." },
+      { name: 'Dzanga-Sangha', description: 'Remote rainforest reserve with forest elephants', bestWeatherMonths: "Dec", goodWeatherMonths: "Jan–Feb, Nov", panelSummary: "Dzanga-Sangha is a remote rainforest reserve with forest elephants. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -16093,7 +16097,7 @@ export const countries: Record<string, CountryData> = {
   CK: {
     name: 'Cook Islands',
     code: 'CK',
-    summary: 'The Cook Islands combine turquoise lagoons, coral reefs, volcanic interiors, and a relaxed Polynesian culture. Rarotonga offers the main concentration of restaurants, beaches, and hiking, while Aitutaki is famous for its lagoon. That mix gives travelers plenty to discover.',
+    panelSummary: 'The Cook Islands combine turquoise lagoons, coral reefs, volcanic interiors, and a relaxed Polynesian culture. Rarotonga offers the main concentration of restaurants, beaches, and hiking, while Aitutaki is famous for its lagoon. That mix gives travelers plenty to discover.',
     flagEmoji: '🇨🇰',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'Oceania',
@@ -16119,8 +16123,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [245, 227, 184, 216, 172, 105, 108, 113, 107, 125, 152, 207],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Rarotonga', description: 'Main island ringed by a lagoon and jungle peaks', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "May, Nov" },
-      { name: 'Aitutaki', description: 'Triangular lagoon with uninhabited motus', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Oct" },
+      { name: 'Rarotonga', description: 'Main island ringed by a lagoon and jungle peaks', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "May, Nov", panelSummary: "Rarotonga is a main island ringed by a lagoon and jungle peaks. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Aitutaki', description: 'Triangular lagoon with uninhabited motus', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Oct", panelSummary: "Aitutaki offers a triangular lagoon with uninhabited motus. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
     ],
     attractions: [
       {
@@ -16167,7 +16171,7 @@ export const countries: Record<string, CountryData> = {
   CW: {
     name: 'Curaçao',
     code: 'CW',
-    summary: 'Curaçao combines colorful Dutch-Caribbean architecture, clear water, small beaches, diving, and a lively food and arts scene. Willemstad’s Handelskade and historic districts are the visual centerpiece, while the island’s dry interior, coves, and national parks add variety.',
+    panelSummary: 'Curaçao combines colorful Dutch-Caribbean architecture, clear water, small beaches, diving, and a lively food and arts scene. Willemstad’s Handelskade and historic districts are the visual centerpiece, while the island’s dry interior, coves, and national parks add variety.',
     flagEmoji: '🇨🇼',
     flagColors: ['#002B7F', '#F9E814', '#FFFFFF'],
     continent: 'North America',
@@ -16194,8 +16198,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'Curaçao is warm year-round and lies outside the main hurricane belt; February–September is generally drier, while October–February is the wetter stretch.',
     bestVisitMonths: [2, 3, 4, 5, 6, 7, 8, 9],
     popularPlaces: [
-      { name: 'Willemstad', description: 'UNESCO capital of pastel Dutch-colonial townhouses', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
-      { name: 'Westpunt', description: 'Rugged northwest coast with quiet cove beaches', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec" },
+      { name: 'Willemstad', description: 'UNESCO capital of pastel Dutch-colonial townhouses', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec", panelSummary: "Willemstad is a UNESCO capital of pastel Dutch-colonial townhouses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The atmosphere encourages travelers to look more closely." },
+      { name: 'Westpunt', description: 'Rugged northwest coast with quiet cove beaches', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Sep, Dec", panelSummary: "Westpunt is a rugged northwest coast with quiet cove beaches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The relaxed setting is part of the appeal." },
     ],
     attractions: [
       {
@@ -16242,7 +16246,7 @@ export const countries: Record<string, CountryData> = {
   DJ: {
     name: 'Djibouti',
     code: 'DJ',
-    summary: 'Djibouti is a small Horn of Africa country of salt lakes, volcanic landscapes, desert, and rich marine life. Lake Assal, Lake Abbe, and the Gulf of Tadjoura are major natural attractions, including seasonal whale-shark encounters.',
+    panelSummary: 'Djibouti is a small Horn of Africa country of salt lakes, volcanic landscapes, desert, and rich marine life. Lake Assal, Lake Abbe, and the Gulf of Tadjoura are major natural attractions, including seasonal whale-shark encounters.',
     flagEmoji: '🇩🇯',
     flagColors: ['#6AB2E7', '#12AD2B', '#D7141A'],
     continent: 'Africa',
@@ -16268,8 +16272,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [10, 8, 23, 26, 19, 4, 33, 48, 24, 11, 11, 9],
     bestTimeToVisit: 'November–March (cooler)',
     popularPlaces: [
-      { name: 'Djibouti City', description: 'Port capital at the mouth of the Red Sea', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar, Nov–Dec" },
-      { name: 'Lake Assal', description: 'Salt lake 509 ft below sea level — Africa’s lowest point', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Mar, Nov" },
+      { name: 'Djibouti City', description: 'Port capital at the mouth of the Red Sea', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar, Nov–Dec", panelSummary: "Djibouti City is a port capital at the mouth of the Red Sea. It is especially rewarding for travelers who enjoy architecture, food, culture, and the pleasure of exploring distinctive neighborhoods at an unhurried pace." },
+      { name: 'Lake Assal', description: 'Salt lake 509 ft below sea level — Africa’s lowest point', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb–Mar, Nov", panelSummary: "Lake Assal is a salt lake 509 ft below sea level — Africa’s lowest point. It is a strong choice for travelers drawn to dramatic scenery, active days outdoors, and landscapes that feel far removed from ordinary routines." },
     ],
     attractions: [
       {
@@ -16308,7 +16312,7 @@ export const countries: Record<string, CountryData> = {
   ER: {
     name: 'Eritrea',
     code: 'ER',
-    summary: 'Eritrea offers Red Sea islands, Italian modernist architecture, highland scenery, and a distinctive cultural mix. Asmara is celebrated for its preserved twentieth-century buildings, while Massawa and the Dahlak Archipelago provide coastal history and marine life.',
+    panelSummary: 'Eritrea offers Red Sea islands, Italian modernist architecture, highland scenery, and a distinctive cultural mix. Asmara is celebrated for its preserved twentieth-century buildings, while Massawa and the Dahlak Archipelago provide coastal history and marine life.',
     flagEmoji: '🇪🇷',
     flagColors: ['#4189DD', '#EA0437', '#12AD2B'],
     continent: 'Africa',
@@ -16334,8 +16338,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [9, 7, 7, 11, 16, 16, 68, 78, 26, 9, 10, 12],
     bestTimeToVisit: 'October–March',
     popularPlaces: [
-      { name: 'Asmara', description: 'UNESCO-listed “Africa’s Art Deco city”', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug" },
-      { name: 'Massawa', description: 'Ottoman-era Red Sea port', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar, Dec" },
+      { name: 'Asmara', description: 'UNESCO-listed “Africa’s Art Deco city”', bestWeatherMonths: "Jan–Jun, Sep–Dec", goodWeatherMonths: "Jul–Aug", panelSummary: "Asmara is an UNESCO-listed “Africa’s Art Deco city”. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Massawa', description: 'Ottoman-era Red Sea port', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Mar, Dec", panelSummary: "Massawa is an ottoman-era Red Sea port. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -16381,7 +16385,7 @@ export const countries: Record<string, CountryData> = {
   FM: {
     name: 'Micronesia',
     code: 'FM',
-    summary: 'Micronesia, formally the Federated States of Micronesia, is a Pacific nation of hundreds of islands spread across a vast ocean area. Pohnpei, Chuuk, Yap, and Kosrae each have distinct cultures and landscapes. That mix gives travelers plenty to discover.',
+    panelSummary: 'Micronesia, formally the Federated States of Micronesia, is a Pacific nation of hundreds of islands spread across a vast ocean area. Pohnpei, Chuuk, Yap, and Kosrae each have distinct cultures and landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇫🇲',
     flagColors: ['#75B2DD', '#FFFFFF', '#75B2DD'],
     continent: 'Oceania',
@@ -16408,8 +16412,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'December–April is generally the drier part of the year, though rain remains possible in this tropical island climate.',
     bestVisitMonths: [12, 1, 2, 3, 4],
     popularPlaces: [
-      { name: 'Pohnpei', description: 'Green mountainous island with waterfalls', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Chuuk', description: 'World-class WWII wreck diving in the lagoon', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Pohnpei', description: 'Green mountainous island with waterfalls', bestWeatherMonths: "Jan–Dec", panelSummary: "Pohnpei is a green mountainous island with waterfalls. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Chuuk', description: 'World-class WWII wreck diving in the lagoon', bestWeatherMonths: "Jan–Dec", panelSummary: "Chuuk offers world-class WWII wreck diving in the lagoon. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -16452,7 +16456,7 @@ export const countries: Record<string, CountryData> = {
   FO: {
     name: 'Faroe Islands',
     code: 'FO',
-    summary: 'The Faroe Islands offer steep sea cliffs, grass-roofed villages, waterfalls, seabirds, and dramatic North Atlantic weather. Tórshavn provides a compact cultural base, while road tunnels and ferries connect remote settlements and hiking areas. That mix gives travelers plenty to discover.',
+    panelSummary: 'The Faroe Islands offer steep sea cliffs, grass-roofed villages, waterfalls, seabirds, and dramatic North Atlantic weather. Tórshavn provides a compact cultural base, while road tunnels and ferries connect remote settlements and hiking areas. That mix gives travelers plenty to discover.',
     flagEmoji: '🇫🇴',
     flagColors: ['#FFFFFF', '#0065BD', '#ED2939'],
     continent: 'Europe',
@@ -16479,8 +16483,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'June–August offers the longest days, best access, and most reliable hiking conditions; late May or early June can be quieter.',
     bestVisitMonths: [5, 6, 7, 8],
     popularPlaces: [
-      { name: 'Tórshavn', description: 'Turf-roofed capital on a fjord', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
-      { name: 'Gásadalur', description: 'Cliffside village next to the iconic Múlafossur waterfall', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Tórshavn', description: 'Turf-roofed capital on a fjord', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Tórshavn is a turf-roofed capital on a fjord. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Gásadalur', description: 'Cliffside village next to the iconic Múlafossur waterfall', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Gásadalur is a cliffside village next to the iconic Múlafossur waterfall. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -16526,7 +16530,7 @@ export const countries: Record<string, CountryData> = {
   GD: {
     name: 'Grenada',
     code: 'GD',
-    summary: 'Grenada is known as the Spice Island for its nutmeg, cocoa, and fragrant plantations. It combines beaches, rainforest, waterfalls, diving, and a colorful capital, St. George’s. It is especially rewarding for travelers drawn to wildlife, scenery, and memorable outdoor experiences.',
+    panelSummary: 'Grenada is known as the Spice Island for its nutmeg, cocoa, and fragrant plantations. It combines beaches, rainforest, waterfalls, diving, and a colorful capital, St. George’s. It is especially rewarding for travelers drawn to wildlife, scenery, and memorable outdoor experiences.',
     flagEmoji: '🇬🇩',
     flagColors: ['#CE1126', '#FCD116', '#007A5E'],
     continent: 'North America',
@@ -16552,8 +16556,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [84, 58, 65, 73, 79, 152, 183, 195, 190, 205, 194, 137],
     bestTimeToVisit: 'January–April (dry season)',
     popularPlaces: [
-      { name: 'St. George\'s', description: 'Horseshoe-harbor capital of colorful houses', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
-      { name: 'Grand Anse', description: '2-mile crescent beach south of the capital', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr" },
+      { name: 'St. George\'s', description: 'Horseshoe-harbor capital of colorful houses', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "St. George's is a horseshoe-harbor capital of colorful houses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
+      { name: 'Grand Anse', description: '2-mile crescent beach south of the capital', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Grand Anse is a 2-mile crescent beach south of the capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -16598,7 +16602,7 @@ export const countries: Record<string, CountryData> = {
   GF: {
     name: 'French Guiana',
     code: 'GF',
-    summary: 'French Guiana combines Amazon rainforest, Atlantic coast, Indigenous and Creole cultures, and the unusual presence of Europe’s spaceport at Kourou. Cayenne offers markets and colonial history, while the interior is remote and biodiversity-rich. That mix gives travelers plenty to discover.',
+    panelSummary: 'French Guiana combines Amazon rainforest, Atlantic coast, Indigenous and Creole cultures, and the unusual presence of Europe’s spaceport at Kourou. Cayenne offers markets and colonial history, while the interior is remote and biodiversity-rich. That mix gives travelers plenty to discover.',
     flagEmoji: '🇬🇫',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'South America',
@@ -16624,8 +16628,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [264, 278, 262, 332, 405, 292, 197, 130, 64, 60, 116, 223],
     bestTimeToVisit: 'July–November (drier)',
     popularPlaces: [
-      { name: 'Cayenne', description: 'Creole capital on the Atlantic coast', bestWeatherMonths: "Sep–Oct", goodWeatherMonths: "Jan–Aug, Nov–Dec" },
-      { name: 'Kourou', description: 'Home of the European Space Centre', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "Jan–Jul, Nov–Dec" },
+      { name: 'Cayenne', description: 'Creole capital on the Atlantic coast', bestWeatherMonths: "Sep–Oct", goodWeatherMonths: "Jan–Aug, Nov–Dec", panelSummary: "Cayenne is a creole capital on the Atlantic coast. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
+      { name: 'Kourou', description: 'Home of the European Space Centre', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "Jan–Jul, Nov–Dec", panelSummary: "Kourou is home to the European Space Centre. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -16675,7 +16679,7 @@ export const countries: Record<string, CountryData> = {
   GG: {
     name: 'Guernsey',
     code: 'GG',
-    summary: 'Guernsey is a compact Channel Island of cliffs, beaches, harbors, and British-French cultural influences. St. Peter Port is the picturesque center, with historic streets and views toward smaller islands. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Guernsey is a compact Channel Island of cliffs, beaches, harbors, and British-French cultural influences. St. Peter Port is the picturesque center, with historic streets and views toward smaller islands. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇬🇬',
     flagColors: ['#FFFFFF', '#E8112D', '#F9DD16'],
     continent: 'Europe',
@@ -16701,8 +16705,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [97, 78, 60, 57, 47, 48, 44, 54, 62, 97, 116, 116],
     bestTimeToVisit: 'May–September',
     popularPlaces: [
-      { name: 'Saint Peter Port', description: 'Steep harbor capital with Regency townhouses', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Sark', description: 'Nearby car-free island reachable by ferry', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Saint Peter Port', description: 'Steep harbor capital with Regency townhouses', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Saint Peter Port is a steep harbor capital with Regency townhouses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Sark', description: 'Nearby car-free island reachable by ferry', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Sark is a nearby car-free island reachable by ferry. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -16747,7 +16751,7 @@ export const countries: Record<string, CountryData> = {
   GI: {
     name: 'Gibraltar',
     code: 'GI',
-    summary: 'Gibraltar is a tiny British territory dominated by the Rock, with caves, fortifications, sea views, and a curious blend of British, Spanish, Mediterranean, and North African influences. Visitors come for the upper rock reserve, macaques, tunnels, and maritime history.',
+    panelSummary: 'Gibraltar is a tiny British territory dominated by the Rock, with caves, fortifications, sea views, and a curious blend of British, Spanish, Mediterranean, and North African influences. Visitors come for the upper rock reserve, macaques, tunnels, and maritime history.',
     flagEmoji: '🇬🇮',
     flagColors: ['#FFFFFF', '#CE1126', '#FFFFFF'],
     continent: 'Europe',
@@ -16773,8 +16777,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [88, 76, 76, 60, 34, 7, 1, 4, 29, 81, 109, 115],
     bestTimeToVisit: 'April–June and September–October',
     popularPlaces: [
-      { name: 'Main Street', description: 'Duty-free pedestrian shopping strip', bestWeatherMonths: "Jan–Nov", goodWeatherMonths: "Dec" },
-      { name: 'Catalan Bay', description: 'Small Genoese fishing village beach', bestWeatherMonths: "Jan–Nov", goodWeatherMonths: "Dec" },
+      { name: 'Main Street', description: 'Duty-free pedestrian shopping strip', bestWeatherMonths: "Jan–Nov", goodWeatherMonths: "Dec", panelSummary: "Main Street offers duty-free pedestrian shopping strip. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Catalan Bay', description: 'Small Genoese fishing village beach', bestWeatherMonths: "Jan–Nov", goodWeatherMonths: "Dec", panelSummary: "Catalan Bay is a small Genoese fishing village beach. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The relaxed setting is part of the appeal." },
     ],
     attractions: [
       {
@@ -16820,7 +16824,7 @@ export const countries: Record<string, CountryData> = {
   GN: {
     name: 'Guinea',
     code: 'GN',
-    summary: 'Guinea offers dramatic highlands, waterfalls, forests, music, and important river sources, including headwaters of the Niger, Senegal, and Gambia. Conakry is the main urban center, while Fouta Djallon and forest regions offer natural beauty. The result is varied and rewarding.',
+    panelSummary: 'Guinea offers dramatic highlands, waterfalls, forests, music, and important river sources, including headwaters of the Niger, Senegal, and Gambia. Conakry is the main urban center, while Fouta Djallon and forest regions offer natural beauty. The result is varied and rewarding.',
     flagEmoji: '🇬🇳',
     flagColors: ['#CE1126', '#FCD116', '#009460'],
     continent: 'Africa',
@@ -16846,8 +16850,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 8, 23, 61, 129, 211, 325, 438, 349, 193, 44, 5],
     bestTimeToVisit: 'November–April (dry season)',
     popularPlaces: [
-      { name: 'Conakry', description: 'Peninsular Atlantic capital', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov" },
-      { name: 'Fouta Djallon', description: 'Highland region of waterfalls and plateaus', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Mar, Jul–Sep" },
+      { name: 'Conakry', description: 'Peninsular Atlantic capital', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar–Apr, Jul–Sep, Nov", panelSummary: "Conakry is a peninsular Atlantic capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'Fouta Djallon', description: 'Highland region of waterfalls and plateaus', bestWeatherMonths: "Jan, Nov–Dec", goodWeatherMonths: "Feb–Mar, Jul–Sep", panelSummary: "Fouta Djallon is a highland region of waterfalls and plateaus. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -16896,7 +16900,7 @@ export const countries: Record<string, CountryData> = {
   GP: {
     name: 'Guadeloupe',
     code: 'GP',
-    summary: 'Guadeloupe is a French Caribbean archipelago combining rainforest, volcanoes, beaches, waterfalls, and Creole culture. Basse-Terre is lush and mountainous, while Grande-Terre offers flatter landscapes and popular beaches. Smaller islands, local markets, rum, seafood, and hiking create a varied destination with both French and Caribbean character.',
+    panelSummary: 'Guadeloupe is a French Caribbean archipelago combining rainforest, volcanoes, beaches, waterfalls, and Creole culture. Basse-Terre is lush and mountainous, while Grande-Terre offers flatter landscapes and popular beaches. Smaller islands, local markets, rum, seafood, and hiking create a varied destination with both French and Caribbean character.',
     flagEmoji: '🇬🇵',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -16922,8 +16926,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [141, 93, 114, 154, 212, 186, 242, 250, 260, 296, 283, 209],
     bestTimeToVisit: 'December–April (dry season)',
     popularPlaces: [
-      { name: 'Pointe-à-Pitre', description: 'Largest city and cruise port', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec" },
-      { name: 'Grande-Terre', description: 'Flatter half with the best beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar" },
+      { name: 'Pointe-à-Pitre', description: 'Largest city and cruise port', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Dec", panelSummary: "Pointe-à-Pitre is a largest city and cruise port. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Grande-Terre', description: 'Flatter half with the best beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar", panelSummary: "Grande-Terre is the flatter half with the best beaches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -16972,7 +16976,7 @@ export const countries: Record<string, CountryData> = {
   GQ: {
     name: 'Equatorial Guinea',
     code: 'GQ',
-    summary: 'Equatorial Guinea combines tropical islands, mainland rainforest, volcanic landscapes, and Spanish colonial influences. Malabo and Bioko Island offer mountain scenery and architecture, while Monte Alén National Park protects rich biodiversity. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Equatorial Guinea combines tropical islands, mainland rainforest, volcanic landscapes, and Spanish colonial influences. Malabo and Bioko Island offer mountain scenery and architecture, while Monte Alén National Park protects rich biodiversity. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇬🇶',
     flagColors: ['#3E9A00', '#FFFFFF', '#E32118'],
     continent: 'Africa',
@@ -16998,8 +17002,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [116, 130, 231, 232, 261, 142, 68, 107, 289, 455, 292, 148],
     bestTimeToVisit: 'November–March',
     popularPlaces: [
-      { name: 'Malabo', description: 'Island capital with colonial-era Spanish quarter', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Oct" },
-      { name: 'Bata', description: 'Largest city on the mainland coast', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep–Oct" },
+      { name: 'Malabo', description: 'Island capital with colonial-era Spanish quarter', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Jul–Oct", panelSummary: "Malabo is an island capital with colonial-era Spanish quarter. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The relaxed setting is part of the appeal." },
+      { name: 'Bata', description: 'Largest city on the mainland coast', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep–Oct", panelSummary: "Bata is a largest city on the mainland coast. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
     ],
     attractions: [
       {
@@ -17040,7 +17044,7 @@ export const countries: Record<string, CountryData> = {
   GU: {
     name: 'Guam',
     code: 'GU',
-    summary: 'Guam combines tropical beaches, coral reefs, Chamorro culture, and significant World War II history. Tumon provides resorts and shopping, while southern villages, coastal drives, and War in the Pacific sites offer a broader experience. The result is varied and rewarding.',
+    panelSummary: 'Guam combines tropical beaches, coral reefs, Chamorro culture, and significant World War II history. Tumon provides resorts and shopping, while southern villages, coastal drives, and War in the Pacific sites offer a broader experience. The result is varied and rewarding.',
     flagEmoji: '🇬🇺',
     flagColors: ['#0033A0', '#DA291C', '#FFFFFF'],
     continent: 'Oceania',
@@ -17066,8 +17070,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [130, 106, 76, 90, 102, 142, 268, 418, 354, 312, 224, 148],
     bestTimeToVisit: 'December–June (dry season)',
     popularPlaces: [
-      { name: 'Tumon', description: 'Resort strip along a turquoise crescent bay', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May, Dec" },
-      { name: 'Hagåtña', description: 'Historic Spanish-era capital', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr–May, Dec" },
+      { name: 'Tumon', description: 'Resort strip along a turquoise crescent bay', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May, Dec", panelSummary: "Tumon is a resort strip along a turquoise crescent bay. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Hagåtña', description: 'Historic Spanish-era capital', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr–May, Dec", panelSummary: "Hagåtña is a historic Spanish-era capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Small details make the history feel especially vivid." },
     ],
     attractions: [
       {
@@ -17119,7 +17123,7 @@ export const countries: Record<string, CountryData> = {
   GW: {
     name: 'Guinea-Bissau',
     code: 'GW',
-    summary: 'Guinea-Bissau is a little-visited West African country known for mangroves, islands, wildlife, music, and diverse ethnic traditions. The Bijagós Archipelago is the main natural attraction, with beaches, marine life, and traditional communities. That mix gives travelers plenty to discover.',
+    panelSummary: 'Guinea-Bissau is a little-visited West African country known for mangroves, islands, wildlife, music, and diverse ethnic traditions. The Bijagós Archipelago is the main natural attraction, with beaches, marine life, and traditional communities. That mix gives travelers plenty to discover.',
     flagEmoji: '🇬🇼',
     flagColors: ['#CE1126', '#FCD116', '#009543'],
     continent: 'Africa',
@@ -17145,8 +17149,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 1, 30, 160, 348, 521, 395, 173, 20, 0],
     bestTimeToVisit: 'November–May (dry season)',
     popularPlaces: [
-      { name: 'Bissau', description: 'Riverside capital with faded Portuguese architecture', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–May, Jul–Aug" },
-      { name: 'Bijagós Archipelago', description: 'Sacred islands with matriarchal culture', bestWeatherMonths: "Jan–Feb, May, Nov–Dec", goodWeatherMonths: "Mar–Apr, Aug" },
+      { name: 'Bissau', description: 'Riverside capital with faded Portuguese architecture', bestWeatherMonths: "Jan–Feb, Nov–Dec", goodWeatherMonths: "Mar–May, Jul–Aug", panelSummary: "Bissau is a riverside capital with faded Portuguese architecture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
+      { name: 'Bijagós Archipelago', description: 'Sacred islands with matriarchal culture', bestWeatherMonths: "Jan–Feb, May, Nov–Dec", goodWeatherMonths: "Mar–Apr, Aug", panelSummary: "Bijagós Archipelago offers sacred islands with matriarchal culture. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
     ],
     attractions: [
       {
@@ -17195,7 +17199,7 @@ export const countries: Record<string, CountryData> = {
   IM: {
     name: 'Isle of Man',
     code: 'IM',
-    summary: 'The Isle of Man combines rugged coastline, green hills, castles, heritage railways, and a strong independent identity in the Irish Sea. Douglas is the main town, while the TT motorcycle course, Snaefell, and coastal villages provide distinctive attractions.',
+    panelSummary: 'The Isle of Man combines rugged coastline, green hills, castles, heritage railways, and a strong independent identity in the Irish Sea. Douglas is the main town, while the TT motorcycle course, Snaefell, and coastal villages provide distinctive attractions.',
     flagEmoji: '🇮🇲',
     flagColors: ['#CF142B', '#FFFFFF', '#FFCC00'],
     continent: 'Europe',
@@ -17221,8 +17225,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [126, 101, 90, 81, 68, 81, 85, 102, 103, 149, 151, 140],
     bestTimeToVisit: 'May–September (esp. TT race fortnight)',
     popularPlaces: [
-      { name: 'Douglas', description: 'Victorian seafront capital', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
-      { name: 'Peel', description: 'West-coast fishing town with a red-sandstone castle', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Douglas', description: 'Victorian seafront capital', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Douglas is a Victorian seafront capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'Peel', description: 'West-coast fishing town with a red-sandstone castle', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Peel is a west-coast fishing town with a red-sandstone castle. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The relaxed setting is part of the appeal." },
     ],
     attractions: [
       {
@@ -17261,7 +17265,7 @@ export const countries: Record<string, CountryData> = {
   IQ: {
     name: 'Iraq',
     code: 'IQ',
-    summary: 'Iraq is the heartland of ancient Mesopotamia, with archaeological sites, sacred cities, marshes, mountain regions, and deeply rooted cultural traditions. Baghdad, Babylon, Najaf, Karbala, and Iraqi Kurdistan reveal very different histories and landscapes. That mix gives travelers plenty to discover.',
+    panelSummary: 'Iraq is the heartland of ancient Mesopotamia, with archaeological sites, sacred cities, marshes, mountain regions, and deeply rooted cultural traditions. Baghdad, Babylon, Najaf, Karbala, and Iraqi Kurdistan reveal very different histories and landscapes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇮🇶',
     flagColors: ['#CE1126', '#FFFFFF', '#000000'],
     continent: 'Asia',
@@ -17287,8 +17291,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [30, 28, 35, 28, 11, 1, 0, 0, 0, 8, 24, 29],
     bestTimeToVisit: 'October–April (cooler)',
     popularPlaces: [
-      { name: 'Baghdad', description: 'Ancient Tigris capital', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr" },
-      { name: 'Erbil', description: 'Kurdish regional capital around a 6,000-year-old citadel', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb" },
+      { name: 'Baghdad', description: 'Ancient Tigris capital', bestWeatherMonths: "Jan–Mar, Nov–Dec", goodWeatherMonths: "Apr", panelSummary: "Baghdad is an ancient Tigris capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Erbil', description: 'Kurdish regional capital around a 6,000-year-old citadel', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb", panelSummary: "Erbil is a kurdish regional capital around a 6,000-year-old citadel. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
     ],
     attractions: [
       {
@@ -17339,7 +17343,7 @@ export const countries: Record<string, CountryData> = {
   IR: {
     name: 'Iran',
     code: 'IR',
-    summary: 'Iran offers extraordinary architecture, ancient ruins, deserts, mountains, gardens, bazaars, and one of the world’s great culinary traditions. Tehran, Isfahan, Shiraz, Yazd, and Persepolis are major highlights. Curious travelers will find layers of history, memorable architecture, and strong local character.',
+    panelSummary: 'Iran offers extraordinary architecture, ancient ruins, deserts, mountains, gardens, bazaars, and one of the world’s great culinary traditions. Tehran, Isfahan, Shiraz, Yazd, and Persepolis are major highlights. Curious travelers will find layers of history, memorable architecture, and strong local character.',
     flagEmoji: '🇮🇷',
     flagColors: ['#239F40', '#FFFFFF', '#DA0000'],
     continent: 'Asia',
@@ -17365,8 +17369,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [34, 29, 37, 29, 16, 4, 4, 3, 4, 10, 22, 28],
     bestTimeToVisit: 'March–May and September–November',
     popularPlaces: [
-      { name: 'Tehran', description: 'Mountain-backed capital with world-class museums', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun, Nov" },
-      { name: 'Isfahan', description: 'Half-the-World city of blue-tiled Safavid squares', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb" },
+      { name: 'Tehran', description: 'Mountain-backed capital with world-class museums', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun, Nov", panelSummary: "Tehran is a mountain-backed capital with world-class museums. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Isfahan', description: 'Half-the-World city of blue-tiled Safavid squares', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb", panelSummary: "Isfahan is a half-the-World city of blue-tiled Safavid squares. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its atmosphere rewards time beyond the main sights." },
     ],
     attractions: [
       {
@@ -17418,7 +17422,7 @@ export const countries: Record<string, CountryData> = {
   JE: {
     name: 'Jersey',
     code: 'JE',
-    summary: 'Jersey is the largest Channel Island, offering beaches, cliffs, castles, seafood, and a blend of British and French influences. St. Helier is the main town, while coastal walks, tidal landscapes, and wartime tunnels provide variety.',
+    panelSummary: 'Jersey is the largest Channel Island, offering beaches, cliffs, castles, seafood, and a blend of British and French influences. St. Helier is the main town, while coastal walks, tidal landscapes, and wartime tunnels provide variety.',
     flagEmoji: '🇯🇪',
     flagColors: ['#FFFFFF', '#E8112D', '#FFCC00'],
     continent: 'Europe',
@@ -17444,8 +17448,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [106, 79, 66, 63, 53, 52, 49, 59, 72, 107, 132, 128],
     bestTimeToVisit: 'May–September',
     popularPlaces: [
-      { name: 'Saint Helier', description: 'Bay-front capital', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Gorey', description: 'Fishing village beneath Mont Orgueil castle', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Saint Helier', description: 'Bay-front capital', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Saint Helier is a bay-front capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Gorey', description: 'Fishing village beneath Mont Orgueil castle', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Gorey is a fishing village beneath Mont Orgueil castle. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -17492,7 +17496,7 @@ export const countries: Record<string, CountryData> = {
   KG: {
     name: 'Kyrgyzstan',
     code: 'KG',
-    summary: 'Kyrgyzstan is a mountainous Central Asian country known for alpine lakes, horse culture, nomadic traditions, and excellent trekking. Bishkek is the gateway, while Issyk-Kul, Song-Kul, Ala-Archa, and remote valleys provide the main experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'Kyrgyzstan is a mountainous Central Asian country known for alpine lakes, horse culture, nomadic traditions, and excellent trekking. Bishkek is the gateway, while Issyk-Kul, Song-Kul, Ala-Archa, and remote valleys provide the main experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇬',
     flagColors: ['#E8112D', '#FCD116', '#E8112D'],
     continent: 'Asia',
@@ -17518,8 +17522,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [26, 36, 47, 56, 67, 53, 41, 36, 19, 30, 40, 36],
     bestTimeToVisit: 'June–September for mountains',
     popularPlaces: [
-      { name: 'Bishkek', description: 'Leafy Soviet-planned capital', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
-      { name: 'Karakol', description: 'Trekking hub on the eastern shore of Issyk-Kul', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep" },
+      { name: 'Bishkek', description: 'Leafy Soviet-planned capital', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Bishkek is a leafy Soviet-planned capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Karakol', description: 'Trekking hub on the eastern shore of Issyk-Kul', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep", panelSummary: "Karakol is a trekking hub on the eastern shore of Issyk-Kul. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -17564,7 +17568,7 @@ export const countries: Record<string, CountryData> = {
   KI: {
     name: 'Kiribati',
     code: 'KI',
-    summary: 'Kiribati is a widely scattered Pacific nation of low-lying coral atolls, lagoons, fishing communities, and strong island traditions. South Tarawa is densely populated, while outer islands feel remote and quiet. That mix gives travelers plenty to discover.',
+    panelSummary: 'Kiribati is a widely scattered Pacific nation of low-lying coral atolls, lagoons, fishing communities, and strong island traditions. South Tarawa is densely populated, while outer islands feel remote and quiet. That mix gives travelers plenty to discover.',
     flagEmoji: '🇰🇮',
     flagColors: ['#CE1126', '#FCD116', '#003F87'],
     continent: 'Oceania',
@@ -17590,8 +17594,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [161, 120, 150, 175, 128, 128, 120, 93, 81, 74, 79, 113],
     bestTimeToVisit: 'April–October',
     popularPlaces: [
-      { name: 'Tarawa', description: 'Ribbon of islets around a WWII battle lagoon', bestWeatherMonths: "Jun, Aug–Nov", goodWeatherMonths: "Jan–May, Jul, Dec" },
-      { name: 'Kiritimati (Christmas Island)', description: 'World’s largest coral atoll — a fly-fishing mecca', bestWeatherMonths: "Feb, Aug–Dec", goodWeatherMonths: "Jan, Mar, May–Jul" },
+      { name: 'Tarawa', description: 'Ribbon of islets around a WWII battle lagoon', bestWeatherMonths: "Jun, Aug–Nov", goodWeatherMonths: "Jan–May, Jul, Dec", panelSummary: "Tarawa offers ribbon of islets around a WWII battle lagoon. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Kiritimati (Christmas Island)', description: 'World’s largest coral atoll — a fly-fishing mecca', bestWeatherMonths: "Feb, Aug–Dec", goodWeatherMonths: "Jan, Mar, May–Jul", panelSummary: "Kiritimati (Christmas Island) offers world’s largest coral atoll — a fly-fishing mecca. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
     ],
     attractions: [
       {
@@ -17622,7 +17626,7 @@ export const countries: Record<string, CountryData> = {
   KM: {
     name: 'Comoros',
     code: 'KM',
-    summary: 'Comoros is a volcanic Indian Ocean archipelago of beaches, reefs, fragrant plantations, and a culture blending African, Arab, and French influences. Grande Comore, Mohéli, and Anjouan each have distinct landscapes. Tourism is limited, but marine life, traditional villages, and dramatic volcanic scenery offer strong potential.',
+    panelSummary: 'Comoros is a volcanic Indian Ocean archipelago of beaches, reefs, fragrant plantations, and a culture blending African, Arab, and French influences. Grande Comore, Mohéli, and Anjouan each have distinct landscapes. Tourism is limited, but marine life, traditional villages, and dramatic volcanic scenery offer strong potential.',
     flagEmoji: '🇰🇲',
     flagColors: ['#FFCE00', '#FFFFFF', '#3B5AA3'],
     continent: 'Africa',
@@ -17649,8 +17653,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'May–October is the cooler, drier season and the best general window for island travel.',
     bestVisitMonths: [5, 6, 7, 8, 9, 10],
     popularPlaces: [
-      { name: 'Moroni', description: 'Old volcanic capital with a whitewashed Friday Mosque', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "May–Jul, Nov" },
-      { name: 'Mohéli', description: 'Least-developed island with sea turtles', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "Jun–Jul, Nov" },
+      { name: 'Moroni', description: 'Old volcanic capital with a whitewashed Friday Mosque', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "May–Jul, Nov", panelSummary: "Moroni is an old volcanic capital with a whitewashed Friday Mosque. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Mohéli', description: 'Least-developed island with sea turtles', bestWeatherMonths: "Aug–Oct", goodWeatherMonths: "Jun–Jul, Nov", panelSummary: "Mohéli is a least-developed island with sea turtles. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Each outing offers a fresh sense of discovery." },
     ],
     attractions: [
       {
@@ -17696,7 +17700,7 @@ export const countries: Record<string, CountryData> = {
   KP: {
     name: 'North Korea',
     code: 'KP',
-    summary: 'North Korea is one of the world’s most closed states, with monumental architecture, highly controlled public life, mountain scenery, and important historic sites. Visits, when permitted, are tightly supervised and provide limited independent contact with local people.',
+    panelSummary: 'North Korea is one of the world’s most closed states, with monumental architecture, highly controlled public life, mountain scenery, and important historic sites. Visits, when permitted, are tightly supervised and provide limited independent contact with local people.',
     flagEmoji: '🇰🇵',
     flagColors: ['#024FA2', '#ED1C27', '#FFFFFF'],
     continent: 'Asia',
@@ -17722,8 +17726,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [13, 17, 29, 48, 90, 118, 245, 231, 103, 51, 42, 20],
     bestTimeToVisit: 'Travel by U.S. passport holders is prohibited.',
     popularPlaces: [
-      { name: 'Pyongyang', description: 'Monumental capital of grand plazas', bestWeatherMonths: "Apr–Jun, Sep–Oct" },
-      { name: 'Mount Paektu', description: 'Sacred volcanic peak on the Chinese border', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug" },
+      { name: 'Pyongyang', description: 'Monumental capital of grand plazas', bestWeatherMonths: "Apr–Jun, Sep–Oct", panelSummary: "Pyongyang is a monumental capital of grand plazas. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Mount Paektu', description: 'Sacred volcanic peak on the Chinese border', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug", panelSummary: "Mount Paektu offers sacred volcanic peak on the Chinese border. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -17767,7 +17771,7 @@ export const countries: Record<string, CountryData> = {
   KY: {
     name: 'Cayman Islands',
     code: 'KY',
-    summary: 'The Cayman Islands are known for clear water, coral reefs, diving, financial services, and polished beach resorts. Grand Cayman offers Seven Mile Beach, restaurants, and most visitor facilities, while Cayman Brac and Little Cayman are quieter and more nature-focused.',
+    panelSummary: 'The Cayman Islands are known for clear water, coral reefs, diving, financial services, and polished beach resorts. Grand Cayman offers Seven Mile Beach, restaurants, and most visitor facilities, while Cayman Brac and Little Cayman are quieter and more nature-focused.',
     flagEmoji: '🇰🇾',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -17793,8 +17797,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [54, 41, 34, 49, 139, 174, 180, 170, 208, 232, 118, 57],
     bestTimeToVisit: 'December–April (dry season)',
     popularPlaces: [
-      { name: 'George Town', description: 'Cruise-port capital with duty-free shops', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Apr, Dec" },
-      { name: 'Seven Mile Beach', description: 'Coral-sand crescent lined with resorts', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Apr, Dec" },
+      { name: 'George Town', description: 'Cruise-port capital with duty-free shops', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Apr, Dec", panelSummary: "George Town is a cruise-port capital with duty-free shops. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Seven Mile Beach', description: 'Coral-sand crescent lined with resorts', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb–Apr, Dec", panelSummary: "Seven Mile Beach offers coral-sand crescent lined with resorts. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -17832,7 +17836,7 @@ export const countries: Record<string, CountryData> = {
   LI: {
     name: 'Liechtenstein',
     code: 'LI',
-    summary: 'Liechtenstein is a tiny Alpine principality of mountains, castles, vineyards, and carefully maintained villages. Vaduz offers museums and the princely castle view, while hiking and cycling routes connect the surrounding slopes. That mix gives travelers plenty to discover.',
+    panelSummary: 'Liechtenstein is a tiny Alpine principality of mountains, castles, vineyards, and carefully maintained villages. Vaduz offers museums and the princely castle view, while hiking and cycling routes connect the surrounding slopes. That mix gives travelers plenty to discover.',
     flagEmoji: '🇱🇮',
     flagColors: ['#002B7F', '#CE1126', '#FFFFFF'],
     continent: 'Europe',
@@ -17858,8 +17862,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [57, 53, 60, 68, 114, 125, 137, 137, 100, 82, 80, 64],
     bestTimeToVisit: 'May–September for hiking; December–March for skiing',
     popularPlaces: [
-      { name: 'Vaduz', description: 'Tiny capital dominated by a hillside castle', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug" },
-      { name: 'Malbun', description: 'Compact ski resort in the eastern mountains', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug" },
+      { name: 'Vaduz', description: 'Tiny capital dominated by a hillside castle', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug", panelSummary: "Vaduz is a tiny capital dominated by a hillside castle. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Malbun', description: 'Compact ski resort in the eastern mountains', bestWeatherMonths: "Jun, Sep", goodWeatherMonths: "May, Jul–Aug", panelSummary: "Malbun is a compact ski resort in the eastern mountains. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The setting makes every outing feel memorable." },
     ],
     attractions: [
       {
@@ -17906,7 +17910,7 @@ export const countries: Record<string, CountryData> = {
   MD: {
     name: 'Moldova',
     code: 'MD',
-    summary: 'Moldova is a small, under-visited country known for wine, monasteries, rolling countryside, and a mix of Romanian, Russian, and Soviet influences. Chișinău offers parks, markets, and food, while vast underground wineries are major attractions. The result is varied and rewarding.',
+    panelSummary: 'Moldova is a small, under-visited country known for wine, monasteries, rolling countryside, and a mix of Romanian, Russian, and Soviet influences. Chișinău offers parks, markets, and food, while vast underground wineries are major attractions. The result is varied and rewarding.',
     flagEmoji: '🇲🇩',
     flagColors: ['#0033A0', '#FFD100', '#CE1126'],
     continent: 'Europe',
@@ -17932,8 +17936,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [32, 28, 30, 35, 50, 68, 58, 44, 47, 36, 36, 35],
     bestTimeToVisit: 'May–September',
     popularPlaces: [
-      { name: 'Chișinău', description: 'Leafy post-Soviet capital', bestWeatherMonths: "Apr–Oct" },
-      { name: 'Orheiul Vechi', description: 'Cliffside cave monastery above a river bend', bestWeatherMonths: "Apr–Oct" },
+      { name: 'Chișinău', description: 'Leafy post-Soviet capital', bestWeatherMonths: "Apr–Oct", panelSummary: "Chișinău is a leafy post-Soviet capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'Orheiul Vechi', description: 'Cliffside cave monastery above a river bend', bestWeatherMonths: "Apr–Oct", panelSummary: "Orheiul Vechi is a cliffside cave monastery above a river bend. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -17979,7 +17983,7 @@ export const countries: Record<string, CountryData> = {
   MF: {
     name: 'Saint Martin',
     code: 'MF',
-    summary: 'Saint Martin is the French northern half of a Caribbean island shared with Dutch Sint Maarten. It is known for beaches, French-Creole dining, small villages, and a relaxed atmosphere. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Saint Martin is the French northern half of a Caribbean island shared with Dutch Sint Maarten. It is known for beaches, French-Creole dining, small villages, and a relaxed atmosphere. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇲🇫',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -18005,8 +18009,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 48, 40, 64, 86, 62, 96, 105, 120, 115, 133, 103],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Marigot', description: 'French capital with a waterfront market', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
-      { name: 'Grand Case', description: 'Beach village known as the “gastronomic capital of the Caribbean”', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
+      { name: 'Marigot', description: 'French capital with a waterfront market', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec", panelSummary: "Marigot is a French capital with a waterfront market. Food and drink are central to the experience, complemented by local culture, scenic surroundings, and opportunities to explore the area at a relaxed pace. A slower visit reveals much more than expected." },
+      { name: 'Grand Case', description: 'Beach village known as the “gastronomic capital of the Caribbean”', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec", panelSummary: "Grand Case is a beach village known as the “gastronomic capital of the Caribbean”. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -18044,7 +18048,7 @@ export const countries: Record<string, CountryData> = {
   MH: {
     name: 'Marshall Islands',
     code: 'MH',
-    summary: 'The Marshall Islands are a remote Pacific nation of coral atolls, lagoons, diving, fishing, and strong seafaring traditions. Majuro is the main center, while outer atolls are far quieter. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'The Marshall Islands are a remote Pacific nation of coral atolls, lagoons, diving, fishing, and strong seafaring traditions. Majuro is the main center, while outer atolls are far quieter. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇲🇭',
     flagColors: ['#003893', '#DD7500', '#FFFFFF'],
     continent: 'Oceania',
@@ -18071,8 +18075,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'December–April is generally drier, with February–March offering some of the most favorable weather for water activities.',
     bestVisitMonths: [12, 1, 2, 3, 4],
     popularPlaces: [
-      { name: 'Majuro', description: 'Ribbon capital atoll', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Bikini Atoll', description: 'Nuclear-test site now a wreck-diving destination', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
+      { name: 'Majuro', description: 'Ribbon capital atoll', bestWeatherMonths: "Jan–Dec", panelSummary: "Majuro is a ribbon capital atoll. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
+      { name: 'Bikini Atoll', description: 'Nuclear-test site now a wreck-diving destination', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec", panelSummary: "Bikini Atoll offers nuclear-test site now a wreck-diving destination. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -18116,7 +18120,7 @@ export const countries: Record<string, CountryData> = {
   MK: {
     name: 'North Macedonia',
     code: 'MK',
-    summary: 'North Macedonia combines Ottoman towns, Orthodox monasteries, mountain landscapes, lakes, and a mix of Balkan cultural influences. Skopje is the capital, while Ohrid, Matka Canyon, and wine regions are major attractions. That mix gives travelers plenty to discover.',
+    panelSummary: 'North Macedonia combines Ottoman towns, Orthodox monasteries, mountain landscapes, lakes, and a mix of Balkan cultural influences. Skopje is the capital, while Ohrid, Matka Canyon, and wine regions are major attractions. That mix gives travelers plenty to discover.',
     flagEmoji: '🇲🇰',
     flagColors: ['#D20000', '#FFE600', '#D20000'],
     continent: 'Europe',
@@ -18142,8 +18146,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [54, 46, 53, 53, 68, 60, 46, 39, 58, 61, 65, 66],
     bestTimeToVisit: 'May–October',
     popularPlaces: [
-      { name: 'Skopje', description: 'Statue-filled capital across a stone Ottoman bridge', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
-      { name: 'Ohrid', description: 'UNESCO lakeside town of 365 churches', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Skopje', description: 'Statue-filled capital across a stone Ottoman bridge', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr", panelSummary: "Skopje is a statue-filled capital across a stone Ottoman bridge. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Ohrid', description: 'UNESCO lakeside town of 365 churches', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Ohrid is a UNESCO lakeside town of 365 churches. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -18195,7 +18199,7 @@ export const countries: Record<string, CountryData> = {
   MO: {
     name: 'Macao',
     code: 'MO',
-    summary: 'Macao is a compact city where Portuguese colonial architecture, Chinese temples, casinos, food, and dense urban neighborhoods coexist. The historic center reflects centuries of cultural exchange, while Cotai offers large-scale entertainment resorts. That mix gives travelers plenty to discover.',
+    panelSummary: 'Macao is a compact city where Portuguese colonial architecture, Chinese temples, casinos, food, and dense urban neighborhoods coexist. The historic center reflects centuries of cultural exchange, while Cotai offers large-scale entertainment resorts. That mix gives travelers plenty to discover.',
     flagEmoji: '🇲🇴',
     flagColors: ['#00785E', '#FFCE00', '#FFFFFF'],
     continent: 'Asia',
@@ -18221,8 +18225,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [24, 37, 74, 148, 268, 376, 288, 348, 231, 82, 33, 31],
     bestTimeToVisit: 'October–December (cool, dry)',
     popularPlaces: [
-      { name: 'Historic Centre', description: 'UNESCO Portuguese-colonial old town', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr" },
-      { name: 'Cotai Strip', description: 'Vegas-scale casino resort district', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr" },
+      { name: 'Historic Centre', description: 'UNESCO Portuguese-colonial old town', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr", panelSummary: "Historic Centre is a UNESCO Portuguese-colonial old town. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Cotai Strip', description: 'Vegas-scale casino resort district', bestWeatherMonths: "Jan–Mar, Oct–Dec", goodWeatherMonths: "Apr", panelSummary: "Cotai Strip is a vegas-scale casino resort district. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -18263,7 +18267,7 @@ export const countries: Record<string, CountryData> = {
   MP: {
     name: 'Northern Mariana Islands',
     code: 'MP',
-    summary: 'The Northern Mariana Islands combine tropical beaches, diving, wartime history, and Chamorro and Carolinian culture. Saipan has most visitor facilities, while Tinian and Rota are quieter. The mix of coastal scenery, local culture, and outdoor experiences makes it especially enjoyable.',
+    panelSummary: 'The Northern Mariana Islands combine tropical beaches, diving, wartime history, and Chamorro and Carolinian culture. Saipan has most visitor facilities, while Tinian and Rota are quieter. The mix of coastal scenery, local culture, and outdoor experiences makes it especially enjoyable.',
     flagEmoji: '🇲🇵',
     flagColors: ['#0033A0', '#FFFFFF', '#8B4513'],
     continent: 'Oceania',
@@ -18289,8 +18293,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [108, 71, 72, 92, 74, 115, 225, 316, 332, 279, 179, 120],
     bestTimeToVisit: 'December–May (dry season)',
     popularPlaces: [
-      { name: 'Saipan', description: 'WWII-battle island with turquoise reefs', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr–May, Dec" },
-      { name: 'Rota', description: 'Quieter island known for cave diving', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May, Dec" },
+      { name: 'Saipan', description: 'WWII-battle island with turquoise reefs', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr–May, Dec", panelSummary: "Saipan is a wWII-battle island with turquoise reefs. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Rota', description: 'Quieter island known for cave diving', bestWeatherMonths: "Feb–Apr", goodWeatherMonths: "Jan, May, Dec", panelSummary: "Rota is a quieter island known for cave diving. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -18340,7 +18344,7 @@ export const countries: Record<string, CountryData> = {
   MQ: {
     name: 'Martinique',
     code: 'MQ',
-    summary: 'Martinique is a French Caribbean island of beaches, rainforest, volcanic mountains, rum estates, and Creole culture. Fort-de-France provides markets and urban life, while Mount Pelée, Les Salines, and northern villages offer nature and history. The result is varied and rewarding.',
+    panelSummary: 'Martinique is a French Caribbean island of beaches, rainforest, volcanic mountains, rum estates, and Creole culture. Fort-de-France provides markets and urban life, while Mount Pelée, Les Salines, and northern villages offer nature and history. The result is varied and rewarding.',
     flagEmoji: '🇲🇶',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -18366,8 +18370,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [134, 95, 82, 135, 174, 199, 222, 248, 271, 281, 333, 185],
     bestTimeToVisit: 'December–May (dry season)',
     popularPlaces: [
-      { name: 'Fort-de-France', description: 'Bustling capital across the bay from Trois-Îlets', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
-      { name: 'Saint-Pierre', description: 'Former “Paris of the Caribbean” destroyed by Mt Pelée in 1902', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec" },
+      { name: 'Fort-de-France', description: 'Bustling capital across the bay from Trois-Îlets', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec", panelSummary: "Fort-de-France is a bustling capital across the bay from Trois-Îlets. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Saint-Pierre', description: 'Former “Paris of the Caribbean” destroyed by Mt Pelée in 1902', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr, Dec", panelSummary: "Saint-Pierre offers former “Paris of the Caribbean” destroyed by Mt Pelée in 1902. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
     ],
     attractions: [
       {
@@ -18418,7 +18422,7 @@ export const countries: Record<string, CountryData> = {
   MR: {
     name: 'Mauritania',
     code: 'MR',
-    summary: 'Mauritania is a vast Saharan country of dunes, ancient caravan towns, desert plateaus, and Atlantic coast. Chinguetti, Ouadane, the Adrar, and the iron-ore train are its best-known attractions. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
+    panelSummary: 'Mauritania is a vast Saharan country of dunes, ancient caravan towns, desert plateaus, and Atlantic coast. Chinguetti, Ouadane, the Adrar, and the iron-ore train are its best-known attractions. Travelers will find dramatic scenery, rewarding outdoor experiences, and strong regional character.',
     flagEmoji: '🇲🇷',
     flagColors: ['#D01C1F', '#00A95C', '#FFD700'],
     continent: 'Africa',
@@ -18445,8 +18449,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'November–April brings cooler, drier conditions and is the best general window for desert and cultural travel.',
     bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
-      { name: 'Nouakchott', description: 'Sand-swept Atlantic capital', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb, Dec" },
-      { name: 'Chinguetti', description: 'Sahara caravan town of ancient libraries', bestWeatherMonths: "Jan–Feb, Dec" },
+      { name: 'Nouakchott', description: 'Sand-swept Atlantic capital', bestWeatherMonths: "Jan", goodWeatherMonths: "Feb, Dec", panelSummary: "Nouakchott is a sand-swept Atlantic capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its atmosphere rewards time beyond the main sights." },
+      { name: 'Chinguetti', description: 'Sahara caravan town of ancient libraries', bestWeatherMonths: "Jan–Feb, Dec", panelSummary: "Chinguetti is a sahara caravan town of ancient libraries. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The atmosphere encourages travelers to look more closely." },
     ],
     attractions: [
       {
@@ -18492,7 +18496,7 @@ export const countries: Record<string, CountryData> = {
   MS: {
     name: 'Montserrat',
     code: 'MS',
-    summary: 'Montserrat is a small Caribbean island transformed by the Soufrière Hills volcano, which buried its former capital, Plymouth. Visitors come for volcanic landscapes, hiking, quiet beaches, and a close-knit community. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Montserrat is a small Caribbean island transformed by the Soufrière Hills volcano, which buried its former capital, Plymouth. Visitors come for volcanic landscapes, hiking, quiet beaches, and a close-knit community. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇲🇸',
     flagColors: ['#012169', '#009543', '#FFCE00'],
     continent: 'North America',
@@ -18518,8 +18522,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [112, 65, 73, 93, 142, 126, 182, 183, 188, 185, 173, 139],
     bestTimeToVisit: 'December–May',
     popularPlaces: [
-      { name: 'Little Bay', description: 'New capital being built on the north coast', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
-      { name: 'Plymouth', description: 'Pompeii-like former capital buried by ash', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Little Bay', description: 'New capital being built on the north coast', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Little Bay is a new capital being built on the north coast. Travelers will find plenty of reasons to be outdoors, along with local culture and relaxed routines that make the setting easy to enjoy." },
+      { name: 'Plymouth', description: 'Pompeii-like former capital buried by ash', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Plymouth is a pompeii-like former capital buried by ash. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -18557,7 +18561,7 @@ export const countries: Record<string, CountryData> = {
   NC: {
     name: 'New Caledonia',
     code: 'NC',
-    summary: 'New Caledonia combines a huge lagoon, coral reefs, beaches, mountains, and a culture shaped by Indigenous Kanak and French influences. Nouméa offers urban comforts, while the Loyalty Islands and Grande Terre provide quieter landscapes and traditions.',
+    panelSummary: 'New Caledonia combines a huge lagoon, coral reefs, beaches, mountains, and a culture shaped by Indigenous Kanak and French influences. Nouméa offers urban comforts, while the Loyalty Islands and Grande Terre provide quieter landscapes and traditions.',
     flagEmoji: '🇳🇨',
     flagColors: ['#009543', '#ED4135', '#0035AD'],
     continent: 'Oceania',
@@ -18583,8 +18587,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [205, 206, 271, 156, 127, 110, 87, 88, 56, 55, 83, 131],
     bestTimeToVisit: 'September–November',
     popularPlaces: [
-      { name: 'Nouméa', description: 'French Pacific capital on a huge bay', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr, Dec" },
-      { name: 'Isle of Pines', description: '“Closest to paradise” lagoon islet', bestWeatherMonths: "May–Dec", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Nouméa', description: 'French Pacific capital on a huge bay', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr, Dec", panelSummary: "Nouméa is a French Pacific capital on a huge bay. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
+      { name: 'Isle of Pines', description: '“Closest to paradise” lagoon islet', bestWeatherMonths: "May–Dec", goodWeatherMonths: "Jan, Apr", panelSummary: "Isle of Pines offers “Closest to paradise” lagoon islet. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -18625,7 +18629,7 @@ export const countries: Record<string, CountryData> = {
   NE: {
     name: 'Niger',
     code: 'NE',
-    summary: 'Niger contains immense Sahara landscapes, the Aïr Mountains, historic caravan towns, and Tuareg cultural traditions. Agadez has long been a key desert crossroads, while remote reserves protect unusual wildlife. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Niger contains immense Sahara landscapes, the Aïr Mountains, historic caravan towns, and Tuareg cultural traditions. Agadez has long been a key desert crossroads, while remote reserves protect unusual wildlife. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇳🇪',
     flagColors: ['#E05206', '#FFFFFF', '#0DB02B'],
     continent: 'Africa',
@@ -18651,8 +18655,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [0, 0, 0, 2, 7, 19, 50, 74, 27, 4, 0, 0],
     bestTimeToVisit: 'November–February',
     popularPlaces: [
-      { name: 'Niamey', description: 'Sahel capital on the Niger River', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb" },
-      { name: 'Agadez', description: 'Ancient Tuareg caravan city (UNESCO)', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb" },
+      { name: 'Niamey', description: 'Sahel capital on the Niger River', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb", panelSummary: "Niamey is a sahel capital on the Niger River. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
+      { name: 'Agadez', description: 'Ancient Tuareg caravan city (UNESCO)', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb", panelSummary: "Agadez is an ancient Tuareg caravan city (UNESCO). Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Small details make the history feel especially vivid." },
     ],
     attractions: [
       {
@@ -18695,7 +18699,7 @@ export const countries: Record<string, CountryData> = {
   NR: {
     name: 'Nauru',
     code: 'NR',
-    summary: 'Nauru is one of the world’s smallest countries, a remote Pacific island shaped profoundly by phosphate mining. Visitors find a ring road, coral coast, a mined interior, and a close-knit community. That mix gives travelers plenty to discover.',
+    panelSummary: 'Nauru is one of the world’s smallest countries, a remote Pacific island shaped profoundly by phosphate mining. Visitors find a ring road, coral coast, a mined interior, and a close-knit community. That mix gives travelers plenty to discover.',
     flagEmoji: '🇳🇷',
     flagColors: ['#002B7F', '#FFCE00', '#FFFFFF'],
     continent: 'Oceania',
@@ -18722,8 +18726,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'March–October avoids the wettest part of the year; May–September is generally the better bet for drier conditions.',
     bestVisitMonths: [3, 4, 5, 6, 7, 8, 9, 10],
     popularPlaces: [
-      { name: 'Yaren', description: 'Airport-adjacent de facto capital', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Anibare Bay', description: 'Best beach on the island’s east coast', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Yaren', description: 'Airport-adjacent de facto capital', bestWeatherMonths: "Jan–Dec", panelSummary: "Yaren is an airport-adjacent de facto capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'Anibare Bay', description: 'Best beach on the island’s east coast', bestWeatherMonths: "Jan–Dec", panelSummary: "Anibare Bay is a best beach on the island’s east coast. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -18766,7 +18770,7 @@ export const countries: Record<string, CountryData> = {
   NU: {
     name: 'Niue',
     code: 'NU',
-    summary: 'Niue is a raised coral island known for clear water, caves, chasms, reef pools, and seasonal humpback whales. With a small population and limited tourism, it feels quiet and personal. That mix gives travelers plenty to discover.',
+    panelSummary: 'Niue is a raised coral island known for clear water, caves, chasms, reef pools, and seasonal humpback whales. With a small population and limited tourism, it feels quiet and personal. That mix gives travelers plenty to discover.',
     flagEmoji: '🇳🇺',
     flagColors: ['#FFCC00', '#012169', '#FFFFFF'],
     continent: 'Oceania',
@@ -18792,8 +18796,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [279, 210, 302, 228, 188, 111, 85, 130, 123, 121, 152, 167],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Alofi', description: 'Tiny coral capital', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug–Oct" },
-      { name: 'Matapa Chasm', description: 'Cliff-walled swim spot once reserved for Niuean royalty', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug–Oct" },
+      { name: 'Alofi', description: 'Tiny coral capital', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug–Oct", panelSummary: "Alofi is a tiny coral capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
+      { name: 'Matapa Chasm', description: 'Cliff-walled swim spot once reserved for Niuean royalty', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug–Oct", panelSummary: "Matapa Chasm offers cliff-walled swim spot once reserved for Niuean royalty. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -18829,7 +18833,7 @@ export const countries: Record<string, CountryData> = {
   PG: {
     name: 'Papua New Guinea',
     code: 'PG',
-    summary: 'Papua New Guinea is one of the world’s most culturally and biologically diverse countries, with hundreds of languages, mountain valleys, tropical islands, reefs, and traditional communities. Trekking, diving, birdwatching, and festivals are major draws. The result is varied and rewarding.',
+    panelSummary: 'Papua New Guinea is one of the world’s most culturally and biologically diverse countries, with hundreds of languages, mountain valleys, tropical islands, reefs, and traditional communities. Trekking, diving, birdwatching, and festivals are major draws. The result is varied and rewarding.',
     flagEmoji: '🇵🇬',
     flagColors: ['#CE1126', '#000000', '#FCD116'],
     continent: 'Oceania',
@@ -18855,8 +18859,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [305, 315, 325, 298, 252, 206, 214, 210, 204, 238, 223, 288],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Port Moresby', description: 'Coastal capital with parliament resembling a spirit house', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug" },
-      { name: 'Mount Hagen', description: 'Highlands town famous for the annual Sing-Sing', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Feb–May, Aug–Sep" },
+      { name: 'Port Moresby', description: 'Coastal capital with parliament resembling a spirit house', bestWeatherMonths: "Jul", goodWeatherMonths: "Jun, Aug", panelSummary: "Port Moresby is a coastal capital with parliament resembling a spirit house. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Mount Hagen', description: 'Highlands town famous for the annual Sing-Sing', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Feb–May, Aug–Sep", panelSummary: "Mount Hagen offers highlands town famous for the annual Sing-Sing. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Even quiet moments outdoors feel worthwhile here." },
     ],
     attractions: [
       {
@@ -18899,7 +18903,7 @@ export const countries: Record<string, CountryData> = {
   PK: {
     name: 'Pakistan',
     code: 'PK',
-    summary: 'Pakistan offers high mountain ranges, ancient civilizations, Islamic architecture, deserts, cities, and exceptionally varied regional cultures. Lahore, Islamabad, the Karakoram Highway, Hunza, and archaeological sites such as Mohenjo-daro are major highlights. Hospitality and food are strong attractions, though security and infrastructure require careful planning.',
+    panelSummary: 'Pakistan offers high mountain ranges, ancient civilizations, Islamic architecture, deserts, cities, and exceptionally varied regional cultures. Lahore, Islamabad, the Karakoram Highway, Hunza, and archaeological sites such as Mohenjo-daro are major highlights. Hospitality and food are strong attractions, though security and infrastructure require careful planning.',
     flagEmoji: '🇵🇰',
     flagColors: ['#01411C', '#FFFFFF', '#01411C'],
     continent: 'Asia',
@@ -18926,8 +18930,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'February–March and October–November suit many cities and cultural trips, while May–October is the main season for the northern mountains. Monsoon and extreme heat make midsummer timing highly regional.',
     bestVisitMonths: [2, 3, 5, 6, 7, 8, 9, 10, 11],
     popularPlaces: [
-      { name: 'Lahore', description: 'Mughal cultural capital with the Badshahi Mosque', bestWeatherMonths: "Jan–Mar, Nov–Dec" },
-      { name: 'Hunza Valley', description: 'Karakoram mountain valley of storybook villages', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun" },
+      { name: 'Lahore', description: 'Mughal cultural capital with the Badshahi Mosque', bestWeatherMonths: "Jan–Mar, Nov–Dec", panelSummary: "Lahore is a mughal cultural capital with the Badshahi Mosque. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its atmosphere rewards time beyond the main sights." },
+      { name: 'Hunza Valley', description: 'Karakoram mountain valley of storybook villages', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun", panelSummary: "Hunza Valley is a karakoram mountain valley of storybook villages. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Even quiet moments outdoors feel worthwhile here." },
     ],
     attractions: [
       {
@@ -18972,7 +18976,7 @@ export const countries: Record<string, CountryData> = {
   PM: {
     name: 'Saint Pierre and Miquelon',
     code: 'PM',
-    summary: 'Saint Pierre and Miquelon is a small French archipelago near Newfoundland, offering colorful towns, rugged coast, maritime history, and a distinctly European atmosphere in North America. Saint-Pierre is the main center, while Miquelon-Langlade provides nature and quiet landscapes.',
+    panelSummary: 'Saint Pierre and Miquelon is a small French archipelago near Newfoundland, offering colorful towns, rugged coast, maritime history, and a distinctly European atmosphere in North America. Saint-Pierre is the main center, while Miquelon-Langlade provides nature and quiet landscapes.',
     flagEmoji: '🇵🇲',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'North America',
@@ -18998,8 +19002,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [120, 101, 98, 96, 98, 94, 96, 106, 115, 137, 134, 129],
     bestTimeToVisit: 'June–September',
     popularPlaces: [
-      { name: 'Saint-Pierre', description: 'Colorful French village opposite Newfoundland', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Sep" },
-      { name: 'Miquelon', description: 'Larger, quieter island with wild horses', bestWeatherMonths: "Jun–Sep" },
+      { name: 'Saint-Pierre', description: 'Colorful French village opposite Newfoundland', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Sep", panelSummary: "Saint-Pierre is a colorful French village opposite Newfoundland. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Miquelon', description: 'Larger, quieter island with wild horses', bestWeatherMonths: "Jun–Sep", panelSummary: "Miquelon is a larger, quieter island with wild horses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -19043,7 +19047,7 @@ export const countries: Record<string, CountryData> = {
   PS: {
     name: 'Palestinian Territories',
     code: 'PS',
-    summary: 'The Palestinian Territories contain profound religious history, ancient towns, cultural traditions, and landscapes stretching from hill country to the Dead Sea. Bethlehem, Jericho, Hebron, Nablus, and Ramallah each offer distinct experiences. That mix gives travelers plenty to discover.',
+    panelSummary: 'The Palestinian Territories contain profound religious history, ancient towns, cultural traditions, and landscapes stretching from hill country to the Dead Sea. Bethlehem, Jericho, Hebron, Nablus, and Ramallah each offer distinct experiences. That mix gives travelers plenty to discover.',
     flagEmoji: '🇵🇸',
     flagColors: ['#000000', '#FFFFFF', '#009639'],
     continent: 'Asia',
@@ -19069,8 +19073,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [117, 93, 52, 16, 4, 0, 0, 0, 0, 15, 51, 92],
     bestTimeToVisit: 'March–May and September–November',
     popularPlaces: [
-      { name: 'Bethlehem', description: 'Church of the Nativity pilgrimage town', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep" },
-      { name: 'Ramallah', description: 'Cultural capital of the West Bank', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep" },
+      { name: 'Bethlehem', description: 'Church of the Nativity pilgrimage town', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep", panelSummary: "Bethlehem is a church of the Nativity pilgrimage town. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Ramallah', description: 'Cultural capital of the West Bank', bestWeatherMonths: "Feb–May, Oct–Dec", goodWeatherMonths: "Jan, Jun, Sep", panelSummary: "Ramallah is a cultural capital of the West Bank. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
     ],
     attractions: [
       {
@@ -19120,7 +19124,7 @@ export const countries: Record<string, CountryData> = {
   PW: {
     name: 'Palau',
     code: 'PW',
-    summary: 'Palau is a Pacific island nation celebrated for world-class diving, clear lagoons, limestone islands, marine wildlife, and strong conservation policies. Koror is the main base, while the Rock Islands, Jellyfish Lake, and outer states provide the main natural attractions.',
+    panelSummary: 'Palau is a Pacific island nation celebrated for world-class diving, clear lagoons, limestone islands, marine wildlife, and strong conservation policies. Koror is the main base, while the Rock Islands, Jellyfish Lake, and outer states provide the main natural attractions.',
     flagEmoji: '🇵🇼',
     flagColors: ['#4AADD6', '#FFDE00', '#4AADD6'],
     continent: 'Oceania',
@@ -19147,8 +19151,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'November–April is the drier season and the best general window for diving, snorkeling, and island trips.',
     bestVisitMonths: [11, 12, 1, 2, 3, 4],
     popularPlaces: [
-      { name: 'Koror', description: 'Main tourist hub', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Rock Islands', description: 'UNESCO-listed lagoon of 445 forested limestone islets', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Koror', description: 'Main tourist hub', bestWeatherMonths: "Jan–Dec", panelSummary: "Koror is a main tourist hub. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Rock Islands', description: 'UNESCO-listed lagoon of 445 forested limestone islets', bestWeatherMonths: "Jan–Dec", panelSummary: "Rock Islands offers UNESCO-listed lagoon of 445 forested limestone islets. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
     ],
     attractions: [
       {
@@ -19194,7 +19198,7 @@ export const countries: Record<string, CountryData> = {
   SB: {
     name: 'Solomon Islands',
     code: 'SB',
-    summary: 'The Solomon Islands combine rainforest, coral reefs, remote islands, traditional communities, and significant World War II history. Honiara is the main gateway, while Western Province and outer islands offer diving, surfing, lagoons, and village stays.',
+    panelSummary: 'The Solomon Islands combine rainforest, coral reefs, remote islands, traditional communities, and significant World War II history. Honiara is the main gateway, while Western Province and outer islands offer diving, surfing, lagoons, and village stays.',
     flagEmoji: '🇸🇧',
     flagColors: ['#0051BA', '#FCD116', '#215B33'],
     continent: 'Oceania',
@@ -19220,8 +19224,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [351, 340, 362, 272, 230, 190, 260, 231, 224, 223, 223, 272],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Honiara', description: 'Guadalcanal capital with WWII battlefield sites', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec" },
-      { name: 'Marovo Lagoon', description: 'World’s largest saltwater lagoon', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Jan–Apr, Sep–Dec" },
+      { name: 'Honiara', description: 'Guadalcanal capital with WWII battlefield sites', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–May, Oct–Dec", panelSummary: "Honiara is a guadalcanal capital with WWII battlefield sites. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Marovo Lagoon', description: 'World’s largest saltwater lagoon', bestWeatherMonths: "May–Aug", goodWeatherMonths: "Jan–Apr, Sep–Dec", panelSummary: "Marovo Lagoon offers world’s largest saltwater lagoon. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -19254,7 +19258,7 @@ export const countries: Record<string, CountryData> = {
   SM: {
     name: 'San Marino',
     code: 'SM',
-    summary: 'San Marino is a tiny republic perched on Mount Titano, known for medieval towers, steep lanes, panoramic views, and one of Europe’s oldest political traditions. The compact historic center is easily explored on foot. The result is varied and rewarding.',
+    panelSummary: 'San Marino is a tiny republic perched on Mount Titano, known for medieval towers, steep lanes, panoramic views, and one of Europe’s oldest political traditions. The compact historic center is easily explored on foot. The result is varied and rewarding.',
     flagEmoji: '🇸🇲',
     flagColors: ['#FFFFFF', '#5EB6E4', '#FFFFFF'],
     continent: 'Europe',
@@ -19280,8 +19284,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [49, 58, 57, 71, 69, 60, 43, 45, 86, 90, 119, 77],
     bestTimeToVisit: 'April–October',
     popularPlaces: [
-      { name: 'San Marino City', description: 'Cliffside old town on Monte Titano', bestWeatherMonths: "Apr–Oct" },
-      { name: 'Borgo Maggiore', description: 'Cable-car linked lower town', bestWeatherMonths: "Apr–Oct" },
+      { name: 'San Marino City', description: 'Cliffside old town on Monte Titano', bestWeatherMonths: "Apr–Oct", panelSummary: "San Marino City is a cliffside old town on Monte Titano. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
+      { name: 'Borgo Maggiore', description: 'Cable-car linked lower town', bestWeatherMonths: "Apr–Oct", panelSummary: "Borgo Maggiore is a cable-car linked lower town. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -19322,7 +19326,7 @@ export const countries: Record<string, CountryData> = {
   SO: {
     name: 'Somalia',
     code: 'SO',
-    summary: 'Somalia has a long Indian Ocean coastline, historic trading cities, pastoral traditions, distinctive cuisine, and important archaeological and cultural heritage. Mogadishu, Somaliland, and Puntland have very different conditions. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
+    panelSummary: 'Somalia has a long Indian Ocean coastline, historic trading cities, pastoral traditions, distinctive cuisine, and important archaeological and cultural heritage. Mogadishu, Somaliland, and Puntland have very different conditions. It rewards travelers interested in history, architecture, food, and distinctive local traditions.',
     flagEmoji: '🇸🇴',
     flagColors: ['#4189DD', '#FFFFFF', '#FFFFFF'],
     continent: 'Africa',
@@ -19348,8 +19352,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [3, 3, 13, 56, 56, 18, 14, 11, 12, 45, 38, 11],
     bestTimeToVisit: 'Travel not advised — Level 4.',
     popularPlaces: [
-      { name: 'Mogadishu', description: 'Coastal capital with pastel Italianate ruins', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–Feb, Oct, Dec" },
-      { name: 'Hargeisa', description: 'Capital of self-declared Somaliland', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May–Sep" },
+      { name: 'Mogadishu', description: 'Coastal capital with pastel Italianate ruins', bestWeatherMonths: "Jun–Sep", goodWeatherMonths: "Jan–Feb, Oct, Dec", panelSummary: "Mogadishu is a coastal capital with pastel Italianate ruins. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Hargeisa', description: 'Capital of self-declared Somaliland', bestWeatherMonths: "Jan–Apr, Oct–Dec", goodWeatherMonths: "May–Sep", panelSummary: "Hargeisa is a capital of self-declared Somaliland. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -19400,7 +19404,7 @@ export const countries: Record<string, CountryData> = {
   SS: {
     name: 'South Sudan',
     code: 'SS',
-    summary: 'South Sudan is a young country of vast wetlands, savannas, diverse ethnic cultures, and major wildlife migrations. The Sudd and remote national parks hold exceptional ecological importance. Travelers come for close encounters with nature, varied landscapes, and rewarding outdoor adventures.',
+    panelSummary: 'South Sudan is a young country of vast wetlands, savannas, diverse ethnic cultures, and major wildlife migrations. The Sudd and remote national parks hold exceptional ecological importance. Travelers come for close encounters with nature, varied landscapes, and rewarding outdoor adventures.',
     flagEmoji: '🇸🇸',
     flagColors: ['#000000', '#DE2010', '#078930'],
     continent: 'Africa',
@@ -19426,8 +19430,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [3, 6, 26, 70, 117, 141, 171, 186, 143, 107, 25, 6],
     bestTimeToVisit: 'Travel not advised — Level 4.',
     popularPlaces: [
-      { name: 'Juba', description: 'Nile-side capital', bestWeatherMonths: "Jun–Sep, Nov–Dec", goodWeatherMonths: "Jan–May, Oct" },
-      { name: 'Boma National Park', description: 'Site of one of the world’s largest wildlife migrations', bestWeatherMonths: "Jun–Sep, Nov–Dec", goodWeatherMonths: "Jan–Mar, May, Oct" },
+      { name: 'Juba', description: 'Nile-side capital', bestWeatherMonths: "Jun–Sep, Nov–Dec", goodWeatherMonths: "Jan–May, Oct", panelSummary: "Juba is a nile-side capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
+      { name: 'Boma National Park', description: 'Site of one of the world’s largest wildlife migrations', bestWeatherMonths: "Jun–Sep, Nov–Dec", goodWeatherMonths: "Jan–Mar, May, Oct", panelSummary: "Boma National Park offers site of one of the world’s largest wildlife migrations. It is especially appealing to nature lovers seeking wildlife encounters, open landscapes, and memorable experiences led by the rhythms of the natural world." },
     ],
     attractions: [
       {
@@ -19470,7 +19474,7 @@ export const countries: Record<string, CountryData> = {
   ST: {
     name: 'São Tomé and Príncipe',
     code: 'ST',
-    summary: 'São Tomé and Príncipe is a lush volcanic island nation of rainforest, cocoa plantations, beaches, and Portuguese-Creole culture. São Tomé is the larger island, while Príncipe is quieter and more pristine. That mix gives travelers plenty to discover.',
+    panelSummary: 'São Tomé and Príncipe is a lush volcanic island nation of rainforest, cocoa plantations, beaches, and Portuguese-Creole culture. São Tomé is the larger island, while Príncipe is quieter and more pristine. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇹',
     flagColors: ['#12AD2B', '#FFCE00', '#D21034'],
     continent: 'Africa',
@@ -19496,8 +19500,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [186, 149, 210, 213, 228, 55, 40, 89, 187, 340, 284, 216],
     bestTimeToVisit: 'June–September (dry, cooler)',
     popularPlaces: [
-      { name: 'São Tomé City', description: 'Sleepy Portuguese-colonial capital', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep–Oct" },
-      { name: 'Príncipe', description: 'Tiny UNESCO biosphere island to the north', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug" },
+      { name: 'São Tomé City', description: 'Sleepy Portuguese-colonial capital', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "Sep–Oct", panelSummary: "São Tomé City is a sleepy Portuguese-colonial capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The atmosphere encourages travelers to look more closely." },
+      { name: 'Príncipe', description: 'Tiny UNESCO biosphere island to the north', bestWeatherMonths: "Jun–Jul", goodWeatherMonths: "Aug", panelSummary: "Príncipe is a tiny UNESCO biosphere island to the north. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -19544,7 +19548,7 @@ export const countries: Record<string, CountryData> = {
   SX: {
     name: 'Sint Maarten',
     code: 'SX',
-    summary: 'Sint Maarten is the Dutch southern half of an island shared with French Saint Martin. It is known for beaches, cruise tourism, nightlife, shopping, and the famous low-flying aircraft at Maho Beach. That mix gives travelers plenty to discover.',
+    panelSummary: 'Sint Maarten is the Dutch southern half of an island shared with French Saint Martin. It is known for beaches, cruise tourism, nightlife, shopping, and the famous low-flying aircraft at Maho Beach. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇽',
     flagColors: ['#CE2029', '#FFFFFF', '#0033A0'],
     continent: 'North America',
@@ -19570,8 +19574,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [77, 48, 40, 64, 86, 62, 96, 105, 120, 115, 133, 103],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Philipsburg', description: 'Cruise-port capital along Great Bay', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
-      { name: 'Maho Beach', description: 'Famous plane-landing beach next to the airport', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec" },
+      { name: 'Philipsburg', description: 'Cruise-port capital along Great Bay', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec", panelSummary: "Philipsburg is a cruise-port capital along Great Bay. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Maho Beach', description: 'Famous plane-landing beach next to the airport', bestWeatherMonths: "Jan–Mar", goodWeatherMonths: "Apr–Jun, Dec", panelSummary: "Maho Beach offers famous plane-landing beach next to the airport. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -19616,7 +19620,7 @@ export const countries: Record<string, CountryData> = {
   SY: {
     name: 'Syria',
     code: 'SY',
-    summary: 'Syria has an extraordinary cultural heritage, including ancient cities, Roman ruins, castles, souqs, and some of the world’s oldest continuously inhabited settlements. Damascus, Aleppo, Palmyra, and coastal regions hold immense historical importance. That mix gives travelers plenty to discover.',
+    panelSummary: 'Syria has an extraordinary cultural heritage, including ancient cities, Roman ruins, castles, souqs, and some of the world’s oldest continuously inhabited settlements. Damascus, Aleppo, Palmyra, and coastal regions hold immense historical importance. That mix gives travelers plenty to discover.',
     flagEmoji: '🇸🇾',
     flagColors: ['#CE1126', '#FFFFFF', '#000000'],
     continent: 'Asia',
@@ -19642,8 +19646,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [57, 48, 42, 27, 17, 2, 0, 0, 2, 16, 33, 50],
     bestTimeToVisit: 'Travel not advised — Level 4.',
     popularPlaces: [
-      { name: 'Damascus', description: 'One of the world’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov" },
-      { name: 'Aleppo', description: 'Ancient citadel city with a partly restored souq', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb, Dec" },
+      { name: 'Damascus', description: 'One of the world’s oldest continuously inhabited cities', bestWeatherMonths: "Apr–Oct", goodWeatherMonths: "Nov", panelSummary: "Damascus is one of the world’s oldest continuously inhabited cities. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Aleppo', description: 'Ancient citadel city with a partly restored souq', bestWeatherMonths: "Mar–May, Oct–Nov", goodWeatherMonths: "Feb, Dec", panelSummary: "Aleppo is an ancient citadel city with a partly restored souq. Travelers can explore layers of history, distinctive architecture, local traditions, and the stories that make the destination more meaningful than a simple photo stop." },
     ],
     attractions: [
       {
@@ -19687,7 +19691,7 @@ export const countries: Record<string, CountryData> = {
   TC: {
     name: 'Turks and Caicos',
     code: 'TC',
-    summary: 'Turks and Caicos is known for exceptionally clear water, white-sand beaches, coral reefs, and upscale but relaxed resorts. Providenciales has most visitor facilities, while Grand Turk and the smaller islands offer history, diving, and quieter settings.',
+    panelSummary: 'Turks and Caicos is known for exceptionally clear water, white-sand beaches, coral reefs, and upscale but relaxed resorts. Providenciales has most visitor facilities, while Grand Turk and the smaller islands offer history, diving, and quieter settings.',
     flagEmoji: '🇹🇨',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -19713,8 +19717,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [46, 44, 43, 44, 50, 38, 34, 48, 76, 97, 135, 88],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Providenciales', description: 'Main tourist island with Grace Bay Beach', bestWeatherMonths: "Jan–Apr, Dec", goodWeatherMonths: "May" },
-      { name: 'Grand Turk', description: 'Historic capital island with a small colonial center', bestWeatherMonths: "Jan–Apr, Dec", goodWeatherMonths: "May–Jun" },
+      { name: 'Providenciales', description: 'Main tourist island with Grace Bay Beach', bestWeatherMonths: "Jan–Apr, Dec", goodWeatherMonths: "May", panelSummary: "Providenciales is a main tourist island with Grace Bay Beach. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Grand Turk', description: 'Historic capital island with a small colonial center', bestWeatherMonths: "Jan–Apr, Dec", goodWeatherMonths: "May–Jun", panelSummary: "Grand Turk is a historic capital island with a small colonial center. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -19762,7 +19766,7 @@ export const countries: Record<string, CountryData> = {
   TD: {
     name: 'Chad',
     code: 'TD',
-    summary: 'Chad contains vast Sahara desert, striking rock formations, savanna, and culturally diverse communities. The Ennedi Plateau and Zakouma National Park are exceptional natural attractions. However, remote logistics, political instability, and serious security risks make tourism highly challenging and usually limited to specialist expeditions.',
+    panelSummary: 'Chad contains vast Sahara desert, striking rock formations, savanna, and culturally diverse communities. The Ennedi Plateau and Zakouma National Park are exceptional natural attractions. However, remote logistics, political instability, and serious security risks make tourism highly challenging and usually limited to specialist expeditions.',
     flagEmoji: '🇹🇩',
     flagColors: ['#002664', '#FECB00', '#C60C30'],
     continent: 'Africa',
@@ -19789,8 +19793,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'November–February is the cooler dry season and the most comfortable general window for travel.',
     bestVisitMonths: [11, 12, 1, 2],
     popularPlaces: [
-      { name: 'N\'Djamena', description: 'Sahel capital across from Cameroon', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov" },
-      { name: 'Zakouma National Park', description: 'One of Africa’s great wildlife comeback stories', bestWeatherMonths: "Jan, Aug, Oct–Dec", goodWeatherMonths: "Feb, Jun–Jul, Sep" },
+      { name: 'N\'Djamena', description: 'Sahel capital across from Cameroon', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov", panelSummary: "N'Djamena is a sahel capital across from Cameroon. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Zakouma National Park', description: 'One of Africa’s great wildlife comeback stories', bestWeatherMonths: "Jan, Aug, Oct–Dec", goodWeatherMonths: "Feb, Jun–Jul, Sep", panelSummary: "Zakouma National Park is one of Africa’s great wildlife comeback stories. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -19837,7 +19841,7 @@ export const countries: Record<string, CountryData> = {
   TJ: {
     name: 'Tajikistan',
     code: 'TJ',
-    summary: 'Tajikistan is a mountainous Central Asian country known for the Pamir Highway, high-altitude lakes, rugged valleys, and Persian cultural traditions. Dushanbe is the main gateway, while the Pamirs and Fann Mountains attract adventurous road-trippers and trekkers.',
+    panelSummary: 'Tajikistan is a mountainous Central Asian country known for the Pamir Highway, high-altitude lakes, rugged valleys, and Persian cultural traditions. Dushanbe is the main gateway, while the Pamirs and Fann Mountains attract adventurous road-trippers and trekkers.',
     flagEmoji: '🇹🇯',
     flagColors: ['#CC0000', '#FFFFFF', '#006600'],
     continent: 'Asia',
@@ -19863,8 +19867,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [67, 86, 96, 93, 87, 40, 20, 14, 10, 36, 68, 75],
     bestTimeToVisit: 'June–September (mountains)',
     popularPlaces: [
-      { name: 'Dushanbe', description: 'Leafy capital with the world’s tallest flagpole (until 2014)', bestWeatherMonths: "May–Oct" },
-      { name: 'Khorog', description: 'Trekking hub in the Pamir Mountains', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep" },
+      { name: 'Dushanbe', description: 'Leafy capital with the world’s tallest flagpole (until 2014)', bestWeatherMonths: "May–Oct", panelSummary: "Dushanbe is a leafy capital with the world’s tallest flagpole (until 2014). Travelers can move between landmark architecture, local dining, cultural institutions, and lively streets that make the city enjoyable well beyond a checklist of sights." },
+      { name: 'Khorog', description: 'Trekking hub in the Pamir Mountains', bestWeatherMonths: "Jul–Aug", goodWeatherMonths: "Jun, Sep", panelSummary: "Khorog is a trekking hub in the Pamir Mountains. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -19910,7 +19914,7 @@ export const countries: Record<string, CountryData> = {
   TL: {
     name: 'Timor-Leste',
     code: 'TL',
-    summary: 'Timor-Leste is a young island nation of mountains, coral reefs, beaches, and a culture shaped by Indigenous traditions and Portuguese influence. Dili is the main gateway, while Atauro Island, mountain villages, and the eastern coast offer diving and quiet scenery.',
+    panelSummary: 'Timor-Leste is a young island nation of mountains, coral reefs, beaches, and a culture shaped by Indigenous traditions and Portuguese influence. Dili is the main gateway, while Atauro Island, mountain villages, and the eastern coast offer diving and quiet scenery.',
     flagEmoji: '🇹🇱',
     flagColors: ['#DC241F', '#FFC726', '#000000'],
     continent: 'Asia',
@@ -19936,8 +19940,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [226, 201, 191, 98, 95, 72, 45, 19, 26, 43, 96, 203],
     bestTimeToVisit: 'May–October (dry season)',
     popularPlaces: [
-      { name: 'Dili', description: 'Waterfront capital ringed by mountains', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "Apr–May, Nov" },
-      { name: 'Atauro Island', description: 'Reef-fringed island known for the world’s highest fish diversity', bestWeatherMonths: "Jul–Oct", goodWeatherMonths: "Apr–Jun, Nov" },
+      { name: 'Dili', description: 'Waterfront capital ringed by mountains', bestWeatherMonths: "Jun–Oct", goodWeatherMonths: "Apr–May, Nov", panelSummary: "Dili is a waterfront capital ringed by mountains. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Atauro Island', description: 'Reef-fringed island known for the world’s highest fish diversity', bestWeatherMonths: "Jul–Oct", goodWeatherMonths: "Apr–Jun, Nov", panelSummary: "Atauro Island is a reef-fringed island known for the world’s highest fish diversity. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
     ],
     attractions: [
       {
@@ -19989,7 +19993,7 @@ export const countries: Record<string, CountryData> = {
   TM: {
     name: 'Turkmenistan',
     code: 'TM',
-    summary: 'Turkmenistan is known for monumental Ashgabat, desert landscapes, Silk Road ruins, and the unusual Darvaza gas crater. Merv, Konye-Urgench, and the Karakum Desert reveal deeper history and geography. Tourism is tightly controlled, visas can be difficult, and independent travel is restricted, making visits highly structured.',
+    panelSummary: 'Turkmenistan is known for monumental Ashgabat, desert landscapes, Silk Road ruins, and the unusual Darvaza gas crater. Merv, Konye-Urgench, and the Karakum Desert reveal deeper history and geography. Tourism is tightly controlled, visas can be difficult, and independent travel is restricted, making visits highly structured.',
     flagEmoji: '🇹🇲',
     flagColors: ['#00843D', '#FFFFFF', '#CE1126'],
     continent: 'Asia',
@@ -20015,8 +20019,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [18, 23, 30, 23, 14, 3, 2, 1, 2, 7, 15, 15],
     bestTimeToVisit: 'April–June and September–October',
     popularPlaces: [
-      { name: 'Ashgabat', description: 'White-marble capital of grand monuments', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Jun, Aug" },
-      { name: 'Darvaza', description: 'Desert village next to the “Gates of Hell” gas crater', bestWeatherMonths: "Mar–Apr, Oct", goodWeatherMonths: "May, Sep, Nov" },
+      { name: 'Ashgabat', description: 'White-marble capital of grand monuments', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Jun, Aug", panelSummary: "Ashgabat is a white-marble capital of grand monuments. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Darvaza', description: 'Desert village next to the “Gates of Hell” gas crater', bestWeatherMonths: "Mar–Apr, Oct", goodWeatherMonths: "May, Sep, Nov", panelSummary: "Darvaza is a desert village next to the “Gates of Hell” gas crater. The experience is strongest when travelers look beyond the headline attraction and make room for local traditions, scenery, food, and everyday life." },
     ],
     attractions: [
       {
@@ -20067,7 +20071,7 @@ export const countries: Record<string, CountryData> = {
   TO: {
     name: 'Tonga',
     code: 'TO',
-    summary: 'Tonga is a Polynesian kingdom of coral islands, beaches, caves, traditional villages, and strong royal and church traditions. Vavaʻu is famous for sailing and seasonal humpback whales, while Tongatapu offers archaeological sites and everyday culture.',
+    panelSummary: 'Tonga is a Polynesian kingdom of coral islands, beaches, caves, traditional villages, and strong royal and church traditions. Vavaʻu is famous for sailing and seasonal humpback whales, while Tongatapu offers archaeological sites and everyday culture.',
     flagEmoji: '🇹🇴',
     flagColors: ['#FFFFFF', '#C10000', '#C10000'],
     continent: 'Oceania',
@@ -20093,8 +20097,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [192, 194, 264, 174, 105, 85, 92, 110, 114, 110, 132, 143],
     bestTimeToVisit: 'May–October (dry season, whale season starts Jul)',
     popularPlaces: [
-      { name: 'Nukuʻalofa', description: 'Small royal capital', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Nov–Dec" },
-      { name: 'Vavaʻu', description: 'Sailing archipelago and humpback-whale nursery', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep–Oct" },
+      { name: 'Nukuʻalofa', description: 'Small royal capital', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Nov–Dec", panelSummary: "Nukuʻalofa is a small royal capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its atmosphere rewards time beyond the main sights." },
+      { name: 'Vavaʻu', description: 'Sailing archipelago and humpback-whale nursery', bestWeatherMonths: "Jun–Aug", goodWeatherMonths: "May, Sep–Oct", panelSummary: "Vavaʻu is a sailing archipelago and humpback-whale nursery. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -20132,7 +20136,7 @@ export const countries: Record<string, CountryData> = {
   TV: {
     name: 'Tuvalu',
     code: 'TV',
-    summary: 'Tuvalu is a tiny Pacific nation of low-lying atolls, lagoons, close-knit communities, and few conventional tourist facilities. Funafuti is the main settlement, while outer islands are even quieter. Travelers can combine beautiful coastal scenery with local food, culture, and time outdoors.',
+    panelSummary: 'Tuvalu is a tiny Pacific nation of low-lying atolls, lagoons, close-knit communities, and few conventional tourist facilities. Funafuti is the main settlement, while outer islands are even quieter. Travelers can combine beautiful coastal scenery with local food, culture, and time outdoors.',
     flagEmoji: '🇹🇻',
     flagColors: ['#41B8E6', '#FCD116', '#012169'],
     continent: 'Oceania',
@@ -20158,8 +20162,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [340, 285, 287, 228, 208, 188, 212, 193, 184, 193, 213, 289],
     bestTimeToVisit: 'May–October (drier)',
     popularPlaces: [
-      { name: 'Funafuti', description: 'Coral-atoll capital 15 ft above the sea', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Funafala', description: 'Uninhabited outer islet reachable by boat', bestWeatherMonths: "Jan–Dec" },
+      { name: 'Funafuti', description: 'Coral-atoll capital 15 ft above the sea', bestWeatherMonths: "Jan–Dec", panelSummary: "Funafuti is a coral-atoll capital 15 ft above the sea. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'Funafala', description: 'Uninhabited outer islet reachable by boat', bestWeatherMonths: "Jan–Dec", panelSummary: "Funafala offers uninhabited outer islet reachable by boat. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {
@@ -20207,7 +20211,7 @@ export const countries: Record<string, CountryData> = {
   VA: {
     name: 'Vatican City',
     code: 'VA',
-    summary: 'Vatican City is the world’s smallest independent state and the spiritual center of the Roman Catholic Church. St. Peter’s Basilica, the Vatican Museums, and the Sistine Chapel contain extraordinary art and architecture. That mix gives travelers plenty to discover.',
+    panelSummary: 'Vatican City is the world’s smallest independent state and the spiritual center of the Roman Catholic Church. St. Peter’s Basilica, the Vatican Museums, and the Sistine Chapel contain extraordinary art and architecture. That mix gives travelers plenty to discover.',
     flagEmoji: '🇻🇦',
     flagColors: ['#FFE000', '#FFFFFF', '#FFE000'],
     continent: 'Europe',
@@ -20233,8 +20237,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [74, 62, 56, 59, 40, 34, 13, 21, 80, 88, 118, 94],
     bestTimeToVisit: 'October–April (fewer crowds)',
     popularPlaces: [
-      { name: 'St. Peter\'s Square', description: 'Bernini’s embracing colonnade', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec" },
-      { name: 'Vatican Museums', description: 'Miles of galleries ending at the Sistine Chapel', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec" },
+      { name: 'St. Peter\'s Square', description: 'Bernini’s embracing colonnade', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec", panelSummary: "St. Peter's Square offers bernini’s embracing colonnade. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'Vatican Museums', description: 'Miles of galleries ending at the Sistine Chapel', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec", panelSummary: "Vatican Museums offers miles of galleries ending at the Sistine Chapel. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit." },
     ],
     attractions: [
       {
@@ -20287,7 +20291,7 @@ export const countries: Record<string, CountryData> = {
   VG: {
     name: 'British Virgin Islands',
     code: 'VG',
-    summary: 'The British Virgin Islands are a sailing-focused Caribbean territory of sheltered bays, coral reefs, beaches, and small islands. Tortola is the main center, while Virgin Gorda, Jost Van Dyke, and Anegada offer different landscapes and atmospheres.',
+    panelSummary: 'The British Virgin Islands are a sailing-focused Caribbean territory of sheltered bays, coral reefs, beaches, and small islands. Tortola is the main center, while Virgin Gorda, Jost Van Dyke, and Anegada offer different landscapes and atmospheres.',
     flagEmoji: '🇻🇬',
     flagColors: ['#012169', '#FFFFFF', '#CE1126'],
     continent: 'North America',
@@ -20313,8 +20317,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [84, 60, 51, 93, 117, 78, 110, 131, 142, 168, 180, 133],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'Tortola', description: 'Main island with the capital', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
-      { name: 'Virgin Gorda', description: 'Home of The Baths granite boulders', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'Tortola', description: 'Main island with the capital', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Tortola is a main island with the capital. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Virgin Gorda', description: 'Home of The Baths granite boulders', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Virgin Gorda is home to The Baths granite boulders. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
     ],
     attractions: [
       {
@@ -20366,7 +20370,7 @@ export const countries: Record<string, CountryData> = {
   VI: {
     name: 'US Virgin Islands',
     code: 'VI',
-    summary: 'The US Virgin Islands combine Caribbean beaches, reefs, historic towns, and easy access for American travelers. St. Thomas offers shopping and resorts, St. John is dominated by national parkland, and St. Croix provides plantation history and a broader local culture.',
+    panelSummary: 'The US Virgin Islands combine Caribbean beaches, reefs, historic towns, and easy access for American travelers. St. Thomas offers shopping and resorts, St. John is dominated by national parkland, and St. Croix provides plantation history and a broader local culture.',
     flagEmoji: '🇻🇮',
     flagColors: ['#FFFFFF', '#FFCC00', '#0033A0'],
     continent: 'North America',
@@ -20392,8 +20396,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [82, 53, 44, 80, 106, 73, 103, 123, 138, 153, 169, 125],
     bestTimeToVisit: 'December–April',
     popularPlaces: [
-      { name: 'St. Thomas', description: 'Cruise hub with Magens Bay beach', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
-      { name: 'St. John', description: 'Two-thirds national park', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr" },
+      { name: 'St. Thomas', description: 'Cruise hub with Magens Bay beach', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "St. Thomas is a cruise hub with Magens Bay beach. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'St. John', description: 'Two-thirds national park', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "St. John offers two-thirds national park. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Even quiet moments outdoors feel worthwhile here." },
     ],
     attractions: [
       {
@@ -20444,7 +20448,7 @@ export const countries: Record<string, CountryData> = {
   WF: {
     name: 'Wallis and Futuna',
     code: 'WF',
-    summary: 'Wallis and Futuna is a remote French Pacific territory of volcanic islands, lagoons, traditional Polynesian kingdoms, and very limited tourism. Wallis offers crater lakes and archaeological sites, while Futuna is mountainous and deeply traditional. The result is varied and rewarding.',
+    panelSummary: 'Wallis and Futuna is a remote French Pacific territory of volcanic islands, lagoons, traditional Polynesian kingdoms, and very limited tourism. Wallis offers crater lakes and archaeological sites, while Futuna is mountainous and deeply traditional. The result is varied and rewarding.',
     flagEmoji: '🇼🇫',
     flagColors: ['#ED2939', '#FFFFFF', '#002395'],
     continent: 'Oceania',
@@ -20471,8 +20475,8 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'May–October is the cooler, drier season; June–September is especially favorable for outdoor and beach activities.',
     bestVisitMonths: [5, 6, 7, 8, 9, 10],
     popularPlaces: [
-      { name: 'Mata-Utu', description: 'Sleepy capital on Wallis', bestWeatherMonths: "Jan, Mar, May–Oct", goodWeatherMonths: "Feb, Apr, Nov–Dec" },
-      { name: 'Futuna', description: 'Second, more traditional island group', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Mar–Jul, Sep–Nov" },
+      { name: 'Mata-Utu', description: 'Sleepy capital on Wallis', bestWeatherMonths: "Jan, Mar, May–Oct", goodWeatherMonths: "Feb, Apr, Nov–Dec", panelSummary: "Mata-Utu is a sleepy capital on Wallis. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Staying longer reveals more of its personality." },
+      { name: 'Futuna', description: 'Second, more traditional island group', bestWeatherMonths: "Aug", goodWeatherMonths: "Jan, Mar–Jul, Sep–Nov", panelSummary: "Futuna is a second, more traditional island group. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Time near the water remains the central pleasure." },
     ],
     attractions: [
       {
@@ -20508,7 +20512,7 @@ export const countries: Record<string, CountryData> = {
   XK: {
     name: 'Kosovo',
     code: 'XK',
-    summary: 'Kosovo combines Ottoman towns, Orthodox monasteries, mountain landscapes, lively cafés, and a young, energetic population. Pristina is the modern center, while Prizren, Rugova Canyon, and medieval religious sites provide history and scenery. That mix gives travelers plenty to discover.',
+    panelSummary: 'Kosovo combines Ottoman towns, Orthodox monasteries, mountain landscapes, lively cafés, and a young, energetic population. Pristina is the modern center, while Prizren, Rugova Canyon, and medieval religious sites provide history and scenery. That mix gives travelers plenty to discover.',
     flagEmoji: '🇽🇰',
     flagColors: ['#244AA5', '#D0A650', '#FFFFFF'],
     continent: 'Europe',
@@ -20534,8 +20538,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [72, 61, 68, 71, 84, 78, 63, 52, 85, 81, 86, 88],
     bestTimeToVisit: 'May–October',
     popularPlaces: [
-      { name: 'Pristina', description: 'Youthful capital dotted with Cold-War-era monuments', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr" },
-      { name: 'Prizren', description: 'Ottoman-era river city under a hilltop fortress', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct" },
+      { name: 'Pristina', description: 'Youthful capital dotted with Cold-War-era monuments', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr", panelSummary: "Pristina is a youthful capital dotted with Cold-War-era monuments. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'Prizren', description: 'Ottoman-era river city under a hilltop fortress', bestWeatherMonths: "May–Sep", goodWeatherMonths: "Apr, Oct", panelSummary: "Prizren is an ottoman-era river city under a hilltop fortress. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Small details make the history feel especially vivid." },
     ],
     attractions: [
       {
@@ -20584,7 +20588,7 @@ export const countries: Record<string, CountryData> = {
   YE: {
     name: 'Yemen',
     code: 'YE',
-    summary: 'Yemen possesses extraordinary mud-brick cities, mountain villages, desert landscapes, islands, and deep Arabian history. Sana’a, Shibam, and Socotra are among its remarkable cultural and natural treasures. Ongoing war, humanitarian crisis, and severe security risks make travel extremely dangerous, but Yemen’s heritage remains globally important.',
+    panelSummary: 'Yemen possesses extraordinary mud-brick cities, mountain villages, desert landscapes, islands, and deep Arabian history. Sana’a, Shibam, and Socotra are among its remarkable cultural and natural treasures. Ongoing war, humanitarian crisis, and severe security risks make travel extremely dangerous, but Yemen’s heritage remains globally important.',
     flagEmoji: '🇾🇪',
     flagColors: ['#CE1126', '#FFFFFF', '#000000'],
     continent: 'Asia',
@@ -20610,8 +20614,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 8, 20, 25, 28, 17, 21, 28, 20, 10, 6, 4],
     bestTimeToVisit: 'Travel not advised — Level 4.',
     popularPlaces: [
-      { name: 'Sana\'a', description: 'Old city of gingerbread tower-houses (UNESCO)', bestWeatherMonths: "Jan–Dec" },
-      { name: 'Socotra', description: 'Otherworldly island of dragon-blood trees', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Jul–Nov" },
+      { name: 'Sana\'a', description: 'Old city of gingerbread tower-houses (UNESCO)', bestWeatherMonths: "Jan–Dec", panelSummary: "Sana'a is an old city of gingerbread tower-houses (UNESCO). Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Socotra', description: 'Otherworldly island of dragon-blood trees', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Jul–Nov", panelSummary: "Socotra is an otherworldly island of dragon-blood trees. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -20662,7 +20666,7 @@ export const countries: Record<string, CountryData> = {
   YT: {
     name: 'Mayotte',
     code: 'YT',
-    summary: 'Mayotte is a French-administered island in the Indian Ocean known for a vast lagoon, coral reefs, marine life, volcanic landscapes, and a blend of African, Comorian, and French influences. Diving and beaches are major draws, while everyday life reflects complex regional migration and social pressures.',
+    panelSummary: 'Mayotte is a French-administered island in the Indian Ocean known for a vast lagoon, coral reefs, marine life, volcanic landscapes, and a blend of African, Comorian, and French influences. Diving and beaches are major draws, while everyday life reflects complex regional migration and social pressures.',
     flagEmoji: '🇾🇹',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'Africa',
@@ -20688,8 +20692,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [251, 206, 188, 99, 43, 32, 29, 24, 27, 53, 79, 161],
     bestTimeToVisit: 'May–October (dry, cooler)',
     popularPlaces: [
-      { name: 'Mamoudzou', description: 'Main town on Grande-Terre', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov" },
-      { name: 'Petite-Terre', description: 'Airport island with the volcanic Dziani Lake', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov" },
+      { name: 'Mamoudzou', description: 'Main town on Grande-Terre', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov", panelSummary: "Mamoudzou is a main town on Grande-Terre. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Petite-Terre', description: 'Airport island with the volcanic Dziani Lake', bestWeatherMonths: "May–Oct", goodWeatherMonths: "Apr, Nov", panelSummary: "Petite-Terre is an airport island with the volcanic Dziani Lake. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
     ],
     attractions: [
       {
@@ -20736,7 +20740,7 @@ export const countries: Record<string, CountryData> = {
   RE: {
     name: 'Réunion',
     code: 'RE',
-    summary: 'Réunion is a French volcanic island in the Indian Ocean, celebrated for rugged mountains, active Piton de la Fournaise, waterfalls, cirques, and excellent hiking. Coastal towns offer beaches and Creole culture, while the interior feels wild and dramatic.',
+    panelSummary: 'Réunion is a French volcanic island in the Indian Ocean, celebrated for rugged mountains, active Piton de la Fournaise, waterfalls, cirques, and excellent hiking. Coastal towns offer beaches and Creole culture, while the interior feels wild and dramatic.',
     flagEmoji: '🇷🇪',
     flagColors: ['#002395', '#FFFFFF', '#ED2939'],
     continent: 'Africa',
@@ -20762,8 +20766,8 @@ export const countries: Record<string, CountryData> = {
     precipitation: [220, 234, 242, 134, 97, 69, 58, 71, 55, 55, 69, 119],
     bestTimeToVisit: 'April–November (cooler, drier)',
     popularPlaces: [
-      { name: 'Saint-Denis', description: 'Creole-Art-Deco capital in the north', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr, Dec" },
-      { name: 'Cirque de Mafate', description: 'Roadless caldera accessible only on foot', bestWeatherMonths: "May–Dec", goodWeatherMonths: "Jan–Apr" },
+      { name: 'Saint-Denis', description: 'Creole-Art-Deco capital in the north', bestWeatherMonths: "May–Nov", goodWeatherMonths: "Apr, Dec", panelSummary: "Saint-Denis is a creole-Art-Deco capital in the north. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. That combination makes it easy to enjoy slowly." },
+      { name: 'Cirque de Mafate', description: 'Roadless caldera accessible only on foot', bestWeatherMonths: "May–Dec", goodWeatherMonths: "Jan–Apr", panelSummary: "Cirque de Mafate offers roadless caldera accessible only on foot. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
     ],
     attractions: [
       {

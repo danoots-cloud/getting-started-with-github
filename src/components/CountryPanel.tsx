@@ -216,9 +216,9 @@ export function CountryPanel({ country, onClose, recommendedPlaceName, recommend
       </div>
 
       <div className="flex-1 overflow-y-auto px-6 py-6" style={{ scrollbarGutter: 'stable' }}>
-        {country.summary && (
+        {country.panelSummary && (
           <p className="mb-5 text-sm leading-relaxed text-[#1E2A44]/75">
-            {country.summary}
+            {country.panelSummary}
           </p>
         )}
         {recommendationIsCountryFallback && recommendationReasonLabel && recommendationMonthName && (
