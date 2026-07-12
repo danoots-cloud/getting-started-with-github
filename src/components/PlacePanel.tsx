@@ -138,6 +138,12 @@ export function PlacePanel({ place, country, onBack, onClose, onOpenAttraction }
           </div>
         )}
 
+        {place.panelSummary && (
+          <p className="mb-5 text-sm leading-relaxed text-[#1E2A44]/80">
+            {place.panelSummary}
+          </p>
+        )}
+
         <p className="mb-6 text-sm leading-relaxed text-[#1E2A44]/80">
           {place.description}
         </p>
