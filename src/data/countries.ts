@@ -1,6 +1,8 @@
 export interface PopularPlace {
   name: string
   description: string
+  // Longer detail-panel-only prose. Do not use for cards/promotional surfaces.
+  panelSummary?: string
   // Optional richer detail — populated per-place as we roll it out.
   coords?: { lat: number; lng: number }
   temperatures?: { month: string; high: number; low: number }[]
