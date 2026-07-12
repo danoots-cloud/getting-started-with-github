@@ -50,6 +50,7 @@ export interface CountryData {
   notableFacts: string[]
   popularSouvenirs: { name: string; description: string }[]
   flightTimeFromEWR: string
+  summary?: string
 }
 
 
