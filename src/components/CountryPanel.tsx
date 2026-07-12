@@ -222,18 +222,15 @@ export function CountryPanel({ country, onClose, recommendedPlaceName, recommend
           </p>
         )}
         {recommendationIsCountryFallback && recommendationReasonLabel && recommendationMonthName && (
-          <div
-            className="mb-6 rounded-xl border px-4 py-3"
-            style={{ borderColor: '#E86A5C55', backgroundColor: '#E86A5C14' }}
-          >
-            <div className="text-xs font-semibold uppercase tracking-wider text-[#c74a3d]">
+          <div className="mb-6 rounded-xl border border-border bg-muted px-4 py-3">
+            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Why this month · {recommendationMonthName}
             </div>
-            <div className="mt-1 text-sm font-semibold text-[#1E2A44]">
+            <div className="mt-1 text-sm font-semibold text-foreground">
               {recommendationReasonLabel}
             </div>
             {recommendationReason && (
-              <div className="mt-1 text-sm leading-relaxed text-[#1E2A44]/80">
+              <div className="mt-1 text-sm leading-relaxed text-muted-foreground">
                 {recommendationReason}
               </div>
             )}
