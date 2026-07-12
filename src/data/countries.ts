@@ -31,6 +31,7 @@ export interface CountryData {
   attractions: {
     name: string
     description: string
+    panelSummary?: string
     entityId?: string
     wikidataId?: string
     imageUrl?: string
