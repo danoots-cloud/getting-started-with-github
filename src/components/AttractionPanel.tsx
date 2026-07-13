@@ -117,7 +117,13 @@ export function AttractionPanel({
           </div>
         )}
 
-        <p className="mb-6 mt-4 text-sm leading-relaxed text-[#1E2A44]/80">
+        {attraction.panelSummary && (
+          <p className="mb-5 mt-4 text-sm leading-relaxed text-[#1E2A44]/80">
+            {attraction.panelSummary}
+          </p>
+        )}
+
+        <p className={`${attraction.panelSummary ? 'mb-6' : 'mb-6 mt-4'} text-sm leading-relaxed text-[#1E2A44]/80`}>
           {attraction.description}
         </p>
 
