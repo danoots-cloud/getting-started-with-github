@@ -221,6 +221,38 @@ export function CountryPanel({ country, onClose, recommendedPlaceName, recommend
             {country.panelSummary}
           </p>
         )}
+        {country.travelCostTier && (
+          <div className="mb-6 rounded-xl border border-border bg-muted px-4 py-3">
+            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Travel cost
+            </div>
+            <div className="mt-1 text-sm font-semibold text-foreground">
+              {country.travelCostTier}
+            </div>
+            {country.travelCostReason && (
+              <div className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {country.travelCostReason}
+              </div>
+            )}
+            {country.usdSignalVisible === 'Yes' && country.usdValueAdjustment && (
+              <>
+                <div className="mt-3 text-sm font-semibold text-foreground">
+                  Current USD value: {country.usdValueAdjustment}
+                </div>
+                {country.usdValueReason && (
+                  <div className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {country.usdValueReason}
+                  </div>
+                )}
+              </>
+            )}
+            {country.structuralUpdatedAt && (
+              <div className="mt-3 text-xs text-muted-foreground">
+                Cost data updated {new Date(country.structuralUpdatedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}
+              </div>
+            )}
+          </div>
+        )}
         {recommendationIsCountryFallback && recommendationReasonLabel && recommendationMonthName && (
           <div className="mb-6 rounded-xl border border-border bg-muted px-4 py-3">
             <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
