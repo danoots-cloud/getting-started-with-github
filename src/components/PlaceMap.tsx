@@ -130,12 +130,18 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
     const padY = Math.max(height * 0.08, 1)
     const viewBoxWidth = width + padX * 2
     const viewBoxHeight = height + padY * 2
-    const markerRadius = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.012, 0.5)
+    const pinHeight = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.02, 0.25)
+    const pinScale = pinHeight / 22
+    const pinStroke = Math.max(pinHeight * 0.12, 0.04)
+    const pinCenterRadius = Math.max(pinHeight * 0.11, 0.03)
     const lineWidth = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.0022, 0.18)
 
     return {
       marker,
-      markerRadius,
+      pinHeight,
+      pinScale,
+      pinStroke,
+      pinCenterRadius,
       lineWidth,
       viewBox: `${bounds.minX - padX} ${bounds.minY - padY} ${viewBoxWidth} ${viewBoxHeight}`,
     }
@@ -184,20 +190,27 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
           />
         )}
 
+        <g
+          transform={`translate(${mapData.marker.x - 12 * mapData.pinScale}, ${mapData.marker.y - 22 * mapData.pinScale}) scale(${mapData.pinScale})`}
+        >
+          <path
+            d="M12 2 C8.13 2 5 5.13 5 9 c0 5.25 7 13 7 13 s7-7.75 7-13 c0-3.87-3.13-7-7-7 z"
+            fill={accentColor}
+            stroke={COLOR_BORDER}
+            strokeWidth={mapData.pinStroke}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            vectorEffect="non-scaling-stroke"
+          />
+        </g>
         <circle
           cx={mapData.marker.x}
-          cy={mapData.marker.y}
-          r={mapData.markerRadius * 1.35}
+          cy={mapData.marker.y - mapData.pinHeight / 2}
+          r={mapData.pinCenterRadius}
           fill="#FBF5EC"
           stroke={COLOR_BORDER}
-          strokeOpacity={0.28}
-          strokeWidth={mapData.markerRadius * 0.35}
-        />
-        <circle
-          cx={mapData.marker.x}
-          cy={mapData.marker.y}
-          r={mapData.markerRadius}
-          fill={COLOR_BORDER}
+          strokeWidth={mapData.pinStroke * 0.7}
+          vectorEffect="non-scaling-stroke"
         />
       </svg>
     </div>
