@@ -130,12 +130,18 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
     const padY = Math.max(height * 0.08, 1)
     const viewBoxWidth = width + padX * 2
     const viewBoxHeight = height + padY * 2
-    const markerRadius = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.012, 0.5)
+    const pinHeight = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.02, 0.25)
+    const pinScale = pinHeight / 22
+    const pinStroke = Math.max(pinHeight * 0.12, 0.04)
+    const pinCenterRadius = Math.max(pinHeight * 0.11, 0.03)
     const lineWidth = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.0022, 0.18)
 
     return {
       marker,
-      markerRadius,
+      pinHeight,
+      pinScale,
+      pinStroke,
+      pinCenterRadius,
       lineWidth,
       viewBox: `${bounds.minX - padX} ${bounds.minY - padY} ${viewBoxWidth} ${viewBoxHeight}`,
     }
