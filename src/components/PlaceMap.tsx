@@ -8,6 +8,8 @@ const GEO_URL =
 const COLOR_OCEAN = '#EAD9BE'
 const COLOR_LAND_NEIGHBOR = '#D9C4A3'
 const COLOR_BORDER = '#1E2A44'
+const COLOR_PIN = '#000000'
+const COLOR_PIN_CENTER = '#FBF5EC'
 
 interface PlaceMapProps {
   countryCode: string
