@@ -3786,7 +3786,7 @@ export const countries: Record<string, CountryData> = {
     popularPlaces: [
       { name: 'Beijing', description: 'Imperial capital with the Forbidden City and ancient hutongs', bestWeatherMonths: "Apr–May, Sep–Oct", goodWeatherMonths: "Mar, Jun", panelSummary: "Beijing is an imperial capital with the Forbidden City and ancient hutongs. Public transport is often the fastest way to connect major districts, while taxis are more useful late at night." },
       { name: 'Shanghai', description: 'Futuristic skyline on the Bund with vibrant nightlife and dining', bestWeatherMonths: "Apr–May, Oct–Nov", goodWeatherMonths: "Mar, Sep", panelSummary: "Shanghai is a futuristic skyline on the Bund with vibrant nightlife and dining. Transport and opening hours should be checked in advance, since the main sights may not operate on a large-city schedule." },
-      { name: 'Xi\'an', description: 'Home of the Terracotta Warriors and ancient Silk Road starting point', bestWeatherMonths: "Mar–May, Sep–Oct", goodWeatherMonths: "Jun, Nov", panelSummary: "Xi'an is home to the Terracotta Warriors and ancient Silk Road starting point. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: 'Xi\'an', description: 'Home of the Terracotta Warriors and ancient Silk Road starting point', bestWeatherMonths: "Mar–May, Sep–Oct", goodWeatherMonths: "Jun, Nov", panelSummary: "Xi'an is home to the Terracotta Warriors and ancient Silk Road starting point. The historic core is easiest to understand on foot, with enough time for interiors rather than only exterior photographs." },
       { name: 'Guilin', description: 'Surreal karst landscapes along the Li River', bestWeatherMonths: "Oct–Dec", goodWeatherMonths: "Feb–Apr, Sep", panelSummary: "Guilin is a surreal karst landscapes along the Li River. The landscape is best understood by combining elevated viewpoints with time on or beside the water." },
       { name: 'Chengdu', description: 'Panda capital with legendary Sichuan cuisine and tea houses', bestWeatherMonths: "Mar–May, Sep–Nov", goodWeatherMonths: "Feb, Jun, Dec", panelSummary: "Chengdu is a panda capital with legendary Sichuan cuisine and tea houses. Guided excursions are the practical way to explore, and the season affects both animal movement and road access." },
     ],
@@ -15888,7 +15888,7 @@ export const countries: Record<string, CountryData> = {
     precipitation: [70, 39, 44, 56, 91, 59, 86, 119, 122, 149, 124, 106],
     bestTimeToVisit: 'December–April dry season — warm, sunny, and outside hurricane peak',
     popularPlaces: [
-      { name: "St. John's", description: 'Colorful Caribbean capital with a busy cruise harbor', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "St. John's is a colorful Caribbean capital with a busy cruise harbor. It gives travelers a satisfying mix of scenery, culture, local food, and distinctive experiences that make the journey feel specific to this place." },
+      { name: "St. John's", description: 'Colorful Caribbean capital with a busy cruise harbor', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "St. John's is known for colorful Caribbean capital with a busy cruise harbor. Two or three well-chosen neighborhoods usually reveal more than a citywide rush between landmarks." },
       { name: 'Nelson’s Dockyard', description: 'Restored Georgian-era naval base and UNESCO site', bestWeatherMonths: "Feb–Mar", goodWeatherMonths: "Jan, Apr", panelSummary: "Nelson’s Dockyard is a restored Georgian-era naval base and UNESCO site. Staying nearby allows visits early or late, when the main monuments are quieter." },
       { name: 'Barbuda', description: 'Quiet sister island famed for pink-sand beaches', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr, Jun", panelSummary: "Barbuda is a quiet sister island famed for pink-sand beaches. Peak-season traffic and limited parking can shape the day as much as the shoreline itself." },
     ],
@@ -18270,7 +18270,7 @@ export const countries: Record<string, CountryData> = {
     precipitation: [84, 58, 65, 73, 79, 152, 183, 195, 190, 205, 194, 137],
     bestTimeToVisit: 'January–April (dry season)',
     popularPlaces: [
-      { name: 'St. George\'s', description: 'Horseshoe-harbor capital of colorful houses', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "St. George's is a horseshoe-harbor capital of colorful houses. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The easygoing atmosphere encourages a slower stay." },
+      { name: 'St. George\'s', description: 'Horseshoe-harbor capital of colorful houses', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "St. George's is a horseshoe-harbor capital of colorful houses. Public transport is often the fastest way to connect major districts, while taxis are more useful late at night." },
       { name: 'Grand Anse', description: '2-mile crescent beach south of the capital', bestWeatherMonths: "Feb", goodWeatherMonths: "Jan, Mar–Apr", panelSummary: "Grand Anse is a 2-mile crescent beach south of the capital. Heat, traffic, or altitude can make an apparently modest sightseeing day more demanding than expected." },
     ],
     attractions: [
@@ -21880,7 +21880,7 @@ export const countries: Record<string, CountryData> = {
     bestTimeToVisit: 'November–February is the cooler dry season and the most comfortable general window for travel.',
     bestVisitMonths: [11, 12, 1, 2],
     popularPlaces: [
-      { name: 'N\'Djamena', description: 'Sahel capital across from Cameroon', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov", panelSummary: "N'Djamena is a sahel capital across from Cameroon. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. A slower visit reveals much more than expected." },
+      { name: 'N\'Djamena', description: 'Sahel capital across from Cameroon', bestWeatherMonths: "Jan, Dec", goodWeatherMonths: "Feb, Nov", panelSummary: "N'Djamena is a Sahel capital across from Cameroon. Heat, traffic, or altitude can make an apparently modest sightseeing day more demanding than expected." },
       { name: 'Zakouma National Park', description: 'One of Africa’s great wildlife comeback stories', bestWeatherMonths: "Jan, Aug, Oct–Dec", goodWeatherMonths: "Feb, Jun–Jul, Sep", panelSummary: "Zakouma National Park is one of Africa’s great wildlife comeback stories. Guided excursions are the practical way to explore, and the season affects both animal movement and road access." },
     ],
     attractions: [
@@ -22378,7 +22378,7 @@ export const countries: Record<string, CountryData> = {
     precipitation: [74, 62, 56, 59, 40, 34, 13, 21, 80, 88, 118, 94],
     bestTimeToVisit: 'October–April (fewer crowds)',
     popularPlaces: [
-      { name: 'St. Peter\'s Square', description: 'Bernini’s embracing colonnade', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec", panelSummary: "St. Peter's Square offers bernini’s embracing colonnade. Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. The destination rewards travelers who linger a little longer." },
+      { name: 'St. Peter\'s Square', description: 'Bernini’s embracing colonnade', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec", panelSummary: "St. Peter's Square is a bernini’s embracing colonnade. Local guides can add context where signage and visitor infrastructure are limited." },
       { name: 'Vatican Museums', description: 'Miles of galleries ending at the Sistine Chapel', bestWeatherMonths: "Mar–Jun, Sep–Oct", goodWeatherMonths: "Jan–Feb, Jul–Aug, Nov–Dec", panelSummary: "Vatican Museums is a miles of galleries ending at the Sistine Chapel. Local guides can add context where signage and visitor infrastructure are limited." },
     ],
     attractions: [
@@ -22798,7 +22798,7 @@ export const countries: Record<string, CountryData> = {
     precipitation: [4, 8, 20, 25, 28, 17, 21, 28, 20, 10, 6, 4],
     bestTimeToVisit: 'Travel not advised — Level 4.',
     popularPlaces: [
-      { name: 'Sana\'a', description: 'Old city of gingerbread tower-houses (UNESCO)', bestWeatherMonths: "Jan–Dec", panelSummary: "Sana'a is an old city of gingerbread tower-houses (UNESCO). Travelers can enjoy the headline attraction while also making room for local food, neighborhood life, scenery, and experiences that add depth to the visit. Its distinctive character becomes clearer with time." },
+      { name: 'Sana\'a', description: 'Old city of gingerbread tower-houses (UNESCO)', bestWeatherMonths: "Jan–Dec", panelSummary: "Sana'a is an old city of gingerbread tower-houses (UNESCO). Two or three well-chosen neighborhoods usually reveal more than a citywide rush between landmarks." },
       { name: 'Socotra', description: 'Otherworldly island of dragon-blood trees', bestWeatherMonths: "Jan–Feb, Dec", goodWeatherMonths: "Mar, Jul–Nov", panelSummary: "Socotra is known for otherworldly island of dragon-blood trees. Beach conditions vary by season, and the calmest water may be on a different side of the island." },
     ],
     attractions: [
