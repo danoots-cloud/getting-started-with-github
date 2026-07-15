@@ -132,7 +132,7 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
     const padY = Math.max(height * 0.08, 1)
     const viewBoxWidth = width + padX * 2
     const viewBoxHeight = height + padY * 2
-    const pinHeight = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.045, 0.35)
+    const pinHeight = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.09, 0.35)
     const pinScale = pinHeight / 22
     const pinStroke = Math.max(pinHeight * 0.12, 0.04)
     const pinCenterRadius = Math.max(pinHeight * 0.11, 0.04)
