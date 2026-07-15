@@ -197,8 +197,8 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
         >
           <path
             d="M12 2 C8.13 2 5 5.13 5 9 c0 5.25 7 13 7 13 s7-7.75 7-13 c0-3.87-3.13-7-7-7 z"
-            fill={accentColor}
-            stroke={COLOR_BORDER}
+            fill={COLOR_PIN}
+            stroke={COLOR_PIN}
             strokeWidth={mapData.pinStroke}
             strokeLinejoin="round"
             strokeLinecap="round"
@@ -207,11 +207,9 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
         </g>
         <circle
           cx={mapData.marker.x}
-          cy={mapData.marker.y - mapData.pinHeight / 2}
+          cy={mapData.marker.y - 13 * mapData.pinScale}
           r={mapData.pinCenterRadius}
-          fill="#FBF5EC"
-          stroke={COLOR_BORDER}
-          strokeWidth={mapData.pinStroke * 0.7}
+          fill={COLOR_PIN_CENTER}
           vectorEffect="non-scaling-stroke"
         />
       </svg>
