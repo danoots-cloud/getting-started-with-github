@@ -8,6 +8,8 @@ const GEO_URL =
 const COLOR_OCEAN = '#EAD9BE'
 const COLOR_LAND_NEIGHBOR = '#D9C4A3'
 const COLOR_BORDER = '#1E2A44'
+const COLOR_PIN = '#000000'
+const COLOR_PIN_CENTER = '#FBF5EC'
 
 interface PlaceMapProps {
   countryCode: string
@@ -130,10 +132,10 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
     const padY = Math.max(height * 0.08, 1)
     const viewBoxWidth = width + padX * 2
     const viewBoxHeight = height + padY * 2
-    const pinHeight = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.02, 0.25)
+    const pinHeight = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.045, 0.35)
     const pinScale = pinHeight / 22
     const pinStroke = Math.max(pinHeight * 0.12, 0.04)
-    const pinCenterRadius = Math.max(pinHeight * 0.11, 0.03)
+    const pinCenterRadius = Math.max(pinHeight * 0.11, 0.04)
     const lineWidth = Math.max(Math.max(viewBoxWidth, viewBoxHeight) * 0.0022, 0.18)
 
     return {
@@ -195,8 +197,8 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
         >
           <path
             d="M12 2 C8.13 2 5 5.13 5 9 c0 5.25 7 13 7 13 s7-7.75 7-13 c0-3.87-3.13-7-7-7 z"
-            fill={accentColor}
-            stroke={COLOR_BORDER}
+            fill={COLOR_PIN}
+            stroke={COLOR_PIN}
             strokeWidth={mapData.pinStroke}
             strokeLinejoin="round"
             strokeLinecap="round"
@@ -205,11 +207,9 @@ export function PlaceMap({ countryCode, coords, accentColor }: PlaceMapProps) {
         </g>
         <circle
           cx={mapData.marker.x}
-          cy={mapData.marker.y - mapData.pinHeight / 2}
+          cy={mapData.marker.y - 13 * mapData.pinScale}
           r={mapData.pinCenterRadius}
-          fill="#FBF5EC"
-          stroke={COLOR_BORDER}
-          strokeWidth={mapData.pinStroke * 0.7}
+          fill={COLOR_PIN_CENTER}
           vectorEffect="non-scaling-stroke"
         />
       </svg>
