@@ -144,10 +144,6 @@ export function PlacePanel({ place, country, onBack, onClose, onOpenAttraction }
           </p>
         )}
 
-        <p className="mb-6 text-sm leading-relaxed text-[#1E2A44]/80">
-          {place.description}
-        </p>
-
         {place.bestWeatherMonths && (
           <div
             className="mb-6 flex items-start gap-3 rounded-xl border px-4 py-3"
