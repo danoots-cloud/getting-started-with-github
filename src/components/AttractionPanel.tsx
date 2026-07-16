@@ -123,9 +123,6 @@ export function AttractionPanel({
           </p>
         )}
 
-        <p className={`${attraction.panelSummary ? 'mb-6' : 'mb-6 mt-4'} text-sm leading-relaxed text-[#1E2A44]/80`}>
-          {attraction.description}
-        </p>
 
         {attraction.bestWeatherMonths && (
           <div
