@@ -110,7 +110,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Schönbrunn Palace",
-        description: "Former summer residence of the Habsburg rulers, this 1,441-room Baroque palace pairs imperial interiors with extensive formal gardens, the Gloriette, fountains, a palm house, and Europe’s oldest continuously operating zoo.",
+        description: "Habsburg summer palace with grand gardens",
         entityId: "attraction_AT_schonbrunn_palace",
         panelSummary: "Schönbrunn Palace brings courtly history to life through ceremonial rooms, decorative craftsmanship, and grounds designed to impress as much as they served daily life. The contrast between public grandeur and smaller human details gives Schönbrunn Palace much of its appeal.",
         wikidataId: "Q131330",
@@ -124,7 +124,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Hallstatt",
-        description: "Hallstatt is a small lakeside town between the Dachstein mountains and Hallstätter See, known for prehistoric salt mining, Iron Age archaeology, and a UNESCO-listed cultural landscape shaped by centuries of settlement.",
+        description: "Lakeside village framed by dramatic Alpine peaks",
         entityId: "attraction_AT_hallstatt",
         panelSummary: "The strongest reason to visit Hallstatt is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q21880215",
@@ -139,7 +139,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Belvedere Museum",
-        description: "Housed in Prince Eugene of Savoy’s Baroque palace complex, the Belvedere presents Austrian art from the Middle Ages onward, including the world’s largest collection of Gustav Klimt paintings and the original The Kiss.",
+        description: "Palace museum home to Klimt masterpieces",
         entityId: "attraction_AT_belvedere_museum",
         panelSummary: "The strength of Belvedere Museum lies in the relationship between its collection, exhibition spaces, and the artistic history they illuminate. A slower visit leaves room for unexpected discoveries beyond the headline pieces. That added context gives Belvedere Museum lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Upper_Belvedere_palace_Vienna.jpg",
@@ -216,7 +216,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Matterhorn",
-        description: "The 4,478-meter Matterhorn rises on the Swiss-Italian border and is recognized for its steep, nearly symmetrical pyramid form. Visitors come for views from Zermatt, surrounding trails, cableways, and its central place in Alpine climbing history.",
+        description: "Iconic pyramid-shaped Alpine peak",
         entityId: "attraction_CH_matterhorn",
         panelSummary: "Matterhorn rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q1374",
@@ -231,7 +231,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Jungfraujoch",
-        description: "Jungfraujoch is a high Alpine saddle between the Jungfrau and Mönch, reached by a railway tunneling through the Eiger and Mönch. Europe’s highest railway station provides direct access to the Aletsch Glacier landscape.",
+        description: "High-altitude railway station with glacier views",
         entityId: "attraction_CH_jungfraujoch",
         panelSummary: "Jungfraujoch rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Aerial_View_of_Jungfraujoch,_Switzerland.jpg",
@@ -246,7 +246,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Chillon Castle",
-        description: "Chillon is a medieval island castle on Lake Geneva, positioned to control the route between northern Europe, the Rhône Valley, and Italy. Its rooms, courtyards, defenses, and lakeside setting reflect Savoy, Bernese, and Vaudois rule.",
+        description: "Lake Geneva fortress with centuries of history",
         entityId: "attraction_CH_chillon_castle",
         panelSummary: "Chillon Castle turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Chillon Castle lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Chillon-castle-winter.jpg",
@@ -323,7 +323,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Charles Bridge",
-        description: "Built between 1357 and the early 1400s, Charles Bridge is a 516-meter sandstone arch bridge linking Prague’s Old Town and castle district. Its towers, Baroque statues, river views, and role in the royal coronation route define the visit.",
+        description: "Historic pedestrian bridge lined with statues",
         entityId: "attraction_CZ_charles_bridge",
         panelSummary: "Charles Bridge offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q204871",
@@ -338,7 +338,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Prague Castle",
-        description: "Founded in the ninth century, Prague Castle served Bohemian kings, Holy Roman emperors, Czechoslovak presidents, and now the Czech president. The vast complex includes palaces, churches, courtyards, fortifications, and the guarded Bohemian Crown Jewels.",
+        description: "Vast castle complex overlooking the city",
         entityId: "attraction_CZ_prague_castle",
         panelSummary: "Prague Castle turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Prague Castle lasting appeal.",
         wikidataId: "Q193369",
@@ -356,7 +356,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kutná Hora",
-        description: "Kutná Hora grew wealthy through medieval silver mining and preserves a major UNESCO-listed historic center. Key sights include St. Barbara’s Church, Sedlec Abbey, and the Sedlec Ossuary, alongside streets shaped by the town’s former economic importance.",
+        description: "Medieval town known for the Sedlec Ossuary",
         entityId: "attraction_CZ_kutna_hora",
         panelSummary: "Kutná Hora gives travelers an accessible entry point into the history or character of Czechia, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q155975",
@@ -435,7 +435,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Buda Castle",
-        description: "Buda Castle is a large UNESCO-listed palace complex built and rebuilt from the fourteenth through twentieth centuries. Today it houses the Hungarian National Gallery, Budapest History Museum, and National Széchényi Library above the Danube.",
+        description: "Historic palace district with sweeping city views",
         entityId: "attraction_HU_buda_castle",
         panelSummary: "At Buda Castle, architecture, interiors, and landscaped grounds reveal how rulers used design to express power, taste, and ceremony. The contrast between public grandeur and smaller human details gives Buda Castle much of its appeal.",
         wikidataId: "Q46313",
@@ -450,7 +450,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Széchenyi Baths",
-        description: "Budapest’s largest medicinal bath complex combines Neo-Baroque architecture with 18 indoor and outdoor pools fed by hot springs. Visitors come to soak, swim, use saunas, and experience the city’s long bathing tradition.",
+        description: "Famous thermal bath complex in City Park",
         entityId: "attraction_HU_szechenyi_baths",
         panelSummary: "Széchenyi Baths creates a memorable change of pace by combining movement, landscape, and a clear sense of participation. The journey, route, or physical sensation matters as much as the final destination. That added context gives Széchenyi Baths lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Budapest_Sz%C3%A9chenyi_Baths_R01.jpg",
@@ -462,7 +462,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Parliament Building",
-        description: "Completed in 1904, Hungary’s Parliament is a vast Gothic Revival landmark on the Danube, housing the National Assembly and the Holy Crown. Guided interiors reveal ceremonial halls, grand staircases, and extensive decorative craftsmanship.",
+        description: "Landmark neo-Gothic building on the Danube",
         entityId: "attraction_HU_parliament_building",
         panelSummary: "The appeal of Parliament Building lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Parliament Building lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hungarian_Parliament_Building_1.jpg",
@@ -540,7 +540,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Wawel Castle",
-        description: "Wawel Castle is a fortified royal complex above the Vistula, shaped by centuries of Polish rulers. Its courtyards, state rooms, cathedral, art collections, and archaeological remains make it central to understanding Kraków’s history.",
+        description: "Royal hilltop complex in Kraków",
         entityId: "attraction_PL_wawel_castle",
         panelSummary: "Wawel Castle turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Wawel Castle lasting appeal.",
         wikidataId: "Q31487",
@@ -555,7 +555,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Wieliczka Salt Mine",
-        description: "Operating since the Middle Ages, Wieliczka is a former salt mine extending through underground chambers, chapels, lakes, and passages. Highlights include sculptures and the large Chapel of St. Kinga, all carved from rock salt.",
+        description: "Underground chapels and chambers carved from salt",
         entityId: "attraction_PL_wieliczka_salt_mine",
         panelSummary: "Wieliczka Salt Mine is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Wieliczka Salt Mine lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wieliczka_Salt_Mine_-_Chapel_of_St._Kinga_01.jpg",
@@ -565,7 +565,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tatra Mountains",
-        description: "The Tatras form the highest mountain range in the Carpathians, straddling Poland and Slovakia. Visitors come for alpine hiking, glacial lakes, wildlife, dramatic peaks, and winter sports around Zakopane and nearby national parks.",
+        description: "Alpine scenery and hiking near Zakopane",
         entityId: "attraction_PL_tatra_mountains",
         panelSummary: "The strongest reason to visit Tatra Mountains is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tatras_-_Morskie_Oko.jpg",
@@ -637,7 +637,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Iguazú Falls",
-        description: "Iguazú is a system of roughly 275 waterfalls spread across the Argentina–Brazil border. Walkways and overlooks reveal immense water volume, subtropical forest, and the powerful Devil’s Throat, the site’s largest and most dramatic section.",
+        description: "Massive waterfall system shared with Brazil",
         entityId: "attraction_AR_iguazu_falls",
         panelSummary: "Iguazú Falls offers more than a single cascade view, rewarding visitors who follow the available paths and observe how the falls change by angle. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Iguazú Falls lasting appeal.",
         wikidataId: "Q36332",
@@ -652,7 +652,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Perito Moreno Glacier",
-        description: "Perito Moreno is a major Patagonian glacier in Los Glaciares National Park, notable for remaining comparatively stable while many glaciers retreat. Boardwalks and boat trips provide close views of its towering face and frequent ice calving.",
+        description: "Dramatic advancing glacier in Los Glaciares National Park",
         entityId: "attraction_AR_perito_moreno_glacier",
         panelSummary: "Perito Moreno Glacier rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q367943",
@@ -667,7 +667,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "La Boca",
-        description: "La Boca is a working-class Buenos Aires neighborhood associated with immigrant history, tango, football, and brightly painted buildings. Most visitors focus on Caminito, an open-air street museum lined with artists, performers, and cafés.",
+        description: "Colorful Buenos Aires neighborhood known for Caminito",
         entityId: "attraction_AR_la_boca",
         panelSummary: "La Boca gives travelers an accessible entry point into the history or character of Argentina, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Colorful_houses_of_La_Boca_01.jpg",
@@ -745,7 +745,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Torres del Paine",
-        description: "Torres del Paine National Park protects granite towers, glaciers, lakes, grasslands, and varied Patagonian wildlife. Its multi-day circuits, shorter hikes, and scenic roads make it one of South America’s major trekking destinations.",
+        description: "Patagonian national park with granite towers and glaciers",
         entityId: "attraction_CL_torres_del_paine",
         panelSummary: "Torres del Paine offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Torres_del_Paine_(Chile).jpg",
@@ -760,7 +760,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Easter Island",
-        description: "Easter Island, or Rapa Nui, is a remote Polynesian island known for nearly 1,000 monumental moai created by its Indigenous people. Archaeological sites, volcanic landscapes, ceremonial platforms, and local culture form the core of a visit.",
+        description: "Remote island famous for moai statues",
         entityId: "attraction_CL_easter_island",
         panelSummary: "The strongest reason to visit Easter Island is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q14452",
@@ -774,7 +774,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Elqui Valley",
-        description: "Chile’s Elqui Valley is a fertile river valley surrounded by arid mountains. It is known for pisco production, clear skies, astronomical observatories, small villages, and a landscape that contrasts vineyards with desert terrain.",
+        description: "Clear skies, pisco distilleries, and observatories",
         entityId: "attraction_CL_elqui_valley",
         panelSummary: "The appeal of Elqui Valley lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Elqui Valley lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Elqui_valley_%2848338686512%29.jpg",
@@ -849,7 +849,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Cotopaxi",
-        description: "Cotopaxi is one of the world’s highest active volcanoes, rising to 5,897 meters within an Ecuadorian national park. Visitors see its symmetrical snow-covered cone, páramo landscapes, wildlife, and high-altitude hiking routes.",
+        description: "Snow-capped active volcano south of Quito",
         entityId: "attraction_EC_cotopaxi",
         panelSummary: "The appeal of Cotopaxi comes from seeing geology in action, with terrain and conditions that make the landscape feel unusually alive. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         wikidataId: "Q181476",
@@ -864,7 +864,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Middle of the World",
-        description: "Ciudad Mitad del Mundo is a visitor complex marking the equator near Quito. Its central monument, museums, exhibits, and demonstrations explain Ecuador’s geographic position, though the precise equatorial line lies slightly north of the monument.",
+        description: "Equator monument and museums near Quito",
         entityId: "attraction_EC_middle_of_the_world",
         panelSummary: "The strength of Middle of the World lies in the relationship between its collection, exhibition spaces, and the artistic history they illuminate. It particularly suits travelers who enjoy understanding why objects matter, not simply seeing them.",
         wikidataId: "Q2900",
@@ -879,7 +879,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Otavalo Market",
-        description: "Otavalo’s market is one of the Andes’ best-known Indigenous markets, centered on Plaza de los Ponchos. Vendors sell woven textiles, clothing, jewelry, crafts, and food, offering direct contact with regional Kichwa culture and commerce.",
+        description: "Famous Indigenous market for textiles and crafts",
         entityId: "attraction_EC_otavalo_market",
         panelSummary: "Otavalo Market is most rewarding as a place to linger, with social life and small discoveries providing as much interest as its headline feature. Spending time here provides a useful counterpoint to more formal landmarks and museums.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Otavalo_Market_%2843775961872%29.jpg",
@@ -956,7 +956,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Salar de Uyuni",
-        description: "Salar de Uyuni is the world’s largest salt flat, formed from prehistoric lakes on Bolivia’s Altiplano. Its vast white surface, polygonal salt crust, cactus islands, and seasonal mirror effect create an unusually stark landscape.",
+        description: "Vast salt flat that becomes a mirror in rainy season",
         entityId: "attraction_BO_salar_de_uyuni",
         panelSummary: "The appeal of Salar de Uyuni lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q76122",
@@ -971,7 +971,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Lake Titicaca",
-        description: "Lake Titicaca is a high-altitude lake shared by Bolivia and Peru, closely tied to Andean history and mythology. Visitors explore islands, Indigenous communities, archaeological sites, reed boats, and broad views across the Altiplano.",
+        description: "High-altitude lake shared with Peru",
         entityId: "attraction_BO_lake_titicaca",
         panelSummary: "The strongest reason to visit Lake Titicaca is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q35342",
@@ -986,7 +986,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tiwanaku",
-        description: "Tiwanaku was the ceremonial and political center of a major pre-Inca civilization near Lake Titicaca. Surviving temples, monoliths, gateways, and precisely cut stonework reveal the scale and sophistication of this influential Andean culture.",
+        description: "Pre-Inca archaeological site near La Paz",
         entityId: "attraction_BO_tiwanaku",
         panelSummary: "Tiwanaku offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/TIWANAKU.jpg",
@@ -1065,7 +1065,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Casapueblo",
-        description: "Casapueblo is a white, sculptural building created by Uruguayan artist Carlos Páez Vilaró above the Atlantic. It contains a museum, gallery, hotel, and terraces, and is best known for its hand-built architecture and sunset setting.",
+        description: "Whitewashed art landmark by Carlos Páez Vilaró",
         entityId: "attraction_UY_casapueblo",
         panelSummary: "The appeal of Casapueblo lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Casapueblo lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Casapueblo.jpg",
@@ -1078,7 +1078,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mercado del Puerto",
-        description: "Mercado del Puerto is a historic iron market hall in Montevideo now dominated by restaurants and parrillas. Visitors come to see its 19th-century structure and eat grilled meats prepared over open fires.",
+        description: "Montevideo market famous for grilled meats",
         entityId: "attraction_UY_mercado_del_puerto",
         panelSummary: "Mercado del Puerto offers a street-level introduction to local life through food, commerce, architecture, and the steady movement of residents and visitors. A flexible itinerary leaves room to follow whatever catches the eye. That added context gives Mercado del Puerto lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mercado_del_Puerto_(4).JPG",
@@ -1091,7 +1091,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "La Mano",
-        description: "La Mano is a large concrete sculpture of five fingers emerging from the sand at Punta del Este. Created by Mario Irarrázabal in 1982, it has become one of Uruguay’s most recognizable public artworks.",
+        description: "Iconic hand sculpture emerging from the sand",
         entityId: "attraction_UY_la_mano",
         panelSummary: "The appeal of La Mano lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. Spending time with the site’s details makes it more satisfying than a quick checklist stop. That added context gives La Mano lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Thehandofpuntadeleste.jpg",
@@ -1169,7 +1169,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mount Fuji",
-        description: "Mount Fuji is Japan’s highest mountain and an active stratovolcano revered in religion and art. Visitors climb during the official season or view its symmetrical cone from lakes, shrines, towns, and scenic routes around the Fuji Five Lakes.",
+        description: "Japan's iconic sacred peak and UNESCO World Heritage Site",
         entityId: "attraction_JP_mount_fuji",
         panelSummary: "Mount Fuji offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q39231",
@@ -1184,7 +1184,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Fushimi Inari Shrine",
-        description: "Fushimi Inari is Kyoto’s principal shrine to Inari, associated with rice, prosperity, and business. Thousands of donated vermilion torii gates form walking trails up Mount Inari, passing smaller shrines and fox statues.",
+        description: "Thousands of vermillion torii gates winding through forested hills",
         entityId: "attraction_JP_fushimi_inari_shrine",
         panelSummary: "Fushimi Inari Shrine rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kyoto_Fushimi_Inari-taisha_1.jpg",
@@ -1197,7 +1197,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Hiroshima Peace Memorial",
-        description: "The Hiroshima Peace Memorial, or Atomic Bomb Dome, is the preserved ruin closest to the 1945 explosion’s hypocenter. Together with the surrounding park and museum, it documents the bombing and promotes nuclear disarmament.",
+        description: "Powerful monument to peace and the atomic bombing of 1945",
         entityId: "attraction_JP_hiroshima_peace_memorial",
         panelSummary: "Hiroshima Peace Memorial offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/20181111_Atomic_Bomb_Dome-5.jpg",
@@ -1207,7 +1207,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Arashiyama Bamboo Grove",
-        description: "Arashiyama is a scenic district in western Kyoto whose bamboo path passes through towering groves near Tenryū-ji temple. The wider area also includes river views, gardens, temples, bridges, and wooded hills.",
+        description: "Towering bamboo forest creating an otherworldly atmosphere",
         entityId: "attraction_JP_arashiyama_bamboo_grove",
         panelSummary: "The strongest reason to visit Arashiyama Bamboo Grove is the chance to experience the surrounding environment at close range rather than from a distant overlook. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arashiyama_Bamboo_Grove_(Unsplash).jpg",
@@ -1221,7 +1221,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Shibuya Crossing",
-        description: "Shibuya Crossing is a large scramble intersection outside Shibuya Station where pedestrians cross from multiple directions at once. The surrounding screens, crowds, shopping streets, and elevated viewpoints capture the scale and pace of modern Tokyo.",
+        description: "World's busiest pedestrian crossing in the heart of Tokyo",
         entityId: "attraction_JP_shibuya_crossing",
         panelSummary: "Shibuya Crossing gives travelers an accessible entry point into the history or character of Japan, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Shibuya_crossing_(12214).jpg",
@@ -1313,7 +1313,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Eiffel Tower",
-        description: "Built for the 1889 Exposition, the Eiffel Tower is a 330-meter iron structure that became Paris’s defining landmark. Visitors can ascend to observation levels for city views and examine the engineering of its lattice construction.",
+        description: "Iconic iron lattice tower and symbol of Paris since 1889",
         entityId: "attraction_FR_eiffel_tower",
         panelSummary: "Eiffel Tower offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q243",
@@ -1330,7 +1330,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Louvre Museum",
-        description: "The Louvre is one of the world’s largest museums, housed in a former royal palace. Its collections span ancient civilizations through the 19th century, including the Mona Lisa, Venus de Milo, and Winged Victory.",
+        description: "World's largest art museum, home to the Mona Lisa",
         entityId: "attraction_FR_louvre_museum",
         panelSummary: "Louvre Museum places significant works within a broader cultural story, helping visitors understand the people, ideas, and periods behind the collection. A slower visit leaves room for unexpected discoveries beyond the headline pieces. That added context gives Louvre Museum lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Louvre_Museum,Paris,France.jpg",
@@ -1343,7 +1343,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mont Saint-Michel",
-        description: "Mont-Saint-Michel is a medieval abbey and fortified village built on a tidal island off Normandy. Visitors climb narrow streets to the abbey while dramatic tides repeatedly transform the surrounding bay.",
+        description: "Medieval abbey perched on a tidal island in Normandy",
         entityId: "attraction_FR_mont_saint_michel",
         panelSummary: "The strongest reason to visit Mont Saint-Michel is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q20892",
@@ -1357,7 +1357,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Palace of Versailles",
-        description: "Versailles was expanded by Louis XIV into the principal palace of the French monarchy. The Hall of Mirrors, royal apartments, formal gardens, fountains, and Trianon estates show how architecture and ceremony projected royal power.",
+        description: "Opulent royal palace with legendary Hall of Mirrors",
         entityId: "attraction_FR_palace_of_versailles",
         panelSummary: "Palace of Versailles brings courtly history to life through ceremonial rooms, decorative craftsmanship, and grounds designed to impress as much as they served daily life. Visitors who explore beyond the principal rooms gain a fuller sense of how the complex functioned.",
         wikidataId: "Q2946",
@@ -1374,7 +1374,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "D-Day Beaches",
-        description: "Normandy’s D-Day sites preserve beaches, bunkers, cemeteries, museums, and memorials connected with the Allied landings of June 6, 1944. Visiting several sectors shows the scale, planning, and human cost of the invasion.",
+        description: "Historic Normandy beaches from the WWII Allied invasion",
         entityId: "attraction_FR_d_day_beaches",
         panelSummary: "D-Day Beaches is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Exploring beyond the busiest access point often reveals the beach at its most atmospheric.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Normandy_Invasion,_June_1944.jpg",
@@ -1463,7 +1463,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Colosseum",
-        description: "The Colosseum is a first-century Roman amphitheater built for gladiatorial contests, animal hunts, and public spectacles. Its seating, underground service areas, and surviving structure illustrate Roman engineering and the organization of mass entertainment.",
+        description: "Ancient Roman amphitheater that once hosted gladiatorial contests",
         entityId: "attraction_IT_colosseum",
         panelSummary: "Exploring Colosseum reveals more than a single monument: the layout and remaining details help reconstruct an earlier world. The most rewarding details are often the modest ones that make past life feel specific and human.",
         wikidataId: "Q10285",
@@ -1481,7 +1481,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Vatican City",
-        description: "Vatican City is the world’s smallest sovereign state and the center of the Roman Catholic Church. Its major sites include St. Peter’s Basilica, the Vatican Museums, the Sistine Chapel, and extensive papal collections.",
+        description: "World's smallest country, home to St. Peter's Basilica and the Sistine Chapel",
         entityId: "attraction_IT_vatican_city",
         panelSummary: "Vatican City is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Vatican City lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/St_Peter's_Square,_Vatican_City_-_April_2007.jpg",
@@ -1493,7 +1493,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Pompeii",
-        description: "Pompeii was buried by Mount Vesuvius in AD 79, preserving streets, houses, shops, temples, baths, and artworks. Walking the city provides an unusually detailed picture of daily life in the Roman world.",
+        description: "Ancient city preserved in volcanic ash from Mount Vesuvius eruption in 79 AD",
         entityId: "attraction_IT_pompeii",
         panelSummary: "Pompeii makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. The most rewarding details are often the modest ones that make past life feel specific and human.",
         wikidataId: "Q43332",
@@ -1508,7 +1508,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Leaning Tower of Pisa",
-        description: "The Leaning Tower is the freestanding bell tower of Pisa Cathedral, famous for the tilt caused by unstable foundations. Visitors can climb its spiral stairs and explore the surrounding cathedral, baptistery, and monumental square.",
+        description: "Famous bell tower with its unintended four-degree tilt",
         entityId: "attraction_IT_leaning_tower_of_pisa",
         panelSummary: "The appeal of Leaning Tower of Pisa lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q39054",
@@ -1526,7 +1526,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cinque Terre",
-        description: "Cinque Terre comprises five historic Ligurian villages built between steep hills and the sea. Footpaths, trains, harbors, terraced vineyards, and compact streets connect settlements whose landscape reflects centuries of coastal farming.",
+        description: "Five colorful coastal villages connected by scenic hiking trails",
         entityId: "attraction_IT_cinque_terre",
         panelSummary: "Cinque Terre creates a memorable change of pace by combining movement, landscape, and a clear sense of participation. Preparation and an unhurried approach help travelers appreciate the experience more fully. That added context gives Cinque Terre lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Manarola,_Cinque_Terre_(Italy).jpg",
@@ -1618,7 +1618,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Christ the Redeemer",
-        description: "Christ the Redeemer is a 30-meter Art Deco statue of Jesus atop Corcovado Mountain. The monument is important for its religious symbolism, engineering, and panoramic views across Rio de Janeiro’s mountains, beaches, and bay.",
+        description: "Iconic 30-meter Art Deco statue atop Corcovado Mountain",
         entityId: "attraction_BR_christ_the_redeemer",
         panelSummary: "Christ the Redeemer offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q79961",
@@ -1633,7 +1633,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sugarloaf Mountain",
-        description: "Sugarloaf Mountain rises at the entrance to Guanabara Bay and is reached by a two-stage cable car. Its summit provides broad views of Rio’s coastline, mountains, city neighborhoods, and Christ the Redeemer.",
+        description: "Dramatic peak accessible by cable car with panoramic views of Rio",
         entityId: "attraction_BR_sugarloaf_mountain",
         panelSummary: "Sugarloaf Mountain rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q210722",
@@ -1648,7 +1648,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Copacabana Beach",
-        description: "Copacabana is a dense Rio neighborhood fronted by a four-kilometer crescent beach and wave-patterned promenade. Visitors come for swimming, people-watching, sports, kiosks, nightlife, and views toward Sugarloaf Mountain.",
+        description: "Legendary 4km crescent beach famous worldwide",
         entityId: "attraction_BR_copacabana_beach",
         panelSummary: "The experience at Copacabana Beach comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         wikidataId: "Q63894",
@@ -1663,7 +1663,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Fernando de Noronha",
-        description: "Fernando de Noronha is a protected volcanic archipelago known for clear water, steep cliffs, beaches, dolphins, sea turtles, and rich marine life. Visitor limits and conservation rules help protect its sensitive ecosystems.",
+        description: "Volcanic archipelago with the clearest waters in Brazil",
         entityId: "attraction_BR_fernando_de_noronha",
         panelSummary: "Fernando de Noronha offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q175057",
@@ -1678,7 +1678,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Pelourinho (Salvador)",
-        description: "Pelourinho is Salvador’s historic colonial center, filled with colorful buildings, churches, steep streets, music, and Afro-Brazilian cultural institutions. Its architecture and public spaces reflect both Portuguese rule and the city’s central role in the slave trade.",
+        description: "UNESCO-listed colonial quarter with vibrant colors and music",
         entityId: "attraction_BR_pelourinho_salvador",
         panelSummary: "Pelourinho (Salvador) gives travelers an accessible entry point into the history or character of Brazil, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Largo_do_Pelourinho_Salvador_2019-9754_(cropped).jpg",
@@ -1768,7 +1768,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Sydney Opera House",
-        description: "The Sydney Opera House is a UNESCO-listed performing arts complex recognized for its shell-like roofs and waterfront setting. Tours and performances reveal its innovative engineering, interior venues, and importance to modern architecture.",
+        description: "Architectural masterpiece and UNESCO World Heritage Site",
         entityId: "attraction_AU_sydney_opera_house",
         panelSummary: "The strength of Sydney Opera House lies in the relationship between its collection, exhibition spaces, and the artistic history they illuminate. It particularly suits travelers who enjoy understanding why objects matter, not simply seeing them.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Shells,Sydney_Opera_House,_Australia.jpg",
@@ -1783,7 +1783,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Great Barrier Reef",
-        description: "The Great Barrier Reef is the world’s largest coral reef system, extending along Australia’s northeast coast. Snorkeling, diving, and boat trips reveal coral formations, fish, turtles, sharks, and other marine species across thousands of reefs.",
+        description: "Over 2,900 individual reef systems with incredible marine life",
         entityId: "attraction_AU_great_barrier_reef",
         panelSummary: "Great Barrier Reef offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. Conditions, season, and responsible guiding strongly influence the experience, so preparation matters. That added context gives Great Barrier Reef lasting appeal.",
         wikidataId: "Q7343",
@@ -1797,7 +1797,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Twelve Apostles",
-        description: "The Twelve Apostles are limestone sea stacks formed by erosion along Victoria’s Great Ocean Road. Cliffside viewpoints show the stacks, arches, and rough Southern Ocean, with changing light and weather altering the scene.",
+        description: "Limestone stacks rising from the Southern Ocean along Great Ocean Road",
         entityId: "attraction_AU_twelve_apostles",
         panelSummary: "Twelve Apostles creates a memorable change of pace by combining movement, landscape, and a clear sense of participation. Because visitors take part rather than simply observe, the memory tends to feel unusually personal. That added context gives Twelve Apostles lasting appeal.",
         wikidataId: "Q475623",
@@ -1812,7 +1812,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kakadu National Park",
-        description: "Kakadu is a vast national park combining wetlands, escarpments, rivers, wildlife, and Aboriginal cultural sites. Ancient rock art, seasonal landscapes, crocodiles, and living Indigenous traditions make it both a natural and cultural destination.",
+        description: "Australia's largest national park with ancient Aboriginal rock art",
         entityId: "attraction_AU_kakadu_national_park",
         panelSummary: "Kakadu National Park offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         wikidataId: "Q189657",
@@ -1829,7 +1829,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bondi Beach",
-        description: "Bondi is Sydney’s best-known urban beach, valued for surfing, swimming, coastal scenery, and beach culture. The promenade and cliff walk toward Coogee add views of sandstone headlands, coves, and the Pacific Ocean.",
+        description: "Sydney's most famous beach with iconic surf culture",
         entityId: "attraction_AU_bondi_beach",
         panelSummary: "Bondi Beach offers a restorative coastal stop where the setting encourages travelers to slow down rather than rush between sights. Its strongest appeal is the unhurried rhythm it adds to a wider trip. That added context gives Bondi Beach lasting appeal.",
         wikidataId: "Q21919992",
@@ -1921,7 +1921,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Great Pyramids of Giza",
-        description: "The Giza pyramid complex contains the pyramids of Khufu, Khafre, and Menkaure, along with temples, tombs, and the Great Sphinx. These monumental structures demonstrate ancient Egyptian engineering, royal power, and funerary beliefs.",
+        description: "Last surviving Wonder of the Ancient World, over 4,500 years old",
         entityId: "attraction_EG_great_pyramids_of_giza",
         panelSummary: "Great Pyramids of Giza makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/All_Gizah_Pyramids.jpg",
@@ -1934,7 +1934,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Great Sphinx",
-        description: "The Great Sphinx is a colossal limestone figure with a lion’s body and human head beside the Giza pyramids. Its scale, age, weathered surface, and uncertain original meaning make it a central Egyptian monument.",
+        description: "Limestone statue with a lion's body and human head",
         entityId: "attraction_EG_great_sphinx",
         panelSummary: "Great Sphinx offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q130958",
@@ -1949,7 +1949,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Valley of the Kings",
-        description: "The Valley of the Kings served as the burial place of New Kingdom pharaohs and elites. Decorated underground tombs, including Tutankhamun’s, preserve religious texts and artwork intended to guide the dead into the afterlife.",
+        description: "Royal burial ground with 63 tombs including Tutankhamun's",
         entityId: "attraction_EG_valley_of_the_kings",
         panelSummary: "Valley of the Kings offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Valley_of_the_Kings_panorama.jpg",
@@ -1959,7 +1959,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Abu Simbel",
-        description: "Abu Simbel consists of two rock-cut temples built by Ramesses II in southern Egypt. Colossal façade statues, interior reliefs, and the temples’ 20th-century relocation make the site important both historically and technically.",
+        description: "Massive rock temples carved by Ramesses II on the Nile",
         entityId: "attraction_EG_abu_simbel",
         panelSummary: "Abu Simbel is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Abu Simbel lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Abu_Simbel_Great_Temple_02.jpg",
@@ -1971,7 +1971,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Egyptian Museum",
-        description: "The Egyptian Museum in Cairo holds a major collection of ancient Egyptian objects, including royal mummies, sculpture, jewelry, papyri, and funerary goods. Its historic galleries provide broad coverage of pharaonic civilization.",
+        description: "Home to the world's largest collection of ancient Egyptian artifacts",
         entityId: "attraction_EG_egyptian_museum",
         panelSummary: "The strength of Egyptian Museum lies in the relationship between its collection, exhibition spaces, and the artistic history they illuminate. A slower visit leaves room for unexpected discoveries beyond the headline pieces. That added context gives Egyptian Museum lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Egyptian_Museum_in_Cairo,_Egypt_(2743500211).jpg",
@@ -2063,7 +2063,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Chichén Itzá",
-        description: "Chichén Itzá was a major Maya city whose buildings reflect both local and wider Mesoamerican influences. El Castillo, the Great Ball Court, temples, columns, and cenotes reveal its religious, political, and astronomical importance.",
+        description: "Mayan pyramid and New Wonder of the World",
         entityId: "attraction_MX_chichen_itza",
         panelSummary: "Chichén Itzá offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Chichen_Itza_3.jpg",
@@ -2075,7 +2075,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Teotihuacán",
-        description: "Teotihuacán was one of the ancient Americas’ largest cities, organized around the Avenue of the Dead. The Pyramids of the Sun and Moon, temples, murals, and residential compounds show its enormous urban scale.",
+        description: "Ancient city with massive Pyramids of the Sun and Moon",
         entityId: "attraction_MX_teotihuacan",
         panelSummary: "Teotihuacán offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Teotihuacan_-_Pyramid_of_the_Moon_-_Mexico_-_panoramio.jpg",
@@ -2086,7 +2086,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cenotes of Yucatán",
-        description: "Cenotes are natural sinkholes created where limestone collapses and exposes groundwater. Across Yucatán they range from open pools to caves, offering swimming, snorkeling, diving, geological formations, and links to ancient Maya ritual practices.",
+        description: "Stunning underground swimming holes formed in limestone",
         entityId: "attraction_MX_cenotes_of_yucatan",
         panelSummary: "Cenotes of Yucatán draws visitors into an underground landscape of chambers, mineral formations, reflected light, and surprising changes in scale. The cooler air, acoustics, and lighting make the experience as sensory as it is visual.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Diving_in_Oxman_Cenote_Yucatan.jpg",
@@ -2097,7 +2097,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Frida Kahlo Museum",
-        description: "The Frida Kahlo Museum occupies the Blue House where Kahlo was born, lived, and died. Rooms, artworks, personal objects, photographs, clothing, and the garden connect her work with her family and physical life.",
+        description: "The Blue House where Mexico's most famous artist lived and worked",
         entityId: "attraction_MX_frida_kahlo_museum",
         panelSummary: "Frida Kahlo Museum offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. It particularly suits travelers who enjoy understanding why objects matter, not simply seeing them.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Museo_Frida_Kahlo_(exterior).jpg",
@@ -2107,7 +2107,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Copper Canyon",
-        description: "Copper Canyon is a network of large canyons in Mexico’s Sierra Madre Occidental. The Chihuahua al Pacífico railway, viewpoints, hiking routes, and Indigenous Rarámuri communities reveal both its immense terrain and living culture.",
+        description: "Series of canyons larger and deeper than the Grand Canyon",
         entityId: "attraction_MX_copper_canyon",
         panelSummary: "The strongest reason to visit Copper Canyon is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Copper_canyon_3.jpg",
@@ -2196,7 +2196,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Taj Mahal",
-        description: "The Taj Mahal is a 17th-century marble mausoleum built by Shah Jahan for Mumtaz Mahal. Its symmetrical gardens, reflecting pool, inlaid decoration, calligraphy, dome, and changing light define its architectural importance.",
+        description: "Ivory-white marble mausoleum and UNESCO Wonder of the World",
         entityId: "attraction_IN_taj_mahal",
         panelSummary: "The appeal of Taj Mahal lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Taj Mahal lasting appeal.",
         wikidataId: "Q9141",
@@ -2214,7 +2214,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Jaipur (Pink City)",
-        description: "Jaipur is Rajasthan’s planned capital, founded in 1727 and known for its pink-painted historic center. Palaces, forts, markets, observatories, temples, and crafts make the city a broad introduction to Rajput history and design.",
+        description: "Royal capital with Amber Fort and Hawa Mahal (Palace of Winds)",
         entityId: "attraction_IN_jaipur_pink_city",
         panelSummary: "At Jaipur (Pink City), architecture, interiors, and landscaped grounds reveal how rulers used design to express power, taste, and ceremony. The contrast between public grandeur and smaller human details gives Jaipur (Pink City) much of its appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jaipur_THE_PINK_CITY_FROM_NAHARGARH_(NARESH_KUMAR).jpg",
@@ -2225,7 +2225,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ganges River at Varanasi",
-        description: "At Varanasi, the Ganges is lined with ghats used for bathing, worship, cremation, and ceremonies. Boat rides and evening aarti reveal how the river remains central to Hindu religious life and the city’s daily rhythms.",
+        description: "Sacred river where evening Ganga Aarti ceremonies mesmerize visitors",
         entityId: "attraction_IN_ganges_river_at_varanasi",
         panelSummary: "Ganges River at Varanasi offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q79980",
@@ -2239,7 +2239,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Hampi",
-        description: "Hampi preserves the ruins of Vijayanagara, once one of South Asia’s largest cities. Temples, markets, royal compounds, waterworks, and monumental stone architecture spread across a boulder-filled landscape along the Tungabhadra River.",
+        description: "Surreal boulder-strewn landscape with ruins of the Vijayanagara Empire",
         entityId: "attraction_IN_hampi",
         panelSummary: "Exploring Hampi reveals more than a single monument: the layout and remaining details help reconstruct an earlier world. Time spent tracing the full setting turns the visit into something closer to discovery than observation. That added context gives Hampi lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vittala_Temple_Hampi.jpg",
@@ -2253,7 +2253,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Golden Temple (Amritsar)",
-        description: "The Golden Temple is Sikhism’s most important shrine, built around a sacred pool in Amritsar. Its gilded sanctuary, continuous scripture recitation, pilgrim activity, and free community kitchen express core Sikh principles of worship and service.",
+        description: "Holiest shrine in Sikhism, serving free meals to 100,000 people daily",
         entityId: "attraction_IN_golden_temple_amritsar",
         panelSummary: "At Golden Temple (Amritsar), craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Golden Temple (Amritsar) lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Shri_Harmandir_Sahib_,_Golden_Temple._Amritsar_,_Punjab_,_India.jpg",
@@ -2341,7 +2341,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Acropolis of Athens",
-        description: "The Acropolis is a fortified hill containing major monuments of classical Athens, including the Parthenon, Erechtheion, and Propylaea. The site combines influential architecture, religious history, archaeological remains, and wide city views.",
+        description: "Ancient citadel crowned by the magnificent Parthenon",
         entityId: "attraction_GR_acropolis_of_athens",
         panelSummary: "Acropolis of Athens rewards exploration through ramparts, courtyards, gateways, and viewpoints that explain why the site held strategic importance. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Acropolis of Athens lasting appeal.",
         wikidataId: "Q131013",
@@ -2359,7 +2359,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Santorini Caldera",
-        description: "Santorini’s caldera is the flooded remnant of a massive volcanic eruption that reshaped the island. Cliff-top settlements, layered volcanic rock, offshore islands, boat excursions, and sunset views reveal the scale of the geological event.",
+        description: "Stunning volcanic crater with the most photographed sunsets in the world",
         entityId: "attraction_GR_santorini_caldera",
         panelSummary: "Santorini Caldera provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. Access and conditions can change, making current local guidance an important part of planning.",
         wikidataId: "Q129296",
@@ -2374,7 +2374,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Delphi",
-        description: "Delphi was a major sanctuary of Apollo and home of the ancient Greek oracle. Its mountainside ruins include the temple, theater, stadium, treasuries, and museum, all tied to religion and interstate competition.",
+        description: "Ancient sanctuary once considered the center of the world",
         entityId: "attraction_GR_delphi",
         panelSummary: "Exploring Delphi reveals more than a single monument: the layout and remaining details help reconstruct an earlier world. The most rewarding details are often the modest ones that make past life feel specific and human.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Temple_of_Apollo_at_Delphi.jpg",
@@ -2386,7 +2386,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Palace of Knossos",
-        description: "Knossos was the largest Bronze Age Minoan palace on Crete, with ceremonial spaces, storage rooms, workshops, frescoes, and complex corridors. Its archaeology inspired associations with King Minos, the Labyrinth, and the Minotaur.",
+        description: "Legendary Minoan palace and possible origin of the Minotaur myth",
         entityId: "attraction_GR_palace_of_knossos",
         panelSummary: "Palace of Knossos brings courtly history to life through ceremonial rooms, decorative craftsmanship, and grounds designed to impress as much as they served daily life. Visitors who explore beyond the principal rooms gain a fuller sense of how the complex functioned.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palace_of_Knossus.jpg",
@@ -2397,7 +2397,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Navagio Beach (Shipwreck)",
-        description: "Navagio is a secluded Zakynthos cove enclosed by limestone cliffs and known for the wreck of the Panagiotis on its beach. Its dramatic setting is viewed from the cliffs or by boat, subject to access restrictions.",
+        description: "Iconic cove in Zakynthos with a rusting shipwreck on white sand",
         entityId: "attraction_GR_navagio_beach_shipwreck",
         panelSummary: "Navagio Beach (Shipwreck) is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Exploring beyond the busiest access point often reveals the beach at its most atmospheric.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Navagio_01.jpg",
@@ -2487,7 +2487,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Grand Palace (Bangkok)",
-        description: "Bangkok’s Grand Palace was the royal residence and administrative center of Siam from 1782. Its ornate halls, courtyards, temples, and Wat Phra Kaew, home of the Emerald Buddha, form Thailand’s most important ceremonial complex.",
+        description: "Glittering royal complex and home of the Emerald Buddha",
         entityId: "attraction_TH_grand_palace_bangkok",
         panelSummary: "Grand Palace (Bangkok) offers a layered look at elite life, combining formal architecture with rooms, gardens, and details that make political history feel tangible. Allowing time for both the building and its surroundings makes Grand Palace (Bangkok) far more rewarding than a quick exterior photograph.",
         wikidataId: "Q476222",
@@ -2502,7 +2502,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Phi Phi Islands",
-        description: "The Phi Phi Islands are limestone islands in the Andaman Sea known for cliffs, bays, reefs, and clear water. Boat trips, snorkeling, diving, and beaches are major draws, though heavy tourism affects the environment.",
+        description: "Stunning archipelago made famous by the film \"The Beach\"",
         entityId: "attraction_TH_phi_phi_islands",
         panelSummary: "Phi Phi Islands is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         wikidataId: "Q511957",
@@ -2517,7 +2517,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Wat Phra That Doi Suthep",
-        description: "Wat Phra That Doi Suthep is a major Buddhist temple overlooking Chiang Mai from Doi Suthep mountain. Its golden chedi, stairway, shrines, murals, and active religious life are central to the visit.",
+        description: "Sacred hilltop temple with panoramic views of Chiang Mai",
         entityId: "attraction_TH_wat_phra_that_doi_suthep",
         panelSummary: "Wat Phra That Doi Suthep is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. Quiet observation of the interior reveals details that an exterior view cannot convey.",
         wikidataId: "Q1517698",
@@ -2532,7 +2532,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Floating Markets",
-        description: "Thailand’s floating markets developed around canal-based trade, with vendors selling produce, food, and goods from boats. Today they vary from working local markets to tourist destinations, but still show the country’s historic waterways and commerce.",
+        description: "Colorful canal markets where vendors sell from traditional boats",
         entityId: "attraction_TH_floating_markets",
         panelSummary: "Floating Markets offers a street-level introduction to local life through food, commerce, architecture, and the steady movement of residents and visitors. A flexible itinerary leaves room to follow whatever catches the eye. That added context gives Floating Markets lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bangkok-floating_market_991201_960_720.jpg",
@@ -2544,7 +2544,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ayutthaya",
-        description: "Ayutthaya Historical Park preserves temples, monasteries, palaces, and statues from the former Siamese capital, destroyed in 1767. Its extensive ruins show the wealth, international connections, and Buddhist architecture of the kingdom.",
+        description: "UNESCO ruins of a once-great Siamese kingdom",
         entityId: "attraction_TH_ayutthaya",
         panelSummary: "Ayutthaya makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. The most rewarding details are often the modest ones that make past life feel specific and human.",
         wikidataId: "Q203370",
@@ -2636,7 +2636,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Table Mountain",
-        description: "Table Mountain is a flat-topped sandstone mountain rising above Cape Town within a biodiverse national park. Cableway rides and hiking trails provide city, ocean, and peninsula views, while weather can change access rapidly.",
+        description: "Iconic flat-topped mountain with cable car and panoramic views",
         entityId: "attraction_ZA_table_mountain",
         panelSummary: "Table Mountain rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Table_Mountain_DanieVDM.jpg",
@@ -2652,7 +2652,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kruger Safari",
-        description: "Kruger National Park is one of Africa’s largest wildlife reserves, supporting elephants, lions, leopards, rhinos, buffalo, and hundreds of bird species. Self-drive roads and guided safaris cross varied savanna, woodland, and river habitats.",
+        description: "See lions, elephants, buffalo, leopards, and rhinos in the wild",
         entityId: "attraction_ZA_kruger_safari",
         panelSummary: "The appeal of Kruger Safari lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Kruger Safari lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kruger_National_Park,_Hazyview,_South_Africa_(Unsplash).jpg",
@@ -2664,7 +2664,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Robben Island",
-        description: "Robben Island was used for imprisonment and exile for centuries, most famously holding Nelson Mandela and other anti-apartheid activists. Guided visits connect the former prison with South Africa’s colonial and apartheid history.",
+        description: "Historic prison island where Nelson Mandela was held for 18 years",
         entityId: "attraction_ZA_robben_island",
         panelSummary: "Robben Island offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Robben_Island_-_South_Africa_(2417719715).jpg",
@@ -2678,7 +2678,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Blyde River Canyon",
-        description: "Blyde River Canyon is a deeply cut, vegetated canyon along South Africa’s Panorama Route. Viewpoints such as the Three Rondavels and Bourke’s Luck Potholes reveal cliffs, river scenery, unusual rock formations, and extensive lowveld views.",
+        description: "One of the largest green canyons in the world",
         entityId: "attraction_ZA_blyde_river_canyon",
         panelSummary: "The strongest reason to visit Blyde River Canyon is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Blyde_River_Canyon,_South_Africa_2.JPG",
@@ -2692,7 +2692,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cape of Good Hope",
-        description: "The Cape of Good Hope is a rugged headland within Table Mountain National Park, historically important to maritime navigation. Visitors come for coastal cliffs, beaches, hiking, wildlife, and views across the Cape Peninsula.",
+        description: "Dramatic headland where the Atlantic and Indian Oceans meet",
         entityId: "attraction_ZA_cape_of_good_hope",
         panelSummary: "Cape of Good Hope gives travelers an accessible entry point into the history or character of South Africa, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q4092",
@@ -2783,7 +2783,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "La Sagrada Família",
-        description: "Sagrada Família is Antoni Gaudí’s monumental basilica, begun in 1882 and still under construction. Its sculpted façades, branching interior columns, colored light, towers, and symbolic program make it a defining work of Catalan modernism.",
+        description: "Gaudí's unfinished basilica, under construction since 1882",
         entityId: "attraction_ES_la_sagrada_familia",
         panelSummary: "La Sagrada Família is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives La Sagrada Família lasting appeal.",
         wikidataId: "Q48435",
@@ -2800,7 +2800,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Alhambra",
-        description: "The Alhambra is a fortified palace city built chiefly by Granada’s Nasrid rulers. Its courtyards, water features, carved stucco, tilework, gardens, and hilltop setting preserve a major achievement of medieval Islamic architecture.",
+        description: "Magnificent Moorish palace complex in Granada with intricate Islamic art",
         entityId: "attraction_ES_alhambra",
         panelSummary: "Alhambra brings courtly history to life through ceremonial rooms, decorative craftsmanship, and grounds designed to impress as much as they served daily life. Allowing time for both the building and its surroundings makes Alhambra far more rewarding than a quick exterior photograph.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Alhambra_in_the_evening.jpg",
@@ -2814,7 +2814,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Prado Museum",
-        description: "The Prado is Spain’s principal national art museum, with major holdings by Velázquez, Goya, El Greco, Rubens, and Bosch. Its collection is especially strong in European painting from the 12th through early 20th centuries.",
+        description: "One of Europe's finest art collections with Velázquez, Goya, and El Greco",
         entityId: "attraction_ES_prado_museum",
         panelSummary: "Prado Museum places significant works within a broader cultural story, helping visitors understand the people, ideas, and periods behind the collection. The building and quieter galleries contribute as much to the experience as the most recognizable exhibits.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Museo_del_Prado_-_Madrid_02.jpg",
@@ -2825,7 +2825,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Park Güell",
-        description: "Park Güell is a hillside garden complex designed by Antoni Gaudí, originally intended as a residential development. Curving architecture, mosaics, terraces, viaducts, and city views show how built forms were integrated with the landscape.",
+        description: "Gaudí's fantastical park with mosaic terraces overlooking Barcelona",
         entityId: "attraction_ES_park_guell",
         panelSummary: "Park Güell gives travelers an accessible entry point into the history or character of Spain, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q212867",
@@ -2839,7 +2839,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Camino de Santiago",
-        description: "The Camino de Santiago is a network of pilgrimage routes ending at Santiago de Compostela. Walking it combines religious tradition, historic towns, rural landscapes, shared pilgrim culture, and the cumulative experience of a long journey.",
+        description: "Ancient pilgrimage route ending at Santiago de Compostela cathedral",
         entityId: "attraction_ES_camino_de_santiago",
         panelSummary: "At Camino de Santiago, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Durante_el_camino_de_Santiago.jpg",
@@ -2930,7 +2930,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Milford Sound",
-        description: "Milford Sound is a glacial fiord in Fiordland National Park, enclosed by steep peaks and rainforest. Cruises, kayaking, and shoreline viewpoints reveal waterfalls, marine wildlife, and scenery intensified by the region’s frequent rain.",
+        description: "Rudyard Kipling called it the \"eighth wonder of the world\"",
         entityId: "attraction_NZ_milford_sound",
         panelSummary: "The appeal of Milford Sound lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Milford Sound lasting appeal.",
         wikidataId: "Q32277796",
@@ -2944,7 +2944,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tongariro Alpine Crossing",
-        description: "The Tongariro Alpine Crossing is a demanding day hike across active volcanic terrain. The route passes craters, lava fields, colored lakes, and high ridges, with weather, volcanic risk, and transport logistics requiring careful planning.",
+        description: "New Zealand's best one-day hike through volcanic terrain",
         entityId: "attraction_NZ_tongariro_alpine_crossing",
         panelSummary: "Tongariro Alpine Crossing turns travel or activity into the attraction itself, allowing scenery and local character to unfold gradually rather than appearing all at once. The journey, route, or physical sensation matters as much as the final destination.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tongariro_Alpine_Crossing.jpg",
@@ -2954,7 +2954,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Glowworm Caves (Waitomo)",
-        description: "Waitomo Glowworm Caves combine limestone chambers, underground rivers, and colonies of bioluminescent larvae. Guided walking and boat sections reveal geological formations before entering dark passages lit by thousands of glowworms.",
+        description: "Underground caves illuminated by thousands of bioluminescent glowworms",
         entityId: "attraction_NZ_glowworm_caves_waitomo",
         panelSummary: "Inside Glowworm Caves (Waitomo), geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. Moving slowly allows smaller formations and reflections to become as memorable as the main chamber. That added context gives Glowworm Caves (Waitomo) lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glowworms_Inside_the_Ruakuri_Cave,_Waitomo,_New_Zealand_(50802159837).jpg",
@@ -2964,7 +2964,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Franz Josef Glacier",
-        description: "Franz Josef Glacier descends from New Zealand’s Southern Alps toward temperate rainforest. Valley viewpoints and guided helicopter access show steep icefalls, crevasses, and a rapidly changing glacier shaped by heavy snowfall and retreat.",
+        description: "Rare glacier descending into temperate rainforest",
         entityId: "attraction_NZ_franz_josef_glacier",
         panelSummary: "Franz Josef Glacier offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q673150",
@@ -2979,7 +2979,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bay of Islands",
-        description: "The Bay of Islands is a subtropical maritime region with sheltered waters, historic settlements, beaches, and numerous islands. Sailing, dolphin watching, fishing, and sites connected to Māori and early colonial history are the main attractions.",
+        description: "144 subtropical islands perfect for sailing, dolphins, and Māori history",
         entityId: "attraction_NZ_bay_of_islands",
         panelSummary: "The strongest reason to visit Bay of Islands is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q812091",
@@ -3071,7 +3071,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Machu Picchu",
-        description: "Machu Picchu is a 15th-century Inca settlement built on a mountain ridge above the Urubamba Valley. Its terraces, temples, residences, water channels, stonework, and dramatic setting reveal sophisticated planning and engineering.",
+        description: "Lost City of the Incas perched high in the Andes — a World Wonder",
         entityId: "attraction_PE_machu_picchu",
         panelSummary: "Machu Picchu offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q676203",
@@ -3089,7 +3089,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Rainbow Mountain",
-        description: "Vinicunca, commonly called Rainbow Mountain, is a high-altitude Andean ridge colored by exposed mineral layers. Reaching it requires a strenuous ascent above 5,000 meters, where weather and altitude are central considerations.",
+        description: "Vinicunca's striated colorful peaks at 5,200m elevation",
         entityId: "attraction_PE_rainbow_mountain",
         panelSummary: "Rainbow Mountain rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vinicunca,_Rainbow_Mountain.jpg",
@@ -3102,7 +3102,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Nazca Lines",
-        description: "The Nazca Lines are enormous geoglyphs etched into Peru’s desert between roughly 500 BCE and 500 CE. Animal, plant, and geometric designs are best understood from the air or nearby observation towers.",
+        description: "Mysterious ancient geoglyphs visible only from the air",
         entityId: "attraction_PE_nazca_lines",
         panelSummary: "Nazca Lines makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nazca_Lines_-_Condor.jpg",
@@ -3114,7 +3114,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Colca Canyon",
-        description: "Colca Canyon is a deep Andean valley shaped by the Colca River and long agricultural settlement. Visitors come for terraced landscapes, villages, hot springs, hiking, and morning views of Andean condors riding thermal currents.",
+        description: "Twice as deep as the Grand Canyon with soaring Andean condors",
         entityId: "attraction_PE_colca_canyon",
         panelSummary: "Colca Canyon rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q1107685",
@@ -3129,7 +3129,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Huacachina",
-        description: "Huacachina is a small desert oasis built around a natural lagoon near Ica. Towering dunes support sandboarding and dune-buggy excursions, while the palm-lined settlement provides an unusual contrast with the surrounding desert.",
+        description: "Desert oasis surrounded by towering sand dunes perfect for sandboarding",
         entityId: "attraction_PE_huacachina",
         panelSummary: "Huacachina offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q1632715",
@@ -3220,7 +3220,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Blue Lagoon",
-        description: "The Blue Lagoon is a geothermal spa set in a lava field on Iceland’s Reykjanes Peninsula. Mineral-rich, milky-blue water, outdoor bathing, steam, and surrounding black rock create its distinctive experience.",
+        description: "Milky-blue geothermal spa surrounded by black lava fields",
         entityId: "attraction_IS_blue_lagoon",
         panelSummary: "Blue Lagoon provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. Access and conditions can change, making current local guidance an important part of planning.",
         wikidataId: "Q886946",
@@ -3234,7 +3234,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Jökulsárlón Glacier Lagoon",
-        description: "Jökulsárlón is a glacial lagoon where icebergs break from Breiðamerkurjökull and drift toward the Atlantic. Boat trips, shoreline walks, seals, and nearby Diamond Beach provide close views of constantly changing ice.",
+        description: "Floating icebergs in a stunning glacial lake",
         entityId: "attraction_IS_jokulsarlon_glacier_lagoon",
         panelSummary: "Jökulsárlón Glacier Lagoon rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Icebergs_in_the_Jökulsárlón_Glacier_Lagoon,_Iceland.jpg",
@@ -3244,7 +3244,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Northern Lights",
-        description: "The aurora is a natural light display caused by charged solar particles interacting with Earth’s atmosphere. In Iceland, dark winter skies and clear conditions can reveal moving bands of green, pink, and violet light.",
+        description: "Nature's greatest light show dancing across winter skies",
         entityId: "attraction_IS_northern_lights",
         panelSummary: "The appeal of Northern Lights lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Northern Lights lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Northern_Lights_In_Iceland_(139789399).jpeg",
@@ -3257,7 +3257,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Gullfoss Waterfall",
-        description: "Gullfoss is a two-stage waterfall on Iceland’s Hvítá River, where water drops into a narrow canyon. Multiple paths show its changing angles, heavy spray, seasonal flow, and the force of a major glacial river.",
+        description: "Massive two-tiered waterfall plunging into a canyon",
         entityId: "attraction_IS_gullfoss_waterfall",
         panelSummary: "Gullfoss Waterfall is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. Weather and water levels can alter the character of the visit considerably. That added context gives Gullfoss Waterfall lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gullfoss_waterfall_-_panoramio_(2).jpg",
@@ -3270,7 +3270,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Þingvellir National Park",
-        description: "Þingvellir is both the site of Iceland’s historic parliament and a rift valley marking the Mid-Atlantic Ridge. Walking trails connect geological fractures, lava fields, waterways, and locations central to Icelandic political history.",
+        description: "Where the North American and Eurasian tectonic plates meet",
         entityId: "attraction_IS_ingvellir_national_park",
         panelSummary: "Þingvellir National Park gives travelers an accessible entry point into the history or character of Iceland, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Almannagjá,_Þingvellir_National_Park_(Iceland).jpg",
@@ -3357,7 +3357,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Gyeongbokgung Palace",
-        description: "Gyeongbokgung was the principal royal palace of the Joseon dynasty, first built in 1395. Reconstructed gates, throne halls, residences, gardens, pavilions, museums, and guard ceremonies explain the scale and order of Korean court life.",
+        description: "Grand Joseon-era palace with changing of the guard ceremony",
         entityId: "attraction_KR_gyeongbokgung_palace",
         panelSummary: "Gyeongbokgung Palace offers a layered look at elite life, combining formal architecture with rooms, gardens, and details that make political history feel tangible. Allowing time for both the building and its surroundings makes Gyeongbokgung Palace far more rewarding than a quick exterior photograph.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gyeongbokgung_Palace.jpg",
@@ -3370,7 +3370,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "N Seoul Tower",
-        description: "N Seoul Tower stands on Namsan Mountain and serves as a communications and observation tower. Its decks provide broad views of Seoul, while trails, cable-car access, and the surrounding park add to the visit.",
+        description: "Iconic tower on Namsan Mountain with panoramic city views",
         entityId: "attraction_KR_n_seoul_tower",
         panelSummary: "N Seoul Tower offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q8684",
@@ -3385,7 +3385,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bukchon Hanok Village",
-        description: "Bukchon Hanok Village is a residential district of narrow lanes and traditional Korean houses between major Seoul palaces. Walking its hills reveals preserved architecture, workshops, cultural spaces, and city views, but visitors should respect residents.",
+        description: "Traditional Korean houses set against a modern Seoul backdrop",
         entityId: "attraction_KR_bukchon_hanok_village",
         panelSummary: "The appeal of Bukchon Hanok Village lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Bukchon Hanok Village lasting appeal.",
         wikidataId: "Q8684",
@@ -3400,7 +3400,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Haedong Yonggungsa",
-        description: "Haedong Yonggungsa is a Buddhist temple complex built on rocky coastline northeast of Busan. Seaside shrines, statues, stairways, and ocean views distinguish it from Korea’s more typical mountain temples.",
+        description: "Stunning seaside Buddhist temple perched on ocean cliffs in Busan",
         entityId: "attraction_KR_haedong_yonggungsa",
         panelSummary: "Haedong Yonggungsa is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Haedong_Yonggungsa_Temple_near_Busan.jpg",
@@ -3414,7 +3414,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Lotte World Tower",
-        description: "Lotte World Tower is a 555-meter skyscraper and one of the world’s tallest buildings. Its Seoul Sky observatory includes high-speed elevators, glass floors, and expansive views across the capital and surrounding mountains.",
+        description: "Fifth tallest building in the world with a glass-floor observation deck",
         entityId: "attraction_KR_lotte_world_tower",
         panelSummary: "The appeal of Lotte World Tower lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. Spending time with the site’s details makes it more satisfying than a quick checklist stop. That added context gives Lotte World Tower lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lotte_World_Tower_(2).jpg",
@@ -3501,7 +3501,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Jemaa el-Fnaa",
-        description: "Jemaa el-Fnaa is Marrakech’s central market square, active from morning through late night. Food stalls, musicians, storytellers, performers, and nearby souks make it a living center of the city’s intangible cultural traditions.",
+        description: "Marrakech's legendary square with snake charmers, storytellers, and food stalls",
         entityId: "attraction_MA_jemaa_el_fnaa",
         panelSummary: "Jemaa el-Fnaa offers a street-level introduction to local life through food, commerce, architecture, and the steady movement of residents and visitors. A flexible itinerary leaves room to follow whatever catches the eye. That added context gives Jemaa el-Fnaa lasting appeal.",
         wikidataId: "Q101625",
@@ -3516,7 +3516,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Hassan II Mosque",
-        description: "The Hassan II Mosque is a vast oceanfront mosque in Casablanca, completed in 1993. Its 210-meter minaret, retractable roof, carved plaster, woodwork, mosaics, and partly glass-floored prayer hall demonstrate large-scale Moroccan craftsmanship.",
+        description: "Casablanca's stunning mosque with the world's tallest minaret",
         entityId: "attraction_MA_hassan_ii_mosque",
         panelSummary: "Hassan II Mosque combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Open_Area_of_Hassan_II_Mosque_-_Casablanca_Morocco.jpg",
@@ -3529,7 +3529,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Todra Gorge",
-        description: "Todgha Gorge narrows to a rocky passage only about ten meters wide, enclosed by limestone walls rising roughly 160 meters. Visitors walk the canyon floor in dry conditions or come for climbing on the sheer cliffs.",
+        description: "Dramatic canyon with 300m limestone walls rising from a river",
         entityId: "attraction_MA_todra_gorge",
         panelSummary: "Todra Gorge offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Todra_Gorge_Morning_2011.jpg",
@@ -3540,7 +3540,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bahia Palace",
-        description: "Bahia Palace is a late-19th-century Marrakesh residence built for powerful royal officials. Its courtyards, gardens, painted cedar ceilings, carved stucco, zellij tilework, and carefully arranged rooms show elite Moroccan domestic architecture.",
+        description: "19th-century palace showcasing the finest Moroccan craftsmanship",
         entityId: "attraction_MA_bahia_palace",
         panelSummary: "At Bahia Palace, architecture, interiors, and landscaped grounds reveal how rulers used design to express power, taste, and ceremony. Visitors who explore beyond the principal rooms gain a fuller sense of how the complex functioned.",
         wikidataId: "Q2465115",
@@ -3555,7 +3555,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Aït Benhaddou",
-        description: "Aït Benhaddou is a fortified earthen village on a former caravan route across southern Morocco. Its clustered kasbahs, narrow passages, communal granary, and hilltop views preserve a notable example of pre-Saharan settlement architecture.",
+        description: "UNESCO fortified village used as a backdrop in Gladiator and Game of Thrones",
         entityId: "attraction_MA_ait_benhaddou",
         panelSummary: "Aït Benhaddou turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. The site is most satisfying when visitors follow its full layout rather than stopping at a single viewpoint.",
         wikidataId: "Q309436",
@@ -3647,7 +3647,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Geirangerfjord",
-        description: "Geirangerfjord is a steep-sided Norwegian fjord surrounded by high mountains, abandoned farms, and major waterfalls including the Seven Sisters. Cruises, ferries, roads, and overlooks reveal the scale of this UNESCO-listed landscape.",
+        description: "One of the most spectacular fjords in the world",
         entityId: "attraction_NO_geirangerfjord",
         panelSummary: "The strongest reason to visit Geirangerfjord is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q193989",
@@ -3662,7 +3662,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Trolltunga",
-        description: "Trolltunga is a narrow rock ledge projecting about 700 meters above Ringedalsvatnet lake. Reaching it requires a long, demanding mountain hike, making the elevated lake and glacier views part of a full-day outdoor challenge.",
+        description: "Dramatic cliff jutting horizontally over a lake 700m below",
         entityId: "attraction_NO_trolltunga",
         panelSummary: "The strongest reason to visit Trolltunga is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q1512593",
@@ -3677,7 +3677,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Northern Lights",
-        description: "The northern lights are created when charged solar particles interact with Earth’s upper atmosphere. In northern Norway, dark winter skies and high latitude provide frequent opportunities to see moving green, red, or violet displays.",
+        description: "Best viewed from Tromsø and northern Norway from October to March",
         entityId: "attraction_NO_northern_lights",
         panelSummary: "Northern Lights offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q42328401",
@@ -3692,7 +3692,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Preikestolen (Pulpit Rock)",
-        description: "Preikestolen is a nearly flat granite cliff rising 604 meters above Lysefjord. A steep but well-established hike reaches the exposed plateau, where the main reward is the uninterrupted view along the narrow fjord.",
+        description: "Flat cliff 604m above the Lysefjord with breathtaking views",
         entityId: "attraction_NO_preikestolen_pulpit_rock",
         panelSummary: "Preikestolen (Pulpit Rock) offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Preikestolen_-_Pulpit_Rock.jpg",
@@ -3702,7 +3702,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Viking Ship Museum",
-        description: "Oslo’s Viking Ship Museum was built around excavated burial ships from Oseberg, Gokstad, and Tune, along with grave goods and carved objects. The collection explains Viking shipbuilding, funerary customs, travel, and elite life.",
+        description: "Perfectly preserved 9th-century Viking ships in Oslo",
         entityId: "attraction_NO_viking_ship_museum",
         panelSummary: "Viking Ship Museum offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. A slower visit leaves room for unexpected discoveries beyond the headline pieces.",
         wikidataId: "Q585",
@@ -3793,7 +3793,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Great Wall of China",
-        description: "The Great Wall is a network of fortifications built and rebuilt by several Chinese states and dynasties. Watchtowers, passes, walls, and varied terrain show how borders were defended and communication was maintained across northern China.",
+        description: "Over 21,000 km of ancient fortifications visible from space legend",
         entityId: "attraction_CN_great_wall_of_china",
         panelSummary: "Great Wall of China turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss.",
         wikidataId: "Q12501",
@@ -3809,7 +3809,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Forbidden City",
-        description: "The Forbidden City was the imperial palace of China’s Ming and Qing dynasties for nearly five centuries. Its gates, ceremonial halls, residential courts, gardens, and extensive art collections reveal the organization of imperial rule.",
+        description: "Immense palace complex with 9,999 rooms in central Beijing",
         entityId: "attraction_CN_forbidden_city",
         panelSummary: "At Forbidden City, architecture, interiors, and landscaped grounds reveal how rulers used design to express power, taste, and ceremony. The contrast between public grandeur and smaller human details gives Forbidden City much of its appeal.",
         wikidataId: "Q80290",
@@ -3827,7 +3827,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Terracotta Warriors",
-        description: "The Terracotta Army consists of thousands of life-sized soldiers, horses, and chariots buried near China’s first emperor. Their individualized faces, military formations, weapons, and excavation pits form part of an enormous unfinished funerary complex.",
+        description: "8,000 life-sized clay soldiers guarding Emperor Qin's tomb",
         entityId: "attraction_CN_terracotta_warriors",
         panelSummary: "Terracotta Warriors gives travelers an accessible entry point into the history or character of China, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Qin_Terracotta_Warriors_11.jpg",
@@ -3838,7 +3838,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Li River Cruise",
-        description: "The Li River flows through Guangxi’s karst landscape between Guilin and Yangshuo. Cruises and smaller boats pass steep limestone hills, villages, farmland, caves, and fishing scenes that have shaped one of China’s best-known landscapes.",
+        description: "Bamboo-raft journey through towering karst limestone peaks",
         entityId: "attraction_CN_li_river_cruise",
         panelSummary: "The strongest reason to visit Li River Cruise is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Li_River_cruise_from_Guilin_to_Yangshuo.JPG",
@@ -3850,7 +3850,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Zhangjiajie National Forest",
-        description: "Zhangjiajie National Forest Park protects thousands of narrow sandstone pillars, ravines, forests, and natural bridges. Trails, cableways, glass elevators, and viewpoints allow visitors to move among formations created by long-term erosion.",
+        description: "Towering sandstone pillars that inspired Avatar's floating mountains",
         entityId: "attraction_CN_zhangjiajie_national_forest",
         panelSummary: "Zhangjiajie National Forest offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Zhangjiajie_National_Forest_Park_37945-Zhangjiajie_(48757573541).jpg",
@@ -3939,7 +3939,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Cartagena Old Town",
-        description: "Cartagena’s historic center preserves colonial walls, forts, churches, plazas, and balconied houses built around a major Caribbean port. Walking the old city shows how Spanish military architecture and maritime trade shaped the city.",
+        description: "UNESCO walled city with balconied colonial buildings and plazas",
         entityId: "attraction_CO_cartagena_old_town",
         panelSummary: "Cartagena Old Town offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cartagena,_Colombia_(5049256137).jpg",
@@ -3952,7 +3952,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Caño Cristales",
-        description: "Caño Cristales is a remote river in Colombia’s Serranía de la Macarena. During part of the year, aquatic plants turn sections red, yellow, green, blue, and black among clear pools, rapids, and rock channels.",
+        description: "\"River of Five Colors\" — the most beautiful river in the world",
         entityId: "attraction_CO_cano_cristales",
         panelSummary: "Caño Cristales rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/CAÑO_CRISTALES_–_LOS_OCHOS_01.jpg",
@@ -3967,7 +3967,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Salt Cathedral of Zipaquirá",
-        description: "The Salt Cathedral is an underground Roman Catholic church built about 200 meters inside a former salt mine. Its carved crosses, stations of the cross, illuminated chambers, and large nave combine mining history with religious architecture.",
+        description: "Underground cathedral carved into a salt mine 200m below the surface",
         entityId: "attraction_CO_salt_cathedral_of_zipaquira",
         panelSummary: "Salt Cathedral of Zipaquirá combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Salt Cathedral of Zipaquirá lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catedral_de_Sal_02.jpg",
@@ -3978,7 +3978,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Lost City (Ciudad Perdida)",
-        description: "Ciudad Perdida is a Tayrona settlement in Colombia’s Sierra Nevada, reached by a multi-day jungle trek. Stone terraces, stairways, roads, and circular house foundations reveal an extensive Indigenous city occupied centuries before European arrival.",
+        description: "Ancient city older than Machu Picchu, reached by jungle trek",
         entityId: "attraction_CO_lost_city_ciudad_perdida",
         panelSummary: "Exploring Lost City (Ciudad Perdida) reveals more than a single monument: the layout and remaining details help reconstruct an earlier world. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wikitravel_Ciudad_perdida_overview.jpg",
@@ -3989,7 +3989,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cocora Valley",
-        description: "Cocora Valley is a protected Andean valley within Los Nevados National Natural Park. Hiking routes cross cloud forest, pasture, and hillsides filled with Colombia’s national tree, the exceptionally tall Quindío wax palm.",
+        description: "World's tallest palm trees (60m) in a misty Andean valley",
         entityId: "attraction_CO_cocora_valley",
         panelSummary: "Cocora Valley offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Valle_de_Cocora,_Colombia_03.jpg",
@@ -4076,7 +4076,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Hagia Sophia",
-        description: "Hagia Sophia was completed in 537 as a Byzantine cathedral, later serving as an Ottoman mosque, museum, and mosque again. Its vast pendentive dome, mosaics, marble, calligraphic panels, and layered religious history define the visit.",
+        description: "Architectural wonder — a cathedral, mosque, museum, and mosque again over 1,500 years",
         entityId: "attraction_TR_hagia_sophia",
         panelSummary: "The strength of Hagia Sophia lies in the relationship between its collection, exhibition spaces, and the artistic history they illuminate. A slower visit leaves room for unexpected discoveries beyond the headline pieces. That added context gives Hagia Sophia lasting appeal.",
         wikidataId: "Q12506",
@@ -4091,7 +4091,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cappadocia Balloon Rides",
-        description: "Hot-air ballooning in Cappadocia provides an aerial view of volcanic valleys, cave dwellings, rock-cut churches, and eroded fairy chimneys. Flights usually launch near sunrise, when calm winds and low light best reveal the terrain.",
+        description: "Hundreds of hot air balloons at sunrise over fairy chimney landscapes",
         entityId: "attraction_TR_cappadocia_balloon_rides",
         panelSummary: "Cappadocia Balloon Rides offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q217265",
@@ -4105,7 +4105,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Grand Bazaar",
-        description: "Istanbul’s Grand Bazaar is a historic covered commercial district containing thousands of shops across vaulted streets, hans, and courtyards. Visitors encounter jewelry, carpets, textiles, ceramics, leather goods, and the workings of a centuries-old market.",
+        description: "One of the world's oldest and largest covered markets with 4,000 shops",
         entityId: "attraction_TR_grand_bazaar",
         panelSummary: "Grand Bazaar is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grand_Bazaar_04.jpg",
@@ -4118,7 +4118,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Pamukkale Travertines",
-        description: "Pamukkale combines white travertine terraces formed by mineral-rich thermal water with the ruins of ancient Hierapolis above them. Visitors can walk designated pools and explore baths, temples, a theater, and an extensive necropolis.",
+        description: "Natural hot springs cascading down white limestone terraces",
         entityId: "attraction_TR_pamukkale_travertines",
         panelSummary: "The appeal of Pamukkale Travertines lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Pamukkale Travertines lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pamukkale_Hierapolis_Travertine_pools.JPG",
@@ -4132,7 +4132,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Blue Mosque",
-        description: "The Blue Mosque was completed in 1617 as an imperial Ottoman mosque facing Hagia Sophia. Six minarets, a large central dome, cascading semi-domes, stained glass, and thousands of blue İznik tiles shape its interior.",
+        description: "Istanbul's iconic mosque with six minarets and stunning blue tile interior",
         entityId: "attraction_TR_blue_mosque",
         panelSummary: "At Blue Mosque, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Blue Mosque lasting appeal.",
         wikidataId: "Q80541",
@@ -4224,7 +4224,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Big Ben & Parliament",
-        description: "Big Ben properly names the great bell inside London’s Elizabeth Tower, part of the Palace of Westminster. The neo-Gothic tower, four clock faces, and famous chimes form one of Britain’s most recognizable civic landmarks.",
+        description: "London's iconic clock tower and the Palace of Westminster",
         entityId: "attraction_GB_big_ben_parliament",
         panelSummary: "At Big Ben & Parliament, architecture, interiors, and landscaped grounds reveal how rulers used design to express power, taste, and ceremony. The contrast between public grandeur and smaller human details gives Big Ben & Parliament much of its appeal.",
         wikidataId: "Q84",
@@ -4239,7 +4239,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tower of London",
-        description: "The Tower of London is a Norman fortress that later served as palace, prison, treasury, armory, and execution site. Its White Tower, medieval walls, Crown Jewels, ravens, and documented prisoners span nearly a millennium.",
+        description: "1,000-year-old fortress housing the Crown Jewels",
         entityId: "attraction_GB_tower_of_london",
         panelSummary: "Tower of London turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history.",
         wikidataId: "Q62378",
@@ -4257,7 +4257,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Stonehenge",
-        description: "Stonehenge is a prehistoric monument built in stages from roughly 3000 to 2000 BCE. Its massive sarsen stones, smaller bluestones, earthworks, burial landscape, and solstitial alignment remain central to understanding Neolithic Britain.",
+        description: "Mysterious prehistoric stone circle on Salisbury Plain dating to 3000 BC",
         entityId: "attraction_GB_stonehenge",
         panelSummary: "Stonehenge gives travelers an accessible entry point into the history or character of United Kingdom, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q39671",
@@ -4275,7 +4275,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Buckingham Palace",
-        description: "Buckingham Palace is the monarch’s official London residence and a working center for state occasions. Seasonal tours reveal state rooms, royal art, ceremonial interiors, gardens, and the setting for Changing the Guard.",
+        description: "Official London residence of the British monarch with the famous Changing of the Guard",
         entityId: "attraction_GB_buckingham_palace",
         panelSummary: "Buckingham Palace brings courtly history to life through ceremonial rooms, decorative craftsmanship, and grounds designed to impress as much as they served daily life. Allowing time for both the building and its surroundings makes Buckingham Palace far more rewarding than a quick exterior photograph.",
         wikidataId: "Q42182",
@@ -4290,7 +4290,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "British Museum",
-        description: "The British Museum holds collections covering more than two million years of human history. Major objects include the Rosetta Stone, Parthenon sculptures, Egyptian mummies, Assyrian reliefs, and artifacts from cultures across every inhabited continent.",
+        description: "World-class museum with free admission and 8 million works including the Rosetta Stone",
         entityId: "attraction_GB_british_museum",
         panelSummary: "British Museum places significant works within a broader cultural story, helping visitors understand the people, ideas, and periods behind the collection. A slower visit leaves room for unexpected discoveries beyond the headline pieces. That added context gives British Museum lasting appeal.",
         wikidataId: "Q6373",
@@ -4384,7 +4384,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Brandenburg Gate",
-        description: "The Brandenburg Gate is an 18th-century neoclassical monument modeled on the entrance to Athens’ Acropolis. Once beside the Berlin Wall, it now represents German division, reunification, and the city’s changing political history.",
+        description: "Iconic 18th-century neoclassical gate symbolizing German reunification",
         entityId: "attraction_DE_brandenburg_gate",
         panelSummary: "The appeal of Brandenburg Gate lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Brandenburg Gate lasting appeal.",
         wikidataId: "Q82425",
@@ -4399,7 +4399,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Neuschwanstein Castle",
-        description: "Neuschwanstein was commissioned by King Ludwig II as a romantic medieval-style retreat rather than a defensive castle. Its theatrical interiors, towers, murals, mountain setting, and views over Bavaria reflect the king’s personal fantasies.",
+        description: "Spectacular Romanesque Revival palace built by King Ludwig II of Bavaria",
         entityId: "attraction_DE_neuschwanstein_castle",
         panelSummary: "Neuschwanstein Castle offers a layered look at elite life, combining formal architecture with rooms, gardens, and details that make political history feel tangible. Visitors who explore beyond the principal rooms gain a fuller sense of how the complex functioned.",
         wikidataId: "Q4152",
@@ -4414,7 +4414,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cologne Cathedral",
-        description: "Cologne Cathedral is a monumental Gothic church begun in 1248 and completed in 1880. Visitors see twin 157-meter spires, stained glass, medieval sculpture, the Shrine of the Three Kings, and broad city views.",
+        description: "Gothic masterpiece with twin spires reaching 157 meters, built over 600 years",
         entityId: "attraction_DE_cologne_cathedral",
         panelSummary: "Cologne Cathedral offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. It particularly suits travelers who enjoy understanding why objects matter, not simply seeing them.",
         wikidataId: "Q4176",
@@ -4431,7 +4431,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Berlin Wall Memorial",
-        description: "The Berlin Wall Memorial preserves a surviving border strip, watchtower, documentation center, and Chapel of Reconciliation along Bernauer Strasse. The site explains the wall’s construction, escape attempts, deaths, and impact on divided neighborhoods.",
+        description: "Preserved section of the wall that divided Berlin from 1961 to 1989",
         entityId: "attraction_DE_berlin_wall_memorial",
         panelSummary: "Berlin Wall Memorial gives travelers an accessible entry point into the history or character of Germany, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q64",
@@ -4446,7 +4446,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Oktoberfest",
-        description: "Oktoberfest is Munich’s annual festival originating from an 1810 royal wedding celebration. Large brewery tents, traditional clothing, music, food, rides, and parades make it both a major public fair and Bavarian cultural event.",
+        description: "World's largest beer festival held annually in Munich since 1810",
         entityId: "attraction_DE_oktoberfest",
         panelSummary: "The appeal of Oktoberfest lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Oktoberfest lasting appeal.",
         wikidataId: "Q102400",
@@ -4538,7 +4538,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Belém Tower",
-        description: "Belém Tower is an early-16th-century fortified tower built at Lisbon’s Tagus entrance. Its Manueline stonework, battlements, royal emblems, balconies, and compact interior connect maritime defense with Portugal’s age of overseas expansion.",
+        description: "Ornate 16th-century fortress guarding Lisbon's harbor entrance",
         entityId: "attraction_PT_belem_tower",
         panelSummary: "Belém Tower turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. The site is most satisfying when visitors follow its full layout rather than stopping at a single viewpoint.",
         wikidataId: "Q215003",
@@ -4556,7 +4556,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Jerónimos Monastery",
-        description: "Jerónimos Monastery is a major Manueline complex funded during Portugal’s maritime expansion. Its church, cloisters, carved nautical motifs, royal tombs, and burial place of Vasco da Gama link religion, monarchy, and exploration.",
+        description: "Masterpiece of Manueline architecture and UNESCO World Heritage Site",
         entityId: "attraction_PT_jeronimos_monastery",
         panelSummary: "Jerónimos Monastery offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. It particularly suits travelers who enjoy understanding why objects matter, not simply seeing them.",
         wikidataId: "Q272781",
@@ -4574,7 +4574,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Pena Palace",
-        description: "Pena Palace is a 19th-century Romantic palace created for King Ferdinand II above Sintra. Brightly colored façades, towers, courtyards, decorative interiors, and surrounding park combine Gothic, Moorish, Renaissance, and Manueline influences.",
+        description: "Whimsical hilltop palace painted in vivid yellow and red in Sintra",
         entityId: "attraction_PT_pena_palace",
         panelSummary: "Pena Palace brings courtly history to life through ceremonial rooms, decorative craftsmanship, and grounds designed to impress as much as they served daily life. Allowing time for both the building and its surroundings makes Pena Palace far more rewarding than a quick exterior photograph.",
         wikidataId: "Q33716124",
@@ -4589,7 +4589,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Benagil Sea Cave",
-        description: "Benagil Cave is a sea grotto on Portugal’s Algarve coast, opened from the ocean and by a circular hole in its roof. Boat or kayak access reveals a small beach, layered cliffs, and overhead light.",
+        description: "Spectacular domed sea cave accessible only by water in the Algarve",
         entityId: "attraction_PT_benagil_sea_cave",
         panelSummary: "Benagil Sea Cave draws visitors into an underground landscape of chambers, mineral formations, reflected light, and surprising changes in scale. The visit provides a dramatic contrast to the landscape above ground. That added context gives Benagil Sea Cave lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Benagil_Cave,_July_2012_edited.jpg",
@@ -4602,7 +4602,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Livraria Lello",
-        description: "Livraria Lello is a historic Porto bookstore noted for its neo-Gothic interior. A carved wooden staircase, stained-glass ceiling, ornate shelving, and literary history make the architecture as significant as the books it sells.",
+        description: "Stunning neo-Gothic bookstore in Porto said to have inspired Harry Potter",
         entityId: "attraction_PT_livraria_lello",
         panelSummary: "Livraria Lello offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Livraria_LELLO_Porto.jpg",
@@ -4691,7 +4691,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Dunn's River Falls",
-        description: "Dunn’s River Falls is a 55-meter travertine waterfall descending in natural terraces directly to the Caribbean. Visitors can climb the wet rock steps with guides or use adjacent stairs to view pools and cascades.",
+        description: "180-foot terraced waterfall you can climb up through the jungle",
         entityId: "attraction_JM_dunn_s_river_falls",
         panelSummary: "Dunn's River Falls offers more than a single cascade view, rewarding visitors who follow the available paths and observe how the falls change by angle. Allowing time for more than the principal overlook makes the setting feel much larger.",
         wikidataId: "Q1266226",
@@ -4706,7 +4706,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bob Marley Museum",
-        description: "The Bob Marley Museum occupies the Kingston house where the reggae musician lived and recorded. Preserved rooms, personal belongings, photographs, awards, studio spaces, and evidence of the 1976 assassination attempt document his work and life.",
+        description: "The reggae legend's former home in Kingston, now a cultural shrine",
         entityId: "attraction_JM_bob_marley_museum",
         panelSummary: "The strength of Bob Marley Museum lies in the relationship between its collection, exhibition spaces, and the artistic history they illuminate. It particularly suits travelers who enjoy understanding why objects matter, not simply seeing them.",
         wikidataId: "Q650517",
@@ -4720,7 +4720,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Blue Mountains",
-        description: "Jamaica’s Blue Mountains rise above Kingston and include the island’s highest peak. Hiking, misty forests, endemic wildlife, panoramic viewpoints, and coffee estates show how elevation and climate shaped the region’s celebrated coffee.",
+        description: "Misty peaks producing some of the world's finest coffee",
         entityId: "attraction_JM_blue_mountains",
         panelSummary: "Blue Mountains offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q885808",
@@ -4734,7 +4734,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Rick's Cafe",
-        description: "Rick’s Cafe is a cliffside bar and restaurant in Negril known for sunset views and high-platform diving. Visitors watch trained and recreational jumpers, listen to live music, and look west across the Caribbean.",
+        description: "Iconic Negril cliff bar famous for sunset watching and cliff jumping",
         entityId: "attraction_JM_rick_s_cafe",
         panelSummary: "Rick's Cafe rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rick's_Cafe,_Negril,_Jamaica_(Unsplash).jpg",
@@ -4748,7 +4748,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Luminous Lagoon",
-        description: "Luminous Lagoon is a shallow bay near Falmouth where microscopic dinoflagellates emit blue-green light when the water is disturbed. Night boat tours and swimming reveal the bioluminescence most clearly against dark surroundings.",
+        description: "Bioluminescent bay where microorganisms glow neon blue at night",
         entityId: "attraction_JM_luminous_lagoon",
         panelSummary: "Luminous Lagoon offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
       },
@@ -4831,7 +4831,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Ha Long Bay cruise",
-        description: "Hạ Long Bay is a UNESCO-listed seascape containing thousands of limestone islands and pillars. Cruises, caves, floating communities, kayaking, and viewpoints reveal a karst landscape shaped by erosion over millions of years.",
+        description: "Overnight junk boat cruise through 1,600 limestone islands and islets",
         entityId: "attraction_VN_ha_long_bay_cruise",
         panelSummary: "Ha Long Bay cruise rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q190128",
@@ -4845,7 +4845,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cu Chi Tunnels",
-        description: "The Củ Chi tunnels formed an extensive underground network used by Viet Cong forces during the Vietnam War. Sections open to visitors demonstrate concealed entrances, living areas, kitchens, traps, and the cramped conditions of guerrilla warfare.",
+        description: "Vast underground tunnel network used during the Vietnam War",
         entityId: "attraction_VN_cu_chi_tunnels",
         panelSummary: "Cu Chi Tunnels offers a distinctly physical encounter with geology, moving from confined passages into larger spaces shaped over immense periods. Moving slowly allows smaller formations and reflections to become as memorable as the main chamber.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/VietnamCuChiTunnels.jpg",
@@ -4857,7 +4857,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Phong Nha Caves",
-        description: "Phong Nha–Kẻ Bàng National Park protects one of the world’s largest limestone karst regions. Underground rivers, extensive cave systems, forested mountains, biodiversity, and major caverns including Sơn Đoòng make geology the central attraction.",
+        description: "Spectacular cave systems including the world's largest cave, Son Doong",
         entityId: "attraction_VN_phong_nha_caves",
         panelSummary: "Phong Nha Caves offers a distinctly physical encounter with geology, moving from confined passages into larger spaces shaped over immense periods. Moving slowly allows smaller formations and reflections to become as memorable as the main chamber.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Phong_nha_cave.jpg",
@@ -4868,7 +4868,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Hoi An Ancient Town",
-        description: "Hội An is a preserved trading port shaped by Vietnamese, Chinese, Japanese, and European merchants. Timber houses, assembly halls, temples, canals, markets, and the Japanese Covered Bridge illustrate its multicultural commercial history.",
+        description: "UNESCO World Heritage trading port with Japanese bridge and Chinese temples",
         entityId: "attraction_VN_hoi_an_ancient_town",
         panelSummary: "Hoi An Ancient Town combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         wikidataId: "Q36160",
@@ -4883,7 +4883,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mekong Delta",
-        description: "The Mekong Delta is a broad network of rivers, canals, islands, farms, and settlements in southern Vietnam. Boat travel reveals floating markets, rice fields, orchards, fishing communities, and daily life organized around water.",
+        description: "Vast river delta with floating markets, fruit orchards, and waterway villages",
         entityId: "attraction_VN_mekong_delta",
         panelSummary: "Mekong Delta offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q1052867",
@@ -4969,7 +4969,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Arenal Volcano National Park",
-        description: "Arenal Volcano National Park surrounds a prominent stratovolcano and protects rainforest, old lava flows, and wildlife habitat. Trails and viewpoints explain the effects of past eruptions, while nearby geothermal activity supports hot-spring bathing.",
+        description: "Hike lava trails and soak in natural hot springs at the foot of the volcano",
         entityId: "attraction_CR_arenal_volcano_national_park",
         panelSummary: "Arenal Volcano National Park turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         wikidataId: "Q1189526",
@@ -4984,7 +4984,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Monteverde Sky Walk",
-        description: "Monteverde is a high-elevation Costa Rican region known for cloud forests sustained by persistent mist. Reserves, canopy bridges, trails, birdlife, orchids, and exceptional biodiversity offer close access to several distinct tropical ecosystems.",
+        description: "Hanging bridges through the cloud forest canopy above the treetops",
         entityId: "attraction_CR_monteverde_sky_walk",
         panelSummary: "The strongest reason to visit Monteverde Sky Walk is the chance to experience the surrounding environment at close range rather than from a distant overlook. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/One_of_the_Skywalk_Hanging_Bridges_at_Sky_Monteverde_in_Costa_Rica.jpg",
@@ -4996,7 +4996,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Manuel Antonio Beach",
-        description: "Manuel Antonio National Park combines Pacific beaches with rainforest, rocky headlands, and coral habitat. Short trails provide opportunities to see monkeys, sloths, iguanas, birds, and coastal scenery within a compact protected area.",
+        description: "Pristine white-sand beach inside a national park with resident wildlife",
         entityId: "attraction_CR_manuel_antonio_beach",
         panelSummary: "Manuel Antonio Beach is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Manuel_Antonio_Beach.jpg",
@@ -5009,7 +5009,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "La Fortuna Waterfall",
-        description: "La Fortuna Waterfall drops about 70 meters into a forested pool near Arenal Volcano. A long staircase reaches the base, where visitors view the cascade, swim in calmer river sections, and experience dense rainforest.",
+        description: "70-meter waterfall cascading into a turquoise jungle swimming hole",
         entityId: "attraction_CR_la_fortuna_waterfall",
         panelSummary: "The power of La Fortuna Waterfall becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. Weather and water levels can alter the character of the visit considerably.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/La_Fortuna_Waterfall_Full.jpg",
@@ -5019,7 +5019,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Corcovado National Park",
-        description: "Corcovado National Park protects extensive lowland rainforest, beaches, rivers, and wetlands on Costa Rica’s Osa Peninsula. Guided hikes offer chances to see tapirs, monkeys, scarlet macaws, peccaries, crocodiles, and other wildlife.",
+        description: "One of the most biologically intense places on Earth, on the Osa Peninsula",
         entityId: "attraction_CR_corcovado_national_park",
         panelSummary: "Corcovado National Park gives travelers an accessible entry point into the history or character of Costa Rica, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q869074",
@@ -5111,7 +5111,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Masai Mara Safari",
-        description: "The Maasai Mara is a Kenyan savanna reserve connected to Tanzania’s Serengeti ecosystem. Game drives focus on lions, elephants, cheetahs, and other wildlife, while seasonal wildebeest migrations create dramatic river crossings.",
+        description: "Big Five game drives during the wildebeest river crossings",
         entityId: "attraction_KE_masai_mara_safari",
         panelSummary: "Masai Mara Safari offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Masai_Mara_Safari_(9545991890).jpg",
@@ -5126,7 +5126,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mount Kenya",
-        description: "Mount Kenya is an extinct volcano and Africa’s second-highest mountain. Trekking routes pass forest, bamboo, moorland, glaciers, and jagged peaks; most visitors climb Point Lenana, while the highest summits require technical mountaineering.",
+        description: "Africa's second-highest peak with glaciers and alpine meadows",
         entityId: "attraction_KE_mount_kenya",
         panelSummary: "The strongest reason to visit Mount Kenya is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q172070",
@@ -5141,7 +5141,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "David Sheldrick Wildlife Trust",
-        description: "The Sheldrick Wildlife Trust rescues and rehabilitates orphaned elephants and other wildlife in Kenya. Public viewing sessions explain hand-rearing, veterinary care, anti-poaching work, and the gradual process of returning animals to protected wilderness.",
+        description: "Orphan elephant nursery where you can adopt a baby elephant",
         entityId: "attraction_KE_david_sheldrick_wildlife_trust",
         panelSummary: "David Sheldrick Wildlife Trust offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Baby_elephants_at_David_Sheldrick_Wildlife_Trust_2.jpg",
@@ -5153,7 +5153,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Lake Nakuru",
-        description: "Lake Nakuru is a shallow alkaline lake within a national park in Kenya’s Rift Valley. Visitors come for birdlife, changing flamingo numbers, rhinos, giraffes, lions, and wooded and grassland habitats around the shore.",
+        description: "Flamingo-filled soda lake in the Great Rift Valley",
         entityId: "attraction_KE_lake_nakuru",
         panelSummary: "Lake Nakuru rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q849508",
@@ -5167,7 +5167,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Giraffe Centre",
-        description: "Nairobi’s Giraffe Centre breeds the endangered Rothschild’s giraffe and supports conservation education. Elevated platforms allow close observation and supervised feeding, while nature trails and exhibits explain the subspecies and its recovery.",
+        description: "Conservation center in Nairobi where you can hand-feed endangered Rothschild giraffes",
         entityId: "attraction_KE_giraffe_centre",
         panelSummary: "Giraffe Centre gives travelers an accessible entry point into the history or character of Kenya, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q3870",
@@ -5259,7 +5259,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Cliffs of Moher",
-        description: "The Cliffs of Moher extend about 14 kilometers along Ireland’s Atlantic coast, rising to 214 meters. Walking paths and O’Brien’s Tower provide views of sea stacks, the Aran Islands, seabird colonies, and layered rock.",
+        description: "Ireland's most visited natural attraction, with views stretching to the Aran Islands",
         entityId: "attraction_IE_cliffs_of_moher",
         panelSummary: "Cliffs of Moher rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q239477",
@@ -5274,7 +5274,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Guinness Storehouse",
-        description: "The Guinness Storehouse occupies a former fermentation building at Dublin’s St James’s Gate brewery. Exhibits explain ingredients, brewing, advertising, and brand history before visitors finish with a pint and city views from the Gravity Bar.",
+        description: "Seven-story brewery experience in Dublin, ending with a pint and panoramic views",
         entityId: "attraction_IE_guinness_storehouse",
         panelSummary: "The appeal of Guinness Storehouse lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. Spending time with the site’s details makes it more satisfying than a quick checklist stop. That added context gives Guinness Storehouse lasting appeal.",
         wikidataId: "Q261012",
@@ -5289,7 +5289,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Giant's Causeway",
-        description: "Giant’s Causeway is a coastal field of roughly 40,000 interlocking basalt columns created by ancient volcanic activity. Walking trails reveal polygonal formations, sea cliffs, erosion features, and the legends attached to the site.",
+        description: "40,000 interlocking basalt columns formed by volcanic activity in Northern Ireland",
         entityId: "attraction_IE_giant_s_causeway",
         panelSummary: "Giant's Causeway gives travelers an accessible entry point into the history or character of Ireland, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giants_Causeway_1b.JPG",
@@ -5301,7 +5301,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Rock of Cashel",
-        description: "The Rock of Cashel is a limestone hill crowned by medieval religious and royal buildings. A round tower, Romanesque chapel, Gothic cathedral, high crosses, and defensive walls trace the site’s political and ecclesiastical importance.",
+        description: "Medieval fortress and chapel perched on a limestone hilltop in Tipperary",
         entityId: "attraction_IE_rock_of_cashel",
         panelSummary: "Walking through Rock of Cashel reveals how defense, geography, and architecture were combined to control the surrounding landscape. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Rock of Cashel lasting appeal.",
         wikidataId: "Q1255597",
@@ -5315,7 +5315,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Newgrange",
-        description: "Newgrange is a Neolithic passage tomb built around 3200 BCE within the Brú na Bóinne complex. Its decorated stones, corbelled chamber, earthen mound, and winter-solstice illumination demonstrate sophisticated prehistoric engineering and ritual planning.",
+        description: "5,200-year-old passage tomb older than the Egyptian pyramids",
         entityId: "attraction_IE_newgrange",
         panelSummary: "Newgrange offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q339503",
@@ -5407,7 +5407,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Borobudur Temple",
-        description: "Borobudur is a 9th-century Buddhist monument built as nine stacked platforms around a central dome. Thousands of relief panels, hundreds of Buddha statues, and a processional route express Buddhist cosmology and pilgrimage.",
+        description: "Massive 9th-century Buddhist temple, the largest in the world, at sunrise",
         entityId: "attraction_ID_borobudur_temple",
         panelSummary: "At Borobudur Temple, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Borobudur Temple lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Borobudur_temple_from_above.jpg",
@@ -5419,7 +5419,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tegallalang Rice Terraces",
-        description: "Tegallalang’s rice terraces form a steep, irrigated landscape north of Ubud. Paths descend between paddies and viewpoints, while the fields demonstrate Bali’s traditional subak system linking water management, agriculture, temples, and community cooperation.",
+        description: "Iconic stepped rice paddies in the heart of Bali's highlands",
         entityId: "attraction_ID_tegallalang_rice_terraces",
         panelSummary: "The appeal of Tegallalang Rice Terraces lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q4648",
@@ -5434,7 +5434,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Komodo Island",
-        description: "Komodo Island is part of a national park created to protect the Komodo dragon, the world’s largest living lizard. Guided walks cross dry savanna and woodland, with surrounding waters also supporting reefs and marine life.",
+        description: "See the world's largest living lizard in its natural habitat",
         entityId: "attraction_ID_komodo_island",
         panelSummary: "Komodo Island gives travelers an accessible entry point into the history or character of Indonesia, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q107640",
@@ -5449,7 +5449,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mount Bromo",
-        description: "Mount Bromo is an active volcano rising from the Tengger caldera in East Java. Visitors cross the volcanic sand plain, climb to the crater rim, and watch sunrise over neighboring peaks and the surrounding massif.",
+        description: "Active volcano with a surreal moonscape caldera in East Java",
         entityId: "attraction_ID_mount_bromo",
         panelSummary: "Mount Bromo turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. The experience is strongest when travelers understand both the beauty and volatility of the setting.",
         wikidataId: "Q679590",
@@ -5464,7 +5464,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ubud Monkey Forest",
-        description: "Ubud Monkey Forest is a sanctuary containing Balinese long-tailed macaques, three Hindu temples, and dense forest. Paths pass carved statues, ravines, and sacred sites while demonstrating the relationship between wildlife, religion, and community management.",
+        description: "Sacred Balinese sanctuary with 700 long-tailed macaques among ancient temples",
         entityId: "attraction_ID_ubud_monkey_forest",
         panelSummary: "Ubud Monkey Forest combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Ubud Monkey Forest lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ubud_Monkey_Forest_8.JPG",
@@ -5552,7 +5552,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Niagara Falls",
-        description: "Niagara Falls comprises Horseshoe, American, and Bridal Veil falls on the Canada–United States border. Overlooks, boats, tunnels, and riverside walks reveal the immense flow, spray, geology, and hydroelectric history of the site.",
+        description: "Thunderous waterfalls straddling the US–Canada border",
         entityId: "attraction_CA_niagara_falls",
         panelSummary: "The power of Niagara Falls becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. Weather and water levels can alter the character of the visit considerably. That added context gives Niagara Falls lasting appeal.",
         wikidataId: "Q34221",
@@ -5567,7 +5567,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Lake Louise",
-        description: "Lake Louise is a glacier-fed lake in Banff National Park, colored turquoise by suspended rock flour. Shore walks, canoeing, mountain trails, and views toward Victoria Glacier make it a major Canadian Rockies landscape.",
+        description: "Glacier-fed emerald lake beneath the Victoria Glacier",
         entityId: "attraction_CA_lake_louise",
         panelSummary: "The strongest reason to visit Lake Louise is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lake_Louise_17092005.jpg",
@@ -5580,7 +5580,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Old Montreal",
-        description: "Old Montreal preserves the city’s historic core beside the St. Lawrence River. Cobblestone streets, former warehouses, churches, public squares, museums, and 17th- to 19th-century buildings trace Montreal’s development as a colonial trading center.",
+        description: "Historic cobblestone district with European flair",
         entityId: "attraction_CA_old_montreal",
         panelSummary: "The energy of Old Montreal comes from browsing, eating, observing, and allowing everyday activity to shape the visit. A flexible itinerary leaves room to follow whatever catches the eye. That added context gives Old Montreal lasting appeal.",
         wikidataId: "Q1529351",
@@ -5593,7 +5593,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Whistler",
-        description: "Whistler is a mountain resort centered on Whistler and Blackcomb peaks. Extensive ski terrain, hiking, mountain biking, gondolas, lakes, and a pedestrian village support year-round recreation in the Coast Mountains.",
+        description: "World-class ski resort and mountain biking hub",
         entityId: "attraction_CA_whistler",
         panelSummary: "Whistler rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Whistler_Mountain_1.jpg",
@@ -5679,7 +5679,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Ilulissat Icefjord",
-        description: "Ilulissat Icefjord is the outlet of Sermeq Kujalleq, one of the Northern Hemisphere’s fastest glaciers. Trails and boat trips reveal enormous icebergs calving, drifting through the fjord, and entering Disko Bay.",
+        description: "UNESCO site where massive glaciers calve into the sea",
         entityId: "attraction_GL_ilulissat_icefjord",
         panelSummary: "Ilulissat Icefjord offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q191047",
@@ -5694,7 +5694,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Northern Lights",
-        description: "In Greenland, auroras result from charged solar particles interacting with Earth’s atmosphere. Long, dark winters and minimal light pollution create strong viewing conditions for shifting green, red, and violet curtains across the Arctic sky.",
+        description: "Some of the clearest aurora viewing on the planet",
         entityId: "attraction_GL_northern_lights",
         panelSummary: "Northern Lights gives travelers an accessible entry point into the history or character of Greenland, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Northern_Lights,_Greenland.jpg",
@@ -5704,7 +5704,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Greenland Ice Sheet",
-        description: "The Greenland Ice Sheet covers most of the island and is the world’s second-largest body of ice. Flights, coastal viewpoints, and guided excursions reveal its vast scale, glaciers, meltwater, and global climate importance.",
+        description: "The second-largest body of ice on Earth",
         entityId: "attraction_GL_greenland_ice_sheet",
         panelSummary: "Greenland Ice Sheet gives travelers an accessible entry point into the history or character of Greenland, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Greenland_Ice_Sheet.jpg",
@@ -5781,7 +5781,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Angel Falls",
-        description: "Angel Falls descends 979 meters from Auyán-tepui in Venezuela’s Canaima National Park, making it the world’s highest uninterrupted waterfall. Reaching it usually involves river travel, jungle walking, and highly seasonal water conditions.",
+        description: "The world’s tallest uninterrupted waterfall at 979 meters",
         entityId: "attraction_VE_angel_falls",
         panelSummary: "The power of Angel Falls becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Angel Falls lasting appeal.",
         wikidataId: "Q80299",
@@ -5796,7 +5796,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mount Roraima",
-        description: "Mount Roraima is a flat-topped sandstone tepui at the borders of Venezuela, Guyana, and Brazil. Multi-day treks reach a summit landscape of cliffs, rock formations, pools, endemic plants, and frequent cloud.",
+        description: "Flat-topped tepui that inspired The Lost World",
         entityId: "attraction_VE_mount_roraima",
         panelSummary: "Mount Roraima offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q4777",
@@ -5811,7 +5811,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Gran Sabana",
-        description: "Gran Sabana is an extensive Venezuelan plateau of grasslands, rivers, waterfalls, and isolated tepuis within Canaima National Park. Road journeys and hikes reveal broad savanna scenery and Indigenous Pemón communities.",
+        description: "Vast savanna of rivers, waterfalls, and ancient plateaus",
         entityId: "attraction_VE_gran_sabana",
         panelSummary: "Gran Sabana makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. The most rewarding details are often the modest ones that make past life feel specific and human.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gran_Sabana,_Venezuela_03.jpg",
@@ -5892,7 +5892,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Old Havana",
-        description: "Old Havana is the original fortified core of Cuba’s capital, founded in 1519. Plazas, baroque and neoclassical buildings, churches, forts, arcades, and restored streets show its role in Spanish colonial trade.",
+        description: "UNESCO-listed historic core of plazas and baroque churches",
         entityId: "attraction_CU_old_havana",
         panelSummary: "At Old Havana, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Old Havana lasting appeal.",
         wikidataId: "Q1563",
@@ -5907,7 +5907,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Malecón",
-        description: "Havana’s Malecón is an eight-kilometer seawall and boulevard built in stages from the early 1900s. It functions as a promenade, gathering place, fishing spot, and continuous viewpoint across the Florida Straits.",
+        description: "Iconic seafront promenade where Havana gathers at sunset",
         entityId: "attraction_CU_malecon",
         panelSummary: "The energy of Malecón comes from browsing, eating, observing, and allowing everyday activity to shape the visit. Spending time here provides a useful counterpoint to more formal landmarks and museums. That added context gives Malecón lasting appeal.",
         wikidataId: "Q12597",
@@ -5922,7 +5922,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cayo Coco",
-        description: "Cayo Coco is a low-lying island off Cuba’s north coast, connected to the mainland by a causeway. Beaches, resort areas, mangroves, coral reefs, and birdlife, including flamingos, define its natural and recreational appeal.",
+        description: "Idyllic cay with coral reefs and flamingo colonies",
         entityId: "attraction_CU_cayo_coco",
         panelSummary: "The appeal of Cayo Coco lies below the surface, where marine life and changing underwater scenery make each visit feel different. Travelers who move slowly and observe carefully tend to notice far more than the headline species.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cuba_-_Cayo_Coco.jpg",
@@ -6006,7 +6006,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Zona Colonial",
-        description: "Ciudad Colonial is Santo Domingo’s oldest district and the first permanent European urban center in the Americas. Its grid, cathedral, fortress, monasteries, palaces, and early colonial institutions preserve the beginnings of Spanish rule.",
+        description: "UNESCO-listed colonial quarter with the first cathedral in the Americas",
         entityId: "attraction_DO_zona_colonial",
         panelSummary: "Zona Colonial combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Zona Colonial lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Calle_las_Damas%2C_Santo_Domingo%2C_Zona_Colonial.jpg",
@@ -6018,7 +6018,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Los Tres Ojos",
-        description: "Los Tres Ojos is an open-air limestone cave system in Santo Domingo containing three main freshwater lakes and a fourth reached by boat. Stairs and paths reveal blue water, rock walls, and tropical vegetation.",
+        description: "Limestone caves with crystalline underground lagoons",
         entityId: "attraction_DO_los_tres_ojos",
         panelSummary: "Inside Los Tres Ojos, geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. The cooler air, acoustics, and lighting make the experience as sensory as it is visual. That added context gives Los Tres Ojos lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Parque_Los_Tres_Ojos_%2833102843230%29.jpg",
@@ -6031,7 +6031,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Saltos de Damajagua",
-        description: "27 Charcos is a series of waterfalls and limestone pools near Puerto Plata. Guided routes involve hiking upstream, then jumping, sliding, and swimming through selected cascades, with course length adjusted to conditions and ability.",
+        description: "27 waterfalls you can jump and slide through",
         entityId: "attraction_DO_saltos_de_damajagua",
         panelSummary: "Saltos de Damajagua is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. Allowing time for more than the principal overlook makes the setting feel much larger.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Damajagua_Waterfall.jpg",
@@ -6111,7 +6111,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Casbah of Algiers",
-        description: "The Casbah of Algiers is a dense historic district rising above the Mediterranean. Ottoman houses, mosques, palaces, narrow lanes, terraces, and defensive remains preserve the structure of the city’s pre-colonial urban core.",
+        description: "UNESCO-listed labyrinth of Ottoman-era alleys",
         entityId: "attraction_DZ_casbah_of_algiers",
         panelSummary: "The appeal of Casbah of Algiers lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Casbah of Algiers lasting appeal.",
         wikidataId: "Q3561",
@@ -6126,7 +6126,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tassili n’Ajjer",
-        description: "Tassili n’Ajjer is a Saharan plateau known for eroded sandstone formations and thousands of prehistoric rock paintings and engravings. The art records changing climates, wildlife, herding, hunting, and human occupation over millennia.",
+        description: "Plateau with prehistoric rock art and surreal sandstone forms",
         entityId: "attraction_DZ_tassili_n_ajjer",
         panelSummary: "Exploring Tassili n’Ajjer reveals more than a single monument: the layout and remaining details help reconstruct an earlier world. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Parc_National_du_Tassili_N'AJJER_(_W.Illizi_)_02.jpg",
@@ -6136,7 +6136,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Djemila",
-        description: "Djémila is a Roman town built on mountainous terrain in northern Algeria. Temples, basilicas, houses, baths, markets, arches, and a theater show how Roman planning was adapted to a constrained site.",
+        description: "Stunning mountain-set Roman archaeological site",
         entityId: "attraction_DZ_djemila",
         panelSummary: "Djemila offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. The most rewarding details are often the modest ones that make past life feel specific and human.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Djemila_-_Panorama_Temple_Septimien.jpg",
@@ -6216,7 +6216,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Vasa Museum",
-        description: "The Vasa Museum is built around a nearly intact 17th-century Swedish warship that sank on its first voyage. Exhibits cover its construction, decoration, sinking, excavation, conservation, crew, and the society that produced it.",
+        description: "A perfectly preserved 17th-century warship raised from the harbor",
         entityId: "attraction_SE_vasa_museum",
         panelSummary: "Vasa Museum places significant works within a broader cultural story, helping visitors understand the people, ideas, and periods behind the collection. A slower visit leaves room for unexpected discoveries beyond the headline pieces. That added context gives Vasa Museum lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stockholm_Vasa_Museum_vasa_exterior_18.jpg",
@@ -6229,7 +6229,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Gamla Stan",
-        description: "Gamla Stan is Stockholm’s medieval center, developed on the city’s original island. Narrow lanes, merchants’ houses, churches, the Royal Palace, Stortorget, and preserved street patterns show the capital’s earliest urban history.",
+        description: "Stockholm’s atmospheric medieval old town",
         entityId: "attraction_SE_gamla_stan",
         panelSummary: "Gamla Stan offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         wikidataId: "Q1208392",
@@ -6243,7 +6243,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Icehotel",
-        description: "Jukkasjärvi’s Icehotel is rebuilt each winter from snow and ice taken from the Torne River. Guest rooms, sculptures, a chapel, and an ice bar combine temporary architecture with an overnight Arctic experience.",
+        description: "Hotel rebuilt each winter from ice of the Torne River",
         entityId: "attraction_SE_icehotel",
         panelSummary: "The strongest reason to visit Icehotel is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Icehotel_entrance.jpg",
@@ -6330,7 +6330,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Northern Lights in Rovaniemi",
-        description: "Auroras near Rovaniemi are produced by solar particles interacting with the upper atmosphere. Dark nights, open northern skies, and low light pollution make the region suitable for seeing shifting green and occasional red displays.",
+        description: "Aurora viewing from glass igloos under the Arctic sky",
         entityId: "attraction_FI_northern_lights_in_rovaniemi",
         panelSummary: "The appeal of Northern Lights in Rovaniemi lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Northern Lights in Rovaniemi lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rovaniemi_-_Aurora_Borealis.jpg",
@@ -6340,7 +6340,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Suomenlinna",
-        description: "Suomenlinna is an inhabited sea fortress spread across islands outside Helsinki. Ferries bring visitors to bastions, tunnels, museums, docks, churches, and waterfront paths reflecting Swedish, Russian, and Finnish military history.",
+        description: "UNESCO-listed sea fortress guarding Helsinki harbor",
         entityId: "attraction_FI_suomenlinna",
         panelSummary: "Walking through Suomenlinna reveals how defense, geography, and architecture were combined to control the surrounding landscape. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history. That added context gives Suomenlinna lasting appeal.",
         wikidataId: "Q1292442",
@@ -6354,7 +6354,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Allas Sea Pool",
-        description: "Allas Sea Pool is a waterfront bathing complex beside Helsinki’s harbor. Heated pools, a seawater pool, saunas, terraces, and views toward the market square and islands combine Finnish sauna culture with outdoor swimming.",
+        description: "Outdoor saunas and pools on the Helsinki waterfront",
         entityId: "attraction_FI_allas_sea_pool",
         panelSummary: "Allas Sea Pool offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q1757",
@@ -6437,7 +6437,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Rijksmuseum",
-        description: "The Rijksmuseum presents Dutch art and history from the Middle Ages onward. Rembrandt’s Night Watch, works by Vermeer and other masters, decorative arts, ship models, weapons, and historical objects anchor its broad national collection.",
+        description: "Home to Rembrandt’s Night Watch and Dutch Golden Age masters",
         entityId: "attraction_NL_rijksmuseum",
         panelSummary: "The strength of Rijksmuseum lies in the relationship between its collection, exhibition spaces, and the artistic history they illuminate. A slower visit leaves room for unexpected discoveries beyond the headline pieces. That added context gives Rijksmuseum lasting appeal.",
         wikidataId: "Q190804",
@@ -6455,7 +6455,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Van Gogh Museum",
-        description: "The Van Gogh Museum holds the largest collection of Vincent van Gogh’s paintings and drawings. Displays arranged around his life, artistic development, letters, influences, and contemporaries explain how his style changed over time.",
+        description: "The world’s largest collection of Van Gogh’s work",
         entityId: "attraction_NL_van_gogh_museum",
         panelSummary: "The strength of Van Gogh Museum lies in the relationship between its collection, exhibition spaces, and the artistic history they illuminate. A slower visit leaves room for unexpected discoveries beyond the headline pieces. That added context gives Van Gogh Museum lasting appeal.",
         wikidataId: "Q224124",
@@ -6472,7 +6472,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Anne Frank House",
-        description: "The Anne Frank House preserves the Amsterdam building where Anne Frank, her family, and others hid during Nazi occupation. The concealed rooms, diary context, documents, and exhibitions connect one family’s story to the Holocaust.",
+        description: "The canal-side hiding place turned moving museum",
         entityId: "attraction_NL_anne_frank_house",
         panelSummary: "Anne Frank House offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. A slower visit leaves room for unexpected discoveries beyond the headline pieces.",
         wikidataId: "Q165366",
@@ -6562,7 +6562,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Hegra (Mada’in Salih)",
-        description: "Hegra is a Nabataean archaeological site in northwestern Saudi Arabia, developed around the first century CE. More than 100 rock-cut tombs, inscriptions, wells, and settlement remains reveal its role in regional caravan trade.",
+        description: "Saudi Arabia’s first UNESCO site, Nabataean tombs like Petra",
         entityId: "attraction_SA_hegra_mada_in_salih",
         panelSummary: "Hegra (Mada’in Salih) gives travelers an accessible entry point into the history or character of Saudi Arabia, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hegra_%28Mada%27in_Salih%29%2C_the_kingdom%27s_second_Nabatean_capital_after_Petra%2C_Saudi_Arabia_-_53534953448.jpg",
@@ -6572,7 +6572,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Al-Balad",
-        description: "Al-Balad is Jeddah’s historic port district, built around coral-stone merchant houses with projecting wooden rawashin. Mosques, markets, narrow streets, and restored residences reflect the city’s Red Sea trade and pilgrimage connections.",
+        description: "Historic Jeddah district of ornate coral merchant houses",
         entityId: "attraction_SA_al_balad",
         panelSummary: "Al-Balad offers a street-level introduction to local life through food, commerce, architecture, and the steady movement of residents and visitors. Spending time here provides a useful counterpoint to more formal landmarks and museums. That added context gives Al-Balad lasting appeal.",
         wikidataId: "Q374365",
@@ -6587,7 +6587,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Diriyah",
-        description: "Diriyah was the first capital of the Saudi state and ancestral home of the House of Saud. The restored At-Turaif district preserves mud-brick palaces, walls, mosques, and views across Wadi Hanifa.",
+        description: "Restored mud-brick birthplace of the Saudi state",
         entityId: "attraction_SA_diriyah",
         panelSummary: "Diriyah offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Diriyah_9.jpg",
@@ -6667,7 +6667,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Angkor Wat",
-        description: "Angkor Wat is a 12th-century Khmer temple complex originally dedicated to Vishnu and later used for Buddhist worship. Its vast moat, galleries, bas-reliefs, towers, and sunrise alignment explain its architectural importance.",
+        description: "The largest religious monument on Earth, a 12th-century marvel",
         entityId: "attraction_KH_angkor_wat",
         panelSummary: "Angkor Wat gives travelers an accessible entry point into the history or character of Cambodia, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q43473",
@@ -6682,7 +6682,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ta Prohm",
-        description: "Ta Prohm is a late-12th-century Buddhist monastery left partly intertwined with the surrounding forest. Visitors see collapsed galleries, carved stonework, courtyards, and enormous tree roots growing through the ruins.",
+        description: "Jungle temple where giant tree roots embrace the ruins",
         entityId: "attraction_KH_ta_prohm",
         panelSummary: "Ta Prohm is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Ta Prohm lasting appeal.",
         wikidataId: "Q592846",
@@ -6697,7 +6697,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bayon",
-        description: "Bayon is the central state temple of Angkor Thom, built under Jayavarman VII. Its towers carry large serene faces, while long bas-reliefs depict battles, ceremonies, markets, and ordinary Khmer life.",
+        description: "Temple crowned with hundreds of serene carved stone faces",
         entityId: "attraction_KH_bayon",
         panelSummary: "Bayon is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Bayon lasting appeal.",
         wikidataId: "Q654024",
@@ -6782,7 +6782,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Sigiriya Rock Fortress",
-        description: "Sigiriya is a fifth-century royal citadel built atop a 200-meter rock. The climb passes water gardens, frescoes, the Mirror Wall, and monumental lion paws before reaching palace foundations and broad views.",
+        description: "Fifth-century palace atop a sheer 200-meter rock",
         entityId: "attraction_LK_sigiriya_rock_fortress",
         panelSummary: "Sigiriya Rock Fortress offers a layered look at elite life, combining formal architecture with rooms, gardens, and details that make political history feel tangible. Allowing time for both the building and its surroundings makes Sigiriya Rock Fortress far more rewarding than a quick exterior photograph.",
         wikidataId: "Q272153",
@@ -6797,7 +6797,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Temple of the Tooth",
-        description: "The Temple of the Tooth is an active Buddhist shrine in Kandy believed to house a relic of the Buddha. Ceremonial halls, daily rituals, museums, and the annual Esala Perahera explain its national importance.",
+        description: "Kandy shrine housing a relic of the Buddha",
         entityId: "attraction_LK_temple_of_the_tooth",
         panelSummary: "At Temple of the Tooth, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Temple of the Tooth lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Temple_of_tooth.jpg",
@@ -6812,7 +6812,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Yala National Park",
-        description: "Yala National Park protects forests, wetlands, grasslands, and coastline in southeastern Sri Lanka. Jeep safaris focus on leopards, elephants, crocodiles, water buffalo, and abundant birdlife across several distinct habitats.",
+        description: "Premier safari park with the world’s densest leopard population",
         entityId: "attraction_LK_yala_national_park",
         panelSummary: "Yala National Park rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Leopard_on_stone_in_Yala_National_Park.jpg",
@@ -6893,7 +6893,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Statue of Liberty",
-        description: "The Statue of Liberty is a colossal copper monument gifted by France and dedicated in 1886. Ferry access, the pedestal museum, harbor setting, and immigration symbolism make the island visit historically significant.",
+        description: "Symbol of freedom standing in New York Harbor",
         entityId: "attraction_US_statue_of_liberty",
         panelSummary: "Statue of Liberty gives travelers an accessible entry point into the history or character of United States, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q9202",
@@ -6911,7 +6911,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Yellowstone National Park",
-        description: "Yellowstone, established in 1872, protects a vast volcanic landscape of geysers, hot springs, canyons, lakes, and forests. Visitors also encounter bison, elk, bears, wolves, and other wildlife across an immense road network.",
+        description: "Geysers, hot springs, and wildlife in the first national park",
         entityId: "attraction_US_yellowstone_national_park",
         panelSummary: "Yellowstone National Park rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q351",
@@ -6928,7 +6928,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Walt Disney World",
-        description: "Walt Disney World is a large Florida resort containing four theme parks, water parks, hotels, dining, and entertainment districts. Its main appeal is the scale and variety of immersive attractions across multiple days.",
+        description: "The most visited resort destination on Earth",
         entityId: "attraction_US_walt_disney_world",
         panelSummary: "Walt Disney World offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q206859",
@@ -7016,7 +7016,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "El Nido",
-        description: "El Nido is a Palawan coastal municipality surrounded by limestone cliffs, islands, lagoons, beaches, and coral reefs. Island-hopping trips provide access to hidden coves, snorkeling areas, and the protected Bacuit Archipelago.",
+        description: "Postcard-perfect bays and hidden lagoons in northern Palawan",
         entityId: "attraction_PH_el_nido",
         panelSummary: "El Nido rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q111483",
@@ -7031,7 +7031,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Chocolate Hills",
-        description: "The Chocolate Hills are more than a thousand unusually uniform limestone mounds across central Bohol. Their grass turns brown during the dry season, creating the landscape’s distinctive appearance from several elevated viewpoints.",
+        description: "More than 1,200 cone-shaped hills on Bohol",
         entityId: "attraction_PH_chocolate_hills",
         panelSummary: "Chocolate Hills offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q977422",
@@ -7046,7 +7046,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Banaue Rice Terraces",
-        description: "The Banaue Rice Terraces are steep mountain fields constructed and maintained by Ifugao communities over many generations. Trails and village viewpoints reveal traditional irrigation, farming practices, and a living cultural landscape.",
+        description: "2,000-year-old terraces dubbed the eighth wonder of the world",
         entityId: "attraction_PH_banaue_rice_terraces",
         panelSummary: "Banaue Rice Terraces gives travelers an accessible entry point into the history or character of Philippines, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Banaue_Rice_Terraces%2C_Philippines.jpg",
@@ -7130,7 +7130,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Burj Khalifa",
-        description: "Burj Khalifa is an 828-meter mixed-use skyscraper and the world’s tallest building. High-speed elevators reach observation decks offering wide Dubai views, while exhibits explain its engineering, construction, and record-setting design.",
+        description: "The tallest building in the world at 828 meters",
         entityId: "attraction_AE_burj_khalifa",
         panelSummary: "Burj Khalifa gives travelers an accessible entry point into the history or character of United Arab Emirates, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q12495",
@@ -7145,7 +7145,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sheikh Zayed Grand Mosque",
-        description: "Sheikh Zayed Grand Mosque is a large functioning mosque clad in white marble. Visitors see 82 domes, reflective pools, floral inlay, vast chandeliers, and one of the world’s largest hand-knotted carpets.",
+        description: "Dazzling white-marble mosque holding up to 40,000 worshippers",
         entityId: "attraction_AE_sheikh_zayed_grand_mosque",
         panelSummary: "Sheikh Zayed Grand Mosque combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Sheikh Zayed Grand Mosque lasting appeal.",
         wikidataId: "Q5594813",
@@ -7160,7 +7160,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Louvre Abu Dhabi",
-        description: "Louvre Abu Dhabi is a universal art museum arranged beneath Jean Nouvel’s perforated dome. Galleries connect works from different cultures and periods, while the waterfront architecture creates a shifting pattern of filtered light.",
+        description: "Domed art museum on Saadiyat Island",
         entityId: "attraction_AE_louvre_abu_dhabi",
         panelSummary: "Louvre Abu Dhabi offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. A slower visit leaves room for unexpected discoveries beyond the headline pieces.",
         wikidataId: "Q3176133",
@@ -7245,7 +7245,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Plitvice Lakes",
-        description: "Plitvice Lakes National Park contains sixteen lakes linked by waterfalls across a forested limestone landscape. Boardwalks and trails pass turquoise water, travertine barriers, caves, and changing upper and lower lake systems.",
+        description: "UNESCO park of cascading turquoise lakes and waterfalls",
         entityId: "attraction_HR_plitvice_lakes",
         panelSummary: "Plitvice Lakes is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. Weather and water levels can alter the character of the visit considerably. That added context gives Plitvice Lakes lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Plitvice_Lakes_1.jpg",
@@ -7258,7 +7258,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Diocletian’s Palace",
-        description: "Diocletian’s Palace is a vast Roman imperial complex that became the historic center of Split. Streets, homes, shops, cellars, temples, gates, and the cathedral remain integrated into a continuously inhabited city.",
+        description: "Living Roman palace at the heart of Split",
         entityId: "attraction_HR_diocletian_s_palace",
         panelSummary: "Diocletian’s Palace brings courtly history to life through ceremonial rooms, decorative craftsmanship, and grounds designed to impress as much as they served daily life. Allowing time for both the building and its surroundings makes Diocletian’s Palace far more rewarding than a quick exterior photograph.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Diocletian%27s_Palace_from_the_air.jpg",
@@ -7269,7 +7269,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Dubrovnik City Walls",
-        description: "Dubrovnik’s stone walls form a complete defensive circuit around the old city. Walking the ramparts provides close views of forts, towers, tiled roofs, the Adriatic, and the engineering that protected the maritime republic.",
+        description: "Walkable medieval ramparts with sweeping sea views",
         entityId: "attraction_HR_dubrovnik_city_walls",
         panelSummary: "The appeal of Dubrovnik City Walls lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q1722",
@@ -7355,7 +7355,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Gardens by the Bay",
-        description: "Gardens by the Bay is a large waterfront garden combining landscape design with environmental engineering. The Supertrees, Cloud Forest, Flower Dome, aerial walkway, and nighttime light show are its principal visitor attractions.",
+        description: "Iconic Supertree grove and cooled biome conservatories",
         entityId: "attraction_SG_gardens_by_the_bay",
         panelSummary: "Gardens by the Bay gives travelers an accessible entry point into the history or character of Singapore, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gardens_by_the_Bay_%28Unsplash%29.jpg",
@@ -7367,7 +7367,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Marina Bay Sands",
-        description: "Marina Bay Sands is an integrated resort formed by three hotel towers supporting a cantilevered SkyPark. Public highlights include the observation deck, ArtScience Museum, shopping complex, restaurants, theaters, and waterfront light show.",
+        description: "Three-tower hotel topped by an infinity SkyPark",
         entityId: "attraction_SG_marina_bay_sands",
         panelSummary: "The appeal of Marina Bay Sands lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q548679",
@@ -7382,7 +7382,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Singapore Zoo",
-        description: "Singapore Zoo is known for landscaped, open-style habitats separated by moats and concealed barriers. Its tropical setting, broad animal collection, conservation programs, and adjacent Night Safari make it a major wildlife attraction.",
+        description: "World-renowned open-concept zoo and night safari",
         entityId: "attraction_SG_singapore_zoo",
         panelSummary: "Singapore Zoo offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Entrance_-_Singapore_Zoo_(01).jpg",
@@ -7466,7 +7466,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mount Everest",
-        description: "Mount Everest is Earth’s highest mountain, rising 8,848.86 meters on the Nepal–China border. Most visitors experience it through Himalayan trekking and viewpoints; reaching the summit requires specialized climbing, permits, and substantial risk.",
+        description: "Earth’s highest mountain at 8,849 meters",
         entityId: "attraction_NP_mount_everest",
         panelSummary: "Mount Everest offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q513",
@@ -7483,7 +7483,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Boudhanath Stupa",
-        description: "Boudhanath is one of Nepal’s largest stupas and a major center of Tibetan Buddhism. Pilgrims circle its white dome, prayer wheels, monasteries, and painted Buddha eyes while performing daily devotional rituals.",
+        description: "One of the largest Buddhist stupas in the world",
         entityId: "attraction_NP_boudhanath_stupa",
         panelSummary: "Boudhanath Stupa gives travelers an accessible entry point into the history or character of Nepal, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Eyes_of_Boudhanath_Stupa.jpg",
@@ -7494,7 +7494,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Annapurna Circuit",
-        description: "The Annapurna Circuit is a multi-day Himalayan trek crossing valleys, villages, forests, and the 5,416-meter Thorong La pass. It combines major mountain scenery with changing climates and Tibetan-influenced communities.",
+        description: "World-famous trek through Himalayan villages and passes",
         entityId: "attraction_NP_annapurna_circuit",
         panelSummary: "The appeal of Annapurna Circuit lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Annapurna Circuit lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Annapurna_III_and_Gangapurna_-_Annapurna_Circuit,_Nepal_-_panoramio_(1).jpg",
@@ -7575,7 +7575,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Serengeti National Park",
-        description: "Serengeti National Park protects extensive grasslands and woodlands supporting lions, cheetahs, elephants, giraffes, and large herbivore herds. Seasonal wildebeest and zebra movements make the greater ecosystem especially important for safari viewing.",
+        description: "Premier safari park famed for big cats and the migration",
         entityId: "attraction_TZ_serengeti_national_park",
         panelSummary: "The strongest reason to visit Serengeti National Park is the chance to experience the surrounding environment at close range rather than from a distant overlook. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q4991540",
@@ -7590,7 +7590,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mount Kilimanjaro",
-        description: "Mount Kilimanjaro is Africa’s highest mountain and a dormant volcano with three cones. Multi-day trekking routes rise through rainforest, moorland, alpine desert, and glacial summit terrain without requiring technical climbing.",
+        description: "The “Roof of Africa” at 5,895 meters",
         entityId: "attraction_TZ_mount_kilimanjaro",
         panelSummary: "Mount Kilimanjaro gives travelers an accessible entry point into the history or character of Tanzania, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q7296",
@@ -7604,7 +7604,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Stone Town",
-        description: "Stone Town is Zanzibar’s historic trading center, shaped by African, Arab, Indian, and European influences. Narrow streets reveal carved doors, coral-stone buildings, markets, mosques, churches, palaces, and sites connected to the slave trade.",
+        description: "UNESCO-listed Swahili trading town on Zanzibar",
         entityId: "attraction_TZ_stone_town",
         panelSummary: "Stone Town offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q844417",
@@ -7688,13 +7688,13 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Cloud 9",
-        description: "Cloud 9 is a two-level floating platform anchored off Fiji’s Mamanuca Islands. Day visitors come by boat for swimming, snorkeling, reef views, music, drinks, and wood-fired pizza in open water.",
+        description: "Floating bar and pizzeria on a turquoise reef",
         entityId: "attraction_FJ_cloud_9",
         panelSummary: "Cloud 9 offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. The sense of entering another environment makes the attraction memorable well beyond its visual beauty.",
       },
       {
         name: "Sabeto Hot Springs",
-        description: "Sabeto Hot Springs is a geothermal bathing site near Nadi where visitors cover themselves in mud, rinse in progressively warmer pools, and use simple outdoor facilities surrounded by tropical vegetation.",
+        description: "Natural geothermal mud pools near Nadi",
         entityId: "attraction_FJ_sabeto_hot_springs",
         panelSummary: "The appeal of Sabeto Hot Springs comes from seeing geology in action, with terrain and conditions that make the landscape feel unusually alive. The experience is strongest when travelers understand both the beauty and volatility of the setting.",
         wikidataId: "Q619443",
@@ -7709,7 +7709,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sigatoka Sand Dunes",
-        description: "Sigatoka Sand Dunes National Park protects coastal dunes, forest, archaeological sites, and ancient burial remains near the Sigatoka River. Walking trails provide sea views and explain Fiji’s natural and human history.",
+        description: "Fiji’s first national park along a dramatic coastline",
         entityId: "attraction_FJ_sigatoka_sand_dunes",
         panelSummary: "Sigatoka Sand Dunes offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q7511961",
@@ -7792,7 +7792,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Great Blue Hole",
-        description: "The Great Blue Hole is a circular marine sinkhole within Belize’s barrier reef. Experienced divers descend past steep walls and large stalactites, while aerial flights best reveal its nearly perfect dark-blue shape.",
+        description: "Iconic deep-blue marine sinkhole prized by divers",
         entityId: "attraction_BZ_great_blue_hole",
         panelSummary: "Great Blue Hole gives swimmers or divers direct access to a distinctive ecosystem rather than presenting nature from a distant viewpoint. Travelers who move slowly and observe carefully tend to notice far more than the headline species.",
         wikidataId: "Q86486",
@@ -7806,7 +7806,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Caracol",
-        description: "Caracol was a powerful Maya city deep in Belize’s rainforest. Its plazas, reservoirs, tombs, hieroglyphic monuments, and Caana pyramid reveal a large urban center that once rivaled neighboring Tikal.",
+        description: "Largest ancient Maya site in Belize, deep in the rainforest",
         entityId: "attraction_BZ_caracol",
         panelSummary: "Caracol makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         wikidataId: "Q1035336",
@@ -7823,7 +7823,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "ATM Cave",
-        description: "Actun Tunichil Muknal is a cave containing Maya ceramics, ritual objects, and human remains. Guided visits require hiking, swimming, and moving through wet passages before reaching preserved ceremonial chambers.",
+        description: "Sacred cave with Maya artifacts and skeletal remains",
         entityId: "attraction_BZ_atm_cave",
         panelSummary: "Inside ATM Cave, geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. The cooler air, acoustics, and lighting make the experience as sensory as it is visual. That added context gives ATM Cave lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/ATM_Cave_-_panoramio.jpg",
@@ -7899,7 +7899,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Tikal National Park",
-        description: "Tikal was one of the largest cities of the ancient Maya world. Forest trails connect towering temples, palaces, plazas, reservoirs, and carved monuments, with elevated structures offering views above the jungle canopy.",
+        description: "Vast Maya city and UNESCO World Heritage Site",
         entityId: "attraction_GT_tikal_national_park",
         panelSummary: "Tikal National Park offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q6063031",
@@ -7914,7 +7914,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Acatenango Volcano",
-        description: "Acatenango is a high Guatemalan volcano commonly climbed on an overnight trek. Campsites and summit routes provide close views of neighboring Fuego, which frequently produces ash plumes and nighttime eruptions.",
+        description: "Overnight hike with views of erupting Fuego",
         entityId: "attraction_GT_acatenango_volcano",
         panelSummary: "Acatenango Volcano creates a memorable change of pace by combining movement, landscape, and a clear sense of participation. Because visitors take part rather than simply observe, the memory tends to feel unusually personal. That added context gives Acatenango Volcano lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/View_from_Volcano_Pacaya%2C_Guatemala.jpg",
@@ -7927,7 +7927,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Chichicastenango Market",
-        description: "Chichicastenango is a highland town best known for its twice-weekly market. Indigenous vendors fill streets and plazas with textiles, produce, pottery, masks, flowers, and religious items around the Santo Tomás church.",
+        description: "Vibrant Indigenous market famed for textiles",
         entityId: "attraction_GT_chichicastenango_market",
         panelSummary: "The energy of Chichicastenango Market comes from browsing, eating, observing, and allowing everyday activity to shape the visit. A flexible itinerary leaves room to follow whatever catches the eye. That added context gives Chichicastenango Market lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sellers_in_Chichicastenango_Market.jpg",
@@ -8002,7 +8002,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Santa Ana Volcano",
-        description: "Santa Ana is El Salvador’s highest volcano, with a large summit crater containing a turquoise acidic lake. The guided hike crosses forest and exposed slopes before reaching views toward nearby volcanoes and lakes.",
+        description: "Hike to a turquoise crater lake at the summit",
         entityId: "attraction_SV_santa_ana_volcano",
         panelSummary: "Santa Ana Volcano provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         wikidataId: "Q1049338",
@@ -8011,7 +8011,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Joya de Cerén",
-        description: "Joya de Cerén is a Maya farming village buried by volcanic ash around AD 600. Excavated homes, kitchens, workshops, fields, and communal buildings preserve unusually detailed evidence of ordinary household life.",
+        description: "UNESCO “Pompeii of the Americas” Maya farming village",
         entityId: "attraction_SV_joya_de_ceren",
         panelSummary: "Joya de Cerén gives travelers an accessible entry point into the history or character of El Salvador, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Joya_de_Ceren_banner.jpg",
@@ -8024,7 +8024,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ruta de las Flores",
-        description: "Ruta de las Flores is a mountain route linking western El Salvador towns known for coffee farms, markets, murals, food festivals, waterfalls, and colonial architecture. The journey is valued more than any single stop.",
+        description: "Scenic mountain route of flower-filled villages",
         entityId: "attraction_SV_ruta_de_las_flores",
         panelSummary: "The strongest reason to visit Ruta de las Flores is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ruta_de_las_Flores_banner.jpg",
@@ -8099,7 +8099,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Copán Ruinas",
-        description: "Copán was a major Classic Maya capital known for exceptionally detailed sculpture and inscriptions. The acropolis, plazas, ball court, stelae, and Hieroglyphic Stairway document its rulers, religion, and political history.",
+        description: "Maya city renowned for intricate carved stelae",
         entityId: "attraction_HN_copan_ruinas",
         panelSummary: "Copán Ruinas offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Copán_Ruinas.jpg",
@@ -8113,7 +8113,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mesoamerican Reef",
-        description: "The Mesoamerican Barrier Reef stretches along Mexico, Belize, Guatemala, and Honduras. Diving and snorkeling reveal coral formations, whale sharks, turtles, rays, reef fish, and extensive marine habitats around the Bay Islands.",
+        description: "World-class diving off the Bay Islands",
         entityId: "attraction_HN_mesoamerican_reef",
         panelSummary: "Mesoamerican Reef gives swimmers or divers direct access to a distinctive ecosystem rather than presenting nature from a distant viewpoint. The sense of entering another environment makes the attraction memorable well beyond its visual beauty.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea_Star_and_Sea_Fan.jpg",
@@ -8123,7 +8123,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Pico Bonito",
-        description: "Pico Bonito National Park protects steep rainforest mountains rising behind Honduras’s Caribbean coast. Hiking, rafting, birdwatching, waterfalls, and wildlife viewing provide access to habitats ranging from lowland forest to cloud forest.",
+        description: "Lush national park of waterfalls and rainforest",
         entityId: "attraction_HN_pico_bonito",
         panelSummary: "Pico Bonito is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. Allowing time for more than the principal overlook makes the setting feel much larger.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pico-Bonito%20%2812122463094%29.jpg",
@@ -8201,7 +8201,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Masaya Volcano",
-        description: "Masaya Volcano is an active volcanic complex near Managua with accessible crater viewpoints. Visitors can observe smoke, lava activity when present, and a landscape shaped by repeated eruptions, though access changes with safety conditions.",
+        description: "Active crater glowing with a lava lake at night",
         entityId: "attraction_NI_masaya_volcano",
         panelSummary: "Masaya Volcano provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. Access and conditions can change, making current local guidance an important part of planning.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Masaya_volcano_crater_and_lava_glow,_2003._Nicaragua.jpg",
@@ -8212,7 +8212,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cerro Negro",
-        description: "Cerro Negro is a young, active cinder-cone volcano with black ash slopes near León. Visitors hike to the crater rim, examine recent lava fields, and descend the loose volcanic surface by board.",
+        description: "Young volcano famous for volcano boarding",
         entityId: "attraction_NI_cerro_negro",
         panelSummary: "Cerro Negro provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. Access and conditions can change, making current local guidance an important part of planning.",
         wikidataId: "Q607078",
@@ -8227,7 +8227,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Corn Islands",
-        description: "The Corn Islands are two Caribbean islands off Nicaragua with beaches, reefs, fishing communities, and limited development. Diving, snorkeling, swimming, and slower island life are the main reasons to visit.",
+        description: "Remote Caribbean islands with turquoise water",
         entityId: "attraction_NI_corn_islands",
         panelSummary: "Corn Islands offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q21054979",
@@ -8306,7 +8306,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Panama Canal",
-        description: "The Panama Canal uses locks, artificial lakes, and channels to move ships between the Atlantic and Pacific. Visitor centers overlooking lock operations explain its engineering, construction history, and continuing importance to global trade.",
+        description: "Engineering marvel linking the Atlantic and Pacific",
         entityId: "attraction_PA_panama_canal",
         panelSummary: "Panama Canal gives travelers an accessible entry point into the history or character of Panama, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q7350",
@@ -8321,7 +8321,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Casco Viejo",
-        description: "Casco Viejo is Panama City’s historic district, founded after the destruction of Panamá Viejo. Its plazas, churches, colonial buildings, waterfront walls, restaurants, and museums trace several centuries of urban history.",
+        description: "UNESCO-listed colonial quarter of plazas and cafés",
         entityId: "attraction_PA_casco_viejo",
         panelSummary: "The appeal of Casco Viejo lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Casco Viejo lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Calles_en_el_Casco_Viejo_de_la_Ciudad_de_Panamá.jpg",
@@ -8332,7 +8332,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Boquete",
-        description: "Boquete is a cool highland town in western Panama surrounded by coffee farms, cloud forest, rivers, and volcanic slopes. Visitors come for hiking, birdwatching, rafting, gardens, and tours of specialty coffee estates.",
+        description: "Cool highland town known for coffee and cloud forest",
         entityId: "attraction_PA_boquete",
         panelSummary: "Boquete offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q804144",
@@ -8411,7 +8411,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Red Square",
-        description: "Red Square is Moscow’s principal historic square, bordered by the Kremlin, Saint Basil’s Cathedral, Lenin’s Mausoleum, and GUM. Its architecture and monuments concentrate centuries of Russian political, religious, and commercial history.",
+        description: "Historic heart of Moscow beside the Kremlin",
         entityId: "attraction_RU_red_square",
         panelSummary: "The appeal of Red Square lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Red Square lasting appeal.",
         wikidataId: "Q41116",
@@ -8425,7 +8425,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Hermitage Museum",
-        description: "The Hermitage is a vast museum complex centered on Saint Petersburg’s former Winter Palace. Its collections include European paintings, classical antiquities, decorative arts, archaeology, and lavish imperial interiors.",
+        description: "Vast art collection in the Winter Palace",
         entityId: "attraction_RU_hermitage_museum",
         panelSummary: "Hermitage Museum offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. It particularly suits travelers who enjoy understanding why objects matter, not simply seeing them.",
         wikidataId: "Q132783",
@@ -8441,7 +8441,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Trans-Siberian Railway",
-        description: "The Trans-Siberian Railway crosses Russia from Moscow to Vladivostok over roughly 9,300 kilometers. Multi-day journeys connect major cities, forests, steppe, Lake Baikal, and remote settlements while functioning as regular public transport.",
+        description: "Epic rail journey spanning the country",
         entityId: "attraction_RU_trans_siberian_railway",
         panelSummary: "The appeal of Trans-Siberian Railway is experiential: visitors actively move through the setting and gain a perspective unavailable from conventional sightseeing. Preparation and an unhurried approach help travelers appreciate the experience more fully. That added context gives Trans-Siberian Railway lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Trans-Siberian%20railway.jpg",
@@ -8516,7 +8516,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Tivoli Gardens",
-        description: "Tivoli Gardens is a historic amusement park in central Copenhagen, opened in 1843. Rides, landscaped gardens, restaurants, concerts, theaters, seasonal decorations, and evening lighting combine recreation with preserved park traditions.",
+        description: "Historic amusement park in central Copenhagen",
         entityId: "attraction_DK_tivoli_gardens",
         panelSummary: "The appeal of Tivoli Gardens lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Tivoli Gardens lasting appeal.",
         wikidataId: "Q110289",
@@ -8533,7 +8533,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Nyhavn",
-        description: "Nyhavn is a 17th-century Copenhagen canal lined with brightly painted townhouses and historic wooden ships. Once a commercial harbor, it is now a pedestrian area of restaurants, cafés, and waterfront walks.",
+        description: "Iconic waterfront of colorful 17th-century houses",
         entityId: "attraction_DK_nyhavn",
         panelSummary: "Nyhavn gives travelers an accessible entry point into the history or character of Denmark, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nyhavn_facades_Copenhagen_Denmark.jpg",
@@ -8546,7 +8546,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "The Little Mermaid",
-        description: "The Little Mermaid is a small bronze statue on Copenhagen’s harbor, installed in 1913 and inspired by Hans Christian Andersen’s story. Its cultural fame exceeds its modest scale and simple waterfront setting.",
+        description: "Bronze statue inspired by Andersen’s fairy tale",
         entityId: "attraction_DK_the_little_mermaid",
         panelSummary: "The Little Mermaid gives travelers an accessible entry point into the history or character of Denmark, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q214619",
@@ -8625,7 +8625,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Grand-Place",
-        description: "Brussels’ Grand-Place is an enclosed square surrounded by ornate guildhalls, the Gothic Town Hall, and the King’s House. The unified architecture and detailed façades make it the city’s principal historic civic space.",
+        description: "Ornate UNESCO-listed central square in Brussels",
         entityId: "attraction_BE_grand_place",
         panelSummary: "The energy of Grand-Place comes from browsing, eating, observing, and allowing everyday activity to shape the visit. Spending time here provides a useful counterpoint to more formal landmarks and museums. That added context gives Grand-Place lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grand_Place_(Brussels)_-_IMG_3644.JPG",
@@ -8639,7 +8639,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Atomium",
-        description: "The Atomium is a 102-meter structure built for the 1958 Brussels World’s Fair, representing an iron crystal enlarged billions of times. Connected spheres contain exhibitions, escalators, and a panoramic upper-level restaurant.",
+        description: "Giant 1958 World’s Fair sculpture of iron crystal",
         entityId: "attraction_BE_atomium",
         panelSummary: "Atomium gives travelers an accessible entry point into the history or character of Belgium, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q180901",
@@ -8654,7 +8654,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Belfry of Bruges",
-        description: "The Belfry of Bruges is a medieval civic tower rising above the market square. Visitors climb 366 steps past the treasury and carillon mechanism to reach wide views over the historic city.",
+        description: "Medieval bell tower with sweeping city views",
         entityId: "attraction_BE_belfry_of_bruges",
         panelSummary: "Belfry of Bruges offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q12994",
@@ -8733,7 +8733,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Kaieteur Falls",
-        description: "Kaieteur Falls carries the Potaro River over a sandstone cliff in Guyana’s rainforest. Its 226-meter main drop, heavy water volume, remote setting, and nearby endemic wildlife distinguish it from more developed waterfall sites.",
+        description: "One of the world’s most powerful single-drop falls",
         entityId: "attraction_GY_kaieteur_falls",
         panelSummary: "Kaieteur Falls is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. Allowing time for more than the principal overlook makes the setting feel much larger.",
         wikidataId: "Q38120",
@@ -8748,7 +8748,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "St. George’s Cathedral",
-        description: "St. George’s Cathedral is a large timber Anglican church in central Georgetown, completed in the late 19th century. Its soaring wooden interior, Gothic details, stained glass, and colonial history are the primary features.",
+        description: "One of the tallest wooden churches on Earth",
         entityId: "attraction_GY_st_george_s_cathedral",
         panelSummary: "St. George’s Cathedral is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives St. George’s Cathedral lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/St._George's_Cathedral_-_Georgetown,_Guyana4.jpg",
@@ -8758,7 +8758,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Rupununi Savannah",
-        description: "The Rupununi is a remote region of savannas, wetlands, rivers, forests, ranches, and Indigenous communities in southwestern Guyana. Wildlife-focused lodges provide access to giant anteaters, otters, caimans, birds, and diverse freshwater ecosystems.",
+        description: "Sweeping grasslands of ranches and giant anteaters",
         entityId: "attraction_GY_rupununi_savannah",
         panelSummary: "Rupununi Savannah offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rupununi_Savannah.jpg",
@@ -8835,7 +8835,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Jesuit Ruins of Trinidad",
-        description: "La Santísima Trinidad de Paraná is an 18th-century Jesuit mission complex. Church ruins, residential quarters, workshops, plazas, carvings, and a surviving stone pulpit show how organized mission settlements functioned in colonial Paraguay.",
+        description: "UNESCO-listed 18th-century mission ruins",
         entityId: "attraction_PY_jesuit_ruins_of_trinidad",
         panelSummary: "Jesuit Ruins of Trinidad offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Paraguay_Jesuit_Banner.jpg",
@@ -8846,7 +8846,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Itaipú Dam",
-        description: "Itaipu is a massive hydroelectric dam on the Paraná River shared by Paraguay and Brazil. Tours emphasize its enormous generating capacity, spillway, reservoir, turbine halls, and importance to both countries’ electricity supplies.",
+        description: "One of the world’s largest hydroelectric dams",
         entityId: "attraction_PY_itaipu_dam",
         panelSummary: "The appeal of Itaipú Dam lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Itaipú Dam lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Itaipu_Dam,_aerial_photograph.jpg",
@@ -8857,7 +8857,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ybycuí National Park",
-        description: "Ybycuí National Park protects Atlantic Forest, streams, waterfalls, and wildlife in southern Paraguay. Trails also reach the remains and museum of La Rosada, a 19th-century iron foundry destroyed during the Paraguayan War.",
+        description: "Lush park of waterfalls and Atlantic forest",
         entityId: "attraction_PY_ybycui_national_park",
         panelSummary: "The power of Ybycuí National Park becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Ybycuí National Park lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Salto_2_del_Mbokarusu_-_panoramio_(3).jpg",
@@ -8932,7 +8932,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Historic Inner City",
-        description: "Paramaribo’s historic inner city preserves a distinctive mix of Dutch colonial planning and wooden tropical architecture. Notable buildings include Fort Zeelandia, the Presidential Palace, churches, a synagogue, government offices, and broad streets.",
+        description: "UNESCO World Heritage colonial center",
         entityId: "attraction_SR_historic_inner_city",
         panelSummary: "The appeal of Historic Inner City lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palmentuin%20Paramaribo-%20Suriname.jpg",
@@ -8943,7 +8943,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Brownsberg Nature Park",
-        description: "Brownsberg Nature Park occupies a rainforest plateau overlooking Brokopondo Reservoir. Hiking trails lead to waterfalls and viewpoints, with opportunities to see monkeys, birds, insects, and other Guianan forest wildlife.",
+        description: "Rainforest plateau overlooking a vast reservoir",
         entityId: "attraction_SR_brownsberg_nature_park",
         panelSummary: "Brownsberg Nature Park rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Leo_val_brownsberg.JPG",
@@ -8953,7 +8953,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Galibi Reserve",
-        description: "Galibi Nature Reserve protects Atlantic beaches used by leatherback and green sea turtles for nesting. Seasonal guided visits focus on nighttime nesting activity, coastal ecosystems, and nearby Indigenous Carib communities.",
+        description: "Coastal nesting ground for sea turtles",
         entityId: "attraction_SR_galibi_reserve",
         panelSummary: "The appeal of Galibi Reserve lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Galibi Reserve lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Galibi%2C%20Suriname%2003.jpg",
@@ -9026,7 +9026,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Zuma Rock",
-        description: "Zuma Rock is a prominent granite monolith rising sharply beside the highway north of Abuja. Its sheer face, distinctive natural markings, cultural associations, and visibility across the surrounding plain define the visit.",
+        description: "Massive monolith rising beside the capital",
         entityId: "attraction_NG_zuma_rock",
         panelSummary: "Zuma Rock offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/ZUMA_ROCK_Niger_State.png",
@@ -9036,7 +9036,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Yankari National Park",
-        description: "Yankari Game Reserve combines West African savanna wildlife with archaeological and recreational sites. Visitors seek elephants, antelope, baboons, birds, caves, and the naturally warm Wikki Spring.",
+        description: "Savannah reserve with elephants and warm springs",
         entityId: "attraction_NG_yankari_national_park",
         panelSummary: "The appeal of Yankari National Park lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. Spending time with the site’s details makes it more satisfying than a quick checklist stop. That added context gives Yankari National Park lasting appeal.",
         wikidataId: "Q1473112",
@@ -9050,7 +9050,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Olumo Rock",
-        description: "Olumo Rock is a granite outcrop that served as a refuge and defensive position for Egba people. Paths, stairs, caves, shrines, and summit viewpoints connect Abeokuta’s founding history with the landscape.",
+        description: "Historic fortress hill in Abeokuta",
         entityId: "attraction_NG_olumo_rock",
         panelSummary: "Walking through Olumo Rock reveals how defense, geography, and architecture were combined to control the surrounding landscape. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Olumo Rock lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Olumo_Rock,_Abeokuta.jpg",
@@ -9125,7 +9125,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Rock-Hewn Churches of Lalibela",
-        description: "Lalibela’s eleven medieval churches were carved directly from volcanic rock and linked by trenches and tunnels. Still used for Ethiopian Orthodox worship, they combine monumental engineering, pilgrimage, ritual, and distinctive cross-shaped architecture.",
+        description: "UNESCO-listed monolithic churches",
         entityId: "attraction_ET_rock_hewn_churches_of_lalibela",
         panelSummary: "Rock-Hewn Churches of Lalibela is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Rock-Hewn Churches of Lalibela lasting appeal.",
         wikidataId: "Q207590",
@@ -9140,7 +9140,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Simien Mountains",
-        description: "Simien Mountains National Park protects deep valleys, sheer escarpments, high plateaus, and peaks above 4,000 meters. Treks offer views of gelada monkeys, walia ibex, Ethiopian wolves, and dramatic highland geology.",
+        description: "Dramatic peaks home to gelada monkeys",
         entityId: "attraction_ET_simien_mountains",
         panelSummary: "The strongest reason to visit Simien Mountains is the chance to experience the surrounding environment at close range rather than from a distant overlook. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Simien_Mountains,_Ethiopia.jpg",
@@ -9153,7 +9153,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Danakil Depression",
-        description: "The Danakil Depression is an extremely hot, low-lying tectonic basin containing salt flats, lava fields, hydrothermal deposits, and active volcanoes. Guided expeditions visit landscapes around Dallol and Erta Ale under demanding conditions.",
+        description: "Otherworldly landscape of salt flats and sulphur",
         entityId: "attraction_ET_danakil_depression",
         panelSummary: "The appeal of Danakil Depression lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Danakil Depression lasting appeal.",
         wikidataId: "Q14213070",
@@ -9233,7 +9233,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Cape Coast Castle",
-        description: "Cape Coast Castle was a major European trading fort and departure point in the transatlantic slave trade. Tours examine dungeons, courtyards, battlements, the Door of No Return, and the site’s changing colonial ownership.",
+        description: "UNESCO site central to the transatlantic slave trade",
         entityId: "attraction_GH_cape_coast_castle",
         panelSummary: "Cape Coast Castle rewards exploration through ramparts, courtyards, gateways, and viewpoints that explain why the site held strategic importance. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cape_Coast_Slave_Castle.jpg",
@@ -9246,7 +9246,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kakum National Park",
-        description: "Kakum National Park protects tropical rainforest in southern Ghana. Its suspended canopy walkway provides elevated forest views, while guided trails interpret trees, insects, birds, monkeys, and the ecology of a threatened habitat.",
+        description: "Rainforest with a thrilling canopy walkway",
         entityId: "attraction_GH_kakum_national_park",
         panelSummary: "The strongest reason to visit Kakum National Park is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kakum_National_Park,_Ghana.jpg",
@@ -9259,7 +9259,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Lake Volta",
-        description: "Lake Volta is one of the world’s largest artificial reservoirs, created by the Akosombo Dam. Ferries, fishing communities, islands, lakeside landscapes, and hydroelectric infrastructure show its economic and geographic importance to Ghana.",
+        description: "One of the largest reservoirs in the world",
         entityId: "attraction_GH_lake_volta",
         panelSummary: "Lake Volta gives travelers an accessible entry point into the history or character of Ghana, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q201679",
@@ -9337,7 +9337,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Carthage",
-        description: "Carthage was a major Phoenician and later Roman city overlooking the Gulf of Tunis. Scattered sites include ports, baths, villas, temples, a theater, cemeteries, and museums documenting repeated destruction and rebuilding.",
+        description: "UNESCO ruins of the great ancient Mediterranean power",
         entityId: "attraction_TN_carthage",
         panelSummary: "Carthage makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. The most rewarding details are often the modest ones that make past life feel specific and human.",
         wikidataId: "Q6343",
@@ -9352,7 +9352,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "El Djem Amphitheatre",
-        description: "The Amphitheatre of El Jem is a large third-century Roman arena with unusually well-preserved outer walls, seating, corridors, and underground chambers. Visitors can explore how spectacles and crowd movement were organized.",
+        description: "Towering Roman colosseum in the desert",
         entityId: "attraction_TN_el_djem_amphitheatre",
         panelSummary: "El Djem Amphitheatre offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tunisie_El_Djem_amphitheatre_01.jpg",
@@ -9363,7 +9363,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Medina of Tunis",
-        description: "The Medina of Tunis is a dense historic quarter of souks, mosques, madrasas, palaces, and courtyard houses. Walking its narrow streets reveals Islamic urban design, traditional crafts, and architecture from several dynasties.",
+        description: "Labyrinthine UNESCO-listed old town",
         entityId: "attraction_TN_medina_of_tunis",
         panelSummary: "Medina of Tunis offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         wikidataId: "Q3572",
@@ -9442,7 +9442,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Gorée Island",
-        description: "Gorée is a small island off Dakar with colonial houses, forts, museums, and memorial sites connected to the Atlantic slave trade. Its compact streets also reflect French, Dutch, Portuguese, and British occupation.",
+        description: "Poignant UNESCO site of the slave trade",
         entityId: "attraction_SN_goree_island",
         panelSummary: "Gorée Island offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gorée_Island,_Senegal,_fort_and_harbor.jpg",
@@ -9452,7 +9452,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Lake Retba",
-        description: "Lake Retba is a shallow hypersaline lake near Dakar whose color can turn pink from salt-tolerant algae. Visitors also observe extensive salt harvesting, though rainfall and flooding can significantly change the lake’s appearance.",
+        description: "Famous pink lake colored by algae and salt",
         entityId: "attraction_SN_lake_retba",
         panelSummary: "Lake Retba rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/LacRose1.jpg",
@@ -9465,7 +9465,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Djoudj Bird Sanctuary",
-        description: "Djoudj National Bird Sanctuary protects wetlands in the Senegal River delta. Seasonal boat trips reveal enormous concentrations of pelicans, flamingos, cormorants, ducks, and other migratory birds using one of West Africa’s key stopovers.",
+        description: "Wetland haven for millions of migratory birds",
         entityId: "attraction_SN_djoudj_bird_sanctuary",
         panelSummary: "Djoudj Bird Sanctuary offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Djoudj_National_Park_027_(45718968175).jpg",
@@ -9540,7 +9540,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Etosha National Park",
-        description: "Etosha National Park centers on a vast salt pan surrounded by dry savanna and waterholes. Self-drive safaris provide strong opportunities to see elephants, lions, rhinos, giraffes, antelope, and large gatherings during dry months.",
+        description: "Salt-pan reserve teeming with desert wildlife",
         entityId: "attraction_NA_etosha_national_park",
         panelSummary: "Etosha National Park rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Game_Drive_at_Etosha_National_Park,_Namibia.jpg",
@@ -9553,7 +9553,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Deadvlei",
-        description: "Deadvlei is a white clay pan enclosed by some of the world’s highest red dunes. Dark, centuries-old camel-thorn trees remain standing because the dried basin prevents decomposition, creating a stark natural landscape.",
+        description: "Ghostly white clay pan dotted with ancient trees",
         entityId: "attraction_NA_deadvlei",
         panelSummary: "Deadvlei offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Dead_Vlei,_Sossusvlei,_Namibia,_2018-08-06,_DD_101-104_PAN.jpg",
@@ -9566,7 +9566,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Fish River Canyon",
-        description: "Fish River Canyon is a vast, deeply eroded gorge in southern Namibia. Roadside viewpoints show its layered geology, while the demanding multi-day canyon hike is available only seasonally and requires advance arrangements.",
+        description: "One of the largest canyons in the world",
         entityId: "attraction_NA_fish_river_canyon",
         panelSummary: "Fish River Canyon offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Fish_River_Canyon_from_Main_View_Point.jpg",
@@ -9643,7 +9643,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Okavango Delta",
-        description: "The Okavango Delta is an inland wetland where floodwater spreads across Botswana’s Kalahari sands. Mokoro trips, boats, walks, and game drives reveal channels, islands, elephants, hippos, predators, and abundant birdlife.",
+        description: "UNESCO wetland explored by traditional mokoro canoe",
         entityId: "attraction_BW_okavango_delta",
         panelSummary: "Okavango Delta rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q650872",
@@ -9657,7 +9657,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Makgadikgadi Pans",
-        description: "Makgadikgadi is a system of immense salt pans left by an ancient lake. Dry-season expanses become seasonal wetlands after rain, attracting flamingos, migrating zebras, wildebeest, and other wildlife to surrounding grasslands.",
+        description: "Vast salt flats that flood into a wildlife haven",
         entityId: "attraction_BW_makgadikgadi_pans",
         panelSummary: "Makgadikgadi Pans rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Salar_del_parque_nacional_Makgadikgadi_Pans,_Botsuana,_2018-07-30,_DD_37.jpg",
@@ -9672,7 +9672,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tsodilo Hills",
-        description: "Tsodilo is a group of desert hills containing thousands of rock paintings and long archaeological evidence of human occupation. Guided trails connect sacred landscapes, caves, shelters, and images created over many centuries.",
+        description: "Sacred site with thousands of ancient rock paintings",
         entityId: "attraction_BW_tsodilo_hills",
         panelSummary: "Exploring Tsodilo Hills reveals more than a single monument: the layout and remaining details help reconstruct an earlier world. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tsodilo_Hills,_Botswana.jpg",
@@ -9750,7 +9750,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bwindi Impenetrable Forest",
-        description: "Bwindi Impenetrable National Park protects dense mountain and lowland forest with exceptional biodiversity. Its principal visitor experience is permit-controlled trekking to habituated mountain gorilla families, alongside birding and forest walks.",
+        description: "World-renowned mountain gorilla trekking",
         entityId: "attraction_UG_bwindi_impenetrable_forest",
         panelSummary: "Bwindi Impenetrable Forest offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q500397",
@@ -9759,7 +9759,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Murchison Falls",
-        description: "Murchison Falls forces the Victoria Nile through a narrow rocky gap before dropping into the river below. Boat trips, viewpoints, and safaris combine the waterfall with elephants, giraffes, crocodiles, hippos, and other wildlife.",
+        description: "Powerful Nile waterfall and wildlife park",
         entityId: "attraction_UG_murchison_falls",
         panelSummary: "Murchison Falls is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Murchison Falls lasting appeal.",
         wikidataId: "Q495475",
@@ -9773,7 +9773,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Queen Elizabeth National Park",
-        description: "Queen Elizabeth National Park spans savanna, wetlands, lakes, forests, and volcanic crater fields in western Uganda. Game drives and Kazinga Channel cruises feature elephants, hippos, birds, and the Ishasha sector’s tree-climbing lions.",
+        description: "Savannah famed for tree-climbing lions",
         entityId: "attraction_UG_queen_elizabeth_national_park",
         panelSummary: "Queen Elizabeth National Park offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q530084",
@@ -9852,7 +9852,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Volcanoes National Park",
-        description: "Volcanoes National Park protects Rwanda’s forested Virunga volcanoes and endangered mountain gorillas. Permit-based treks also offer chances to see golden monkeys, visit Dian Fossey-related sites, and experience high-altitude bamboo forest.",
+        description: "Trek to see mountain gorillas in misty forest",
         entityId: "attraction_RW_volcanoes_national_park",
         panelSummary: "Volcanoes National Park rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Volcanoes%20National%20Park%20Rwanda.jpg",
@@ -9865,7 +9865,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kigali Genocide Memorial",
-        description: "The Kigali Genocide Memorial is a burial place and museum dedicated to victims of the 1994 genocide against the Tutsi. Exhibitions explain the causes, violence, aftermath, survivor experiences, and wider history of genocide.",
+        description: "Moving tribute to the 1994 genocide victims",
         entityId: "attraction_RW_kigali_genocide_memorial",
         panelSummary: "Kigali Genocide Memorial offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q3859",
@@ -9880,7 +9880,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Nyungwe Forest",
-        description: "Nyungwe Forest National Park protects one of Africa’s oldest montane rainforests. Chimpanzee tracking, primate encounters, birding, waterfalls, hiking trails, and a suspended canopy walkway are its main visitor experiences.",
+        description: "Ancient rainforest with a treetop canopy walk",
         entityId: "attraction_RW_nyungwe_forest",
         panelSummary: "Nyungwe Forest offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Monument%20of%20tree%20at%20Nyungwe%20forest.jpg",
@@ -9957,7 +9957,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Western Wall",
-        description: "The Western Wall is a surviving retaining wall of Jerusalem’s ancient Temple Mount and Judaism’s most accessible major prayer site. Visitors observe continuous worship, written prayers placed in cracks, and separate prayer areas.",
+        description: "Holiest accessible site in Judaism",
         entityId: "attraction_IL_western_wall",
         panelSummary: "The appeal of Western Wall lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Western Wall lasting appeal.",
         wikidataId: "Q134821",
@@ -9972,7 +9972,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Masada",
-        description: "Masada is a fortified plateau above the Dead Sea containing palaces, storehouses, baths, cisterns, and siege remains. The site is closely associated with the final resistance of Jewish rebels against Rome.",
+        description: "Clifftop fortress overlooking the Dead Sea",
         entityId: "attraction_IL_masada",
         panelSummary: "Walking through Masada reveals how defense, geography, and architecture were combined to control the surrounding landscape. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history. That added context gives Masada lasting appeal.",
         wikidataId: "Q186312",
@@ -9986,7 +9986,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Old City of Jerusalem",
-        description: "Jerusalem’s Old City contains major sacred sites for Judaism, Christianity, and Islam within medieval walls. Its four traditional quarters include the Western Wall, Church of the Holy Sepulchre, Temple Mount, markets, and historic streets.",
+        description: "UNESCO-listed maze of religious landmarks",
         entityId: "attraction_IL_old_city_of_jerusalem",
         panelSummary: "The appeal of Old City of Jerusalem lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Old City of Jerusalem lasting appeal.",
         wikidataId: "Q1218",
@@ -10065,7 +10065,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Petra",
-        description: "Petra was a Nabataean capital carved and built among sandstone mountains. The Siq opens to the Treasury, while tombs, temples, theaters, water systems, and extensive trails reveal a much larger ancient city.",
+        description: "New Wonder of the World and UNESCO treasure",
         entityId: "attraction_JO_petra",
         panelSummary: "Petra offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q5788",
@@ -10083,7 +10083,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Wadi Rum",
-        description: "Wadi Rum is a protected desert of sandstone mountains, arches, canyons, and broad valleys. Jeep tours, camel rides, hiking, climbing, Bedouin camps, rock inscriptions, and clear night skies shape the visitor experience.",
+        description: "Protected desert famed for stargazing and film shoots",
         entityId: "attraction_JO_wadi_rum",
         panelSummary: "Wadi Rum offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jordan,_Wadi_Rum_Desert,_Vast_Valleys_and_Rock_Formations.jpg",
@@ -10096,7 +10096,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Dead Sea",
-        description: "The Dead Sea is a hypersaline lake at Earth’s lowest exposed land elevation. Visitors float easily in dense water, use mineral-rich mud, view stark desert shores, and witness a rapidly shrinking environmental landmark.",
+        description: "Buoyant salt sea on Jordan’s western edge",
         entityId: "attraction_JO_dead_sea",
         panelSummary: "Dead Sea gives travelers an accessible entry point into the history or character of Jordan, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q23883",
@@ -10176,7 +10176,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Petronas Twin Towers",
-        description: "These 88-story Kuala Lumpur towers were the world’s tallest buildings from 1998 to 2004 and remain the tallest twin skyscrapers. Visitors can cross the skybridge and reach an observation deck above the city.",
+        description: "Iconic 88-story skyscrapers in KL",
         entityId: "attraction_MY_petronas_twin_towers",
         panelSummary: "Petronas Twin Towers offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q83063",
@@ -10191,7 +10191,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Batu Caves",
-        description: "Batu Caves combines a 400-million-year-old limestone cave system with one of Malaysia’s major Hindu shrines. A 272-step staircase passes the giant Murugan statue and leads to temples inside the main cavern.",
+        description: "Limestone cave temple with a giant golden statue",
         entityId: "attraction_MY_batu_caves",
         panelSummary: "At Batu Caves, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Batu Caves lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gombak_Selangor_Batu-Caves-01.jpg",
@@ -10204,7 +10204,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "George Town",
-        description: "George Town is Penang’s historic port city, shaped by Malay, Chinese, Indian, and European communities. Its UNESCO-listed center contains shophouses, clan houses, temples, mosques, colonial buildings, street art, and major food districts.",
+        description: "UNESCO-listed old town rich in murals and culture",
         entityId: "attraction_MY_george_town",
         panelSummary: "George Town offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         wikidataId: "Q61092",
@@ -10283,7 +10283,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Genghis Khan Statue",
-        description: "This 40-meter stainless-steel equestrian statue commemorates Genghis Khan near the site traditionally linked to his golden whip. Visitors can climb through the horse to a viewing platform overlooking the Mongolian steppe.",
+        description: "Colossal stainless-steel equestrian monument",
         entityId: "attraction_MN_genghis_khan_statue",
         panelSummary: "Genghis Khan Statue gives travelers an accessible entry point into the history or character of Mongolia, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Genghis_Khan_Equestrian_Statue.JPG",
@@ -10293,7 +10293,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Gorkhi-Terelj National Park",
-        description: "Gorkhi-Terelj protects granite formations, river valleys, forest, and open steppe near Ulaanbaatar. Visitors hike, ride horses, stay in ger camps, see Turtle Rock, and visit a Buddhist monastery.",
+        description: "Granite peaks and nomadic ger camps",
         entityId: "attraction_MN_gorkhi_terelj_national_park",
         panelSummary: "Gorkhi-Terelj National Park offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gorkhi-Terelj_National_Park.jpg",
@@ -10304,7 +10304,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Flaming Cliffs",
-        description: "The Flaming Cliffs are red sandstone formations in Mongolia’s Gobi Desert where major dinosaur fossils and the first scientifically recognized dinosaur eggs were discovered. The cliffs are especially striking when low sunlight deepens their color.",
+        description: "Red Gobi cliffs famous for dinosaur eggs",
         entityId: "attraction_MN_flaming_cliffs",
         panelSummary: "The strongest reason to visit Flaming Cliffs is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Flaming_Cliffs_of_the_Gobi_Desert.jpg",
@@ -10379,7 +10379,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bayterek Tower",
-        description: "Bayterek is an observation tower representing a Kazakh legend about the tree of life and a golden egg. Its elevated glass sphere provides broad views of Astana’s planned government district.",
+        description: "Landmark observation tower symbolizing Astana",
         entityId: "attraction_KZ_bayterek_tower",
         panelSummary: "The appeal of Bayterek Tower lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Bayterek Tower lasting appeal.",
         wikidataId: "Q1520",
@@ -10393,7 +10393,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Big Almaty Lake",
-        description: "Big Almaty Lake is a high-altitude reservoir in the Trans-Ili Alatau, valued for its turquoise water and mountain setting. It supplies drinking water, so shoreline access and recreational use are restricted.",
+        description: "Vivid turquoise alpine lake near Almaty",
         entityId: "attraction_KZ_big_almaty_lake",
         panelSummary: "Big Almaty Lake offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q35493",
@@ -10408,7 +10408,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kolsai Lakes",
-        description: "Kolsai Lakes National Park protects three mountain lakes, forests, meadows, and nearby Lake Kaindy in the Tian Shan. Hiking and horseback routes connect the lakes, with camping and guesthouses based around Saty village.",
+        description: "String of mountain lakes in the Tian Shan",
         entityId: "attraction_KZ_kolsai_lakes",
         panelSummary: "Kolsai Lakes offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kolsai_lakes.Mountains.jpg",
@@ -10483,7 +10483,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Registan Square",
-        description: "Registan is Samarkand’s monumental public square, framed by the Ulugh Beg, Sher-Dor, and Tilya-Kori madrasas. Their tiled façades, courtyards, domes, and former teaching spaces illustrate Timurid and later Islamic architecture.",
+        description: "Trio of grand madrasas in Samarkand",
         entityId: "attraction_UZ_registan_square",
         panelSummary: "Registan Square gives travelers an accessible entry point into the history or character of Uzbekistan, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q5753",
@@ -10498,7 +10498,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Itchan Kala",
-        description: "Itchan Kala is the walled inner city of Khiva, preserving mosques, madrasas, mausoleums, palaces, minarets, and traditional houses. Walking its compact streets gives a coherent view of a historic Central Asian caravan city.",
+        description: "UNESCO-listed inner town of Khiva",
         entityId: "attraction_UZ_itchan_kala",
         panelSummary: "Itchan Kala offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q486195",
@@ -10513,7 +10513,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Po-i-Kalyan",
-        description: "Po-i-Kalyan is Bukhara’s central religious complex, built around the 12th-century Kalyan Minaret. The adjoining mosque and Mir-i-Arab madrasa create a large tiled ensemble still connected to Islamic worship and education.",
+        description: "Bukhara’s towering minaret and mosque complex",
         entityId: "attraction_UZ_po_i_kalyan",
         panelSummary: "Po-i-Kalyan combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Po-i-Kalyan lasting appeal.",
         wikidataId: "Q5764",
@@ -10592,7 +10592,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Museum of Islamic Art",
-        description: "Doha’s Museum of Islamic Art presents manuscripts, ceramics, metalwork, textiles, jewelry, glass, and other objects spanning three continents and fourteen centuries. I. M. Pei’s waterfront building is part of the museum experience.",
+        description: "I. M. Pei landmark on the Doha waterfront",
         entityId: "attraction_QA_museum_of_islamic_art",
         panelSummary: "Museum of Islamic Art places significant works within a broader cultural story, helping visitors understand the people, ideas, and periods behind the collection. It particularly suits travelers who enjoy understanding why objects matter, not simply seeing them.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Foyer_of_Museum_of_Islamic_Art_-_Doha_-_Qatar_(34492873192).jpg",
@@ -10604,7 +10604,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Katara Cultural Village",
-        description: "Katara is a purpose-built cultural district containing theaters, galleries, performance spaces, mosques, restaurants, and a beach. Its program includes exhibitions, festivals, concerts, workshops, and events focused on Qatari and international culture.",
+        description: "Seaside hub of theaters, galleries, and mosques",
         entityId: "attraction_QA_katara_cultural_village",
         panelSummary: "Katara Cultural Village combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Katara Cultural Village lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Doha_Katara_Cultural_Village_Plaza_4.jpg",
@@ -10615,7 +10615,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Khor Al Adaid",
-        description: "Khor Al Adaid is a tidal inlet in southern Qatar where the sea penetrates deep into a desert of shifting dunes. Four-wheel-drive trips reveal unusual coastal geology, salt flats, wildlife, and isolated camps.",
+        description: "Rare “inland sea” where dunes meet the Gulf",
         entityId: "attraction_QA_khor_al_adaid",
         panelSummary: "Khor Al Adaid offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/010-QatarSharkDesert.jpg",
@@ -10690,7 +10690,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Sultan Qaboos Grand Mosque",
-        description: "Muscat’s principal mosque accommodates thousands of worshippers and is open to non-Muslim visitors at designated times. Its marble courtyards, large dome, carved decoration, chandelier, library, and handwoven prayer carpet are the main features.",
+        description: "Vast marble mosque with a colossal chandelier",
         entityId: "attraction_OM_sultan_qaboos_grand_mosque",
         panelSummary: "Sultan Qaboos Grand Mosque combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Sultan Qaboos Grand Mosque lasting appeal.",
         wikidataId: "Q1548443",
@@ -10705,7 +10705,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Wadi Shab",
-        description: "Wadi Shab is a narrow gorge in Oman’s eastern Hajar Mountains, reached by a short boat crossing and hike. The route passes palms, rock walls, freshwater pools, and a swimmable cave with a waterfall.",
+        description: "Turquoise pools and a hidden waterfall cave",
         entityId: "attraction_OM_wadi_shab",
         panelSummary: "Wadi Shab offers more than a single cascade view, rewarding visitors who follow the available paths and observe how the falls change by angle. Allowing time for more than the principal overlook makes the setting feel much larger.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wadi_Shab,_Oman_04.jpg",
@@ -10719,7 +10719,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Jebel Shams",
-        description: "Jebel Shams is Oman’s highest mountain, rising above the deep Wadi Ghul canyon. Viewpoints and the Balcony Walk provide access to exposed limestone scenery, abandoned villages, and cooler high-altitude conditions.",
+        description: "Oman’s highest peak above a dramatic canyon",
         entityId: "attraction_OM_jebel_shams",
         panelSummary: "Jebel Shams offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jebel_Shams,_Oman.jpg",
@@ -10796,7 +10796,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Tiger’s Nest Monastery",
-        description: "Paro Taktsang is a Buddhist monastery built on a cliff roughly 900 meters above the Paro Valley. The uphill pilgrimage passes forest, prayer flags, and viewpoints before reaching temples associated with Guru Rinpoche.",
+        description: "Iconic temple clinging to a sheer cliff",
         entityId: "attraction_BT_tiger_s_nest_monastery",
         panelSummary: "Tiger’s Nest Monastery is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Tiger’s Nest Monastery lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Tiger's_Nest_Monastery_Bhutan.jpg",
@@ -10807,7 +10807,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Punakha Dzong",
-        description: "Punakha Dzong is a 17th-century fortress-monastery at the confluence of two rivers. Its courtyards, temples, administrative rooms, painted woodwork, and continued religious and state functions make it central to Bhutanese history.",
+        description: "Grand fortress-monastery at a river confluence",
         entityId: "attraction_BT_punakha_dzong",
         panelSummary: "Punakha Dzong rewards exploration through ramparts, courtyards, gateways, and viewpoints that explain why the site held strategic importance. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history.",
         wikidataId: "Q587062",
@@ -10822,7 +10822,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Dochula Pass",
-        description: "Dochula is a 3,100-meter Himalayan pass between Thimphu and Punakha. Its 108 memorial chortens, temple, prayer flags, botanical park, and clear-weather views of Bhutan’s highest peaks justify the roadside stop.",
+        description: "Mountain pass lined with 108 memorial chortens",
         entityId: "attraction_BT_dochula_pass",
         panelSummary: "The strongest reason to visit Dochula Pass is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Dochu_La_Pass,_108_Druk_Wangyal_Chortens_(15818199106).jpg",
@@ -10896,7 +10896,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Matavai Bay",
-        description: "Matavai Bay is a black-sand bay on Tahiti’s north coast closely associated with early European contact. Wallis, Bougainville, Cook, Bligh, and missionary expeditions anchored here during the 18th century.",
+        description: "Black-sand bay where famed explorers once anchored",
         entityId: "attraction_PF_matavai_bay",
         panelSummary: "Matavai Bay gives travelers an accessible entry point into the history or character of Tahiti, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q803710",
@@ -10910,13 +10910,13 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Fautaua Waterfall",
-        description: "Fautaua Valley follows a steep river gorge inland from Papeete to one of Tahiti’s tallest waterfalls. The permitted hike passes tropical forest, archaeological remains, pools, and viewpoints along a historically important route.",
+        description: "Towering cascade reached by a lush valley hike",
         entityId: "attraction_PF_fautaua_waterfall",
         panelSummary: "The strongest reason to visit Fautaua Waterfall is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
       },
       {
         name: "Teahupoʻo",
-        description: "Teahupoʻo is a Tahitian village beside a reef break that produces exceptionally heavy, hollow waves over shallow coral. It is best experienced by skilled surfers or from authorized boats during major swells and competitions.",
+        description: "World-famous reef break with thunderous waves",
         entityId: "attraction_PF_teahupo_o",
         panelSummary: "Teahupoʻo offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. Conditions, season, and responsible guiding strongly influence the experience, so preparation matters. That added context gives Teahupoʻo lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Teahupo%C5%8Do_Surfing.jpg",
@@ -10991,7 +10991,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Hanifaru Bay",
-        description: "Hanifaru Bay is a protected feeding area in Baa Atoll where seasonal plankton concentrations attract large groups of manta rays and occasional whale sharks. Access is controlled, and snorkeling replaces scuba diving inside the bay.",
+        description: "Seasonal gathering spot for manta rays and whale sharks",
         entityId: "attraction_MV_hanifaru_bay",
         panelSummary: "Hanifaru Bay gives swimmers or divers direct access to a distinctive ecosystem rather than presenting nature from a distant viewpoint. Travelers who move slowly and observe carefully tend to notice far more than the headline species.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Reef%20Manta%20in%20the%20Maldives%2009347.jpg",
@@ -11001,7 +11001,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Overwater villas",
-        description: "Overwater villas are hotel rooms built on piles above calm lagoons, with direct water access and uninterrupted sea views. The design originated in French Polynesia and became especially associated with Maldivian island resorts.",
+        description: "Iconic stilted bungalows above turquoise lagoons",
         entityId: "attraction_MV_overwater_villas",
         panelSummary: "The strongest reason to visit Overwater villas is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Thulhagiri%20Bungalows%20Row.JPG",
@@ -11011,7 +11011,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Coral house reefs",
-        description: "Maldivian house reefs are coral ecosystems immediately surrounding resort or inhabited islands. Shore entry can provide snorkeling among reef fish, corals, turtles, rays, and drop-offs without requiring a separate boat excursion.",
+        description: "Vibrant reefs steps from the shoreline",
         entityId: "attraction_MV_coral_house_reefs",
         panelSummary: "Coral house reefs gives swimmers or divers direct access to a distinctive ecosystem rather than presenting nature from a distant viewpoint. Conditions, season, and responsible guiding strongly influence the experience, so preparation matters. That added context gives Coral house reefs lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Coral%20Reef%2C%20Indian%20Ocean.jpg",
@@ -11085,7 +11085,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "To Sua Ocean Trench",
-        description: "To Sua is a large coastal sinkhole on Upolu containing a tidal swimming pool connected to the ocean. Visitors descend a steep ladder to the water and can also explore the surrounding gardens and lava coastline.",
+        description: "Stunning swimming hole reached by a steep ladder",
         entityId: "attraction_WS_to_sua_ocean_trench",
         panelSummary: "The appeal of To Sua Ocean Trench lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives To Sua Ocean Trench lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/To_Sua_Ocean_Trench_-_Lotofaga_village_-_Samoa.jpg",
@@ -11095,7 +11095,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Alofaaga Blowholes",
-        description: "At Alofaaga, incoming waves force seawater through lava tubes and eject it high above the rocky coast. The strongest displays occur with larger swells, requiring visitors to remain behind safe viewing areas.",
+        description: "Lava tubes that jet seawater high into the air",
         entityId: "attraction_WS_alofaaga_blowholes",
         panelSummary: "Alofaaga Blowholes provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Alofa%27aga%20Blowholes%20-%20Savai%27i.jpg",
@@ -11105,7 +11105,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sopoaga Falls",
-        description: "Sopoaga Falls drops about 54 meters through dense vegetation on Upolu. A roadside garden and overlook provide the main view, with tropical plants and demonstrations of traditional Samoan uses of local vegetation.",
+        description: "Lush waterfall framed by tropical gardens",
         entityId: "attraction_WS_sopoaga_falls",
         panelSummary: "The power of Sopoaga Falls becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Sopoaga Falls lasting appeal.",
         wikidataId: "Q32022830",
@@ -11182,7 +11182,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mount Yasur",
-        description: "Mount Yasur is an active stratovolcano on Tanna known for frequent Strombolian eruptions. Guided vehicles and a short walk reach the crater rim, where visitors may see glowing lava and explosive bursts after dark.",
+        description: "One of the world’s most approachable active volcanoes",
         entityId: "attraction_VU_mount_yasur",
         panelSummary: "Mount Yasur turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. The experience is strongest when travelers understand both the beauty and volatility of the setting.",
         wikidataId: "Q392766",
@@ -11197,7 +11197,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Champagne Beach",
-        description: "Champagne Beach is a sheltered white-sand bay on Espiritu Santo. Its clear, shallow water supports swimming and snorkeling, while the name refers to bubbling effects sometimes produced by volcanic gases at low tide.",
+        description: "Powder-soft sand on a sheltered turquoise bay",
         entityId: "attraction_VU_champagne_beach",
         panelSummary: "The appeal of Champagne Beach lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Champagne Beach lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Champagne%20Beach.jpg",
@@ -11208,7 +11208,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "SS President Coolidge",
-        description: "The SS President Coolidge was a luxury liner converted to a troopship and sunk by mines in 1942. Now a major shore-accessible wreck dive, it contains military equipment, cargo holds, guns, and the ship’s preserved interior.",
+        description: "Famous shipwreck dive off Espiritu Santo",
         entityId: "attraction_VU_ss_president_coolidge",
         panelSummary: "SS President Coolidge offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q337524",
@@ -11286,7 +11286,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Shwedagon Pagoda",
-        description: "Shwedagon is Myanmar’s most important Buddhist pagoda, centered on a gilded stupa traditionally believed to contain relics of four Buddhas. Surrounding shrines, planetary posts, rituals, and offerings remain actively used.",
+        description: "Gilded stupa that glows over Yangon",
         entityId: "attraction_MM_shwedagon_pagoda",
         panelSummary: "The appeal of Shwedagon Pagoda lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. Spending time with the site’s details makes it more satisfying than a quick checklist stop. That added context gives Shwedagon Pagoda lasting appeal.",
         wikidataId: "Q464535",
@@ -11301,7 +11301,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bagan temples",
-        description: "Bagan was the capital of a medieval kingdom that built thousands of Buddhist temples, stupas, and monasteries across a dry plain. Surviving monuments contain murals, sculpture, inscriptions, and varied architectural forms from several centuries.",
+        description: "Sunrise vistas across a temple-strewn plain",
         entityId: "attraction_MM_bagan_temples",
         panelSummary: "Bagan temples combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Respectful visitors gain more by noticing how worship and heritage continue to share the same space. That added context gives Bagan temples lasting appeal.",
         wikidataId: "Q29317",
@@ -11316,7 +11316,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Golden Rock",
-        description: "Kyaiktiyo Pagoda is a small stupa built on a gold-leaf-covered boulder balanced near a mountain edge. The pilgrimage site is reached by truck and foot, with separate access rules near the sacred rock.",
+        description: "Gravity-defying boulder shrine at Mount Kyaiktiyo",
         entityId: "attraction_MM_golden_rock",
         panelSummary: "At Golden Rock, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Golden Rock lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Golden_Rock_Pagoda_at_sunset,_Kyaiktiyo,_Myanmar_-_ကျိုက်ထီးရိုးဘုရား,_မြန်မာ_(12707085874).jpg",
@@ -11391,7 +11391,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Kuang Si Falls",
-        description: "Kuang Si is a multi-tiered waterfall outside Luang Prabang, where mineral-rich water fills a sequence of turquoise forest pools. Trails lead between cascades, designated swimming areas, and a nearby bear rescue center.",
+        description: "Tiered turquoise pools cascading through forest",
         entityId: "attraction_LA_kuang_si_falls",
         panelSummary: "Kuang Si Falls offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q2584261",
@@ -11406,7 +11406,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Wat Xieng Thong",
-        description: "Wat Xieng Thong is a 16th-century Buddhist monastery in Luang Prabang. Its low sweeping roofs, gilded woodwork, mosaics, carved doors, chapels, and funerary carriage house exemplify northern Lao religious architecture.",
+        description: "Ornate golden monastery in Luang Prabang",
         entityId: "attraction_LA_wat_xieng_thong",
         panelSummary: "Wat Xieng Thong is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Wat Xieng Thong lasting appeal.",
         wikidataId: "Q190165",
@@ -11421,7 +11421,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Plain of Jars",
-        description: "The Plain of Jars consists of thousands of large stone vessels scattered across upland archaeological sites. Their original purpose remains uncertain, though burial evidence links them to Iron Age mortuary practices.",
+        description: "Mysterious fields of giant ancient stone vessels",
         entityId: "attraction_LA_plain_of_jars",
         panelSummary: "Plain of Jars offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         wikidataId: "Q870258",
@@ -11500,7 +11500,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Gergeti Trinity Church",
-        description: "Gergeti Trinity Church is a 14th-century Georgian Orthodox church above Stepantsminda, beneath Mount Kazbek. Visitors reach it by road or hike for the stone architecture, mountain setting, and continuing religious use.",
+        description: "Lone hilltop chapel below Mount Kazbek",
         entityId: "attraction_GE_gergeti_trinity_church",
         panelSummary: "At Gergeti Trinity Church, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Gergeti Trinity Church lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gergeti%20Trinity%20Church%2009.23.jpg",
@@ -11511,7 +11511,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Uplistsikhe",
-        description: "Uplistsikhe is an ancient rock-cut town above the Mtkvari River, occupied from the Iron Age through the Middle Ages. Caves, streets, halls, wine presses, tunnels, and churches show both pagan and Christian periods.",
+        description: "Ancient cave town carved into rock",
         entityId: "attraction_GE_uplistsikhe",
         panelSummary: "Uplistsikhe makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. The most rewarding details are often the modest ones that make past life feel specific and human.",
         wikidataId: "Q1351318",
@@ -11526,7 +11526,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Vardzia",
-        description: "Vardzia is a 12th-century cave monastery excavated across a cliff in as many as nineteen tiers. Passages, dwellings, water systems, chapels, and the frescoed Church of the Dormition reveal its former scale.",
+        description: "Sprawling medieval monastery hewn into a cliff",
         entityId: "attraction_GE_vardzia",
         panelSummary: "Vardzia combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Respectful visitors gain more by noticing how worship and heritage continue to share the same space. That added context gives Vardzia lasting appeal.",
         wikidataId: "Q691813",
@@ -11605,7 +11605,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bran Castle",
-        description: "Bran Castle is a medieval Transylvanian fortress later used as a royal residence. Its towers, narrow stairs, furnished rooms, defensive position, and museum collections matter more historically than its loose association with Dracula.",
+        description: "Cliffside fortress linked to the Dracula legend",
         entityId: "attraction_RO_bran_castle",
         panelSummary: "Walking through Bran Castle reveals how defense, geography, and architecture were combined to control the surrounding landscape. The site is most satisfying when visitors follow its full layout rather than stopping at a single viewpoint.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bran%20Castle%20Bran%20Romania%20%2822395202444%29.jpg",
@@ -11616,7 +11616,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Transfăgărășan",
-        description: "The Transfăgărășan crosses Romania’s Făgăraș Mountains through tunnels, viaducts, hairpin turns, and high passes. Seasonal driving provides access to Bâlea Lake and broad alpine views, but winter closure is common.",
+        description: "Spectacular alpine highway through the Carpathians",
         entityId: "attraction_RO_transfagarasan",
         panelSummary: "Transfăgărășan rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Transf%C4%83g%C4%83r%C4%83%C8%99an%20%2815470387225%29.jpg",
@@ -11626,7 +11626,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Painted Monasteries",
-        description: "The Churches of Moldavia are 15th- and 16th-century Orthodox monasteries noted for exterior frescoes covering entire façades. Biblical scenes, saints, sieges, and Last Judgment imagery remain visible in their original religious settings.",
+        description: "Frescoed UNESCO churches of Bucovina",
         entityId: "attraction_RO_painted_monasteries",
         panelSummary: "Painted Monasteries is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Dragomirna%20monastery%20sunset.jpg",
@@ -11701,7 +11701,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Belgrade Fortress",
-        description: "Belgrade Fortress occupies a strategic ridge above the Sava–Danube confluence. Roman, Byzantine, Ottoman, Austrian, and Serbian layers appear in gates, walls, towers, museums, churches, and the surrounding Kalemegdan park.",
+        description: "Ancient citadel above the river confluence",
         entityId: "attraction_RS_belgrade_fortress",
         panelSummary: "Belgrade Fortress turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Belgrade%20-%20Fortress.jpg",
@@ -11714,7 +11714,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Petrovaradin Fortress",
-        description: "Petrovaradin is a large 17th- and 18th-century fortress overlooking the Danube at Novi Sad. Its bastions, clock tower, underground galleries, museums, studios, river views, and EXIT Festival define its current use.",
+        description: "Star fort hosting the EXIT music festival",
         entityId: "attraction_RS_petrovaradin_fortress",
         panelSummary: "Petrovaradin Fortress turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Serbia-0327%20-%20Views%20form%20the%20Petrovaradin%20Fortress%20%287355249790%29.jpg",
@@ -11724,7 +11724,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Đavolja Varoš",
-        description: "Đavolja Varoš is a cluster of more than 200 narrow earth pillars capped by harder stone. Erosion continues to reshape the formations, while highly mineralized springs and local legends add context to the site.",
+        description: "Eerie field of natural rock “devil’s towers”",
         entityId: "attraction_RS_avolja_varos",
         panelSummary: "Đavolja Varoš gives travelers an accessible entry point into the history or character of Serbia, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/%C4%90avolja%20Varo%C5%A1%2C%20overview%20looking%20up%2C%20Serbia.jpg",
@@ -11799,7 +11799,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Postojna Cave",
-        description: "Postojna is a long karst cave system toured partly by underground train and partly on foot. Large chambers, stalactites, stalagmites, subterranean rivers, and the endemic olm make geology and cave biology equally important.",
+        description: "Vast karst cavern explored by underground train",
         entityId: "attraction_SI_postojna_cave",
         panelSummary: "Postojna Cave draws visitors into an underground landscape of chambers, mineral formations, reflected light, and surprising changes in scale. Moving slowly allows smaller formations and reflections to become as memorable as the main chamber. That added context gives Postojna Cave lasting appeal.",
         wikidataId: "Q15903",
@@ -11814,7 +11814,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Triglav National Park",
-        description: "Triglav National Park protects most of Slovenia’s Julian Alps, including Mount Triglav, glacial valleys, lakes, gorges, forests, and traditional settlements. Hiking, climbing, cycling, and river activities require attention to mountain conditions.",
+        description: "Julian Alps wilderness of peaks and gorges",
         entityId: "attraction_SI_triglav_national_park",
         panelSummary: "Triglav National Park offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Julian%20Alps%20-%20Triglav%20National%20Park%2C%20Slovenia%20%287451235888%29.jpg",
@@ -11826,7 +11826,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Predjama Castle",
-        description: "Predjama Castle is a Renaissance fortress built into a cave mouth beneath a cliff. Rooms, defensive passages, vertical shafts, and the connected cave system explain how its dramatic position supported concealment and resistance.",
+        description: "Dramatic fortress built into a cliff cave",
         entityId: "attraction_SI_predjama_castle",
         panelSummary: "Predjama Castle rewards exploration through ramparts, courtyards, gateways, and viewpoints that explain why the site held strategic importance. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Predjama%20castle%2C%20Slovenia.jpg",
@@ -11902,7 +11902,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Spiš Castle",
-        description: "Spiš Castle is one of Central Europe’s largest castle complexes, developed from the 12th century onward. Its walls, courtyards, palace remains, chapel, towers, and hilltop views illustrate changing medieval defensive architecture.",
+        description: "One of central Europe’s largest castle ruins",
         entityId: "attraction_SK_spis_castle",
         panelSummary: "Walking through Spiš Castle reveals how defense, geography, and architecture were combined to control the surrounding landscape. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Spiš Castle lasting appeal.",
         wikidataId: "Q205558",
@@ -11917,7 +11917,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Slovak Paradise",
-        description: "Slovak Paradise National Park is known for narrow limestone gorges equipped with ladders, chains, bridges, and metal steps. Trails follow waterfalls and streams, while plateaus and caves broaden the park’s hiking options.",
+        description: "National park of ladders, gorges, and waterfalls",
         entityId: "attraction_SK_slovak_paradise",
         panelSummary: "Slovak Paradise is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. Allowing time for more than the principal overlook makes the setting feel much larger.",
         wikidataId: "Q253514",
@@ -11932,7 +11932,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bojnice Castle",
-        description: "Bojnice Castle is a medieval fortress remodeled as a Romantic château in the 19th century. Tours cover furnished rooms, art collections, chapel, courtyards, underground cave, and the aristocratic Pálffy family’s redesign.",
+        description: "Romantic fairy-tale château and gardens",
         entityId: "attraction_SK_bojnice_castle",
         panelSummary: "Walking through Bojnice Castle reveals how defense, geography, and architecture were combined to control the surrounding landscape. The site is most satisfying when visitors follow its full layout rather than stopping at a single viewpoint.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bojnice%20Castle%20Slovakia.jpg",
@@ -12007,7 +12007,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Saint Sophia Cathedral",
-        description: "Saint Sophia Cathedral is an 11th-century Kyiv monument containing major Byzantine mosaics and frescoes. Its bell tower, galleries, burial sites, and monastic buildings document the political and religious center of medieval Kyivan Rus.",
+        description: "Millennium-old church with shimmering mosaics",
         entityId: "attraction_UA_saint_sophia_cathedral",
         panelSummary: "Saint Sophia Cathedral combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Saint Sophia Cathedral lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.Sophia%20Cathedral%2C%20Kyiv%2C%20Ukraine%20%285%29.jpg",
@@ -12017,7 +12017,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kyiv Pechersk Lavra",
-        description: "Kyiv Pechersk Lavra is an Orthodox monastic complex founded in the 11th century. Above-ground churches, museums, bell towers, and underground cave passages containing saints’ relics reflect centuries of pilgrimage and scholarship.",
+        description: "Cave monastery and spiritual landmark",
         entityId: "attraction_UA_kyiv_pechersk_lavra",
         panelSummary: "Kyiv Pechersk Lavra combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         wikidataId: "Q1899",
@@ -12032,7 +12032,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tunnel of Love",
-        description: "The Tunnel of Love is a working industrial railway bordered by dense trees that form a green arch over the tracks. Visitors photograph the corridor, but must remain alert because trains still use the line.",
+        description: "Leafy railway arch beloved by photographers",
         entityId: "attraction_UA_tunnel_of_love",
         panelSummary: "Tunnel of Love turns travel or activity into the attraction itself, allowing scenery and local character to unfold gradually rather than appearing all at once. Because visitors take part rather than simply observe, the memory tends to feel unusually personal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Green%20Mile%20Tunnel%20with%20train.jpg",
@@ -12108,7 +12108,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Avenue of the Baobabs",
-        description: "The Avenue of the Baobabs is an unpaved road lined by surviving Grandidier’s baobabs, some centuries old. Sunrise and sunset emphasize their scale, while nearby cleared farmland shows the loss of the original forest.",
+        description: "Iconic row of towering ancient baobab trees",
         entityId: "attraction_MG_avenue_of_the_baobabs",
         panelSummary: "Avenue of the Baobabs offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. The most rewarding details are often the modest ones that make past life feel specific and human.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Avenue%20of%20the%20baobabs%20at%20sunrise%20blue%20and%20gold%20madagascar.jpg",
@@ -12118,7 +12118,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tsingy de Bemaraha",
-        description: "Tsingy de Bemaraha protects a vast limestone karst landscape cut into sharp pinnacles, caves, canyons, and forests. Guided circuits use ladders, cables, bridges, and narrow passages while revealing endemic lemurs and other wildlife.",
+        description: "Razor-sharp limestone forest and UNESCO site",
         entityId: "attraction_MG_tsingy_de_bemaraha",
         panelSummary: "Tsingy de Bemaraha offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q1405154",
@@ -12133,7 +12133,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ranomafana",
-        description: "Ranomafana National Park protects humid rainforest across steep eastern Madagascar terrain. Guided hikes focus on lemurs, including the golden bamboo lemur, along with chameleons, frogs, birds, orchids, waterfalls, and dense vegetation.",
+        description: "Misty park rich with lemurs and orchids",
         entityId: "attraction_MG_ranomafana",
         panelSummary: "The appeal of Ranomafana lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Ranomafana lasting appeal.",
         wikidataId: "Q3419016",
@@ -12206,7 +12206,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bazaruto reefs",
-        description: "The Bazaruto Archipelago is a protected group of sandy islands and coral reefs off Mozambique. Diving and snorkeling may reveal reef fish, turtles, rays, whale sharks, and one of the region’s remaining dugong populations.",
+        description: "World-class diving with dugongs and manta rays",
         entityId: "attraction_MZ_bazaruto_reefs",
         panelSummary: "The appeal of Bazaruto reefs lies below the surface, where marine life and changing underwater scenery make each visit feel different. The sense of entering another environment makes the attraction memorable well beyond its visual beauty.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bazaruto%20Archipelago%20National%20Park%2C%20Mozambique.jpg",
@@ -12216,7 +12216,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ilha de Moçambique",
-        description: "Ilha de Moçambique was a Swahili trading center and later the capital of Portuguese East Africa. Fort São Sebastião, coral-stone houses, churches, mosques, colonial buildings, beaches, and inhabited neighborhoods reflect its layered history.",
+        description: "UNESCO island of coral-stone colonial heritage",
         entityId: "attraction_MZ_ilha_de_mocambique",
         panelSummary: "The strongest reason to visit Ilha de Moçambique is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Avenida%20Am%C3%ADlcar%20Cabral%2C%20Ilha%20de%20Mo%C3%A7ambique.jpg",
@@ -12229,7 +12229,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Gorongosa National Park",
-        description: "Gorongosa National Park combines floodplain, savanna, woodland, rivers, and mountain habitats. Wildlife populations are recovering through a major restoration program, making game drives, birding, and conservation work central to a visit.",
+        description: "Restored wilderness teeming with wildlife",
         entityId: "attraction_MZ_gorongosa_national_park",
         panelSummary: "The strongest reason to visit Gorongosa National Park is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mount%20Gorongosa%2C%20Gorongosa%20National%20Park%2C%20Mozambique%20%2846316615492%29.jpg",
@@ -12304,7 +12304,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Victoria Falls",
-        description: "Victoria Falls forms where the Zambezi River drops into a narrow basalt gorge along the Zambia–Zimbabwe border. Multiple viewpoints reveal its mile-wide curtain, heavy spray, rainbows, and dramatic seasonal changes in water volume.",
+        description: "Thundering mile-wide curtain of the Zambezi",
         entityId: "attraction_ZW_victoria_falls",
         panelSummary: "Victoria Falls offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q43278",
@@ -12319,7 +12319,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Great Zimbabwe",
-        description: "Great Zimbabwe was the capital of a wealthy medieval African state. The Hill Complex, Great Enclosure, stone walls, passageways, and archaeological finds demonstrate sophisticated local construction and extensive regional trade.",
+        description: "Majestic stone ruins of a medieval kingdom",
         entityId: "attraction_ZW_great_zimbabwe",
         panelSummary: "Great Zimbabwe offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Great%20Zimbabwe%20%28Great%20Enclosure%29.jpg",
@@ -12331,7 +12331,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mana Pools",
-        description: "Mana Pools protects Zambezi River floodplains, channels, woodland, and seasonal pools. Canoeing, guided walking, and game drives offer unusually close encounters with elephants, hippos, crocodiles, wild dogs, and other wildlife.",
+        description: "Wild Zambezi floodplain famed for walking safaris",
         entityId: "attraction_ZW_mana_pools",
         panelSummary: "The strongest reason to visit Mana Pools is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/ZmbziRvr.jpg",
@@ -12392,7 +12392,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Pig Beach (Big Major Cay)",
-        description: "Big Major Cay is an uninhabited Exuma island known for pigs that swim toward visiting boats. The encounter is recreational rather than a wildlife sanctuary, so responsible feeding and distance are important.",
+        description: "Uninhabited island where wild pigs paddle in clear water",
         entityId: "attraction_BS_pig_beach_big_major_cay",
         panelSummary: "The strongest reason to visit Pig Beach (Big Major Cay) is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vorobek%20Bahamas%20-%20swimming%20pigs.jpg",
@@ -12402,13 +12402,13 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Thunderball Grotto",
-        description: "Thunderball Grotto is a limestone sea cave near Staniel Cay, named after its appearance in a James Bond film. Snorkelers enter through submerged openings to see shafts of light and reef fish.",
+        description: "Snorkeling cave made famous by the James Bond film",
         entityId: "attraction_BS_thunderball_grotto",
         panelSummary: "The appeal of Thunderball Grotto lies below the surface, where marine life and changing underwater scenery make each visit feel different. Conditions, season, and responsible guiding strongly influence the experience, so preparation matters. That added context gives Thunderball Grotto lasting appeal.",
       },
       {
         name: "Blue Lagoon Island",
-        description: "Blue Lagoon Island is a privately operated island near Nassau with beaches, sheltered lagoon water, and day-trip facilities. Boat excursions typically combine swimming, snorkeling, water sports, and organized animal-interaction programs.",
+        description: "Day-trip beach island a short boat ride from Nassau",
         entityId: "attraction_BS_blue_lagoon_island",
         panelSummary: "Blue Lagoon Island offers a restorative coastal stop where the setting encourages travelers to slow down rather than rush between sights. Its strongest appeal is the unhurried rhythm it adds to a wider trip. That added context gives Blue Lagoon Island lasting appeal.",
         wikidataId: "Q2467",
@@ -12471,7 +12471,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Harrison’s Cave",
-        description: "Harrison’s Cave is an active limestone cavern containing streams, pools, waterfalls, stalactites, and stalagmites. Guided tram and walking routes enter large chambers and explain how flowing water continues to shape the cave.",
+        description: "Crystallized limestone cavern with underground streams",
         entityId: "attraction_BB_harrison_s_cave",
         panelSummary: "Inside Harrison’s Cave, geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. Moving slowly allows smaller formations and reflections to become as memorable as the main chamber. That added context gives Harrison’s Cave lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Harrisons%20Cave%20%286835262484%29.jpg",
@@ -12482,7 +12482,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Carlisle Bay",
-        description: "Carlisle Bay is a sheltered marine park beside Bridgetown with calm water and several shallow shipwrecks. Snorkel and dive trips commonly encounter turtles, rays, reef fish, anchors, cannons, and coral growth.",
+        description: "Turquoise bay with shipwreck snorkeling",
         entityId: "attraction_BB_carlisle_bay",
         panelSummary: "Carlisle Bay offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. Conditions, season, and responsible guiding strongly influence the experience, so preparation matters. That added context gives Carlisle Bay lasting appeal.",
         wikidataId: "Q2879612",
@@ -12497,7 +12497,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Animal Flower Cave",
-        description: "Animal Flower Cave occupies sea cliffs at Barbados’s northern tip. Steps descend into chambers with openings toward the Atlantic, wave-cut rock formations, sea anemones, and a natural pool usable only when conditions permit.",
+        description: "Sea cave with natural swimming pools on the north cliffs",
         entityId: "attraction_BB_animal_flower_cave",
         panelSummary: "Animal Flower Cave offers a distinctly physical encounter with geology, moving from confined passages into larger spaces shaped over immense periods. Moving slowly allows smaller formations and reflections to become as memorable as the main chamber.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Animal%20Flower%20Cave%2C%20Barbados%20%286940537217%29.jpg",
@@ -12560,7 +12560,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "The Pitons",
-        description: "Gros Piton and Petit Piton are steep volcanic plugs rising from Saint Lucia’s southwest coast. The UNESCO area includes forest, marine habitat, geothermal features, and a guided hiking route up the more accessible Gros Piton.",
+        description: "UNESCO-listed volcanic spires rising straight out of the sea",
         entityId: "attraction_LC_the_pitons",
         panelSummary: "The Pitons offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Pitons%2C%20Soufriere%20district%2C%20Saint%20Lucia.jpg",
@@ -12571,7 +12571,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sulphur Springs",
-        description: "Sulphur Springs lies within the collapsed Soufrière volcanic center, where hot pools, fumaroles, steam, and sulfur deposits remain active. Visitors view the geothermal field and use separate mineral mud-bathing facilities.",
+        description: "World’s only “drive-in volcano” with mud baths",
         entityId: "attraction_LC_sulphur_springs",
         panelSummary: "Sulphur Springs turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. Access and conditions can change, making current local guidance an important part of planning. That added context gives Sulphur Springs lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/17-04-07%20114%20Sulphur%20Springs%2C%20Saint%20Lucia.jpg",
@@ -12584,7 +12584,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Diamond Falls",
-        description: "Diamond Botanical Gardens surrounds a mineral-stained waterfall fed by volcanic springs near Soufrière. Paths pass tropical plants, historic estate features, old bathing pools, and the roughly 17-meter cascade, whose rock changes color with deposits.",
+        description: "Botanical gardens with mineral-stained waterfall",
         entityId: "attraction_LC_diamond_falls",
         panelSummary: "The power of Diamond Falls becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Diamond Falls lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Diamond%20Falls%2C%20Diamond%20Botanical%20Gardens%2C%20Soufriere%2C%20Saint%20Lucia.jpg",
@@ -12645,7 +12645,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Eagle Beach",
-        description: "Eagle Beach is a broad public beach with white sand, low-rise surroundings, and Aruba’s wind-shaped fofoti trees. It is used for swimming, water sports, sunset viewing, and seasonal sea-turtle nesting.",
+        description: "Wide white-sand beach with iconic Fofoti divi-divi trees",
         entityId: "attraction_AW_eagle_beach",
         panelSummary: "The experience at Eagle Beach comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Its strongest appeal is the unhurried rhythm it adds to a wider trip.",
         wikidataId: "Q5325023",
@@ -12660,7 +12660,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Natural Pool (Conchi)",
-        description: "Conchi is a saltwater tide pool enclosed by volcanic pillow-lava formations inside Arikok National Park. Reaching the remote east-coast site requires hiking, horseback travel, or suitable four-wheel-drive transport.",
+        description: "Hidden lava-rock pool inside Arikok National Park",
         entityId: "attraction_AW_natural_pool_conchi",
         panelSummary: "Natural Pool (Conchi) provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. The experience is strongest when travelers understand both the beauty and volatility of the setting.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Aruba-Natural-Pool-2013.JPG",
@@ -12672,7 +12672,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "California Lighthouse",
-        description: "The California Lighthouse stands on Aruba’s northwest tip near dunes and rocky coastline. Built after the wreck of the steamship California, it provides an elevated view across the island’s western shore.",
+        description: "Photo-perfect lookout at the northwestern tip",
         entityId: "attraction_AW_california_lighthouse",
         panelSummary: "California Lighthouse offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/California%20Lighthouse%20at%20sunset.jpg",
@@ -12732,7 +12732,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "El Yunque National Forest",
-        description: "El Yunque is the only tropical rainforest in the U.S. National Forest System. Roads and trails reach waterfalls, observation towers, rivers, dense vegetation, and habitats supporting Puerto Rican parrots, coquí frogs, and other species.",
+        description: "Only tropical rainforest in the U.S. National Forest System",
         entityId: "attraction_PR_el_yunque_national_forest",
         panelSummary: "El Yunque National Forest offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q2375961",
@@ -12747,7 +12747,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Castillo San Felipe del Morro",
-        description: "El Morro is a six-level Spanish fortress built to defend San Juan Bay. Visitors explore ramps, sentry boxes, batteries, tunnels, barracks, and open grounds overlooking the Atlantic and harbor entrance.",
+        description: "Six-level clifftop fortress guarding San Juan Bay",
         entityId: "attraction_PR_castillo_san_felipe_del_morro",
         panelSummary: "Castillo San Felipe del Morro turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss.",
         wikidataId: "Q550502",
@@ -12762,7 +12762,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mosquito Bay",
-        description: "Mosquito Bay on Vieques glows when dinoflagellates emit blue light after the water is disturbed. Protected mangroves and limited development support the phenomenon, which visitors observe on regulated nighttime kayak tours.",
+        description: "Brightest bioluminescent bay on Earth",
         entityId: "attraction_PR_mosquito_bay",
         panelSummary: "The appeal of Mosquito Bay lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Mosquito Bay lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mosquito%20bay%2C%20Bioluminescent%20bay%2C%20Vieques%20-%20panoramio.jpg",
@@ -12825,7 +12825,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Maracas Beach",
-        description: "Maracas Beach is a crescent-shaped bay on Trinidad’s north coast, reached by a mountainous scenic road. Swimming, shaded picnic areas, and local bake-and-shark food stalls are its primary attractions.",
+        description: "Palm-lined bay famous for shark-and-bake sandwiches",
         entityId: "attraction_TT_maracas_beach",
         panelSummary: "Maracas Beach offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Maracas%20beach%20panoramaTrinidad%2003%202012%20976.jpg",
@@ -12837,7 +12837,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Caroni Bird Sanctuary",
-        description: "Caroni Swamp is a mangrove wetland and protected bird habitat on Trinidad’s west coast. Guided boat trips follow channels to evening roosts where large flocks of scarlet ibis gather.",
+        description: "Boat tours to see scarlet ibis roost at sunset",
         entityId: "attraction_TT_caroni_bird_sanctuary",
         panelSummary: "Caroni Bird Sanctuary gives travelers an accessible entry point into the history or character of Trinidad and Tobago, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Caronipanchrisfitzpatrick.JPG",
@@ -12848,7 +12848,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Pigeon Point (Tobago)",
-        description: "Pigeon Point is a managed beach park on Tobago’s southwest coast, recognized by its thatched-roof jetty. Calm water, reef excursions, swimming, water sports, and boat trips to Buccoo Reef dominate the visit.",
+        description: "Postcard beach with a thatched jetty",
         entityId: "attraction_TT_pigeon_point_tobago",
         panelSummary: "The experience at Pigeon Point (Tobago) comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Exploring beyond the busiest access point often reveals the beach at its most atmospheric.",
         wikidataId: "Q185111",
@@ -12907,7 +12907,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Victoria Peak",
-        description: "Victoria Peak is Hong Kong Island’s highest prominent summit and its best-known city viewpoint. The Peak Tram, walking roads, commercial terraces, and overlooks provide changing perspectives over Victoria Harbour and dense urban districts.",
+        description: "Tram ride to a panorama of the world’s densest skyline",
         entityId: "attraction_HK_victoria_peak",
         panelSummary: "The appeal of Victoria Peak lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Victoria Peak lasting appeal.",
         wikidataId: "Q17541",
@@ -12922,7 +12922,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Star Ferry",
-        description: "The Star Ferry has carried passengers across Victoria Harbour since the late 19th century. The short crossing remains useful public transport while providing low-level views of Hong Kong Island, Kowloon, and the waterfront skyline.",
+        description: "Historic cross-harbor ferry for less than $1",
         entityId: "attraction_HK_star_ferry",
         panelSummary: "Star Ferry gives travelers an accessible entry point into the history or character of Hong Kong, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Star%20Ferry%20Hong%20Kong%20%28084945%29.jpg",
@@ -12934,7 +12934,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Temple Street Night Market",
-        description: "Temple Street becomes an evening market lined with stalls selling clothing, electronics, souvenirs, and household goods. Food vendors, mahjong rooms, Cantonese opera, and fortune tellers add to its neighborhood street life.",
+        description: "Neon-lit street of dim sum, fortune tellers, and stalls",
         entityId: "attraction_HK_temple_street_night_market",
         panelSummary: "Walking through Temple Street Night Market reveals how defense, geography, and architecture were combined to control the surrounding landscape. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Temple%20Street%20Night%20Market%20-%20Sarah%20Stierch.jpg",
@@ -12997,7 +12997,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Taipei 101",
-        description: "Taipei 101 is a 508-meter skyscraper designed in stacked segments resembling bamboo. Observation floors, high-speed elevators, city views, and the exposed tuned mass damper demonstrate both symbolism and earthquake-resistant engineering.",
+        description: "Bamboo-shaped tower with one of the world’s fastest elevators",
         entityId: "attraction_TW_taipei_101",
         panelSummary: "Taipei 101 offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tower%20of%20Taipei%20101%28cropped%29.jpg",
@@ -13010,7 +13010,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Shilin Night Market",
-        description: "Shilin is Taipei’s largest and best-known night market, spreading through streets and an indoor food area. Visitors come for Taiwanese snacks, clothing, games, small shops, and late-evening crowds.",
+        description: "Sprawling market of street food and games",
         entityId: "attraction_TW_shilin_night_market",
         panelSummary: "Shilin Night Market offers a street-level introduction to local life through food, commerce, architecture, and the steady movement of residents and visitors. Spending time here provides a useful counterpoint to more formal landmarks and museums.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Shilin_night_market_alley.jpg",
@@ -13022,7 +13022,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sun Moon Lake",
-        description: "Sun Moon Lake is Taiwan’s largest natural lake, surrounded by forested mountains and sites important to the Thao people. Ferries, cycling routes, temples, cable cars, and lakeside trails provide varied ways to explore.",
+        description: "Serene alpine lake ringed by cycling paths and pagodas",
         entityId: "attraction_TW_sun_moon_lake",
         panelSummary: "Sun Moon Lake rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q716206",
@@ -13087,7 +13087,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Blue Grotto",
-        description: "Malta’s Blue Grotto is a group of sea caves beneath coastal limestone arches. Morning boat trips enter the caverns, where sunlight reflected through clear water produces strong blue and turquoise effects.",
+        description: "Sea caves with electric-blue water on the southern coast",
         entityId: "attraction_MT_blue_grotto",
         panelSummary: "Inside Blue Grotto, geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. The visit provides a dramatic contrast to the landscape above ground. That added context gives Blue Grotto lasting appeal.",
         wikidataId: "Q882491",
@@ -13102,7 +13102,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ħal Saflieni Hypogeum",
-        description: "The Ħal Saflieni Hypogeum is a multi-level underground cemetery and ritual complex carved between roughly 4000 and 2500 BCE. Restricted tours reveal chambers, red ochre decoration, acoustic effects, and sophisticated prehistoric stonework.",
+        description: "UNESCO subterranean necropolis older than the pyramids",
         entityId: "attraction_MT_al_saflieni_hypogeum",
         panelSummary: "Ħal Saflieni Hypogeum gives travelers an accessible entry point into the history or character of Malta, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hal%20Saflieni%20Hypogeum%20%E2%80%93%20Middle%20Level%20%E2%80%93%20The%20Central%20Chamber.jpg",
@@ -13113,7 +13113,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ġgantija Temples",
-        description: "Ġgantija consists of two Neolithic temples on Gozo built from enormous limestone blocks. Curving chambers, altars, hearths, and surviving walls make the complex among the world’s oldest freestanding monumental structures.",
+        description: "Some of the oldest freestanding structures on Earth",
         entityId: "attraction_MT_ggantija_temples",
         panelSummary: "The appeal of Ġgantija Temples lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Ġgantija Temples lasting appeal.",
         wikidataId: "Q216862",
@@ -13179,7 +13179,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Tombs of the Kings",
-        description: "The Tombs of the Kings is a Hellenistic and Roman necropolis carved into rock near Paphos. Underground chambers, columned courtyards, stairways, and burial niches were created for wealthy officials rather than actual kings.",
+        description: "Hellenistic rock-cut necropolis outside Paphos",
         entityId: "attraction_CY_tombs_of_the_kings",
         panelSummary: "The appeal of Tombs of the Kings lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q1796353",
@@ -13194,7 +13194,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Troodos Mountains",
-        description: "The Troodos Mountains contain Cyprus’s highest peaks, pine forests, villages, ski slopes, and extensive hiking routes. Their UNESCO-listed Byzantine churches preserve exceptional medieval frescoes inside modest stone and timber buildings.",
+        description: "Painted Byzantine churches and pine-shaded hiking",
         entityId: "attraction_CY_troodos_mountains",
         panelSummary: "At Troodos Mountains, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Troodos Mountains lasting appeal.",
         wikidataId: "Q466628",
@@ -13209,7 +13209,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kyrenia (Girne)",
-        description: "Kyrenia is a historic harbor town on Cyprus’s north coast, dominated by a large castle. The fortress contains Byzantine, Lusignan, Venetian, and Ottoman elements plus a museum displaying an ancient shipwreck.",
+        description: "Northern harbor town with an ancient castle and shipwreck museum",
         entityId: "attraction_CY_kyrenia_girne",
         panelSummary: "Kyrenia (Girne) offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. A slower visit leaves room for unexpected discoveries beyond the headline pieces.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Girne-Kyrenia.jpg",
@@ -13269,7 +13269,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bock Casemates",
-        description: "The Bock is the rocky promontory where Luxembourg City’s first fortress developed. Its surviving casemates form a network of tunnels, chambers, gun positions, and openings overlooking the Alzette valley.",
+        description: "Kilometers of underground defensive tunnels",
         entityId: "attraction_LU_bock_casemates",
         panelSummary: "Inside Bock Casemates, geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. Moving slowly allows smaller formations and reflections to become as memorable as the main chamber. That added context gives Bock Casemates lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bock_casemates%2C_Luxembourg_-_panoramio_%283%29.jpg",
@@ -13282,7 +13282,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Grand Ducal Palace",
-        description: "The Grand Ducal Palace is the official city residence and working office of Luxembourg’s head of state. Its Renaissance façade, ceremonial rooms, guard post, and seasonal guided tours explain its governmental role.",
+        description: "Residence of the reigning grand duke",
         entityId: "attraction_LU_grand_ducal_palace",
         panelSummary: "Grand Ducal Palace offers a layered look at elite life, combining formal architecture with rooms, gardens, and details that make political history feel tangible. Visitors who explore beyond the principal rooms gain a fuller sense of how the complex functioned.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grand_Ducal_Palace_in_Luxembourg_City_07.jpg",
@@ -13293,7 +13293,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Echternach",
-        description: "Echternach is Luxembourg’s oldest town, centered on a Benedictine abbey and basilica. Medieval streets, Roman villa remains, nearby hiking, and the UNESCO-recognized Whit Tuesday dancing procession shape its identity.",
+        description: "Oldest town in Luxembourg with a UNESCO-listed dancing procession",
         entityId: "attraction_LU_echternach",
         panelSummary: "Echternach gives travelers an accessible entry point into the history or character of Luxembourg, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Echternach lasting appeal.",
         wikidataId: "Q204317",
@@ -13358,7 +13358,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Tallinn Old Town",
-        description: "Tallinn Old Town preserves an unusually complete medieval northern European city. Walls, towers, merchants’ houses, churches, guild halls, narrow streets, and the upper and lower towns reveal its Hanseatic history.",
+        description: "UNESCO-listed walled city with cobbled squares",
         entityId: "attraction_EE_tallinn_old_town",
         panelSummary: "Tallinn Old Town is most rewarding as a place to linger, with social life and small discoveries providing as much interest as its headline feature. Spending time here provides a useful counterpoint to more formal landmarks and museums.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tallinn_Old_Town_%288053657936%29.jpg",
@@ -13371,7 +13371,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Lahemaa National Park",
-        description: "Lahemaa protects Estonia’s northern coast, forests, bogs, villages, and manor estates across a large national park. Boardwalks, hiking trails, wildlife, rocky shores, and historic sites make it a varied day trip from Tallinn.",
+        description: "Bogs, manors, and forest coastline east of Tallinn",
         entityId: "attraction_EE_lahemaa_national_park",
         panelSummary: "Lahemaa National Park offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wooden_walkway_in_Lahemaa_National_Park%2C_Estonia.jpg",
@@ -13383,7 +13383,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "KGB Museum (Hotel Viru)",
-        description: "Hotel Viru’s former secret KGB floor preserves surveillance rooms, listening equipment, documents, and stories from Soviet-era Tallinn. Guided tours explain how foreign guests and hotel staff were monitored during the Cold War.",
+        description: "Preserved Soviet-era surveillance floor",
         entityId: "attraction_EE_kgb_museum_hotel_viru",
         panelSummary: "KGB Museum (Hotel Viru) offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. The building and quieter galleries contribute as much to the experience as the most recognizable exhibits.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sokos_Hotel_Viru_-_panoramio.jpg",
@@ -13443,7 +13443,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Riga Old Town",
-        description: "Vecrīga is Riga’s historic center, where medieval streets, churches, guild houses, fortification remnants, and later architecture sit within a compact UNESCO-listed district. Walking the area reveals the city’s commercial and religious past.",
+        description: "UNESCO ensemble of Hanseatic gables and Gothic spires",
         entityId: "attraction_LV_riga_old_town",
         panelSummary: "Riga Old Town offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Riga_Old_Town_Square.jpg",
@@ -13455,7 +13455,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Riga Central Market",
-        description: "Riga Central Market occupies five former Zeppelin hangars beside the old city. Its produce, meat, fish, dairy, prepared foods, and everyday local trade make it one of Europe’s largest and most distinctive markets.",
+        description: "Massive market in five converted zeppelin hangars",
         entityId: "attraction_LV_riga_central_market",
         panelSummary: "The energy of Riga Central Market comes from browsing, eating, observing, and allowing everyday activity to shape the visit. Spending time here provides a useful counterpoint to more formal landmarks and museums. That added context gives Riga Central Market lasting appeal.",
         wikidataId: "Q1773",
@@ -13469,7 +13469,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Gauja National Park",
-        description: "Gauja National Park follows Latvia’s longest river through sandstone cliffs, caves, forests, castles, and historic towns. Hiking, canoeing, cycling, and sites around Sigulda and Cēsis provide the main ways to explore.",
+        description: "Sandstone cliffs, castles, and canoe rivers",
         entityId: "attraction_LV_gauja_national_park",
         panelSummary: "Gauja National Park turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/View_of_Gauja_National_Park_from_R%C5%ABsi%C5%86%C5%A1_hill.jpg",
@@ -13530,7 +13530,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Trakai Island Castle",
-        description: "Trakai Island Castle is a reconstructed red-brick fortress on Lake Galvė, once a residence of Lithuania’s grand dukes. Courtyards, defensive towers, museum rooms, and boat views explain its strategic and ceremonial importance.",
+        description: "14th-century red-brick castle floating on a lake",
         entityId: "attraction_LT_trakai_island_castle",
         panelSummary: "Trakai Island Castle rewards exploration through ramparts, courtyards, gateways, and viewpoints that explain why the site held strategic importance. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Trakai_Island_Castle%2C_Lithuania_-_Diliff.jpg",
@@ -13542,7 +13542,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Hill of Crosses",
-        description: "The Hill of Crosses is a pilgrimage site covered with crosses, crucifixes, rosaries, and religious statues left over generations. Its repeated destruction under Soviet rule also made it a symbol of Lithuanian faith and resistance.",
+        description: "Over 100,000 crosses planted on a small hill near Šiauliai",
         entityId: "attraction_LT_hill_of_crosses",
         panelSummary: "Hill of Crosses offers a street-level introduction to local life through food, commerce, architecture, and the steady movement of residents and visitors. The experience is strongest when travelers treat the area as a living neighborhood rather than a checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hill%20of%20Crosses%201%2C%20Siauliai%2C%20Lithuania.JPG",
@@ -13553,7 +13553,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Vilnius Old Town",
-        description: "Vilnius Old Town contains one of Europe’s largest surviving medieval centers, with Gothic, Renaissance, Baroque, and neoclassical buildings. Churches, courtyards, university spaces, and winding streets reflect centuries of multicultural urban life.",
+        description: "UNESCO-listed baroque core with over 40 churches",
         entityId: "attraction_LT_vilnius_old_town",
         panelSummary: "At Vilnius Old Town, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Vilnius Old Town lasting appeal.",
         wikidataId: "Q216",
@@ -13620,7 +13620,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Rila Monastery",
-        description: "Rila Monastery is Bulgaria’s largest Orthodox monastery and a major pilgrimage site. Its fortified courtyard, striped arcades, church frescoes, woodcarving, museum, and mountain setting preserve important religious and national history.",
+        description: "UNESCO-listed mountain monastery with painted arcades",
         entityId: "attraction_BG_rila_monastery",
         panelSummary: "At Rila Monastery, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Rila Monastery lasting appeal.",
         wikidataId: "Q207945",
@@ -13635,7 +13635,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Seven Rila Lakes",
-        description: "Seven glacial lakes lie in a stepped alpine basin high in Bulgaria’s Rila Mountains. Hiking routes connect each lake, with broad ridge views and changing weather making the full circuit more rewarding than a single stop.",
+        description: "Glacial lakes strung across the Rila range",
         entityId: "attraction_BG_seven_rila_lakes",
         panelSummary: "Seven Rila Lakes offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rila_7_lakes_circus_panorama_edit1.jpg",
@@ -13645,7 +13645,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ancient Nesebar",
-        description: "Nesebar occupies a rocky Black Sea peninsula with ancient walls, medieval churches, timber houses, and narrow streets. Greek, Byzantine, Bulgarian, and Ottoman layers make the compact old town especially rich in architectural history.",
+        description: "Cobblestone Black Sea peninsula packed with Byzantine churches",
         entityId: "attraction_BG_ancient_nesebar",
         panelSummary: "At Ancient Nesebar, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nessebar_general_view.jpg",
@@ -13706,7 +13706,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Butrint National Park",
-        description: "Butrint preserves a settlement occupied by Greeks, Romans, Byzantines, Venetians, and Ottomans beside a lagoon. Visitors walk among a theater, baptistery, basilica, walls, gates, and museum within a protected wetland landscape.",
+        description: "Layered Greek, Roman, and Venetian ruins by a lagoon",
         entityId: "attraction_AL_butrint_national_park",
         panelSummary: "Butrint National Park offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. The most rewarding details are often the modest ones that make past life feel specific and human.",
         wikidataId: "Q975250",
@@ -13723,7 +13723,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Blue Eye Spring (Syri i Kaltër)",
-        description: "The Blue Eye is a deep karst spring whose clear water rises through a dark central pool, creating vivid blue and turquoise colors. Forest paths and viewing platforms provide access, though swimming is restricted.",
+        description: "Deep karst spring in electric blues",
         entityId: "attraction_AL_blue_eye_spring_syri_i_kalter",
         panelSummary: "Blue Eye Spring (Syri i Kaltër) offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Syri_i_kalt%C3%ABr_%28Blue_Eye_Spring%29.jpg",
@@ -13734,7 +13734,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Gjirokastër",
-        description: "Gjirokastër is a steep Ottoman-era town of stone-roofed houses beneath a large hilltop castle. Cobbled streets, fortified homes, museums, and panoramic views show how domestic architecture adapted to mountainous terrain.",
+        description: "Stone-roofed Ottoman town under a hilltop castle",
         entityId: "attraction_AL_gjirokaster",
         panelSummary: "Gjirokastër turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Gjirokastër lasting appeal.",
         wikidataId: "Q173690",
@@ -13799,7 +13799,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bay of Kotor",
-        description: "The Bay of Kotor is a winding Adriatic bay enclosed by steep mountains and historic towns. Kotor’s walls, Perast’s waterfront, churches, boat trips, and mountain viewpoints make the landscape and settlement equally important.",
+        description: "Serpentine bay called Europe’s southernmost fjord",
         entityId: "attraction_ME_bay_of_kotor",
         panelSummary: "The strongest reason to visit Bay of Kotor is the chance to experience the surrounding environment at close range rather than from a distant overlook. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bay_of_Kotor_from_Perast.jpg",
@@ -13812,7 +13812,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sveti Stefan",
-        description: "Sveti Stefan is a fortified islet village converted into a luxury resort and linked to the mainland by a narrow causeway. Public viewpoints and nearby beaches provide the main experience when the island itself is closed.",
+        description: "Iconic islet resort connected by a slender causeway",
         entityId: "attraction_ME_sveti_stefan",
         panelSummary: "The appeal of Sveti Stefan lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Sveti Stefan lasting appeal.",
         wikidataId: "Q844192",
@@ -13827,7 +13827,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tara River Canyon",
-        description: "Tara River Canyon cuts through Durmitor National Park and ranks among Europe’s deepest gorges. Rafting, the Đurđevića Tara Bridge, forested cliffs, and clear water define the visit.",
+        description: "Second-deepest canyon in the world; rafting and zip-lines",
         entityId: "attraction_ME_tara_river_canyon",
         panelSummary: "The strongest reason to visit Tara River Canyon is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tara%20River%20Canyon%203.jpg",
@@ -13886,7 +13886,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Stari Most (Old Bridge)",
-        description: "Stari Most is a reconstructed 16th-century Ottoman bridge arching over the Neretva in Mostar. Its engineering, surrounding old town, and long tradition of bridge diving make it both a civic symbol and active public space.",
+        description: "UNESCO 16th-century bridge — famous for cliff divers",
         entityId: "attraction_BA_stari_most_old_bridge",
         panelSummary: "The strongest reason to visit Stari Most (Old Bridge) is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stari_Most_viewed_from_North.jpg",
@@ -13897,7 +13897,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Baščaršija",
-        description: "Baščaršija is Sarajevo’s Ottoman-era commercial quarter, centered on narrow lanes, small shops, mosques, courtyards, cafés, and craft workshops. Coppersmiths, bakeries, and traditional food keep the district connected to everyday city life.",
+        description: "Sarajevo’s Ottoman bazaar of coppersmiths and čevapi grills",
         entityId: "attraction_BA_bascarsija",
         panelSummary: "Baščaršija is most rewarding as a place to linger, with social life and small discoveries providing as much interest as its headline feature. A flexible itinerary leaves room to follow whatever catches the eye. That added context gives Baščaršija lasting appeal.",
         wikidataId: "Q11194",
@@ -13911,7 +13911,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kravice Waterfalls",
-        description: "Kravica is a broad semicircle of waterfalls on the Trebižat River, surrounded by vegetation and natural pools. Paths, viewpoints, swimming areas, and seasonal water levels shape the experience.",
+        description: "Fan-shaped falls perfect for a summer swim",
         entityId: "attraction_BA_kravice_waterfalls",
         panelSummary: "Kravice Waterfalls offers more than a single cascade view, rewarding visitors who follow the available paths and observe how the falls change by angle. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Kravice Waterfalls lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kravice_Waterfalls%2C_Ljubu%C5%A1ki%2C_Bosnia-Hercegovina%2C_2013.jpg",
@@ -13973,7 +13973,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Le Morne Brabant",
-        description: "Le Morne Brabant is a basalt mountain on Mauritius’s southwest peninsula, linked to the history and memory of escaped slaves. Hiking combines broad lagoon views with the site’s importance as a UNESCO cultural landscape.",
+        description: "UNESCO peninsula with a hike commemorating escaped slaves",
         entityId: "attraction_MU_le_morne_brabant",
         panelSummary: "The appeal of Le Morne Brabant is experiential: visitors actively move through the setting and gain a perspective unavailable from conventional sightseeing. Because visitors take part rather than simply observe, the memory tends to feel unusually personal.",
         wikidataId: "Q1129992",
@@ -13988,7 +13988,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Black River Gorges NP",
-        description: "Black River Gorges protects Mauritius’s largest remaining native forest. More than 60 kilometers of trails lead through gorges, viewpoints, waterfalls, and habitats for endemic birds including the pink pigeon and Mauritius kestrel.",
+        description: "Endemic forest home to the pink pigeon and Mauritius kestrel",
         entityId: "attraction_MU_black_river_gorges_np",
         panelSummary: "Black River Gorges NP rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20River%20Gorges%20National%20Park%2C%20Mauritius.jpg",
@@ -13999,7 +13999,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Île aux Cerfs",
-        description: "Île aux Cerfs is a small lagoon island off Mauritius known for beaches, shallow turquoise water, water sports, and golf. Boat transfers make it an easy day trip, though much of the setting is commercially developed.",
+        description: "Turquoise-lagoon islet reachable by speedboat",
         entityId: "attraction_MU_ile_aux_cerfs",
         panelSummary: "Île aux Cerfs rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q292217",
@@ -14065,7 +14065,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Anse Source d’Argent",
-        description: "Anse Source d’Argent is a shallow beach on La Digue framed by sculpted granite boulders. Clear water, reef-protected swimming, changing tides, and access through L’Union Estate define its distinctive landscape.",
+        description: "Photograph-perfect beach framed by pink granite",
         entityId: "attraction_SC_anse_source_d_argent",
         panelSummary: "The experience at Anse Source d’Argent comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Exploring beyond the busiest access point often reveals the beach at its most atmospheric.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Anse_Source_d%27Argent_La_Digue_%284%29.jpg",
@@ -14076,7 +14076,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Vallée de Mai",
-        description: "Vallée de Mai protects an unusually intact palm forest on Praslin, including the endemic coco de mer. Shaded trails reveal giant leaves, rare birds, and a dense ecosystem often described as prehistoric.",
+        description: "UNESCO palm forest that inspired Gordon’s “Garden of Eden” claim",
         entityId: "attraction_SC_vallee_de_mai",
         panelSummary: "Vallée de Mai rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q573558",
@@ -14085,7 +14085,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Aldabra Atoll",
-        description: "Aldabra is a remote raised coral atoll with one of the world’s largest populations of giant tortoises. Its lagoons, mangroves, seabirds, turtles, and limited human presence make conservation, not conventional sightseeing, its defining feature.",
+        description: "UNESCO atoll with 100,000+ giant tortoises",
         entityId: "attraction_SC_aldabra_atoll",
         panelSummary: "The appeal of Aldabra Atoll lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Aldabra Atoll lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Aldabra%20Atoll%20%2832808379840%29.jpg",
@@ -14145,7 +14145,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Victoria Falls",
-        description: "Victoria Falls spans the Zambia–Zimbabwe border where the Zambezi drops into a narrow basalt gorge. Multiple viewpoints, heavy spray, seasonal flow changes, and nearby trails reveal the scale of the waterfall.",
+        description: "Mile-wide UNESCO waterfall — “the smoke that thunders”",
         entityId: "attraction_ZM_victoria_falls",
         panelSummary: "The power of Victoria Falls becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. Allowing time for more than the principal overlook makes the setting feel much larger.",
         wikidataId: "Q1323548",
@@ -14160,7 +14160,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Devil’s Pool",
-        description: "Devil’s Pool is a seasonal rock pool beside the lip of Victoria Falls, reached from Zambia under guided conditions. Low water makes the experience possible; access closes when river levels become unsafe.",
+        description: "Natural infinity pool at the edge of the falls (Sep–Dec)",
         entityId: "attraction_ZM_devil_s_pool",
         panelSummary: "The power of Devil’s Pool becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Devil’s Pool lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tourists%20swimming%20at%20Victoria%20Falls.jpg",
@@ -14170,7 +14170,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kafue National Park",
-        description: "Kafue is one of Africa’s largest national parks, covering rivers, woodland, grassland, and the Busanga Plains. Safaris focus on lions, leopards, antelope, elephants, and birdlife across a relatively uncrowded landscape.",
+        description: "One of Africa’s largest parks, home to the Busanga floodplains",
         entityId: "attraction_ZM_kafue_national_park",
         panelSummary: "Kafue National Park offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Main%20Road%20Kafue%20National%20Park%20Zambia%20Jul23%20A7C%2005400.jpg",
@@ -14231,7 +14231,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Cape Maclear",
-        description: "Cape Maclear is a lakeside village within Lake Malawi National Park. Beaches, kayaking, boat trips, island excursions, and snorkeling among colorful endemic cichlid fish are the main reasons to visit.",
+        description: "Beach village on Lake Malawi with snorkelling among cichlids",
         entityId: "attraction_MW_cape_maclear",
         panelSummary: "Cape Maclear offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. Travelers who move slowly and observe carefully tend to notice far more than the headline species.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lake%20Malawi%20-%20Cape%20Maclear%20-%20Thumbi%20Island%20Sunset.jpg",
@@ -14244,7 +14244,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Majete Wildlife Reserve",
-        description: "Majete is a restored wildlife reserve where elephants, rhinos, lions, leopards, and buffalo were reintroduced after major conservation work. Game drives, boat trips, and walking safaris show the reserve’s ecological recovery.",
+        description: "Big Five reserve revived by African Parks",
         entityId: "attraction_MW_majete_wildlife_reserve",
         panelSummary: "The appeal of Majete Wildlife Reserve lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. Spending time with the site’s details makes it more satisfying than a quick checklist stop. That added context gives Majete Wildlife Reserve lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephant%20at%20Majete%20wildlife%20reserve.jpg",
@@ -14255,7 +14255,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Zomba Plateau",
-        description: "Zomba Plateau rises above southern Malawi with pine forest, streams, waterfalls, and broad escarpment viewpoints. Hiking, horseback riding, and scenic drives provide cooler conditions and a sharp contrast to the lowlands.",
+        description: "Cool highland plateau with forest walks and viewpoints",
         entityId: "attraction_MW_zomba_plateau",
         panelSummary: "Zomba Plateau rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q8073720",
@@ -14320,7 +14320,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Basilica of Our Lady of Peace",
-        description: "The Basilica of Our Lady of Peace is a monumental Roman Catholic church in Yamoussoukro, modeled partly on St. Peter’s Basilica. Its vast dome, stained glass, colonnades, and enormous interior define the visit.",
+        description: "One of the largest churches in the world",
         entityId: "attraction_CI_basilica_of_our_lady_of_peace",
         panelSummary: "Basilica of Our Lady of Peace combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Yakro%20basilique05.jpg",
@@ -14330,7 +14330,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Taï National Park",
-        description: "Taï protects one of West Africa’s largest remaining primary rainforests. Guided visits may reveal chimpanzees, monkeys, forest elephants, pygmy hippos, and exceptional plant diversity, though access is remote and conservation-focused.",
+        description: "UNESCO rainforest with chimpanzees and pygmy hippos",
         entityId: "attraction_CI_tai_national_park",
         panelSummary: "Taï National Park offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q328577",
@@ -14345,7 +14345,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Comoé National Park",
-        description: "Comoé National Park spans savanna, woodland, river, and gallery forest in northeastern Côte d’Ivoire. Its size and ecological variety support elephants, antelope, primates, birds, and other wildlife across a largely undeveloped reserve.",
+        description: "Vast UNESCO savanna reserve in the north",
         entityId: "attraction_CI_comoe_national_park",
         panelSummary: "The appeal of Comoé National Park lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Comoé National Park lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Como%C3%A9%20national%20park%20on%20the%20wayto%20Gaoui.jpg",
@@ -14405,7 +14405,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Waza National Park",
-        description: "Waza National Park is a Sahelian savanna reserve in northern Cameroon. Dry-season drives concentrate wildlife around water sources, offering chances to see elephants, giraffes, antelope, lions, and large numbers of birds.",
+        description: "Savanna park with elephants, giraffes, and lions",
         entityId: "attraction_CM_waza_national_park",
         panelSummary: "The appeal of Waza National Park lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q1751924",
@@ -14420,7 +14420,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kribi Beaches",
-        description: "Kribi is a Gulf of Guinea beach town with long Atlantic beaches, fishing activity, and nearby Lobé Falls, where the river drops directly toward the sea. Seafood and coastal scenery are the main draws.",
+        description: "White-sand Atlantic coast with the Chutes de la Lobé waterfalls",
         entityId: "attraction_CM_kribi_beaches",
         panelSummary: "Kribi Beaches is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kribi%20Beach.jpg",
@@ -14431,7 +14431,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Dja Faunal Reserve",
-        description: "Dja Faunal Reserve protects a large tract of Congo Basin rainforest encircled by the Dja River. Biodiversity includes gorillas, chimpanzees, forest elephants, monkeys, and numerous bird species, though tourism infrastructure is limited.",
+        description: "UNESCO rainforest home to gorillas and forest elephants",
         entityId: "attraction_CM_dja_faunal_reserve",
         panelSummary: "The strongest reason to visit Dja Faunal Reserve is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q843147",
@@ -14495,7 +14495,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Kalandula Falls",
-        description: "Kalandula Falls forms a wide horseshoe where the Lucala River drops over a high escarpment. Upper and lower viewpoints reveal separate cascades, heavy spray, and a surrounding rural landscape that changes with seasonal flow.",
+        description: "One of Africa’s largest waterfalls by volume",
         entityId: "attraction_AO_kalandula_falls",
         panelSummary: "Kalandula Falls is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Kalandula Falls lasting appeal.",
         wikidataId: "Q940305",
@@ -14510,7 +14510,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Miradouro da Lua",
-        description: "Miradouro da Lua is an eroded coastal escarpment south of Luanda, shaped into sharp ridges and gullies of red, white, and ochre sediment. Roadside viewpoints emphasize its unusual, moonlike geology.",
+        description: "“Moon viewpoint” of eroded lunar-like cliffs",
         entityId: "attraction_AO_miradouro_da_lua",
         panelSummary: "Miradouro da Lua offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Miradouro%20da%20Lua%20%28Angola%29.jpg",
@@ -14523,7 +14523,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Namibe Desert",
-        description: "The Namib is an ancient coastal desert extending through Angola, Namibia, and South Africa. Towering dunes, fog-fed ecosystems, gravel plains, shipwreck coastlines, and highly adapted plants and animals define the region.",
+        description: "Southern desert meeting the Atlantic Ocean",
         entityId: "attraction_AO_namibe_desert",
         panelSummary: "Namibe Desert offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mini%20oasis%20in%20the%20namibe%20desert%2C%20Angola.JPG",
@@ -14584,7 +14584,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Pico do Fogo",
-        description: "Pico do Fogo is Cape Verde’s highest peak and an active volcano rising from a large caldera. Guided hikes cross ash fields and lava landscapes, while nearby villages and vineyards show how people live with volcanic risk.",
+        description: "Active volcano rising from a caldera on Fogo island",
         entityId: "attraction_CV_pico_do_fogo",
         panelSummary: "Pico do Fogo provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         wikidataId: "Q499108",
@@ -14598,7 +14598,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cidade Velha",
-        description: "Cidade Velha was the first permanent European colonial settlement in the tropics. Fortifications, churches, the pillory, old streets, and the Ribeira Grande valley trace Cape Verde’s role in Atlantic trade and slavery.",
+        description: "UNESCO-listed first European colonial settlement in the tropics",
         entityId: "attraction_CV_cidade_velha",
         panelSummary: "Cidade Velha offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q464913",
@@ -14613,7 +14613,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Santa Maria beach",
-        description: "Santa Maria is Sal’s main resort town, built around a long sandy beach and former salt-export pier. Swimming, wind sports, diving, fishing trips, restaurants, and sea-turtle activity shape its visitor appeal.",
+        description: "Long Atlantic beach known for kitesurfing and turtle nesting",
         entityId: "attraction_CV_santa_maria_beach",
         panelSummary: "Santa Maria beach is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Its strongest appeal is the unhurried rhythm it adds to a wider trip.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Santa%20maria%20beach%20sal.jpg",
@@ -14672,7 +14672,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Ivindo National Park",
-        description: "Ivindo National Park protects dense Gabonese rainforest, rivers, and major waterfalls including Kongou and Mingouli. Remote expeditions focus on forest scenery, wildlife, and one of Central Africa’s least altered ecosystems.",
+        description: "Rainforest reserve with Kongou and Mingouli waterfalls",
         entityId: "attraction_GA_ivindo_national_park",
         panelSummary: "Ivindo National Park offers more than a single cascade view, rewarding visitors who follow the available paths and observe how the falls change by angle. The attraction particularly suits travelers who value sensory outdoor experiences.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Waterfall%20ivindo%20gabon.jpg",
@@ -14683,7 +14683,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Pointe Denis",
-        description: "Pointe Denis is a low-key beach peninsula across the estuary from Libreville. Boat access, sandy shoreline, calm water, simple lodgings, and occasional wildlife sightings make it a common weekend escape from the capital.",
+        description: "Peninsula beach across the estuary from Libreville",
         entityId: "attraction_GA_pointe_denis",
         panelSummary: "Pointe Denis is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Exploring beyond the busiest access point often reveals the beach at its most atmospheric.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pointe%20Denis.JPG",
@@ -14697,7 +14697,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Akanda National Park",
-        description: "Akanda National Park protects mangroves, tidal flats, beaches, and coastal forest near Libreville. It is especially important for migratory birds, marine life, and green turtle nesting rather than conventional big-game viewing.",
+        description: "Coastal mangroves and prime birdwatching",
         entityId: "attraction_GA_akanda_national_park",
         panelSummary: "Akanda National Park offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
       },
@@ -14751,7 +14751,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Great Mosque of Djenné",
-        description: "The Great Mosque of Djenné is the world’s largest mud-brick building and a landmark of Sudano-Sahelian architecture. Timber beams, earthen towers, and annual community replastering make the structure both monumental and continuously maintained.",
+        description: "UNESCO earthen mosque re-plastered each year in a festival",
         entityId: "attraction_ML_great_mosque_of_djenne",
         panelSummary: "Great Mosque of Djenné is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Great Mosque of Djenné lasting appeal.",
         wikidataId: "Q213507",
@@ -14766,7 +14766,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bandiagara Escarpment",
-        description: "The Bandiagara Escarpment is a long sandstone cliff inhabited by Dogon communities. Villages, granaries, ritual sites, architecture, rock formations, and older Tellem remains connect the landscape with living cultural traditions.",
+        description: "Dogon Country cliffs dotted with ancient villages",
         entityId: "attraction_ML_bandiagara_escarpment",
         panelSummary: "Bandiagara Escarpment makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bandiagara%20escarpment%201.jpg",
@@ -14777,7 +14777,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Timbuktu manuscripts",
-        description: "The Timbuktu manuscripts are collections of handwritten works on theology, law, astronomy, medicine, poetry, and commerce. Libraries and preservation projects demonstrate the city’s historic importance as a center of Islamic scholarship.",
+        description: "Hundreds of thousands of medieval Islamic texts",
         entityId: "attraction_ML_timbuktu_manuscripts",
         panelSummary: "Timbuktu manuscripts gives travelers an accessible entry point into the history or character of Mali, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q9427",
@@ -14841,7 +14841,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Grande Mosquée de Bobo-Dioulasso",
-        description: "Bobo-Dioulasso’s Grand Mosque is a late-19th-century mud-brick building with projecting timber supports and two tall towers. Its interior columns and continuing religious use make it a key example of Sudano-Sahelian architecture.",
+        description: "Sudano-Sahelian mud-brick mosque from 1880",
         entityId: "attraction_BF_grande_mosquee_de_bobo_dioulasso",
         panelSummary: "At Grande Mosquée de Bobo-Dioulasso, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Grande Mosquée de Bobo-Dioulasso lasting appeal.",
         wikidataId: "Q105708736",
@@ -14856,7 +14856,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Domes of Fabédougou",
-        description: "The Domes of Fabédougou are rounded sandstone formations shaped by erosion over millions of years. Walking among the layered, beehive-like rocks reveals unusual geology and broad views of the Banfora region.",
+        description: "Beehive-shaped sandstone formations near Banfora",
         entityId: "attraction_BF_domes_of_fabedougou",
         panelSummary: "Domes of Fabédougou offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q639674",
@@ -14871,7 +14871,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Karfiguéla Falls",
-        description: "Karfiguéla Falls is a series of cascades and pools on the Comoé River near Banfora. Paths across rock terraces provide swimming and picnic areas, with the strongest flow during and after the rainy season.",
+        description: "Waterfalls tumbling through sugarcane country",
         entityId: "attraction_BF_karfiguela_falls",
         panelSummary: "The power of Karfiguéla Falls becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. Weather and water levels can alter the character of the visit considerably. That added context gives Karfiguéla Falls lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Waterfalls%20at%20Karfiguela%2C%20Burkina%20Faso.jpg",
@@ -14929,7 +14929,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Royal Palaces of Abomey",
-        description: "The Royal Palaces of Abomey preserve the ceremonial and administrative center of the former Kingdom of Dahomey. Earthen walls, courtyards, bas-reliefs, royal tombs, and museum collections explain the monarchy’s power and history.",
+        description: "UNESCO complex of the former Kingdom of Dahomey",
         entityId: "attraction_BJ_royal_palaces_of_abomey",
         panelSummary: "At Royal Palaces of Abomey, architecture, interiors, and landscaped grounds reveal how rulers used design to express power, taste, and ceremony. Allowing time for both the building and its surroundings makes Royal Palaces of Abomey far more rewarding than a quick exterior photograph.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Royal%20Palaces%20of%20Abomey-133471.jpg",
@@ -14939,7 +14939,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Door of No Return",
-        description: "The Door of No Return is a memorial arch at Ouidah’s Atlantic shore, marking the end of a route used in the transatlantic slave trade. Its meaning comes from the surrounding historical sites and commemorative landscape.",
+        description: "Memorial arch marking the transatlantic slave route in Ouidah",
         entityId: "attraction_BJ_door_of_no_return",
         panelSummary: "Door of No Return gives travelers an accessible entry point into the history or character of Benin, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q850031",
@@ -14953,7 +14953,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Pendjari National Park",
-        description: "Pendjari National Park forms part of the W-Arly-Pendjari conservation complex. Safaris may encounter lions, elephants, buffalo, antelope, hippos, and birds across savanna, woodland, cliffs, and seasonal wetlands.",
+        description: "West Africa’s premier safari park with lions and elephants",
         entityId: "attraction_BJ_pendjari_national_park",
         panelSummary: "Pendjari National Park offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lion%20at%20Pendjari%20National%20Park%2C%20Benin%20%2848910327546%29.jpg",
@@ -15015,7 +15015,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Grand Marché de Lomé",
-        description: "Grand Marché de Lomé is a major commercial center spread through streets and market buildings. Textiles, food, household goods, crafts, and the influential women traders known as Nana Benz reflect Togo’s urban economy.",
+        description: "Sprawling market famous for its “Nana Benz” cloth traders",
         entityId: "attraction_TG_grand_marche_de_lome",
         panelSummary: "Grand Marché de Lomé is most rewarding as a place to linger, with social life and small discoveries providing as much interest as its headline feature. Spending time here provides a useful counterpoint to more formal landmarks and museums.",
         wikidataId: "Q3792",
@@ -15030,7 +15030,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Akodessewa Fetish Market",
-        description: "Akodessewa is a specialized market serving practitioners of West African Vodun. Stalls display animal remains, herbs, carved objects, and ritual materials, and visits are best approached with a knowledgeable guide and cultural sensitivity.",
+        description: "The world’s largest voodoo market",
         entityId: "attraction_TG_akodessewa_fetish_market",
         panelSummary: "The energy of Akodessewa Fetish Market comes from browsing, eating, observing, and allowing everyday activity to shape the visit. The experience is strongest when travelers treat the area as a living neighborhood rather than a checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/In%20the%20Akodessewa%20Fetish%20Market%20%2833632321458%29.jpg",
@@ -15043,7 +15043,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mount Agou",
-        description: "Mount Agou is Togo’s highest peak, rising in a forested coffee- and cacao-growing region near the Ghana border. Guided hikes pass villages and farms before reaching broad views from the upper slopes.",
+        description: "Togo’s highest peak, with panoramic views over Ghana",
         entityId: "attraction_TG_mount_agou",
         panelSummary: "The strongest reason to visit Mount Agou is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Agou%20view%20-%203330439632.jpg",
@@ -15102,7 +15102,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Providence Island",
-        description: "Providence Island lies near Monrovia where formerly enslaved settlers from the United States first landed in 1822. Ruins, memorials, and the river setting connect the site to Liberia’s founding history.",
+        description: "Landing site of the first freed American settlers in 1822",
         entityId: "attraction_LR_providence_island",
         panelSummary: "Providence Island offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q27459317",
@@ -15116,7 +15116,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kpatawee Waterfalls",
-        description: "Kpatawee is a multi-tiered waterfall in Bong County surrounded by forest and rock pools. Visitors come for swimming, picnics, short walks, and the cooler setting created by the cascades.",
+        description: "Multi-tiered falls in Bong County",
         entityId: "attraction_LR_kpatawee_waterfalls",
         panelSummary: "The power of Kpatawee Waterfalls becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Kpatawee Waterfalls lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Front%20View%20of%20Kpatawee%20Falls.jpg",
@@ -15127,7 +15127,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cape Mount",
-        description: "Mount Cape overlooks Robertsport and Liberia’s Atlantic coast. The area combines elevated coastal views, beaches, fishing communities, and surf breaks that have made Robertsport the country’s best-known surfing destination.",
+        description: "Coastal peak overlooking Robertsport’s surf breaks",
         entityId: "attraction_LR_cape_mount",
         panelSummary: "The strongest reason to visit Cape Mount is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Robertsport.jpg",
@@ -15190,7 +15190,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "River No. 2 Beach",
-        description: "River Number Two is a community-managed beach near Freetown with pale sand, a river mouth, and forested hills. Swimming, seafood, boat rides, and local tourism operations support the village economy.",
+        description: "Postcard white-sand beach on the Freetown peninsula",
         entityId: "attraction_SL_river_no_2_beach",
         panelSummary: "River No. 2 Beach offers a restorative coastal stop where the setting encourages travelers to slow down rather than rush between sights. Exploring beyond the busiest access point often reveals the beach at its most atmospheric.",
         wikidataId: "Q3780",
@@ -15205,7 +15205,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cotton Tree",
-        description: "Freetown’s Cotton Tree was a centuries-old national symbol linked to the city’s founding by formerly enslaved settlers. Most of the tree fell in 2023, and the remaining trunk and memorial plans now carry its significance.",
+        description: "Historic downtown Freetown landmark (rebuilt after 2023 storm)",
         entityId: "attraction_SL_cotton_tree",
         panelSummary: "The appeal of Cotton Tree lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Cotton Tree lasting appeal.",
         wikidataId: "Q602200",
@@ -15220,7 +15220,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tacugama Chimpanzee Sanctuary",
-        description: "Tacugama rescues and rehabilitates orphaned chimpanzees in forest outside Freetown. Guided visits explain individual animals, habitat loss, the illegal wildlife trade, and conservation work protecting Sierra Leone’s national animal.",
+        description: "Rescue and rehabilitation center outside Freetown",
         entityId: "attraction_SL_tacugama_chimpanzee_sanctuary",
         panelSummary: "Tacugama Chimpanzee Sanctuary offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q3780",
@@ -15283,7 +15283,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Kunta Kinteh Island",
-        description: "Kunta Kinteh Island preserves the ruins of a small colonial fort used in the Atlantic slave trade. Reached by boat on the Gambia River, it is visited alongside nearby villages, museums, and related historic sites.",
+        description: "UNESCO island tied to the transatlantic slave trade and Alex Haley’s Roots",
         entityId: "attraction_GM_kunta_kinteh_island",
         panelSummary: "The strongest reason to visit Kunta Kinteh Island is the chance to experience the surrounding environment at close range rather than from a distant overlook. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kunta%20Kinteh%20Island%20seen%20from%20Albadar%20beach.jpg",
@@ -15294,7 +15294,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Abuko Nature Reserve",
-        description: "Abuko is The Gambia’s oldest protected reserve, preserving gallery forest, savanna, and pools near the coast. Trails and hides offer monkeys, crocodiles, antelope, reptiles, and extensive birdlife in a compact area.",
+        description: "Small but rich reserve with monkeys and crocodiles",
         entityId: "attraction_GM_abuko_nature_reserve",
         panelSummary: "The energy of Abuko Nature Reserve comes from browsing, eating, observing, and allowing everyday activity to shape the visit. A flexible itinerary leaves room to follow whatever catches the eye. That added context gives Abuko Nature Reserve lasting appeal.",
         wikidataId: "Q335818",
@@ -15309,7 +15309,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "River Gambia National Park",
-        description: "River Gambia National Park consists of river islands used for a chimpanzee rehabilitation project. Boat trips may observe chimpanzees from the water along with hippos, monkeys, crocodiles, and birds, but landing is restricted.",
+        description: "Chimpanzee rehabilitation islands on the river",
         entityId: "attraction_GM_river_gambia_national_park",
         panelSummary: "The strongest reason to visit River Gambia National Park is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rijeka%20Gambija%204.%20o%C5%BEujka%202026.jpg",
@@ -15369,7 +15369,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mount Nyiragongo",
-        description: "Nyiragongo is an active volcano above Goma known for a large lava lake and highly fluid eruptions. Summit access depends on security and volcanic conditions, and the 2021 eruption demonstrated the continuing risk.",
+        description: "Active volcano with a lava lake summit hike (subject to closures)",
         entityId: "attraction_CD_mount_nyiragongo",
         panelSummary: "Mount Nyiragongo turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         wikidataId: "Q214696",
@@ -15384,7 +15384,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mountain gorilla trekking",
-        description: "Virunga National Park protects volcanoes, rainforest, savanna, lakes, and endangered mountain gorillas. Gorilla trekking is its best-known experience, but access is tightly controlled and frequently affected by security conditions.",
+        description: "Encounters with critically endangered gorillas in Virunga",
         entityId: "attraction_CD_mountain_gorilla_trekking",
         panelSummary: "Mountain gorilla trekking offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mountain%20Gorilla%20%28Humba%20family%29%20%E2%80%93%20Virunga%20National%20Park%20%2829%29.jpg",
@@ -15395,7 +15395,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Congo River",
-        description: "The Congo River is Africa’s second-longest river and the world’s deepest measured river. Its immense basin, rapids, ports, rainforest, and role in transport make it central to understanding Central Africa’s geography.",
+        description: "The world’s deepest river and Africa’s second-longest",
         entityId: "attraction_CD_congo_river",
         panelSummary: "Congo River rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q3503",
@@ -15458,7 +15458,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Nouabalé-Ndoki National Park",
-        description: "Nouabalé-Ndoki protects remote, largely intact Congo Basin rainforest within the Sangha Trinational. Guided expeditions focus on forest elephants, western lowland gorillas, chimpanzees, birds, and clearings such as Mbeli Bai.",
+        description: "Remote UNESCO rainforest — part of the Sangha Trinational",
         entityId: "attraction_CG_nouabale_ndoki_national_park",
         panelSummary: "Nouabalé-Ndoki National Park offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q3015170",
@@ -15473,7 +15473,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Diosso Gorge",
-        description: "Diosso Gorge is a network of steep, eroded ravines near Pointe-Noire, with exposed layers of red, orange, and white earth. Viewpoints and short walks reveal a striking landscape shaped by rain and erosion.",
+        description: "Colorful eroded canyons near Pointe-Noire",
         entityId: "attraction_CG_diosso_gorge",
         panelSummary: "The strongest reason to visit Diosso Gorge is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q223920",
@@ -15488,7 +15488,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Basilica of Sainte-Anne",
-        description: "Sainte-Anne Basilica is a large Catholic church in Brazzaville known for its green tiled roof, pointed arches, and reinforced-concrete design. Its architecture blends European church planning with decorative forms associated with Central Africa.",
+        description: "Iconic green-tiled church in Brazzaville",
         entityId: "attraction_CG_basilica_of_sainte_anne",
         panelSummary: "At Basilica of Sainte-Anne, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Basilica of Sainte-Anne lasting appeal.",
         wikidataId: "Q3844",
@@ -15550,7 +15550,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Leptis Magna",
-        description: "Leptis Magna is an exceptionally preserved Roman city on Libya’s Mediterranean coast. The forum, basilica, market, theater, baths, harbor, and monumental arch reveal the wealth of Emperor Septimius Severus’s birthplace.",
+        description: "One of the best-preserved Roman cities in the world (UNESCO)",
         entityId: "attraction_LY_leptis_magna",
         panelSummary: "Leptis Magna offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q191504",
@@ -15565,7 +15565,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sabratha",
-        description: "Sabratha was a Phoenician trading post later developed into a Roman city. Its restored theater, temples, basilicas, baths, mosaics, and seaside setting make the archaeological site’s urban layout easy to understand.",
+        description: "UNESCO Roman theatre on the Mediterranean",
         entityId: "attraction_LY_sabratha",
         panelSummary: "Sabratha gives travelers an accessible entry point into the history or character of Libya, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ancient%20Theatre%20-%20Sabratha%20-%20Libya%2007.jpg",
@@ -15579,7 +15579,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Acacus Mountains",
-        description: "The Acacus Mountains contain sandstone arches, dunes, caves, and thousands of prehistoric paintings and engravings. The rock art records changing climates, wildlife, hunting, herding, and human life across many millennia.",
+        description: "Saharan range with 12,000-year-old rock art (UNESCO)",
         entityId: "attraction_LY_acacus_mountains",
         panelSummary: "Exploring Acacus Mountains reveals more than a single monument: the layout and remaining details help reconstruct an earlier world. The most rewarding details are often the modest ones that make past life feel specific and human.",
         wikidataId: "Q308807",
@@ -15642,7 +15642,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Pyramids of Meroë",
-        description: "The Pyramids of Meroë are steep-sided royal tombs built for Kushite rulers and elites. Their compact desert groups, chapels, reliefs, and distinctive proportions differ markedly from Egyptian pyramid complexes.",
+        description: "Steep-sided Nubian pyramids of the Kushite kings",
         entityId: "attraction_SD_pyramids_of_meroe",
         panelSummary: "Pyramids of Meroë gives travelers an accessible entry point into the history or character of Sudan, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q5780",
@@ -15657,7 +15657,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Jebel Barkal",
-        description: "Jebel Barkal is a small sandstone mountain considered sacred by ancient Egyptians and Kushites. Temples, pyramids, palaces, and ruins around its base formed a major religious and political center of the Napatan kingdom.",
+        description: "UNESCO sacred mountain and ancient Napatan capital",
         entityId: "attraction_SD_jebel_barkal",
         panelSummary: "Jebel Barkal makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         wikidataId: "Q499019",
@@ -15672,7 +15672,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sanganeb Marine National Park",
-        description: "Sanganeb is a coral reef and marine national park in the Red Sea, centered on an offshore lighthouse. Clear water, steep reef walls, fish, sharks, turtles, and relatively intact coral support exceptional diving.",
+        description: "UNESCO Red Sea reef, one of the world’s clearest",
         entityId: "attraction_SD_sanganeb_marine_national_park",
         panelSummary: "Sanganeb Marine National Park offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. Conditions, season, and responsible guiding strongly influence the experience, so preparation matters. That added context gives Sanganeb Marine National Park lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barracuda%20Tornado.jpg",
@@ -15731,7 +15731,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Maletsunyane Falls",
-        description: "Maletsunyane Falls is a 192-meter single-drop waterfall near Semonkong. Viewpoints, pony treks, hiking, and a commercial abseil route show the basalt gorge and the full scale of the descent.",
+        description: "192 m single-drop waterfall — abseiling world record site",
         entityId: "attraction_LS_maletsunyane_falls",
         panelSummary: "Maletsunyane Falls is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. Allowing time for more than the principal overlook makes the setting feel much larger.",
         wikidataId: "Q37683",
@@ -15745,7 +15745,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Afriski Mountain Resort",
-        description: "Afriski is a high-altitude mountain resort in Lesotho’s Maloti range. Winter skiing and snowboarding use limited slopes and snowmaking, while summer activities include hiking, mountain biking, and scenic drives.",
+        description: "Southern Africa’s premier ski resort",
         entityId: "attraction_LS_afriski_mountain_resort",
         panelSummary: "The appeal of Afriski Mountain Resort lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Afriski Mountain Resort lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/AfriSki.jpg",
@@ -15755,7 +15755,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Thaba Bosiu",
-        description: "Thaba Bosiu is the sandstone plateau where Moshoeshoe I established the Basotho nation. Guided walks reach springs, graves, settlement remains, and defensive passes while explaining why the natural fortress resisted repeated attacks.",
+        description: "Sandstone plateau, birthplace of the Basotho nation",
         entityId: "attraction_LS_thaba_bosiu",
         panelSummary: "Thaba Bosiu gives travelers an accessible entry point into the history or character of Lesotho, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/685%20Thaba%20Bosiu.jpg",
@@ -15817,7 +15817,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mlilwane Wildlife Sanctuary",
-        description: "Mlilwane is Eswatini’s oldest wildlife sanctuary and a relatively accessible reserve for walking, cycling, horseback riding, and driving. Zebra, antelope, warthogs, crocodiles, and birdlife can be seen without major predators.",
+        description: "Original Swazi conservation project — walkable safari",
         entityId: "attraction_SZ_mlilwane_wildlife_sanctuary",
         panelSummary: "Mlilwane Wildlife Sanctuary offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mlilwane%20Wildlife%20Sanctuary%20in%20Eswatini%2001.jpg",
@@ -15828,7 +15828,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sibebe Rock",
-        description: "Sibebe is a massive exposed granite dome near Mbabane. Guided hikes cross bare rock, grassland, caves, streams, and steep sections, with wide views and local cultural significance adding to the geological interest.",
+        description: "World’s second-largest exposed granite dome",
         entityId: "attraction_SZ_sibebe_rock",
         panelSummary: "Sibebe Rock offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         bestWeatherMonths: "Mar–Oct",
@@ -15836,7 +15836,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Umhlanga (Reed) Dance",
-        description: "Umhlanga is an annual Eswatini ceremony in which thousands of unmarried girls cut reeds, present them to the queen mother, and perform traditional dances. It is a living national event, not a staged attraction.",
+        description: "Annual ceremony where thousands of Swazi maidens honor the queen mother",
         entityId: "attraction_SZ_umhlanga_reed_dance",
         panelSummary: "Umhlanga (Reed) Dance gives travelers an accessible entry point into the history or character of Eswatini, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Umhlanga%20Reed%20dance%20ceremony%20from%20Eswatini.jpg",
@@ -15895,7 +15895,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Dickenson Bay",
-        description: "Dickenson Bay is a developed beach on Antigua’s northwest coast, with calm water, resorts, restaurants, and water sports. Its accessibility and broad sandy shoreline make it one of the island’s busiest beach areas.",
+        description: "Long white-sand beach lined with resorts",
         entityId: "attraction_AG_dickenson_bay",
         panelSummary: "The experience at Dickenson Bay comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Its strongest appeal is the unhurried rhythm it adds to a wider trip.",
         wikidataId: "Q5273629",
@@ -15910,7 +15910,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Devil’s Bridge",
-        description: "Devil’s Bridge is a natural limestone arch on Antigua’s exposed Atlantic coast, shaped by wave erosion. Blowholes, surf, and sharp coastal rock make it visually dramatic but require caution near the edge.",
+        description: "Dramatic natural limestone arch on the Atlantic coast",
         entityId: "attraction_AG_devil_s_bridge",
         panelSummary: "Devil’s Bridge gives travelers an accessible entry point into the history or character of Antigua and Barbuda, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Devils%20Bridge%2C%20Antigua.JPG",
@@ -15923,7 +15923,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Shirley Heights",
-        description: "Shirley Heights is a restored military lookout above English Harbour. Visitors come for fortification remains, panoramic views over Nelson’s Dockyard, and the long-running Sunday gathering with music, food, and sunset.",
+        description: "Hilltop viewpoint famous for Sunday sunset parties",
         entityId: "attraction_AG_shirley_heights",
         panelSummary: "The appeal of Shirley Heights lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Shirley Heights lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Shirley%20Heights%20-%20Antigua.jpg",
@@ -15988,7 +15988,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Horseshoe Bay Beach",
-        description: "Horseshoe Bay is Bermuda’s best-known beach, recognized for pale pink sand and a curved shoreline. Swimming areas, nearby coves, coastal paths, and easy public access make it suitable for a full beach day.",
+        description: "Signature pink-sand crescent on the South Shore",
         entityId: "attraction_BM_horseshoe_bay_beach",
         panelSummary: "Horseshoe Bay Beach is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bermuda%20%28UK%29%20image%20number%20289%20Horseshoe%20Bay%20beach%20area.jpg",
@@ -16001,7 +16001,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Crystal Caves",
-        description: "Crystal Cave contains clear underground pools, stalactites, stalagmites, and suspended walkways beneath Bermuda’s limestone landscape. Guided tours explain the cave’s accidental discovery and the geology created by changing sea levels.",
+        description: "Underground caverns with turquoise pools and formations",
         entityId: "attraction_BM_crystal_caves",
         panelSummary: "Inside Crystal Caves, geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. The visit provides a dramatic contrast to the landscape above ground. That added context gives Crystal Caves lasting appeal.",
         wikidataId: "Q3304574",
@@ -16016,7 +16016,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Gibbs Hill Lighthouse",
-        description: "Gibbs Hill Lighthouse is an 1846 cast-iron tower built on one of Bermuda’s highest points. Climbing its spiral staircase provides broad island and ocean views while illustrating early prefabricated lighthouse engineering.",
+        description: "One of the world’s oldest cast-iron lighthouses",
         entityId: "attraction_BM_gibbs_hill_lighthouse",
         panelSummary: "The appeal of Gibbs Hill Lighthouse lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gibbs%20Hill%20Lighthouse%2C%20Bermuda%20-%20panoramio.jpg",
@@ -16078,7 +16078,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Sultan Omar Ali Saifuddien Mosque",
-        description: "Omar Ali Saifuddien Mosque is Brunei’s best-known religious landmark, set beside an artificial lagoon. A gold-covered dome, marble, minarets, gardens, ceremonial barge, and detailed interior define its architecture.",
+        description: "Marble and gold-domed mosque with a lagoon setting",
         entityId: "attraction_BN_sultan_omar_ali_saifuddien_mosque",
         panelSummary: "At Sultan Omar Ali Saifuddien Mosque, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sultan%20Omar%20Ali%20Saifuddin%20Mosque%20%2817970479693%29.jpg",
@@ -16088,7 +16088,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Jame’ Asr Hassanil Bolkiah Mosque",
-        description: "Jame’ Asr Hassanil Bolkiah Mosque is Brunei’s largest mosque, built to commemorate the current sultan’s reign. Twenty-nine golden domes, landscaped grounds, marble interiors, fountains, and separate prayer halls emphasize its scale.",
+        description: "Vast modern mosque with 29 golden domes",
         entityId: "attraction_BN_jame_asr_hassanil_bolkiah_mosque",
         panelSummary: "Jame’ Asr Hassanil Bolkiah Mosque combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Jame’ Asr Hassanil Bolkiah Mosque lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jame%27%20Asr%20Hassanil%20Bolkiah%20Mosque%2C%20Brunei.jpg",
@@ -16099,7 +16099,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Royal Regalia Museum",
-        description: "The Royal Regalia Museum presents objects connected with Brunei’s monarchy, including coronation chariots, ceremonial weapons, gifts, uniforms, and royal insignia. Exhibits explain state rituals and the public image of the sultanate.",
+        description: "Displays celebrating the sultan’s coronation and gifts of state",
         entityId: "attraction_BN_royal_regalia_museum",
         panelSummary: "Royal Regalia Museum places significant works within a broader cultural story, helping visitors understand the people, ideas, and periods behind the collection. A slower visit leaves room for unexpected discoveries beyond the headline pieces. That added context gives Royal Regalia Museum lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/ROYAL%20REGALIA%20MUSEUM%2C%20BRUNEI.jpg",
@@ -16158,7 +16158,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Boiling Lake",
-        description: "Boiling Lake is a flooded volcanic fumarole in Dominica’s Morne Trois Pitons National Park. Reaching it requires a strenuous guided hike through rainforest, valleys, steam vents, and unstable geothermal terrain.",
+        description: "Bubbling flooded fumarole reached by a demanding day hike",
         entityId: "attraction_DM_boiling_lake",
         panelSummary: "Boiling Lake turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. Access and conditions can change, making current local guidance an important part of planning. That added context gives Boiling Lake lasting appeal.",
         wikidataId: "Q891027",
@@ -16172,7 +16172,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Trafalgar Falls",
-        description: "Trafalgar Falls consists of two neighboring cascades, commonly called the Father and Mother, in Dominica’s rainforest interior. A short trail reaches a viewing platform, with rougher paths continuing toward pools and hot springs.",
+        description: "Twin waterfalls plunging through rainforest",
         entityId: "attraction_DM_trafalgar_falls",
         panelSummary: "Trafalgar Falls offers more than a single cascade view, rewarding visitors who follow the available paths and observe how the falls change by angle. Allowing time for more than the principal overlook makes the setting feel much larger.",
         wikidataId: "Q23755365",
@@ -16187,7 +16187,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Champagne Reef",
-        description: "Champagne Reef is a snorkeling and diving site where volcanic gases escape through the seabed as streams of warm bubbles. Coral, fish, sponges, and easy shore access make the geothermal effect especially memorable.",
+        description: "Snorkel spot where volcanic bubbles rise through the water",
         entityId: "attraction_DM_champagne_reef",
         panelSummary: "Champagne Reef offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. The sense of entering another environment makes the attraction memorable well beyond its visual beauty.",
       },
@@ -16241,7 +16241,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Citadelle Laferrière",
-        description: "Citadelle Laferrière is a vast mountaintop fortress built after Haitian independence to deter a possible French return. Massive walls, cannon batteries, cisterns, and panoramic views demonstrate the scale of the new state’s defenses.",
+        description: "Mountaintop fortress built after independence — a UNESCO site",
         entityId: "attraction_HT_citadelle_laferriere",
         panelSummary: "Walking through Citadelle Laferrière reveals how defense, geography, and architecture were combined to control the surrounding landscape. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Citadelle Laferrière lasting appeal.",
         wikidataId: "Q206194",
@@ -16255,7 +16255,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sans-Souci Palace",
-        description: "Sans-Souci Palace was the royal residence of Haiti’s King Henri I. Its ruined stairways, terraces, courtyards, gardens, and mountain setting reveal the ambition of the early post-independence monarchy.",
+        description: "Ruins of the early-19th-century royal palace",
         entityId: "attraction_HT_sans_souci_palace",
         panelSummary: "At Sans-Souci Palace, architecture, interiors, and landscaped grounds reveal how rulers used design to express power, taste, and ceremony. Visitors who explore beyond the principal rooms gain a fuller sense of how the complex functioned.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sans-Souci%20Palace%2C%20National%20History%20Park%2C%20Haiti.jpg",
@@ -16265,7 +16265,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bassin Bleu",
-        description: "Bassin Bleu is a series of spring-fed pools and waterfalls in the hills near Jacmel. Reaching the site involves a guided walk, river crossings, and optional swimming in clear turquoise basins.",
+        description: "Cascading turquoise pools in the hills above Jacmel",
         entityId: "attraction_HT_bassin_bleu",
         panelSummary: "The appeal of Bassin Bleu lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Bassin Bleu lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bassin%20Bleu%2C%20Haiti.jpg",
@@ -16327,7 +16327,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Brimstone Hill Fortress",
-        description: "Brimstone Hill is a large British colonial fortress built by enslaved African labor on a steep volcanic hill. Its bastions, barracks, museum, and broad Caribbean views explain its strategic importance.",
+        description: "UNESCO-listed 17th-century “Gibraltar of the West Indies”",
         entityId: "attraction_KN_brimstone_hill_fortress",
         panelSummary: "Walking through Brimstone Hill Fortress reveals how defense, geography, and architecture were combined to control the surrounding landscape. The site is most satisfying when visitors follow its full layout rather than stopping at a single viewpoint.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Saint%20Kitts%20-%20Brimstone%20Hill%20Fortress%2004.JPG",
@@ -16337,7 +16337,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mount Liamuiga",
-        description: "Mount Liamuiga is a dormant volcano and Saint Kitts’ highest point. A strenuous rainforest hike reaches the crater rim, passing dense vegetation, steep slopes, and viewpoints across the island and neighboring seas.",
+        description: "Dormant volcano with a rainforest crater hike",
         entityId: "attraction_KN_mount_liamuiga",
         panelSummary: "Mount Liamuiga turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         wikidataId: "Q1269774",
@@ -16351,7 +16351,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "St. Kitts Scenic Railway",
-        description: "This narrow-gauge railway follows part of the former sugar-cane network around Saint Kitts. Its double-deck trains pass villages, fields, coastline, bridges, and estate ruins while explaining the island’s plantation history.",
+        description: "Narrow-gauge sugar-cane railway loop around the island",
         entityId: "attraction_KN_st_kitts_scenic_railway",
         panelSummary: "St. Kitts Scenic Railway offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Kitts%20Scenic%20Railway%20%2849939619506%29.jpg",
@@ -16413,7 +16413,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Kuwait Towers",
-        description: "The Kuwait Towers are three waterfront structures completed in 1979 and recognized for blue-green mosaic cladding. Visitors use the observation sphere and revolving restaurant for city and Gulf views.",
+        description: "Blue-tiled seaside towers with a revolving observation deck",
         entityId: "attraction_KW_kuwait_towers",
         panelSummary: "Kuwait Towers offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kuwait%20Towers%20%28158990699%29.jpg",
@@ -16428,7 +16428,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Grand Mosque",
-        description: "Kuwait’s Grand Mosque is the country’s largest place of worship, built in a modern Islamic style. Guided visits cover its main prayer hall, dome, calligraphy, chandeliers, courtyards, and religious role.",
+        description: "Country’s largest mosque, open to guided tours",
         entityId: "attraction_KW_grand_mosque",
         panelSummary: "At Grand Mosque, craftsmanship and sacred purpose remain closely connected, giving visitors insight into both belief and local artistic traditions. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Grand Mosque lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kuwait%20City%20Grand%20Mosque%20Exterior%20South%20Facade%205.jpg",
@@ -16441,7 +16441,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "The Avenues Mall",
-        description: "The Avenues is Kuwait’s largest shopping complex, organized into architecturally themed districts. Beyond retail, its restaurants, cinemas, indoor streets, and gathering spaces show how malls function as major social centers.",
+        description: "Enormous themed shopping mall — a local social hub",
         entityId: "attraction_KW_the_avenues_mall",
         panelSummary: "The energy of The Avenues Mall comes from browsing, eating, observing, and allowing everyday activity to shape the visit. A flexible itinerary leaves room to follow whatever catches the eye. That added context gives The Avenues Mall lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prestige%20the%20avenues%20mall%20of%20Kuwait.jpg",
@@ -16502,7 +16502,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Jeita Grotto",
-        description: "Jeita Grotto is a two-level limestone cave system north of Beirut. Visitors walk through the upper chambers and, when water conditions permit, take a boat through the lower underground river.",
+        description: "Two-tier limestone cave system explored by walkway and boat",
         entityId: "attraction_LB_jeita_grotto",
         panelSummary: "Jeita Grotto draws visitors into an underground landscape of chambers, mineral formations, reflected light, and surprising changes in scale. The cooler air, acoustics, and lighting make the experience as sensory as it is visual. That added context gives Jeita Grotto lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Upper%20Jeita%20Grotto.jpg",
@@ -16512,7 +16512,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cedars of God",
-        description: "The Cedars of God preserve one of Lebanon’s last groves of ancient cedar trees, some estimated to be centuries old. Walking paths reveal the species’ ecological, religious, and national significance.",
+        description: "Ancient cedar grove in the mountains — Lebanon’s national symbol",
         entityId: "attraction_LB_cedars_of_god",
         panelSummary: "Exploring Cedars of God reveals more than a single monument: the layout and remaining details help reconstruct an earlier world. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Forest%20of%20The%20cedars%20of%20God.jpg",
@@ -16523,7 +16523,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Corniche Beirut",
-        description: "Beirut’s Corniche is a long Mediterranean promenade used for walking, fishing, cycling, and socializing. The route passes seaside neighborhoods and viewpoints toward Raouché’s Pigeon Rocks, especially popular around sunset.",
+        description: "Seafront promenade with Pigeon Rocks and sunset joggers",
         entityId: "attraction_LB_corniche_beirut",
         panelSummary: "Corniche Beirut is most rewarding as a place to linger, with social life and small discoveries providing as much interest as its headline feature. The experience is strongest when travelers treat the area as a living neighborhood rather than a checklist stop.",
         wikidataId: "Q3820",
@@ -16587,7 +16587,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Casino de Monte-Carlo",
-        description: "The Monte Carlo Casino is an ornate Belle Époque gambling and entertainment complex designed by Charles Garnier. Its gaming rooms, opera house, gilded interiors, and formal square reflect Monaco’s luxury-tourism history.",
+        description: "Belle Époque casino by architect Charles Garnier",
         entityId: "attraction_MC_casino_de_monte_carlo",
         panelSummary: "Casino de Monte-Carlo gives travelers an accessible entry point into the history or character of Monaco, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Casino%20de%20Monte-Carlo%20%2849582351802%29.jpg",
@@ -16599,7 +16599,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Oceanographic Museum",
-        description: "Monaco’s Oceanographic Museum combines marine science collections, historic research exhibits, aquariums, and monumental cliffside architecture. Displays cover ocean exploration, biodiversity, conservation, and the work of Prince Albert I.",
+        description: "Cliffside marine science museum founded by Prince Albert I",
         entityId: "attraction_MC_oceanographic_museum",
         panelSummary: "Oceanographic Museum offers more than a display of famous objects, using context and presentation to connect individual works with a wider cultural tradition. It particularly suits travelers who enjoy understanding why objects matter, not simply seeing them.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Monaco%20Oceanographic%20Museum%2001.jpg",
@@ -16609,7 +16609,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Prince’s Palace",
-        description: "The Prince’s Palace is the official residence of Monaco’s Grimaldi family, developed from a medieval fortress. Seasonal tours show state apartments, frescoes, courtyards, collections, and the palace’s continuing governmental role.",
+        description: "Grimaldi family residence with a daily changing of the guard",
         entityId: "attraction_MC_prince_s_palace",
         panelSummary: "Prince’s Palace brings courtly history to life through ceremonial rooms, decorative craftsmanship, and grounds designed to impress as much as they served daily life. The contrast between public grandeur and smaller human details gives Prince’s Palace much of its appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Exterior%20of%20the%20Prince%27s%20Palace%20%28Monaco%29.jpg",
@@ -16668,7 +16668,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "La Soufrière Volcano",
-        description: "La Soufrière is Saint Vincent’s active stratovolcano, most recently erupting in 2021. Summit hikes cross farmland, rainforest, and exposed volcanic terrain, but access depends on current safety and weather conditions.",
+        description: "Active volcano with a demanding summit hike",
         entityId: "attraction_VC_la_soufriere_volcano",
         panelSummary: "The appeal of La Soufrière Volcano comes from seeing geology in action, with terrain and conditions that make the landscape feel unusually alive. Access and conditions can change, making current local guidance an important part of planning.",
         wikidataId: "Q26544",
@@ -16677,7 +16677,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mustique",
-        description: "Mustique is a privately managed Grenadine island known for secluded villas, beaches, and strict development controls. Visitors come for quiet coastal scenery, swimming, sailing, and a deliberately low-key atmosphere.",
+        description: "Private island retreat favored by royalty and rock stars",
         entityId: "attraction_VC_mustique",
         panelSummary: "The strongest reason to visit Mustique is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q607357",
@@ -16691,7 +16691,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Wallilabou Bay",
-        description: "Wallilabou is a small volcanic bay on Saint Vincent used as a filming location for Pirates of the Caribbean. Remaining sets, anchorage views, and the surrounding working coastline are the main attractions.",
+        description: "Filming location for Pirates of the Caribbean",
         entityId: "attraction_VC_wallilabou_bay",
         panelSummary: "Wallilabou Bay offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Saint-Vincent%20Wallilabou%20Bay.jpg",
@@ -16768,7 +16768,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Grandvalira",
-        description: "Grandvalira is Andorra’s largest ski area, linking several mountain sectors across the eastern Pyrenees. Winter visitors use extensive lifts and pistes, while summer brings hiking, cycling, and alpine activities.",
+        description: "Largest ski resort in the Pyrenees",
         entityId: "attraction_AD_grandvalira",
         panelSummary: "Grandvalira offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/GrandValira-Grau%20Roig.jpg",
@@ -16778,7 +16778,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Caldea",
-        description: "Caldea is a large thermal spa complex in Escaldes-Engordany, supplied by naturally hot mineral water. Indoor and outdoor pools, saunas, baths, and treatments provide a modern interpretation of Andorra’s spa tradition.",
+        description: "Thermal spa complex fed by hot springs",
         entityId: "attraction_AD_caldea",
         panelSummary: "Caldea creates a memorable change of pace by combining movement, landscape, and a clear sense of participation. Preparation and an unhurried approach help travelers appreciate the experience more fully. That added context gives Caldea lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Caldea%2020231205%20122111.jpg",
@@ -16845,7 +16845,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Band-e Amir National Park",
-        description: "Band-e Amir contains six deep-blue mountain lakes separated by natural travertine dams in Afghanistan’s Hindu Kush. The remote park is valued for stark geology, pilgrimage sites, boating, and high-altitude scenery.",
+        description: "Cobalt-blue mineral lakes in the Hindu Kush",
         entityId: "attraction_AF_band_e_amir_national_park",
         panelSummary: "Band-e Amir National Park offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Band-e-Amir%2C%20Afghanistan.jpg",
@@ -16860,7 +16860,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Blue Mosque of Mazar-i-Sharif",
-        description: "The Blue Mosque, also known as the Shrine of Ali, is Mazar-i-Sharif’s principal religious landmark. Blue tilework, courtyards, white doves, and active pilgrimage traditions define the complex.",
+        description: "15th-century tiled shrine",
         entityId: "attraction_AF_blue_mosque_of_mazar_i_sharif",
         panelSummary: "Blue Mosque of Mazar-i-Sharif is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Blue%20Mosque%20%28general%20view%29%2C%20Mazar-i%20Sharif%2C%20Afghanistan.jpg",
@@ -16930,13 +16930,13 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Meads Bay",
-        description: "Meads Bay is a broad, gently curving beach on Anguilla’s northwest coast. Clear water, soft sand, swimming, sunset views, and several upscale hotels and restaurants make it suited to an unhurried beach day.",
+        description: "Long crescent beach lined with luxury resorts",
         entityId: "attraction_AI_meads_bay",
         panelSummary: "Meads Bay is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Its strongest appeal is the unhurried rhythm it adds to a wider trip.",
       },
       {
         name: "Prickly Pear Cays",
-        description: "The Prickly Pear Cays are two uninhabited islands northwest of Anguilla. Day boats bring visitors for white-sand beaches, snorkeling, swimming, seabirds, and reef life in protected, shallow water.",
+        description: "Uninhabited islands for day-trip snorkeling",
         entityId: "attraction_AI_prickly_pear_cays",
         panelSummary: "Prickly Pear Cays offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. The sense of entering another environment makes the attraction memorable well beyond its visual beauty.",
         wikidataId: "Q3911374",
@@ -17000,7 +17000,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Geghard Monastery",
-        description: "Geghard is a medieval Armenian monastery partly carved into the rock of the Azat Valley. Churches, tombs, khachkars, acoustically resonant chambers, and continuing worship make the complex especially distinctive.",
+        description: "Medieval monastery partially carved into cliffs",
         entityId: "attraction_AM_geghard_monastery",
         panelSummary: "Geghard Monastery is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Geghard Monastery lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Geghard%20Monastery%2C%20Armenia.jpg",
@@ -17011,7 +17011,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Lake Sevan",
-        description: "Lake Sevan is one of the world’s largest high-altitude freshwater lakes and a major Armenian recreation area. Beaches, fish restaurants, mountain views, and the Sevanavank monastery draw most visitors.",
+        description: "High-altitude alpine lake with hilltop monasteries",
         entityId: "attraction_AM_lake_sevan",
         panelSummary: "Lake Sevan offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q181932",
@@ -17085,7 +17085,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "National Park of American Samoa",
-        description: "This national park protects tropical rainforest, coral reefs, beaches, and Samoan cultural landscapes across several islands. Hiking, snorkeling, wildlife, and village-based access distinguish it from mainland U.S. parks.",
+        description: "Only US national park south of the equator",
         entityId: "attraction_AS_national_park_of_american_samoa",
         panelSummary: "National Park of American Samoa rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q843075",
@@ -17103,7 +17103,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mount ʻAlava",
-        description: "Mount ʻAlava rises above Pago Pago Harbor within the National Park of American Samoa. A ridge trail follows an old cable-car route to panoramic views of rainforest, coastline, and volcanic mountains.",
+        description: "Ridge hike with sweeping harbor views",
         entityId: "attraction_AS_mount_alava",
         panelSummary: "Mount ʻAlava creates a memorable change of pace by combining movement, landscape, and a clear sense of participation. Because visitors take part rather than simply observe, the memory tends to feel unusually personal. That added context gives Mount ʻAlava lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mount%20%27Alava.jpg",
@@ -17172,7 +17172,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Flame Towers",
-        description: "Baku’s Flame Towers are three glass skyscrapers shaped to evoke flames and Azerbaijan’s association with fire. Their LED-covered façades create nightly displays visible across the city.",
+        description: "Iconic trio of fire-shaped skyscrapers",
         entityId: "attraction_AZ_flame_towers",
         panelSummary: "The appeal of Flame Towers lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Flame Towers lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Flame%20towers%20from%20Baku%20boulevard.JPG",
@@ -17182,7 +17182,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Gobustan National Park",
-        description: "Gobustan preserves thousands of prehistoric rock engravings documenting hunting, dancing, boats, animals, and daily life over many millennia. A museum and nearby mud volcanoes add archaeological and geological context.",
+        description: "Ancient rock petroglyphs and mud volcanoes",
         entityId: "attraction_AZ_gobustan_national_park",
         panelSummary: "Gobustan National Park offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gobustan%20National%20Park.JPG",
@@ -17250,7 +17250,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Sundarbans",
-        description: "The Sundarbans form the world’s largest mangrove forest across Bangladesh and India. Boat journeys explore tidal channels, islands, birdlife, crocodiles, deer, and habitat used by Bengal tigers.",
+        description: "World’s largest mangrove forest, home to Bengal tigers",
         entityId: "attraction_BD_sundarbans",
         panelSummary: "Sundarbans rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bangladesh%27s%20Sundarbans%20at%20dawn%20%282398829081%29.jpg",
@@ -17263,7 +17263,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Srimangal",
-        description: "Sreemangal is Bangladesh’s best-known tea-growing region, surrounded by plantations, forests, wetlands, and villages. Estate visits, cycling, birdwatching, and local tea culture provide a quieter rural experience.",
+        description: "Rolling tea gardens in the northeast",
         entityId: "attraction_BD_srimangal",
         panelSummary: "Srimangal turns travel or activity into the attraction itself, allowing scenery and local character to unfold gradually rather than appearing all at once. Preparation and an unhurried approach help travelers appreciate the experience more fully.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Zareen%20Tea%20Estate%20Sylhet%20Division%20-%20Bangladesh.jpg",
@@ -17331,7 +17331,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bahrain Fort",
-        description: "Qal’at al-Bahrain is a Portuguese-era fort built over a settlement mound occupied for thousands of years. Excavated layers, harbor connections, museum exhibits, and ramparts explain Bahrain’s Dilmun and later history.",
+        description: "Portuguese-era fort atop a 4,000-year-old tell",
         entityId: "attraction_BH_bahrain_fort",
         panelSummary: "Bahrain Fort turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. The site is most satisfying when visitors follow its full layout rather than stopping at a single viewpoint.",
         wikidataId: "Q740104",
@@ -17346,7 +17346,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Tree of Life",
-        description: "Bahrain’s Tree of Life is a mature mesquite standing alone in an arid oil-field landscape. Its survival without an obvious water source and isolated desert setting account for its local fame.",
+        description: "Lone acacia surviving in the desert for 400+ years",
         entityId: "attraction_BH_tree_of_life",
         panelSummary: "The strongest reason to visit Tree of Life is the chance to experience the surrounding environment at close range rather than from a distant overlook. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tree%20of%20Life%20Bahrain.jpg",
@@ -17414,7 +17414,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Lake Tanganyika",
-        description: "Lake Tanganyika is one of the world’s deepest and oldest freshwater lakes, shared by four countries. Its clear water, endemic fish, beaches, fishing communities, and mountain backdrop support swimming and boat travel.",
+        description: "World’s second-deepest and longest freshwater lake",
         entityId: "attraction_BI_lake_tanganyika",
         panelSummary: "Lake Tanganyika rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Beach%20in%20Bujumbura.jpg",
@@ -17425,7 +17425,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kibira National Park",
-        description: "Kibira protects montane rainforest along Burundi’s Congo–Nile Divide. Guided visits focus on chimpanzees, colobus monkeys, birds, tea-growing landscapes, and one of the country’s largest remaining forest ecosystems.",
+        description: "Mountain rainforest home to chimpanzees",
         entityId: "attraction_BI_kibira_national_park",
         panelSummary: "Kibira National Park offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/L%27environnement%20de%20Kibira%20%C3%A0%20teza.jpg",
@@ -17495,7 +17495,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Shell Beach",
-        description: "Shell Beach, near Gustavia, is covered with countless small shells rather than conventional sand. Calm water, easy access, snorkeling, and views of the harbor make it a convenient short beach visit.",
+        description: "Beach made of tiny pink and white shells",
         entityId: "attraction_BL_shell_beach",
         panelSummary: "Shell Beach offers a restorative coastal stop where the setting encourages travelers to slow down rather than rush between sights. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Shell%20Beach%20%2846666832614%29.jpg",
@@ -17505,7 +17505,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Colombier Beach",
-        description: "Colombier is a secluded Saint Barthélemy beach reachable only by foot or boat. The undeveloped cove offers clear water, snorkeling, swimming, and a quieter setting than the island’s road-accessible beaches.",
+        description: "Hike-in cove once favored by the Rockefellers",
         entityId: "attraction_BL_colombier_beach",
         panelSummary: "Colombier Beach offers a restorative coastal stop where the setting encourages travelers to slow down rather than rush between sights. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Colombier%20Beach%20%2846845329694%29.jpg",
@@ -17569,7 +17569,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bonaire National Marine Park",
-        description: "Bonaire National Marine Park protects the island’s surrounding reefs, seagrass beds, and mangroves. Marked shore-diving sites provide unusually direct access to coral, fish, turtles, and steep underwater drop-offs.",
+        description: "Shore-diving paradise protecting the entire coastline",
         entityId: "attraction_BQ_bonaire_national_marine_park",
         panelSummary: "Bonaire National Marine Park gives swimmers or divers direct access to a distinctive ecosystem rather than presenting nature from a distant viewpoint. Travelers who move slowly and observe carefully tend to notice far more than the headline species.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Klein%20Bonaire%20%2834800854911%29.jpg",
@@ -17579,7 +17579,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Washington-Slagbaai National Park",
-        description: "This northern Bonaire park combines cactus desert, salt ponds, beaches, historic plantation sites, and rugged coastline. Rough driving routes lead to flamingos, snorkeling coves, viewpoints, and Mount Brandaris trails.",
+        description: "Cactus-covered desert with flamingo lagoons",
         entityId: "attraction_BQ_washington_slagbaai_national_park",
         panelSummary: "The experience at Washington-Slagbaai National Park comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Washington-Slagbaai%20National%20Park%20%282446955129%29.jpg",
@@ -17644,7 +17644,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mir Castle",
-        description: "Mir Castle is a fortified Belarusian complex blending Gothic, Renaissance, and Baroque architecture. Towers, courtyards, furnished rooms, exhibitions, and surrounding parkland trace its military and aristocratic history.",
+        description: "16th-century UNESCO-listed castle",
         entityId: "attraction_BY_mir_castle",
         panelSummary: "Mir Castle turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Mir Castle lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Belarus-Mir-Castle-2.jpg",
@@ -17654,7 +17654,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Białowieża Forest",
-        description: "Białowieża is a rare surviving lowland primeval forest shared by Belarus and Poland. Guided areas preserve old-growth trees, wetlands, diverse wildlife, and the largest free-ranging population of European bison.",
+        description: "Ancient European bison forest shared with Poland",
         entityId: "attraction_BY_bia_owieza_forest",
         panelSummary: "Białowieża Forest makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Border%20pl-be%20in%20bialowieza%20forest%20beentree.jpg",
@@ -17721,7 +17721,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Dzanga Bai",
-        description: "Dzanga Bai is a large mineral-rich forest clearing in the Congo Basin. Elevated platforms allow visitors to watch forest elephants, buffalo, sitatunga, and other wildlife gather in an unusually open setting.",
+        description: "Forest clearing where elephants gather by the hundreds",
         entityId: "attraction_CF_dzanga_bai",
         panelSummary: "The strongest reason to visit Dzanga Bai is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Forest%20Elephants%2C%20Dzanga%20Bai%2C%20Central%20African%20Republic%202.jpg",
@@ -17731,7 +17731,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Boali Falls",
-        description: "Boali Falls are a broad series of cascades on the Mbali River near Bangui. Water volume changes sharply by season, and hydroelectric development affects the flow, but the escarpment remains visually dramatic.",
+        description: "250-ft waterfall near the capital",
         entityId: "attraction_CF_boali_falls",
         panelSummary: "The power of Boali Falls becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Boali Falls lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Chute%20boali.jpg",
@@ -17797,7 +17797,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Aitutaki Lagoon",
-        description: "Aitutaki’s broad turquoise lagoon encloses reefs, sandbars, and small palm-covered islets. Boat cruises, snorkeling, swimming, and stops at uninhabited motu provide the clearest sense of its scale and color.",
+        description: "Regularly voted the world’s most beautiful lagoon",
         entityId: "attraction_CK_aitutaki_lagoon",
         panelSummary: "The strongest reason to visit Aitutaki Lagoon is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Maina%20Island%2C%20Aitutaki%20Lagoon%2C%20Cook%20Islands.jpg",
@@ -17812,7 +17812,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cross-Island Track",
-        description: "Rarotonga’s Cross-Island Track is a steep rainforest route passing beneath the distinctive Te Rua Manga rock formation. The hike includes stream crossings, dense vegetation, mountain views, and a waterfall finish.",
+        description: "Rainforest hike over Rarotongan peaks",
         entityId: "attraction_CK_cross_island_track",
         panelSummary: "The strongest reason to visit Cross-Island Track is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Needle%2C%20Rarotonga.jpg",
@@ -17881,7 +17881,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Handelskade",
-        description: "Handelskade is Willemstad’s row of brightly painted Dutch colonial buildings along St. Anna Bay. The waterfront, floating Queen Emma Bridge, harbor traffic, cafés, and nearby streets form Curaçao’s best-known urban view.",
+        description: "Iconic candy-colored waterfront",
         entityId: "attraction_CW_handelskade",
         panelSummary: "Handelskade gives travelers an accessible entry point into the history or character of Curaçao, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Handelskade lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Facades%20of%20Handelskade%2C%20Willemstad%2C%20Cura%C3%A7ao%20-%20February%202020.jpg",
@@ -17891,7 +17891,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Klein Curaçao",
-        description: "Klein Curaçao is an uninhabited island reached by boat from Curaçao. Visitors explore a long beach, abandoned lighthouse, shipwrecks, snorkeling areas, and sea-turtle habitat in an exposed offshore setting.",
+        description: "Uninhabited island with a shipwreck and lighthouse",
         entityId: "attraction_CW_klein_curacao",
         panelSummary: "The strongest reason to visit Klein Curaçao is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q1366804",
@@ -17962,7 +17962,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Lake Abbe",
-        description: "Lake Abbe is a remote salt lake on the Djibouti–Ethiopia border, surrounded by tall limestone chimneys created by geothermal activity. Flamingos, steam vents, and stark desert scenery dominate guided visits.",
+        description: "Otherworldly limestone chimneys straddling Ethiopia",
         entityId: "attraction_DJ_lake_abbe",
         panelSummary: "Lake Abbe offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q306194",
@@ -17976,7 +17976,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Whale-shark diving in Gulf of Tadjoura",
-        description: "The Gulf of Tadjoura attracts juvenile whale sharks during seasonal plankton blooms. Boat excursions allow supervised snorkeling beside the fish, with volcanic coastline, reefs, and other marine life adding context.",
+        description: "Seasonal swims with giant sharks",
         entityId: "attraction_DJ_whale_shark_diving_in_gulf_of_tadjoura",
         panelSummary: "Whale-shark diving in Gulf of Tadjoura offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
       },
@@ -18035,7 +18035,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Fiat Tagliero Building",
-        description: "Asmara’s Fiat Tagliero is a 1938 service station designed like an airplane, with long unsupported concrete wings. It is a landmark of the city’s preserved Italian Futurist and modernist architecture.",
+        description: "Iconic 1938 futurist service station",
         entityId: "attraction_ER_fiat_tagliero_building",
         panelSummary: "Fiat Tagliero Building gives travelers an accessible entry point into the history or character of Eritrea, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Fiat%20Tagliero%20Building.jpg",
@@ -18046,7 +18046,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Dahlak Archipelago",
-        description: "The Dahlak Archipelago contains more than 100 arid Red Sea islands with reefs, seabirds, fishing communities, and archaeological traces. Limited development preserves the marine environment but makes access logistically demanding.",
+        description: "Undeveloped Red Sea islands",
         entityId: "attraction_ER_dahlak_archipelago",
         panelSummary: "Dahlak Archipelago offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q639648",
@@ -18116,7 +18116,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Nan Madol",
-        description: "Nan Madol is a ruined ceremonial city built on 92 artificial islets off Pohnpei. Basalt walls, canals, tombs, and elite compounds reveal the political center of the Saudeleur dynasty.",
+        description: "Ancient stone city built on 92 artificial islets",
         entityId: "attraction_FM_nan_madol",
         panelSummary: "Nan Madol makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         wikidataId: "Q846967",
@@ -18129,7 +18129,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Chuuk Lagoon",
-        description: "Chuuk Lagoon contains dozens of Japanese ships and aircraft sunk during World War II. Divers explore cargo holds, guns, vehicles, aircraft, coral growth, and marine life across one of the world’s major wreck-diving areas.",
+        description: "Ghost fleet of sunken Japanese WWII ships",
         entityId: "attraction_FM_chuuk_lagoon",
         panelSummary: "The appeal of Chuuk Lagoon lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Chuuk Lagoon lasting appeal.",
         wikidataId: "Q3593555",
@@ -18196,7 +18196,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Múlafossur Waterfall",
-        description: "Múlafossur drops from the village plateau at Gásadalur directly toward the Atlantic. A roadside path frames the waterfall with sea cliffs, grass-roofed houses, and the rugged western coast of Vágar.",
+        description: "Cascade plunging directly into the Atlantic",
         entityId: "attraction_FO_mulafossur_waterfall",
         panelSummary: "The appeal of Múlafossur Waterfall lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. Spending time with the site’s details makes it more satisfying than a quick checklist stop. That added context gives Múlafossur Waterfall lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Blick%20auf%20den%20Wasserfall%20M%C3%BAlafossur%20und%20den%20Ort%20G%C3%A1sadalur%2C%20August%202019.jpg",
@@ -18206,7 +18206,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kalsoy",
-        description: "Kalsoy is a narrow, mountainous Faroe island linked by tunnels and ferries. The hike to Kallur Lighthouse provides steep cliff views, while small villages and the Seal Woman legend add cultural interest.",
+        description: "“Kallur Lighthouse” hike with dramatic cliff views",
         entityId: "attraction_FO_kalsoy",
         panelSummary: "Kalsoy offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q212043",
@@ -18276,7 +18276,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Underwater Sculpture Park",
-        description: "Molinere Underwater Sculpture Park places human figures and installations on Grenada’s seabed. Snorkelers and divers see art becoming reef habitat as coral and marine life gradually colonize the works.",
+        description: "Diver-accessible art in the sea",
         entityId: "attraction_GD_underwater_sculpture_park",
         panelSummary: "The appeal of Underwater Sculpture Park lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Underwater Sculpture Park lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grenada%20Underwater%20Sculpture%20Park%202%20%28Boris%20Kasimov%29%20-%20Flickr.jpg",
@@ -18287,7 +18287,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Grand Etang",
-        description: "Grand Etang is a crater lake surrounded by rainforest in Grenada’s central highlands. Short trails, viewpoints, birdlife, mona monkeys, and access to longer mountain hikes make it a useful nature stop.",
+        description: "Crater-lake rainforest with mona monkeys",
         entityId: "attraction_GD_grand_etang",
         panelSummary: "Grand Etang turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. The experience is strongest when travelers understand both the beauty and volatility of the setting.",
         wikidataId: "Q5594534",
@@ -18357,7 +18357,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Guiana Space Centre",
-        description: "The Guiana Space Centre is Europe’s principal orbital launch site, positioned near the equator for efficient rocket launches. Guided visits cover launch complexes, control facilities, exhibits, and space-program history.",
+        description: "Europe’s equatorial launch site for Ariane rockets",
         entityId: "attraction_GF_guiana_space_centre",
         panelSummary: "Guiana Space Centre gives travelers an accessible entry point into the history or character of French Guiana, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q308987",
@@ -18372,7 +18372,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Îles du Salut",
-        description: "The Salvation Islands are three tropical islands off French Guiana once used as a notorious penal colony. Visitors tour prison ruins, officers’ buildings, cemeteries, wildlife, and coastal paths on Île Royale.",
+        description: "Former penal-colony islands including Devil’s Island",
         entityId: "attraction_GF_iles_du_salut",
         panelSummary: "The strongest reason to visit Îles du Salut is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q292695",
@@ -18443,7 +18443,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Castle Cornet",
-        description: "Castle Cornet is an 800-year-old fortress guarding Guernsey’s harbor. Ramparts, museums, restored rooms, gardens, and a daily cannon firing trace the island’s military and maritime history.",
+        description: "800-year-old harbor fortress",
         entityId: "attraction_GG_castle_cornet",
         panelSummary: "Walking through Castle Cornet reveals how defense, geography, and architecture were combined to control the surrounding landscape. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history. That added context gives Castle Cornet lasting appeal.",
         wikidataId: "Q155252",
@@ -18458,7 +18458,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Little Chapel",
-        description: "Guernsey’s Little Chapel is a miniature place of worship decorated with shells, pebbles, and broken china. Its hand-built scale, intricate surfaces, and repeated reconstruction make it a distinctive folk-art landmark.",
+        description: "Miniature chapel decorated with seashells and china",
         entityId: "attraction_GG_little_chapel",
         panelSummary: "Little Chapel is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. The atmosphere gives the site emotional depth as well as historical interest. That added context gives Little Chapel lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Little%20Chapel%2C%20Guernsey.jpg",
@@ -18524,7 +18524,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Rock of Gibraltar",
-        description: "The Rock of Gibraltar is a limestone ridge overlooking the Strait. Cable cars and roads reach viewpoints, military tunnels, caves, nature reserve trails, and Europe’s only wild Barbary macaques.",
+        description: "Iconic limestone monolith with Barbary macaques",
         entityId: "attraction_GI_rock_of_gibraltar",
         panelSummary: "Rock of Gibraltar offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q690347",
@@ -18538,7 +18538,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "St. Michael’s Cave",
-        description: "St. Michael’s Cave is a large limestone cavern inside the Rock of Gibraltar. Illuminated chambers, stalactites, historic legends, and a natural auditorium used for concerts define the guided visit.",
+        description: "Concert-hosting stalactite cavern inside the Rock",
         entityId: "attraction_GI_st_michael_s_cave",
         panelSummary: "Inside St. Michael’s Cave, geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. The cooler air, acoustics, and lighting make the experience as sensory as it is visual. That added context gives St. Michael’s Cave lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Michael%27s%20Cave%2C%20Gibraltar.jpg",
@@ -18604,7 +18604,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bossou Chimpanzee Reserve",
-        description: "Bossou is known for a long-studied community of wild chimpanzees that use stone tools to crack nuts. Guided tracking also introduces the surrounding forest, conservation research, and nearby village relationships.",
+        description: "Habituated wild chimpanzee community",
         entityId: "attraction_GN_bossou_chimpanzee_reserve",
         panelSummary: "The appeal of Bossou Chimpanzee Reserve lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Chimpanz%C3%A9%20de%20Bossou%2040.jpg",
@@ -18617,7 +18617,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Îles de Los",
-        description: "The Îles de Los are a small archipelago off Conakry with beaches, fishing villages, and forested interiors. Boat trips, swimming, seafood, and traces of colonial and slave-trade history shape visits.",
+        description: "Small archipelago off Conakry with beaches",
         entityId: "attraction_GN_iles_de_los",
         panelSummary: "Îles de Los offers a restorative coastal stop where the setting encourages travelers to slow down rather than rush between sights. Time in the water and a walk along the shore provide a fuller experience than a brief photo stop.",
         wikidataId: "Q292625",
@@ -18689,7 +18689,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "La Soufrière",
-        description: "La Grande Soufrière is Guadeloupe’s highest mountain and an active volcano. A demanding hike crosses rainforest and exposed summit terrain to fumaroles, sulfur deposits, crater features, and island views.",
+        description: "Active volcano hikable to the summit",
         entityId: "attraction_GP_la_soufriere",
         panelSummary: "La Soufrière provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. The experience is strongest when travelers understand both the beauty and volatility of the setting.",
         wikidataId: "Q1149310",
@@ -18704,7 +18704,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Chutes du Carbet",
-        description: "Carbet Falls are three major waterfalls descending through rainforest on Guadeloupe’s La Soufrière massif. Maintained trails and viewpoints provide access, though volcanic activity and weather can close some routes.",
+        description: "Trio of jungle waterfalls up to 380 ft",
         entityId: "attraction_GP_chutes_du_carbet",
         panelSummary: "The power of Chutes du Carbet becomes clearer in person, where rushing water, mist, and the surrounding landscape create a highly physical experience. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Chutes du Carbet lasting appeal.",
         wikidataId: "Q2967747",
@@ -18772,7 +18772,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Pico Basile",
-        description: "Pico Basilé is Bioko Island’s highest mountain and an extinct shield volcano. Road and hiking access lead through montane forest to cooler summit conditions and views across the Gulf of Guinea.",
+        description: "Volcanic peak with views across the Bight of Bonny",
         entityId: "attraction_GQ_pico_basile",
         panelSummary: "Pico Basile rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q1518286",
@@ -18787,7 +18787,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Monte Alén National Park",
-        description: "Monte Alén protects dense mainland rainforest, rivers, and mountains in Equatorial Guinea. Guided expeditions may encounter gorillas, chimpanzees, elephants, monkeys, birds, and remote forest communities.",
+        description: "Mainland rainforest with lowland gorillas",
         entityId: "attraction_GQ_monte_alen_national_park",
         panelSummary: "Monte Alén National Park rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         bestWeatherMonths: "Jul–Aug",
@@ -18849,7 +18849,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Two Lovers Point",
-        description: "Two Lovers Point is a limestone cliff overlooking Tumon Bay from roughly 120 meters above the sea. Observation decks combine broad coastal views with a Chamorro legend about two young lovers.",
+        description: "Cliffside overlook with tragic Chamorro legend",
         entityId: "attraction_GU_two_lovers_point",
         panelSummary: "Two Lovers Point rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q96097880",
@@ -18864,7 +18864,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "War in the Pacific National Historical Park",
-        description: "This Guam park preserves beaches, battlefields, fortifications, caves, and memorials connected to the Pacific War. Separate units combine military history with snorkeling, hiking, and coastal scenery.",
+        description: "WWII battle sites and jungle trails",
         entityId: "attraction_GU_war_in_the_pacific_national_historical_park",
         panelSummary: "War in the Pacific National Historical Park turns travel or activity into the attraction itself, allowing scenery and local character to unfold gradually rather than appearing all at once. Because visitors take part rather than simply observe, the memory tends to feel unusually personal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/General%20view%20-%20War%20in%20the%20Pacific%20National%20Historical%20Park%20%28Asan%20Beach%20Unit%29%20-%20DSC00850.JPG",
@@ -18935,7 +18935,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bijagós Islands",
-        description: "The Bijagós are a large archipelago of mangroves, mudflats, savannas, and culturally distinct island communities. Wildlife includes sea turtles, birds, and rare saltwater hippos, with many islands remaining difficult to reach.",
+        description: "UNESCO biosphere with saltwater hippos",
         entityId: "attraction_GW_bijagos_islands",
         panelSummary: "Bijagós Islands gives travelers an accessible entry point into the history or character of Guinea-Bissau, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q151909",
@@ -18950,7 +18950,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bolama",
-        description: "Bolama was Guinea-Bissau’s colonial capital before administration moved to Bissau. Faded civic buildings, broad avenues, port ruins, and quiet streets reveal the remains of an ambitious planned town.",
+        description: "Former colonial capital now half-abandoned",
         entityId: "attraction_GW_bolama",
         panelSummary: "Bolama gives travelers an accessible entry point into the history or character of Guinea-Bissau, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q681802",
@@ -19020,13 +19020,13 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Isle of Man TT course",
-        description: "The TT Mountain Course is a 37.73-mile public-road circuit used for the Isle of Man’s motorcycle races. Driving or touring it reveals villages, mountain sections, landmarks, and the event’s exceptional speed and danger.",
+        description: "Legendary 37-mile public-road motorcycle circuit",
         entityId: "attraction_IM_isle_of_man_tt_course",
         panelSummary: "Isle of Man TT course creates a memorable change of pace by combining movement, landscape, and a clear sense of participation. Preparation and an unhurried approach help travelers appreciate the experience more fully. That added context gives Isle of Man TT course lasting appeal.",
       },
       {
         name: "Snaefell Mountain Railway",
-        description: "This electric railway climbs from Laxey to Snaefell, the Isle of Man’s highest point. The historic cars, steep mountain route, and summit views across several surrounding countries are the main attractions.",
+        description: "Electric railway to the island’s highest point",
         entityId: "attraction_IM_snaefell_mountain_railway",
         panelSummary: "Snaefell Mountain Railway rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Snaefell%20Mountain%20Railway%20car%20no%204%20on%20mountain.jpg",
@@ -19095,7 +19095,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Erbil Citadel",
-        description: "Erbil Citadel is a fortified settlement mound rising above the modern city. Gates, restored houses, museums, lanes, and archaeological layers document occupation extending back thousands of years.",
+        description: "UNESCO-listed continuously inhabited mound",
         entityId: "attraction_IQ_erbil_citadel",
         panelSummary: "Erbil Citadel rewards exploration through ramparts, courtyards, gateways, and viewpoints that explain why the site held strategic importance. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Erbil Citadel lasting appeal.",
         wikidataId: "Q132754",
@@ -19110,7 +19110,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ur",
-        description: "Ur was a major Sumerian city-state near the ancient Euphrates coast. The restored ziggurat, royal cemetery, temples, city walls, and excavated neighborhoods reveal Bronze Age religion, trade, government, and wealth.",
+        description: "Ziggurat of the Sumerian city, birthplace of Abraham",
         entityId: "attraction_IQ_ur",
         panelSummary: "Ur makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         wikidataId: "Q5699",
@@ -19180,7 +19180,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Persepolis",
-        description: "Persepolis was the ceremonial capital of the Achaemenid Empire, begun by Darius I. Monumental stairways, columned halls, gateways, tombs, and detailed reliefs depict imperial delegations and court ceremony.",
+        description: "Ceremonial capital of Achaemenid Persia",
         entityId: "attraction_IR_persepolis",
         panelSummary: "Persepolis gives travelers an accessible entry point into the history or character of Iran, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q129072",
@@ -19195,7 +19195,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Naqsh-e Jahan Square",
-        description: "Naqsh-e Jahan is a vast 17th-century square at the center of Safavid Isfahan. The Shah Mosque, Sheikh Lotfollah Mosque, Ali Qapu Palace, and bazaar entrances form a unified civic ensemble.",
+        description: "Vast tile-covered plaza in Isfahan",
         entityId: "attraction_IR_naqsh_e_jahan_square",
         panelSummary: "Naqsh-e Jahan Square is appealing not simply for its shoreline, but for the combination of water color, surrounding landscape, and space to settle into the setting. Exploring beyond the busiest access point often reveals the beach at its most atmospheric.",
         wikidataId: "Q42053",
@@ -19268,7 +19268,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mont Orgueil Castle",
-        description: "Mont Orgueil is a medieval fortress overlooking Gorey Harbour in Jersey. Towers, battlements, stairways, hidden rooms, exhibitions, and elevated coastal views show how the castle defended the island.",
+        description: "13th-century castle above Gorey harbor",
         entityId: "attraction_JE_mont_orgueil_castle",
         panelSummary: "Walking through Mont Orgueil Castle reveals how defense, geography, and architecture were combined to control the surrounding landscape. The site is most satisfying when visitors follow its full layout rather than stopping at a single viewpoint.",
         wikidataId: "Q639326",
@@ -19283,7 +19283,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Jersey War Tunnels",
-        description: "The Jersey War Tunnels were excavated by forced labor during the German occupation and intended as an underground hospital. Exhibitions use the unfinished chambers to explain occupation, resistance, hardship, and liberation.",
+        description: "Vast WWII German underground hospital",
         entityId: "attraction_JE_jersey_war_tunnels",
         panelSummary: "Inside Jersey War Tunnels, geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. The cooler air, acoustics, and lighting make the experience as sensory as it is visual. That added context gives Jersey War Tunnels lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Inside%20the%20Jersey%20War%20Tunnels%20%28Hohlgangsanlage%208%20Ho8%20WWII%20German%20Underground%20Hospital%29%20Museum%20St.%20Lawrence%20Flickr%20photo%20by%20Michael%20Gaylard%20UK%202026-03-27%20CC%20BY%204.0%20-%2055177399997.jpg",
@@ -19351,7 +19351,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Song-Kul",
-        description: "Song-Kul is a high-altitude lake surrounded by open pasture in central Kyrgyzstan. Summer yurt camps, horseback riding, herding culture, clear night skies, and remote mountain scenery define the experience.",
+        description: "High-alpine lake with summer yurt camps",
         entityId: "attraction_KG_song_kul",
         panelSummary: "The strongest reason to visit Song-Kul is the chance to experience the surrounding environment at close range rather than from a distant overlook. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Song-Kul%2C%20Kyrgyzstan%20%2844580008121%29.jpg",
@@ -19362,7 +19362,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ala-Archa National Park",
-        description: "Ala-Archa protects a glacier-carved valley close to Bishkek. Trails range from easy riverside walks to demanding routes toward waterfalls, alpine huts, glaciers, and peaks used by climbers.",
+        description: "Glacier-fed canyon 30 minutes from Bishkek",
         entityId: "attraction_KG_ala_archa_national_park",
         panelSummary: "Ala-Archa National Park offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mountains%20in%20the%20National%20Park%20Ala%20Archa%2001.jpg",
@@ -19432,13 +19432,13 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Kiritimati flats",
-        description: "Kiritimati’s expansive saltwater flats and lagoons are internationally known for bonefish and giant trevally fishing. Guides use skiffs and wading routes across remote, shallow habitats also important to seabirds.",
+        description: "Famed bonefish and giant trevally fishing",
         entityId: "attraction_KI_kiritimati_flats",
         panelSummary: "Kiritimati flats offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
       },
       {
         name: "Betio War Memorials",
-        description: "Betio preserves bunkers, guns, memorials, and burial sites from the 1943 Battle of Tarawa. Walking the island connects surviving defenses with the intense amphibious fighting and heavy casualties.",
+        description: "Sites of the WWII Battle of Tarawa",
         entityId: "attraction_KI_betio_war_memorials",
         panelSummary: "Betio War Memorials offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         bestWeatherMonths: "Jun, Aug–Nov",
@@ -19498,7 +19498,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mount Karthala",
-        description: "Mount Karthala is an active shield volcano dominating Grande Comore. Multi-day hikes cross farmland, forest, and exposed lava to reach a large summit caldera shaped by frequent eruptions.",
+        description: "Massive active volcano with a summit trek",
         entityId: "attraction_KM_mount_karthala",
         panelSummary: "Mount Karthala turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         wikidataId: "Q527548",
@@ -19513,7 +19513,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mohéli Marine Park",
-        description: "Mohéli Marine Park protects reefs, mangroves, beaches, and offshore islets around the island. Seasonal sea-turtle nesting, whale watching, snorkeling, village-based tourism, and occasional dugong sightings are key attractions.",
+        description: "Nesting sea turtles and dugongs",
         entityId: "attraction_KM_moheli_marine_park",
         panelSummary: "The appeal of Mohéli Marine Park lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Mohéli Marine Park lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ouallah-Moh%C3%A9li-Corail.jpg",
@@ -19578,7 +19578,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mansu Hill Grand Monument",
-        description: "Mansudae Grand Monument centers on enormous bronze statues of North Korea’s founding leaders. Required visitor behavior, surrounding revolutionary sculptures, and official symbolism make it a highly controlled political site.",
+        description: "Bronze statues of Kim Il-sung and Kim Jong-il",
         entityId: "attraction_KP_mansu_hill_grand_monument",
         panelSummary: "Mansu Hill Grand Monument offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mansudae%20Grand%20Monument%2018.JPG",
@@ -19588,7 +19588,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Kaesong",
-        description: "Kaesong is a historic Korean city near the Demilitarized Zone and former capital of the Goryeo dynasty. Tombs, academies, old gates, museums, and traditional neighborhoods form its UNESCO-listed heritage.",
+        description: "Historic city near the DMZ",
         entityId: "attraction_KP_kaesong",
         panelSummary: "The appeal of Kaesong lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit. That added context gives Kaesong lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kaesong%2C%20North%20Korea%20%282914912708%29.jpg",
@@ -19658,7 +19658,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Stingray City",
-        description: "Stingray City is a shallow Grand Cayman sandbar where southern stingrays gather around tour boats. Visitors stand, snorkel, and observe the animals closely under guide supervision.",
+        description: "Sandbar snorkel with wild southern stingrays",
         entityId: "attraction_KY_stingray_city",
         panelSummary: "Stingray City gives swimmers or divers direct access to a distinctive ecosystem rather than presenting nature from a distant viewpoint. Travelers who move slowly and observe carefully tend to notice far more than the headline species.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stingray%20CIty%20in%20Grand%20Cayman.jpg",
@@ -19669,7 +19669,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Bloody Bay Wall",
-        description: "Bloody Bay Marine Park protects reefs off Little Cayman, including a near-vertical wall descending into deep water. Divers come for clear visibility, coral, sponges, turtles, rays, and abundant reef fish.",
+        description: "World-class drop-off dive on Little Cayman",
         entityId: "attraction_KY_bloody_bay_wall",
         panelSummary: "Bloody Bay Wall offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
       },
@@ -19732,7 +19732,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Vaduz Castle",
-        description: "Vaduz Castle is the official residence of Liechtenstein’s princely family, positioned above the capital. The interior is closed to visitors, but hillside viewpoints show its medieval core, later additions, and valley setting.",
+        description: "Home of the princely family, overlooking the town",
         entityId: "attraction_LI_vaduz_castle",
         panelSummary: "Walking through Vaduz Castle reveals how defense, geography, and architecture were combined to control the surrounding landscape. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss. That added context gives Vaduz Castle lasting appeal.",
         wikidataId: "Q1844",
@@ -19747,7 +19747,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Fürstensteig",
-        description: "Fürstensteig is an exposed alpine trail cut across cliffs above Liechtenstein’s Rhine Valley. Cables and narrow ledges assist hikers, while ridgeline sections provide broad views toward Switzerland and Austria.",
+        description: "Cliff-edge Alpine ridge hike",
         entityId: "attraction_LI_furstensteig",
         panelSummary: "Fürstensteig rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         wikidataId: "Q1483351",
@@ -19815,7 +19815,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Cricova",
-        description: "Cricova is a Moldovan winery occupying an extensive network of former limestone tunnels. Guided vehicle tours pass underground streets, aging cellars, sparkling-wine production areas, tasting rooms, and notable private collections.",
+        description: "Vast underground wine city with 75 miles of tunnels",
         entityId: "attraction_MD_cricova",
         panelSummary: "Cricova offers a distinctly physical encounter with geology, moving from confined passages into larger spaces shaped over immense periods. The cooler air, acoustics, and lighting make the experience as sensory as it is visual. That added context gives Cricova lasting appeal.",
         wikidataId: "Q1139983",
@@ -19829,7 +19829,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mileștii Mici",
-        description: "Mileștii Mici is a vast underground Moldovan winery recognized for its enormous bottled-wine collection. Tours travel through limestone galleries to storage chambers, tasting rooms, and cellars extending for many kilometers.",
+        description: "Guinness-record largest wine collection in the world",
         entityId: "attraction_MD_milestii_mici",
         panelSummary: "Mileștii Mici places significant works within a broader cultural story, helping visitors understand the people, ideas, and periods behind the collection. The building and quieter galleries contribute as much to the experience as the most recognizable exhibits.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bodegas%20de%20Mile%C8%99tii%20Mici%2C%20Moldavia%2C%202023-11-02%2C%20DD%2075-77%20HDR.jpg",
@@ -19897,7 +19897,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Pinel Island",
-        description: "Pinel is a small islet off Saint Martin reached by a short ferry. Shallow water, beaches, snorkeling trails, restaurants, and views across the protected nature reserve support an easy day trip.",
+        description: "Uninhabited islet reached by short water-taxi",
         entityId: "attraction_MF_pinel_island",
         panelSummary: "Pinel Island offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q21427420",
@@ -19912,7 +19912,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Loterie Farm",
-        description: "Loterie Farm is a privately managed forest reserve on Pic Paradis. Hiking trails, canopy zip-lines, pools, and hillside dining combine active recreation with access to Saint Martin’s tropical interior.",
+        description: "Rainforest zip-line preserve",
         entityId: "attraction_MF_loterie_farm",
         panelSummary: "Loterie Farm rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
       },
@@ -19972,7 +19972,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Bikini Atoll dive sites",
-        description: "Bikini Atoll’s lagoon contains warships sunk during U.S. nuclear tests, including USS Saratoga and Japanese battleship Nagato. Technical divers encounter exceptionally large wrecks alongside the atoll’s complex nuclear history.",
+        description: "USS Saratoga and other sunken WWII/nuclear-test ships",
         entityId: "attraction_MH_bikini_atoll_dive_sites",
         panelSummary: "Bikini Atoll dive sites offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q152225",
@@ -19986,7 +19986,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Arno Atoll",
-        description: "Arno is a large, inhabited atoll close to Majuro, composed of many islets around several lagoons. Visitors encounter fishing, copra production, traditional community life, beaches, and limited tourism infrastructure.",
+        description: "Traditional outer-island culture",
         entityId: "attraction_MH_arno_atoll",
         panelSummary: "Arno Atoll offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Aerial%20view%20of%20Arno%20atoll.jpg",
@@ -20052,7 +20052,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Lake Ohrid",
-        description: "Lake Ohrid is one of Europe’s oldest and deepest lakes, shared by North Macedonia and Albania. Ancient churches, lakeside towns, endemic species, beaches, boat trips, and mountain views support varied visits.",
+        description: "One of Europe’s oldest and deepest lakes",
         entityId: "attraction_MK_lake_ohrid",
         panelSummary: "Lake Ohrid offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q156258",
@@ -20066,7 +20066,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Matka Canyon",
-        description: "Matka Canyon is a limestone gorge and reservoir near Skopje. Kayaking, boat trips, cliffside trails, medieval monasteries, caves, climbing routes, and birdlife make it a compact outdoor destination.",
+        description: "Kayak-friendly gorge near Skopje",
         entityId: "attraction_MK_matka_canyon",
         panelSummary: "Matka Canyon offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q384",
@@ -20140,7 +20140,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Ruins of St. Paul’s",
-        description: "Ruins of St. Paul’s preserves the carved stone façade, crypt, and foundations of a 17th-century Jesuit church destroyed by fire. Its Asian-influenced religious carvings and hilltop staircase make it Macau’s defining historic landmark.",
+        description: "Iconic 17th-century facade above a stone staircase",
         entityId: "attraction_MO_ruins_of_st_paul_s",
         panelSummary: "Ruins of St. Paul’s gives travelers an accessible entry point into the history or character of Macao, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Ruins%20of%20St.%20Pauls%2C%20Macau%20%286847680308%29.jpg",
@@ -20151,7 +20151,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Senado Square",
-        description: "Senado Square is Macau’s principal civic plaza, paved in Portuguese wave-pattern mosaic and surrounded by colonial-era buildings. Its pedestrian streets connect major churches, shops, and monuments within the UNESCO-listed historic center.",
+        description: "Wave-patterned Portuguese-tiled plaza",
         entityId: "attraction_MO_senado_square",
         panelSummary: "Senado Square offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Macau%20-%20Senado%20Square.jpg",
@@ -20217,7 +20217,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Grotto (Saipan)",
-        description: "The Grotto is a collapsed limestone cavern on Saipan where stairs descend to a tidal pool linked to the ocean by underwater passages. Divers value its blue light, arches, depth, and strong open-sea conditions.",
+        description: "Collapsed limestone cavern dive site",
         entityId: "attraction_MP_grotto_saipan",
         panelSummary: "Inside Grotto (Saipan), geology becomes immersive as passages and chambers reveal textures and forms hidden from the surface. Moving slowly allows smaller formations and reflections to become as memorable as the main chamber. That added context gives Grotto (Saipan) lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grotto%20in%20Saipan%202.JPG",
@@ -20233,7 +20233,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Banzai Cliff",
-        description: "Banzai Cliff is a northern Saipan headland associated with civilian deaths during the final 1944 battle. Memorials, interpretive plaques, and exposed ocean views make it both a scenic overlook and a sobering wartime site.",
+        description: "WWII memorial with dramatic ocean cliffs",
         entityId: "attraction_MP_banzai_cliff",
         panelSummary: "Banzai Cliff rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q11328397",
@@ -20303,7 +20303,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mount Pelée",
-        description: "Mount Pelée is an active volcano whose 1902 eruption destroyed Saint-Pierre and transformed volcanology. Hiking routes cross rainforest and exposed summit terrain to reach domes, caldera views, and landscapes shaped by repeated eruptions.",
+        description: "Volcano hikable to a caldera summit",
         entityId: "attraction_MQ_mount_pelee",
         panelSummary: "Mount Pelée turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. Access and conditions can change, making current local guidance an important part of planning. That added context gives Mount Pelée lasting appeal.",
         wikidataId: "Q76309",
@@ -20317,7 +20317,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Les Salines",
-        description: "Les Salines is a long beach at Martinique’s southern tip, with pale sand, coconut palms, and views toward Diamond Rock and Saint Lucia. Calm periods favor swimming, while weekends can become crowded.",
+        description: "Long powdery beach at the southern tip",
         entityId: "attraction_MQ_les_salines",
         panelSummary: "The experience at Les Salines comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Its strongest appeal is the unhurried rhythm it adds to a wider trip.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Les%20Salines%20Beach.JPG",
@@ -20389,7 +20389,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Banc d’Arguin National Park",
-        description: "Banc d’Arguin protects vast tidal flats, islands, seagrass beds, and shallow coastal waters between the Sahara and Atlantic. Boat access reveals major seabird colonies, migratory birds, dolphins, turtles, and traditional Imraguen fishing communities.",
+        description: "Migratory-bird UNESCO reserve",
         entityId: "attraction_MR_banc_d_arguin_national_park",
         panelSummary: "Banc d’Arguin National Park gives travelers an accessible entry point into the history or character of Mauritania, while still delivering an immediate visual impression. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Banc%20d%27Arguin%20National%20Park%2C%20Mauritania.jpg",
@@ -20400,7 +20400,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Adrar Plateau",
-        description: "The Adrar is a sandstone plateau of cliffs, canyons, dunes, oasis towns, and ancient caravan routes in central Mauritania. Chinguetti, Ouadane, rock art, palm groves, and desert crossings anchor most visits.",
+        description: "Desert mesas and oasis villages",
         entityId: "attraction_MR_adrar_plateau",
         panelSummary: "The strongest reason to visit Adrar Plateau is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Adrar%20Plateau%20%2814980145940%29.jpg",
@@ -20471,7 +20471,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Soufrière Hills Volcano",
-        description: "Soufrière Hills is an active volcano whose eruptions since 1995 buried Plymouth and reshaped southern Montserrat. Observatory viewpoints explain the exclusion zone, monitoring work, ash-covered settlements, and the island’s continuing volcanic risk.",
+        description: "Active volcano with an observatory viewpoint",
         entityId: "attraction_MS_soufriere_hills_volcano",
         panelSummary: "Soufrière Hills Volcano turns volcanic history into an outdoor experience, revealing how heat, pressure, and eruption have shaped the surrounding terrain. The experience is strongest when travelers understand both the beauty and volatility of the setting.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Soufriere%20Hills.jpg",
@@ -20482,7 +20482,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Rendezvous Beach",
-        description: "Rendezvous Bay is Montserrat’s only white-sand beach, reached mainly by boat or a steep coastal hike. Its clear water, snorkeling, cliffs, and relative isolation contrast with the island’s darker volcanic beaches.",
+        description: "Only white-sand beach on the island, hike-in",
         entityId: "attraction_MS_rendezvous_beach",
         panelSummary: "Rendezvous Beach offers a restorative coastal stop where the setting encourages travelers to slow down rather than rush between sights. Its strongest appeal is the unhurried rhythm it adds to a wider trip. That added context gives Rendezvous Beach lasting appeal.",
       },
@@ -20545,7 +20545,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "New Caledonia Barrier Reef",
-        description: "New Caledonia’s barrier reef encloses one of the world’s largest lagoon systems. Diving, snorkeling, boating, turtles, dugongs, coral habitats, and exceptional marine diversity explain its UNESCO protection and visitor appeal.",
+        description: "World’s second-longest and UNESCO-protected",
         entityId: "attraction_NC_new_caledonia_barrier_reef",
         panelSummary: "The appeal of New Caledonia Barrier Reef lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives New Caledonia Barrier Reef lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Reefs%20of%20New%20Caledonia%20from%20ISS%2C%20September%209%2C%202020.jpg",
@@ -20556,7 +20556,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Grande Terre highlands",
-        description: "Grande Terre is New Caledonia’s main island, divided by a rugged mountain spine. Red-soil mining landscapes, waterfalls, forests, Kanak communities, western ranch country, and reef-fringed coasts reward overland exploration.",
+        description: "Nickel-rich red-earth mountains",
         entityId: "attraction_NC_grande_terre_highlands",
         panelSummary: "Grande Terre highlands rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grande%20Terre%20New%20Caledonia%20%28MODIS%202020-07-24%29.jpg",
@@ -20620,7 +20620,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Aïr Mountains",
-        description: "The Aïr Mountains rise as volcanic massifs from Niger’s Sahara, creating valleys, oases, and cooler highlands. Desert expeditions reveal granite peaks, rock art, Tuareg culture, wildlife, and dramatic transitions into the surrounding Ténéré.",
+        description: "Volcanic desert range in the Sahara",
         entityId: "attraction_NE_air_mountains",
         panelSummary: "Aïr Mountains offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Airmountains%20tmo%202013145.jpg",
@@ -20633,7 +20633,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "W National Park",
-        description: "W National Park spans Niger, Benin, and Burkina Faso around a distinctive bend in the Niger River. Savanna, wetlands, and woodland support elephants, lions, antelope, hippos, birds, and other West African wildlife.",
+        description: "Cross-border safari park with elephants and lions",
         entityId: "attraction_NE_w_national_park",
         panelSummary: "The strongest reason to visit W National Park is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephants%20bath%20park%20w%20Niger%202006.jpg",
@@ -20698,7 +20698,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Command Ridge",
-        description: "Command Ridge is Nauru’s highest point and a former Japanese military position from World War II. Rusting guns, bunkers, communications remains, and views across the phosphate-scarred interior provide the main reasons to visit.",
+        description: "WWII Japanese guns and island viewpoint",
         entityId: "attraction_NR_command_ridge",
         panelSummary: "Command Ridge rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nauru-WWIIrelic.jpg",
@@ -20710,7 +20710,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Buada Lagoon",
-        description: "Buada Lagoon is Nauru’s only significant inland freshwater body, set within a fertile depression surrounded by palms and vegetation. The quiet, enclosed setting contrasts sharply with the island’s mined central plateau.",
+        description: "Freshwater inland lagoon",
         entityId: "attraction_NR_buada_lagoon",
         panelSummary: "The strongest reason to visit Buada Lagoon is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q997345",
@@ -20777,7 +20777,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Talava Arches",
-        description: "Talava Arches is a limestone coastal formation reached by a forest trail and reef walk at low tide. Large arches, caves, tidal pools, and open-ocean views demonstrate Niue’s uplifted coral geology.",
+        description: "Coastal limestone arches at low tide",
         entityId: "attraction_NU_talava_arches",
         panelSummary: "Talava Arches gives travelers an accessible entry point into the history or character of Niue, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Talava%20Arches%201%2C%20Niue.jpg",
@@ -20790,7 +20790,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Whale-watching",
-        description: "Niue’s clear, deep coastal water brings migrating humpback whales unusually close to shore from roughly July through October. Licensed boat tours focus on respectful observation, with limited in-water encounters governed by local rules.",
+        description: "Humpbacks visit close to shore Jul–Oct",
         entityId: "attraction_NU_whale_watching",
         panelSummary: "The experience at Whale-watching comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Exploring beyond the busiest access point often reveals the beach at its most atmospheric.",
       },
@@ -20849,7 +20849,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Kokoda Track",
-        description: "The Kokoda Track is a 96-kilometer foot trail across Papua New Guinea’s Owen Stanley Range. Multi-day treks combine steep jungle terrain, village stays, biodiversity, and battle sites from the 1942 Kokoda campaign.",
+        description: "96km WWII trek across the Owen Stanley Range",
         entityId: "attraction_PG_kokoda_track",
         panelSummary: "Kokoda Track gives travelers an accessible entry point into the history or character of Papua New Guinea, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Early%20morning%20at%20Alola%2C%20Kokoda%20Track%2C%20Papua%20New%20Guinea.jpg",
@@ -20860,7 +20860,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sepik River",
-        description: "The Sepik is a vast river system winding through lowland rainforest, wetlands, and remote villages. Boat journeys center on carved spirit houses, masks, ceremonial art, subsistence life, and one of Melanesia’s most distinctive cultural regions.",
+        description: "Wooden-spirit-mask villages along a jungle river",
         entityId: "attraction_PG_sepik_river",
         panelSummary: "The strongest reason to visit Sepik River is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Men%27s%20house%20in%20Tambunum%20village%2C%20Sepik%20River%2C%20Papua%20New%20Guinea%20%28side%20view%29.jpg",
@@ -20929,7 +20929,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Karakoram Highway",
-        description: "The Karakoram Highway links Pakistan and China across extreme mountain terrain. The route follows deep river valleys beneath major peaks, passes glaciers and villages, and reaches the high Khunjerab Pass.",
+        description: "World’s highest paved international road",
         entityId: "attraction_PK_karakoram_highway",
         panelSummary: "The appeal of Karakoram Highway is experiential: visitors actively move through the setting and gain a perspective unavailable from conventional sightseeing. Because visitors take part rather than simply observe, the memory tends to feel unusually personal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tahir%20Aziz%20-%20Passu%20Cons%20-%20Karakoram%20Highway%20-%20Pakistan.jpg",
@@ -20940,7 +20940,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Mohenjo-daro",
-        description: "Mohenjo-daro was one of the largest cities of the Indus civilization, built around 2500 BCE. Planned streets, drainage systems, wells, brick houses, public buildings, and the Great Bath reveal sophisticated early urban life.",
+        description: "5,000-year-old Indus Valley city (UNESCO)",
         entityId: "attraction_PK_mohenjo_daro",
         panelSummary: "Mohenjo-daro offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mohenjo-daro.jpg",
@@ -21010,7 +21010,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Île aux Marins",
-        description: "Île aux Marins is a largely preserved former fishing settlement reached by boat from Saint-Pierre. Empty houses, a church, school, museum, cemetery, and shoreline ruins document the cod-fishing economy that once sustained the island.",
+        description: "Preserved former fishing village on a small islet",
         entityId: "attraction_PM_ile_aux_marins",
         panelSummary: "The energy of Île aux Marins comes from browsing, eating, observing, and allowing everyday activity to shape the visit. A flexible itinerary leaves room to follow whatever catches the eye. That added context gives Île aux Marins lasting appeal.",
         wikidataId: "Q292246",
@@ -21019,7 +21019,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Grand Barachois",
-        description: "Grand Barachois is a broad lagoon and wetland on Miquelon, separated from the sea by a sand barrier. Guided outings focus on large grey-seal colonies, shorebirds, dunes, and the archipelago’s distinctive coastal ecology.",
+        description: "Seal-filled lagoon on Miquelon",
         entityId: "attraction_PM_grand_barachois",
         panelSummary: "The strongest reason to visit Grand Barachois is the chance to experience the surrounding environment at close range rather than from a distant overlook. Walking, boating, or pausing to observe gives the destination much more depth than a brief stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Miquelon%20%26%20Langlade%20Islands%2C%20FR.jpg",
@@ -21090,7 +21090,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Church of the Nativity",
-        description: "The Church of the Nativity stands over the traditional birthplace of Jesus in Bethlehem. Its ancient basilica, low entrance, mosaics, adjoining churches, and crowded Grotto of the Nativity make it a major pilgrimage site.",
+        description: "Traditional birthplace of Jesus (UNESCO)",
         entityId: "attraction_PS_church_of_the_nativity",
         panelSummary: "The appeal of Church of the Nativity lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q194504",
@@ -21105,7 +21105,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Hisham’s Palace",
-        description: "Hisham’s Palace is an early Islamic desert complex near Jericho containing residential halls, baths, courtyards, and extensive decoration. Its celebrated mosaic floor, including the Tree of Life, is the site’s principal artistic highlight.",
+        description: "8th-century Umayyad mosaic near Jericho",
         entityId: "attraction_PS_hisham_s_palace",
         panelSummary: "At Hisham’s Palace, architecture, interiors, and landscaped grounds reveal how rulers used design to express power, taste, and ceremony. The contrast between public grandeur and smaller human details gives Hisham’s Palace much of its appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hisham%27s%20Palace%20P1190926.JPG",
@@ -21175,7 +21175,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Jellyfish Lake",
-        description: "Jellyfish Lake is a landlocked marine lake on Eil Malk containing large populations of golden and moon jellyfish. Permit-controlled snorkeling allows close observation, though access depends on ecological conditions and conservation rules.",
+        description: "Marine lake where you can snorkel with stingless jellies",
         entityId: "attraction_PW_jellyfish_lake",
         panelSummary: "The appeal of Jellyfish Lake lies below the surface, where marine life and changing underwater scenery make each visit feel different. Travelers who move slowly and observe carefully tend to notice far more than the headline species.",
         wikidataId: "Q263422",
@@ -21189,7 +21189,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Blue Corner",
-        description: "Blue Corner is a current-swept reef point in Palau known for dense marine life. Experienced divers use reef hooks while watching sharks, barracuda, tuna, turtles, rays, and large schools of fish.",
+        description: "World-famous shark and pelagic dive site",
         entityId: "attraction_PW_blue_corner",
         panelSummary: "Blue Corner offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Napoleon%20fish%2C%20Blue%20Corner%2C%20Palau.jpg",
@@ -21257,13 +21257,13 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Guadalcanal battlefields",
-        description: "Guadalcanal’s battlefields preserve sites from the pivotal 1942–43 Allied campaign. Memorials, ridges, airfield areas, museums, and wrecks in Ironbottom Sound connect land fighting with major naval and air battles.",
+        description: "Iron Bottom Sound wrecks and land memorials",
         entityId: "attraction_SB_guadalcanal_battlefields",
         panelSummary: "Guadalcanal battlefields gives travelers an accessible entry point into the history or character of Solomon Islands, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
       },
       {
         name: "Skull Island (Munda)",
-        description: "Skull Island near Munda is a small sacred site containing ancestral skull shrines associated with former headhunting traditions. Visits require local guides and respectful behavior because the remains retain cultural and spiritual importance.",
+        description: "Sacred site of ancestral head-hunting shrines",
         entityId: "attraction_SB_skull_island_munda",
         panelSummary: "Skull Island (Munda) combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Respectful visitors gain more by noticing how worship and heritage continue to share the same space.",
       },
@@ -21324,7 +21324,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Three Towers of San Marino",
-        description: "San Marino’s three medieval towers occupy separate peaks of Monte Titano. Guaita, Cesta, and Montale combine fortifications, museums, steep paths, and wide views that explain the republic’s defensive geography.",
+        description: "Medieval fortresses ringing the summit",
         entityId: "attraction_SM_three_towers_of_san_marino",
         panelSummary: "Three Towers of San Marino turns military and political history into a physical experience, with walls, passages, and elevated views unfolding gradually. Looking beyond the best-known façade reveals craftsmanship and layers of occupation that photographs often miss.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Towers%20San%20Marino.jpg",
@@ -21337,7 +21337,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Basilica di San Marino",
-        description: "The Basilica di San Marino is the republic’s principal Catholic church, built in neoclassical style over an earlier sanctuary. Its columned interior preserves relics of Saint Marinus, the state’s traditional founder.",
+        description: "Neoclassical church of the republic’s founder",
         entityId: "attraction_SM_basilica_di_san_marino",
         panelSummary: "Basilica di San Marino combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Basilica di San Marino lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Basilica%20di%20San%20Marino%20%282%29.JPG",
@@ -21399,7 +21399,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Laas Geel",
-        description: "Laas Geel is a group of rock shelters containing exceptionally preserved prehistoric paintings. Vivid cattle, human figures, and ceremonial scenes provide rare evidence of pastoral life in the Horn of Africa thousands of years ago.",
+        description: "9,000-year-old rock art in Somaliland",
         entityId: "attraction_SO_laas_geel",
         panelSummary: "Laas Geel makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Somaliland%2C%20Las%20Geel%20Caves%20%2828983083573%29.jpg",
@@ -21414,7 +21414,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Berbera",
-        description: "Berbera is a historic Gulf of Aden port with Ottoman-era buildings, mosques, markets, and long undeveloped beaches. Its maritime history, hot desert setting, and access to nearby coral coastline distinguish the town.",
+        description: "Gulf of Aden port with long empty beaches",
         entityId: "attraction_SO_berbera",
         panelSummary: "The experience at Berbera comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Exploring beyond the busiest access point often reveals the beach at its most atmospheric.",
         wikidataId: "Q191718",
@@ -21484,7 +21484,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "White Nile",
-        description: "The White Nile is the slower, sediment-light branch of the Nile, flowing north from the Great Lakes region through South Sudan. Boat travel near Juba reveals riverine scenery, islands, fishing, and riverside communities.",
+        description: "River origin trip north from Juba",
         entityId: "attraction_SS_white_nile",
         panelSummary: "The strongest reason to visit White Nile is the chance to experience the surrounding environment at close range rather than from a distant overlook. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q1947",
@@ -21499,7 +21499,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Sudd wetlands",
-        description: "The Sudd is one of the world’s largest wetlands, formed where the White Nile spreads through papyrus swamps, channels, and seasonal floodplains. Wildlife, pastoral communities, and immense scale define this difficult-to-access ecosystem.",
+        description: "Vast papyrus swamps along the White Nile",
         entityId: "attraction_SS_sudd_wetlands",
         panelSummary: "The appeal of Sudd wetlands lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Sudd wetlands lasting appeal.",
       },
@@ -21561,7 +21561,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Pico Cão Grande",
-        description: "Pico Cão Grande is a narrow volcanic plug rising sharply above São Tomé’s rainforest. Roadside and hiking viewpoints emphasize its unusual shape; technical climbing is exceptionally difficult because of steep rock, moisture, vegetation, and snakes.",
+        description: "950-ft volcanic needle jutting from the jungle",
         entityId: "attraction_ST_pico_cao_grande",
         panelSummary: "Pico Cão Grande offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         wikidataId: "Q2082148",
@@ -21576,7 +21576,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Roça São João",
-        description: "Roça São João is a restored plantation estate near São João dos Angolares, reflecting São Tomé’s cacao-era history. Visitors encounter colonial architecture, gardens, local art, community projects, and cuisine based on island ingredients.",
+        description: "Restored colonial cacao plantation",
         entityId: "attraction_ST_roca_sao_joao",
         panelSummary: "Roça São João offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Parc%20de%20la%20ro%C3%A7a%20S%C3%A3o%20Jo%C3%A3o%20dos%20Angolares%20%28S%C3%A3o%20Tom%C3%A9%29%20%281%29.jpg",
@@ -21644,7 +21644,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Maho Beach",
-        description: "Maho Beach lies directly beneath the approach to Princess Juliana International Airport. Visitors watch aircraft pass extremely low overhead, but jet blast from departures is dangerous and official warning signs should be taken seriously.",
+        description: "Watch jumbo jets land just over your head",
         entityId: "attraction_SX_maho_beach",
         panelSummary: "Maho Beach offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. Spending time with the site’s details makes it more satisfying than a quick checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Final%20Approach%20Maho%20Beach%20St.%20Martin%20%288461204541%29.jpg",
@@ -21657,7 +21657,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Front Street",
-        description: "Front Street is Philipsburg’s main commercial street, running parallel to the waterfront. Duty-free shops, restaurants, historic buildings, courtyards, and easy access from the cruise pier make it the town’s busiest visitor corridor.",
+        description: "Duty-free shopping strip",
         entityId: "attraction_SX_front_street",
         panelSummary: "The energy of Front Street comes from browsing, eating, observing, and allowing everyday activity to shape the visit. The experience is strongest when travelers treat the area as a living neighborhood rather than a checklist stop.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Philipsburg%20Front%20Street%20%2816110940207%29.jpg",
@@ -21723,7 +21723,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Umayyad Mosque",
-        description: "The Umayyad Mosque is an early eighth-century monumental mosque in Damascus, built on a site sacred for centuries. Its vast courtyard, mosaics, prayer hall, minarets, and shrine associated with John the Baptist are central features.",
+        description: "8th-century mosque in the heart of old Damascus",
         entityId: "attraction_SY_umayyad_mosque",
         panelSummary: "Umayyad Mosque combines architecture, decorative detail, and spiritual tradition in a space whose meaning extends beyond visual beauty. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives Umayyad Mosque lasting appeal.",
         wikidataId: "Q183562",
@@ -21732,7 +21732,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Palmyra",
-        description: "Palmyra was a wealthy caravan city linking Rome with eastern trade routes. Its colonnaded street, temples, theater, tombs, and monumental arches remain important despite extensive destruction and reconstruction during recent conflict.",
+        description: "Roman-era desert ruins (heavily damaged during war)",
         entityId: "attraction_SY_palmyra",
         panelSummary: "Palmyra offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palmyra%2C%20Syria%2C%20Ruins.jpg",
@@ -21803,7 +21803,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Grace Bay Beach",
-        description: "Grace Bay is a long, reef-protected beach on Providenciales with pale sand and generally calm turquoise water. Swimming, snorkeling, resorts, restaurants, and extensive walking space make it the islands’ main beach destination.",
+        description: "Regularly voted world’s best beach",
         entityId: "attraction_TC_grace_bay_beach",
         panelSummary: "The experience at Grace Bay Beach comes from more than sand and sea: changing light, swimming conditions, and the shape of the coast give it character. Its strongest appeal is the unhurried rhythm it adds to a wider trip.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grace%20bay%2C%20Turks%20and%20Caicos%20%2844250116614%29.jpg",
@@ -21816,7 +21816,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Salt Cay",
-        description: "Salt Cay is a small, lightly developed island shaped by historic salt production. Visitors explore salinas, stone buildings, quiet roads, diving sites, and seasonal humpback-whale routes between January and April.",
+        description: "Whale-watching for humpbacks Jan–Apr",
         entityId: "attraction_TC_salt_cay",
         panelSummary: "Salt Cay offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. Travelers who move slowly and observe carefully tend to notice far more than the headline species.",
         wikidataId: "Q426843",
@@ -21886,7 +21886,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Zakouma National Park",
-        description: "Zakouma is a restored savanna park in southeastern Chad known for large elephant herds and strong wildlife recovery. Dry-season safaris also feature lions, giraffes, buffalo, antelope, wetlands, and exceptional bird concentrations.",
+        description: "Elephant herds and rare bird life",
         entityId: "attraction_TD_zakouma_national_park",
         panelSummary: "The appeal of Zakouma National Park lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Zakouma National Park lasting appeal.",
         wikidataId: "Q1561524",
@@ -21901,7 +21901,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Ennedi Plateau",
-        description: "The Ennedi Plateau is a remote sandstone landscape of arches, towers, canyons, gueltas, and prehistoric rock art. Desert expeditions reveal nomadic culture, crocodile habitat, and some of the Sahara’s most dramatic geological formations.",
+        description: "Sahara sandstone arches and rock art (UNESCO)",
         entityId: "attraction_TD_ennedi_plateau",
         panelSummary: "Exploring Ennedi Plateau reveals more than a single monument: the layout and remaining details help reconstruct an earlier world. Walking the broader site provides context that a photograph of its most famous feature cannot supply.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ennedi%20Mountains%20-%20northeastern%20Chad%20015.jpg",
@@ -21969,7 +21969,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Pamir Highway",
-        description: "The Pamir Highway crosses high valleys and passes through Tajikistan’s remote eastern mountains. Long overland journeys feature stark plateaus, Afghan-border views, hot springs, villages, and elevations above 4,000 meters.",
+        description: "Legendary M41 road above 4,000m",
         entityId: "attraction_TJ_pamir_highway",
         panelSummary: "Pamir Highway turns travel or activity into the attraction itself, allowing scenery and local character to unfold gradually rather than appearing all at once. The journey, route, or physical sensation matters as much as the final destination.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pamir%20highway%20near%20karakul.JPG",
@@ -21980,7 +21980,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Iskanderkul",
-        description: "Iskanderkul is a triangular alpine lake in Tajikistan’s Fann Mountains, surrounded by steep peaks. Roads and trails reach lakeside viewpoints, a nearby waterfall, hiking routes, and a setting linked by legend to Alexander the Great.",
+        description: "Turquoise alpine lake named for Alexander the Great",
         entityId: "attraction_TJ_iskanderkul",
         panelSummary: "Iskanderkul rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q2478596",
@@ -22051,7 +22051,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Atauro Island reefs",
-        description: "Atauro is a mountainous island north of Dili, surrounded by exceptionally diverse coral reefs and deep water. Diving, snorkeling, village stays, hiking, and community-run tourism provide the main visitor experiences.",
+        description: "Record-setting reef-fish diversity for divers",
         entityId: "attraction_TL_atauro_island_reefs",
         panelSummary: "Atauro Island reefs gives swimmers or divers direct access to a distinctive ecosystem rather than presenting nature from a distant viewpoint. Conditions, season, and responsible guiding strongly influence the experience, so preparation matters. That added context gives Atauro Island reefs lasting appeal.",
         wikidataId: "Q753794",
@@ -22066,7 +22066,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cristo Rei of Dili",
-        description: "Cristo Rei is a large statue of Jesus on a headland east of Dili. A long stairway passes devotional stations to the monument, beaches, and broad views across the capital’s coastline.",
+        description: "Hilltop statue overlooking the bay",
         entityId: "attraction_TL_cristo_rei_of_dili",
         panelSummary: "Cristo Rei of Dili gives travelers an accessible entry point into the history or character of Timor-Leste, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
         wikidataId: "Q9310",
@@ -22139,7 +22139,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Darvaza Gas Crater",
-        description: "The Darvaza gas crater is a large burning pit in Turkmenistan’s Karakum Desert, created after a drilling collapse and deliberate ignition. Night visits emphasize the flames, heat, isolation, and unusual industrial origin.",
+        description: "Fiery pit burning since 1971",
         entityId: "attraction_TM_darvaza_gas_crater",
         panelSummary: "Darvaza Gas Crater gives travelers an accessible entry point into the history or character of Turkmenistan, while still delivering an immediate visual impression. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q390802",
@@ -22154,7 +22154,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Merv",
-        description: "Merv was a succession of major Silk Road cities spread across a vast archaeological landscape. Fortifications, mausoleums, palaces, city walls, and settlement mounds illustrate repeated growth, destruction, and rebuilding over two millennia.",
+        description: "Ancient Silk Road city (UNESCO)",
         entityId: "attraction_TM_merv",
         panelSummary: "Merv offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Turkmenistan%20Merv%20city.jpg",
@@ -22226,13 +22226,13 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Swimming with humpback whales",
-        description: "Tonga is one of the few countries permitting regulated swimming near humpback whales. Seasonal boat trips search for migrating adults and calves, with brief guided water entries dependent on animal behavior, weather, and licensing rules.",
+        description: "One of the few places worldwide it is permitted",
         entityId: "attraction_TO_swimming_with_humpback_whales",
         panelSummary: "Swimming with humpback whales gives travelers an accessible entry point into the history or character of Tonga, while still delivering an immediate visual impression. The surrounding environment contributes as much to the experience as the landmark itself.",
       },
       {
         name: "Haʻamonga ʻa Maui",
-        description: "Haʻamonga ʻa Maui is a massive coral-limestone trilithon built in Tonga around the 13th century. Its precisely fitted uprights and lintel connect the site to royal history, ceremony, and enduring local legends.",
+        description: "Ancient stone trilithon — “Pacific Stonehenge”",
         entityId: "attraction_TO_ha_amonga_a_maui",
         panelSummary: "Haʻamonga ʻa Maui makes the distant past feel concrete through surviving structures, spatial relationships, and smaller traces of how people once lived. The most rewarding details are often the modest ones that make past life feel specific and human.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ha%CA%BBamonga%20%CA%BBa%20Maui%20-%202012.jpg",
@@ -22300,7 +22300,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Funafuti Conservation Area",
-        description: "Funafuti Conservation Area protects six islets, lagoon, reef, channels, and ocean habitat on the atoll’s western side. Boat trips support snorkeling among coral and fish while also revealing seabird and turtle nesting areas.",
+        description: "Six-islet marine reserve for snorkeling",
         entityId: "attraction_TV_funafuti_conservation_area",
         panelSummary: "Funafuti Conservation Area offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. Conditions, season, and responsible guiding strongly influence the experience, so preparation matters. That added context gives Funafuti Conservation Area lasting appeal.",
         wikidataId: "Q34126",
@@ -22314,7 +22314,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Nanumea",
-        description: "Nanumea is Tuvalu’s northernmost atoll, comprising low islets around a lagoon. Village life, traditional meeting houses, fishing, beaches, and remains of a World War II American airfield define the limited visitor experience.",
+        description: "Traditional outer atoll with a WWII airstrip",
         entityId: "attraction_TV_nanumea",
         panelSummary: "The appeal of Nanumea lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Nanumea lasting appeal.",
         wikidataId: "Q1964786",
@@ -22384,7 +22384,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Sistine Chapel",
-        description: "The Sistine Chapel is the papal chapel used for conclaves and major ceremonies. Michelangelo’s ceiling and Last Judgment dominate, while frescoes by Botticelli, Perugino, Ghirlandaio, and others complete its Renaissance narrative program.",
+        description: "Michelangelo’s ceiling and Last Judgment",
         entityId: "attraction_VA_sistine_chapel",
         panelSummary: "Sistine Chapel offers more depth than its familiar image suggests, combining visual impact with details that explain its place in local history and identity. A closer look reveals context that turns the attraction from a photograph into a meaningful visit.",
         wikidataId: "Q2943",
@@ -22399,7 +22399,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "St. Peter's Basilica",
-        description: "St. Peter’s Basilica is a vast Renaissance and Baroque church built over the traditional tomb of Saint Peter. Michelangelo’s dome, Bernini’s baldachin, papal monuments, chapels, mosaics, and Pietà reward extended exploration.",
+        description: "Largest church in Christendom",
         entityId: "attraction_VA_st_peter_s_basilica",
         panelSummary: "St. Peter's Basilica is best understood as both an architectural landmark and a living expression of faith, ritual, and community identity. Quiet observation of the interior reveals details that an exterior view cannot convey. That added context gives St. Peter's Basilica lasting appeal.",
         wikidataId: "Q12512",
@@ -22473,7 +22473,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "The Baths",
-        description: "The Baths is a coastal area on Virgin Gorda where enormous granite boulders form sheltered pools, arches, and narrow passages. A marked trail connects beaches and grottoes best explored outside peak crowds.",
+        description: "Boulder-strewn beach with hidden grottoes",
         entityId: "attraction_VG_the_baths",
         panelSummary: "The Baths offers a restorative coastal stop where the setting encourages travelers to slow down rather than rush between sights. Its strongest appeal is the unhurried rhythm it adds to a wider trip. That added context gives The Baths lasting appeal.",
         wikidataId: "Q7715805",
@@ -22488,7 +22488,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Anegada",
-        description: "Anegada is a flat coral-and-limestone island surrounded by reefs, unlike the volcanic British Virgin Islands. Visitors come for quiet beaches, flamingos, shipwreck diving, bonefishing, and locally caught spiny lobster.",
+        description: "Flat coral island famed for lobster",
         entityId: "attraction_VG_anegada",
         panelSummary: "Anegada rewards travelers with a landscape that changes as they move through it, revealing scale, texture, wildlife, and shifting light from different viewpoints. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Loblolly%20Beach%2C%20Anegada%2C%20BVI%20-%20Flickr%20-%20Kathleen%20Tyler%20Conklin.jpg",
@@ -22561,7 +22561,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Virgin Islands National Park",
-        description: "Virgin Islands National Park protects much of St. John’s forests, beaches, reefs, and historic plantation landscapes. Trails, snorkeling coves, petroglyphs, sugar-estate ruins, and marine life support both cultural and outdoor exploration.",
+        description: "Rainforest, ruins, and turquoise coves on St. John",
         entityId: "attraction_VI_virgin_islands_national_park",
         panelSummary: "Virgin Islands National Park offers an immersive encounter with history, allowing visitors to move through the physical evidence of settlement, belief, trade, or power. Time spent tracing the full setting turns the visit into something closer to discovery than observation.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/StJohnTrunkBay.jpg",
@@ -22576,7 +22576,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Trunk Bay",
-        description: "Trunk Bay is a protected St. John beach known for clear water, white sand, and an offshore snorkeling route. Facilities and easy access make it popular, while reefs and fish provide the main underwater interest.",
+        description: "Underwater snorkeling trail",
         entityId: "attraction_VI_trunk_bay",
         panelSummary: "Trunk Bay offers an immersive marine experience shaped by clear water, underwater topography, and the possibility of close wildlife encounters. Travelers who move slowly and observe carefully tend to notice far more than the headline species.",
         wikidataId: "Q4573739",
@@ -22649,7 +22649,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Lake Lalolalo",
-        description: "Lake Lalolalo is a nearly circular volcanic crater lake on Wallis, enclosed by steep forested cliffs. A roadside overlook reveals its dark water and dramatic shape, while the inaccessible shoreline preserves its isolation.",
+        description: "Perfectly circular crater lake on Wallis",
         entityId: "attraction_WF_lake_lalolalo",
         panelSummary: "Lake Lalolalo provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lac%20Lalolalo%20Sept.%202018%20drone.png",
@@ -22662,7 +22662,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Talietumu",
-        description: "Talietumu is a fortified archaeological site on Wallis built by Tongans around the 15th century. Stone walls, platforms, entrances, and central structures reveal the scale and organization of a former regional stronghold.",
+        description: "Ancient stone fortress ruins",
         entityId: "attraction_WF_talietumu",
         panelSummary: "Talietumu rewards exploration through ramparts, courtyards, gateways, and viewpoints that explain why the site held strategic importance. The changing perspectives make the visit engaging even for travelers without a specialist interest in military history. That added context gives Talietumu lasting appeal.",
       },
@@ -22721,7 +22721,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Visoki Dečani Monastery",
-        description: "Visoki Dečani is a 14th-century Serbian Orthodox monastery noted for its Romanesque-Gothic church and extensive Byzantine frescoes. Active monastic life, medieval art, and a protected valley setting give the site exceptional importance.",
+        description: "14th-century Serbian Orthodox UNESCO site",
         entityId: "attraction_XK_visoki_decani_monastery",
         panelSummary: "The appeal of Visoki Dečani Monastery lies in the relationship between its distinctive appearance, surrounding setting, and cultural significance. The surrounding environment contributes as much to the experience as the landmark itself. That added context gives Visoki Dečani Monastery lasting appeal.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Visoki%20De%C4%8Dani%20monastery%2C%202008.jpg",
@@ -22734,7 +22734,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Rugova Canyon",
-        description: "Rugova Canyon is a deep gorge west of Peja, cut through the Accursed Mountains. Scenic driving, hiking, caves, waterfalls, climbing, and via ferrata routes provide access to its limestone cliffs and alpine scenery.",
+        description: "Cliff-walled hiking and via-ferrata region",
         entityId: "attraction_XK_rugova_canyon",
         panelSummary: "The strongest reason to visit Rugova Canyon is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rugova%20Canyon%20%E2%80%93%20Peja%2C%20Kosovo.jpg",
@@ -22804,7 +22804,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Socotra",
-        description: "Socotra is an isolated Arabian Sea archipelago with exceptionally high plant endemism. Dragon’s blood trees, bottle trees, limestone plateaus, caves, dunes, beaches, and distinct local culture make its landscapes unlike mainland Yemen.",
+        description: "UNESCO island with plants found nowhere else on earth",
         entityId: "attraction_YE_socotra",
         panelSummary: "Socotra offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. Visitors who allow time for conditions to change often leave with the strongest sense of place.",
         wikidataId: "Q2583995",
@@ -22819,7 +22819,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Shibam",
-        description: "Shibam is a compact walled city of multi-story mud-brick tower houses dating largely from the 16th century. Its dense vertical plan demonstrates how builders adapted traditional materials to defense, heat, and limited land.",
+        description: "16th-century mud-brick “Manhattan of the desert”",
         entityId: "attraction_YE_shibam",
         panelSummary: "Shibam offers an outdoor experience shaped by geology, weather, vegetation, and perspective, making the setting more varied than a single image suggests. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         wikidataId: "Q192518",
@@ -22891,7 +22891,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Mayotte Lagoon",
-        description: "Mayotte’s lagoon is enclosed by a large double barrier reef, creating extensive sheltered water. Diving, snorkeling, mangroves, coral gardens, turtles, dolphins, and seasonal whales make the marine environment the territory’s principal natural attraction.",
+        description: "One of the largest enclosed lagoons in the world",
         entityId: "attraction_YT_mayotte_lagoon",
         panelSummary: "The strongest reason to visit Mayotte Lagoon is the chance to experience the surrounding environment at close range rather than from a distant overlook. The attraction is particularly rewarding for travelers who prefer active discovery to conventional sightseeing.",
         imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mayotte%20oli%202015196%20lrg.jpg",
@@ -22904,7 +22904,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Dziani Dzaha",
-        description: "Dziani Dzaha is an emerald crater lake on Petite-Terre formed within an extinct volcanic cone. A rim trail provides lagoon and island views, while the lake’s unusual chemistry supports distinctive microbial life.",
+        description: "Emerald crater lake on Petite-Terre",
         entityId: "attraction_YT_dziani_dzaha",
         panelSummary: "Dziani Dzaha provides a direct view of volcanic forces through exposed rock, crater scenery, geothermal activity, or landscapes reshaped by past eruptions. Prepared visitors are rewarded with a landscape unlike the more familiar scenery elsewhere in the region.",
         wikidataId: "Q2893122",
@@ -22974,7 +22974,7 @@ export const countries: Record<string, CountryData> = {
     attractions: [
       {
         name: "Piton de la Fournaise",
-        description: "Piton de la Fournaise is a highly active shield volcano on Réunion. Roads and trails cross the Enclos caldera, old lava fields, craters, and barren summit terrain, with access changing during eruptions.",
+        description: "One of the world’s most active volcanoes",
         entityId: "attraction_RE_piton_de_la_fournaise",
         panelSummary: "The appeal of Piton de la Fournaise comes from seeing geology in action, with terrain and conditions that make the landscape feel unusually alive. The experience is strongest when travelers understand both the beauty and volatility of the setting.",
         wikidataId: "Q1049644",
@@ -22989,7 +22989,7 @@ export const countries: Record<string, CountryData> = {
       },
       {
         name: "Cirque de Salazie",
-        description: "Salazie is a steep, rain-fed volcanic cirque filled with waterfalls, forest, villages, and towering ridges. Scenic roads and trails connect Hell-Bourg, Creole architecture, canyon views, and routes into Réunion’s mountainous interior.",
+        description: "Lush green amphitheater of waterfalls",
         entityId: "attraction_RE_cirque_de_salazie",
         panelSummary: "Cirque de Salazie is best experienced through movement, sound, and changing viewpoints, with spray and surrounding vegetation adding to the sense of scale. The attraction particularly suits travelers who value sensory outdoor experiences. That added context gives Cirque de Salazie lasting appeal.",
         wikidataId: "Q1093097",
